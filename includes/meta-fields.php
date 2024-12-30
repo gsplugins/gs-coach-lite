@@ -45,39 +45,39 @@ class Meta_Fields {
 
 			<div class="form-group">
 				<label for="gsProfession"><?php _e('Profession', 'gscoach'); ?></label>
-				<input type="text" id="gsProfession" class="form-control" name="gs_profession" value="<?php echo isset($gs_profession) ? esc_attr($gs_profession) : ''; ?>">
+				<input type="text" id="gsProfession" class="form-control" name="gs_profession" placeholder="Your Profession" value="<?php echo isset($gs_profession) ? esc_attr($gs_profession) : ''; ?>">
 			</div>
 
 			<div class="gs-coach-pro-field">
 
 				<div class="form-group">
 					<label for="gsLinkedin"><?php _e('Linkedin', 'gscoach'); ?></label>
-					<input type="text" id="gsLinkedin" class="form-control" name="gs_linkedin" value="<?php echo isset($gs_linkedin) ? esc_attr($gs_linkedin) : ''; ?>">
+					<input type="text" id="gsLinkedin" class="form-control" name="gs_linkedin" placeholder="Linkedin" value="<?php echo isset($gs_linkedin) ? esc_attr($gs_linkedin) : ''; ?>">
 				</div>
 				
 				<div class="form-group">
 					<label for="gsTwitter"><?php _e('Twitter', 'gscoach'); ?></label>
-					<input type="text" id="gsTwitter" class="form-control" name="gs_twitter" value="<?php echo isset($gs_twitter) ? esc_attr($gs_twitter) : ''; ?>">
+					<input type="text" id="gsTwitter" class="form-control" name="gs_twitter" placeholder="Twitter" value="<?php echo isset($gs_twitter) ? esc_attr($gs_twitter) : ''; ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="gsFacebook"><?php _e('Facebook', 'gscoach'); ?></label>
-					<input type="text" id="gsFacebook" class="form-control" name="gs_facebook" value="<?php echo isset($gs_facebook) ? esc_attr($gs_facebook) : ''; ?>">
+					<input type="text" id="gsFacebook" class="form-control" name="gs_facebook" placeholder="Facebook" value="<?php echo isset($gs_facebook) ? esc_attr($gs_facebook) : ''; ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="gsGooglePlus"><?php _e('Google+', 'gscoach'); ?></label>
-					<input type="text" id="gsGooglePlus" class="form-control" name="gs_google_plus" value="<?php echo isset($gs_google_plus) ? esc_attr($gs_google_plus) : ''; ?>">
+					<input type="text" id="gsGooglePlus" class="form-control" name="gs_google_plus" placeholder="Google+" value="<?php echo isset($gs_google_plus) ? esc_attr($gs_google_plus) : ''; ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="gsYoutube"><?php _e('Youtube', 'gscoach'); ?></label>
-					<input type="text" id="gsYoutube" class="form-control" name="gs_youtube" value="<?php echo isset($gs_youtube) ? esc_attr($gs_youtube) : ''; ?>">
+					<input type="text" id="gsYoutube" class="form-control" name="gs_youtube" placeholder="Youtube" value="<?php echo isset($gs_youtube) ? esc_attr($gs_youtube) : ''; ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="gsPersonalSite"><?php _e('Personal Site', 'gscoach'); ?></label>
-					<input type="text" id="gsPersonalSite" class="form-control" name="gs_personal_site" value="<?php echo isset($gs_personal_site) ? esc_attr($gs_personal_site) : ''; ?>">
+					<input type="text" id="gsPersonalSite" class="form-control" name="gs_personal_site" placeholder="Personal Site URL" value="<?php echo isset($gs_personal_site) ? esc_attr($gs_personal_site) : ''; ?>">
 				</div>
 
 			</div>

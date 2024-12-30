@@ -54,8 +54,8 @@ class Plugin {
 
         // require_once GSTEAM_PLUGIN_DIR . 'includes/asset-generator/gs-load-asset-generator.php';
 
-        // // Load Free/Pro Plugins List
-        // require_once GSTEAM_PLUGIN_DIR . 'includes/gs-common-pages/gs-team-common-pages.php';
+        // Load Free/Pro Plugins List
+        require_once GSCOACH_PLUGIN_DIR . 'includes/gs-common-pages/gs-coach-common-pages.php';
     }
 
 }

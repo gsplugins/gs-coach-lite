@@ -38,7 +38,7 @@ final class Scripts {
 
 		add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_script'], 9999);
 		add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 9999);
-		// add_action('admin_head', [$this, 'print_plugin_icon_css']);
+		add_action('admin_head', [$this, 'admin_menu_css']);
 
 		return $this;
 	}
@@ -431,6 +431,34 @@ final class Scripts {
 		if (!isset($wp_styles->registered[$handle])) return;
 
 		$wp_styles->registered[$handle]->deps = array_unique(array_merge($wp_styles->registered[$handle]->deps, $styles));
+	}
+
+	public function admin_menu_css() {
+		?>
+		<style>
+			#menu-posts-gs_coach li {
+				clear: both
+			}
+/* 
+			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-team-members-affiliation"] ),
+			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-team-shortcode#/taxonomies"] ), */
+			#menu-posts-gs_coach li:nth-last-child(2) {
+				position: relative;
+				margin-top: 16px;
+			}
+			
+			/* #menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-team-members-affiliation"] ):before,
+			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-team-shortcode#/taxonomies"] ):before, */
+			#menu-posts-gs_coach li:nth-last-child(2):before {
+				content: "";
+				position: absolute;
+				background: hsla(0, 0%, 100%, .2);
+				width: calc(100%);
+				height: 1px;
+				top: -8px;
+			}
+		</style>
+		<?php
 	}
 
 }
