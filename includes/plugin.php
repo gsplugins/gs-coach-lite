@@ -38,7 +38,7 @@ class Plugin {
         // $this->template_loader   = new Template_Loader();
         $this->scripts           = new Scripts();
         // $this->hooks             = new Hooks();
-        // $this->sortable          = new Sortable();
+        $this->sortable          = new Sortable();
         // $this->builder           = new Builder();
         // $this->integrations      = new Integrations();
 

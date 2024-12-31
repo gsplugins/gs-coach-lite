@@ -52,7 +52,7 @@ final class Scripts {
         // Styles
 		$this->add_style('gs-select2', GSCOACH_PLUGIN_URI . '/assets/libs/select2/select2.min.css', [], GSCOACH_VERSION, 'all');
 		$this->add_style('gs-font-awesome-5', GSCOACH_PLUGIN_URI . '/assets/libs/font-awesome/css/font-awesome.min.css', [], GSCOACH_VERSION, 'all');
-		// $this->add_style('gs-team-sort', GSTEAM_PLUGIN_URI . '/assets/admin/css/sort.min.css', ['gs-font-awesome-5'], GSTEAM_VERSION, 'all');
+		$this->add_style('gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/css/sort.min.css', ['gs-font-awesome-5'], GSCOACH_VERSION, 'all');
 		$this->add_style('gs-coach-admin', GSCOACH_PLUGIN_URI . '/assets/admin/css/admin.css', [], GSCOACH_VERSION, 'all');
 		// $this->add_style('gs-bootstrap-grid', GSTEAM_PLUGIN_URI . '/assets/libs/bootstrap-grid/bootstrap-grid.min.css', [], GSTEAM_VERSION, 'all');
 		// $this->add_style('gs-bootstrap-table', GSTEAM_PLUGIN_URI . '/assets/libs/bootstrap-table/bootstrap-table.min.css', [], GSTEAM_VERSION, 'all');
@@ -60,10 +60,10 @@ final class Scripts {
 		// $this->add_style('gs-owl-carousel', GSTEAM_PLUGIN_URI . '/assets/libs/owl-carousel/owl-carousel.min.css', [], GSTEAM_VERSION, 'all');
 		// $this->add_style('gs-team-public', GSTEAM_PLUGIN_URI . '/assets/css/gs-team.min.css', ['gs-bootstrap-grid'], GSTEAM_VERSION, 'all');
 
-		// // Scripts
+		// Scripts
 		$this->add_script('gs-select2', GSCOACH_PLUGIN_URI . '/assets/libs/select2/select2.min.js', ['jquery'], GSCOACH_VERSION, true);
-		// $this->add_script('gs-team-sort', GSTEAM_PLUGIN_URI . '/assets/admin/js/sort.min.js', ['jquery', 'jquery-ui-sortable'], GSTEAM_VERSION, true);
-		// $this->add_script('gs-team-sort-group', GSTEAM_PLUGIN_URI . '/assets/admin/js/sort-group.min.js', ['jquery', 'jquery-ui-sortable'], GSTEAM_VERSION, true);
+		$this->add_script('gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true);
+		$this->add_script('gs-coach-sort-group', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort-group.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true);
 		$this->add_script('gs-coach-admin', GSCOACH_PLUGIN_URI . '/assets/admin/js/admin.js', ['jquery'], GSCOACH_VERSION, true);
 		// $this->add_script('gs-bootstrap-table', GSTEAM_PLUGIN_URI . '/assets/libs/bootstrap-table/bootstrap-table.min.js', ['jquery'], GSTEAM_VERSION, true);
 		// $this->add_script('gs-cpb-scroller', GSTEAM_PLUGIN_URI . '/assets/libs/cpb-scroller/cpb-scroller.min.js', ['jquery'], GSTEAM_VERSION, true);
@@ -406,6 +406,8 @@ final class Scripts {
 
 		// Enqueue Scripts
 		wp_enqueue_script('gs-coach-admin');
+
+		// wp_enqueue_style();
 
 		// add_fs_script('gs-team-admin');
 	}
