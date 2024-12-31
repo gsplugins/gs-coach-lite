@@ -105,9 +105,6 @@ class Sortable {
 
 		if ( $hook != 'post-new.php' ) return;
 
-		plugin()->scripts->wp_enqueue_style('gs-coach-sort');
-		plugin()->scripts->wp_enqueue_script('gs-coach-sort');
-
 		if ( $this->is_pro() ) {
 
 			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_team' ) {

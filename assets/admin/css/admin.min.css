@@ -1,0 +1,243 @@
+#gsCoachSection * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+#gsCoachSection {
+        min-width: 255px;
+        border: 1px solid #e5e5e5;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+        background: #fff;
+        overflow: hidden;
+}
+
+.gs_coach-metafields .form-group {
+        margin-bottom: 15px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+}
+
+.gs_coach-metafields .form-group>*:first-child {
+        width: 20%;
+}
+
+.gs_coach-metafields .form-group>*:nth-child(2) {
+        width: 80%;
+}
+
+.gs_coach-metafields .form-control {
+        border-radius: 4px;
+        padding: 5px 15px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        height: auto;
+        border: 1px solid #e1e1e1;
+}
+
+.gs_coach-metafields h2 {
+        font-weight: 600 !important;
+        padding: 8px 12px 8px 0 !important;
+        font-style: italic;
+}
+
+.gs_team-metafields a.gs_remove_image_button {
+        margin-top: 8px;
+        display: inline-block;
+}
+
+.gs_team-metafields a.gs_upload_image_button {
+        display: block;
+        max-width: 130px;
+        line-height: 0;
+        outline: none !important;
+}
+
+.gs_team-metafields a.gs_upload_image_button.button {
+        display: inline-block;
+        font-size: 14px;
+        min-height: 40px;
+        line-height: 38px;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+}
+
+.gs_team-metafields a.gs_upload_image_button img {
+        height: auto;
+        width: 100%;
+        margin: 0px;
+}
+
+.gs-team-pro-field.gs-team-fields-disable {
+        position: relative;
+}
+
+.gs-team-pro-field.gs-team-fields-disable>*:not(.gs-team-pro-field--inner) {
+        opacity: 0.3;
+}
+
+.gs-team-pro-field--inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+}
+
+.gs-team-pro-field--inner .gs-team-pro-field--content {
+        font-size: 18px;
+        background: #6472ef;
+        padding: 20px 100px;
+        -webkit-box-shadow: 0px 0px 50px rgba(89, 97, 109, 0.1);
+        box-shadow: 0px 0px 50px rgba(89, 97, 109, 0.1);
+        border-radius: 3px;
+        color: #fff;
+        letter-spacing: 1px;
+}
+
+.edit-tags-php.post-type-gs_team #col-container #col-left,
+.term-php.post-type-gs_team #wpbody-content {
+        position: relative;
+}
+
+.edit-tags-php.post-type-gs_team .gs-team-pro-field--inner,
+.term-php.post-type-gs_team .gs-team-pro-field--inner {
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+}
+
+.gs_team-metafields a.button {
+        font-size: 14px;
+        height: 36px;
+        line-height: 34px;
+        padding-left: 14px;
+        padding-right: 14px;
+}
+
+.gs_team-metafields a.button,
+.gs_team-metafields a.button:hover {
+        color: #6472ef;
+        border-color: #6472ef;
+        background: rgba(100, 114, 239, 0.05);
+}
+
+.gs_team-metafields a.button:focus {
+        -webkit-box-shadow: 0 0 0 1px #6472ef;
+        box-shadow: 0 0 0 1px #6472ef;
+}
+
+.gs_team-metafields a.button.remove-row {
+        height: 40px;
+        line-height: 38px;
+}
+
+.gs_team-metafields a.button.remove-row,
+.gs_team-metafields a.button.remove-row:hover {
+        color: #f16c6c;
+        border-color: rgba(241, 108, 108, 0.3);
+        background: rgba(241, 108, 108, 0.0005);
+}
+
+.gs_team-metafields a.button.remove-row:focus {
+        -webkit-box-shadow: 0 0 0 1px #f16c6c;
+        box-shadow: 0 0 0 1px #f16c6c;
+}
+
+.gs_team-metafields tr.ui-sortable-handle {
+        height: 50px;
+}
+
+.select2-container .select2-selection--single {
+        height: 40px;
+        border-color: #e1e1e1;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 38px;
+        padding-left: 12px;
+        padding-right: 30px;
+        color: #525258;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+        border-width: 6px 5px 0 5px;
+        margin-left: -8px;
+        margin-top: 5px;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+        border-width: 0 5px 6px 5px;
+}
+
+.gs-team-social--section select,
+.gs-team-social--section select+.select2-container,
+#select2-gstm-team-icon-results {
+        text-transform: capitalize;
+}
+
+.gs_team-metafields .ui-sortable-handle input {
+        min-height: 40px;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-color: #e1e1e1;
+}
+
+.gs_team-metafields .ui-sortable-handle .fa-arrows {
+        color: #676875;
+}
+
+.gs_team-metafields .ui-sortable-handle>td:nth-child(2) {
+        padding-right: 10px;
+}
+
+.gs_team-metafields .ui-sortable-handle>td:nth-child(3) {
+        padding-right: 10px;
+}
+
+.gs-team-social--section .ui-sortable-handle>td:nth-child(1),
+.gs-team-skills--section .ui-sortable-handle>td:nth-child(1) {
+        width: 45px;
+}
+
+.gs-team-social--section .ui-sortable-handle>td:nth-child(2),
+.gs-team-skills--section .ui-sortable-handle>td:nth-child(2) {
+        width: 30%;
+}
+
+.gs-team-social--section .ui-sortable-handle>td:nth-child(3),
+.gs-team-skills--section .ui-sortable-handle>td:nth-child(3) {
+        width: 70%;
+}
+
+.gs-team-social--section .ui-sortable-handle>td:nth-child(4),
+.gs-team-skills--section .ui-sortable-handle>td:nth-child(4) {
+        width: auto;
+}
+
+.gs_team-metafields a.gstm-add-row,
+.gs_team-metafields a.gstm-add-skill {
+        margin-left: 45px;
+}
+
+.gs-team-pro-field--content>a {
+        color: #ffffff;
+        text-decoration: none;
+}
