@@ -15,7 +15,7 @@ class Meta_Fields {
 
 	function add_gs_coach_metaboxes() {
 		add_meta_box('gsCoachSection', 'Coach\'s Additional Info', [ $this, 'cmb_cb' ], 'gs_coach', 'normal', 'high');
-		add_meta_box('gsCoachSectionSocial', 'Member\'s Social Links', [ $this, 'cmb_social_cb' ], 'gs_coach', 'normal', 'high');
+		add_meta_box('gsCoachSectionSocial', 'Coach\'s Social Links', [ $this, 'cmb_social_cb' ], 'gs_coach', 'normal', 'high');
 		// add_meta_box('gsCoachSectionSkill', 'Member\'s Skills', [ $this, 'cmb_skill_cb' ], 'gs_coach', 'normal', 'high');
 	}
 
@@ -132,7 +132,7 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_social = get_post_meta( $post->ID, 'gs_coach_social', true );
+		$gs_social = get_post_meta( $post->ID, '_gs_coach_social', true );
 		
 		$social_icons = require_once GSCOACH_PLUGIN_DIR . 'includes/fs-icons.php';
 
@@ -249,7 +249,7 @@ class Meta_Fields {
 				if (!empty($icon) && !empty($link)) return ['icon' => $icon, 'link' => $link];
 			}, $social_icons, $social_links);
 
-			$meta_key = 'gs_coach_social';
+			$meta_key = '_gs_coach_social';
 
 			$newdata = array_values(array_filter($newdata));
 			$olddata = get_post_meta($post_id, $meta_key, true);
