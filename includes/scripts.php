@@ -68,6 +68,7 @@ final class Scripts {
 			wp_enqueue_style( 'gs-font-awesome-5', GSCOACH_PLUGIN_URI . '/assets/libs/font-awesome/css/font-awesome.min.css', [], GSCOACH_VERSION );
 			wp_enqueue_style( 'gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/css/sort.min.css', [], GSCOACH_VERSION );
 			wp_enqueue_style( 'gs-coach-admin', GSCOACH_PLUGIN_URI . '/assets/admin/css/admin.min.css', [], GSCOACH_VERSION );
+			wp_enqueue_style( 'gs-coach-rate-it', GSCOACH_PLUGIN_URI . '/assets/rateit-js/rateit.css', [], GSCOACH_VERSION );
 	
 
 			// Scripts
@@ -75,6 +76,7 @@ final class Scripts {
 			wp_enqueue_script( 'gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true );
 			wp_enqueue_script( 'gs-coach-sort-group', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort-group.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true );
 			wp_enqueue_script( 'gs-coach-admin', GSCOACH_PLUGIN_URI . '/assets/admin/js/admin.min.js', ['jquery', 'jquery-ui-sortable', 'gs-select2'], GSCOACH_VERSION, true );
+			wp_enqueue_script( 'gs-coach-rate-it', GSCOACH_PLUGIN_URI . '/assets/rateit-js/jquery.rateit.min.js', ['jquery'], GSCOACH_VERSION, true );
 		}
 
 

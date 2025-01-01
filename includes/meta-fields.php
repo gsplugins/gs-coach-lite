@@ -28,20 +28,20 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_coach_profession       = get_post_meta($post->ID, '_gs_coach_profession', true);
-		$gs_coach_experience       = get_post_meta($post->ID, '_gs_coach_experience', true);
-		$gs_coach_education        = get_post_meta($post->ID, '_gs_coach_education', true);
-		$gs_coach_skills           = get_post_meta($post->ID, '_gs_coach_skills', true);
-		$gs_coach_address          = get_post_meta($post->ID, '_gs_coach_address', true);
-		$gs_coach_state            = get_post_meta($post->ID, '_gs_coach_state', true);
-		$gs_coach_country          = get_post_meta($post->ID, '_gs_coach_country', true);
-		$gs_coach_contact_number   = get_post_meta($post->ID, '_gs_coach_contact_number', true);
-		$gs_coach_schedule         = get_post_meta($post->ID, '_gs_coach_schedule', true);
-		$gs_coach_available        = get_post_meta($post->ID, '_gs_coach_available', true);
-		$gs_coach_fee              = get_post_meta($post->ID, '_gs_coach_fee', true);
-		$gs_coach_review           = get_post_meta($post->ID, '_gs_coach_review', true);
-		$gs_coach_students_rating  = get_post_meta($post->ID, '_gs_coach_students_rating', true);
-
+		$gs_coach_profession       = get_post_meta($post->ID, '_gscoach_profession', true);
+		$gs_coach_experience       = get_post_meta($post->ID, '_gscoach_experience', true);
+		$gs_coach_education        = get_post_meta($post->ID, '_gscoach_education', true);
+		$gs_coach_skills           = get_post_meta($post->ID, '_gscoach_skills', true);
+		$gs_coach_address          = get_post_meta($post->ID, '_gscoach_address', true);
+		$gs_coach_state            = get_post_meta($post->ID, '_gscoach_state', true);
+		$gs_coach_country          = get_post_meta($post->ID, '_gscoach_country', true);
+		$gs_coach_contact_number   = get_post_meta($post->ID, '_gscoach_contact', true);
+		$gs_coach_schedule         = get_post_meta($post->ID, '_gscoach_shedule', true);
+		$gs_coach_available        = get_post_meta($post->ID, '_gscoach_available', true);
+		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
+		$gs_coach_review           = get_post_meta($post->ID, '_gscoach_review', true);
+		$gs_coach_rating 		   = get_post_meta( $post->ID, '_gscoach_rating', true );
+		$gs_coach_rating		   = $gs_coach_rating ? $gs_coach_rating : 2;
 
 		?>
 
@@ -93,12 +93,12 @@ class Meta_Fields {
 
 				<div class="form-group">
 					<label for="gsCoachSchedule"><?php _e('Schedule Time', 'gscoach'); ?></label>
-					<input type="text" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
+					<input type="time" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachAvailable"><?php _e('Available', 'gscoach'); ?></label>
-					<input type="text" id="gsCoachAvailable" class="form-control" name="gs_coach_available" placeholder="Available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>">
+					<label for="gsCoachAvailable"><?php _e('Availablity', 'gscoach'); ?></label>
+					<input type="date" id="gsCoachAvailable" class="form-control" name="gs_coach_available" placeholder="Available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>">
 				</div>
 
 				<div class="form-group">
@@ -111,9 +111,12 @@ class Meta_Fields {
 					<input type="text" id="gsCoachReview" class="form-control" name="gs_coach_review" placeholder="Review" value="<?php echo isset($gs_coach_review) ? esc_attr($gs_coach_review) : ''; ?>">
 				</div>
 
-				<div class="form-group">
-					<label for="gsCoachStudentsRating"><?php _e('Students Rating', 'gscoach'); ?></label>
-					<input type="text" id="gsCoachStudentsRating" class="form-control" name="gs_coach_students_rating" placeholder="Students Rating" value="<?php echo isset($gs_coach_students_rating) ? esc_attr($gs_coach_students_rating) : ''; ?>">
+				<div>
+					<p><label for="gsCoachRating"><b><?php _e('Rating:', 'gscoach'); ?></b></label></p>
+					<p>
+						<input name="gs_coach_rating" type="range" value="<?php echo esc_attr($gs_coach_rating); ?>" step="0.25" id="gsCoachRating" style="display:none" />
+						<div class="rateit bigstars" data-rateit-starwidth="32" data-rateit-starheight="32" data-rateit-backingfld="#gsCoachRating" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
+					</p>
 				</div>
 
 			</div>
@@ -123,7 +126,8 @@ class Meta_Fields {
 	<?php
 	}
 
-	function cmb_social_cb($post) {
+	function cmb_social_cb($post)
+	{
 
 		// Add a nonce field so we can check for it later.
 		wp_nonce_field('gs_coach_nonce_name', 'gs_coach_cmb_token');
@@ -295,22 +299,22 @@ class Meta_Fields {
 
 		// Sanitize user input.
 		$gs_coach_profession = sanitize_text_field($_POST['gs_coach_profession']);
-		update_post_meta($post_id, '_gs_coach_profession', $gs_coach_profession);
+		update_post_meta($post_id, '_gscoach_profession', $gs_coach_profession);
 
 		// if (gtm_fs()->is_paying_or_trial()) {
 
-			update_post_meta($post_id, '_gs_coach_experience', sanitize_text_field($_POST['gs_coach_experience']));
-			update_post_meta($post_id, '_gs_coach_education', sanitize_text_field($_POST['gs_coach_education']));
-			update_post_meta($post_id, '_gs_coach_skills', sanitize_text_field($_POST['gs_coach_skills']));
-			update_post_meta($post_id, '_gs_coach_address', sanitize_text_field($_POST['gs_coach_address']));
-			update_post_meta($post_id, '_gs_coach_state', sanitize_text_field($_POST['gs_coach_state']));
+			update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
+			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));
+			update_post_meta($post_id, '_gscoach_skills', sanitize_text_field($_POST['gs_coach_skills']));
+			update_post_meta($post_id, '_gscoach_address', sanitize_text_field($_POST['gs_coach_address']));
+			update_post_meta($post_id, '_gscoach_state', sanitize_text_field($_POST['gs_coach_state']));
 			update_post_meta($post_id, '_gs_coach_country', sanitize_text_field($_POST['gs_coach_country']));
-			update_post_meta($post_id, '_gs_coach_contact_number', sanitize_text_field($_POST['gs_coach_contact_number']));
-			update_post_meta($post_id, '_gs_coach_schedule', sanitize_text_field($_POST['gs_coach_schedule']));
-			update_post_meta($post_id, '_gs_coach_available', sanitize_text_field($_POST['gs_coach_available']));
-			update_post_meta($post_id, '_gs_coach_fee', sanitize_text_field($_POST['gs_coach_fee']));
-			update_post_meta($post_id, '_gs_coach_review', sanitize_text_field($_POST['gs_coach_review']));
-			update_post_meta($post_id, '_gs_coach_students_rating', sanitize_text_field($_POST['gs_coach_students_rating']));
+			update_post_meta($post_id, '_gscoach_contact', sanitize_text_field($_POST['gs_coach_contact_number']));
+			update_post_meta($post_id, '_gscoach_shedule', sanitize_text_field($_POST['gs_coach_schedule']));
+			update_post_meta($post_id, '_gscoach_available', sanitize_text_field($_POST['gs_coach_available']));
+			update_post_meta($post_id, '_gscoach_fee', sanitize_text_field($_POST['gs_coach_fee']));
+			update_post_meta($post_id, '_gscoach_review', sanitize_text_field($_POST['gs_coach_review']));
+			update_post_meta($post_id, '_gscoach_rating', sanitize_text_field($_POST['gs_coach_rating']));
 
 		// }
 	}

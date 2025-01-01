@@ -14,20 +14,26 @@ class Cpt{
 	// Register coach Custom Post Type
 	function register_coach_cpt() {
 		$labels = array(
-			'name'               => __( 'Coach', 'gscoach' ),
-			'singular_name'      => __( 'Coach', 'gscoach' ),
-			'menu_name'          => _x( 'GS Coach', 'admin menu', 'gscoach' ),
-			'name_admin_bar'     => _x( 'GS Coach', 'add new on admin bar', 'gscoach' ),
-			'add_new'            => __( 'Add New Coach', 'gscoach' ),
-			'add_new_item'       => __( 'Add New Coach', 'gscoach' ),
-			'new_item'           => __( 'New Coach', 'gscoach' ),
-			'edit_item'          => __( 'Edit Coach', 'gscoach' ),
-			'view_item'          => __( 'View Coach', 'gscoach' ),
-			'all_items'          => __( 'All Coaches', 'gscoach' ),
-			'search_items'       => __( 'Search Coaches', 'gscoach' ),
-			'parent_item_colon'  => __( 'Parent Coaches:', 'gscoach' ),
-			'not_found'          => __( 'No Coaches found.', 'gscoach' ),
-			'not_found_in_trash' => __( 'No Coaches found in Trash.', 'gscoach' ),
+			'name'                  => __( 'Coach', 'gscoach' ),
+			'singular_name'         => __( 'Coach', 'gscoach' ),
+			'menu_name'             => _x( 'GS Coach', 'admin menu', 'gscoach' ),
+			'name_admin_bar'        => _x( 'GS Coach', 'add new on admin bar', 'gscoach' ),
+			'add_new'               => __( 'Add New Coach', 'gscoach' ),
+			'add_new_item'          => __( 'Add New Coach', 'gscoach' ),
+			'new_item'              => __( 'New Coach', 'gscoach' ),
+			'edit_item'             => __( 'Edit Coach', 'gscoach' ),
+			'view_item'             => __( 'View Coach', 'gscoach' ),
+			'all_items'             => __( 'All Coaches', 'gscoach' ),
+			'search_items'          => __( 'Search Coaches', 'gscoach' ),
+			'parent_item_colon'     => __( 'Parent Coaches:', 'gscoach' ),
+			'not_found'             => __( 'No Coaches found.', 'gscoach' ),
+			'not_found_in_trash'    => __( 'No Coaches found in Trash.', 'gscoach' ),
+			'featured_image'        => __( 'Coach image', 'gscoach' ),
+			'set_featured_image'    => __( 'Set Coach image', 'gscoach' ),
+			'remove_featured_image' => __( 'Remove Coach image', 'gscoach' ),
+			'use_featured_image'    => __( 'Use as Coach image', 'gscoach' ),
+			'insert_into_item'      => __( 'Insert into Coach', 'gscoach' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this Coach', 'gscoach' ),
 		);
 
 		$args = array(
@@ -37,7 +43,7 @@ class Cpt{
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'bla' ),
+			'rewrite'            => array( 'slug' => 'coach' ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,
@@ -81,7 +87,7 @@ class Cpt{
 			'not_found'                  => __( 'Not Found', 'gscoach' ),
 		);
 		$rewrite = array(
-			'slug'                       => 'bla-group',
+			'slug'                       => 'group',
 			'with_front'                 => true,
 			'hierarchical'               => false,
 		);
@@ -125,7 +131,7 @@ class Cpt{
 			'not_found'                  => __( 'Not Found', 'gsteam' ),
 		);
 		$rewrite = array(
-			'slug'                       => 'bla-tag',
+			'slug'                       => 'tag',
 			'with_front'                 => true,
 			'hierarchical'               => false,
 		);
