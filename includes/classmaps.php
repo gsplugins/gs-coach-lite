@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
 $classmaps = [
 
 	'Plugin'             => 'includes/plugin.php',
-	// 'Column' 		     => 'includes/column.php',
+	'Columns' 		     => 'includes/columns.php',
 	'Cpt'       	     => 'includes/cpt.php',
 	// 'Hooks'              => 'includes/hooks.php',
 	'Meta_Fields'        => 'includes/meta-fields.php',

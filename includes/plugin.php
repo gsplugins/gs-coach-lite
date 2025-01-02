@@ -43,7 +43,7 @@ class Plugin {
         // $this->integrations      = new Integrations();
 
         // new Bulk_Importer();
-        // new Column();
+        new Columns();
         new Meta_Fields();
         // new Dummy_Data();
         // new Import_Export();
