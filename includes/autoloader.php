@@ -5,8 +5,8 @@ namespace GSCOACH;
 // if direct access than exit the file.
 defined('ABSPATH') || exit;
 
+class Autoloader {
 
-class Autoloader{
     /**
      * Instance of Autoloader
      * 
@@ -45,19 +45,35 @@ class Autoloader{
      */
     private static $CLASS_MAPS_FILE = __DIR__ . '/classmaps.php';
 
-    public static function get_instance(){
-        if( ! self::$instance ) {
+    /**
+     * Get a single instace of Autoloader
+     * 
+     * @return Autoloader
+     */
+    public static function init() {
+        if (is_null(self::$instance)) {
             self::$instance = new self();
         }
-
         return self::$instance;
     }
 
-    private function __construct(){
-        spl_autoload_register( array( $this, 'autoload' ) );
+    /**
+     * Automatically get invoked when initilize the Autoloader.
+     */
+    public function __construct() {
+        spl_autoload_register(array(&$this, 'autoload'));
     }
 
-    private function autoload( $class ){
+    /**
+     * Autoload function ensure that, every class you called is loaded properly.
+     * 
+     * @param String $class
+     * @access private
+     * 
+     * @return void
+     */
+    private function autoload($class) {
+
         if (0 !== strpos($class, __NAMESPACE__ . '\\')) {
             return;
         }
@@ -117,4 +133,4 @@ class Autoloader{
     }
 }
 
-Autoloader::get_instance();
+Autoloader::init();

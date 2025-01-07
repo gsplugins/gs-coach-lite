@@ -1,0 +1,2845 @@
+<?php
+
+namespace GSCOACH;
+
+/**
+ * Protect direct access
+ */
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+if ( ! class_exists( 'Builder' ) ) {
+
+    final class Builder {
+
+        private $option_name = 'gs_coach_shortcode_prefs';
+        private $taxonomy_option_name = 'gs_coach_taxonomy_settings';
+
+        public function __construct() {
+            
+            add_action( 'admin_menu', array( $this, 'register_sub_menu') );
+            add_action( 'admin_enqueue_scripts', array( $this, 'scripts') );
+            add_action( 'wp_enqueue_scripts', array( $this, 'preview_scripts') );
+
+            add_action( 'wp_ajax_gscoach_create_shortcode', array($this, 'create_shortcode') );
+            add_action( 'wp_ajax_gscoach_clone_shortcode', array($this, 'clone_shortcode') );
+            add_action( 'wp_ajax_gscoach_get_shortcode', array($this, 'get_shortcode') );
+            add_action( 'wp_ajax_gscoach_update_shortcode', array($this, 'update_shortcode') );
+            add_action( 'wp_ajax_gscoach_delete_shortcodes', array($this, 'delete_shortcodes') );
+            add_action( 'wp_ajax_gscoach_temp_save_shortcode_settings', array($this, 'temp_save_shortcode_settings') );
+            add_action( 'wp_ajax_gscoach_get_shortcodes', array($this, 'get_shortcodes') );
+
+            add_action( 'wp_ajax_gscoach_get_shortcode_pref', array($this, 'get_shortcode_pref') );
+            add_action( 'wp_ajax_gscoach_save_shortcode_pref', array($this, 'save_shortcode_pref') );
+
+            add_action( 'wp_ajax_gscoach_get_taxonomy_settings', array($this, 'get_taxonomy_settings') );
+            add_action( 'wp_ajax_gscoach_save_taxonomy_settings', array($this, 'save_taxonomy_settings') );
+
+            add_action( 'template_include', array($this, 'populate_shortcode_preview') );
+            add_action( 'show_admin_bar', array($this, 'hide_admin_bar_from_preview') );
+
+            return $this;
+
+        }
+
+        public function is_preview() {
+
+            return isset( $_REQUEST['gscoach_shortcode_preview'] ) && !empty($_REQUEST['gscoach_shortcode_preview']);
+
+        }
+
+        public function hide_admin_bar_from_preview( $visibility ) {
+
+            if ( $this->is_preview() ) return false;
+
+            return $visibility;
+
+        }
+
+        public function populate_shortcode_preview( $template ) {
+
+            global $wp, $wp_query;
+            
+            if ( $this->is_preview() ) {
+
+                // Create our fake post
+                $post_id = rand( 1, 99999 ) - 9999999;
+                $post = new \stdClass();
+                $post->ID = $post_id;
+                $post->post_author = 1;
+                $post->post_date = current_time( 'mysql' );
+                $post->post_date_gmt = current_time( 'mysql', 1 );
+                $post->post_title = __('Shortcode Preview', 'gscoach');
+                $post->post_content = '[gscoach preview="yes" id="' . esc_attr($_REQUEST['gscoach_shortcode_preview']) . '"]';
+                $post->post_status = 'publish';
+                $post->comment_status = 'closed';
+                $post->ping_status = 'closed';
+                $post->post_name = 'fake-page-' . rand( 1, 99999 ); // append random number to avoid clash
+                $post->post_type = 'page';
+                $post->filter = 'raw'; // important!
+
+
+                // Convert to WP_Post object
+                $wp_post = new \WP_Post( $post );
+
+
+                // Add the fake post to the cache
+                wp_cache_add( $post_id, $wp_post, 'posts' );
+
+
+                // Update the main query
+                $wp_query->post = $wp_post;
+                $wp_query->posts = array( $wp_post );
+                $wp_query->queried_object = $wp_post;
+                $wp_query->queried_object_id = $post_id;
+                $wp_query->found_posts = 1;
+                $wp_query->post_count = 1;
+                $wp_query->max_num_pages = 1; 
+                $wp_query->is_page = true;
+                $wp_query->is_singular = true; 
+                $wp_query->is_single = false; 
+                $wp_query->is_attachment = false;
+                $wp_query->is_archive = false; 
+                $wp_query->is_category = false;
+                $wp_query->is_tag = false; 
+                $wp_query->is_tax = false;
+                $wp_query->is_author = false;
+                $wp_query->is_date = false;
+                $wp_query->is_year = false;
+                $wp_query->is_month = false;
+                $wp_query->is_day = false;
+                $wp_query->is_time = false;
+                $wp_query->is_search = false;
+                $wp_query->is_feed = false;
+                $wp_query->is_comment_feed = false;
+                $wp_query->is_trackback = false;
+                $wp_query->is_home = false;
+                $wp_query->is_embed = false;
+                $wp_query->is_404 = false; 
+                $wp_query->is_paged = false;
+                $wp_query->is_admin = false; 
+                $wp_query->is_preview = false; 
+                $wp_query->is_robots = false; 
+                $wp_query->is_posts_page = false;
+                $wp_query->is_post_type_archive = false;
+
+
+                // Update globals
+                $GLOBALS['wp_query'] = $wp_query;
+                $wp->register_globals();
+
+
+                include GSCOACH_PLUGIN_DIR . 'includes/shortcode-builder/preview.php';
+
+                return;
+
+            }
+
+            return $template;
+
+        }
+
+        public function register_sub_menu() {
+
+            add_submenu_page( 
+                'edit.php?post_type=gs_coach', 'Coach Shortcode', 'Coach Shortcode', 'publish_pages', 'gs-coach-shortcode', array( $this, 'view' )
+            );
+
+            add_submenu_page( 
+                'edit.php?post_type=gs_coach', 'Preference', 'Preference', 'publish_pages', 'gs-coach-shortcode#/preferences', array( $this, 'view' )
+            );
+
+            do_action( 'gs_after_shortcode_submenu' );
+
+        }
+
+        public function view() {
+
+            include GSCOACH_PLUGIN_DIR . 'includes/shortcode-builder/page.php';
+
+        }
+
+        public static function get_team_terms( $term_name, $idsOnly = false ) {
+
+            $taxonomies = get_taxonomies([ 'type' => 'restricted', 'enabled' => true ]);
+
+            if ( ! in_array( $term_name, $taxonomies ) ) return [];
+
+            $_terms = get_terms( $term_name, [
+                'hide_empty' => false,
+            ]);
+
+            if ( empty($_terms) ) return [];
+            
+            if ( $idsOnly ) return wp_list_pluck( $_terms, 'term_id' );
+
+            $terms = [];
+
+            foreach ( $_terms as $term ) {
+                $terms[] = [
+                    'label' => $term->name,
+                    'value' => $term->term_id
+                ];
+            }
+
+            return $terms;
+
+        }
+
+        public function scripts( $hook ) {
+
+            if ( 'gs_coach_page_gs-coach-shortcode' != $hook ) {
+                return;
+            }
+
+            wp_register_style( 'gs-zmdi-fonts', GSCOACH_PLUGIN_URI . '/assets/libs/material-design-iconic-font/css/material-design-iconic-font.min.css', '', GSCOACH_VERSION, 'all' );
+
+            wp_enqueue_style( 'gs-coach-shortcode', GSCOACH_PLUGIN_URI . '/assets/admin/css/shortcode.min.css', array('gs-zmdi-fonts'), GSCOACH_VERSION, 'all' );
+
+            $data = array(
+                "nonce"    => wp_create_nonce( "_gscoach_admin_nonce_gs_" ),
+                "ajaxurl"  => admin_url( "admin-ajax.php" ),
+                "adminurl" => admin_url(),
+                "siteurl"  => home_url()
+            );
+
+            $data['shortcode_settings'] = $this->get_shortcode_default_settings();
+            $data['shortcode_options']  = $this->get_shortcode_default_options();
+            $data['translations']       = $this->get_translation_srtings();
+            $data['preference']         = $this->get_shortcode_default_prefs();
+            $data['preference_options'] = $this->get_shortcode_prefs_options();
+            $data['taxonomy_settings']  = $this->get_taxonomy_default_settings();
+            $data['enabled_plugins']    = $this->get_enabled_plugins();
+            $data['is_multilingual']    = $this->is_multilingual_enabled();
+
+            $data['demo_data'] = [
+                'team_data'      => wp_validate_boolean( get_option('gscoach_dummy_team_data_created') ),
+                'shortcode_data' => wp_validate_boolean( get_option('gscoach_dummy_shortcode_data_created') )
+            ];
+
+            wp_enqueue_script( 'gs-coach-shortcode', GSCOACH_PLUGIN_URI . '/assets/admin/js/shortcode.min.js', array('jquery'), GSCOACH_VERSION, true );
+
+            wp_localize_script( 'gs-coach-shortcode', '_gscoach_data', $data );
+
+            add_fs_script( 'gs-coach-shortcode' );
+            
+        }
+
+        public function get_enabled_plugins() {
+            
+            include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+            $plugins = [];
+
+            if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
+                
+                $team_groups = \acf_get_field_groups([
+                    'post_type'	=> 'gs_coach'
+                ]);
+                
+                if ( !empty($team_groups) ) {
+                    $plugins[] = 'advanced-custom-fields';
+                }
+            }
+
+            return $plugins;
+        }
+
+        public function preview_scripts( $hook ) {
+            
+            if ( ! $this->is_preview() ) return;
+
+            wp_enqueue_style( 'gs-coach-shortcode-preview', GSCOACH_PLUGIN_URI . '/assets/css/preview.min.css', '', GSCOACH_VERSION );
+            
+        }
+
+        public function get_wpdb() {
+
+            global $wpdb;
+            
+            if ( wp_doing_ajax() ) $wpdb->show_errors = false;
+
+            return $wpdb;
+
+        }
+
+        public function has_db_error() {
+
+            $wpdb = $this->get_wpdb();
+
+            if ( $wpdb->last_error === '') return false;
+
+            return true;
+
+        }
+
+        public function validate_shortcode_settings( $shortcode_settings ) {
+            $shortcode_settings = shortcode_atts( $this->get_shortcode_default_settings(), $shortcode_settings );
+            return array_map( 'sanitize_text_field', $shortcode_settings );
+        }
+
+        protected function get_db_columns() {
+
+            return array(
+                'shortcode_name'     => '%s',
+                'shortcode_settings' => '%s',
+                'created_at'         => '%s',
+                'updated_at'         => '%s',
+            );
+
+        }
+
+        public function _get_shortcode( $shortcode_id, $is_ajax = false ) {
+
+            if ( empty($shortcode_id) ) {
+                if ( $is_ajax ) wp_send_json_error( __('Shortcode ID missing', 'gscoach'), 400 );
+                return false;
+            }
+
+            $shortcode = wp_cache_get( 'gs_coach_shortcode' . $shortcode_id, 'gs_coach_memebrs' );
+
+            // Return the cache if found
+            if ( $shortcode !== false ) {
+                if ( $is_ajax ) wp_send_json_success( $shortcode );
+                return $shortcode;
+            }
+
+            $wpdb = $this->get_wpdb();
+
+            $shortcode = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}gs_coach WHERE id = %d LIMIT 1", absint($shortcode_id) ), ARRAY_A );
+
+            if ( $shortcode ) {
+
+                $shortcode["shortcode_settings"] = json_decode( $shortcode["shortcode_settings"], true );
+                $shortcode["shortcode_settings"] = $this->validate_shortcode_settings( $shortcode["shortcode_settings"] );
+
+                wp_cache_add( 'gs_coach_shortcode' . $shortcode_id, $shortcode, 'gs_coach_memebrs' );
+
+                if ( $is_ajax ) wp_send_json_success( $shortcode );
+
+                return $shortcode;
+
+            }
+
+            if ( $is_ajax ) wp_send_json_error( __('No shortcode found', 'gscoach'), 404 );
+
+            return false;
+
+        }
+
+        public function _update_shortcode( $shortcode_id, $nonce, $fields, $is_ajax ) {
+
+            if ( ! wp_verify_nonce( $nonce, '_gscoach_admin_nonce_gs_') || ! current_user_can( 'publish_pages' ) ) {
+                if ( $is_ajax ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+                return false;
+            }
+
+            if ( empty($shortcode_id) ) {
+                if ( $is_ajax ) wp_send_json_error( __('Shortcode ID missing', 'gscoach'), 400 );
+                return false;
+            }
+        
+            $_shortcode = $this->_get_shortcode( $shortcode_id, false );
+        
+            if ( empty($_shortcode) ) {
+                if ( $is_ajax ) wp_send_json_error( __('No shortcode found to update', 'gscoach'), 404 );
+                return false;
+            }
+        
+            $shortcode_name = !empty( $fields['shortcode_name'] ) ? $fields['shortcode_name'] : $_shortcode['shortcode_name'];
+            $shortcode_settings = !empty( $fields['shortcode_settings']) ? $fields['shortcode_settings'] : $_shortcode['shortcode_settings'];
+
+            // Remove dummy indicator on update
+            if ( isset($shortcode_settings['gscoach-demo_data']) ) unset($shortcode_settings['gscoach-demo_data']);
+        
+            $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+        
+            $wpdb = $this->get_wpdb();
+        
+            $data = array(
+                "shortcode_name" 	    => $shortcode_name,
+                "shortcode_settings" 	=> json_encode($shortcode_settings),
+                "updated_at" 		    => current_time( 'mysql')
+            );
+        
+            $update_id = $wpdb->update( "{$wpdb->prefix}gs_coach" , $data, array( 'id' => absint( $shortcode_id ) ),  $this->get_db_columns() );
+        
+            if ( $this->has_db_error() ) {
+                if ( $is_ajax ) wp_send_json_error( sprintf( __( 'Database Error: %1$s', 'gscoach'), $wpdb->last_error), 500 );
+                return false;
+            }
+
+            // Delete the shortcode cache
+            wp_cache_delete( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
+            wp_cache_delete( 'gs_coach_shortcode' . $shortcode_id, 'gs_coach_memebrs' );
+
+            do_action( 'gs_coach_shortcode_updated', $update_id );
+            do_action( 'gsp_shortcode_updated', $update_id );
+        
+            if ($is_ajax) wp_send_json_success( array(
+                'message' => __('Shortcode updated', 'gscoach'),
+                'shortcode_id' => $update_id
+            ));
+        
+            return $update_id;
+
+        }
+        
+        public function fetch_shortcodes( $shortcode_ids = [], $is_ajax = false, $minimal = false ) {
+
+            $wpdb = $this->get_wpdb();
+            $fields = $minimal ? 'id, shortcode_name' : '*';
+
+            if ( empty( $shortcode_ids ) ) {
+                
+                $shortcodes = wp_cache_get( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
+
+                if ( $shortcodes === false ) {
+                    $shortcodes = $wpdb->get_results( "SELECT {$fields} FROM {$wpdb->prefix}gs_coach ORDER BY id DESC", ARRAY_A );
+                    wp_cache_add( 'gs_coach_shortcodes', $shortcodes, 'gs_coach_memebrs' );
+                }
+
+            } else {
+
+                $how_many = count($shortcode_ids);
+                $placeholders = array_fill(0, $how_many, '%d');
+                $format = implode(', ', $placeholders);
+                $query = "SELECT {$fields} FROM {$wpdb->prefix}gs_coach WHERE id IN($format)";
+                $shortcodes = $wpdb->get_results( $wpdb->prepare($query, $shortcode_ids), ARRAY_A );
+
+            }
+
+            // check for database error
+            if ( $this->has_db_error() ) wp_send_json_error( sprintf(__('Database Error: %s'), $wpdb->last_error) );
+
+            if ( $is_ajax ) {
+                wp_send_json_success( $shortcodes );
+            }
+
+            return $shortcodes;
+
+        }
+
+        public function create_shortcode() {
+
+            // validate nonce && check permission
+            if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+
+            $shortcode_settings  = !empty( $_POST['shortcode_settings'] ) ? $_POST['shortcode_settings'] : '';
+            $shortcode_name  = !empty( $_POST['shortcode_name'] ) ? $_POST['shortcode_name'] : __( 'Undefined', 'gscoach' );
+
+            if ( empty($shortcode_settings) || !is_array($shortcode_settings) ) {
+                wp_send_json_error( __('Please configure the settings properly', 'gscoach'), 206 );
+            }
+
+            $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+
+            $wpdb = $this->get_wpdb();
+
+            $data = array(
+                "shortcode_name" => $shortcode_name,
+                "shortcode_settings" => json_encode($shortcode_settings),
+                "created_at" => current_time( 'mysql'),
+                "updated_at" => current_time( 'mysql'),
+            );
+
+            $wpdb->insert( "{$wpdb->prefix}gs_coach", $data, $this->get_db_columns() );
+
+            // check for database error
+            if ( $this->has_db_error() ) wp_send_json_error( sprintf(__('Database Error: %s'), $wpdb->last_error), 500 );
+
+            // Delete the shortcode cache
+            wp_cache_delete( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
+
+            do_action( 'gs_coach_shortcode_created', $wpdb->insert_id );
+            do_action( 'gsp_shortcode_created', $wpdb->insert_id );
+
+            // send success response with inserted id
+            wp_send_json_success( array(
+                'message' => __('Shortcode created successfully', 'gscoach'),
+                'shortcode_id' => $wpdb->insert_id
+            ));
+        }
+
+        public function clone_shortcode() {
+
+            // validate nonce && check permission
+            if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+
+            $clone_id  = !empty( $_POST['clone_id']) ? $_POST['clone_id'] : '';
+
+            if ( empty($clone_id) ) wp_send_json_error( __('Clone Id not provided', 'gscoach'), 400 );
+
+            $clone_shortcode = $this->_get_shortcode( $clone_id, false );
+
+            if ( empty($clone_shortcode) ) wp_send_json_error( __('Clone shortcode not found', 'gscoach'), 404 );
+
+
+            $shortcode_settings  = $clone_shortcode['shortcode_settings'];
+            $shortcode_name  = $clone_shortcode['shortcode_name'] .' '. __('- Cloned', 'gscoach');
+
+            $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+
+            $wpdb = $this->get_wpdb();
+
+            $data = array(
+                "shortcode_name" => $shortcode_name,
+                "shortcode_settings" => json_encode($shortcode_settings),
+                "created_at" => current_time( 'mysql'),
+                "updated_at" => current_time( 'mysql'),
+            );
+
+            $wpdb->insert( "{$wpdb->prefix}gs_coach", $data, $this->get_db_columns() );
+
+            // check for database error
+            if ( $this->has_db_error() ) wp_send_json_error( sprintf(__('Database Error: %s'), $wpdb->last_error), 500 );
+
+            // Delete the shortcode cache
+            wp_cache_delete( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
+
+            // Get the cloned shortcode
+            $shotcode = $this->_get_shortcode( $wpdb->insert_id, false );
+
+            // send success response with inserted id
+            wp_send_json_success( array(
+                'message' => __('Shortcode cloned successfully', 'gscoach'),
+                'shortcode' => $shotcode,
+            ));
+        }
+
+        public function get_shortcode() {
+
+            $shortcode_id = !empty( $_GET['id']) ? absint( $_GET['id'] ) : null;
+
+            $this->_get_shortcode( $shortcode_id, wp_doing_ajax() );
+
+        }
+
+        public function update_shortcode( $shortcode_id = null, $nonce = null ) {
+
+            if ( ! $shortcode_id ) {
+                $shortcode_id = !empty( $_POST['id']) ? $_POST['id'] : null;
+            }
+            
+            if ( ! $nonce ) {
+                $nonce = $_POST['_wpnonce'] ?: null;
+            }
+    
+            $this->_update_shortcode( $shortcode_id, $nonce, $_POST, true );
+
+        }
+
+        public function delete_shortcodes() {
+
+            if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') )
+                wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+    
+            $ids = isset( $_POST['ids'] ) ? (array) $_POST['ids'] : null;
+    
+            if ( empty( $ids ) ) {
+                wp_send_json_error( __('No shortcode ids provided', 'gscoach'), 400 );
+            }
+    
+            $wpdb = $this->get_wpdb();
+    
+            $count = count( $ids );
+    
+            $ids = implode( ',', array_map('absint', $ids) );
+            $wpdb->query( "DELETE FROM {$wpdb->prefix}gs_coach WHERE ID IN($ids)" );
+    
+            if ( $this->has_db_error() ) wp_send_json_error( sprintf(__('Database Error: %s'), $wpdb->last_error), 500 );
+
+            // Delete the shortcode cache
+            wp_cache_delete( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
+
+            do_action( 'gs_coach_shortcode_deleted' );
+            do_action( 'gsp_shortcode_deleted' );
+    
+            $m = _n( "Shortcode has been deleted", "Shortcodes have been deleted", $count, 'gscoach' ) ;
+    
+            wp_send_json_success( ['message' => $m] );
+
+        }
+
+        public function get_shortcodes() {
+
+            $this->fetch_shortcodes( null, wp_doing_ajax() );
+
+        }
+
+        public function temp_save_shortcode_settings() {
+
+            if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') )
+                wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+            
+            $temp_key = isset( $_POST['temp_key'] ) ? $_POST['temp_key'] : null;
+            $shortcode_settings = isset( $_POST['shortcode_settings'] ) ? $_POST['shortcode_settings'] : [];
+
+            if ( empty($temp_key) ) wp_send_json_error( __('No temp key provided', 'gscoach'), 400 );
+            if ( empty($shortcode_settings) ) wp_send_json_error( __('No temp settings provided', 'gscoach'), 400 );
+
+            delete_transient( $temp_key );
+
+            $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+            set_transient( $temp_key, $shortcode_settings, DAY_IN_SECONDS ); // save the transient for 1 day
+
+            wp_send_json_success([
+                'message' => __('Temp data saved', 'gscoach'),
+            ]);
+
+        }
+
+        public function get_translation_srtings() {
+            return [
+
+                'image_filter'       => __( 'Image Filter', 'gscoach' ),
+                'hover_image_filter' => __( 'Image Filter on Hover', 'gscoach' ),
+
+                'location'  => __('Location', 'gscoach'),
+                'location--details'  => __('Select specific team location to show that specific location members', 'gscoach'),
+
+                'specialty'  => __('Specialty', 'gscoach'),
+                'specialty--details'  => __('Select specific team specialty to show that specific specialty members', 'gscoach'),
+
+                'language'  => __('Language', 'gscoach'),
+                'language--details'  => __('Select specific team language to show that specific language members', 'gscoach'),
+
+                'gender'  => __('Gender', 'gscoach'),
+                'gender--details'  => __('Select specific team gender to show that specific gender members', 'gscoach'),
+
+                'include_extra_one'  => __('Extra One', 'gscoach'),
+                'include_extra_one--details'  => __('Select specific team extra one to show that specific extra one members', 'gscoach'),
+
+                'include_extra_two'  => __('Extra Two', 'gscoach'),
+                'include_extra_two--details'  => __('Select specific team extra two to show that specific extra two members', 'gscoach'),
+
+                'include_extra_three'  => __('Extra Three', 'gscoach'),
+                'include_extra_three--details'  => __('Select specific team extra three to show that specific extra three members', 'gscoach'),
+
+                'include_extra_four'  => __('Extra Four', 'gscoach'),
+                'include_extra_four--details'  => __('Select specific team extra four to show that specific extra four members', 'gscoach'),
+
+                'include_extra_five'  => __('Extra Five', 'gscoach'),
+                'include_extra_five--details'  => __('Select specific team extra five to show that specific extra five members', 'gscoach'),
+
+                'install-demo-data' => __('Install Demo Data', 'gscoach'),
+                'install-demo-data-description' => __('Quick start with GS Plugins by installing the demo data', 'gscoach'),
+
+                'export-data' => __('Export Data', 'gscoach'),
+                'export-data--description' => __('Export GS Coach Plugins data', 'gscoach'),
+
+                'import-data' => __('Import Data', 'gscoach'),
+                'import-data--description' => __('Import GS Coach Plugins data', 'gscoach'),
+
+                'bulk-import' => __('Bulk Import', 'gscoach'),
+                'bulk-import-description' => __('Add team members faster by GS Bulk Import feature', 'gscoach'),
+
+                'preference' => __('Preference', 'gscoach'),
+                'save-preference' => __('Save Preference', 'gscoach'),
+                'save-settings' => __('Save Settings', 'gscoach'),
+                'team-members-slug' => __('Coach Members Slug', 'gscoach'),
+                'team-members-slug-details' => __('Customize Coach Members Post Type Slug, by default it is set to team-members', 'gscoach'),
+                'replace-custom-slug' => __('Ignore Base Permalink Prefix', 'gscoach'),
+                'replace-custom-slug-details' => __('Enable this option to use a custom structure without the base prefix.', 'gscoach'),
+
+                'archive-page-slug' => __('Archive Page Slug', 'gscoach'),
+                'archive-page-slug-details' => __('Set Custom Archive Page Slug, now it is set to', 'gscoach') . ' ' . get_post_type_archive_link( 'gs_coach' ),
+
+                'archive-page-title' => __('Archive Page Title', 'gscoach'),
+                'archive-page-title-details' => __('Set Custom Archive Page Title, now it is set to', 'gscoach') . ' ' . gs_get_post_type_archive_title(),
+
+                'taxonomies-page' => __('Taxonomies', 'gscoach'),
+                'taxonomies-page--des' => __('Global settings for Taxonomies', 'gscoach'),
+
+                'taxonomy_group' => $this->get_tax_option( 'group_tax_plural_label' ),
+                'taxonomy_tag' => $this->get_tax_option( 'tag_tax_plural_label' ),
+                'taxonomy_language' => $this->get_tax_option( 'language_tax_plural_label' ),
+                'taxonomy_location' => $this->get_tax_option( 'location_tax_plural_label' ),
+                'taxonomy_gender' => $this->get_tax_option( 'gender_tax_plural_label' ),
+                'taxonomy_specialty' => $this->get_tax_option( 'specialty_tax_plural_label' ),
+                'taxonomy_extra_one' => $this->get_tax_option( 'extra_one_tax_plural_label' ),
+                'taxonomy_extra_two' => $this->get_tax_option( 'extra_two_tax_plural_label' ),
+                'taxonomy_extra_three' => $this->get_tax_option( 'extra_three_tax_plural_label' ),
+                'taxonomy_extra_four' => $this->get_tax_option( 'extra_four_tax_plural_label' ),
+                'taxonomy_extra_five' => $this->get_tax_option( 'extra_five_tax_plural_label' ),
+
+                // Extra One Taxonomy Settings
+                'enable_extra_tax' => __('Enable Taxonomy', 'gscoach'),
+                'enable_extra_tax--details' => __('Enable Taxonomy for team members', 'gscoach'),
+                'extra_tax_label' => __('Taxonomy Label', 'gscoach'),
+                'extra_tax_label--details' => __('Set Taxonomy Label', 'gscoach'),
+                'extra_tax_plural_label' => __('Taxonomy Plural Label', 'gscoach'),
+                'extra_tax_plural_label--details' => __('Set Taxonomy Plural Label', 'gscoach'),
+                'enable_extra_tax_archive' => __('Enable Taxonomy Archive', 'gscoach'),
+                'enable_extra_tax_archive--details' => __('Enable Taxonomy Archive', 'gscoach'),
+                'extra_tax_archive_slug' => __('Taxonomy Archive Slug', 'gscoach'),
+                'extra_tax_archive_slug--details' => __('Set Taxonomy Archive Slug', 'gscoach'),
+
+                'disable-google-fonts' => __('Disable Google Fonts', 'gscoach'),
+                'disable-google-fonts-details' => __('Disable Google Fonts Loading', 'gscoach'),
+                
+                'show-acf-fields' => __('Display ACF Fields', 'gscoach'),
+                'show-acf-fields-details' => __('Display ACF fields in the single pages', 'gscoach'),
+                
+                'disable_lazy_load' => __('Disable Lazy Load', 'gscoach'),
+                'disable_lazy_load-details' => __('Disable Lazy Load for team member images', 'gscoach'),
+                
+                'lazy_load_class' => __('Lazy Load Class', 'gscoach'),
+                'lazy_load_class-details' => __('Add class to disable lazy loading, multiple classes should be separated by space', 'gscoach'),
+
+                'acf-fields-position' => __('ACF Fields Position', 'gscoach'),
+                'acf-fields-position-details' => __('Position to display ACF fields', 'gscoach'),
+                
+                'enable-multilingual' => __('Enable Multilingual', 'gscoach'),
+                'enable-multilingual--details' => __('Enable Multilingual mode to translate below strings using any Multilingual plugin like wpml or loco translate.', 'gscoach'),
+                
+                'pref-filter-designation-text' => __('Filter Designation Text', 'gscoach'),
+                'pref-serach-text' => __('Search Text', 'gscoach'),
+                'gs_coachfliter_company-text' => __('Company Search Text', 'gscoach'),
+                'gs_coachfliter_zip-text' => __('Zip Search Text', 'gscoach'),
+                'gs_coachfliter_tag-text' => __('Tag Search Text', 'gscoach'),
+                'pref-zip_code-text' => __('Zip Code', 'gscoach'),
+                'pref-follow_me_on-text' => __('Follow Me On', 'gscoach'),
+                'pref-skills-text' => __('Skills', 'gscoach'),
+                'pref-search-all-fields' => __('Include fields when search', 'gscoach'),
+                'pref-company' => __('Company', 'gscoach'),
+                'pref-address' => __('Address', 'gscoach'),
+                'pref-land-phone' => __('Land Phone', 'gscoach'),
+                'pref-cell-phone' => __('Cell Phone', 'gscoach'),
+                'pref-email' => __('Email', 'gscoach'),
+                'pref-location' => __('Location', 'gscoach'),
+                'pref-language' => __('Language', 'gscoach'),
+                'pref-specialty' => __('Specialty', 'gscoach'),
+                'pref-gender' => __('Gender', 'gscoach'),
+                'pref-read-on' => __('Read On', 'gscoach'),
+                'pref-more' => __('More', 'gscoach'),
+                'custom-css' => __('Custom CSS', 'gscoach'),
+                
+                'pref-filter-designation-text-details' => __('Replace with preferred text for Designation', 'gscoach'),
+                'pref-serach-text-details' => __('Replace with preferred text for Search', 'gscoach'),
+                'gs_coachfliter_company-text-details' => __('Replace with preferred text for Company Search', 'gscoach'),
+                'gs_coachfliter_zip-text-details' => __('Replace with preferred text for Zip Search', 'gscoach'),
+                'gs_coachfliter_tag-text-details' => __('Replace with preferred text for Tag Search', 'gscoach'),
+                'pref-company-details' => __('Replace with preferred text for Company', 'gscoach'),
+                'pref-address-details' => __('Replace with preferred text for Address', 'gscoach'),
+                'pref-land-phone-details' => __('Replace with preferred text for Land Phone', 'gscoach'),
+                'pref-cell-phone-details' => __('Replace with preferred text for Cell Phone', 'gscoach'),
+                'pref-email-details' => __('Replace with preferred text for Email', 'gscoach'),
+                'pref-location-details' => __('Replace with preferred text for Location', 'gscoach'),
+                'pref-language-details' => __('Replace with preferred text for Language', 'gscoach'),
+                'pref-specialty-details' => __('Replace with preferred text for Specialty', 'gscoach'),
+                'pref-gender-details' => __('Replace with preferred text for Gender', 'gscoach'),
+                'pref-read-on-details' => __('Replace with preferred text for Read On', 'gscoach'),
+                'pref-zip_code-text-details' => __('Replace with preferred text for Zip Code', 'gscoach'),
+                'pref-follow_me_on-text-details' => __('Replace with preferred text for Follow Me On', 'gscoach'),
+                'pref-skills-text-details' => __('Replace with preferred text for Skills', 'gscoach'),
+                'pref-more-details' => __('Replace with preferred text for More', 'gscoach'),
+                'pref-search-all-fields-details' => __('Enable searching through all fields', 'gscoach'),
+
+                'vcard-txt' => __('vCard Text', 'gscoach'),
+                'vcard-txt-details' => __('Replace with preferred text for vCard Text', 'gscoach'),
+
+                'land-phone-link' => __('Link Land Phone', 'gscoach'),
+                'land-phone-link--details' => __('Enable link for land phone number', 'gscoach'),
+
+                'cell-phone-link' => __('Link Cell Phone', 'gscoach'),
+                'cell-phone-link--details' => __('Enable link for cell phone number', 'gscoach'),
+
+                'email-link' => __('Link Email', 'gscoach'),
+                'email-link--details' => __('Enable link for Email', 'gscoach'),
+
+                'reset-filters' => __('Reset Filters Text', 'gscoach'),
+                'reset-filters-details' => __('Replace with preferred text for Reset Filters button text', 'gscoach'),
+
+                'prev' => __('Prev Text', 'gscoach'),
+                'prev-details' => __('Replace with preferred text for carousel Prev text', 'gscoach'),
+
+                'next' => __('Next Text', 'gscoach'),
+                'next-details' => __('Replace with preferred text for carousel Next text', 'gscoach'),
+
+                'carousel_enabled' => __('Enable Carousel', 'gscoach'),
+                'carousel_enabled__details' => __('Enable carousel for this theme, it may not available for certain theme', 'gscoach'),
+
+                'carousel_navs_enabled' => __('Enable Carousel Navs', 'gscoach'),
+                'carousel_navs_enabled__details' => __('Enable carousel navs for this theme, it may not available for certain theme', 'gscoach'),
+
+                'gs_slider_nav_bg_color' => __('Nav BG Color', 'gscoach'),
+                'gs_slider_nav_color' => __('Nav Color', 'gscoach'),
+                'gs_slider_nav_hover_bg_color' => __('Nav Hover BG Color', 'gscoach'),
+                'gs_slider_nav_hover_color' => __('Nav Hover Color', 'gscoach'),
+                'gs_slider_dot_color' => __('Dots Color', 'gscoach'),
+                'gs_slider_dot_hover_color' => __('Dots Active Color', 'gscoach'),
+
+                'carousel_dots_enabled' => __('Enable Carousel Dots', 'gscoach'),
+                'carousel_dots_enabled__details' => __('Enable carousel dots for this theme, it may not available for certain theme', 'gscoach'),
+
+                'carousel_navs_style' => __('Carousel Navs Style', 'gscoach'),
+                'carousel_navs_style__details' => __('Select carousel navs style, this is available for certain theme', 'gscoach'),
+
+                'carousel_dots_style' => __('Carousel Dots Style', 'gscoach'),
+                'carousel_dots_style__details' => __('Select carousel dots style, this is available for certain theme', 'gscoach'),
+
+                'carousel_navs' => __('Carousel Navs Style', 'gscoach'),
+                'carousel_navs__details' => __('Select carousel navs style, this is available for certain theme', 'gscoach'),
+
+                'filter_enabled' => __('Enable Filter', 'gscoach'),
+                'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gscoach'),
+
+                'drawer_style' => __('Drawer Style', 'gscoach'),
+                'drawer_style__details' => __('Select drawer style, this is available for certain theme', 'gscoach'),
+
+                'panel_style' => __('Panel Style', 'gscoach'),
+                'panel_style__details' => __('Select panel style, this is available for certain theme', 'gscoach'),
+
+                'popup_style' => __('Popup Style', 'gscoach'),
+                'popup_style__details' => __('Select popup style, this is available for certain theme', 'gscoach'),
+
+                'filter_style' => __('Filter Style', 'gscoach'),
+                'filter_text_color' => __('Filter Color', 'gscoach'),
+                'filter_bg_color' => __('Filter BG Color', 'gscoach'),
+                'filter_border_color' => __('Filter Border Color', 'gscoach'),
+                'filter_active_text_color' => __('Filter Active Color', 'gscoach'),
+                'filter_active_bg_color' => __('Filter Active BG Color', 'gscoach'),
+                'filter_active_border_color' => __('Filter Active Border Color', 'gscoach'),
+
+                'shortcodes' => __('Shortcodes', 'gscoach'),
+                'shortcode' => __('Shortcode', 'gscoach'),
+                'global-settings-for-gs-coach-members' => __('Global Settings for GS Coach Members', 'gscoach'),
+                'all-shortcodes-for-gs-coach-member' => __('All shortcodes for GS Coach Member', 'gscoach'),
+                'create-shortcode' => __('Create Shortcode', 'gscoach'),
+                'create-new-shortcode' => __('Create New Shortcode', 'gscoach'),
+                'name' => __('Name', 'gscoach'),
+                'action' => __('Action', 'gscoach'),
+                'actions' => __('Actions', 'gscoach'),
+                'edit' => __('Edit', 'gscoach'),
+                'clone' => __('Clone', 'gscoach'),
+                'delete' => __('Delete', 'gscoach'),
+                'delete-all' => __('Delete All', 'gscoach'),
+                'create-a-new-shortcode-and' => __('Create a new shortcode & save it to use globally in anywhere', 'gscoach'),
+                'edit-shortcode' => __('Edit Shortcode', 'gscoach'),
+                'general-settings' => __('General Settings', 'gscoach'),
+                'style-settings' => __('Style Settings', 'gscoach'),
+                'query-settings' => __('Query Settings', 'gscoach'),
+                'general-settings-short' => __('General', 'gscoach'),
+                'style-settings-short' => __('Style', 'gscoach'),
+                'query-settings-short' => __('Query', 'gscoach'),
+                'link_preview_image'   => __( 'Link Image', 'gscoach' ),
+                'preview_enabled__details'   => __( 'Link Image', 'gscoach' ),
+                'columns' => __('Columns', 'gscoach'),
+                'columns_desktop' => __('Desktop Slides', 'gscoach'),
+                'columns_desktop_details' => __('Enter the slides number for desktop', 'gscoach'),
+                'columns_tablet' => __('Tablet Slides', 'gscoach'),
+                'columns_tablet_details' => __('Enter the slides number for tablet', 'gscoach'),
+                'columns_mobile_portrait' => __('Portrait Mobile Slides', 'gscoach'),
+                'columns_mobile_portrait_details' => __('Enter the slides number for portrait or large display mobile', 'gscoach'),
+                'columns_mobile' => __('Mobile Slides', 'gscoach'),
+                'columns_mobile_details' => __('Enter the slides number for mobile', 'gscoach'),
+                'style-theming' => __('Style & Theming', 'gscoach'),
+                'member-name' => __('Member Name', 'gscoach'),
+                'gs_member_name_is_linked' => __('Link Coach Members', 'gscoach'),
+                'gs_member_name_is_linked__details' => __('Add links to the Member\'s name, description & image to display popup or to single member page', 'gscoach'),
+                'gs_member_thumbnail_sizes' => __('Thumbnail Sizes', 'gscoach'),
+                'gs_member_thumbnail_sizes_details' => __('Select a thumbnail size', 'gscoach'),
+                'gs_member_link_type' => __('Link Type', 'gscoach'),
+                'gs_member_link_type__details' => __('Choose the link type of team members', 'gscoach'),
+                
+                'member-designation' => __('Member Designation', 'gscoach'),
+                'member-details' => __('Member Details', 'gscoach'),
+                'social-connection' => __('Social Connection', 'gscoach'),
+                'display-ribbon' => __('Display Ribbon', 'gscoach'),
+                'pagination' => __('Pagination', 'gscoach'),
+                'single_page_style' => __('Single Page Style', 'gscoach'),
+                'single_link_type' => __('Single Link Type', 'gscoach'),
+                'single_page_style__details' => __('Style for all single page', 'gscoach'),
+                'single_link_type__details' => __('Set the default link type for link behaviour', 'gscoach'),
+                'next-prev-member' => __('Next / Prev Member', 'gscoach'),
+                'instant-search-by-name' => __('Search by Name', 'gscoach'),
+                'gs-member-srch-by-zip' => __('Search by Zip', 'gscoach'),
+                'gs-member-srch-by-tag' => __('Search by Tag', 'gscoach'),
+                'gs-member-srch-by-company' => __('Search by Company', 'gscoach'),
+                'filter-by-designation' => __('Filter by Designation', 'gscoach'),
+                'filter-by-location' => __('Filter by Location', 'gscoach'),
+                'filter-by-language' => __('Filter by Language', 'gscoach'),
+                'filter-by-gender' => __('Filter by Gender', 'gscoach'),
+                'filter-by-speciality' => __('Filter by Specialty', 'gscoach'),
+                'filter-by-extra-one' => __('Filter by Extra One', 'gscoach'),
+                'filter-by-extra-two' => __('Filter by Extra Two', 'gscoach'),
+                'filter-by-extra-three' => __('Filter by Extra Three', 'gscoach'),
+                'filter-by-extra-four' => __('Filter by Extra Four', 'gscoach'),
+                'filter-by-extra-five' => __('Filter by Extra Five', 'gscoach'),
+                'gs_coach_filter_columns' => __('Filter Columns', 'gscoach'),
+                'social-link-target' => __('Social Link Target', 'gscoach'),
+                'gs-desc-allow-html' => __('Allow HTML for Details', 'gscoach'),
+                'gs-desc-allow-html--help' => __('Enable/Disable HTML content for the single team member descript, this will load whole content from the post type.', 'gscoach'),
+                'details-control' => __('Details Control', 'gscoach'),
+                'gs-desc-scroll-contrl' => __('Description Scroll Control', 'gscoach'),
+                'gs-desc-scroll-contrl--help' => __('Enable/Disable scrollbar for description on popup, drawer & panel, useful when description has large content.', 'gscoach'),
+                'gs-max-scroll-height' => __('Scroll Height', 'gscoach'),
+                'gs-max-scroll-height--help' => __('Set the maximum height of the description, if content exceds the height, scrollbar will appear.', 'gscoach'),
+                'popup-column' => __('Popup Column', 'gscoach'),
+                'filter-category-position' => __('Filter Category Position', 'gscoach'),
+                'panel' => __('Panel', 'gscoach'),
+                'name-font-size' => __('Name Font Size', 'gscoach'),
+                'name-font-weight' => __('Name Font Weight', 'gscoach'),
+                'name-font-style' => __('Name Font Style', 'gscoach'),
+                'name-color' => __('Name Color', 'gscoach'),
+                'name-bg-color' => __('Name BG Color', 'gscoach'),
+                'tm-bg-color' => __('Item BG Color', 'gscoach'),
+                'tm-bg-color-hover' => __('Item Hover BG Color', 'gscoach'),
+                'description-color' => __('Description Color', 'gscoach'),
+                'description-link-color' => __('Description Link Color', 'gscoach'),
+                'info-color' => __('Info Color', 'gscoach'),
+                'info-icon-color' => __('Info Icon Color', 'gscoach'),
+                'tooltip-bg-color' => __('Tooltip BG Color', 'gscoach'),
+                'info-bg-color' => __('Info BG Color', 'gscoach'),
+                'hover-icon-bg-color' => __('Hover Icon BG Color', 'gscoach'),
+                'ribon-background-color' => __('Ribbon BG Color', 'gscoach'),
+                'role-font-size' => __('Role Font Size', 'gscoach'),
+                'role-font-weight' => __('Role Font Weight', 'gscoach'),
+                'role-font-style' => __('Role Font Style', 'gscoach'),
+                'role-color' => __('Role Color', 'gscoach'),
+                'popup-arrow-color' => __('Popup Arrow Color', 'gscoach'),
+                'team-members' => __('Coach Members', 'gscoach'),
+                'order' => __('Order', 'gscoach'),
+                'order-by' => __('Order By', 'gscoach'),
+                'group-order' => __('Group Order', 'gscoach'),
+                'group-order-by' => __('Group Order By', 'gscoach'),
+                'group_hide_empty' => __('Hide Empty Filters', 'gscoach'),
+                'group_hide_empty__details' => __('Enable to hide the empty filters', 'gscoach'),
+                'group' => __('Group', 'gscoach'),
+                'exclude_group' => __('Exclude Group', 'gscoach'),
+                'exclude_group__help' => __('Select a specific team group to hide that specific group members', 'gscoach'),
+
+                'theme' => __('Theme', 'gscoach'),
+                'font-size' => __('Font Size', 'gscoach'),
+                'font-weight' => __('Font Weight', 'gscoach'),
+                'font-style' => __('Font Style', 'gscoach'),
+                'shortcode-name' => __('Shortcode Name', 'gscoach'),
+
+                'select-number-of-team-columns' => __('Select the number of Coach columns', 'gscoach'),
+                'select-preffered-style-theme' => __('Select the preferred Style & Theme', 'gscoach'),
+                'show-or-hide-team-member-name' => __('Show or Hide Coach Member Name', 'gscoach'),
+                'show-or-hide-team-member-designation' => __('Show or Hide Coach Member Designation', 'gscoach'),
+                'show-or-hide-team-member-details' => __('Show or Hide Coach Member Details', 'gscoach'),
+                'show-or-hide-team-member-social-connections' => __('Show or Hide Coach Member Social Connections', 'gscoach'),
+                'show-or-hide-team-member-paginations' => __('Show or Hide Coach Member Paginations', 'gscoach'),
+                'show-or-hide-next-prev-member-link-at-single-team-template' => __('Show or Hide Next / Prev Member link at Single Coach Template', 'gscoach'),
+                'show-or-hide-instant-search-applicable-for-theme-9' => __('Show or Hide Instant Search', 'gscoach'),
+                'gs-member-srch-by-zip--details' => __('Show or Hide by Instant Zip Search', 'gscoach'),
+                'gs-member-srch-by-tag--details' => __('Show or Hide by Instant Tag Search', 'gscoach'),
+                'gs-member-srch-by-company--details' => __('Show or Hide Instant Company Search', 'gscoach'),
+                'filter-by-designation--des' => __('Show or Hide Filter by Designation', 'gscoach'),
+                'filter-by-location--des' => __('Show or Hide Filter by Location', 'gscoach'),
+                'filter-by-language--des' => __('Show or Hide Filter by Language', 'gscoach'),
+                'filter-by-gender--des' => __('Show or Hide Filter by Gender', 'gscoach'),
+                'filter-by-speciality--des' => __('Show or Hide Filter by Specialty', 'gscoach'),
+                'filter-by-extra-one--des' => __('Show or Hide Filter by Extra One', 'gscoach'),
+                'filter-by-extra-two--des' => __('Show or Hide Filter by Extra Two', 'gscoach'),
+                'filter-by-extra-three--des' => __('Show or Hide Filter by Extra Three', 'gscoach'),
+                'filter-by-extra-four--des' => __('Show or Hide Filter by Extra Four', 'gscoach'),
+                'filter-by-extra-five--des' => __('Show or Hide Filter by Extra Five', 'gscoach'),
+                'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gscoach'),
+                'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gscoach'),
+                'define-maximum-number-of-characters' => __('Define the maximum number of characters in Member details. Default 100', 'gscoach'),
+                'set-column-for-popup' => __('Set column for popup', 'gscoach'),
+                'set-max-team-numbers-you-want-to-show' => __('Set max team numbers you want to show, set -1 for all members', 'gscoach'),
+                'select-specific-team-group-to' => __('Select a specific team group to show that specific group members', 'gscoach'),
+
+                'export-team-members-data' => __('Export Coach Members', 'gscoach'),
+                'export-shortcodes-data' => __('Export Shortcodes', 'gscoach'),
+                'export-settings-data' => __('Export Settings', 'gscoach'),
+
+                'enable-multi-select' => __('Enable Multi Select', 'gscoach'),
+                'enable-multi-select--help' => __('Enable multi-selection on the filters, Default is Off', 'gscoach'),
+                'multi-select-ellipsis' => __('Multi Select Ellipsis', 'gscoach'),
+                'multi-select-ellipsis--help' => __('Show multi-selected values in ellipsis mode, Default is Off', 'gscoach'),
+
+                'filter-all-enabled' => __('Enable All Filter', 'gscoach'),
+                'filter-all-enabled--help' => __('Enable All filter in the filter templates, Default is On', 'gscoach'),
+
+                'enable-child-cats' => __('Enable Child Filters', 'gscoach'),
+                'enable-child-cats--help' => __('Enable child group filters, Default is Off', 'gscoach'),
+
+                'enable-scroll-animation' => __('Enable Scroll Animation', 'gscoach'),
+                'enable-scroll-animation--help' => __('Enable scroll animation, Default is On', 'gscoach'),
+
+                'fitler-all-text' => __('All filter text', 'gscoach'),
+                'fitler-all-text--help' => __('All filter text for filter templates, Default is All', 'gscoach'),
+
+                'enable-clear-filters' => __('Reset Filters Button', 'gscoach'),
+                'enable-clear-filters--help' => __('Enable Reset all filters button in filter themes, Default is Off ', 'gscoach'),
+
+                'shortcode-name' => __('Shortcode Name', 'gscoach'),
+                'save-shortcode' => __('Save Shortcode', 'gscoach'),
+                'preview-shortcode' => __('Preview Shortcode', 'gscoach')
+            ];
+        }
+
+        public static function _themes() {
+            return [
+                [
+                    'label' => __( 'Grid 1', 'gscoach' ),
+                    'value' => 'gs-grid-style-one',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 2', 'gscoach' ),
+                    'value' => 'gs-grid-style-two',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 3', 'gscoach' ),
+                    'value' => 'gs-grid-style-three',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 4', 'gscoach' ),
+                    'value' => 'gs-grid-style-four',
+                    'type' => 'free',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 5', 'gscoach' ),
+                    'value' => 'gs-grid-style-five',
+                    'type' => 'free',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 6', 'gscoach' ),
+                    'value' => 'gs-grid-style-six',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 1', 'gscoach' ),
+                    'value' => 'gs-coach-circle-one',
+                    'type' => 'free',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 2', 'gscoach' ),
+                    'value' => 'gs-coach-circle-two',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 3', 'gscoach' ),
+                    'value' => 'gs-coach-circle-three',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 4', 'gscoach' ),
+                    'value' => 'gs-coach-circle-four',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 5', 'gscoach' ),
+                    'value' => 'gs-coach-circle-five',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 1', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-one',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 2', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-two',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 3', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-three',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 4', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-four',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 5', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-five',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Flip 1', 'gscoach' ),
+                    'value' => 'gs-coach-flip-one',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Flip 2', 'gscoach' ),
+                    'value' => 'gs-coach-flip-two',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Flip 3', 'gscoach' ),
+                    'value' => 'gs-coach-flip-three',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Flip 4', 'gscoach' ),
+                    'value' => 'gs-coach-flip-four',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Flip 5', 'gscoach' ),
+                    'value' => 'gs-coach-flip-five',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Table 1', 'gscoach' ),
+                    'value' => 'gs-coach-table-one',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Table 2', 'gscoach' ),
+                    'value' => 'gs-coach-table-two',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Table 3', 'gscoach' ),
+                    'value' => 'gs-coach-table-three',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Table 4', 'gscoach' ),
+                    'value' => 'gs-coach-table-four',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Table 5', 'gscoach' ),
+                    'value' => 'gs-coach-table-five',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 1', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-one',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 2', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-two',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 3', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-three',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 4', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-four',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 5', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-five',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 6', 'gscoach' ),
+                    'value' => 'gs_tm_theme1',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 7', 'gscoach' ),
+                    'value' => 'gs_tm_grid2',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 8', 'gscoach' ),
+                    'value' => 'gs_tm_theme20',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 9', 'gscoach' ),
+                    'value' => 'gs_tm_theme10',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 10', 'gscoach' ),
+                    'value' => 'gs_tm_theme_custom_10',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Popup', 'gscoach' ),
+                    'value' => 'gs_tm_theme8',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Single', 'gscoach' ),
+                    'value' => 'gs_tm_theme11',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter Single', 'gscoach' ),
+                    'value' => 'gs_tm_theme22',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter Popup', 'gscoach' ),
+                    'value' => 'gs_tm_theme9',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Slider', 'gscoach' ),
+                    'value' => 'gs_tm_theme7',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter - Selected Cats', 'gscoach' ),
+                    'value' => 'gs_tm_theme12',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter with vcard', 'gscoach' ),
+                    'value' => 'gs_tm_theme24',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Panel Slide', 'gscoach' ),
+                    'value' => 'gs_tm_theme19',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Drawer 1', 'gscoach' ),
+                    'value' => 'gs_tm_theme13',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Drawer 2', 'gscoach' ),
+                    'value' => 'gs_tm_drawer2',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Circle 6', 'gscoach' ),
+                    'value' => 'gs_tm_theme2',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Horizontal 6', 'gscoach' ), // Horizontal 1 (Square Right Info)
+                    'value' => 'gs_tm_theme3',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Horizontal 7', 'gscoach' ), // Horizontal 2 (Square Left Info)
+                    'value' => 'gs_tm_theme4',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Horizontal 8', 'gscoach' ), // Horizontal 3 (Circle Right Info)
+                    'value' => 'gs_tm_theme5',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Horizontal 9', 'gscoach' ), // Horizontal 4 (Circle Left Info)
+                    'value' => 'gs_tm_theme6',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Flip', 'gscoach' ),
+                    'value' => 'gs_tm_theme23',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Table 6 - Underline', 'gscoach' ),
+                    'value' => 'gs_tm_theme14',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Table 7 - Box Border', 'gscoach' ),
+                    'value' => 'gs_tm_theme15',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Table 8 - Odd Even', 'gscoach' ),
+                    'value' => 'gs_tm_theme16',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Table 9 Filter', 'gscoach' ),
+                    'value' => 'gs_tm_theme21',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Table 10 Filter Dense', 'gscoach' ),
+                    'value' => 'gs_tm_theme21_dense',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'List 6', 'gscoach' ),
+                    'value' => 'gs_tm_theme17',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'List 7', 'gscoach' ),
+                    'value' => 'gs_tm_theme18',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Group Filter 1', 'gscoach' ),
+                    'value' => 'gs_tm_theme25',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+            ];
+        }
+
+        public static function get_free_themes_v_1() {
+            $themes = self::_themes();
+            return wp_list_filter( $themes, [ 'version' => 1, 'type' => 'free' ] );
+        }
+
+        public static function get_free_themes_v_2() {
+            $themes = self::_themes();
+            return wp_list_filter( $themes, [ 'version' => 2, 'type' => 'free' ] );
+        }
+
+        public static function get_pro_themes_v_1() {
+            $themes = self::_themes();
+            return wp_list_filter( $themes, [ 'version' => 1, 'type' => 'pro' ] );
+        }
+
+        public static function get_pro_themes_v_2() {
+            $themes = self::_themes();
+            return wp_list_filter( $themes, [ 'version' => 2, 'type' => 'pro' ] );
+        }
+
+        public static function get_free_themes() {
+            $themes = self::_themes();
+            return wp_list_filter( $themes, [ 'type' => 'free' ] );
+        }
+
+        public static function get_pro_themes() {
+            $themes = self::_themes();
+            return wp_list_filter( $themes, [ 'type' => 'pro' ] );
+        }
+
+        public static function get_formated_themes( $themes ) {
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+
+                $_themes = array_map( function( $theme ) {
+                    $theme['label'] = $theme['label'] . __(' (Pro)', 'gscoach');
+                    return $theme;
+                }, wp_list_filter( $themes, [ 'version' => 1, 'type' => 'pro' ] ) );
+                $themes = shortcode_atts( $themes, $_themes );
+    
+                $_themes = array_map( function( $theme ) {
+                    $theme['label'] = $theme['label'] . __(' (New - Pro)', 'gscoach');
+                    return $theme;
+                }, wp_list_filter( $themes, [ 'version' => 2, 'type' => 'pro' ] ) );
+                $themes = shortcode_atts( $themes, $_themes );
+                
+                $_themes = wp_list_filter( $themes, [ 'type' => 'pro' ] );
+                $_themes = self::add_pro_to_options( $_themes );
+
+                $_themes = shortcode_atts( $themes, $_themes );
+                $themes = wp_list_sort( $_themes, 'type', 'ASC' );
+
+            } else {
+
+                $_themes = array_map( function( $theme ) {
+                    $theme['label'] = $theme['label'] . __(' (New)', 'gscoach');
+                    return $theme;
+                }, wp_list_filter( $themes, [ 'version' => 2 ] ) );
+                
+                $themes = shortcode_atts( $themes, $_themes );
+
+            }
+
+            $themes = array_map( function( $theme ) {
+                unset( $theme['type'] );
+                unset( $theme['version'] );
+                return $theme;
+            }, $themes );
+
+            return $themes;
+        }
+
+        public function get_shortcode_options_themes() {
+            return self::get_formated_themes( self::_themes() );
+        }
+
+        public function get_shortcode_options_link_types() {
+
+            $free_options = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Single Page', 'gscoach' ),
+                    'value' => 'single_page'
+                ],
+                [
+                    'label' => __( 'Popup', 'gscoach' ),
+                    'value' => 'popup'
+                ]
+            ];
+
+            $pro_options = [
+                [
+                    'label' => __( 'Panel', 'gscoach' ),
+                    'value' => 'panel'
+                ],
+                [
+                    'label' => __( 'Drawer', 'gscoach' ),
+                    'value' => 'drawer'
+                ],
+                [
+                    'label' => __( 'Custom URL', 'gscoach' ),
+                    'value' => 'custom'
+                ]
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $pro_options = self::add_pro_to_options( $pro_options );
+            }
+
+            return array_merge( $free_options, $pro_options );
+
+        }
+
+        public function get_carousel_navs_styles() {
+
+            $styles = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ]
+
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $default = array_shift( $styles );
+                $styles = array_merge( [$default], self::add_pro_to_options($styles) );
+            }
+
+            return $styles;
+
+        }
+
+        public function get_carousel_dots_styles() {
+
+            $styles = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ]
+
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $default = array_shift( $styles );
+                $styles = array_merge( [$default], self::add_pro_to_options($styles) );
+            }
+
+            return $styles;
+
+        }
+
+        public function get_drawer_styles() {
+
+            $styles = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ],
+                [
+                    'label' => __( 'Style Four', 'gscoach' ),
+                    'value' => 'style-four'
+                ],
+                [
+                    'label' => __( 'Style Five', 'gscoach' ),
+                    'value' => 'style-five'
+                ]
+
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $styles = self::add_pro_to_options( $styles );
+            }
+
+            return $styles;
+
+        }
+
+        public static function add_pro_to_options( $options ) {
+            return array_map( function( $item ) {
+                $item['pro'] = true;
+                return $item;
+            }, $options );
+        }
+
+        public function get_panel_styles() {
+
+            $styles = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ],
+                [
+                    'label' => __( 'Style Four', 'gscoach' ),
+                    'value' => 'style-four'
+                ],
+                [
+                    'label' => __( 'Style Five', 'gscoach' ),
+                    'value' => 'style-five'
+                ]
+
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $styles = self::add_pro_to_options($styles);
+            }
+
+            return $styles;
+
+        }
+
+        public function get_popup_styles() {
+
+            $styles = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ],
+                [
+                    'label' => __( 'Style Four', 'gscoach' ),
+                    'value' => 'style-four'
+                ],
+                [
+                    'label' => __( 'Style Five', 'gscoach' ),
+                    'value' => 'style-five'
+                ],
+                [
+                    'label' => __( 'Style Six', 'gscoach' ),
+                    'value' => 'style-six'
+                ]
+
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $default = array_shift( $styles );
+                $styles = array_merge( [$default], self::add_pro_to_options($styles) );
+            }
+
+            return $styles;
+
+        }
+
+        public function get_filter_styles() {
+
+            $styles = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ],
+                [
+                    'label' => __( 'Style Four', 'gscoach' ),
+                    'value' => 'style-four'
+                ],
+                [
+                    'label' => __( 'Style Five', 'gscoach' ),
+                    'value' => 'style-five'
+                ]
+
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $styles = self::add_pro_to_options($styles);
+            }
+
+            return $styles;
+
+        }
+
+        public function get_shortcode_default_options() {
+            return [
+                'location' => self::get_team_terms('gs_coach_location'),
+                'specialty' => self::get_team_terms('gs_coach_specialty'),
+                'language' => self::get_team_terms('gs_coach_language'),
+                'gender' => self::get_team_terms('gs_coach_gender'),
+                'group' => self::get_team_terms('gs_coach_group'),
+                'exclude_group' => self::get_team_terms('gs_coach_group'),
+                'extra_one' => self::get_team_terms('gs_coach_extra_one'),
+                'extra_two' => self::get_team_terms('gs_coach_extra_two'),
+                'extra_three' => self::get_team_terms('gs_coach_extra_three'),
+                'extra_four' => self::get_team_terms('gs_coach_extra_four'),
+                'extra_five' => self::get_team_terms('gs_coach_extra_five'),
+                'gs_coach_cols' => $this->get_columns(),
+                'drawer_style' => $this->get_drawer_styles(),
+                'carousel_navs_style' => $this->get_carousel_navs_styles(),
+                'carousel_dots_style' => $this->get_carousel_dots_styles(),
+                'panel_style' => $this->get_panel_styles(),
+                'popup_style' => $this->get_popup_styles(),
+                'filter_style' => $this->get_filter_styles(),
+                'gs_member_thumbnail_sizes' => $this->getPossibleThumbnailSizes(),
+                'gs_coach_cols_tablet' => $this->get_columns(),
+                'gs_coach_cols_mobile_portrait' => $this->get_columns(),
+                'gs_coach_cols_mobile' => $this->get_columns(),
+                'gs_coach_theme' => $this->get_shortcode_options_themes(),
+                'gs_member_link_type' => $this->get_shortcode_options_link_types(),
+                'acf_fields_position' => $this->get_acf_fields_position(),
+                'gs_coachmembers_pop_clm' => [
+                    [
+                        'label' => __( 'One', 'gscoach' ),
+                        'value' => 'one'
+                    ],
+                    [
+                        'label' => __( 'Two', 'gscoach' ),
+                        'value' => 'two'
+                    ],
+                ],
+                'gs_coach_filter_columns' => [
+                    [
+                        'label' => __( 'Two', 'gscoach' ),
+                        'value' => 'two'
+                    ],
+                    [
+                        'label' => __( 'Three', 'gscoach' ),
+                        'value' => 'three'
+                    ],
+                ],
+                'gs_tm_filter_cat_pos' => [
+                    [
+                        'label' => __( 'Left', 'gscoach' ),
+                        'value' => 'left'
+                    ],
+                    [
+                        'label' => __( 'Center', 'gscoach' ),
+                        'value' => 'center'
+                    ],
+                    [
+                        'label' => __( 'Right', 'gscoach' ),
+                        'value' => 'right'
+                    ]
+                ],
+                'panel' => [
+                    [
+                        'label' => __( 'Left', 'gscoach' ),
+                        'value' => 'left'
+                    ],
+                    [
+                        'label' => __( 'Center', 'gscoach' ),
+                        'value' => 'center'
+                    ],
+                    [
+                        'label' => __( 'Right', 'gscoach' ),
+                        'value' => 'right'
+                    ]
+                ],
+                'orderby' => [
+                    [
+                        'label' => __( 'Custom Order', 'gscoach' ),
+                        'value' => 'menu_order'
+                    ],
+                    [
+                        'label' => __( 'Coach ID', 'gscoach' ),
+                        'value' => 'ID'
+                    ],
+                    [
+                        'label' => __( 'Coach Name', 'gscoach' ),
+                        'value' => 'title'
+                    ],
+                    [
+                        'label' => __( 'Date', 'gscoach' ),
+                        'value' => 'date'
+                    ],
+                    [
+                        'label' => __( 'Random', 'gscoach' ),
+                        'value' => 'rand'
+                    ],
+                ],
+                'group_orderby' => [
+                    [
+                        'label' => __( 'Custom Order', 'gscoach' ),
+                        'value' => 'term_order'
+                    ],
+                    [
+                        'label' => __( 'Group ID', 'gscoach' ),
+                        'value' => 'term_id'
+                    ],
+                    [
+                        'label' => __( 'Group Name', 'gscoach' ),
+                        'value' => 'name'
+                    ],
+                ],
+                'order' => [
+                    [
+                        'label' => __( 'DESC', 'gscoach' ),
+                        'value' => 'DESC'
+                    ],
+                    [
+                        'label' => __( 'ASC', 'gscoach' ),
+                        'value' => 'ASC'
+                    ],
+                ],
+
+                'image_filter' => $this->get_image_filter_effects(),
+
+                'hover_image_filter' => $this->get_image_filter_effects(),
+
+                // Style Options
+                'gs_tm_m_fntw' => [
+                    [
+                        'label' => __( '100 - Thin', 'gscoach' ),
+                        'value' => 100
+                    ],
+                    [
+                        'label' => __( '200 - Extra Light', 'gscoach' ),
+                        'value' => 200
+                    ],
+                    [
+                        'label' => __( '300 - Light', 'gscoach' ),
+                        'value' => 300
+                    ],
+                    [
+                        'label' => __( '400 - Regular', 'gscoach' ),
+                        'value' => 400
+                    ],
+                    [
+                        'label' => __( '500 - Medium', 'gscoach' ),
+                        'value' => 500
+                    ],
+                    [
+                        'label' => __( '600 - Semi-Bold', 'gscoach' ),
+                        'value' => 600
+                    ],
+                    [
+                        'label' => __( '700 - Bold', 'gscoach' ),
+                        'value' => 700
+                    ],
+                    [
+                        'label' => __( '800 - Extra Bold', 'gscoach' ),
+                        'value' => 800
+                    ],
+                    [
+                        'label' => __( '900 - Black', 'gscoach' ),
+                        'value' => 900
+                    ],
+                ],
+                'gs_tm_m_fnstyl' => [
+                    [
+                        'label' => __( 'Normal', 'gscoach' ),
+                        'value' => 'normal'
+                    ],
+                    [
+                        'label' => __( 'Italic', 'gscoach' ),
+                        'value' => 'italic'
+                    ],
+                ],
+                'gs_tm_role_fntw' => [
+                    [
+                        'label' => __( '100 - Thin', 'gscoach' ),
+                        'value' => 100
+                    ],
+                    [
+                        'label' => __( '200 - Extra Light', 'gscoach' ),
+                        'value' => 200
+                    ],
+                    [
+                        'label' => __( '300 - Light', 'gscoach' ),
+                        'value' => 300
+                    ],
+                    [
+                        'label' => __( '400 - Regular', 'gscoach' ),
+                        'value' => 400
+                    ],
+                    [
+                        'label' => __( '500 - Medium', 'gscoach' ),
+                        'value' => 500
+                    ],
+                    [
+                        'label' => __( '600 - Semi-Bold', 'gscoach' ),
+                        'value' => 600
+                    ],
+                    [
+                        'label' => __( '700 - Bold', 'gscoach' ),
+                        'value' => 700
+                    ],
+                    [
+                        'label' => __( '800 - Extra Bold', 'gscoach' ),
+                        'value' => 800
+                    ],
+                    [
+                        'label' => __( '900 - Black', 'gscoach' ),
+                        'value' => 900
+                    ],
+                ],
+                'gs_tm_role_fnstyl' => [
+                    [
+                        'label' => __( 'Normal', 'gscoach' ),
+                        'value' => 'normal'
+                    ],
+                    [
+                        'label' => __( 'Italic', 'gscoach' ),
+                        'value' => 'italic'
+                    ],
+                ],
+            ];
+        }
+
+        public function get_shortcode_default_settings() {
+            return [
+                'num'                             => -1,
+                'order'                           => 'DESC',
+                'orderby'                         => 'date',
+                'group_orderby'                   => 'term_order',
+                'group_order'                     => 'ASC',
+                'group_hide_empty'                => 'off',
+                'gs_coach_theme'                   => 'gs-grid-style-five',
+                'gs_coach_cols'                    => '3',
+                'gs_coach_cols_tablet'             => '4',
+                'gs_coach_cols_mobile_portrait'    => '6',
+                'gs_coach_cols_mobile'             => '12',
+                'group'                           => '',
+                'exclude_group'                   => '',
+                'panel'                           => 'right',
+                'gs_coachmembers_pop_clm'          => 'two',
+                'gs_member_connect'               => 'on',
+                'display_ribbon'                  => 'on',        
+                'gs_slider_nav_color'             => '',
+                'gs_slider_nav_bg_color'          => '',
+                'gs_slider_nav_hover_color'       => '',
+                'gs_slider_nav_hover_bg_color'    => '',
+                'gs_slider_dot_color'             => '',
+                'gs_slider_dot_hover_color'       => '',
+                'filter_text_color'               => '',
+                'filter_active_text_color'        => '',
+                'filter_bg_color'                 => '',
+                'filter_active_bg_color'          => '',
+                'filter_border_color'             => '',
+                'filter_active_border_color'      => '',
+                'gs_tm_mname_color'               => '',
+                'description_color'               => '',
+                'info_color'                      => '',
+                'info_icon_color'                 => '',
+                'description_link_color'          => '',
+                'tm_bg_color'                     => '',
+                'tm_bg_color_hover'               => '',
+                'gs_tm_info_background'           => '',
+                'gs_tm_mname_background'          => '',
+                'gs_tm_tooltip_background'        => '',
+                'gs_tm_hover_icon_background'     => '',
+                'gs_tm_ribon_color'               => '',
+                'gs_tm_role_color'                => '',
+                'gs_tm_arrow_color'               => '',
+                'gs_member_name'                  => 'on',
+                'gs_member_name_is_linked'        => 'on',
+                'gs_member_link_type'             => 'default',
+                'gs_member_role'                  => 'on',
+                'gs_member_pagination'            => 'off',
+                'gs_member_details'               => 'on',
+                'gs_desc_scroll_contrl'           => 'on',
+                'gs_max_scroll_height'            => '',
+                'gs_details_area_height'          => 'off',
+                'carousel_enabled'                => 'off',
+                'link_preview_image'              => 'off',
+                'carousel_navs_enabled'           => 'on',
+                'carousel_dots_enabled'           => 'on',
+                'carousel_navs_style'             => 'default',
+                'carousel_dots_style'             => 'default',
+                'filter_enabled'                  => 'off',
+                'drawer_style'                    => 'default',
+                'panel_style'                     => 'default',
+                'popup_style'                     => 'default',
+                'filter_style'                    => 'default',
+                'gs_desc_allow_html'              => 'off',
+                'gs_tm_details_contl'             => 100,
+                'gs_member_srch_by_name'          => 'on',
+                'gs_member_srch_by_zip'           => 'on',
+                'gs_member_srch_by_tag'           => 'off',
+                'gs_member_srch_by_company'       => 'off',
+                'gs_member_filter_by_desig'       => 'on',
+                'gs_member_filter_by_location'    => 'on',
+                'gs_member_filter_by_language'    => 'on',
+                'gs_member_filter_by_gender'      => 'on',
+                'gs_member_filter_by_speciality'  => 'on',
+                'gs_member_filter_by_extra_one'  => 'off',
+                'gs_member_filter_by_extra_two'  => 'off',
+                'gs_member_filter_by_extra_three'  => 'off',
+                'gs_member_filter_by_extra_four'  => 'off',
+                'gs_member_filter_by_extra_five'  => 'off',
+                'gs_member_enable_clear_filters'  => 'off',
+                'gs_member_enable_multi_select'   => 'off',
+                'gs_member_multi_select_ellipsis' => 'off',
+                'gs_filter_all_enabled'           => 'on',
+                'enable_child_cats'               => 'off',
+                'enable_scroll_animation'         => 'on',
+                'fitler_all_text'                 => 'All',
+                'gs_coach_filter_columns'          => 'two',
+                'gs_tm_m_fz'                      => '',
+                'gs_tm_m_fntw'                    => '',
+                'image_filter'                    => 'none',
+                'hover_image_filter'              => 'none',
+                'gs_tm_m_fnstyl'                  => '',
+                'gs_tm_role_fz'                   => '',
+                'gs_tm_role_fntw'                 => '',
+                'gs_tm_role_fnstyl'               => '',
+                'gs_tm_filter_cat_pos'            => 'center',
+                'gs_member_thumbnail_sizes'       => 'large',
+                'show_acf_fields'                 => 'off',
+                'acf_fields_position'             => 'after_skills',
+                'location'                        => '',
+                'specialty'                       => '',
+                'language'                        => '',
+                'gender'                          => '',
+                'include_extra_one'               => '',
+                'include_extra_two'               => '',
+                'include_extra_three'             => '',
+                'include_extra_four'              => '',
+                'include_extra_five'              => '',
+            ];
+        }
+
+        public function get_translation($translation_name) {
+
+            $translations = $this->get_shortcode_default_translations();
+        
+            if ( ! array_key_exists( $translation_name, $translations ) ) return '';
+
+            $prefs = $this->_get_shortcode_pref( false );
+
+            if ( $prefs['gs_member_enable_multilingual'] === 'on' ) return $translations[$translation_name];
+        
+            return $prefs[ $translation_name ];
+        }
+
+        public function get_shortcode_default_translations() {
+            $translations = [
+                'gs_coachfliter_designation' => __('Show All Designation', 'gscoach'),
+                'gs_coachfliter_name' => __('Search By Name', 'gscoach'),
+                'gs_coachfliter_company' => __('Search By Company', 'gscoach'),
+                'gs_coachfliter_zip' => __('Search By Zip', 'gscoach'),
+                'gs_coachfliter_tag' => __('Search By Tag', 'gscoach'),
+                'gs_coachcom_meta' => __('Company', 'gscoach'),
+                'gs_coachadd_meta' => __('Address', 'gscoach'),
+                'gs_coachlandphone_meta' => __('Land Phone', 'gscoach'),
+                'gs_coachcellPhone_meta' => __('Cell Phone', 'gscoach'),
+                'gs_coachemail_meta' => __('Email', 'gscoach'),
+                'gs_coach_zipcode_meta' => __('Zip Code', 'gscoach'),
+                'gs_coach_follow_me_on' => __('Follow Me On', 'gscoach'),
+                'gs_coach_skills' => __('Skills', 'gscoach'),
+                'gs_coach_read_on' => __('Read On', 'gscoach'),
+                'gs_coach_more' => __('More', 'gscoach'),
+                'gs_coach_vcard_txt' => __('Download vCard', 'gscoach'),
+                'gs_coach_reset_filters_txt' => __('Reset Filters', 'gscoach'),
+                'gs_coach_prev_txt' => __('Prev', 'gscoach'),
+                'gs_coach_next_txt' => __('Next', 'gscoach')
+            ];
+
+            return $translations;
+        }
+
+        public function get_shortcode_default_prefs() {
+            $prefs = [
+                'gs_member_nxt_prev'            => 'off',
+                'single_page_style'             => 'default',
+                'single_link_type'              => 'single_page',
+                'gs_member_search_all_fields'   => 'off',
+                'gs_member_enable_multilingual' => 'off',
+                'gs_coachmembers_slug'           => 'team-members',
+                'replace_custom_slug'           => 'off',
+                'archive_page_slug'             => '',
+                'archive_page_title'            => '',
+                'disable_google_fonts'          => 'off',
+                'show_acf_fields'               => 'off',
+                'disable_lazy_load'             => 'off',
+
+                'land_phone_link'               => 'off',
+                'cell_phone_link'               => 'off',
+                'email_link'                    => 'off',
+
+                'lazy_load_class'               => 'skip-lazy',
+                'acf_fields_position'           => 'after_skills',
+                'gs_coach_custom_css'            => ''
+            ];
+
+            $translations = $this->get_shortcode_default_translations();
+
+            $prefs = array_merge( $prefs, $translations );
+
+            return $prefs;
+        }
+
+        public function get_taxonomy_default_settings() {
+
+            return [
+
+                // Group Taxonomy
+                'enable_group_tax' => 'on',
+                'group_tax_label' => __('Group', 'gscoach'),
+                'group_tax_plural_label' => __('Groups', 'gscoach'),
+                'enable_group_tax_archive' => 'on',
+                'group_tax_archive_slug' => 'gs-coach-group',
+
+                // Tag Taxonomy
+                'enable_tag_tax' => 'on',
+                'tag_tax_label' => __('Tag', 'gscoach'),
+                'tag_tax_plural_label' => __('Tags', 'gscoach'),
+                'enable_tag_tax_archive' => 'on',
+                'tag_tax_archive_slug' => 'gs-coach-tag',
+
+                // Language Taxonomy
+                'enable_language_tax' => 'on',
+                'language_tax_label' => __('Language', 'gscoach'),
+                'language_tax_plural_label' => __('Languages', 'gscoach'),
+                'enable_language_tax_archive' => 'on',
+                'language_tax_archive_slug' => 'gs-coach-language',
+
+                // Location Taxonomy
+                'enable_location_tax' => 'on',
+                'location_tax_label' => __('Location', 'gscoach'),
+                'location_tax_plural_label' => __('Locations', 'gscoach'),
+                'enable_location_tax_archive' => 'on',
+                'location_tax_archive_slug' => 'gs-coach-location',
+
+                // Gender Taxonomy
+                'enable_gender_tax' => 'on',
+                'gender_tax_label' => __('Gender', 'gscoach'),
+                'gender_tax_plural_label' => __('Genders', 'gscoach'),
+                'enable_gender_tax_archive' => 'on',
+                'gender_tax_archive_slug' => 'gs-coach-gender',
+
+                // Specialty Taxonomy
+                'enable_specialty_tax' => 'on',
+                'specialty_tax_label' => __('Specialty', 'gscoach'),
+                'specialty_tax_plural_label' => __('Specialties', 'gscoach'),
+                'enable_specialty_tax_archive' => 'on',
+                'specialty_tax_archive_slug' => 'gs-coach-specialty',
+
+                // Extra One Taxonomy
+                'enable_extra_one_tax' => 'off',
+                'extra_one_tax_label' => __('Extra 1', 'gscoach'),
+                'extra_one_tax_plural_label' => __('Extra 1', 'gscoach'),
+                'enable_extra_one_tax_archive' => 'on',
+                'extra_one_tax_archive_slug' => 'gs-coach-extra-one',
+
+                // Extra Two Taxonomy
+                'enable_extra_two_tax' => 'off',
+                'extra_two_tax_label' => __('Extra 2', 'gscoach'),
+                'extra_two_tax_plural_label' => __('Extra 2', 'gscoach'),
+                'enable_extra_two_tax_archive' => 'off',
+                'extra_two_tax_archive_slug' => 'gs-coach-extra-two',
+
+                // Extra Three Taxonomy
+                'enable_extra_three_tax' => 'off',
+                'extra_three_tax_label' => __('Extra 3', 'gscoach'),
+                'extra_three_tax_plural_label' => __('Extra 3', 'gscoach'),
+                'enable_extra_three_tax_archive' => 'off',
+                'extra_three_tax_archive_slug' => 'gs-coach-extra-three',
+
+                // Extra Four Taxonomy
+                'enable_extra_four_tax' => 'off',
+                'extra_four_tax_label' => __('Extra 4', 'gscoach'),
+                'extra_four_tax_plural_label' => __('Extra 4', 'gscoach'),
+                'enable_extra_four_tax_archive' => 'off',
+                'extra_four_tax_archive_slug' => 'gs-coach-extra-four',
+
+                // Extra Five Taxonomy
+                'enable_extra_five_tax' => 'off',
+                'extra_five_tax_label' => __('Extra 5', 'gscoach'),
+                'extra_five_tax_plural_label' => __('Extra 5', 'gscoach'),
+                'enable_extra_five_tax_archive' => 'off',
+                'extra_five_tax_archive_slug' => 'gs-coach-extra-five',
+
+            ];
+
+        }
+
+        public function get_tax_option( $option, $default = '' ) {
+            $options = (array) get_option( $this->taxonomy_option_name, [] );
+            $defaults = $this->get_taxonomy_default_settings();
+            $options = array_merge($defaults, $options);
+
+            if ( str_contains($option, '_label') && ( getoption('gs_member_enable_multilingual', 'off') == 'on' ) ) {
+                return $defaults[$option];
+            }
+
+            if ( str_contains($option, '_label') && empty($options[$option]) ) {
+                return $defaults[$option];
+            }
+
+            if ( isset($options[$option]) ) return $options[$option];
+            return $default;
+        }
+
+        public function get_columns() {
+
+            return [
+                [
+                    'label' => __( '1 Column', 'gscoach' ),
+                    'value' => '12'
+                ],
+                [
+                    'label' => __( '2 Columns', 'gscoach' ),
+                    'value' => '6'
+                ],
+                [
+                    'label' => __( '3 Columns', 'gscoach' ),
+                    'value' => '4'
+                ],
+                [
+                    'label' => __( '4 Columns', 'gscoach' ),
+                    'value' => '3'
+                ],
+                [
+                    'label' => __( '5 Columns', 'gscoach' ),
+                    'value' => '2_4'
+                ],
+                [
+                    'label' => __( '6 Columns', 'gscoach' ),
+                    'value' => '2'
+                ],
+            ];
+
+        }
+
+        public function get_acf_fields_position() {
+
+            return [
+                [
+                    'label' => __( 'After Skills', 'gscoach' ),
+                    'value' => 'after_skills'
+                ],
+                [
+                    'label' => __( 'After Description', 'gscoach' ),
+                    'value' => 'after_description'
+                ],
+                [
+                    'label' => __( 'After Meta Details', 'gscoach' ),
+                    'value' => 'after_meta_details'
+                ],
+            ];
+
+        }
+
+        public function get_image_filter_effects() {
+
+            $effects = [
+                [
+                    'label' => __( 'None', 'gscoach' ),
+                    'value' => 'none'
+                ],
+                [
+                    'label' => __( 'Blur', 'gscoach' ),
+                    'value' => 'blur'
+                ],
+                [
+                    'label' => __( 'Brightness', 'gscoach' ),
+                    'value' => 'brightness'
+                ],
+                [
+                    'label' => __( 'Contrast', 'gscoach' ),
+                    'value' => 'contrast'
+                ],
+                [
+                    'label' => __( 'Grayscale', 'gscoach' ),
+                    'value' => 'grayscale'
+                ],
+                [
+                    'label' => __( 'Hue Rotate', 'gscoach' ),
+                    'value' => 'hue_rotate'
+                ],
+                [
+                    'label' => __( 'Invert', 'gscoach' ),
+                    'value' => 'invert'
+                ],
+                [
+                    'label' => __( 'Opacity', 'gscoach' ),
+                    'value' => 'opacity'
+                ],
+                [
+                    'label' => __( 'Saturate', 'gscoach' ),
+                    'value' => 'saturate'
+                ],
+                [
+                    'label' => __( 'Sepia', 'gscoach' ),
+                    'value' => 'sepia'
+                ]
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $effects = self::add_pro_to_options($effects);
+            }
+
+            return $effects;
+
+        }
+
+        public function get_single_page_style() {
+
+            return [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ],
+                [
+                    'label' => __( 'Style Four', 'gscoach' ),
+                    'value' => 'style-four'
+                ],
+                [
+                    'label' => __( 'Style Five', 'gscoach' ),
+                    'value' => 'style-five'
+                ]
+            ];
+
+        }
+
+        /**
+         * Retrives WP registered possible thumbnail sizes.
+         * 
+         * @since  1.10.14
+         * @return array   image sizes.
+         */
+        public function getPossibleThumbnailSizes() {
+            
+            $sizes = get_intermediate_image_sizes();
+
+            if ( empty($sizes) ) return [];
+
+            $result = [];
+
+            foreach ( $sizes as $size ) {
+                $result[] = [
+                    'label' => ucwords( preg_replace('/_|-/', ' ', $size) ),
+                    'value' => $size
+                ];
+            }
+            
+            return $result;
+        }
+
+        public function get_shortcode_prefs_options() {
+
+            $acf_fields_position = $this->get_acf_fields_position();
+            $single_page_style = $this->get_single_page_style();
+            $single_link_type = [
+                [
+                    'label' => __( 'None', 'gscoach' ),
+                    'value' => 'none'
+                ],
+                $this->get_shortcode_options_link_types()[1]
+            ];
+
+            if ( ! gtm_fs()->is_paying_or_trial() ) {
+                $acf_fields_position = self::add_pro_to_options( $acf_fields_position );
+                $default = array_shift( $single_page_style );
+                $single_page_style = array_merge( [$default], self::add_pro_to_options($single_page_style) );
+            }
+
+            return [
+                'acf_fields_position' => $acf_fields_position,
+                'single_page_style' => $single_page_style,
+                'single_link_type' => $single_link_type
+            ];
+        }
+
+        public function is_multilingual_enabled() {
+            return $this->_get_shortcode_pref( false )['gs_member_enable_multilingual'] == 'on';
+        }
+
+        public function validate_shortcode_prefs( Array $settings ) {
+            foreach ( $settings as $setting_key => $setting_val ) {
+                if ( $setting_key == 'gs_coach_custom_css' ) {
+                    $settings[ $setting_key ] = wp_strip_all_tags( $setting_val );
+                } else {
+                    $settings[ $setting_key ] = sanitize_text_field( $setting_val );
+                }
+            }
+            return $settings;
+        }
+
+        public function _save_shortcode_pref( $settings, $is_ajax ) {
+
+            if ( empty($settings) ) $settings = [];
+
+            $settings = $this->validate_shortcode_prefs( $settings );
+            update_option( $this->option_name, $settings, 'yes' );
+            
+            // Clean permalink flush
+            delete_option( 'GS_Coach_plugin_permalinks_flushed' );
+
+            do_action( 'gs_coach_preference_update' );
+            do_action( 'gsp_preference_update' );
+        
+            if ( $is_ajax ) wp_send_json_success( __('Preference saved', 'gscoach') );
+
+        }
+
+        public function save_shortcode_pref() {
+
+            check_ajax_referer( '_gscoach_admin_nonce_gs_' );
+            
+            if ( empty($_POST['prefs']) ) {
+                wp_send_json_error( __('No preference provided', 'gscoach'), 400 );
+            }
+    
+            $this->_save_shortcode_pref( $_POST['prefs'], true );
+
+        }
+
+        public function _get_shortcode_pref( $is_ajax ) {
+
+            $pref = (array) get_option( $this->option_name, [] );
+            $pref = shortcode_atts( $this->get_shortcode_default_prefs(), $pref );
+
+            if ( $is_ajax ) {
+                wp_send_json_success( $pref );
+            }
+
+            return $pref;
+        }
+
+        public function get_shortcode_pref() {
+            return $this->_get_shortcode_pref( wp_doing_ajax() );
+        }
+
+        public function _get_taxonomy_settings( $is_ajax ) {
+
+            $settings = (array) get_option( $this->taxonomy_option_name, [] );
+            $settings = $this->validate_taxonomy_settings( $settings );
+
+            if ( $is_ajax ) {
+                wp_send_json_success( $settings );
+            }
+
+            return $settings;
+
+        }
+
+        public function validate_taxonomy_settings( $settings ) {
+
+            $defaults = $this->get_taxonomy_default_settings();
+
+            if ( empty($settings) ) {
+                $settings = $defaults;
+            } else {
+                foreach ( $settings as $setting_key => $setting_val ) {
+                    if ( str_contains($setting_key, '_label') && empty($setting_val) ) {
+                        $settings[$setting_key] = $defaults[$setting_key];
+                    }
+                }
+            }
+            
+            return array_map( 'sanitize_text_field', $settings );
+        }
+
+        public function get_taxonomy_settings() {
+            return $this->_get_taxonomy_settings( wp_doing_ajax() );
+        }
+
+        public function _save_taxonomy_settings( $settings, $is_ajax ) {
+
+            if ( empty($settings) ) $settings = [];
+
+            $settings = $this->validate_taxonomy_settings( $settings );
+            update_option( $this->taxonomy_option_name, $settings, 'yes' );
+            
+            // Clean permalink flush
+            delete_option( 'GS_Coach_plugin_permalinks_flushed' );
+
+            do_action( 'gs_coach_tax_settings_update' );
+            do_action( 'gsp_tax_settings_update' );
+        
+            if ( $is_ajax ) wp_send_json_success( __('Taxonomy settings saved', 'gscoach') );
+        }
+
+        public function save_taxonomy_settings() {
+
+            check_ajax_referer( '_gscoach_admin_nonce_gs_' );
+            
+            if ( empty($_POST['tax_settings']) ) {
+                wp_send_json_error( __('No settings provided', 'gscoach'), 400 );
+            }
+    
+            $this->_save_taxonomy_settings( $_POST['tax_settings'], true );
+        }
+
+        static function maybe_create_shortcodes_table() {
+
+            global $wpdb;
+
+            $gs_coach_db_version = '1.0';
+
+            if ( get_option("{$wpdb->prefix}gs_coach_db_version") == $gs_coach_db_version ) return; // vail early
+            
+            require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+
+            $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}gs_coach (
+            	id BIGINT(20) unsigned NOT NULL AUTO_INCREMENT,
+            	shortcode_name TEXT NOT NULL,
+            	shortcode_settings LONGTEXT NOT NULL,
+            	created_at DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+            	updated_at DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+            	PRIMARY KEY (id)
+            )".$wpdb->get_charset_collate().";";
+                
+            if ( get_option("{$wpdb->prefix}gs_coach_db_version") < $gs_coach_db_version ) {
+                dbDelta( $sql );
+            }
+
+            update_option( "{$wpdb->prefix}gs_coach_db_version", $gs_coach_db_version );
+        }
+
+        public function create_dummy_shortcodes() {
+
+            $Dummy_Data = new Dummy_Data();
+
+            $request = wp_remote_get( GSCOACH_PLUGIN_URI . '/includes/demo-data/shortcodes.json', array('sslverify' => false) );
+
+            if ( is_wp_error($request) ) return false;
+
+            $shortcodes = wp_remote_retrieve_body( $request );
+
+            $shortcodes = json_decode( $shortcodes, true );
+
+            $wpdb = $this->get_wpdb();
+
+            if ( ! $shortcodes || ! count($shortcodes) ) return;
+
+            foreach ( $shortcodes as $shortcode ) {
+
+                $shortcode['shortcode_settings'] = json_decode( $shortcode['shortcode_settings'], true );
+                $shortcode['shortcode_settings']['gscoach-demo_data'] = true;
+
+                if ( !empty( $group = $shortcode['shortcode_settings']['group']) ) {
+                    $shortcode['shortcode_settings']['group'] = (array) $Dummy_Data->get_taxonomy_ids_by_slugs( 'gs_coach_group', explode(',', $group) );
+                }
+
+                if ( !empty( $exclude_group = $shortcode['shortcode_settings']['exclude_group']) ) {
+                    $shortcode['shortcode_settings']['exclude_group'] = (array) $Dummy_Data->get_taxonomy_ids_by_slugs( 'gs_coach_group', explode(',', $exclude_group) );
+                }
+    
+                $data = array(
+                    "shortcode_name" => $shortcode['shortcode_name'],
+                    "shortcode_settings" => json_encode($shortcode['shortcode_settings']),
+                    "created_at" => current_time( 'mysql'),
+                    "updated_at" => current_time( 'mysql'),
+                );
+    
+                $wpdb->insert( "{$wpdb->prefix}gs_coach", $data, $this->get_db_columns() );
+
+            }
+
+        }
+
+        public function delete_dummy_shortcodes() {
+
+            $wpdb = $this->get_wpdb();
+
+            $needle = 'gscoach-demo_data';
+
+            $wpdb->query( "DELETE FROM {$wpdb->prefix}gs_coach WHERE shortcode_settings like '%$needle%'" );
+
+            // Delete the shortcode cache
+            wp_cache_delete( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
+
+        }
+
+        public function maybe_upgrade_data( $old_version ) {
+            if ( version_compare( $old_version, '1.10.8' ) < 0 ) $this->upgrade_to_1_10_8();
+            if ( version_compare( $old_version, '1.10.16' ) < 0 ) $this->upgrade_to_1_10_16();
+            if ( version_compare( $old_version, '2.3.6' ) < 0 ) $this->upgrade_to_2_3_6();
+            if ( version_compare( $old_version, '2.3.9' ) < 0 ) $this->upgrade_to_2_3_9();
+            if ( version_compare( $old_version, '2.5.0' ) < 0 ) $this->upgrade_to_2_5_0();
+        }
+
+        public function upgrade_to_1_10_8() {
+
+            $shortcodes = $this->fetch_shortcodes();
+            
+            foreach ( $shortcodes as $shortcode ) {
+
+                $shortcode_id = $shortcode['id'];
+                $shortcode_settings = json_decode( $shortcode["shortcode_settings"], true );
+
+                if ( !in_array( $shortcode_settings['gs_coach_theme'], ['gs_tm_theme3', 'gs_tm_theme4', 'gs_tm_theme5', 'gs_tm_theme6'] ) ) {
+
+                    $shortcode_settings['gs_coach_cols']                 = 3;
+                    $shortcode_settings['gs_coach_cols_tablet']          = 4;
+                    $shortcode_settings['gs_coach_cols_mobile_portrait'] = 6;
+                    $shortcode_settings['gs_coach_cols_mobile']          = 12;
+
+                } else {
+
+                    $shortcode_settings['gs_coach_cols']                 = 4;
+                    $shortcode_settings['gs_coach_cols_tablet']          = 6;
+                    $shortcode_settings['gs_coach_cols_mobile_portrait'] = 6;
+                    $shortcode_settings['gs_coach_cols_mobile']          = 12;
+
+                }
+
+                if ( empty($shortcode_settings['gs_member_link_type']) ) $shortcode_settings['gs_member_link_type'] = 'default';
+
+                unset( $shortcode_settings['gs_coach_cols_desktop'] );
+
+                $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+        
+                $wpdb = $this->get_wpdb();
+            
+                $data = array(
+                    "shortcode_settings" 	=> json_encode($shortcode_settings),
+                    "updated_at" 		    => current_time( 'mysql')
+                );
+            
+                $wpdb->update( "{$wpdb->prefix}gs_coach" , $data, array( 'id' => absint( $shortcode_id ) ), [
+                    'shortcode_settings' => '%s',
+                    'updated_at' => '%s',
+                ]);
+
+            }
+
+        }
+
+        public function upgrade_to_1_10_16() {
+
+            $shortcodes = $this->fetch_shortcodes();
+            
+            foreach ( $shortcodes as $shortcode ) {
+
+                $update             = false;
+                $shortcode_id       = $shortcode['id'];
+                $shortcode_settings = json_decode( $shortcode["shortcode_settings"], true );
+                $group              = $shortcode_settings['group'];
+                $exclude_group      = $shortcode_settings['exclude_group'];
+
+                if ( !empty($group) && is_string($group) ) {
+                    
+                    $update = true;
+                    $group = explode( ',', $group );
+                    
+                    $terms = array_map( function( $group_slug ) {
+                        return get_term_by( 'slug', $group_slug, 'gs_coach_group' );
+                    }, $group );
+
+                    $shortcode_settings['group'] = wp_list_pluck( $terms, 'term_id' );
+
+                }
+
+                if ( !empty($exclude_group) && is_string($exclude_group) ) {
+                    
+                    $update = true;
+                    $exclude_group  = explode( ',', $exclude_group );
+
+                    $terms = array_map( function( $group_slug ) {
+                        return get_term_by( 'slug', $group_slug, 'gs_coach_group' );
+                    }, $exclude_group );
+
+                    $shortcode_settings['exclude_group'] = wp_list_pluck( $terms, 'term_id' );
+
+                }
+
+                if ( ! $update ) continue;
+
+                $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+        
+                $wpdb = $this->get_wpdb();
+            
+                $data = array(
+                    "shortcode_settings" 	=> json_encode($shortcode_settings),
+                    "updated_at" 		    => current_time( 'mysql')
+                );
+            
+                $wpdb->update( "{$wpdb->prefix}gs_coach" , $data, array( 'id' => absint( $shortcode_id ) ), [
+                    'shortcode_settings' => '%s',
+                    'updated_at' => '%s',
+                ]);
+
+            }
+
+        }
+
+        public function upgrade_to_2_3_6() {
+
+            $social_icons_map = [
+                "envelope"                => "fas fa-envelope",
+                "link"                    => "fas fa-link",
+                "google-plus"             => "fab fa-google-plus-g",
+                "facebook"                => "fab fa-facebook-f",
+                "instagram"               => "fab fa-instagram",
+                "whatsapp"                => "fab fa-whatsapp",
+                "twitter"                 => "fab fa-x-twitter",
+                "youtube"                 => "fab fa-youtube",
+                "vimeo-square"            => "fab fa-vimeo-square",
+                "flickr"                  => "fab fa-flickr",
+                "dribbble"                => "fab fa-dribbble",
+                "behance"                 => "fab fa-behance",
+                "dropbox"                 => "fab fa-dropbox",
+                "wordpress"               => "fab fa-wordpress",
+                "tumblr"                  => "fab fa-tumblr",
+                "skype"                   => "fab fa-skype",
+                "linkedin"                => "fab fa-linkedin-in",
+                "stack-overflow"          => "fab fa-stack-overflow",
+                "pinterest"               => "fab fa-pinterest",
+                "foursquare"              => "fab fa-foursquare",
+                "github"                  => "fab fa-github",
+                "xing"                    => "fab fa-xing",
+                "stumbleupon"             => "fab fa-stumbleupon",
+                "delicious"               => "fab fa-delicious",
+                "lastfm"                  => "fab fa-lastfm",
+                "hacker-news"             => "fab fa-hacker-news",
+                "reddit"                  => "fab fa-reddit",
+                "soundcloud"              => "fab fa-soundcloud",
+                "yahoo"                   => "fab fa-yahoo",
+                "trello"                  => "fab fa-trello",
+                "steam"                   => "fab fa-steam-symbol",
+                "deviantart"              => "fab fa-deviantart",
+                "twitch"                  => "fab fa-twitch",
+                "feed"                    => "fas fa-rss",
+                "renren"                  => "fab fa-renren",
+                "vk"                      => "fab fa-vk",
+                "vine"                    => "fab fa-vine",
+                "spotify"                 => "fab fa-spotify",
+                "digg"                    => "fab fa-digg",
+                "slideshare"              => "fab fa-slideshare",
+                "bandcamp"                => "fab fa-bandcamp",
+                "map-pin"                 => "fas fa-map-pin",
+                "map-marker"              => "fas fa-map-marker-alt"
+            ];
+
+            $team_members = get_posts([
+                'numberposts' => -1,
+                'post_type' => 'gs_coach',
+                'fields' => 'ids'
+            ]);
+
+            foreach ( $team_members as $team_member_id ) {
+
+                $social_data = get_post_meta( $team_member_id, 'gs_social', true );
+
+                foreach ( $social_data as $key => $social_link ) {
+                    if ( ! empty($social_link['icon']) && array_key_exists( $social_link['icon'], $social_icons_map ) ) {
+                        $social_data[$key]['icon'] = $social_icons_map[ $social_link['icon'] ];
+                    }
+                }
+
+                update_post_meta( $team_member_id, 'gs_social', $social_data );
+
+            }
+
+        }
+
+        public function upgrade_to_2_3_9() {
+            
+            // Coach Group
+            $this->upgrade_to_2_3_9__taxonomy( 'team_group', 'gs_coach_group' );
+
+            // Coach Tag
+            $this->upgrade_to_2_3_9__taxonomy( 'team_tag', 'gs_coach_tag' );
+
+            // Coach Gender
+            $this->upgrade_to_2_3_9__taxonomy( 'team_gender', 'gs_coach_gender' );
+
+            // Coach Location
+            $this->upgrade_to_2_3_9__taxonomy( 'team_location', 'gs_coach_location' );
+
+            // Coach Language
+            $this->upgrade_to_2_3_9__taxonomy( 'team_language', 'gs_coach_language' );
+
+            // Coach Specialty
+            $this->upgrade_to_2_3_9__taxonomy( 'team_specialty', 'gs_coach_specialty' );
+    
+        }
+
+        public function upgrade_to_2_3_9__taxonomy( $from_taxonomy, $to_taxonomy ) {
+
+            $wpdb = self::get_wpdb();
+
+            $term_taxonomy_ids = $wpdb->get_results( $wpdb->prepare( "SELECT term_taxonomy_id FROM $wpdb->term_taxonomy WHERE taxonomy='%s'", $from_taxonomy ), ARRAY_A );
+    
+            if ( $this->has_db_error() ) {
+                die( sprintf( __( 'GS Coach Upgrade failed. Database Error: %s' ), $wpdb->last_error ) );
+            }
+    
+            if ( empty($term_taxonomy_ids) ) return;
+    
+            $term_taxonomy_ids = wp_list_pluck( $term_taxonomy_ids, 'term_taxonomy_id' );
+    
+            foreach ( $term_taxonomy_ids as $term_taxonomy_id ) {
+                $wpdb->update( $wpdb->term_taxonomy, array( 'taxonomy' => esc_html( $to_taxonomy ) ), array( 'term_taxonomy_id' => $term_taxonomy_id ) );
+            }
+
+        }
+
+        public function upgrade_to_2_5_0() {
+
+            // Get the preference settings
+            $prefs = $this->get_shortcode_pref();
+
+            // Get the taxonomy settings
+            $taxonomy_settings = $this->_get_taxonomy_settings( false );
+
+            // Set the Language Taxonomy Labels
+            $taxonomy_settings['language_tax_label'] = $prefs['gs_coachlanguage_meta'];
+            $taxonomy_settings['language_tax_plural_label'] = $prefs['gs_coachlanguage_meta'];
+
+            // Set the Location Taxonomy Labels
+            $taxonomy_settings['location_tax_label'] = $prefs['gs_coachlocation_meta'];
+            $taxonomy_settings['location_tax_plural_label'] = $prefs['gs_coachlocation_meta'];
+
+            // Set the Specialty Taxonomy Labels
+            $taxonomy_settings['specialty_tax_label'] = $prefs['gs_coachspecialty_meta'];
+            $taxonomy_settings['specialty_tax_plural_label'] = $prefs['gs_coachspecialty_meta'];;
+
+            // Set the Gender Taxonomy Labels
+            $taxonomy_settings['gender_tax_label'] = $prefs['gs_coachgender_meta'];
+            $taxonomy_settings['gender_tax_plural_label'] = $prefs['gs_coachgender_meta'];
+
+            // Update the taxonomy settings
+            $this->_save_taxonomy_settings( $taxonomy_settings, false );
+
+            // Remove old meta settings
+            unset( $prefs['gs_coachlanguage_meta'] );
+            unset( $prefs['gs_coachlocation_meta'] );
+            unset( $prefs['gs_coachspecialty_meta'] );
+            unset( $prefs['gs_coachgender_meta'] );
+
+            // Update the shortcode settings
+            $this->_save_shortcode_pref( $prefs, false );
+
+        }
+
+    }
+
+}

@@ -20,7 +20,7 @@ class Plugin {
 
     public static function get_instance() {
         
-        if ( self::$instance === null ) {
+        if ( ! self::$instance ) {
             self::$instance = new self();
         }
         return self::$instance;
@@ -34,25 +34,25 @@ class Plugin {
     public function __construct() {
 
         $this->cpt               = new Cpt();
-        // $this->shortcode         = new Shortcode();
-        // $this->template_loader   = new Template_Loader();
+        $this->shortcode         = new Shortcode();
+        $this->template_loader   = new Template_Loader();
         $this->scripts           = new Scripts();
-        // $this->hooks             = new Hooks();
+        $this->hooks             = new Hooks();
         $this->sortable          = new Sortable();
-        // $this->builder           = new Builder();
-        // $this->integrations      = new Integrations();
+        $this->builder           = new Builder();
+        $this->integrations      = new Integrations();
 
-        // new Bulk_Importer();
-        new Columns();
+        new Bulk_Importer();
+        new Column();
         new Meta_Fields();
-        // new Dummy_Data();
-        // new Import_Export();
+        new Dummy_Data();
+        new Import_Export();
 
-        // if (gtm_fs()->is_paying_or_trial()) {
-        //     $this->widget = new Widgets();
-        // }
+        if (gtm_fs()->is_paying_or_trial()) {
+            $this->widget = new Widgets();
+        }
 
-        // require_once GSTEAM_PLUGIN_DIR . 'includes/asset-generator/gs-load-asset-generator.php';
+        require_once GSCOACH_PLUGIN_DIR . 'includes/asset-generator/gs-load-asset-generator.php';
 
         // Load Free/Pro Plugins List
         require_once GSCOACH_PLUGIN_DIR . 'includes/gs-common-pages/gs-coach-common-pages.php';
@@ -63,5 +63,4 @@ class Plugin {
 function plugin() {
     return Plugin::get_instance();
 }
-
 plugin();

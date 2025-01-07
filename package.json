@@ -1,0 +1,44 @@
+{
+  "name": "gs-coach-members",
+  "version": "1.0.0",
+  "description": "GS Coach Members Plugin",
+  "main": "index.js",
+  "scripts": {
+    "start": "mix watch",
+    "development": "mix",
+    "dev": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production",
+    "prod": "mix --production"
+  },
+  "browserslist": [
+    "defaults",
+    "last 30 versions",
+    "last 3 major versions",
+    "maintained node versions"
+  ],
+  "author": "gsplugins",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^19.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.39",
+    "postcss": "^8.4.5",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.48.0",
+    "sass-loader": "^12.4.0",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.14",
+    "wp-pot": "^1.9.9"
+  },
+  "dependencies": {
+    "alertifyjs": "^1.13.1",
+    "clipboard": "^2.0.8",
+    "vue": "^2.6.14",
+    "vue-confirm-dialog": "^1.0.2",
+    "vue-router": "^3.5.3"
+  }
+}

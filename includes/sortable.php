@@ -12,10 +12,10 @@ class Sortable {
 	public function __construct() {
 		
 		// Add sortable menu in admin
-		// add_action('admin_menu', [$this, 'gs_team_sortable']);
+		add_action('admin_menu', [$this, 'gs_coach_sortable']);
 		
 		// Set object_type if not set & Redirect to the correct page
-		// add_action('admin_init', [$this, 'maybe_redirect']);
+		add_action('admin_init', [$this, 'maybe_redirect']);
 		
 		// Add term_order column to terms table
 		add_filter('plugins_loaded', array($this, 'alter_terms_table'), 0);
@@ -47,8 +47,8 @@ class Sortable {
 
 		if (!$this->is_pro()) wp_send_json_error();
 
-		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gsteam_update_order_gs_')) {
-			wp_send_json_error(__('Unauthorised Request', 'gsteam'), 401);
+		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
+			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
 		}
 
 		global $wpdb;
@@ -65,18 +65,18 @@ class Sortable {
 	}
 
 	/**
-	 * Update Team Filters Order
+	 * Update Coach Filters Order
 	 */
 	public function update_team_filters_order() {
 
 		if (!$this->is_pro()) wp_send_json_error();
 
-		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gsteam_update_order_gs_')) {
-			wp_send_json_error(__('Unauthorised Request', 'gsteam'), 401);
+		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
+			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
 		}
 
 		$order = explode(',', sanitize_text_field($_POST['order']));
-		update_option('gs_team_filters_order', $order);
+		update_option('gs_coach_filters_order', $order);
 
 		wp_send_json_success();
 	}
@@ -91,7 +91,7 @@ class Sortable {
 		
 		if ( ! isset($wp_query) || ! is_main_query() ) return $orderby;
 
-		if ( is_post_type_archive('gs_team') ) {
+		if ( is_post_type_archive('gs_coach') ) {
 			$orderby = "{$wpdb->posts}.menu_order, {$wpdb->posts}.post_date DESC";
 		}
 
@@ -103,36 +103,39 @@ class Sortable {
 	 */
 	public function sort_scripts($hook) {
 
-		if ( $hook != 'post-new.php' ) return;
+		if ( $hook != 'gs_coach_page_sort_gs_coach' ) return;
+
+		plugin()->scripts->wp_enqueue_style('gs-coach-sort');
+		plugin()->scripts->wp_enqueue_script('gs-coach-sort');
 
 		if ( $this->is_pro() ) {
 
-			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_team' ) {
+			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_coach' ) {
 				$action = 'update_team_members_order';
-			} else if ( $_GET['object_type'] == 'gs_team_filters' ) {
+			} else if ( $_GET['object_type'] == 'gs_coach_filters' ) {
 				$action = 'update_team_filters_order';
 			} else {
 				$action = 'update_taxonomy_order';
 			}
 
 			$data = [
-				'nonce' => wp_create_nonce('_gsteam_update_order_gs_'),
+				'nonce' => wp_create_nonce('_gscoach_update_order_gs_'),
 				'action' => $action
 			];
 
-			wp_localize_script('gs-team-sort', '_gsteam_sort_data', $data);
+			wp_localize_script('gs-coach-sort', '_gscoach_sort_data', $data);
 		}
 
-		// add_fs_script('gs-team-sort');
+		add_fs_script('gs-coach-sort');
 	}
 
 	/**
-	 * Update Team Members Order
+	 * Update Coach Members Order
 	 */
 	public function update_team_members_order() {
 
-		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gsteam_update_order_gs_')) {
-			wp_send_json_error(__('Unauthorised Request', 'gsteam'), 401);
+		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
+			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
 		}
 
 		global $wpdb;
@@ -155,7 +158,7 @@ class Sortable {
 
 		if (empty($args['taxonomy'])) return $clauses;
 
-		if (!$this->is_pro() || !in_array('gs_team_group', $args['taxonomy'])) return $clauses;
+		if (!$this->is_pro() || !in_array('gs_coach_group', $args['taxonomy'])) return $clauses;
 
 		$options = [
 			'adminsort' => '1',
@@ -185,7 +188,7 @@ class Sortable {
 
 		if (empty($args['taxonomy'])) return $orderby;
 
-		if ($this->is_pro() && in_array('gs_team_group', $args['taxonomy'])) {
+		if ($this->is_pro() && in_array('gs_coach_group', $args['taxonomy'])) {
 			if (isset($args['orderby']) && $args['orderby'] == "term_order" && $orderby != "term_order") return "t.term_order";
 		}
 
@@ -219,15 +222,14 @@ class Sortable {
 	 * Check if PRO version is active
 	 */
 	public function is_pro() {
-		return true;
-		// return gtm_fs()->is_paying_or_trial();
+		return gtm_fs()->is_paying_or_trial();
 	}
 
 	/**
 	 * Redirect to the correct page
 	 */
 	public function maybe_redirect() {
-		if ( isset($_GET['post_type']) && $_GET['post_type'] == 'gs_team' && isset($_GET['page']) && $_GET['page'] === 'sort_gs_team' && empty($_GET['object_type']) ) {
+		if ( isset($_GET['post_type']) && $_GET['post_type'] == 'gs_coach' && isset($_GET['page']) && $_GET['page'] === 'sort_gs_coach' && empty($_GET['object_type']) ) {
 			wp_redirect( $this->get_url_with_object_type() );
 			exit;
 		}
@@ -236,14 +238,14 @@ class Sortable {
 	/**
 	 * Add Sortable Menu
 	 */
-	public function gs_team_sortable() {
+	public function gs_coach_sortable() {
 		add_submenu_page(
-			'edit.php?post_type=gs_team',
+			'edit.php?post_type=gs_coach',
 			'Sort Order',
 			'Sort Order',
 			'publish_pages',
-			'sort_gs_team',
-			[$this, 'gs_team_sortable_callback']
+			'sort_gs_coach',
+			[$this, 'gs_coach_sortable_callback']
 		);
 	}
 
@@ -269,36 +271,36 @@ class Sortable {
 	/**
 	 * Get the URL with object type
 	 */
-	public function get_url_with_object_type( $object = 'gs_team' ) {
+	public function get_url_with_object_type( $object = 'gs_coach' ) {
 		return add_query_arg( 'object_type', $object, $this->get_full_url() );
 	}
 
 	/**
 	 * Sortable Callback
 	 */
-	public function gs_team_sortable_callback() {
+	public function gs_coach_sortable_callback() {
 		
-		$object_type = isset($_GET['object_type']) ? $_GET['object_type'] : 'gs_team';
+		$object_type = isset($_GET['object_type']) ? $_GET['object_type'] : 'gs_coach';
 
 		?>
 
 		<div class="gs-plugins--sort-page">
 
 			<div class="gs-plugins--sort-links">
-				<a class="<?php echo $object_type === 'gs_team' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_team') ); ?>">Team Members</a>
-				<a class="<?php echo $object_type === 'gs_team_group' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_team_group') ); ?>">Groups</a>
-				<a class="<?php echo $object_type === 'gs_team_filters' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_team_filters') ); ?>">Team Filters</a>
+				<a class="<?php echo $object_type === 'gs_coach' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach') ); ?>">Coach Members</a>
+				<a class="<?php echo $object_type === 'gs_coach_group' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_group') ); ?>">Groups</a>
+				<a class="<?php echo $object_type === 'gs_coach_filters' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_filters') ); ?>">Coach Filters</a>
 			</div>
 
 			<div class="gs-plugins--sort-content">
 
 				<!-- <h2>Sort Order <img src="<?php // bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h2> -->
 				
-				<?php if ($object_type === 'gs_team') : ?>
+				<?php if ($object_type === 'gs_coach') : ?>
 
 					<?php $this->sort_team_members(); ?>
 
-				<?php elseif ($object_type === 'gs_team_filters') : ?>
+				<?php elseif ($object_type === 'gs_coach_filters') : ?>
 
 					<?php $this->sort_team_filters(); ?>
 
@@ -316,30 +318,30 @@ class Sortable {
 	}
 
 	/**
-	 * Sort Team Members
+	 * Sort Coach Members
 	 */
 	public function sort_team_members() {
 
 
-		$sortable = new \WP_Query('post_type=gs_team&posts_per_page=-1&orderby=menu_order&order=ASC');
+		$sortable = new \WP_Query('post_type=gs_coach&posts_per_page=-1&orderby=menu_order&order=ASC');
 
 		if (!$this->is_pro()) : ?>
 
-			<div class="gs-team-disable--term-pages">
-				<div class="gs-team-disable--term-inner">
-					<div class="gs-team-disable--term-message"><a href="https://www.gsplugins.com/product/gs-team-members/#pricing">Upgrade to PRO</a></div>
+			<div class="gs-coach-disable--term-pages">
+				<div class="gs-coach-disable--term-inner">
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
 		<?php endif; ?>
 
-		<div class="gs-team--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
+		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
 
 			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
 
-				<div class="gsteam-sort--left-area" style="flex: 1 0 auto; width: 670px;">
+				<div class="gscoach-sort--left-area" style="flex: 1 0 auto; width: 670px;">
 
-					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrange Members', 'gsteam'); ?><img src="<?php // bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
+					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrange Members', 'gscoach'); ?><img src="<?php // bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
 
 					<?php if ($sortable->have_posts()) : ?>
 
@@ -347,7 +349,7 @@ class Sortable {
 							<?php while ($sortable->have_posts()) :
 
 								$sortable->the_post();
-								$term_obj_list = get_the_terms(get_the_ID(), 'gs_team_group');
+								$term_obj_list = get_the_terms(get_the_ID(), 'gs_coach_group');
 								$terms_string = '';
 
 								if (is_array($term_obj_list) || is_object($term_obj_list)) {
@@ -371,30 +373,30 @@ class Sortable {
 					<?php else : ?>
 
 						<div class="notice notice-warning" style="margin-top: 30px;">
-							<h3><?php _e('No Team Member Found!', 'gsteam'); ?></h3>
-							<p style="font-size: 14px;"><?php _e('We didn\'t find any team member.</br>Please add some team members to sort them.', 'gsteam'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_team'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add Member', 'gsteam'); ?></a>
+							<h3><?php _e('No Coach Member Found!', 'gscoach'); ?></h3>
+							<p style="font-size: 14px;"><?php _e('We didn\'t find any team member.</br>Please add some team members to sort them.', 'gscoach'); ?></p>
+							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add Member', 'gscoach'); ?></a>
 						</div>
 
 					<?php endif; ?>
 
 				</div>
 
-				<div class="gsteam-sort--right-area">
+				<div class="gscoach-sort--right-area">
 					
-					<h3><?php esc_html_e('Step 2: Query Settings for Members', 'gsteam'); ?></h3>
+					<h3><?php esc_html_e('Step 2: Query Settings for Members', 'gscoach'); ?></h3>
 
 					<div style="background: #fff; border-radius: 6px; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12); font-size: 1.3em; line-height: 1.6; margin-top: 30px">
 						
 						<ol style="list-style: numeric; padding-left: 20px; margin: 0">
-							<li>Create or Edit a Shortcode From <strong>GS Team > Team Shortcode</strong>.</li>
+							<li>Create or Edit a Shortcode From <strong>GS Coach > Coach Shortcode</strong>.</li>
 							<li>Then proceed to the 3rd tab labeled <strong>Query Settings</strong>.</li>
 							<li>Set <strong>Order by</strong> to <strong>Custom Order</strong>.</li>
 							<li>Set <strong>Order</strong> to <strong>ASC</strong>.</li>
 						</ol>
 	
 						<ul style="list-style: circle; padding-left: 20px; margin-top: 20px">
-							<li>Follow <a href="https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/sort-order/" target="_blank">Documentation</a> to learn more.</li>
+							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-members/manage-gs-coach-member/sort-order/" target="_blank">Documentation</a> to learn more.</li>
 							<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
 						</ul>
 
@@ -411,7 +413,7 @@ class Sortable {
 	}
 
 	/**
-	 * Get Team Filters Strings
+	 * Get Coach Filters Strings
 	 */
 	public static function get_team_filters_strings() {
 		$translations = plugin()->builder->get_translation_srtings();
@@ -419,56 +421,56 @@ class Sortable {
 			'search_by_name' => $translations['instant-search-by-name'],
 			'search_by_company' => $translations['gs-member-srch-by-company'],
 			'search_by_zip' => $translations['gs-member-srch-by-zip'],
-			'gs_team_tag' => $translations['gs-member-srch-by-tag'],
+			'gs_coach_tag' => $translations['gs-member-srch-by-tag'],
 			'filter_by_designation' => $translations['filter-by-designation'],
-			'gs_team_language' => $translations['filter-by-language'],
-			'gs_team_location' => $translations['filter-by-location'],
-			'gs_team_gender' => $translations['filter-by-gender'],
-			'gs_team_specialty' => $translations['filter-by-speciality'],
-			'gs_team_extra_one' => $translations['filter-by-extra-one'],
-			'gs_team_extra_two' => $translations['filter-by-extra-two'],
-			'gs_team_extra_three' => $translations['filter-by-extra-three'],
-			'gs_team_extra_four' => $translations['filter-by-extra-four'],
-			'gs_team_extra_five' => $translations['filter-by-extra-five']
+			'gs_coach_language' => $translations['filter-by-language'],
+			'gs_coach_location' => $translations['filter-by-location'],
+			'gs_coach_gender' => $translations['filter-by-gender'],
+			'gs_coach_specialty' => $translations['filter-by-speciality'],
+			'gs_coach_extra_one' => $translations['filter-by-extra-one'],
+			'gs_coach_extra_two' => $translations['filter-by-extra-two'],
+			'gs_coach_extra_three' => $translations['filter-by-extra-three'],
+			'gs_coach_extra_four' => $translations['filter-by-extra-four'],
+			'gs_coach_extra_five' => $translations['filter-by-extra-five']
 		];
 		return $team_filters;
 	}
 
 	/**
-	 * Get Team Filters
+	 * Get Coach Filters
 	 */
 	public static function get_team_filters() {
 		$defaults = [
 			'search_by_name',
 			'search_by_company',
 			'search_by_zip',
-			'gs_team_tag',
+			'gs_coach_tag',
 			'filter_by_designation',
-			'gs_team_language',
-			'gs_team_location',
-			'gs_team_gender',
-			'gs_team_specialty',
-			'gs_team_extra_one',
-			'gs_team_extra_two',
-			'gs_team_extra_three',
-			'gs_team_extra_four',
-			'gs_team_extra_five',
+			'gs_coach_language',
+			'gs_coach_location',
+			'gs_coach_gender',
+			'gs_coach_specialty',
+			'gs_coach_extra_one',
+			'gs_coach_extra_two',
+			'gs_coach_extra_three',
+			'gs_coach_extra_four',
+			'gs_coach_extra_five',
 		];
-		$saved = get_option( 'gs_team_filters_order', $defaults );
+		$saved = get_option( 'gs_coach_filters_order', $defaults );
 		$filter_strings = self::get_team_filters_strings();
 		return array_merge(array_flip($saved), $filter_strings);
 	}
 
 	/**
-	 * Sort Team Filters
+	 * Sort Coach Filters
 	 */
 	public function sort_team_filters() {
 
 		if (!$this->is_pro()) : ?>
 
-			<div class="gs-team-disable--term-pages">
-				<div class="gs-team-disable--term-inner">
-					<div class="gs-team-disable--term-message"><a href="https://www.gsplugins.com/product/gs-team-members/#pricing">Upgrade to PRO</a></div>
+			<div class="gs-coach-disable--term-pages">
+				<div class="gs-coach-disable--term-inner">
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
@@ -478,13 +480,13 @@ class Sortable {
 
 		?>
 
-		<div class="gs-team--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
+		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
 
 			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
 
-				<div class="gsteam-sort--left-area" style="flex: 1 0 auto; width: 570px;">
+				<div class="gscoach-sort--left-area" style="flex: 1 0 auto; width: 570px;">
 
-					<h3><?php esc_html_e('Filter Orders', 'gsteam'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
+					<h3><?php esc_html_e('Filter Orders', 'gscoach'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
 
 					<?php if (!empty($filters)) : ?>
 
@@ -511,31 +513,31 @@ class Sortable {
 	}
 
 	/**
-	 * Sort Team Taxonomies
+	 * Sort Coach Taxonomies
 	 */
 	public function sort_team_taxonomies() {
 
 		if (!$this->is_pro()) : ?>
 
-			<div class="gs-team-disable--term-pages">
-				<div class="gs-team-disable--term-inner">
-					<div class="gs-team-disable--term-message"><a href="https://www.gsplugins.com/product/gs-team-members/#pricing">Upgrade to PRO</a></div>
+			<div class="gs-coach-disable--term-pages">
+				<div class="gs-coach-disable--term-inner">
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
 		<?php endif; ?>
 
-		<div class="gs-team--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
+		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
 
 			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
 
-				<div class="gsteam-sort--left-area" style="flex: 1 0 auto; width: 570px;">
+				<div class="gscoach-sort--left-area" style="flex: 1 0 auto; width: 570px;">
 
-					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrange Groups', 'gsteam'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
+					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrange Groups', 'gscoach'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
 
 					<?php
 
-					$terms = get_terms('gs_team_group');
+					$terms = get_terms('gs_coach_group');
 
 					if (!empty($terms)) : ?>
 
@@ -554,30 +556,30 @@ class Sortable {
 					<?php else : ?>
 
 						<div class="notice notice-warning" style="margin-top: 30px;">
-							<h3><?php _e('No Team Member Found!', 'gsteam'); ?></h3>
-							<p style="font-size: 14px;"><?php _e('We didn\'t find any team member.</br>Please add some team members to sort them.', 'gsteam'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_team'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add Member', 'gsteam'); ?></a>
+							<h3><?php _e('No Coach Member Found!', 'gscoach'); ?></h3>
+							<p style="font-size: 14px;"><?php _e('We didn\'t find any team member.</br>Please add some team members to sort them.', 'gscoach'); ?></p>
+							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add Member', 'gscoach'); ?></a>
 						</div>
 
 					<?php endif; ?>
 
 				</div>
 
-				<div class="gsteam-sort--right-area">
+				<div class="gscoach-sort--right-area">
 					
-					<h3><?php esc_html_e('Step 2: Query Settings for Groups', 'gsteam'); ?></h3>
+					<h3><?php esc_html_e('Step 2: Query Settings for Groups', 'gscoach'); ?></h3>
 
 					<div style="background: #fff; border-radius: 6px; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12); font-size: 1.3em; line-height: 1.6; margin-top: 30px">
 						
 						<ol style="list-style: numeric; padding-left: 20px; margin: 0">
-							<li>Create or Edit a Shortcode From <strong>GS Team > Team Shortcode</strong>.</li>
+							<li>Create or Edit a Shortcode From <strong>GS Coach > Coach Shortcode</strong>.</li>
 							<li>Then proceed to the 3rd tab labeled <strong>Query Settings</strong>.</li>
 							<li>Set <strong>Group Order by</strong> to <strong>Custom Order</strong>.</li>
 							<li>Set <strong>Group Order</strong> to <strong>ASC</strong>.</li>
 						</ol>
 	
 						<ul style="list-style: circle; padding-left: 20px; margin-top: 20px">
-							<li>Follow <a href="https://docs.gsplugins.com/gs-team-members/manage-gs-team-member/sort-order/#reordering-groups-categories" target="_blank">Documentation</a> to learn more.</li>
+							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-members/manage-gs-coach-member/sort-order/#reordering-groups-categories" target="_blank">Documentation</a> to learn more.</li>
 							<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
 						</ul>
 

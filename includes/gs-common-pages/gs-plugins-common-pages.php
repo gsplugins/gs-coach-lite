@@ -43,7 +43,7 @@ if ( ! class_exists( 'GS_Plugins_Common_Pages' ) ) {
         public function admin_menu() {
 			
 			// Help Page
-			// add_submenu_page( $this->data['parent_slug'], $this->data['help_page_title'],  __('Help & Usage'), 'publish_pages', $this->data['help_page_slug'], array( $this, 'display_help_page' ) );
+			add_submenu_page( $this->data['parent_slug'], $this->data['help_page_title'],  __('Help & Usage'), 'publish_pages', $this->data['help_page_slug'], array( $this, 'display_help_page' ) );
 
         }
 		
@@ -99,11 +99,11 @@ if ( ! class_exists( 'GS_Plugins_Common_Pages' ) ) {
 	
 			if ( $r['number'] ) {
 				/* translators: 1: The rating, 2: The number of ratings */
-				$format = _n( '%1$s rating based on %2$s rating', '%1$s rating based on %2$s ratings', $r['number'], 'gsteam' );
+				$format = _n( '%1$s rating based on %2$s rating', '%1$s rating based on %2$s ratings', $r['number'], 'gscoach' );
 				$title = sprintf( $format, number_format_i18n( $rating, 1 ), number_format_i18n( $r['number'] ) );
 			} else {
 				/* translators: 1: The rating */
-				$title = sprintf( __( '%s rating', 'gsteam' ), number_format_i18n( $rating, 1 ) );
+				$title = sprintf( __( '%s rating', 'gscoach' ), number_format_i18n( $rating, 1 ) );
 			}
 	
 			echo '<div class="star-rating" title="' . esc_attr( $title ) . '">';
@@ -136,18 +136,18 @@ if ( ! class_exists( 'GS_Plugins_Common_Pages' ) ) {
 					case "install":
 						if ( $status["url"] ) {
 							/* translators: 1: Plugin name and version. */
-							$action_links[] = '<a class="install-now button" href="' . esc_url($status['url']) . '" aria-label="' . esc_attr( sprintf("Install %s now", $name ) ) . '">' . __( 'Install Now', 'gsteam' ) . '</a>';
+							$action_links[] = '<a class="install-now button" href="' . esc_url($status['url']) . '" aria-label="' . esc_attr( sprintf("Install %s now", $name ) ) . '">' . __( 'Install Now', 'gscoach' ) . '</a>';
 						}
 					break;
 					case "update_available":
 						if ($status["url"]) {
 							/* translators: 1: Plugin name and version */
-							$action_links[] = '<a class="button" href="' . esc_url($status['url']) . '" aria-label="' . esc_attr( sprintf( "Update %s now", $name ) ) . '">' . __( 'Update Now', 'gsteam' ) . '</a>';
+							$action_links[] = '<a class="button" href="' . esc_url($status['url']) . '" aria-label="' . esc_attr( sprintf( "Update %s now", $name ) ) . '">' . __( 'Update Now', 'gscoach' ) . '</a>';
 						}
 					break;
 					case "latest_installed":
 					case "newer_installed":
-						$action_links[] = '<span class="button button-disabled" title="' . esc_attr__( "This plugin is already installed and is up to date" ) . ' ">' . _x( 'Installed', 'plugin', 'gsteam' ) . '</span>';
+						$action_links[] = '<span class="button button-disabled" title="' . esc_attr__( "This plugin is already installed and is up to date" ) . ' ">' . _x( 'Installed', 'plugin', 'gscoach' ) . '</span>';
 					break;
 				}
 			}
