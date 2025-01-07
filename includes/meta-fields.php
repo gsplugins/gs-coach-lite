@@ -50,19 +50,21 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_des         = get_post_meta($post->ID, '_gs_des', true);
-		$gs_com         = get_post_meta($post->ID, '_gs_com', true);
-		$gs_com_website = get_post_meta($post->ID, '_gs_com_website', true);
-		$gs_land        = get_post_meta($post->ID, '_gs_land', true);
-		$gs_cell        = get_post_meta($post->ID, '_gs_cell', true);
-		$gs_email       = get_post_meta($post->ID, '_gs_email', true);
-		$gs_cc       	= get_post_meta($post->ID, '_gs_cc', true);
-		$gs_bcc       	= get_post_meta($post->ID, '_gs_bcc', true);
-		$gs_address     = get_post_meta($post->ID, '_gs_address', true);
-		$gs_ribon       = get_post_meta($post->ID, '_gs_ribon', true);
-		$gs_zip_code    = get_post_meta($post->ID, '_gs_zip_code', true);
-		$gs_vcard       = get_post_meta($post->ID, '_gs_vcard', true);
-		$gs_custom_page = get_post_meta($post->ID, '_gs_custom_page', true);
+		$gs_prof        = get_post_meta($post->ID, '_gscoach_profession', true);
+
+		$gs_coach_experience       = get_post_meta($post->ID, '_gscoach_experience', true);
+		$gs_coach_education        = get_post_meta($post->ID, '_gscoach_education', true);
+		$gs_coach_skills           = get_post_meta($post->ID, '_gscoach_skills', true);
+		$gs_coach_address          = get_post_meta($post->ID, '_gscoach_address', true);
+		$gs_coach_state            = get_post_meta($post->ID, '_gscoach_state', true);
+		$gs_coach_country          = get_post_meta($post->ID, '_gscoach_country', true);
+		$gs_coach_contact_number   = get_post_meta($post->ID, '_gscoach_contact', true);
+		$gs_coach_schedule         = get_post_meta($post->ID, '_gscoach_shedule', true);
+		$gs_coach_available        = get_post_meta($post->ID, '_gscoach_available', true);
+		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
+		$gs_coach_review           = get_post_meta($post->ID, '_gscoach_review', true);
+		$gs_coach_rating 		   = get_post_meta( $post->ID, '_gscoach_rating', true );
+		$gs_coach_rating		   = $gs_coach_rating ? $gs_coach_rating : 2;
 
 		?>
 
@@ -71,76 +73,79 @@ class Meta_Fields {
 			<div style="height: 20px;"></div>
 
 			<div class="form-group">
-				<label for="gsDes"><?php _e('Designation', 'gscoach'); ?></label>
-				<input type="text" id="gsDes" class="form-control" name="gs_des" value="<?php echo isset($gs_des) ? esc_attr($gs_des) : ''; ?>">
+				<label for="gsProf"><?php _e('Profession', 'gscoach'); ?></label>
+				<input type="text" id="gsProf" class="form-control" name="gs_prof" value="<?php echo isset($gs_prof) ? esc_attr($gs_prof) : ''; ?>">
 			</div>
 
 			<div class="gs-coach-pro-field">
 
-				<div class="form-group">
-					<label for="gsCom"><?php _e('Company', 'gscoach'); ?></label>
-					<input type="text" id="gsCom" class="form-control" name="gs_com" value="<?php echo isset($gs_com) ? esc_attr($gs_com) : ''; ?>">
+			<div class="form-group">
+					<label for="gsCoachExperience"><?php _e('Experience', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachExperience" class="form-control" name="gs_coach_experience" placeholder="Experience" value="<?php echo isset($gs_coach_experience) ? esc_attr($gs_coach_experience) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsComWebsite"><?php _e('Company Website', 'gscoach'); ?></label>
-					<input type="text" id="gsComWebsite" class="form-control" name="gs_com_website" value="<?php echo isset($gs_com_website) ? esc_attr($gs_com_website) : ''; ?>">
+					<label for="gsCoachEducation"><?php _e('Education', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachEducation" class="form-control" name="gs_coach_education" placeholder="Education" value="<?php echo isset($gs_coach_education) ? esc_attr($gs_coach_education) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsLand"><?php _e('Land Phone', 'gscoach'); ?></label>
-					<input type="text" id="gsLand" class="form-control" name="gs_land" value="<?php echo isset($gs_land) ? esc_attr($gs_land) : ''; ?>">
+					<label for="gsCoachSkills"><?php _e('Skills', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachSkills" class="form-control" name="gs_coach_skills" placeholder="Skills" value="<?php echo isset($gs_coach_skills) ? esc_attr($gs_coach_skills) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCell"><?php _e('Cell Phone', 'gscoach'); ?></label>
-					<input type="text" id="gsCell" class="form-control" name="gs_cell" value="<?php echo isset($gs_cell) ? esc_attr($gs_cell) : ''; ?>">
+					<label for="gsCoachAddress"><?php _e('Address', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachAddress" class="form-control" name="gs_coach_address" placeholder="Address" value="<?php echo isset($gs_coach_address) ? esc_attr($gs_coach_address) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsEm"><?php _e('Email', 'gscoach'); ?></label>
-					<input type="text" id="gsEm" class="form-control" name="gs_email" value="<?php echo isset($gs_email) ? esc_attr($gs_email) : ''; ?>">
+					<label for="gsCoachState"><?php _e('State/City', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachState" class="form-control" name="gs_coach_state" placeholder="State/City" value="<?php echo isset($gs_coach_state) ? esc_attr($gs_coach_state) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsEmCC"><?php _e('CC', 'gscoach'); ?></label>
-					<input type="text" id="gsEmCC" class="form-control" name="gs_cc" placeholder="<?php esc_attr_e( 'Enter CC emails, separated by commas' ); ?>" value="<?php echo isset($gs_cc) ? esc_attr($gs_cc) : ''; ?>">
+					<label for="gsCoachCountry"><?php _e('Country', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachCountry" class="form-control" name="gs_coach_country" placeholder="Country" value="<?php echo isset($gs_coach_country) ? esc_attr($gs_coach_country) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsEmBCC"><?php _e('BCC', 'gscoach'); ?></label>
-					<input type="text" id="gsEmBCC" class="form-control" name="gs_bcc" placeholder="<?php esc_attr_e( 'Enter BCC emails, separated by commas' ); ?>" value="<?php echo isset($gs_bcc) ? esc_attr($gs_bcc) : ''; ?>">
+					<label for="gsCoachContactNumber"><?php _e('Contact Number', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachContactNumber" class="form-control" name="gs_coach_contact_number" placeholder="Contact Number" value="<?php echo isset($gs_coach_contact_number) ? esc_attr($gs_coach_contact_number) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsAdd"><?php _e('Address', 'gscoach'); ?></label>
-					<input type="text" id="gsAdd" class="form-control" name="gs_address" value="<?php echo isset($gs_address) ? esc_attr($gs_address) : ''; ?>">
+					<label for="gsCoachSchedule"><?php _e('Schedule Time', 'gscoach'); ?></label>
+					<input type="time" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsribon"><?php _e('Ribbon', 'gscoach'); ?></label>
-					<input type="text" id="gsribon" class="form-control" name="gs_ribon" value="<?php echo isset($gs_ribon) ? esc_attr($gs_ribon) : ''; ?>">
+					<label for="gsCoachAvailable"><?php _e('Availablity', 'gscoach'); ?></label>
+					<input type="date" id="gsCoachAvailable" class="form-control" name="gs_coach_available" placeholder="Available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gs_zip_code"><?php _e('Zip Code', 'gscoach'); ?></label>
-					<input type="text" id="gs_zip_code" class="form-control" name="gs_zip_code" value="<?php echo isset($gs_zip_code) ? esc_attr($gs_zip_code) : ''; ?>">
+					<label for="gsCoachFee"><?php _e('Fee', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachFee" class="form-control" name="gs_coach_fee" placeholder="Fee" value="<?php echo isset($gs_coach_fee) ? esc_attr($gs_coach_fee) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsvcard"><?php _e('vCard', 'gscoach'); ?></label>
-					<input type="url" id="gsvcard" class="form-control" name="gs_vcard" placeholder="<?php _e('Add any external or internal link', 'gscoach'); ?>" value="<?php echo isset($gs_vcard) ? esc_url($gs_vcard) : ''; ?>">
+					<label for="gsCoachReview"><?php _e('Review', 'gscoach'); ?></label>
+					<input type="text" id="gsCoachReview" class="form-control" name="gs_coach_review" placeholder="Review" value="<?php echo isset($gs_coach_review) ? esc_attr($gs_coach_review) : ''; ?>">
 				</div>
 
-				<div class="form-group">
-					<label for="gs_custom_page"><?php _e('Custom Page Link', 'gscoach'); ?></label>
-					<input type="url" id="gs_custom_page" class="form-control" name="gs_custom_page" placeholder="<?php _e('Add any external or internal link', 'gscoach'); ?>" value="<?php echo isset($gs_custom_page) ? esc_url($gs_custom_page) : ''; ?>">
+				<div>
+					<p><label for="gsCoachRating"><b><?php _e('Rating:', 'gscoach'); ?></b></label></p>
+					<p>
+						<input name="gs_coach_rating" type="range" value="<?php echo esc_attr($gs_coach_rating); ?>" step="0.25" id="gsCoachRating" style="display:none" />
+						<div class="rateit bigstars" data-rateit-starwidth="32" data-rateit-starheight="32" data-rateit-backingfld="#gsCoachRating" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
+					</p>
 				</div>
 
-				<?php
-				$meta_key = 'second_featured_img';
-				echo $this->gs_image_uploader_field($meta_key, get_post_meta($post->ID, $meta_key, true));
-				?>
+				<!-- <?php
+				// $meta_key = 'second_featured_img';
+				// echo $this->gs_image_uploader_field($meta_key, get_post_meta($post->ID, $meta_key, true));
+				?> -->
 
 			</div>
 
@@ -397,31 +402,31 @@ class Meta_Fields {
 		/* OK, it's safe for us to save the data now. */
 
 		// Make sure that it is set.
-		if (!isset($_POST['gs_des'])) {
+		if (!isset($_POST['gs_prof'])) {
 			return;
 		}
 
 		// Sanitize user input.
-		$gs_des_data = sanitize_text_field($_POST['gs_des']);
-		update_post_meta($post_id, '_gs_des', $gs_des_data);
+		$gs_prof_data = sanitize_text_field($_POST['gs_prof']);
+		update_post_meta($post_id, '_gscoach_profession', $gs_prof_data);
 
 		if (gtm_fs()->is_paying_or_trial()) {
 
-			update_post_meta($post_id, '_gs_com', sanitize_text_field($_POST['gs_com']));
-			update_post_meta($post_id, '_gs_com_website', esc_url_raw($_POST['gs_com_website']));
-			update_post_meta($post_id, '_gs_land', sanitize_text_field($_POST['gs_land']));
-			update_post_meta($post_id, '_gs_cell', sanitize_text_field($_POST['gs_cell']));
-			update_post_meta($post_id, '_gs_email', sanitize_text_field($_POST['gs_email']));
-			update_post_meta($post_id, '_gs_cc', sanitize_text_field($_POST['gs_cc']));
-			update_post_meta($post_id, '_gs_bcc', sanitize_text_field($_POST['gs_bcc']));
-			update_post_meta($post_id, '_gs_address', sanitize_text_field($_POST['gs_address']));
-			update_post_meta($post_id, '_gs_ribon', sanitize_text_field($_POST['gs_ribon']));
-			update_post_meta($post_id, '_gs_zip_code', sanitize_text_field($_POST['gs_zip_code']));
-			update_post_meta($post_id, '_gs_vcard', esc_url_raw($_POST['gs_vcard'], array('http', 'https', 'ftp', 'ftps')));
-			update_post_meta($post_id, '_gs_custom_page', esc_url_raw($_POST['gs_custom_page'], array('http', 'https')));
+			update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
+			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));
+			update_post_meta($post_id, '_gscoach_skills', sanitize_text_field($_POST['gs_coach_skills']));
+			update_post_meta($post_id, '_gscoach_address', sanitize_text_field($_POST['gs_coach_address']));
+			update_post_meta($post_id, '_gscoach_state', sanitize_text_field($_POST['gs_coach_state']));
+			update_post_meta($post_id, '_gs_coach_country', sanitize_text_field($_POST['gs_coach_country']));
+			update_post_meta($post_id, '_gscoach_contact', sanitize_text_field($_POST['gs_coach_contact_number']));
+			update_post_meta($post_id, '_gscoach_shedule', sanitize_text_field($_POST['gs_coach_schedule']));
+			update_post_meta($post_id, '_gscoach_available', sanitize_text_field($_POST['gs_coach_available']));
+			update_post_meta($post_id, '_gscoach_fee', sanitize_text_field($_POST['gs_coach_fee']));
+			update_post_meta($post_id, '_gscoach_review', sanitize_text_field($_POST['gs_coach_review']));
+			update_post_meta($post_id, '_gscoach_rating', sanitize_text_field($_POST['gs_coach_rating']));
 
-			$meta_key = 'second_featured_img';
-			update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$meta_key]));
+			// $meta_key = 'second_featured_img';
+			// update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$meta_key]));
 		}
 	}
 }

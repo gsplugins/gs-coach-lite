@@ -60,6 +60,7 @@ final class Scripts {
 		$this->add_style('gs-magnific-popup', GSCOACH_PLUGIN_URI . '/assets/libs/magnific-popup/magnific-popup.min.css', [], GSCOACH_VERSION, 'all');
 		$this->add_style('gs-owl-carousel', GSCOACH_PLUGIN_URI . '/assets/libs/owl-carousel/owl-carousel.min.css', [], GSCOACH_VERSION, 'all');
 		$this->add_style('gs-coach-public', GSCOACH_PLUGIN_URI . '/assets/css/gs-coach.min.css', ['gs-bootstrap-grid'], GSCOACH_VERSION, 'all');
+		$this->add_style('gs-rate-it', GSCOACH_PLUGIN_URI . '/assets/rateit-js/rateit.css', [], GSCOACH_VERSION, 'all');
 
 		// Scripts
 		$this->add_script('gs-select2', GSCOACH_PLUGIN_URI . '/assets/libs/select2/select2.min.js', ['jquery'], GSCOACH_VERSION, true);
@@ -75,6 +76,7 @@ final class Scripts {
 		$this->add_script('gs-magnific-popup', GSCOACH_PLUGIN_URI . '/assets/libs/magnific-popup/magnific-popup.min.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-owl-carousel', GSCOACH_PLUGIN_URI . '/assets/libs/owl-carousel/owl-carousel.min.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-coach-public', GSCOACH_PLUGIN_URI . '/assets/js/gs-coach.min.js', ['jquery'], GSCOACH_VERSION, true);
+		$this->add_script('gs-rate-it', GSCOACH_PLUGIN_URI . '/assets/rateit-js/jquery.rateit.min.js', ['jquery'], GSCOACH_VERSION, true);
 
 		// For Divi fix
 		$this->add_style('gs-coach-divi-public', GSCOACH_PLUGIN_URI . '/assets/css/public-divi.min.css', ['gs-coach-public'], GSCOACH_VERSION, 'all');
@@ -250,7 +252,8 @@ final class Scripts {
 		return (array) apply_filters('gs_coach_get_admin_style_all', [
 			'gs-select2',
 			'gs-font-awesome-5',
-			'gs-coach-admin'
+			'gs-coach-admin',
+			'gs-rate-it'
 		]);
 	}
 
@@ -263,7 +266,8 @@ final class Scripts {
 	public function _get_admin_script_all() {
 		return (array) apply_filters('gs_coach_get_admin_script_all', [
 			'gs-select2',
-			'gs-coach-admin'
+			'gs-coach-admin',
+			'gs-rate-it'
 		]);
 	}
 

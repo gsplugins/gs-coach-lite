@@ -287,7 +287,7 @@ class Sortable {
 		<div class="gs-plugins--sort-page">
 
 			<div class="gs-plugins--sort-links">
-				<a class="<?php echo $object_type === 'gs_coach' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach') ); ?>">Coach Members</a>
+				<a class="<?php echo $object_type === 'gs_coach' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach') ); ?>">Coaches</a>
 				<a class="<?php echo $object_type === 'gs_coach_group' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_group') ); ?>">Groups</a>
 				<a class="<?php echo $object_type === 'gs_coach_filters' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_filters') ); ?>">Coach Filters</a>
 			</div>
