@@ -20,8 +20,8 @@
 						<p>Following data will get imported:</p>
 
 						<ul class="ul-list">
-							<li>6 Coach Members</li>
-							<li>12 Attachments for Coach Members</li>
+							<li>6 Coaches</li>
+							<li>12 Attachments for Coaches</li>
 							<li>Texonomies: Group, Language, Location, Gender, Specialty</li>
 							<li>27 Premade Shortcodes will be created</li>
 						</ul>
@@ -53,12 +53,12 @@
 
 					<div class="demo-data--import-section m-b-30">
 
-						<h3>Import Coach Members</h3>
+						<h3>Import Coaches</h3>
 						<p>Following data will get imported:</p>
 
 						<ul class="ul-list">
-							<li>6 Coach Members</li>
-							<li>12 Attachments for Coach Members</li>
+							<li>6 Coaches</li>
+							<li>12 Attachments for Coaches</li>
 							<li>Texonomies: Group, Language, Location, Gender, Specialty</li>
 						</ul>
 
