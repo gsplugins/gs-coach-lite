@@ -130,7 +130,7 @@ class Sortable {
 	}
 
 	/**
-	 * Update Coach Members Order
+	 * Update Coaches Order
 	 */
 	public function update_team_members_order() {
 
@@ -222,7 +222,7 @@ class Sortable {
 	 * Check if PRO version is active
 	 */
 	public function is_pro() {
-		return gtm_fs()->is_paying_or_trial();
+		return is_pro_valid();
 	}
 
 	/**
@@ -318,7 +318,7 @@ class Sortable {
 	}
 
 	/**
-	 * Sort Coach Members
+	 * Sort Coaches
 	 */
 	public function sort_team_members() {
 
@@ -341,7 +341,7 @@ class Sortable {
 
 				<div class="gscoach-sort--left-area" style="flex: 1 0 auto; width: 670px;">
 
-					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrange Members', 'gscoach'); ?><img src="<?php // bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
+					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrangees', 'gscoach'); ?><img src="<?php // bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
 
 					<?php if ($sortable->have_posts()) : ?>
 
@@ -384,7 +384,7 @@ class Sortable {
 
 				<div class="gscoach-sort--right-area">
 					
-					<h3><?php esc_html_e('Step 2: Query Settings for Members', 'gscoach'); ?></h3>
+					<h3><?php esc_html_e('Step 2: Query Settings fores', 'gscoach'); ?></h3>
 
 					<div style="background: #fff; border-radius: 6px; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12); font-size: 1.3em; line-height: 1.6; margin-top: 30px">
 						

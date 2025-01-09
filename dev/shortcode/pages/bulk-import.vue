@@ -62,7 +62,7 @@
 				<form class="bulk-import--form" enctype='multipart/form-data' @submit.prevent v-else>
 					
 					<h2 class="m-b-15">Choose the CSV file</h2>
-					<p class="m-b-20">Choose the CSV file of your Coach Members you want to import.</p>
+					<p class="m-b-20">Choose the CSV file of your Coaches you want to import.</p>
 
 					<div class="import-upload--wrapper">
 						<label for="import_file" class="import-upload btn btn-brand btn-sm"><i class="zmdi zmdi-cloud-upload"></i> Upload CSV File</label>

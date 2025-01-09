@@ -13,7 +13,7 @@ class Shortcode {
 		add_filter( 'post_thumbnail_html', [ $this, 'gscoach_post_thumbnail_html' ], 999999 );
 		add_shortcode( 'gscoach', [ $this, 'shortcode' ] );		
 
-		if ( gtm_fs()->is_paying_or_trial() ) {
+		if ( is_pro_valid() ) {
 			add_shortcode( 'gs_coach_sidebar', [ $this, 'sidebar_shortcode' ] );		
 		}
 	}
@@ -133,7 +133,7 @@ class Shortcode {
 				if ( $default_link_type == 'none' ) $gs_member_name_is_linked = 'off';
 			}
 	
-			if ( ! gtm_fs()->is_paying_or_trial() ) {
+			if ( ! is_pro_valid() ) {
 				if ( $gs_member_link_type == 'popup' ) $popup_style = 'default';
 				if ( in_array($gs_member_link_type, ['panel', 'drawer', 'custom']) ) $gs_member_link_type = 'default';
 			}
@@ -152,7 +152,7 @@ class Shortcode {
 	
 		if ( empty($fitler_all_text) ) $fitler_all_text = 'All';
 	
-		if ( ! gtm_fs()->is_paying_or_trial() && $gs_member_link_type == 'popup' ) $popup_style = 'default';
+		if ( ! is_pro_valid() && $gs_member_link_type == 'popup' ) $popup_style = 'default';
 	
 		$args = [
 			'order'          => sanitize_text_field( $order ),
@@ -253,7 +253,7 @@ class Shortcode {
 	
 		$GLOBALS['gs_coach_loop'] = get_query( $args );
 	
-		if ( ! gtm_fs()->is_paying_or_trial() ) {
+		if ( ! is_pro_valid() ) {
 			
 			$free_themes = wp_list_pluck( Builder::get_free_themes() , 'value' );
 			$initial_theme = $gs_coach_theme;
@@ -310,7 +310,7 @@ class Shortcode {
 
 		$img_effect_class = '';
 
-		if ( gtm_fs()->is_paying_or_trial() ) {
+		if ( is_pro_valid() ) {
 			$img_effect_class = "gs-coach--img-efect_$image_filter gs-coach--img-hover-efect_$hover_image_filter";
 		}
 	
@@ -322,7 +322,7 @@ class Shortcode {
 	
 			do_action( 'gs_coach_template_before__loaded', $gs_coach_theme );
 	
-			if ( ! gtm_fs()->is_paying_or_trial() ) {
+			if ( ! is_pro_valid() ) {
 				require_once GSCOACH_PLUGIN_DIR . 'includes/restrict-template.php';
 			}
 	
@@ -423,7 +423,7 @@ class Shortcode {
 			}
 
 	
-			if ( gtm_fs()->is_paying_or_trial() ) {
+			if ( is_pro_valid() ) {
 
 				if ( $gs_coach_theme == 'gs-grid-style-one') {
 						

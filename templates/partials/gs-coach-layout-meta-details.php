@@ -36,16 +36,16 @@ $land               = get_post_meta( get_the_id(), '_gs_land', true );
 $cell               = get_post_meta( get_the_id(), '_gs_cell', true );
 $company            = get_post_meta( get_the_id(), '_gs_com', true );
 $company_website    = get_post_meta( get_the_id(), '_gs_com_website', true );
-$gs_zip_code        = gtm_fs()->is_paying_or_trial() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';
-$location           = gtm_fs()->is_paying_or_trial() ? gs_coach_member_location() : '';
-$language           = gtm_fs()->is_paying_or_trial() ? gs_coach_member_language() : '';
-$specialty          = gtm_fs()->is_paying_or_trial() ? gs_coach_member_specialty() : '';
-$gender             = gtm_fs()->is_paying_or_trial() ? gs_coach_member_gender() : '';
-$extra_one          = gtm_fs()->is_paying_or_trial() ? gs_coach_member_extra_one() : '';
-$extra_two          = gtm_fs()->is_paying_or_trial() ? gs_coach_member_extra_two() : '';
-$extra_three        = gtm_fs()->is_paying_or_trial() ? gs_coach_member_extra_three() : '';
-$extra_four         = gtm_fs()->is_paying_or_trial() ? gs_coach_member_extra_four() : '';
-$extra_five         = gtm_fs()->is_paying_or_trial() ? gs_coach_member_extra_five() : '';
+$gs_zip_code        = is_pro_valid() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';
+$location           = is_pro_valid() ? gs_coach_member_location() : '';
+$language           = is_pro_valid() ? gs_coach_member_language() : '';
+$specialty          = is_pro_valid() ? gs_coach_member_specialty() : '';
+$gender             = is_pro_valid() ? gs_coach_member_gender() : '';
+$extra_one          = is_pro_valid() ? gs_coach_member_extra_one() : '';
+$extra_two          = is_pro_valid() ? gs_coach_member_extra_two() : '';
+$extra_three        = is_pro_valid() ? gs_coach_member_extra_three() : '';
+$extra_four         = is_pro_valid() ? gs_coach_member_extra_four() : '';
+$extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
 
 ?>
 

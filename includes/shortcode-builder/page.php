@@ -39,7 +39,7 @@ $routes = [
 				<div class="gs-containeer-f">
 					<div class="gs-roow">
 						<div class="logo-area gs-col-xs-6 gs-col-sm-5 gs-col-md-3">
-							<router-link to="/"><img src="<?php echo GSCOACH_PLUGIN_URI . '/assets/img/logo.svg'; ?>" alt="GS Coach Members Logo"></router-link>
+							<router-link to="/"><img src="<?php echo GSCOACH_PLUGIN_URI . '/assets/img/logo.svg'; ?>" alt="GS Coaches Logo"></router-link>
 						</div>
 						<div class="menu-area gs-col-xs-6 gs-col-sm-7 gs-col-md-9 text-right">
 							<ul>

@@ -1026,10 +1026,10 @@
 }
 @media only screen and (min-width: 1024px) and (max-width: 1220px) {
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-social li a {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-social li a {
     width: 30px;
     height: 30px;
   }
@@ -1039,8 +1039,8 @@
     font-size: 10px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
     margin-bottom: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs-coach-social li a {
@@ -1053,31 +1053,31 @@
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li a {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li a {
     width: 30px;
     height: 30px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desc {
     margin-bottom: 15px;
     font-size: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-social,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-social,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social {
     text-align: center;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social li,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li {
     margin-bottom: 4px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-social li {
@@ -1087,26 +1087,26 @@
     width: 342.5px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
     display: initial;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
     text-align: center;
     margin: 15px 0 6px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
     text-align: center;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_drawer2 .gridder .gridder-list {
@@ -1127,20 +1127,20 @@
 }
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-mem-desc-social,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .single-mem-desc-social {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .single-mem-desc-social {
     padding: 29% 10px 0;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desc {
     margin-bottom: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a {
     width: 30px;
     height: 30px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
     margin-bottom: 15px;
     font-size: 15px;
   }
@@ -1151,27 +1151,27 @@
     margin-top: 5px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
     display: initial;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
     text-align: center;
     margin: 15px 0 6px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs-coach-social {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs-coach-social {
     text-align: center;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_drawer2 .gridder .gridder-list {
@@ -1187,7 +1187,7 @@
     margin-top: 20px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme17 .image img,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme18 .image img {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme18 .image img {
     width: 100%;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .search-by-name {
@@ -1202,12 +1202,12 @@
     padding: 17% 10px 0;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-social li a {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-social li a,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-social li a {
     width: 27px;
     height: 27px;
   }
@@ -1223,10 +1223,10 @@
     padding: 28% 10px 0;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desc {
     font-size: 15px;
     margin-bottom: 15px;
   }
@@ -1246,27 +1246,27 @@
     width: 209.5px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
     display: initial;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
     text-align: center;
     margin: 15px 0 6px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs-coach-social {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs-coach-social {
     text-align: center;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_drawer2 .gridder .gridder-list {
@@ -1282,8 +1282,8 @@
     margin-top: 20px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-table-head,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-table-head,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-table-head {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-table-head,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-table-head {
     display: none;
   }
   .et-db #et-boc .et-l .et_pb_module .gs-coach-table-row {
@@ -1293,37 +1293,37 @@
     display: inline-table;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gs-coach-table .gs-coach-table-cell,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .gs-coach-table-cell,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .gs-coach-table-cell {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .gs-coach-table-cell,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .gs-coach-table-cell {
     border-bottom: none;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-image,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-image,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-image {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-image,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-image {
     float: left;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name {
     margin-top: 40px;
     display: inline-block;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-desig {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-desig {
     width: 70%;
     padding: 0;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gs-coach-table .socialicon,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .socialicon,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .socialicon {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .socialicon,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .socialicon {
     width: 100%;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 ul.gs-coach-social,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 ul.gs-coach-social {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 ul.gs-coach-social {
     border-bottom: 1px solid #ece6e6;
     display: block;
     padding-bottom: 15px;
@@ -1347,13 +1347,13 @@
     width: 100% !important;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
     margin-bottom: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-social li a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-social li a {
     width: 30px;
     height: 30px;
   }
@@ -1367,27 +1367,27 @@
     width: 320px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
     display: initial;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
     text-align: center;
     margin: 15px 0 6px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
-.et-db #et-boc .et-l .et_pb_module .gs-coach-social {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs-coach-social {
     text-align: center;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_drawer2 .gridder .gridder-list {
@@ -1404,8 +1404,8 @@
     margin-top: 20px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-table-head,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-table-head,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-table-head {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-table-head,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-table-head {
     display: none;
   }
   .et-db #et-boc .et-l .et_pb_module .gs-coach-table-row {
@@ -1415,37 +1415,37 @@
     display: inline-table;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gs-coach-table .gs-coach-table-cell,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .gs-coach-table-cell,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .gs-coach-table-cell {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .gs-coach-table-cell,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .gs-coach-table-cell {
     border-bottom: none;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-image,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-image,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-image {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-image,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-image {
     float: left;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name {
     margin-top: 40px;
     display: inline-block;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-desig {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gsc-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gsc-desig {
     width: 56%;
     padding: 0;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gs-coach-table .socialicon,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .socialicon,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .socialicon {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 .gs-coach-table .socialicon,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme16 .gs-coach-table .socialicon {
     width: 100%;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 ul.gs-coach-social,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 ul.gs-coach-social {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme15 ul.gs-coach-social {
     border-bottom: 1px solid #ece6e6;
     display: block;
     padding-bottom: 15px;

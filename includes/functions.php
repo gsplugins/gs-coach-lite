@@ -572,7 +572,7 @@ function get_taxonomies( $args = [] ) {
         'extra_five' => 'gs_coach_extra_five'
     ];
 
-    if ( $args['restricted'] && ! gtm_fs()->is_paying_or_trial() ) {
+    if ( $args['restricted'] && ! is_pro_valid() ) {
         $taxonomies = array_intersect_key($taxonomies, array_flip(['group', 'tag']));
     }
 
@@ -707,7 +707,7 @@ function select_builder($name, $options, $selected = "", $selecttext = "", $clas
 function add_fs_script($handler) {
 
     $data = [
-        'is_paying_or_trial' => wp_validate_boolean(gtm_fs()->is_paying_or_trial())
+        'is_paying_or_trial' => wp_validate_boolean(is_pro_valid())
     ];
 
     wp_localize_script($handler, 'gs_coach_fs', $data);
@@ -787,7 +787,7 @@ function get_themes_list($version = 'all', $type = 'both', $data_type = 'full') 
     return wp_list_pluck($themes, $data_type);
 }
 
-if (gtm_fs()->is_paying_or_trial()) {
+if (is_pro_valid()) {
 
     function gs_coach_get_terms_names($term_name, $separator = ', ') {
 

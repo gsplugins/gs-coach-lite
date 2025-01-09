@@ -18,8 +18,8 @@ class Widgets extends \WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'widgets', // Base ID
-			__( 'GS Coach Members', 'gscoach' ), // Name
-			array( 'description' => __( 'Display Coach Members at widget area.', 'gscoach' ), ) // Args
+			__( 'GS Coaches', 'gscoach' ), // Name
+			array( 'description' => __( 'Display Coaches at widget area.', 'gscoach' ), ) // Args
 		);
 	}
 
@@ -58,7 +58,7 @@ class Widgets extends \WP_Widget {
 			/>
 		</p>
 		<p> 
-			<label for="<?php echo esc_attr( $this->get_field_id('total_mem') );?>"><?php _e( 'Total Members to display', 'gscoach' ); ?> :</label>
+			<label for="<?php echo esc_attr( $this->get_field_id('total_mem') );?>"><?php _e( 'Totales to display', 'gscoach' ); ?> :</label>
 			<input
 				class="widefat" type="number" min="1"
 				id="<?php echo esc_attr( $this->get_field_id('total_mem') );?>"

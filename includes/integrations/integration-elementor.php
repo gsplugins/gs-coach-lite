@@ -137,7 +137,7 @@ function load_elementor_widget_class() {
         }
 
         public function get_title() {
-            return __( 'GS Coach Members', 'gscoach' );
+            return __( 'GS Coaches', 'gscoach' );
         }
 
         public function get_icon() {
@@ -221,7 +221,7 @@ function load_elementor_widget_class() {
 
             if ( empty($shortcode_id) ) {
                 if ( is_user_logged_in() && current_user_can( 'publish_pages' ) ) {
-                    printf( '<div class="gscoach-elementor-no-shortcode" style="padding:20px;background:rgba(115, 113, 124, 0.3);color:#1a1828;font-size:18px;border-radius:4px;font-weight:500;">%s</div>', __('GS Coach Members: Please select a shortcode', 'gscoach') );
+                    printf( '<div class="gscoach-elementor-no-shortcode" style="padding:20px;background:rgba(115, 113, 124, 0.3);color:#1a1828;font-size:18px;border-radius:4px;font-weight:500;">%s</div>', __('GS Coaches: Please select a shortcode', 'gscoach') );
                 }
             } else {
                 echo do_shortcode( "[gscoach id={$shortcode_id}]" );

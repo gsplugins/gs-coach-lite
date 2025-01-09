@@ -37,7 +37,7 @@
   font-weight: bold;
   line-height: 1.867;
   border-radius: 10px;
-  background-color: #ec121b1f;
+  background-color: rgba(236, 18, 27, 0.1215686275);
   border: none;
   padding: 6px 28px;
   -webkit-transition: all 0.25s;
@@ -174,7 +174,7 @@
 .gs-plugins--single_details {
   font-size: 14px;
   font-family: "Gotham", sans-serif;
-  color: #666666;
+  color: rgb(102, 102, 102);
   line-height: 1.571;
   margin: 0;
 }
@@ -277,7 +277,7 @@
 
 .gs-plugin--color-one .gs-plugins--single_details .gs-plugins--single_actions .button {
   color: #ed1c24;
-  background-color: #ec121b1f;
+  background-color: rgba(236, 18, 27, 0.1215686275);
 }
 .gs-plugin--color-one .gs-plugins--single_details .gs-plugins--single_actions .button:hover {
   color: #fff;
@@ -286,7 +286,7 @@
 
 .gs-plugin--color-two .gs-plugins--single_details .gs-plugins--single_actions .button {
   color: #750bec;
-  background-color: #750bec1f;
+  background-color: rgba(117, 11, 236, 0.1215686275);
 }
 .gs-plugin--color-two .gs-plugins--single_details .gs-plugins--single_actions .button:hover {
   color: #fff;
@@ -295,7 +295,7 @@
 
 .gs-plugin--color-three .gs-plugins--single_details .gs-plugins--single_actions .button {
   color: #44a49b;
-  background-color: #28be821f;
+  background-color: rgba(40, 190, 130, 0.1215686275);
 }
 .gs-plugin--color-three .gs-plugins--single_details .gs-plugins--single_actions .button:hover {
   color: #fff;
@@ -304,7 +304,7 @@
 
 .gs-plugin--color-four .gs-plugins--single_details .gs-plugins--single_actions .button {
   color: #ffab00;
-  background-color: #ffab001f;
+  background-color: rgba(255, 171, 0, 0.1215686275);
 }
 .gs-plugin--color-four .gs-plugins--single_details .gs-plugins--single_actions .button:hover {
   color: #fff;
@@ -443,7 +443,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: var(--icon-bg-color, #750bec26);
+  background-color: var(--icon-bg-color, rgba(117, 11, 236, 0.1490196078));
   border-radius: 50%;
 }
 .gs-plugins--help .gs-plugins--single_desc {
@@ -452,7 +452,7 @@
   line-height: 1.45;
 }
 .gs-plugins--help .button {
-  background: var(--color-alt, #750bec1f);
+  background: var(--color-alt, rgba(117, 11, 236, 0.1215686275));
   color: var(--color, #750ced);
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -508,25 +508,20 @@
     padding: 54px 42px 52px;
     margin-bottom: 50px;
   }
-
   .gs-plugins--list_logo svg {
     width: 72px;
     height: auto;
   }
-
   .gs-plugins--list_info {
     margin-left: 30px;
   }
-
   .gs-plugins--list_brand {
     font-size: 30px;
   }
-
   .gs-plugins--list_desc {
     font-size: 26px;
     margin-top: 3px;
   }
-
   .gs-plugins--single_wrapper {
     width: 100%;
     max-width: 570px;
@@ -536,48 +531,38 @@
   .gs-plugins--list {
     padding: 30px 30px 30px 20px;
   }
-
   .gs-plugins--list_inner {
     padding: 0;
     background: none;
   }
-
   .gs-plugins--list_header {
     padding: 35px 36px 33px;
     margin-bottom: 40px;
   }
-
   .gs-plugins--list_logo svg {
     width: 60px;
   }
-
   .gs-plugins--list_info {
     margin-left: 24px;
   }
-
   .gs-plugins--list_brand {
     font-size: 26px;
   }
-
   .gs-plugins--list_desc {
     font-size: 20px;
     margin-top: 5px;
   }
-
   .gs-plugins--list_items {
     padding: 0;
   }
-
   .gs-plugins--single_top {
     padding: 34px 20px 26px 30px;
   }
-
   .gs-plugins--single_icon {
     position: static;
     width: 72px;
     margin-bottom: 20px;
   }
-
   .gs-plugins--single_bottom {
     padding: 30px 30px 34px 30px;
     -webkit-box-orient: vertical;
@@ -588,7 +573,6 @@
         -ms-flex-align: start;
             align-items: flex-start;
   }
-
   .gs-plugins--single_downloaded {
     margin-top: 20px;
   }

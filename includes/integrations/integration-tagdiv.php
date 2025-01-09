@@ -60,7 +60,7 @@ class Integration_TagDiv {
 
             'map_in_visual_composer' => false,
             'map_in_td_composer'     => true,
-            "name"                   => __('GS Coach Members', 'gscoach'),
+            "name"                   => __('GS Coaches', 'gscoach'),
             "base"                   => 'td_gs_coach',
             "class"                  => 'td_gs_coach',
             "controls"               => "full",

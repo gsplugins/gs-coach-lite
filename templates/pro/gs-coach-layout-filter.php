@@ -124,7 +124,7 @@ global $gs_coach_loop;
 
 		<div class="gs-roow clearfix gs_coach">
 
-			<!-- Members not found - Load no-team-member template -->
+			<!--es not found - Load no-team-member template -->
 			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
 
 		</div>

@@ -636,8 +636,8 @@ if ( ! class_exists( 'Builder' ) ) {
                 'preference' => __('Preference', 'gscoach'),
                 'save-preference' => __('Save Preference', 'gscoach'),
                 'save-settings' => __('Save Settings', 'gscoach'),
-                'team-members-slug' => __('Coaches Slug', 'gscoach'),
-                'team-members-slug-details' => __('Customize Coaches Post Type Slug, by default it is set to team-members', 'gscoach'),
+                'coaches-slug' => __('Coaches Slug', 'gscoach'),
+                'coaches-slug-details' => __('Customize Coaches Post Type Slug, by default it is set to coaches', 'gscoach'),
                 'replace-custom-slug' => __('Ignore Base Permalink Prefix', 'gscoach'),
                 'replace-custom-slug-details' => __('Enable this option to use a custom structure without the base prefix.', 'gscoach'),
 
@@ -898,7 +898,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'role-font-style' => __('Role Font Style', 'gscoach'),
                 'role-color' => __('Role Color', 'gscoach'),
                 'popup-arrow-color' => __('Popup Arrow Color', 'gscoach'),
-                'team-members' => __('Coaches', 'gscoach'),
+                'coaches' => __('Coaches', 'gscoach'),
                 'order' => __('Order', 'gscoach'),
                 'order-by' => __('Order By', 'gscoach'),
                 'group-order' => __('Group Order', 'gscoach'),
@@ -944,7 +944,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'set-max-team-numbers-you-want-to-show' => __('Set max team numbers you want to show, set -1 for all members', 'gscoach'),
                 'select-specific-team-group-to' => __('Select a specific team group to show that specific group members', 'gscoach'),
 
-                'export-team-members-data' => __('Export Coach Members', 'gscoach'),
+                'export-coaches-data' => __('Export Coaches', 'gscoach'),
                 'export-shortcodes-data' => __('Export Shortcodes', 'gscoach'),
                 'export-settings-data' => __('Export Settings', 'gscoach'),
 
@@ -1371,7 +1371,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public static function get_formated_themes( $themes ) {
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
 
                 $_themes = array_map( function( $theme ) {
                     $theme['label'] = $theme['label'] . __(' (Pro)', 'gscoach');
@@ -1447,7 +1447,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 ]
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $pro_options = self::add_pro_to_options( $pro_options );
             }
 
@@ -1477,7 +1477,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
@@ -1508,7 +1508,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
@@ -1547,7 +1547,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $styles = self::add_pro_to_options( $styles );
             }
 
@@ -1592,7 +1592,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $styles = self::add_pro_to_options($styles);
             }
 
@@ -1634,7 +1634,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
@@ -1673,7 +1673,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $styles = self::add_pro_to_options($styles);
             }
 
@@ -2287,7 +2287,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 ]
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $effects = self::add_pro_to_options($effects);
             }
 
@@ -2362,7 +2362,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 $this->get_shortcode_options_link_types()[1]
             ];
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 $acf_fields_position = self::add_pro_to_options( $acf_fields_position );
                 $default = array_shift( $single_page_style );
                 $single_page_style = array_merge( [$default], self::add_pro_to_options($single_page_style) );

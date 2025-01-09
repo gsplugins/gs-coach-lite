@@ -390,7 +390,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
         }
 
-        // Members
+        //es
         public function create_dummy_members() {
 
             do_action( 'gscoach_dummy_members_process_start' );

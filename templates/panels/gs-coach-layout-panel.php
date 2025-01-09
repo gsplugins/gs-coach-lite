@@ -13,7 +13,7 @@ if ( $gs_coach_loop->have_posts() ) : ?>
 
         while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-            if ( ! gtm_fs()->is_paying_or_trial() ) {
+            if ( ! is_pro_valid() ) {
                 include Template_Loader::locate_template( 'panels/gs-coach-panel-default.php' );
                 return;
             }

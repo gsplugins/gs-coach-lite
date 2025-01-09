@@ -8,7 +8,7 @@ class Beaver extends FLBuilderModule {
         
         parent::__construct(array(
             'name'            => __( 'Coach', 'gscoach' ),
-            'description'     => __( 'Coach Members', 'gscoach' ),
+            'description'     => __( 'Coaches', 'gscoach' ),
             'group'           => __( 'GS Plugins', 'gscoach' ),
             'category'        => __( 'Basic', 'gscoach' ),
             'dir'             => GSCOACH_PLUGIN_DIR . 'includes/integrations/beaver/',

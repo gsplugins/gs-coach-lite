@@ -18,8 +18,8 @@
 
 						<ul>
 							<li>
-								<label for="export-team-members">
-									<input type="checkbox" id="export-team-members" v-model="export_data.team_members"> {{translation('export-team-members-data')}}
+								<label for="export-coaches">
+									<input type="checkbox" id="export-coaches" v-model="export_data.team_members"> {{translation('export-coaches-data')}}
 								</label>
 							</li>
 

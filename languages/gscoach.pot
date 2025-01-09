@@ -60,11 +60,11 @@ msgid "View Coach"
 msgstr ""
 
 #: ../includes/cpt.php:37
-msgid "All Members"
+msgid "Alles"
 msgstr ""
 
 #: ../includes/cpt.php:38
-msgid "Search Members"
+msgid "Searches"
 msgstr ""
 
 #: ../includes/cpt.php:39
@@ -240,7 +240,7 @@ msgid "Unauthorised Request"
 msgstr ""
 
 #: ../includes/sortable.php:344
-msgid "Step 1: Drag & Drop to rearrange Members"
+msgid "Step 1: Drag & Drop to rearrangees"
 msgstr ""
 
 #: ../includes/sortable.php:376, ../includes/sortable.php:559
@@ -256,7 +256,7 @@ msgid "Add Member"
 msgstr ""
 
 #: ../includes/sortable.php:387
-msgid "Step 2: Query Settings for Members"
+msgid "Step 2: Query Settings fores"
 msgstr ""
 
 #: ../includes/sortable.php:489
@@ -276,11 +276,11 @@ msgid "Template file not found - GS Plugins"
 msgstr ""
 
 #: ../includes/widgets.php:21, ../includes/integrations/integration-divi.php:101, ../includes/integrations/integration-elementor.php:140, ../includes/integrations/integration-tagdiv.php:63, ../includes/integrations/integration-wpb-vc.php:34
-msgid "GS Coach Members"
+msgid "GS Coaches"
 msgstr ""
 
 #: ../includes/widgets.php:22
-msgid "Display Coach Members at widget area."
+msgid "Display Coaches at widget area."
 msgstr ""
 
 #: ../includes/widgets.php:29
@@ -288,7 +288,7 @@ msgid "Meet Our Coach"
 msgstr ""
 
 #: ../includes/widgets.php:61
-msgid "Total Members to display"
+msgid "Totales to display"
 msgstr ""
 
 #: ../includes/widgets.php:72
@@ -362,7 +362,7 @@ msgid "Select Shortcode"
 msgstr ""
 
 #: ../includes/integrations/integration-divi.php:111
-msgid "Show Coach Members by GS Coach Plugin"
+msgid "Show Coaches by GS Coach Plugin"
 msgstr ""
 
 #: ../includes/integrations/integration-elementor.php:156
@@ -390,7 +390,7 @@ msgid "Create"
 msgstr ""
 
 #: ../includes/integrations/integration-elementor.php:224
-msgid "GS Coach Members: Please select a shortcode"
+msgid "GS Coaches: Please select a shortcode"
 msgstr ""
 
 #: ../includes/integrations/integration-gutenberg.php:51
@@ -600,11 +600,11 @@ msgid "Save Settings"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:639
-msgid "Coach Members Slug"
+msgid "Coaches Slug"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:640
-msgid "Customize Coach Members Post Type Slug, by default it is set to team-members"
+msgid "Customize Coaches Post Type Slug, by default it is set to coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:641
@@ -1032,7 +1032,7 @@ msgid "Shortcodes"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:806
-msgid "Global Settings for GS Coach Members"
+msgid "Global Settings for GS Coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:807
@@ -1148,7 +1148,7 @@ msgid "Style & Theming"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:838
-msgid "Link Coach Members"
+msgid "Link Coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:839
@@ -1396,7 +1396,7 @@ msgid "Popup Arrow Color"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:901, ../includes/integrations/beaver/beaver-widget-team.php:11
-msgid "Coach Members"
+msgid "Coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:902
@@ -1564,7 +1564,7 @@ msgid "Select a specific team group to show that specific group members"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:947
-msgid "Export Coach Members"
+msgid "Export Coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:948

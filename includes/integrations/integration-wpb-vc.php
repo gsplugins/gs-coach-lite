@@ -31,7 +31,7 @@ class Integration_WPB_VC {
 
         $params = [
 
-            'name' => __( 'GS Coach Members', 'gscoach' ),
+            'name' => __( 'GS Coaches', 'gscoach' ),
             'base' => 'gscoach',
             'description' => __( 'Show team members from GS Coach plugin' ),
             'category' => 'GS Plugins',

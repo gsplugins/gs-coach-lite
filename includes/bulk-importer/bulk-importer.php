@@ -13,7 +13,7 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
 
         public function __construct() {
 
-            if ( gtm_fs()->is_paying_or_trial() ) {
+            if ( is_pro_valid() ) {
                 add_action( 'wp_ajax_gscoach_process_csv_file', array($this, 'process_csv_file') );
                 add_action( 'wp_ajax_gscoach_bulk_import', array($this, 'bulk_import') );
             }

@@ -258,7 +258,7 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 			$_filter_enabled = true;
 		}
 
-		if ( ! gtm_fs()->is_paying_or_trial() && in_array($link_type, ['panel', 'drawer']) ) {
+		if ( ! is_pro_valid() && in_array($link_type, ['panel', 'drawer']) ) {
 			$link_type = 'default';
 		}
 

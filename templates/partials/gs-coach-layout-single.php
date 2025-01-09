@@ -6,7 +6,7 @@ $single_page_style = getoption( 'single_page_style', 'default' );
 
 $single_page_style = apply_filters( 'gs_coach_single_page_style', $single_page_style );
 
-if ( ! gtm_fs()->is_paying_or_trial() ) {
+if ( ! is_pro_valid() ) {
 	$single_page_style = 'default';
 }
 
@@ -20,7 +20,7 @@ if ( ! gtm_fs()->is_paying_or_trial() ) {
 		
 		while ( have_posts() ) : the_post();
 
-			if ( ! gtm_fs()->is_paying_or_trial() ) {
+			if ( ! is_pro_valid() ) {
 				include Template_Loader::locate_template( 'singles/gs-coach-single-default.php' );
 				return;
 			}

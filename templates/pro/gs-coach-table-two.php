@@ -96,7 +96,7 @@ global $gs_coach_loop;
 
 					<tr>
 						<td colspan="5">
-							<!-- Members not found - Load no-team-member template -->
+							<!--es not found - Load no-team-member template -->
 							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
 						</td>
 					</tr>

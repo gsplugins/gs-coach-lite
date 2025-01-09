@@ -14,7 +14,7 @@
 					<div class="gs-roow row-20">
 
 						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-							<label class="m-t-10" for="gs_coachmembers_slug">{{translation('team-members-slug')}}:</label>
+							<label class="m-t-10" for="gs_coachmembers_slug">{{translation('coaches-slug')}}:</label>
 							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 						</div>
 
@@ -23,7 +23,7 @@
 						</div>
 
 						<div class="gs-col-xs-12 bi-text-help--area">  
-							<p class="bi-text-help">{{translation('team-members-slug-details')}}</p>
+							<p class="bi-text-help">{{translation('coaches-slug-details')}}</p>
 						</div>
 
 					</div>

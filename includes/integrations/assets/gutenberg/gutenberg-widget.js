@@ -82,8 +82,8 @@
 
     registerBlockType('gscoach/shortcodes', {
 
-        title: __( 'GS Coach Members', 'gscoach' ),
-        description: __( 'Show Coach Members by GS Coach Plugin', 'gscoach' ),
+        title: __( 'GS Coaches', 'gscoach' ),
+        description: __( 'Show Coaches by GS Coach Plugin', 'gscoach' ),
         icon: Icon,
         category: 'layout',
         keywords: [ 'image', 'photo', 'pics' ],

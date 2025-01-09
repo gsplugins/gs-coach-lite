@@ -136,7 +136,7 @@ $panel_enabled = 'on';
 		
 	<?php else: ?>
 
-		<!-- Members not found - Load no-team-member template -->
+		<!--es not found - Load no-team-member template -->
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
 
 	<?php endif; ?>

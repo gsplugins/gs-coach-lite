@@ -48,7 +48,7 @@ class Plugin {
         new Dummy_Data();
         new Import_Export();
 
-        if (gtm_fs()->is_paying_or_trial()) {
+        if (is_pro_valid()) {
             $this->widget = new Widgets();
         }
 

@@ -98,7 +98,7 @@ function divi_widget_class() {
         public $vb_support = 'on';
         
         public function init() {                    
-            $this->name = esc_html__( 'GS Coach Members', 'gscoach' );
+            $this->name = esc_html__( 'GS Coaches', 'gscoach' );
         }
     
         public function get_fields() {
@@ -108,7 +108,7 @@ function divi_widget_class() {
                     'label'           => esc_html__( 'Select Shortcode', 'gscoach' ),
                     'type'            => 'select',
                     'option_category' => 'basic_option',
-                    'description'     => esc_html__( 'Show Coach Members by GS Coach Plugin', 'gscoach' ),
+                    'description'     => esc_html__( 'Show Coaches by GS Coach Plugin', 'gscoach' ),
                     'toggle_slug'     => 'main_content',
                     'default'         => $this->get_default_item(),
                     'options'         => $this->get_shortcode_list(),

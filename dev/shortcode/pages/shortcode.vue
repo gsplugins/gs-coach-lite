@@ -1829,12 +1829,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="num">{{translation('team-members')}}:</label>
+									<label class="m-t-10" for="num">{{translation('coaches')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-7">
-									<input type="text" class="bi-input-control" id="num" v-model="shortcode_settings.num" :placeholder="translation('team-members')">
+									<input type="text" class="bi-input-control" id="num" v-model="shortcode_settings.num" :placeholder="translation('coaches')">
 								</div>
 								
 								<div class="gs-col-xs-12 bi-text-help--area">

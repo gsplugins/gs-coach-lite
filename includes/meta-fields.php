@@ -375,7 +375,7 @@ class Meta_Fields {
 		}
 
 
-		if (gtm_fs()->is_paying_or_trial()) {
+		if (is_pro_valid()) {
 
 			if (!empty($member_skill = $_POST['gstm-skill-name']) && !empty($members_percent = $_POST['gstm-skill-percent'])) {
 
@@ -410,7 +410,7 @@ class Meta_Fields {
 		$gs_prof_data = sanitize_text_field($_POST['gs_prof']);
 		update_post_meta($post_id, '_gscoach_profession', $gs_prof_data);
 
-		if (gtm_fs()->is_paying_or_trial()) {
+		if (is_pro_valid()) {
 
 			update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
 			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));

@@ -16,7 +16,7 @@ class Cpt {
 		add_action( 'init', [ $this, 'register_taxonomies' ] );
 		add_action( 'after_setup_theme', [ $this, 'theme_support' ] );
 
-		if ( ! gtm_fs()->is_paying_or_trial() ) {
+		if ( ! is_pro_valid() ) {
 			$this->dummy_tax();
 		}
 		
@@ -41,7 +41,7 @@ class Cpt {
 			'not_found_in_trash' => __( 'No Coaches found in Trash.', 'gscoach' ),
 		);
 
-		$gs_coachmembers_slug = getoption( 'gs_coachmembers_slug', 'team-members' );
+		$gs_coachmembers_slug = getoption( 'gs_coachmembers_slug', 'coaches' );
 		$replace_custom_slug = getoption( 'replace_custom_slug', 'off' ) === 'off';
 
 		$args = array(
@@ -71,7 +71,7 @@ class Cpt {
 		$this->group();
 		$this->tag();
 
-		if ( gtm_fs()->is_paying_or_trial() ) {
+		if ( is_pro_valid() ) {
 			$this->language();
 			$this->location();
 			$this->gender();
