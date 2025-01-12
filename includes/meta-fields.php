@@ -54,7 +54,6 @@ class Meta_Fields {
 
 		$gs_coach_experience       = get_post_meta($post->ID, '_gscoach_experience', true);
 		$gs_coach_education        = get_post_meta($post->ID, '_gscoach_education', true);
-		$gs_coach_skills           = get_post_meta($post->ID, '_gscoach_skills', true);
 		$gs_coach_address          = get_post_meta($post->ID, '_gscoach_address', true);
 		$gs_coach_state            = get_post_meta($post->ID, '_gscoach_state', true);
 		$gs_coach_country          = get_post_meta($post->ID, '_gscoach_country', true);
@@ -87,11 +86,6 @@ class Meta_Fields {
 				<div class="form-group">
 					<label for="gsCoachEducation"><?php _e('Education', 'gscoach'); ?></label>
 					<input type="text" id="gsCoachEducation" class="form-control" name="gs_coach_education" placeholder="Education" value="<?php echo isset($gs_coach_education) ? esc_attr($gs_coach_education) : ''; ?>">
-				</div>
-
-				<div class="form-group">
-					<label for="gsCoachSkills"><?php _e('Skills', 'gscoach'); ?></label>
-					<input type="text" id="gsCoachSkills" class="form-control" name="gs_coach_skills" placeholder="Skills" value="<?php echo isset($gs_coach_skills) ? esc_attr($gs_coach_skills) : ''; ?>">
 				</div>
 
 				<div class="form-group">
@@ -163,7 +157,7 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_social = get_post_meta( $post->ID, 'gs_social', true );
+		$gs_social = get_post_meta( $post->ID, '_gscoach_socials', true );
 		
 		$social_icons = require_once GSCOACH_PLUGIN_DIR . 'includes/fs-icons.php';
 
@@ -246,7 +240,7 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_skill = get_post_meta($post->ID, 'gs_skill', true);
+		$gs_skill = get_post_meta($post->ID, '_gscoach_skills', true);
 
 	?>
 
@@ -362,7 +356,7 @@ class Meta_Fields {
 				if (!empty($icon) && !empty($link)) return ['icon' => $icon, 'link' => $link];
 			}, $social_icons, $social_links);
 
-			$meta_key = 'gs_social';
+			$meta_key = '_gscoach_socials';
 
 			$newdata = array_values(array_filter($newdata));
 			$olddata = get_post_meta($post_id, $meta_key, true);
@@ -386,7 +380,7 @@ class Meta_Fields {
 					if (!empty($skill) && !empty($percent)) return ['skill' => $skill, 'percent' => $percent];
 				}, $member_skill, $members_percent);
 
-				$meta_key = 'gs_skill';
+				$meta_key = '_gscoach_skills';
 
 				$newdata = array_values(array_filter($newdata));
 				$olddata = get_post_meta($post_id, $meta_key, true);

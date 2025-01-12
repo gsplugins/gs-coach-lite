@@ -137,7 +137,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             if ( get_option('gs_coach_autoimport_done') == true ) return;
 
-            $team_members = get_posts([
+            $coaches = get_posts([
                 'numberposts' => -1,
                 'post_type' => 'gs_coach',
                 'fields' => 'ids'
@@ -145,7 +145,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             $shortcodes = plugin()->builder->fetch_shortcodes();
 
-            if ( empty($team_members) && empty($shortcodes) ) {
+            if ( empty($coaches) && empty($shortcodes) ) {
                 $this->_import_team_data( false );
                 $this->_import_shortcode_data( false );
             }
@@ -416,21 +416,25 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ]),
                 'meta_input' => $this->get_meta_inputs([
                     '_thumbnail_id' => 'gscoach-member-1',
-                    '_gs_des' => "Web Developer",
-                    '_gs_com' => "Herzog PLC",
-                    '_gs_land' => '406-324-6585',
-                    '_gs_cell' => '619-770-9056',
-                    '_gs_email' => "morganfreman@herzogplc.com",
-                    '_gs_address' => "406 Goyette Inlet Apt. 008 Kochmouth",
-                    '_gs_ribon' => 'Rising Star',
-                    'second_featured_img' => 'gscoach-member-flip-1',
-                    'gs_social' => [
-                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/WilliamMDean'],
-                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/WilliamMDean'],
-                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/WilliamMDean'],
-                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/WilliamMDean'],
+                    '_gscoach_profession' => "Web Developer",
+                    '_gscoach_experience' => "3 Years",
+                    '_gscoach_education' => "BBA",
+                    '_gscoach_address' => "37/7, Hilton Road",
+                    '_gscoach_state' => "LA",
+                    '_gs_coach_country' => "USA",
+                    '_gscoach_contact' => "+1 202-555-0110",
+                    '_gscoach_shedule' => "13:00",
+                    '_gscoach_available' => "2025-01-23",
+                    '_gscoach_fee' => "500",
+                    '_gscoach_review' => "Lorem ipsum dolor sit amet",
+                    '_gscoach_rating' => "3.5",
+                    '_gscoach_socials' => [
+                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
+                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
+                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/john_doe'],
+                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/john_doe'],
                     ],
-                    'gs_skill' => [
+                    '_gscoach_skills' => [
                         ['skill' => 'Communication', 'percent' => 100],
                         ['skill' => 'Growth Process', 'percent' => 90],
                         ['skill' => 'Analysis', 'percent' => 95],
@@ -454,21 +458,25 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ]),
                 'meta_input' => $this->get_meta_inputs([
                     '_thumbnail_id' => 'gscoach-member-2',
-                    '_gs_des' => "Corona Specialist",
-                    '_gs_com' => "Herzog PLC",
-                    '_gs_land' => '301-346-3447',
-                    '_gs_cell' => '719-382-2900',
-                    '_gs_email' => "samueljackson@herzogplc.com",
-                    '_gs_address' => "99050 Meggie Harbor New Dawson",
-                    '_gs_ribon' => 'Top Talent',
-                    'second_featured_img' => 'gscoach-member-flip-2',
-                    'gs_social' => [
-                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/MichaelDDehaven'],
-                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/MichaelDDehaven'],
-                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/MichaelDDehaven'],
-                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/MichaelDDehaven'],
+                    '_gscoach_profession' => "Web Developer",
+                    '_gscoach_experience' => "3 Years",
+                    '_gscoach_education' => "BBA",
+                    '_gscoach_address' => "37/7, Hilton Road",
+                    '_gscoach_state' => "LA",
+                    '_gs_coach_country' => "USA",
+                    '_gscoach_contact' => "+1 202-555-0110",
+                    '_gscoach_shedule' => "13:00",
+                    '_gscoach_available' => "2025-01-23",
+                    '_gscoach_fee' => "500",
+                    '_gscoach_review' => "Lorem ipsum dolor sit amet",
+                    '_gscoach_rating' => "3.5",
+                    '_gscoach_socials' => [
+                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
+                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
+                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/john_doe'],
+                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/john_doe'],
                     ],
-                    'gs_skill' => [
+                    '_gscoach_skills' => [
                         ['skill' => 'Graphic Design', 'percent' => 95],
                         ['skill' => 'UI/UX Design', 'percent' => 100],
                         ['skill' => 'Design Tools', 'percent' => 95],
@@ -492,21 +500,25 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ]),
                 'meta_input' => $this->get_meta_inputs([
                     '_thumbnail_id' => 'gscoach-member-3',
-                    '_gs_des' => "Corona Specialist",
-                    '_gs_com' => "Stroman",
-                    '_gs_land' => '949-250-0110',
-                    '_gs_cell' => '646-281-3348',
-                    '_gs_email' => "orlandobloom@stromaninc.com",
-                    '_gs_address' => "8500 Lorem Street, Chicago",
-                    '_gs_ribon' => 'Best Employee',
-                    'second_featured_img' => 'gscoach-member-flip-3',
-                    'gs_social' => [
-                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/HermanEWillis'],
-                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/HermanEWillis'],
-                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/HermanEWillis'],
-                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/HermanEWillis'],
+                    '_gscoach_profession' => "Web Developer",
+                    '_gscoach_experience' => "3 Years",
+                    '_gscoach_education' => "BBA",
+                    '_gscoach_address' => "37/7, Hilton Road",
+                    '_gscoach_state' => "LA",
+                    '_gs_coach_country' => "USA",
+                    '_gscoach_contact' => "+1 202-555-0110",
+                    '_gscoach_shedule' => "13:00",
+                    '_gscoach_available' => "2025-01-23",
+                    '_gscoach_fee' => "500",
+                    '_gscoach_review' => "Lorem ipsum dolor sit amet",
+                    '_gscoach_rating' => "3.5",
+                    '_gscoach_socials' => [
+                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
+                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
+                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/john_doe'],
+                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/john_doe'],
                     ],
-                    'gs_skill' => [
+                    '_gscoach_skills' => [
                         ['skill' => 'Empathy', 'percent' => 100],
                         ['skill' => 'Social Skills', 'percent' => 80],
                         ['skill' => 'Active Listening', 'percent' => 85],
@@ -530,21 +542,25 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ]),
                 'meta_input' => $this->get_meta_inputs([
                     '_thumbnail_id' => 'gscoach-member-4',
-                    '_gs_des' => "UI\/UX Designer",
-                    '_gs_com' => "Modera",
-                    '_gs_land' => '785-416-8903',
-                    '_gs_cell' => '212-694-2286',
-                    '_gs_email' => "cameronguy@modera.com",
-                    '_gs_address' => "2589 Cheshire Road, Stamford, CT 06901",
-                    '_gs_ribon' => 'Top Talent',
-                    'second_featured_img' => 'gscoach-member-flip-4',
-                    'gs_social' => [
-                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/JosephPBarren'],
-                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/JosephPBarren'],
-                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/JosephPBarren'],
-                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/JosephPBarren'],
+                    '_gscoach_profession' => "Web Developer",
+                    '_gscoach_experience' => "3 Years",
+                    '_gscoach_education' => "BBA",
+                    '_gscoach_address' => "37/7, Hilton Road",
+                    '_gscoach_state' => "LA",
+                    '_gs_coach_country' => "USA",
+                    '_gscoach_contact' => "+1 202-555-0110",
+                    '_gscoach_shedule' => "13:00",
+                    '_gscoach_available' => "2025-01-23",
+                    '_gscoach_fee' => "500",
+                    '_gscoach_review' => "Lorem ipsum dolor sit amet",
+                    '_gscoach_rating' => "3.5",
+                    '_gscoach_socials' => [
+                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
+                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
+                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/john_doe'],
+                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/john_doe'],
                     ],
-                    'gs_skill' => [
+                    '_gscoach_skills' => [
                         ['skill' => 'FrontEnd Development', 'percent' => 100],
                         ['skill' => 'BackEnd Development', 'percent' => 95],
                         ['skill' => 'Server Management', 'percent' => 90],
@@ -568,21 +584,25 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ]),
                 'meta_input' => $this->get_meta_inputs([
                     '_thumbnail_id' => 'gscoach-member-5',
-                    '_gs_des' => "SEO Manager",
-                    '_gs_com' => "",
-                    '_gs_land' => '952-855-3834',
-                    '_gs_cell' => '865-635-1895',
-                    '_gs_email' => "richardgere@oracleorg.com",
-                    '_gs_address' => "4970 University Drive, Chicago, IL 60606",
-                    '_gs_ribon' => 'Rising Star',
-                    'second_featured_img' => 'gscoach-member-flip-5',
-                    'gs_social' => [
-                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/SidneyMBuckley'],
-                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/SidneyMBuckley'],
-                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/SidneyMBuckley'],
-                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/SidneyMBuckley'],
+                    '_gscoach_profession' => "Web Developer",
+                    '_gscoach_experience' => "3 Years",
+                    '_gscoach_education' => "BBA",
+                    '_gscoach_address' => "37/7, Hilton Road",
+                    '_gscoach_state' => "LA",
+                    '_gs_coach_country' => "USA",
+                    '_gscoach_contact' => "+1 202-555-0110",
+                    '_gscoach_shedule' => "13:00",
+                    '_gscoach_available' => "2025-01-23",
+                    '_gscoach_fee' => "500",
+                    '_gscoach_review' => "Lorem ipsum dolor sit amet",
+                    '_gscoach_rating' => "3.5",
+                    '_gscoach_socials' => [
+                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
+                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
+                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/john_doe'],
+                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/john_doe'],
                     ],
-                    'gs_skill' => [
+                    '_gscoach_skills' => [
                         ['skill' => 'Product Design', 'percent' => 95],
                         ['skill' => 'Competitor Analysis', 'percent' => 100],
                         ['skill' => 'Product Interaction', 'percent' => 95],
@@ -606,21 +626,25 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ]),
                 'meta_input' => $this->get_meta_inputs([
                     '_thumbnail_id' => 'gscoach-member-6',
-                    '_gs_des' => "Web Developer",
-                    '_gs_com' => "Sanira Inc",
-                    '_gs_land' => '419-255-5857',
-                    '_gs_cell' => '507-513-6174',
-                    '_gs_email' => "hughjakman@sanirainc.com",
-                    '_gs_address' => "1158 Hartland Avenue, Fond Du Lac, WI 54935",
-                    '_gs_ribon' => 'Top Rated',
-                    'second_featured_img' => 'gscoach-member-flip-6',
-                    'gs_social' => [
-                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/DanteKHicks'],
-                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/DanteKHicks'],
-                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/DanteKHicks'],
-                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/DanteKHicks'],
+                    '_gscoach_profession' => "Web Developer",
+                    '_gscoach_experience' => "3 Years",
+                    '_gscoach_education' => "BBA",
+                    '_gscoach_address' => "37/7, Hilton Road",
+                    '_gscoach_state' => "LA",
+                    '_gs_coach_country' => "USA",
+                    '_gscoach_contact' => "+1 202-555-0110",
+                    '_gscoach_shedule' => "13:00",
+                    '_gscoach_available' => "2025-01-23",
+                    '_gscoach_fee' => "500",
+                    '_gscoach_review' => "Lorem ipsum dolor sit amet",
+                    '_gscoach_rating' => "3.5",
+                    '_gscoach_socials' => [
+                        ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
+                        ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
+                        ['icon' => 'fab fa-facebook-f', 'link' => 'https://facebook.com/john_doe'],
+                        ['icon' => 'fab fa-linkedin-in', 'link' => 'https://linkedin.com/john_doe'],
                     ],
-                    'gs_skill' => [
+                    '_gscoach_skills' => [
                         ['skill' => 'Cartoon Design', 'percent' => 85],
                         ['skill' => 'Product Mockup', 'percent' => 100],
                         ['skill' => 'Graphic Elements', 'percent' => 95],
