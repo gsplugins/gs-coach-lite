@@ -30,10 +30,10 @@ $gs_coach_extra_three_label = 'Extra Three';
 $gs_coach_extra_four_label  = 'Extra Four';
 $gs_coach_extra_five_label  = 'Extra Five';
 
-$address            = get_post_meta( get_the_id(), '_gs_address', true );
-$email              = get_post_meta( get_the_id(), '_gs_email', true );
+$address            = get_post_meta( get_the_id(), '_gscoach_address', true );
+$email              = get_post_meta( get_the_id(), '_gscoach_email', true );
 $land               = get_post_meta( get_the_id(), '_gs_land', true );
-$cell               = get_post_meta( get_the_id(), '_gs_cell', true );
+$cell               = get_post_meta( get_the_id(), '_gscoach_contact', true );
 $company            = get_post_meta( get_the_id(), '_gs_com', true );
 $company_website    = get_post_meta( get_the_id(), '_gs_com_website', true );
 $gs_zip_code        = is_pro_valid() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';

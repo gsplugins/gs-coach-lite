@@ -24,11 +24,11 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 	
 		<?php if ( $gs_coach_loop->have_posts() ):
 
-			do_action( 'gs_coach_before_team_members' );
+			do_action( 'gs_coach_before_coaches' );
 
 			while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-			$designation = get_post_meta( get_the_id(), '_gs_des', true );
+			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 			$classes = ['gs-col-xs-12 single-member-div'];
 
@@ -110,7 +110,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 		<?php endwhile; ?>
 
-		<?php do_action( 'gs_coach_after_team_members' ); ?>
+		<?php do_action( 'gs_coach_after_coaches' ); ?>
 
 		<?php else: ?>
 

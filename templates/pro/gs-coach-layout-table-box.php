@@ -20,7 +20,7 @@ global $gs_coach_loop;
 	
 	<?php if ( $gs_coach_loop->have_posts() ): ?>
 		
-		<?php do_action( 'gs_coach_before_team_members' ); ?>
+		<?php do_action( 'gs_coach_before_coaches' ); ?>
 		
 		<div class="gs_coach_table_box">
 
@@ -45,7 +45,7 @@ global $gs_coach_loop;
 
 				<?php while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-					$designation = get_post_meta( get_the_id(), '_gs_des', true );
+					$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 					$ribon = get_post_meta( get_the_id(), '_gs_ribon', true );
 
 					$classes = ['gs-coach-table-row single-member-div'];
@@ -114,7 +114,7 @@ global $gs_coach_loop;
 
 		</div>
 
-		<?php do_action( 'gs_coach_after_team_members' ); ?>
+		<?php do_action( 'gs_coach_after_coaches' ); ?>
 			
 	<?php else: ?>
 

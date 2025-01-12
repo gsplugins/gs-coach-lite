@@ -28,12 +28,12 @@ class Import_Export {
         if (empty($export_data = $_REQUEST['export_data'])) wp_send_json_error(__('No export data provided', 'gscoach'), 400);
 
         // Validate the export data
-        $export_team_members = wp_validate_boolean($export_data['team_members']);
+        $export_coaches = wp_validate_boolean($export_data['coaches']);
         $export_shortcodes = wp_validate_boolean($export_data['shortcodes']);
         $export_settings = wp_validate_boolean($export_data['settings']);
 
         // Check for valid export data
-        if (!$export_team_members && !$export_shortcodes && !$export_settings) wp_send_json_error(__('No export data provided', 'gscoach'), 400);
+        if (!$export_coaches && !$export_shortcodes && !$export_settings) wp_send_json_error(__('No export data provided', 'gscoach'), 400);
 
         // Init the zip archive
         $this->init_zip_file();
@@ -42,7 +42,7 @@ class Import_Export {
         $json_data = [];
 
         // Add Posts Data to the zip file
-        if ($export_team_members) $json_data = $this->export__team_members($json_data);
+        if ($export_coaches) $json_data = $this->export__coaches($json_data);
 
         // Add Shortcodes Data to the zip file
         if ($export_shortcodes) $json_data = $this->export__shortcodes($json_data);
@@ -432,7 +432,7 @@ class Import_Export {
         return $term_id;
     }
 
-    public function export__team_members($json_data = []) {
+    public function export__coaches($json_data = []) {
 
         $json_data['posts']       = [];
         $json_data['attachments'] = [];

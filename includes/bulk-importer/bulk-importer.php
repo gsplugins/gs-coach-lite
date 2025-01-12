@@ -101,17 +101,17 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
 
             if ( !empty($row['image']) )            $meta_input['_thumbnail_id']        = (int) $row['image'];
             if ( !empty($row['flip_image']) )       $meta_input['second_featured_img']  = (int) $row['flip_image'];
-            if ( !empty($row['designation']) )      $meta_input['_gs_des']              = sanitize_text_field( $row['designation'] );
+            if ( !empty($row['designation']) )      $meta_input['_gscoach_profession']              = sanitize_text_field( $row['designation'] );
             if ( !empty($row['company']) )          $meta_input['_gs_com']              = sanitize_text_field( $row['company'] );
             if ( !empty($row['company_website']) )  $meta_input['_gs_com_website']      = sanitize_url( $row['company_website'] );
             if ( !empty($row['land_phone']) )       $meta_input['_gs_land']             = sanitize_text_field( $row['land_phone'] );
-            if ( !empty($row['cell_phone']) )       $meta_input['_gs_cell']             = sanitize_text_field( $row['cell_phone'] );
-            if ( !empty($row['email']) )            $meta_input['_gs_email']            = sanitize_email( $row['email'] );
-            if ( !empty($row['address']) )          $meta_input['_gs_address']          = sanitize_text_field( $row['address'] );
+            if ( !empty($row['cell_phone']) )       $meta_input['_gscoach_contact']             = sanitize_text_field( $row['cell_phone'] );
+            if ( !empty($row['email']) )            $meta_input['_gscoach_email']            = sanitize_email( $row['email'] );
+            if ( !empty($row['address']) )          $meta_input['_gscoach_address']          = sanitize_text_field( $row['address'] );
             if ( !empty($row['zip_code']) )         $meta_input['_gs_zip_code']         = sanitize_text_field( $row['zip_code'] );
             if ( !empty($row['ribbon']) )           $meta_input['_gs_ribon']            = sanitize_text_field( $row['ribbon'] );
-            if ( !empty($row['socials']) )          $meta_input['gs_social']            = (array) $row['socials'];
-            if ( !empty($row['skills']) )           $meta_input['gs_skill']             = (array) $row['skills'];
+            if ( !empty($row['socials']) )          $meta_input['_gscoach_socials']            = (array) $row['socials'];
+            if ( !empty($row['skills']) )           $meta_input['_gscoach_skills']             = (array) $row['skills'];
             if ( !empty($row['vcard']) )            $meta_input['gs_vcard']             = esc_url_raw( $row['vcard'] );
 
             return $meta_input;

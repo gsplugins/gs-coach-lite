@@ -28,11 +28,11 @@ if ( $_drawer_enabled ) $gs_row_classes[] = 'gstm-gridder gstm-gridder-' . $draw
 
 			if ( $_drawer_enabled ) echo '<div class="gridder">';
 
-			do_action( 'gs_coach_before_team_members' );
+			do_action( 'gs_coach_before_coaches' );
 
 			while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-			$designation = get_post_meta( get_the_id(), '_gs_des', true );
+			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 			$classes = ['single-member-div', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 
@@ -96,14 +96,14 @@ if ( $_drawer_enabled ) $gs_row_classes[] = 'gstm-gridder gstm-gridder-' . $draw
 
 		<?php endwhile; ?>
 
-		<?php do_action( 'gs_coach_after_team_members' );
+		<?php do_action( 'gs_coach_after_coaches' );
 
 		if ( $_drawer_enabled ) echo '</div>'; ?>
 
 		<?php else: ?>
 
 			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-coach-member.php' ); ?>
 
 		<?php endif; ?>
 

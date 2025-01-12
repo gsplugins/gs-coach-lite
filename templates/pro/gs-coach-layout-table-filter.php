@@ -22,7 +22,7 @@ global $gs_coach_loop;
 	
 		<?php if ( $gs_coach_loop->have_posts() ): ?>
 
-			<?php do_action( 'gs_coach_before_team_members' ); ?>
+			<?php do_action( 'gs_coach_before_coaches' ); ?>
 			
 			<div class="table-responsive gs-col-md-12">
 
@@ -46,10 +46,10 @@ global $gs_coach_loop;
 
 						<?php while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-							$designation = get_post_meta( get_the_id(), '_gs_des', true );
-							$email = get_post_meta( get_the_id(), '_gs_email', true );
+							$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
+							$email = get_post_meta( get_the_id(), '_gscoach_email', true );
 
-							$cell = get_post_meta( get_the_id(), '_gs_cell', true );
+							$cell = get_post_meta( get_the_id(), '_gscoach_contact', true );
 							$cell = format_phone($cell);
 
 							$classes = ['single-member-div'];
@@ -79,7 +79,7 @@ global $gs_coach_loop;
 
 			</div>
 
-			<?php do_action( 'gs_coach_after_team_members' ); ?>
+			<?php do_action( 'gs_coach_after_coaches' ); ?>
 				
 		<?php else: ?>
 

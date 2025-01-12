@@ -19,7 +19,7 @@
 						<ul>
 							<li>
 								<label for="export-coaches">
-									<input type="checkbox" id="export-coaches" v-model="export_data.team_members"> {{translation('export-coaches-data')}}
+									<input type="checkbox" id="export-coaches" v-model="export_data.coaches"> {{translation('export-coaches-data')}}
 								</label>
 							</li>
 
@@ -105,7 +105,7 @@
 				importing: false,
 				importFileSelected: false,
 				export_data: {
-					team_members: true,
+					coaches: true,
 					shortcodes: true,
 					settings: true
 				}

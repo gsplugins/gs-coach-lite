@@ -25,7 +25,7 @@ class Sortable {
 		add_filter('terms_clauses', array($this, 'terms_clauses'), 10, 3);
 		
 		// Update team members order via AJAX
-		add_action('wp_ajax_update_team_members_order', array($this, 'update_team_members_order'));
+		add_action('wp_ajax_update_coaches_order', array($this, 'update_coaches_order'));
 		
 		// Update taxonomy order via AJAX
 		add_action('wp_ajax_update_taxonomy_order', array($this, 'update_taxonomy_order'));
@@ -111,7 +111,7 @@ class Sortable {
 		if ( $this->is_pro() ) {
 
 			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_coach' ) {
-				$action = 'update_team_members_order';
+				$action = 'update_coaches_order';
 			} else if ( $_GET['object_type'] == 'gs_coach_filters' ) {
 				$action = 'update_team_filters_order';
 			} else {
@@ -132,7 +132,7 @@ class Sortable {
 	/**
 	 * Update Coaches Order
 	 */
-	public function update_team_members_order() {
+	public function update_coaches_order() {
 
 		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
 			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
@@ -298,7 +298,7 @@ class Sortable {
 				
 				<?php if ($object_type === 'gs_coach') : ?>
 
-					<?php $this->sort_team_members(); ?>
+					<?php $this->sort_coaches(); ?>
 
 				<?php elseif ($object_type === 'gs_coach_filters') : ?>
 
@@ -320,7 +320,7 @@ class Sortable {
 	/**
 	 * Sort Coaches
 	 */
-	public function sort_team_members() {
+	public function sort_coaches() {
 
 
 		$sortable = new \WP_Query('post_type=gs_coach&posts_per_page=-1&orderby=menu_order&order=ASC');

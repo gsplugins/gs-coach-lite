@@ -2738,15 +2738,15 @@ if ( ! class_exists( 'Builder' ) ) {
                 "map-marker"              => "fas fa-map-marker-alt"
             ];
 
-            $team_members = get_posts([
+            $coaches = get_posts([
                 'numberposts' => -1,
                 'post_type' => 'gs_coach',
                 'fields' => 'ids'
             ]);
 
-            foreach ( $team_members as $team_member_id ) {
+            foreach ( $coaches as $team_member_id ) {
 
-                $social_data = get_post_meta( $team_member_id, 'gs_social', true );
+                $social_data = get_post_meta( $team_member_id, '_gscoach_socials', true );
 
                 foreach ( $social_data as $key => $social_link ) {
                     if ( ! empty($social_link['icon']) && array_key_exists( $social_link['icon'], $social_icons_map ) ) {
@@ -2754,7 +2754,7 @@ if ( ! class_exists( 'Builder' ) ) {
                     }
                 }
 
-                update_post_meta( $team_member_id, 'gs_social', $social_data );
+                update_post_meta( $team_member_id, '_gscoach_socials', $social_data );
 
             }
 

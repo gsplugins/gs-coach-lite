@@ -55,7 +55,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
             <select class="filters-select-designation">
                 <option value="*"><?php echo esc_html($gs_coachfliter_designation); ?></option>
-                <?php get_meta_values_options( '_gs_des', [ 'post_ids' => wp_list_pluck( $gs_coach_loop->posts, 'ID' ) ] ); ?>
+                <?php get_meta_values_options( '_gscoach_profession', [ 'post_ids' => wp_list_pluck( $gs_coach_loop->posts, 'ID' ) ] ); ?>
             </select>
         </div>
     <?php continue; endif; ?>

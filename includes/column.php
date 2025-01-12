@@ -50,7 +50,7 @@ class Column {
 
         $columns['title']                           = __( 'Coach Name', 'gscoach' );
         $columns['gscoach_featured_image']           = __( 'Coach Image', 'gscoach' );
-        $columns['_gs_des']                         = __( 'Designation', 'gscoach' );
+        $columns['_gscoach_profession']                         = __( 'Designation', 'gscoach' );
 
         if ( $is_enabled_group_tax ) $columns['taxonomy-gs_coach_group'] = $this->get_tax_option('group_tax_plural_label');
         if ( $is_enabled_tag_tax ) $columns['taxonomy-gs_coach_tag'] = $this->get_tax_option('tag_tax_plural_label');
@@ -90,8 +90,8 @@ class Column {
     }
 
     function populate_columns( $column ) {
-        if ( '_gs_des' == $column ) {
-            $tm_m_desig = get_post_meta( get_the_ID(), '_gs_des', true );
+        if ( '_gscoach_profession' == $column ) {
+            $tm_m_desig = get_post_meta( get_the_ID(), '_gscoach_profession', true );
             echo esc_html($tm_m_desig);
         }
     }

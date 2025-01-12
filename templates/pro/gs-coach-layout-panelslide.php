@@ -68,13 +68,13 @@ $panel_enabled = 'on';
 			</div>
 		</div>
 
-		<?php do_action( 'gs_coach_before_team_members' ); ?>
+		<?php do_action( 'gs_coach_before_coaches' ); ?>
 
 		<div class="gs-roow clearfix gs_coach gs-all-items-filter-wrapper" id="gs_coach<?php echo get_the_id(); ?>">
 
 			<?php while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 			
-			$designation = get_post_meta( get_the_id(), '_gs_des', true );
+			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 			$classes = ['gs-filter-single-item single-member-div gs-filter-single-item', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
@@ -132,7 +132,7 @@ $panel_enabled = 'on';
 		
 		</div>
 
-		<?php do_action( 'gs_coach_after_team_members' ); ?>
+		<?php do_action( 'gs_coach_after_coaches' ); ?>
 		
 	<?php else: ?>
 

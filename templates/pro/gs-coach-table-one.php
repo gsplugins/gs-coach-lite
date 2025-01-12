@@ -39,11 +39,11 @@ global $gs_coach_loop;
 									
 					if ( $gs_member_link_type == 'popup' ) $classes[] = 'single-member-pop';
 
-					do_action( 'gs_coach_before_team_members' );
+					do_action( 'gs_coach_before_coaches' );
 
 					while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-					$designation = get_post_meta( get_the_id(), '_gs_des', true );
+					$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 					?>
 
@@ -90,7 +90,7 @@ global $gs_coach_loop;
 
 				<?php endwhile; ?>
 
-					<?php do_action( 'gs_coach_after_team_members' ); ?>
+					<?php do_action( 'gs_coach_after_coaches' ); ?>
 
 				<?php else: ?>
 

@@ -10,7 +10,7 @@ namespace GSCOACH;
  * @version 1.0.2
  */
 
-$designation = get_post_meta( get_the_id(), '_gs_des', true );
+$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 ?>
 

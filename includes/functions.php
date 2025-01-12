@@ -384,7 +384,7 @@ function member_email_mailto($icon = '', $echo = false) {
 
     $member_id = get_the_ID();
 
-    $email = get_post_meta($member_id, '_gs_email', true);
+    $email = get_post_meta($member_id, '_gscoach_email', true);
     $email_cc = get_post_meta($member_id, '_gs_cc', true);
     $email_bcc = get_post_meta($member_id, '_gs_bcc', true);
 
@@ -856,7 +856,7 @@ if (!function_exists('str_contains')) {
 function get_social_links($post_id = null) {
     if (empty($post_id)) $post_id = get_the_ID();
     if (empty($post_id)) return [];
-    $social_links = (array) get_post_meta($post_id, 'gs_social', true);
+    $social_links = (array) get_post_meta($post_id, '_gscoach_socials', true);
     $social_links = array_filter($social_links);
     return (array) apply_filters('gs_coach_member_social_links', $social_links, $post_id);
 }
@@ -864,7 +864,7 @@ function get_social_links($post_id = null) {
 function get_skills($post_id = null) {
     if (empty($post_id)) $post_id = get_the_ID();
     if (empty($post_id)) return [];
-    $skills = (array) get_post_meta($post_id, 'gs_skill', true);
+    $skills = (array) get_post_meta($post_id, '_gscoach_skills', true);
     $skills = array_filter($skills);
     return (array) apply_filters('gs_coach_member_skills', $skills, $post_id);
 }

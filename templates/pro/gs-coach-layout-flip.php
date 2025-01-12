@@ -22,15 +22,15 @@ global $gs_coach_loop;
 	
 		<?php if ( $gs_coach_loop->have_posts() ):
 
-			do_action( 'gs_coach_before_team_members' );
+			do_action( 'gs_coach_before_coaches' );
 
 			while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
 			$land_number = get_post_meta( get_the_id(), '_gs_land', true );
-			$cell_number = get_post_meta( get_the_id(), '_gs_cell', true );
-			$member_email = get_post_meta( get_the_id(), '_gs_email', true );
+			$cell_number = get_post_meta( get_the_id(), '_gscoach_contact', true );
+			$member_email = get_post_meta( get_the_id(), '_gscoach_email', true );
 			
-			$designation = get_post_meta( get_the_id(), '_gs_des', true );
+			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 			if ( empty($designation) ) $designation = '';
 
 			$designation_slug = sanitize_title( $designation );
@@ -124,7 +124,7 @@ global $gs_coach_loop;
 
 		<?php endwhile; ?>
 
-		<?php do_action( 'gs_coach_after_team_members' ); ?>
+		<?php do_action( 'gs_coach_after_coaches' ); ?>
 
 		<?php else: ?>
 

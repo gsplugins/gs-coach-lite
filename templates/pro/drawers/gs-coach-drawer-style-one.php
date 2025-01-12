@@ -1,6 +1,6 @@
 <?php
 namespace GSCOACH;
-$designation = get_post_meta( get_the_id(), '_gs_des', true );
+$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 

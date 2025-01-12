@@ -21,22 +21,22 @@ global $gs_coach_loop;
 	<!-- Filters Template -->
 	<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-filters.php' ); ?>
 	
-	<?php do_action( 'gs_coach_before_team_members' ); ?>
+	<?php do_action( 'gs_coach_before_coaches' ); ?>
 
 	<?php if ( $gs_coach_loop->have_posts() ): ?>
 
-		<?php do_action( 'gs_coach_before_team_members' ); ?>
+		<?php do_action( 'gs_coach_before_coaches' ); ?>
 
 		<div class="gs-all-items-filter-wrapper gs-roow">
 
 			<?php while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-				$email = get_post_meta( get_the_id(), '_gs_email', true );
-				$cell = get_post_meta( get_the_id(), '_gs_cell', true );
+				$email = get_post_meta( get_the_id(), '_gscoach_email', true );
+				$cell = get_post_meta( get_the_id(), '_gscoach_contact', true );
 				
 				$vcard = get_post_meta( get_the_id(), '_gs_vcard', true );
 
-				$designation = get_post_meta( get_the_id(), '_gs_des', true );
+				$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 				if ( empty($designation) ) $designation = '';
 
 				$designation_slug = sanitize_title( $designation );
@@ -139,7 +139,7 @@ global $gs_coach_loop;
 
 		</div>
 
-		<?php do_action( 'gs_coach_after_team_members' ); ?>
+		<?php do_action( 'gs_coach_after_coaches' ); ?>
 	
 	<?php else: ?>
 

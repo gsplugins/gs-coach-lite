@@ -1,7 +1,7 @@
 <?php
 namespace GSCOACH;
 $ribon = get_post_meta( get_the_id(), '_gs_ribon', true );
-$designation = get_post_meta( get_the_id(), '_gs_des', true );
+$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 ?>
 

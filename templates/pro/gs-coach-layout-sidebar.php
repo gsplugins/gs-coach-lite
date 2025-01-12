@@ -26,8 +26,8 @@ if ( $gs_coach_loop_side->have_posts() ) : while ( $gs_coach_loop_side->have_pos
     $gs_coach_alt = get_post_meta($gs_coach_id,'_wp_attachment_image_alt',true);
     $gs_member_desc_link = get_the_permalink();
     $gs_tm_meta = get_post_meta( get_the_id() );
-    $designation = !empty($gs_tm_meta['_gs_des'][0]) ? $gs_tm_meta['_gs_des'][0] : '';
-    $gs_social  = get_post_meta( get_the_id(), 'gs_social', true);
+    $designation = !empty($gs_tm_meta['_gscoach_profession'][0]) ? $gs_tm_meta['_gscoach_profession'][0] : '';
+    $_gscoach_socials  = get_post_meta( get_the_id(), '_gscoach_socials', true);
 
     ?>
 

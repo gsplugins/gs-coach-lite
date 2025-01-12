@@ -58,6 +58,7 @@ class Meta_Fields {
 		$gs_coach_state            = get_post_meta($post->ID, '_gscoach_state', true);
 		$gs_coach_country          = get_post_meta($post->ID, '_gscoach_country', true);
 		$gs_coach_contact_number   = get_post_meta($post->ID, '_gscoach_contact', true);
+		$gs_coach_email            = get_post_meta($post->ID, '_gscoach_email', true);
 		$gs_coach_schedule         = get_post_meta($post->ID, '_gscoach_shedule', true);
 		$gs_coach_available        = get_post_meta($post->ID, '_gscoach_available', true);
 		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
@@ -109,6 +110,11 @@ class Meta_Fields {
 				</div>
 
 				<div class="form-group">
+					<label for="gsCoachEmail"><?php _e('Email Address', 'gscoach'); ?></label>
+					<input type="email" id="gsCoachEmail" class="form-control" name="gs_coach_email" placeholder="Email Address" value="<?php echo isset($gs_coach_email) ? esc_attr($gs_coach_email) : ''; ?>">
+				</div>
+
+				<div class="form-group">
 					<label for="gsCoachSchedule"><?php _e('Schedule Time', 'gscoach'); ?></label>
 					<input type="time" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
 				</div>
@@ -157,7 +163,7 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_social = get_post_meta( $post->ID, '_gscoach_socials', true );
+		$_gscoach_socials = get_post_meta( $post->ID, '_gscoach_socials', true );
 		
 		$social_icons = require_once GSCOACH_PLUGIN_DIR . 'includes/fs-icons.php';
 
@@ -182,7 +188,7 @@ class Meta_Fields {
 						</thead>
 						<tbody>
 
-							<?php if ($gs_social) : foreach ($gs_social as $field) : ?>
+							<?php if ($_gscoach_socials) : foreach ($_gscoach_socials as $field) : ?>
 
 									<tr>
 										<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
@@ -240,7 +246,7 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_skill = get_post_meta($post->ID, '_gscoach_skills', true);
+		$_gscoach_skills = get_post_meta($post->ID, '_gscoach_skills', true);
 
 	?>
 
@@ -262,7 +268,7 @@ class Meta_Fields {
 						</thead>
 						<tbody>
 
-							<?php if ($gs_skill) : foreach ($gs_skill as $field) : ?>
+							<?php if ($_gscoach_skills) : foreach ($_gscoach_skills as $field) : ?>
 
 									<tr>
 										<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
@@ -413,6 +419,7 @@ class Meta_Fields {
 			update_post_meta($post_id, '_gscoach_state', sanitize_text_field($_POST['gs_coach_state']));
 			update_post_meta($post_id, '_gs_coach_country', sanitize_text_field($_POST['gs_coach_country']));
 			update_post_meta($post_id, '_gscoach_contact', sanitize_text_field($_POST['gs_coach_contact_number']));
+			update_post_meta($post_id, '_gscoach_email', sanitize_text_field($_POST['gs_coach_email']));
 			update_post_meta($post_id, '_gscoach_shedule', sanitize_text_field($_POST['gs_coach_schedule']));
 			update_post_meta($post_id, '_gscoach_available', sanitize_text_field($_POST['gs_coach_available']));
 			update_post_meta($post_id, '_gscoach_fee', sanitize_text_field($_POST['gs_coach_fee']));

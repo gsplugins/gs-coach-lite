@@ -29,7 +29,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post();
 		
-		$designation = get_post_meta( get_the_id(), '_gs_des', true );
+		$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 		
 		?>
 		

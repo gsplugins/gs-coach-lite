@@ -22,7 +22,7 @@ global $gs_coach_loop;
 
 		<?php if ( $gs_coach_loop->have_posts() ):
 
-			do_action( 'gs_coach_before_team_members' );
+			do_action( 'gs_coach_before_coaches' );
 
 			$gs_row_classes = ['gs_coach slider gs-col-md-12 owl-carousel owl-theme'];
 			$carousel_params = get_carousel_data( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile, false );
@@ -42,7 +42,7 @@ global $gs_coach_loop;
 
 				<?php while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-					$designation = get_post_meta( get_the_id(), '_gs_des', true );
+					$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 					$classes = ['single-member--wrapper single-member-div'];
 		
@@ -113,7 +113,7 @@ global $gs_coach_loop;
 
 			</div>
 
-			<?php do_action( 'gs_coach_after_team_members' ); ?>
+			<?php do_action( 'gs_coach_after_coaches' ); ?>
 
 		<?php else: ?>
 

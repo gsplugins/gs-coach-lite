@@ -53,12 +53,12 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 			if ( $_drawer_enabled ) echo '<div class="gridder">';
 
-			do_action( 'gs_coach_before_team_members' );
+			do_action( 'gs_coach_before_coaches' );
 
 			while ( $gs_coach_loop->have_posts() ): $gs_coach_loop->the_post();
 
-			$designation = get_post_meta( get_the_id(), '_gs_des', true );
-			$cell = get_post_meta( get_the_id(), '_gs_cell', true );
+			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
+			$cell = get_post_meta( get_the_id(), '_gscoach_contact', true );
 
 			$classes = ['single-member-div', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 
@@ -66,7 +66,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 			if ( $_drawer_enabled ) $classes[] = 'gridder-list';
 			if ( $_filter_enabled ) {
-				$designation = get_post_meta( get_the_id(), '_gs_des', true );
+				$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 				if ( empty($designation) ) $designation = '';
 				
 				$classes[] = 'gs-filter-single-item';
@@ -163,7 +163,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 		<?php endwhile; ?>
 
-			<?php do_action( 'gs_coach_after_team_members' );
+			<?php do_action( 'gs_coach_after_coaches' );
 
 			if ( $_drawer_enabled ) echo '</div>'; ?>
 
