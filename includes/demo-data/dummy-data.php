@@ -384,7 +384,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         public function get_meta_inputs( $meta_inputs = [] ) {
 
             $meta_inputs['_thumbnail_id'] = $this->get_attachment_id_by_filename( $meta_inputs['_thumbnail_id'] );
-            $meta_inputs['second_featured_img'] = $this->get_attachment_id_by_filename( $meta_inputs['second_featured_img'] );
+            // $meta_inputs['second_featured_img'] = $this->get_attachment_id_by_filename( $meta_inputs['second_featured_img'] );
 
             return $meta_inputs;
 

@@ -74,6 +74,9 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
                 <div class="gs-roow">
 
                     <div class="gs-col-md-6 gs-col-xs-12 gstm-dsf-bottom-left">
+                    
+                        <!-- Meta Fields -->
+                        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
         
                         <!-- Meta Details -->
                         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>

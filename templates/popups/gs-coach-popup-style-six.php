@@ -24,6 +24,9 @@ if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
         <!-- Social Links -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
 
+        <!-- Meta Fields -->
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
+
         <!-- Description -->
         <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
         <?php do_action( 'gs_coach_after_member_details' ); ?>
@@ -76,6 +79,9 @@ if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
         <!-- Description -->
         <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
         <?php do_action( 'gs_coach_after_member_details' ); ?>
+        
+        <!-- Meta Fields -->
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
         
         <!-- Social Links -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
