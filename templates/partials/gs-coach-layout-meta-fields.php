@@ -35,7 +35,6 @@ $course_link           = get_post_meta( get_the_id(), '_gscoach_courselink', tru
 $fee                   = get_post_meta( get_the_id(), '_gscoach_fee', true );
 $review                = get_post_meta( get_the_id(), '_gscoach_review', true );
 $rating                = get_post_meta( get_the_id(), '_gscoach_rating', true );
-// $rating                = gs_star_rating( array( 'rating' => $rating ) );
 
 ?>
 

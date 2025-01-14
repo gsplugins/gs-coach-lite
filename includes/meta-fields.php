@@ -428,7 +428,7 @@ class Meta_Fields {
 			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));
 			update_post_meta($post_id, '_gscoach_address', sanitize_text_field($_POST['gs_coach_address']));
 			update_post_meta($post_id, '_gscoach_state', sanitize_text_field($_POST['gs_coach_state']));
-			update_post_meta($post_id, '_gs_coach_country', sanitize_text_field($_POST['gs_coach_country']));
+			update_post_meta($post_id, '_gscoach_country', sanitize_text_field($_POST['gs_coach_country']));
 			update_post_meta($post_id, '_gscoach_contact', sanitize_text_field($_POST['gs_coach_contact_number']));
 			update_post_meta($post_id, '_gscoach_email', sanitize_text_field($_POST['gs_coach_email']));
 			update_post_meta($post_id, '_gscoach_shedule', sanitize_text_field($_POST['gs_coach_schedule']));
