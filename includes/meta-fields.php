@@ -61,6 +61,8 @@ class Meta_Fields {
 		$gs_coach_email            = get_post_meta($post->ID, '_gscoach_email', true);
 		$gs_coach_schedule         = get_post_meta($post->ID, '_gscoach_shedule', true);
 		$gs_coach_available        = get_post_meta($post->ID, '_gscoach_available', true);
+		$gs_coach_psite            = get_post_meta($post->ID, '_gscoach_psite', true);
+		$gs_coach_courselink       = get_post_meta($post->ID, '_gscoach_courselink', true);
 		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
 		$gs_coach_review           = get_post_meta($post->ID, '_gscoach_review', true);
 		$gs_coach_rating 		   = get_post_meta( $post->ID, '_gscoach_rating', true );
@@ -122,6 +124,16 @@ class Meta_Fields {
 				<div class="form-group">
 					<label for="gsCoachAvailable"><?php _e('Availablity', 'gscoach'); ?></label>
 					<input type="date" id="gsCoachAvailable" class="form-control" name="gs_coach_available" placeholder="Available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>">
+				</div>
+
+				<div class="form-group">
+					<label for="gsCoachPersonalSite"><?php _e('Personal Site', 'gscoach'); ?></label>
+					<input type="url" id="gsCoachPersonalSite" class="form-control" name="gs_coach_psite" placeholder="Personal Site" value="<?php echo isset($gs_coach_psite) ? esc_attr($gs_coach_psite) : ''; ?>">
+				</div>
+
+				<div class="form-group">
+					<label for="gsCoachCourseLink"><?php _e('Course Link', 'gscoach'); ?></label>
+					<input type="url" id="gsCoachCourseLink" class="form-control" name="gs_coach_courselink" placeholder="Course Link" value="<?php echo isset($gs_coach_courselink) ? esc_attr($gs_coach_courselink) : ''; ?>">
 				</div>
 
 				<div class="form-group">
@@ -421,12 +433,11 @@ class Meta_Fields {
 			update_post_meta($post_id, '_gscoach_email', sanitize_text_field($_POST['gs_coach_email']));
 			update_post_meta($post_id, '_gscoach_shedule', sanitize_text_field($_POST['gs_coach_schedule']));
 			update_post_meta($post_id, '_gscoach_available', sanitize_text_field($_POST['gs_coach_available']));
+			update_post_meta($post_id, '_gscoach_psite', sanitize_text_field($_POST['gs_coach_psite']));
+			update_post_meta($post_id, '_gscoach_courselink', sanitize_text_field($_POST['gs_coach_courselink']));
 			update_post_meta($post_id, '_gscoach_fee', sanitize_text_field($_POST['gs_coach_fee']));
 			update_post_meta($post_id, '_gscoach_review', sanitize_text_field($_POST['gs_coach_review']));
 			update_post_meta($post_id, '_gscoach_rating', sanitize_text_field($_POST['gs_coach_rating']));
-
-			// $meta_key = 'second_featured_img';
-			// update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$meta_key]));
 		}
 	}
 }

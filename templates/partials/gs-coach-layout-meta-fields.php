@@ -31,7 +31,7 @@ $availablity           = get_post_meta( get_the_id(), '_gscoach_availablity', tr
 $fee                   = get_post_meta( get_the_id(), '_gscoach_fee', true );
 $review                = get_post_meta( get_the_id(), '_gscoach_review', true );
 $rating                = get_post_meta( get_the_id(), '_gscoach_rating', true );
-$rating                = gs_star_rating( array( 'rating' => $rating ) );
+// $rating                = gs_star_rating( array( 'rating' => $rating ) );
 
 ?>
 
@@ -96,7 +96,7 @@ $rating                = gs_star_rating( array( 'rating' => $rating ) );
     <?php if ( !empty($rating) ) : ?>
         <div class="gs-member-rating">
             <span class="levels"><?php echo esc_html($gs_coach_rating_meta); ?></span>
-            <span class="level-info-rating"><?php echo $rating; ?></span>
+            <span class="level-info-rating"><?php esc_html( gs_star_rating( array( 'rating' => $rating ) ) ); ?></span>
         </div>
     <?php endif; ?>
 

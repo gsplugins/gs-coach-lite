@@ -922,9 +922,9 @@ function gs_star_rating( $args = array() ) {
 
 	$output  = '<div class="star-rating">';
 	$output .= '<span class="screen-reader-text">' . $title . '</span>';
-	$output .= str_repeat( '<div class="star <i class="fa-solid fa-star"></i>" aria-hidden="true"></div>', $full_stars );
-	$output .= str_repeat( '<div class="star star-half" aria-hidden="true"></div>', $half_stars );
-	$output .= str_repeat( '<div class="star star-empty" aria-hidden="true"></div>', $empty_stars );
+	$output .= str_repeat( '<div class="star fas fa-star" aria-hidden="true"></div>', $full_stars );
+	$output .= str_repeat( '<div class="star fas fa-star-half-alt" aria-hidden="true"></div>', $half_stars );
+	$output .= str_repeat( '<div class="star far fa-star" aria-hidden="true"></div>', $empty_stars );
 	$output .= '</div>';
 
 	if ( $parsed_args['echo'] ) {
