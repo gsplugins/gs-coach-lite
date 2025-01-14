@@ -16,6 +16,9 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
             <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
         </div>
 
+        <!-- Meta Details -->
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>
+
     </div>
 
 
@@ -33,6 +36,9 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
         <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
         <?php do_action( 'gs_coach_after_member_details' ); ?>
 
+        <!-- Meta Fields -->
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
+
         <!-- Social Links -->
         <?php if ( ! empty( get_social_links( get_the_id() ) ) ) : ?>
             <div class="gs-tm-sicons">
@@ -41,9 +47,6 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
                 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
             </div>
         <?php endif; ?>
-
-        <!-- Meta Details -->
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>
 
     </div>
 

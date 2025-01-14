@@ -18,8 +18,12 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
             <p class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
             <?php do_action( 'gs_coach_after_member_designation' ); ?>
 
+            <!-- Single member description -->
             <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
             <?php do_action( 'gs_coach_after_member_details' ); ?>
+
+            <!-- Meta Fields -->
+            <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
 
     </div>
 
