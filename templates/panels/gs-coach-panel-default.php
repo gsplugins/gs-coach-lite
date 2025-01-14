@@ -38,6 +38,9 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
             
             <div class="gstm-panel-right_bottom__wrap">
 
+                <!-- Meta Fields -->
+                <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
+
                 <!-- Description -->
                 <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
                 <?php do_action( 'gs_coach_after_member_details' ); ?>

@@ -42,6 +42,9 @@ namespace GSCOACH; ?>
                     <!-- Description -->
                     <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
                     <?php do_action( 'gs_coach_after_member_details' ); ?>
+
+                    <!-- Meta Fields -->
+                    <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
     
                     <!-- Skills -->
                     <?php $is_skills_title = true; ?>
