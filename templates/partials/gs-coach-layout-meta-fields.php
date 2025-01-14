@@ -17,6 +17,8 @@ $gs_coach_state_meta        = 'State:';
 $gs_coach_country_meta      = 'Country:';
 $gs_coach_schedule_meta     = 'Schedule:';
 $gs_coach_availablity_meta  = 'Availablity:';
+$gs_coach_psite_meta        = 'Personal Site:';
+$gs_coach_courselink_meta   = 'Course Link:';
 $gs_coach_fee_meta          = 'Fee:';
 $gs_coach_review_meta       = 'Review:';
 $gs_coach_rating_meta       = 'Rating:';
@@ -27,7 +29,9 @@ $education             = get_post_meta( get_the_id(), '_gscoach_education', true
 $state                 = get_post_meta( get_the_id(), '_gscoach_state', true );
 $country               = get_post_meta( get_the_id(), '_gscoach_country', true );
 $schedule              = get_post_meta( get_the_id(), '_gscoach_shedule', true );
-$availablity           = get_post_meta( get_the_id(), '_gscoach_availablity', true );
+$availablity           = get_post_meta( get_the_id(), '_gscoach_available', true );
+$personal_site         = get_post_meta( get_the_id(), '_gscoach_psite', true );
+$course_link           = get_post_meta( get_the_id(), '_gscoach_courselink', true );
 $fee                   = get_post_meta( get_the_id(), '_gscoach_fee', true );
 $review                = get_post_meta( get_the_id(), '_gscoach_review', true );
 $rating                = get_post_meta( get_the_id(), '_gscoach_rating', true );
@@ -76,6 +80,20 @@ $rating                = get_post_meta( get_the_id(), '_gscoach_rating', true );
         <div class="gs-member-availablity">
             <span class="levels"><?php echo esc_html($gs_coach_availablity_meta); ?></span>
             <span class="level-info-availablity"><?php echo esc_html($availablity); ?></span>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( !empty($personal_site) ) : ?>
+        <div class="gs-member-psite">
+            <span class="levels"><?php echo esc_html($gs_coach_psite_meta); ?></span>
+            <span class="level-info-psite"><?php echo esc_html($personal_site); ?></span>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( !empty($course_link) ) : ?>
+        <div class="gs-member-courselink">
+            <span class="levels"><?php echo esc_html($gs_coach_courselink_meta); ?></span>
+            <span class="level-info-courselink"><?php echo esc_html($course_link); ?></span>
         </div>
     <?php endif; ?>
 
