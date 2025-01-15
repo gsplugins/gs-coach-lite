@@ -431,6 +431,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     '_gscoach_fee' => "500",
                     '_gscoach_review' => "Lorem ipsum dolor sit amet",
                     '_gscoach_rating' => "3.5",
+                    '_gscoach_custom_page' => "https://yoursite.com/",
                     '_gscoach_socials' => [
                         ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
                         ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
@@ -476,6 +477,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     '_gscoach_fee' => "500",
                     '_gscoach_review' => "Lorem ipsum dolor sit amet",
                     '_gscoach_rating' => "3.5",
+                    '_gscoach_custom_page' => "https://yoursite.com/",
                     '_gscoach_socials' => [
                         ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
                         ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
@@ -521,6 +523,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     '_gscoach_fee' => "500",
                     '_gscoach_review' => "Lorem ipsum dolor sit amet",
                     '_gscoach_rating' => "3.5",
+                    '_gscoach_custom_page' => "https://yoursite.com/",
                     '_gscoach_socials' => [
                         ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
                         ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
@@ -566,6 +569,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     '_gscoach_fee' => "500",
                     '_gscoach_review' => "Lorem ipsum dolor sit amet",
                     '_gscoach_rating' => "3.5",
+                    '_gscoach_custom_page' => "https://yoursite.com/",
                     '_gscoach_socials' => [
                         ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
                         ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
@@ -611,6 +615,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     '_gscoach_fee' => "500",
                     '_gscoach_review' => "Lorem ipsum dolor sit amet",
                     '_gscoach_rating' => "3.5",
+                    '_gscoach_custom_page' => "https://yoursite.com/",
                     '_gscoach_socials' => [
                         ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
                         ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],
@@ -656,6 +661,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     '_gscoach_fee' => "500",
                     '_gscoach_review' => "Lorem ipsum dolor sit amet",
                     '_gscoach_rating' => "3.5",
+                    '_gscoach_custom_page' => "https://yoursite.com/",
                     '_gscoach_socials' => [
                         ['icon' => 'fab fa-x-twitter', 'link' => 'https://twitter.com/john_doe'],
                         ['icon' => 'fab fa-google-plus-g', 'link' => 'https://google.com/john_doe'],

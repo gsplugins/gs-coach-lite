@@ -153,3 +153,7 @@ div.bigstars div.rateit-reset {
 div.bigstars div.rateit-reset:hover {
     background: url(star-white32.png);
 }
+
+.form-group.gs-star-rating {
+    justify-content: flex-start !important;
+}

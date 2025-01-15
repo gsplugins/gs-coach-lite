@@ -65,8 +65,9 @@ class Meta_Fields {
 		$gs_coach_courselink       = get_post_meta($post->ID, '_gscoach_courselink', true);
 		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
 		$gs_coach_review           = get_post_meta($post->ID, '_gscoach_review', true);
-		$gs_coach_rating 		   = get_post_meta( $post->ID, '_gscoach_rating', true );
-		$gs_coach_rating		   = $gs_coach_rating ? $gs_coach_rating : 2;
+		$gs_coach_rating 		   = get_post_meta($post->ID, '_gscoach_rating', true);
+		$gs_coach_rating		   = $gs_coach_rating ?? 2;
+		$gs_coach_custom_page 	   = get_post_meta($post->ID, '_gscoach_custom_page', true);
 
 		?>
 
@@ -146,12 +147,15 @@ class Meta_Fields {
 					<input type="text" id="gsCoachReview" class="form-control" name="gs_coach_review" placeholder="Review" value="<?php echo isset($gs_coach_review) ? esc_attr($gs_coach_review) : ''; ?>">
 				</div>
 
-				<div>
-					<p><label for="gsCoachRating"><b><?php _e('Rating:', 'gscoach'); ?></b></label></p>
-					<p>
-						<input name="gs_coach_rating" type="range" value="<?php echo esc_attr($gs_coach_rating); ?>" step="0.25" id="gsCoachRating" style="display:none" />
-						<div class="rateit bigstars" data-rateit-starwidth="32" data-rateit-starheight="32" data-rateit-backingfld="#gsCoachRating" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
-					</p>
+				<div class="form-group gs-star-rating">
+					<label for="gsCoachRating"><b><?php _e('Rating:', 'gscoach'); ?></b></label>
+					<input name="gs_coach_rating" type="range" value="<?php echo esc_attr($gs_coach_rating); ?>" step="0.25" id="gsCoachRating" class="form-control" style="display:none" />
+					<div class="rateit bigstars" data-rateit-starwidth="32" data-rateit-starheight="32" data-rateit-backingfld="#gsCoachRating" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
+				</div>
+
+				<div class="form-group">
+					<label for="gsCoachCustomPage"><?php _e('Custom Page Link', 'gscoach'); ?></label>
+					<input type="url" id="gsCoachCustomPage" class="form-control" name="gs_coach_custom_page" placeholder="Custom Page Link" value="<?php echo isset($gs_coach_custom_page) ? esc_attr($gs_coach_custom_page) : ''; ?>">
 				</div>
 
 				<!-- <?php
@@ -438,6 +442,7 @@ class Meta_Fields {
 			update_post_meta($post_id, '_gscoach_fee', sanitize_text_field($_POST['gs_coach_fee']));
 			update_post_meta($post_id, '_gscoach_review', sanitize_text_field($_POST['gs_coach_review']));
 			update_post_meta($post_id, '_gscoach_rating', sanitize_text_field($_POST['gs_coach_rating']));
+			update_post_meta($post_id, '_gscoach_custom_page', sanitize_text_field($_POST['gs_coach_custom_page']));
 		}
 	}
 }

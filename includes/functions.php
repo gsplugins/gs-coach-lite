@@ -86,7 +86,7 @@ function member_description($shortcode_id, $max_length = 100, $echo = false, $is
     $gs_more_link = '';
 
     if ( $link_type == 'custom' ) {
-        $custom_page_link = get_post_meta( $member_id, '_gs_custom_page', true );
+        $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
         if ( empty($custom_page_link) ) {
             $default_link_type = getoption('single_link_type', 'single_page');
             if ( $default_link_type == 'none' ) {
@@ -192,7 +192,7 @@ function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_t
         ]);
 
         if ( $link_type == 'custom' ) {
-            $custom_page_link = get_post_meta( $member_id, '_gs_custom_page', true );
+            $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
             if ( empty($custom_page_link) ) {
                 $default_link_type = getoption('single_link_type', 'single_page');
                 if ( $default_link_type == 'none' ) {
@@ -251,7 +251,7 @@ function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $li
     $before = $after = '';
 
     if ( $link_type == 'custom' ) {
-        $custom_page_link = get_post_meta( $member_id, '_gs_custom_page', true );
+        $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
         if ( empty($custom_page_link) ) {
             $default_link_type = getoption('single_link_type', 'single_page');
             if ( $default_link_type == 'none' ) {
@@ -301,7 +301,7 @@ function member_name($shortcode_id, $echo = false, $has_link = true, $link_type 
     $the_title = $custom_title ?: get_the_title();
 
     if ( $link_type == 'custom' ) {
-        $custom_page_link = get_post_meta( $member_id, '_gs_custom_page', true );
+        $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
         if ( empty($custom_page_link) ) {
             $default_link_type = getoption('single_link_type', 'single_page');
             if ( $default_link_type == 'none' ) {
