@@ -64,10 +64,11 @@ final class Scripts {
 
 		// Scripts
 		$this->add_script('gs-rate-it', GSCOACH_PLUGIN_URI . '/assets/libs/rateit-js/jquery.rateit.min.js', ['jquery'], GSCOACH_VERSION, true);
+		$this->add_script('gs-coach-certificate-gallery', GSCOACH_PLUGIN_URI . '/assets/admin/js/gscoach_certificate_gallery.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-select2', GSCOACH_PLUGIN_URI . '/assets/libs/select2/select2.min.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true);
 		$this->add_script('gs-coach-sort-group', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort-group.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true);
-		$this->add_script('gs-coach-admin', GSCOACH_PLUGIN_URI . '/assets/admin/js/admin.min.js', ['jquery', 'jquery-ui-sortable', 'gs-select2', 'gs-rate-it'], GSCOACH_VERSION, true);
+		$this->add_script('gs-coach-admin', GSCOACH_PLUGIN_URI . '/assets/admin/js/admin.min.js', ['jquery', 'jquery-ui-sortable', 'gs-select2', 'gs-rate-it', 'gs-coach-certificate-gallery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-bootstrap-table', GSCOACH_PLUGIN_URI . '/assets/libs/bootstrap-table/bootstrap-table.min.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-cpb-scroller', GSCOACH_PLUGIN_URI . '/assets/libs/cpb-scroller/cpb-scroller.min.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-gridder', GSCOACH_PLUGIN_URI . '/assets/libs/gridder/gridder.min.js', ['jquery'], GSCOACH_VERSION, true);
@@ -267,7 +268,8 @@ final class Scripts {
 		return (array) apply_filters('gs_coach_get_admin_script_all', [
 			'gs-select2',
 			'gs-coach-admin',
-			'gs-rate-it'
+			'gs-rate-it',
+			'gs-coach-certificate-gallery',
 		]);
 	}
 

@@ -19,6 +19,7 @@ class Meta_Fields {
 		add_meta_box('gsCoachSection', 'Coach\'s Additional Info', [ $this, 'cmb_cb' ], 'gs_coach', 'normal', 'high');
 		add_meta_box('gsCoachSectionSocial', 'Coach\'s Social Links', [ $this, 'cmb_social_cb' ], 'gs_coach', 'normal', 'high');
 		add_meta_box('gsCoachSectionSkill', 'Coach\'s Skills', [ $this, 'cmb_skill_cb' ], 'gs_coach', 'normal', 'high');
+		add_meta_box('gsCoachSectionCertificate', 'Coach\'s Certificates', [ $this, 'cmb_certificate_cb' ], 'gs_coach', 'normal', 'high');
 	}
 
 	function gs_image_uploader_field($name, $value = '') {
@@ -330,7 +331,41 @@ class Meta_Fields {
 
 		</div>
 
-<?php
+	<?php
+	}
+
+
+	public function cmb_certificate_cb(){
+		
+		// Add a nonce field so we can check for it later.
+		wp_nonce_field('gs_coach_nonce_name', 'gs_coach_cmb_token');
+
+		global $post;
+		// Here we get the current images ids of the gallery
+		$custom = get_post_custom($post->ID);
+		$gscoach_certif_gallery = (isset($custom["_gscoach_certif_gallery"][0])) ? $custom["_gscoach_certif_gallery"][0] : '';
+	
+		// We display the gallery
+		?>
+	
+		<div class="gs-coach-pro-field">
+			<div class="gs_coach_gallery_certifs">
+				<?php
+				$img_array = (isset($gscoach_certif_gallery) && $gscoach_certif_gallery != '') ? explode(',', $gscoach_certif_gallery) : '';
+				if ($img_array != '') {
+					foreach ($img_array as $img) {
+						echo '<div class="gallery-item">'.wp_get_attachment_image($img).'</div>';
+					}
+				}
+				?>
+			</div>
+			<p class="separator">
+				<input id="gscoach_certif_gal_input" type="hidden" name="gscoach_certif_gallery" value="<?php echo $gscoach_certif_gallery; ?>" data-urls=""/>
+				<input id="manage_certificate" class="button" title="Add / Edit Certificates" type="button" value="Add / Edit Certificates" />
+				<input id="gscoach_empty_certif" class="button" title="Empty Certificates" type="button" value="Empty Certificates" />
+			</p>
+		</div>
+		<?php
 	}
 
 
@@ -443,6 +478,16 @@ class Meta_Fields {
 			update_post_meta($post_id, '_gscoach_review', sanitize_text_field($_POST['gs_coach_review']));
 			update_post_meta($post_id, '_gscoach_rating', sanitize_text_field($_POST['gs_coach_rating']));
 			update_post_meta($post_id, '_gscoach_custom_page', sanitize_text_field($_POST['gs_coach_custom_page']));
+
+			// Save certificate gallery
+			global $post;
+			if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){
+				return;
+			} else if(is_object($post)){
+			   
+				$gscoach_certif_gallery = (isset($_POST["gscoach_certif_gallery"])) ? $_POST["gscoach_certif_gallery"] : '';
+				update_post_meta($post->ID, "_gscoach_certif_gallery", $gscoach_certif_gallery);
+			}
 		}
 	}
 }

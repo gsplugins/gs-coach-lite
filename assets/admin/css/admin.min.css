@@ -243,3 +243,11 @@
   color: #ffffff;
   text-decoration: none;
 }
+
+.gs_coach_gallery_certifs .gallery-item {
+  display: inline-block !important;
+  margin-right: 2%;
+}
+.gs_coach_gallery_certifs .gallery-item img {
+  max-width: 200px;
+}
