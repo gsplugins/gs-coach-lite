@@ -13,6 +13,7 @@ namespace GSCOACH;
 
 $member_id = get_the_id();
 
+
 $skills = get_skills( $member_id );
 
 $is_skills_title = empty($is_skills_title) ? false : wp_validate_boolean($is_skills_title);

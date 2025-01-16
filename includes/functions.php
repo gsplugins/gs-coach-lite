@@ -869,6 +869,23 @@ function get_skills($post_id = null) {
     return (array) apply_filters('gs_coach_member_skills', $skills, $post_id);
 }
 
+function get_certificates($post_id = null) {
+    if (empty($post_id)) $post_id = get_the_ID();
+    if (empty($post_id)) return [];
+    $certificate_ids = (array) get_post_meta($post_id, 'gscoach_certif_gallery', true);
+    $certificate_ids = array_filter($certificate_ids);
+    var_dump($certificate_ids);
+    exit;
+    $certificates = [];
+
+    foreach ($certificate_ids as $certificate_id) {
+        $certificate = wp_get_attachment_image($certificate_id, 'thumbnail');
+        if (!empty($certificate)) $certificates[] = $certificate;
+    }
+
+    return (array) apply_filters('gs_coach_member_certificates', $certificates, $post_id);
+}
+
 function isPreview() {
     return isset($_REQUEST['gscoach_shortcode_preview']) && !empty($_REQUEST['gscoach_shortcode_preview']);
 }

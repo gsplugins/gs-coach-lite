@@ -343,7 +343,7 @@ class Meta_Fields {
 		global $post;
 		// Here we get the current images ids of the gallery
 		$custom = get_post_custom($post->ID);
-		$gscoach_certif_gallery = (isset($custom["_gscoach_certif_gallery"][0])) ? $custom["_gscoach_certif_gallery"][0] : '';
+		$gscoach_certif_gallery = (isset($custom["gscoach_certif_gallery"][0])) ? $custom["gscoach_certif_gallery"][0] : '';
 	
 		// We display the gallery
 		?>
@@ -486,7 +486,7 @@ class Meta_Fields {
 			} else if(is_object($post)){
 			   
 				$gscoach_certif_gallery = (isset($_POST["gscoach_certif_gallery"])) ? $_POST["gscoach_certif_gallery"] : '';
-				update_post_meta($post->ID, "_gscoach_certif_gallery", $gscoach_certif_gallery);
+				update_post_meta($post->ID, "gscoach_certif_gallery", $gscoach_certif_gallery);
 			}
 		}
 	}
