@@ -11,16 +11,26 @@ namespace GSCOACH;
  * @version 1.0.0
  */
 
-$member_id = get_the_id();
 
-$certificates = get_certificates( $member_id );
+$coach_id = get_the_id();
+$certificates = get_certificate_ids( $coach_id );
 
-var_dump($certificates);
-exit();
+if ( ! $certificates ) {
+    return;
+}
 
+if( 'on' === $is_certificates_enabled ):
 
+$certificates_title = 'Certificates';
 ?>
 
-<div class="">
-
+<h2 class="gs-coach-certificates-title"><?php echo esc_html( $certificates_title ); ?></h2>
+<div class="gs-coach-certificates-wrapper">
+    <?php foreach ( $certificates as $certificate ) : ?>
+        <div class="gs-coach-certificate">
+            <?php echo wp_get_attachment_image( $certificate, 'full' ); ?>
+        </div>
+    <?php endforeach; ?>
 </div>
+
+<?php endif; ?>

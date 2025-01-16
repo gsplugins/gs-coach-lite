@@ -348,7 +348,8 @@ class Meta_Fields {
 		// We display the gallery
 		?>
 	
-		<div class="gs-coach-pro-field">
+		<div class="gs-coach-pro-field gs_coach-metafields">
+			<div style="height: 20px;"></div>
 			<div class="gs_coach_gallery_certifs">
 				<?php
 				$img_array = (isset($gscoach_certif_gallery) && $gscoach_certif_gallery != '') ? explode(',', $gscoach_certif_gallery) : '';

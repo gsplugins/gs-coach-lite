@@ -869,21 +869,19 @@ function get_skills($post_id = null) {
     return (array) apply_filters('gs_coach_member_skills', $skills, $post_id);
 }
 
-function get_certificates($post_id = null) {
+function get_certificate_ids($post_id = null) {
     if (empty($post_id)) $post_id = get_the_ID();
     if (empty($post_id)) return [];
     $certificate_ids = (array) get_post_meta($post_id, 'gscoach_certif_gallery', true);
-    $certificate_ids = array_filter($certificate_ids);
-    var_dump($certificate_ids);
-    exit;
-    $certificates = [];
-
-    foreach ($certificate_ids as $certificate_id) {
-        $certificate = wp_get_attachment_image($certificate_id, 'thumbnail');
-        if (!empty($certificate)) $certificates[] = $certificate;
+    
+    if( '' === $certificate_ids[0] ){
+        return;
     }
 
-    return (array) apply_filters('gs_coach_member_certificates', $certificates, $post_id);
+    $certificate_ids = array_filter($certificate_ids);
+    $certificate_ids = explode(',', $certificate_ids[0]);
+
+    return $certificate_ids;
 }
 
 function isPreview() {

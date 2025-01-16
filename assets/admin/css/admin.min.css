@@ -146,6 +146,26 @@
           box-shadow: 0 0 0 1px #6472ef;
 }
 
+.gs_coach-metafields input.button {
+  font-size: 14px;
+  height: 36px;
+  line-height: 34px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.gs_coach-metafields input.button,
+.gs_coach-metafields input.button:hover {
+  color: #6472ef;
+  border-color: #6472ef;
+  background: rgba(100, 114, 239, 0.05);
+}
+
+.gs_coach-metafields input.button:focus {
+  -webkit-box-shadow: 0 0 0 1px #6472ef;
+          box-shadow: 0 0 0 1px #6472ef;
+}
+
 .gs_coach-metafields a.button.remove-row {
   height: 40px;
   line-height: 38px;
