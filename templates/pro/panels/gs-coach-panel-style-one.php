@@ -63,6 +63,12 @@ namespace GSCOACH; ?>
                     <!-- Meta Details -->
                     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>
 
+                    <div class="gs_member_certificates">
+                        <!-- Certificates -->
+                        <?php $is_certificates_enabled = 'on'; ?>
+                        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
+                    </div>
+
                 </div>
                 
 

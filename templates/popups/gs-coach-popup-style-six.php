@@ -37,6 +37,12 @@ if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
         <!-- Skills -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-skills.php' ); ?>
 
+        <div class="gs_member_certificates">
+            <!-- Certificates -->
+            <?php $is_certificates_enabled = 'on'; ?>
+            <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
+        </div>
+
     </div>
 
 <?php else: ?>
@@ -85,6 +91,12 @@ if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
         
         <!-- Social Links -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
+
+        <div class="gs_member_certificates">
+            <!-- Certificates -->
+            <?php $is_certificates_enabled = 'on'; ?>
+            <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
+        </div>
 
     </div>
 

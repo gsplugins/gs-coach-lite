@@ -78,6 +78,12 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
             </div> <!--End Of gs-col-md-6 -->
 
-    </div> <!-- End Of Row -->
+    </div>
+
+    <div class="gs_member_certificates">
+        <!-- Certificates -->
+         <?php $is_certificates_enabled = 'on'; ?>
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
+    </div>
 
 </div>

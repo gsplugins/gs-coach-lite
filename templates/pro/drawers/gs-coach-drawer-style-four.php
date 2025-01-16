@@ -42,3 +42,9 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
     </div>
 
 </div>
+
+<div class="gs_member_certificates">
+    <!-- Certificates -->
+    <?php $is_certificates_enabled = 'on'; ?>
+    <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
+</div>
