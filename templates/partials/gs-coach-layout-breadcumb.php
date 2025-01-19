@@ -13,14 +13,19 @@ namespace GSCOACH;
 
 if( 'on' === $is_breadcumb_enabled ):
 
+    // get home text and url
+    $home_text = 'Home';
     $home_url = home_url();
     $seperator = ' > ';
-    $current_page = get_the_title();
-    // get post type slug
+
+    // get post type slug and archive link
     $post_type = get_post_type();
     $post_type_obj = get_post_type_object( $post_type );
     $post_type_slug = ucfirst($post_type_obj->rewrite['slug']);
     $post_type_archive_link = get_post_type_archive_link( $post_type );
+
+    // get current page title
+    $current_page = get_the_title();
 
 ?>
 <!-- Temporary style -->
@@ -28,18 +33,19 @@ if( 'on' === $is_breadcumb_enabled ):
     ul.gs-coach-breadcumb-list li {
     display: inline-block;
 }
+ul.gs-coach-breadcumb-list {
+    padding: 0;
+}
 </style>
 
-<div class="gs-coach-breadcumb">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="gs-coach-breadcumb-list">
-                    <li><a href="<?php echo esc_url( $home_url ); ?>"><?php _e( 'Home', 'gs-coach' ); ?></a><?php echo $seperator; ?></li>
-                    <li><a href="<?php echo esc_url( $post_type_archive_link ); ?>"><?php echo esc_html( $post_type_slug ); ?></a><?php echo esc_html( $seperator ); ?></li>
-                    <li><?php echo esc_html( $current_page ); ?></li>
-                </ul>
-            </div>
+<div class="gs-breadcumb-container">
+    <div class="gs-roow">
+        <div class="col-md-12">
+            <ul class="gs-coach-breadcumb-list">
+                <li><a href="<?php echo esc_url( $home_url ); ?>"><?php echo esc_html($home_text); ?></a><?php echo $seperator; ?></li>
+                <li><a href="<?php echo esc_url( $post_type_archive_link ); ?>"><?php echo esc_html( $post_type_slug ); ?></a><?php echo esc_html( $seperator ); ?></li>
+                <li><?php echo esc_html( $current_page ); ?></li>
+            </ul>
         </div>
     </div>
 </div>
