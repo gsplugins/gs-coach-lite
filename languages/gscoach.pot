@@ -300,15 +300,15 @@ msgid "File is not valid"
 msgstr ""
 
 #: ../includes/demo-data/dummy-data.php:235
-msgid "Dummy Coach members already imported"
+msgid "Dummy Coaches already imported"
 msgstr ""
 
 #: ../includes/demo-data/dummy-data.php:249
-msgid "Dummy Coach members imported"
+msgid "Dummy Coaches imported"
 msgstr ""
 
 #: ../includes/demo-data/dummy-data.php:271
-msgid "Dummy Coach members deleted"
+msgid "Dummy Coaches deleted"
 msgstr ""
 
 #: ../includes/demo-data/dummy-data.php:289

@@ -19,7 +19,7 @@ if ( $_drawer_enabled ) $gs_row_classes[] = 'gstm-gridder gstm-gridder-' . $draw
 
 ?>
 
-<!-- Container for Coach members -->
+<!-- Container for Coaches -->
 <div class="gs-containeer cbp-so-scroller">
 	
 	<div class="<?php echo esc_attr( implode(' ', $gs_row_classes) ); ?>">

@@ -232,7 +232,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             // Data already imported
             if ( get_option('gscoach_dummy_team_data_created') !== false || get_transient('gscoach_dummy_team_data_creating') !== false ) {
 
-                $message_202 = __( 'Dummy Coach members already imported', 'gscoach' );
+                $message_202 = __( 'Dummy Coaches already imported', 'gscoach' );
 
                 if ( $is_ajax ) wp_send_json_success( $message_202, 202 );
                 
@@ -246,7 +246,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             // Importing demo data
             $this->create_dummy_attachments();
 
-            $message = __( 'Dummy Coach members imported', 'gscoach' );
+            $message = __( 'Dummy Coaches imported', 'gscoach' );
 
             if ( $is_ajax ) wp_send_json_success( $message, 200 );
 
@@ -268,7 +268,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             delete_option( 'gscoach_dummy_team_data_created' );
             delete_transient( 'gscoach_dummy_team_data_creating' );
 
-            $message = __( 'Dummy Coach members deleted', 'gscoach' );
+            $message = __( 'Dummy Coaches deleted', 'gscoach' );
 
             if ( $is_ajax ) wp_send_json_success( $message, 200 );
 

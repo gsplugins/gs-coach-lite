@@ -15,7 +15,7 @@ global $gs_coach_loop;
 
 ?>
 
-<!-- Container for Coach members -->
+<!-- Container for Coaches -->
 <div class="gs-containeer">
 	
 	<?php if ( $gs_coach_loop->have_posts() ): ?>

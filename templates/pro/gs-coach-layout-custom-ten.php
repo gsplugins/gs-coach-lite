@@ -15,7 +15,7 @@ global $gs_coach_loop;
 
 ?>
 
-<!-- Container for Coach members -->
+<!-- Container for Coaches -->
 <div class="gs-containeer cbp-so-scroller">
 	
 	<div class="gs-roow gs-custom-layout-ten clearfix gs_coach">

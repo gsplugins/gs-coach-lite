@@ -40,7 +40,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 ?>
 
-<!-- Container for Coach members -->
+<!-- Container for Coaches -->
 <div class="gs-containeer cbp-so-scroller">
 
 	<?php if ( $_filter_enabled ) : ?>

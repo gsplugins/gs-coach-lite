@@ -16,7 +16,7 @@ $panel_enabled = 'on';
 
 ?>
 
-<!-- Container for Coach members -->
+<!-- Container for Coaches -->
 <div class="gs-containeer cbp-so-scroller">
 
 	<?php if ( $gs_coach_loop->have_posts() ): ?>

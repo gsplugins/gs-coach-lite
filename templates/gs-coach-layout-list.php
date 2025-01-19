@@ -17,7 +17,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 ?>
 
-<!-- Container for Coach members -->
+<!-- Container for Coaches -->
 <div class="gs-containeer cbp-so-scroller">
 	
 	<div class="gs-roow clearfix gs_coach">
