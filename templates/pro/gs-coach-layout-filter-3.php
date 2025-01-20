@@ -47,7 +47,12 @@ global $gs_coach_loop;
 					get_member_terms_slugs( 'gs_coach_location' ),
 					get_member_terms_slugs( 'gs_coach_language' ),
 					get_member_terms_slugs( 'gs_coach_gender' ),
-					get_member_terms_slugs( 'gs_coach_specialty' )
+					get_member_terms_slugs( 'gs_coach_specialty' ),
+					get_member_terms_slugs( 'gs_coach_extra_one' ),
+					get_member_terms_slugs( 'gs_coach_extra_two' ),
+					get_member_terms_slugs( 'gs_coach_extra_three' ),
+					get_member_terms_slugs( 'gs_coach_extra_four' ),
+					get_member_terms_slugs( 'gs_coach_extra_five' ),
 				];
 
 				if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';

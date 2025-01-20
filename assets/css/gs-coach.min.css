@@ -4346,7 +4346,7 @@ li.gridder-list {
   padding: 0px 25px 25px 40px !important;
 }
 .gs-coach-panel--default .gstm-panel-right, .gs-coach-panel--default .gstm-panel-right .gs-member-desc p {
-  color: #000;
+  color: #fff;
 }
 .gs-coach-panel--default .gstm-panel-right h3 {
   margin-top: 25px;
