@@ -155,6 +155,27 @@
 					</div>
 
 				</div>
+
+				<div class="shortcode-setting--row">
+
+					<div class="gs-roow row-20">
+
+						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+							<label class="m-t-10" for="enable_breadcumb">{{translation('enable-breadcumb')}}:</label>
+							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+						</div>
+
+						<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+							<input-toggle class="m-t-6" name="enable_breadcumb" v-model="preference.enable_breadcumb" offLabel="Off" onLabel="On"></input-toggle>
+						</div>
+
+						<div class="gs-col-xs-12 bi-text-help--area">
+							<p class="bi-text-help">{{translation('enable-breadcumb--details')}}</p>
+						</div>
+
+					</div>
+
+				</div>
 				
 				<div class="shortcode-setting--row">
 

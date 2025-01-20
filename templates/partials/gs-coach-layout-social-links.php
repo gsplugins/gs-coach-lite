@@ -13,7 +13,7 @@ namespace GSCOACH;
 
 $social_links = get_social_links( get_the_id() );
 
-if ( 'on' == $gs_member_connect && !empty($social_links) ): ?>
+if ( 'on' == $gs_coach_connect && !empty($social_links) ): ?>
 
     <ul class="gs-coach-social">
 

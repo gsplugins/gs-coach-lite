@@ -62,7 +62,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 			$classes = ['single-member-div', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 
-			if ( $gs_member_link_type == 'popup' ) $classes[] = 'single-member-pop';
+			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 			if ( $_drawer_enabled ) $classes[] = 'gridder-list';
 			if ( $_filter_enabled ) {
@@ -101,7 +101,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 						<div class="gs_coach_image__wrapper">
 							
 							<!-- Coach Image -->
-							<?php echo member_thumbnail_with_link( $id, $gs_member_thumbnail_sizes, $gs_member_name_is_linked == 'on', $gs_member_link_type, $link_preview_image == 'on' ); ?>
+							<?php echo member_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, $link_preview_image == 'on' ); ?>
 							
 							<!-- Overlay -->
 							<?php if( $link_preview_image == 'off' ) { ?>
@@ -117,27 +117,27 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 						</div>
 	
 						<!-- Member Name -->
-						<div class="gs_member_info">
+						<div class="gs_coach_info">
 	
 							<!-- Single member name -->
-							<?php if ( 'on' ==  $gs_member_name ): ?>
-								<?php member_name( $id, true, $gs_member_name_is_linked == 'on', $gs_member_link_type ); ?>
+							<?php if ( 'on' ==  $gs_coach_name ): ?>
+								<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
 								<?php do_action( 'gs_coach_after_member_name' ); ?>
 							<?php endif; ?>
 	
 							<!-- Single member designation -->
-							<?php if ( !empty( $designation ) && 'on' == $gs_member_role ): ?>
+							<?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
 								<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
 								<?php do_action( 'gs_coach_after_member_designation' ); ?>
 							<?php endif; ?>
 
 							<!-- Description -->
-							<?php if ( 'on' ==  $gs_member_details ) : ?>
+							<?php if ( 'on' ==  $gs_coach_details ) : ?>
 								
 								<?php if ( 'on' === $gs_desc_allow_html ) : ?>
 									<div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
 								<?php else : ?>
-									<p class="gs-member-desc" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, true, $gs_member_name_is_linked == 'on', $gs_member_link_type ); ?></p>
+									<p class="gs-member-desc" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
 								<?php endif; ?>
 
 								<?php do_action( 'gs_coach_after_member_details' ); ?>
@@ -180,7 +180,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_member_pagination ) : ?>
+	<?php if ( 'on' == $gs_coach_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

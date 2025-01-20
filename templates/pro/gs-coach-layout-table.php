@@ -35,7 +35,7 @@ global $gs_coach_loop;
 					<div class="gs-coach-table-cell"><?php _e( 'Position', 'gscoach' ); ?></div>
 					<div class="gs-coach-table-cell"><?php _e( 'Description', 'gscoach' ); ?></div>
 
-					<?php if ( 'on' == $gs_member_connect ) : ?>
+					<?php if ( 'on' == $gs_coach_connect ) : ?>
 						<div class="gs-coach-table-cell"><?php _e( 'Social Links', 'gscoach' ); ?></div>
 					<?php endif; ?>
 
@@ -50,7 +50,7 @@ global $gs_coach_loop;
 
 					$classes = ['gs-coach-table-row single-member-div'];
 
-					if ( $gs_member_link_type == 'popup' ) $classes[] = 'single-member-pop';
+					if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
 
 					?>
 
@@ -60,14 +60,14 @@ global $gs_coach_loop;
 
 						<!-- Coach Image -->
 						<div class="gs-coach-table-cell gsc-image">
-							<?php echo member_thumbnail_with_link( $id, $gs_member_thumbnail_sizes, $gs_member_name_is_linked == 'on', $gs_member_link_type, 'gs_coach_image__wrapper' ); ?>
+							<?php echo member_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'gs_coach_image__wrapper' ); ?>
 							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
 						</div>
 
 						<!-- Single member name -->
 						<div class="gs-coach-table-cell gsc-name">
 							<div class="gs-coach-table-cell-inner">
-								<?php member_name( $id, true, $gs_member_name_is_linked == 'on', $gs_member_link_type ); ?>
+								<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
 								<?php do_action( 'gs_coach_after_member_name' ); ?>
 							</div>
 						</div>
@@ -87,14 +87,14 @@ global $gs_coach_loop;
 								<?php if ( 'on' === $gs_desc_allow_html ) : ?>
 									<div class="gs-member-details justify" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
 								<?php else : ?>
-									<div class="gs-member-details justify" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, true, $gs_member_name_is_linked == 'on', $gs_member_link_type ); ?></div>
+									<div class="gs-member-details justify" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></div>
 								<?php endif; ?>
 
 								<?php do_action( 'gs_coach_after_member_details' ); ?>
 							</div>
 						</div>
 
-						<?php if ( 'on' == $gs_member_connect ) : ?>
+						<?php if ( 'on' == $gs_coach_connect ) : ?>
 							<!-- Social Links -->
 							<div class="gs-coach-table-cell socialicon gs-tm-sicons">
 								<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
@@ -124,7 +124,7 @@ global $gs_coach_loop;
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_member_pagination ) : ?>
+	<?php if ( 'on' == $gs_coach_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

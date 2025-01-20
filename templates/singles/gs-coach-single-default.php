@@ -14,15 +14,16 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 ?>
 
+
 <div class="gs-coach-breadcumb">
-    <?php $is_breadcumb_enabled = 'on'; ?>
+    <?php $is_breadcumb_enabled = getoption('enable_breadcumb', 'off'); ?>
     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-breadcumb.php' ); ?>
     <?php do_action( 'gs_coach_after_breadcumb' ); ?>
 </div>
 
 <div class="gs-coach-single-content" itemscope="" itemtype="http://schema.org/Person">
 
-    <div class="gs_member_img">
+    <div class="gs_coach_img">
         
         <div class="gs_ribon_wrapper">
             
@@ -40,7 +41,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
     </div>
 
-    <div class="gs_member_details gs-tm-sicons">
+    <div class="gs_coach_details gs-tm-sicons">
 
         <!-- Member Name -->
         <h1 class="gs-sin-mem-name" itemprop="name"><?php the_title(); ?></h1>
@@ -51,7 +52,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
         <?php do_action( 'gs_coach_after_member_designation' ); ?>
 
         <!-- Social Links -->
-        <?php $gs_member_connect = 'on'; ?>
+        <?php $gs_coach_connect = 'on'; ?>
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
 
         <!-- Meta Fields -->
@@ -66,7 +67,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
         
     </div>
 
-    <div class="gs_member_certificates">
+    <div class="gs_coach_certificates">
         <!-- Certificates -->
          <?php $is_certificates_enabled = 'on'; ?>
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>

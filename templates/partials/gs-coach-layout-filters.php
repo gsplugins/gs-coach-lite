@@ -22,35 +22,35 @@ ob_start();
 
 foreach ( $filters_order as $filter_order ) : ?>
 
-    <?php if ( $filter_order == 'search_by_name' && 'on' ==  $gs_member_srch_by_name ) : ?>
+    <?php if ( $filter_order == 'search_by_name' && 'on' ==  $gs_coach_srch_by_name ) : ?>
         <?php do_action( 'gs_coach_before_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
             <input type="text" class="search-by-name" placeholder="<?php echo esc_attr( $gs_coachfliter_name ); ?>" />
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'search_by_company' && 'on' ==  $gs_member_srch_by_company ) : ?>
+    <?php if ( $filter_order == 'search_by_company' && 'on' ==  $gs_coach_srch_by_company ) : ?>
         <?php do_action( 'gs_coach_before_company_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
             <input type="text" class="search-by-company" placeholder="<?php echo esc_attr( $gs_coachfliter_company ); ?>" />
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'search_by_zip' && 'on' ==  $gs_member_srch_by_zip ) : ?>
+    <?php if ( $filter_order == 'search_by_zip' && 'on' ==  $gs_coach_srch_by_zip ) : ?>
         <?php do_action( 'gs_coach_before_zip_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
             <input type="text" class="search-by-zip" placeholder="<?php echo esc_attr( $gs_coachfliter_zip ); ?>" />
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_tag' && plugin()->builder->get_tax_option('enable_tag_tax') == 'on' && $gs_member_srch_by_tag == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_tag' && plugin()->builder->get_tax_option('enable_tag_tax') == 'on' && $gs_coach_srch_by_tag == 'on' ) : ?>
         <?php do_action( 'gs_coach_before_tag_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
             <input type="text" class="search-by-tag" placeholder="<?php echo esc_attr( $gs_coachfliter_tag ); ?>" />
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'filter_by_designation' && 'on' == $gs_member_filter_by_desig ) : ?>
+    <?php if ( $filter_order == 'filter_by_designation' && 'on' == $gs_coach_filter_by_desig ) : ?>
         <?php do_action( 'gs_coach_before_designation_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
             <select class="filters-select-designation">
@@ -60,7 +60,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_language' && plugin()->builder->get_tax_option('enable_language_tax') == 'on' && $gs_member_filter_by_language == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_language' && plugin()->builder->get_tax_option('enable_language_tax') == 'on' && $gs_coach_filter_by_language == 'on' ) : ?>
         <?php
             $gs_coach_language_meta = plugin()->builder->get_tax_option( 'language_tax_label' );
             $language_terms = get_terms_for_filter( 'gs_coach_language', $hide_empty, $language );
@@ -74,7 +74,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_location' && plugin()->builder->get_tax_option('enable_location_tax') == 'on' && $gs_member_filter_by_location == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_location' && plugin()->builder->get_tax_option('enable_location_tax') == 'on' && $gs_coach_filter_by_location == 'on' ) : ?>
         <?php
             $gs_coach_location_meta = plugin()->builder->get_tax_option( 'location_tax_label' );
             $location_terms = get_terms_for_filter( 'gs_coach_location', $hide_empty, $location );
@@ -88,7 +88,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_gender' && plugin()->builder->get_tax_option('enable_gender_tax') == 'on' && $gs_member_filter_by_gender == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_gender' && plugin()->builder->get_tax_option('enable_gender_tax') == 'on' && $gs_coach_filter_by_gender == 'on' ) : ?>
         <?php
             $gs_coach_gender_meta = plugin()->builder->get_tax_option( 'gender_tax_label' );
             $gender_terms = get_terms_for_filter( 'gs_coach_gender', $hide_empty, $gender, 'DESC' );
@@ -102,7 +102,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_specialty' && plugin()->builder->get_tax_option('enable_specialty_tax') == 'on' && $gs_member_filter_by_speciality == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_specialty' && plugin()->builder->get_tax_option('enable_specialty_tax') == 'on' && $gs_coach_filter_by_speciality == 'on' ) : ?>
         <?php
             $gs_coach_specialty_meta = plugin()->builder->get_tax_option( 'specialty_tax_label' );
             $specialty_terms = get_terms_for_filter( 'gs_coach_specialty', $hide_empty, $specialty, 'ASC' );
@@ -116,7 +116,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_extra_one' && plugin()->builder->get_tax_option('enable_extra_one_tax') == 'on' && $gs_member_filter_by_extra_one == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_extra_one' && plugin()->builder->get_tax_option('enable_extra_one_tax') == 'on' && $gs_coach_filter_by_extra_one == 'on' ) : ?>
         <?php
             $gs_coach_extra_one_meta = plugin()->builder->get_tax_option( 'extra_one_tax_label' );
             $extra_one_terms = get_terms_for_filter( 'gs_coach_extra_one', $hide_empty, $include_extra_one, 'ASC' );
@@ -130,7 +130,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_extra_two' && plugin()->builder->get_tax_option('enable_extra_two_tax') == 'on' && $gs_member_filter_by_extra_two == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_extra_two' && plugin()->builder->get_tax_option('enable_extra_two_tax') == 'on' && $gs_coach_filter_by_extra_two == 'on' ) : ?>
         <?php
             $gs_coach_extra_two_meta = plugin()->builder->get_tax_option( 'extra_two_tax_label' );
             $extra_two_terms = get_terms_for_filter( 'gs_coach_extra_two', $hide_empty, $include_extra_two, 'ASC' );
@@ -144,7 +144,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_extra_three' && plugin()->builder->get_tax_option('enable_extra_three_tax') == 'on' && $gs_member_filter_by_extra_three == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_extra_three' && plugin()->builder->get_tax_option('enable_extra_three_tax') == 'on' && $gs_coach_filter_by_extra_three == 'on' ) : ?>
         <?php
             $gs_coach_extra_three_meta = plugin()->builder->get_tax_option( 'extra_three_tax_label' );
             $extra_three_terms = get_terms_for_filter( 'gs_coach_extra_three', $hide_empty, $include_extra_three, 'ASC' );
@@ -158,7 +158,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_extra_four' && plugin()->builder->get_tax_option('enable_extra_four_tax') == 'on' && $gs_member_filter_by_extra_four == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_extra_four' && plugin()->builder->get_tax_option('enable_extra_four_tax') == 'on' && $gs_coach_filter_by_extra_four == 'on' ) : ?>
         <?php
             $gs_coach_extra_four_meta = plugin()->builder->get_tax_option( 'extra_four_tax_label' );
             $extra_four_terms = get_terms_for_filter( 'gs_coach_extra_four', $hide_empty, $include_extra_four, 'ASC' );
@@ -172,7 +172,7 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'gs_coach_extra_five' && plugin()->builder->get_tax_option('enable_extra_five_tax') == 'on' && $gs_member_filter_by_extra_five == 'on' ) : ?>
+    <?php if ( $filter_order == 'gs_coach_extra_five' && plugin()->builder->get_tax_option('enable_extra_five_tax') == 'on' && $gs_coach_filter_by_extra_five == 'on' ) : ?>
         <?php
             $gs_coach_extra_five_meta = plugin()->builder->get_tax_option( 'extra_five_tax_label' );
             $extra_five_terms = get_terms_for_filter( 'gs_coach_extra_five', $hide_empty, $include_extra_five, 'ASC' );

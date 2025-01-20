@@ -13,9 +13,9 @@ namespace GSCOACH;
 
 do_action( 'gs_coach_before_navigation' );
 
-$gs_member_nxt_prev = getoption( 'gs_member_nxt_prev', 'on' );
+$gs_coach_nxt_prev = getoption( 'gs_coach_nxt_prev', 'on' );
 
-if ( 'on' ==  $gs_member_nxt_prev ) : ?>
+if ( 'on' ==  $gs_coach_nxt_prev ) : ?>
     
     <div class="prev-next-navigation">
         <?php previous_post_link( '<div class="previous">%link</div>', '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="20px"><path fill-rule="evenodd" fill="rgb(204 204 204)" d="M11.414,18.485 L10.000,19.899 L0.100,10.000 L1.515,8.585 L1.515,8.585 L10.000,0.100 L11.414,1.514 L2.929,10.000 L11.414,18.485 Z"/></svg>%title' ); ?>

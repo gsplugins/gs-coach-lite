@@ -242,16 +242,16 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_name_is_linked">{{translation('gs_member_name_is_linked')}}:</label>
+									<label class="m-t-10" for="gs_coach_name_is_linked">{{translation('gs_coach_name_is_linked')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_name_is_linked" v-model="shortcode_settings.gs_member_name_is_linked" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_name_is_linked" v-model="shortcode_settings.gs_coach_name_is_linked" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('gs_member_name_is_linked__details')}}</p>
+									<p class="bi-text-help">{{translation('gs_coach_name_is_linked__details')}}</p>
 								</div>
 
 							</div>
@@ -260,34 +260,34 @@
 
 
 
-						<template v-if="shortcode_settings.gs_member_name_is_linked && !displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme19', 'gs_tm_theme22', 'gs_tm_theme25'] )">
+						<template v-if="shortcode_settings.gs_coach_name_is_linked && !displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme19', 'gs_tm_theme22', 'gs_tm_theme25'] )">
 
 							<div class="shortcode-setting--row">
 
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-5">
-										<label class="m-t-10" for="gs_member_link_type">{{translation('gs_member_link_type')}}:</label>
+										<label class="m-t-10" for="gs_coach_link_type">{{translation('gs_coach_link_type')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-7">
-										<input-select key="gs_member_link_type" id="gs_member_link_type" v-model="shortcode_settings.gs_member_link_type" :options="shortcode_options.gs_member_link_type" :placeholder="translation('column')"></input-select>
+										<input-select key="gs_coach_link_type" id="gs_coach_link_type" v-model="shortcode_settings.gs_coach_link_type" :options="shortcode_options.gs_coach_link_type" :placeholder="translation('column')"></input-select>
 									</div>
 
-									<div class="gs-col-xs-12 bi-text-help--area" v-if="shortcode_settings.gs_member_link_type == 'drawer' && shortcode_settings.carousel_enabled" style="display: block;">
+									<div class="gs-col-xs-12 bi-text-help--area" v-if="shortcode_settings.gs_coach_link_type == 'drawer' && shortcode_settings.carousel_enabled" style="display: block;">
 										<p class="bi-text-help">Drawer will not work while carousel is enabled or on carousel only themes.</p>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area" v-else>
-										<p class="bi-text-help">{{translation('gs_member_link_type__details')}}</p>
+										<p class="bi-text-help">{{translation('gs_coach_link_type__details')}}</p>
 									</div>
 
 								</div>
 
 							</div>
 
-							<div class="shortcode-setting--row" v-if="shortcode_settings.gs_member_link_type == 'popup'">
+							<div class="shortcode-setting--row" v-if="shortcode_settings.gs_coach_link_type == 'popup'">
 
 								<div class="gs-roow row-20">
 
@@ -308,7 +308,7 @@
 
 							</div>
 
-							<div class="shortcode-setting--row" v-if="shortcode_settings.gs_member_link_type == 'panel'">
+							<div class="shortcode-setting--row" v-if="shortcode_settings.gs_coach_link_type == 'panel'">
 
 								<div class="gs-roow row-20">
 
@@ -329,7 +329,7 @@
 
 							</div>
 
-							<div class="shortcode-setting--row" v-if="shortcode_settings.gs_member_link_type == 'drawer' && !shortcode_settings.carousel_enabled">
+							<div class="shortcode-setting--row" v-if="shortcode_settings.gs_coach_link_type == 'drawer' && !shortcode_settings.carousel_enabled">
 
 								<div class="gs-roow row-20">
 
@@ -359,16 +359,16 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="gs_member_thumbnail_sizes">{{translation('gs_member_thumbnail_sizes')}}:</label>
+									<label class="m-t-10" for="gs_coach_thumbnail_sizes">{{translation('gs_coach_thumbnail_sizes')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-7">
-									<input-select key="gs_member_thumbnail_sizes" id="gs_member_thumbnail_sizes" v-model="shortcode_settings.gs_member_thumbnail_sizes" :options="shortcode_options.gs_member_thumbnail_sizes" :placeholder="translation('gs_member_thumbnail_sizes')"></input-select>
+									<input-select key="gs_coach_thumbnail_sizes" id="gs_coach_thumbnail_sizes" v-model="shortcode_settings.gs_coach_thumbnail_sizes" :options="shortcode_options.gs_coach_thumbnail_sizes" :placeholder="translation('gs_coach_thumbnail_sizes')"></input-select>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('gs_member_thumbnail_sizes_details')}}</p>
+									<p class="bi-text-help">{{translation('gs_coach_thumbnail_sizes_details')}}</p>
 								</div>
 
 							</div>
@@ -380,12 +380,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_name">{{translation('member-name')}}:</label>
+									<label class="m-t-10" for="gs_coach_name">{{translation('member-name')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_name" v-model="shortcode_settings.gs_member_name" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_name" v-model="shortcode_settings.gs_coach_name" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -401,12 +401,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_role">{{translation('member-designation')}}:</label>
+									<label class="m-t-10" for="gs_coach_role">{{translation('member-designation')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_role" v-model="shortcode_settings.gs_member_role" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_role" v-model="shortcode_settings.gs_coach_role" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -422,12 +422,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_details">{{translation('member-details')}}:</label>
+									<label class="m-t-10" for="gs_coach_details">{{translation('member-details')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_details" v-model="shortcode_settings.gs_member_details" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_details" v-model="shortcode_settings.gs_coach_details" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -443,12 +443,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_connect">{{translation('social-connection')}}:</label>
+									<label class="m-t-10" for="gs_coach_connect">{{translation('social-connection')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_connect" v-model="shortcode_settings.gs_member_connect" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_connect" v-model="shortcode_settings.gs_coach_connect" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -480,12 +480,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_pagination">{{translation('pagination')}}:</label>
+									<label class="m-t-10" for="gs_coach_pagination">{{translation('pagination')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_pagination" v-model="shortcode_settings.gs_member_pagination" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_pagination" v-model="shortcode_settings.gs_coach_pagination" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -504,12 +504,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_srch_by_name">{{translation('instant-search-by-name')}}:</label>
+									<label class="m-t-10" for="gs_coach_srch_by_name">{{translation('instant-search-by-name')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_srch_by_name" v-model="shortcode_settings.gs_member_srch_by_name" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_srch_by_name" v-model="shortcode_settings.gs_coach_srch_by_name" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -528,12 +528,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_srch_by_company">{{translation('gs-member-srch-by-company')}}:</label>
+									<label class="m-t-10" for="gs_coach_srch_by_company">{{translation('gs-member-srch-by-company')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_srch_by_company" v-model="shortcode_settings.gs_member_srch_by_company" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_srch_by_company" v-model="shortcode_settings.gs_coach_srch_by_company" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -552,12 +552,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_srch_by_zip">{{translation('gs-member-srch-by-zip')}}:</label>
+									<label class="m-t-10" for="gs_coach_srch_by_zip">{{translation('gs-member-srch-by-zip')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_srch_by_zip" v-model="shortcode_settings.gs_member_srch_by_zip" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_srch_by_zip" v-model="shortcode_settings.gs_coach_srch_by_zip" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -576,12 +576,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_srch_by_tag">{{translation('gs-member-srch-by-tag')}}:</label>
+									<label class="m-t-10" for="gs_coach_srch_by_tag">{{translation('gs-member-srch-by-tag')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_srch_by_tag" v-model="shortcode_settings.gs_member_srch_by_tag" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_srch_by_tag" v-model="shortcode_settings.gs_coach_srch_by_tag" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -602,12 +602,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_desig">{{translation('filter-by-designation')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_desig">{{translation('filter-by-designation')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_desig" v-model="shortcode_settings.gs_member_filter_by_desig" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_desig" v-model="shortcode_settings.gs_coach_filter_by_desig" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -623,12 +623,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_location">{{translation('filter-by-location')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_location">{{translation('filter-by-location')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_location" v-model="shortcode_settings.gs_member_filter_by_location" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_location" v-model="shortcode_settings.gs_coach_filter_by_location" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -644,12 +644,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_language">{{translation('filter-by-language')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_language">{{translation('filter-by-language')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_language" v-model="shortcode_settings.gs_member_filter_by_language" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_language" v-model="shortcode_settings.gs_coach_filter_by_language" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -665,12 +665,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_gender">{{translation('filter-by-gender')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_gender">{{translation('filter-by-gender')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_gender" v-model="shortcode_settings.gs_member_filter_by_gender" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_gender" v-model="shortcode_settings.gs_coach_filter_by_gender" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -686,12 +686,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_speciality">{{translation('filter-by-speciality')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_speciality">{{translation('filter-by-speciality')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_speciality" v-model="shortcode_settings.gs_member_filter_by_speciality" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_speciality" v-model="shortcode_settings.gs_coach_filter_by_speciality" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -707,12 +707,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_extra_one">{{translation('filter-by-extra-one')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_extra_one">{{translation('filter-by-extra-one')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_extra_one" v-model="shortcode_settings.gs_member_filter_by_extra_one" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_extra_one" v-model="shortcode_settings.gs_coach_filter_by_extra_one" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -728,12 +728,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_extra_two">{{translation('filter-by-extra-two')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_extra_two">{{translation('filter-by-extra-two')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_extra_two" v-model="shortcode_settings.gs_member_filter_by_extra_two" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_extra_two" v-model="shortcode_settings.gs_coach_filter_by_extra_two" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -749,12 +749,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_extra_three">{{translation('filter-by-extra-three')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_extra_three">{{translation('filter-by-extra-three')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_extra_three" v-model="shortcode_settings.gs_member_filter_by_extra_three" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_extra_three" v-model="shortcode_settings.gs_coach_filter_by_extra_three" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -770,12 +770,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_extra_four">{{translation('filter-by-extra-four')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_extra_four">{{translation('filter-by-extra-four')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_extra_four" v-model="shortcode_settings.gs_member_filter_by_extra_four" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_extra_four" v-model="shortcode_settings.gs_coach_filter_by_extra_four" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -791,12 +791,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_filter_by_extra_five">{{translation('filter-by-extra-five')}}:</label>
+										<label class="m-t-10" for="gs_coach_filter_by_extra_five">{{translation('filter-by-extra-five')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_filter_by_extra_five" v-model="shortcode_settings.gs_member_filter_by_extra_five" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_filter_by_extra_five" v-model="shortcode_settings.gs_coach_filter_by_extra_five" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -812,12 +812,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_enable_clear_filters">{{translation('enable-clear-filters')}}:</label>
+										<label class="m-t-10" for="gs_coach_enable_clear_filters">{{translation('enable-clear-filters')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_enable_clear_filters" v-model="shortcode_settings.gs_member_enable_clear_filters" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_enable_clear_filters" v-model="shortcode_settings.gs_coach_enable_clear_filters" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -833,12 +833,12 @@
 								<div class="gs-roow row-20">
 
 									<div class="gs-col-xs-7">
-										<label class="m-t-10" for="gs_member_enable_multi_select">{{translation('enable-multi-select')}}:</label>
+										<label class="m-t-10" for="gs_coach_enable_multi_select">{{translation('enable-multi-select')}}:</label>
 										<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 									</div>
 
 									<div class="gs-col-xs-5">
-										<input-toggle class="m-t-6" name="gs_member_enable_multi_select" v-model="shortcode_settings.gs_member_enable_multi_select" offLabel="Off" onLabel="On"></input-toggle>
+										<input-toggle class="m-t-6" name="gs_coach_enable_multi_select" v-model="shortcode_settings.gs_coach_enable_multi_select" offLabel="Off" onLabel="On"></input-toggle>
 									</div>
 
 									<div class="gs-col-xs-12 bi-text-help--area">
@@ -852,7 +852,7 @@
 						</template>
 
 						<div class="shortcode-setting--row" v-if="
-							shortcode_settings.gs_member_enable_multi_select &&
+							shortcode_settings.gs_coach_enable_multi_select &&
 							(
 								displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme9', 'gs_tm_theme22', 'gs_tm_theme24', 'gs_tm_theme25'] ) ||
 								( displayCondition( shortcode_settings.gs_coach_theme, themes_v2_filter() ) && shortcode_settings.filter_enabled )
@@ -862,12 +862,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_member_multi_select_ellipsis">{{translation('multi-select-ellipsis')}}:</label>
+									<label class="m-t-10" for="gs_coach_multi_select_ellipsis">{{translation('multi-select-ellipsis')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="gs_member_multi_select_ellipsis" v-model="shortcode_settings.gs_member_multi_select_ellipsis" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="gs_coach_multi_select_ellipsis" v-model="shortcode_settings.gs_coach_multi_select_ellipsis" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -1079,12 +1079,12 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="gs_coachmembers_pop_clm">{{translation('popup-column')}}:</label>
+									<label class="m-t-10" for="gs_coaches_pop_clm">{{translation('popup-column')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-7">
-									<input-select key="gs_coachmembers_pop_clm" id="gs_coachmembers_pop_clm" v-model="shortcode_settings.gs_coachmembers_pop_clm" :options="shortcode_options.gs_coachmembers_pop_clm" :placeholder="translation('popup-column')"></input-select>
+									<input-select key="gs_coaches_pop_clm" id="gs_coaches_pop_clm" v-model="shortcode_settings.gs_coaches_pop_clm" :options="shortcode_options.gs_coaches_pop_clm" :placeholder="translation('popup-column')"></input-select>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
@@ -2279,11 +2279,11 @@
 
 			is_popup_enabled() {
 				
-				if ( ! this.shortcode_settings.gs_member_name_is_linked ) return false;
+				if ( ! this.shortcode_settings.gs_coach_name_is_linked ) return false;
 
-				if ( this.shortcode_settings.gs_member_link_type == 'popup' ) return true;
+				if ( this.shortcode_settings.gs_coach_link_type == 'popup' ) return true;
 
-				if ( this.shortcode_settings.gs_member_link_type == 'single_page' ) return false;
+				if ( this.shortcode_settings.gs_coach_link_type == 'single_page' ) return false;
 
 				return this.displayCondition( this.shortcode_settings.gs_coach_theme, ['gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme12'] );
 
@@ -2721,13 +2721,13 @@
 			},
 
 			resetLinkTypes() {
-				if ( this.shortcode_settings.gs_member_name_is_linked && this.shortcode_settings.gs_member_link_type == 'drawer' ) {
-					this.shortcode_settings.gs_member_link_type = 'default';
+				if ( this.shortcode_settings.gs_coach_name_is_linked && this.shortcode_settings.gs_coach_link_type == 'drawer' ) {
+					this.shortcode_settings.gs_coach_link_type = 'default';
 				}
 			},
 
 			disableCarouselFilers() {
-				if ( this.shortcode_settings.gs_member_name_is_linked && this.shortcode_settings.gs_member_link_type == 'drawer' ) {
+				if ( this.shortcode_settings.gs_coach_name_is_linked && this.shortcode_settings.gs_coach_link_type == 'drawer' ) {
 					this.shortcode_settings.carousel_enabled = false;
 					this.shortcode_settings.filter_enabled = false;
 				}
@@ -2750,13 +2750,13 @@
 				}
 			},
 
-			'shortcode_settings.gs_member_name_is_linked': function() {
+			'shortcode_settings.gs_coach_name_is_linked': function() {
 				if ( this.shortcode_settings.filter_enabled || this.shortcode_settings.carousel_enabled ) {
 					this.resetLinkTypes();
 				}
 			},
 
-			'shortcode_settings.gs_member_link_type': function() {
+			'shortcode_settings.gs_coach_link_type': function() {
 				if ( this.shortcode_settings.filter_enabled || this.shortcode_settings.carousel_enabled ) {
 					this.disableCarouselFilers();
 				}

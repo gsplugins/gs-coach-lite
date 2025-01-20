@@ -1,12 +1,12 @@
 <?php
 namespace GSCOACH;
-if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
+if ( $gs_coaches_pop_clm == 'one' ) : ?>
 
     <div class="gs_coach_popup_details gs-tm-sicons popup-one-column">
         
         <!-- Coach Image -->
         <div class="clearfix">
-            <?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+            <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
         </div>
         <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
 
@@ -36,7 +36,7 @@ if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
         <!-- Skills -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-skills.php' ); ?>
 
-        <div class="gs_member_certificates">
+        <div class="gs_coach_certificates">
             <!-- Certificates -->
             <?php $is_certificates_enabled = 'on'; ?>
             <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
@@ -50,7 +50,7 @@ if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
     
         <!-- Coach Image -->
         <div class="gs_coach_popup_img">
-            <?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+            <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
             <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
         </div>
 
@@ -85,7 +85,7 @@ if ( $gs_coachmembers_pop_clm == 'one' ) : ?>
         <!-- Skills -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-skills.php' ); ?>
 
-        <div class="gs_member_certificates">
+        <div class="gs_coach_certificates">
             <!-- Certificates -->
             <?php $is_certificates_enabled = 'on'; ?>
             <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>

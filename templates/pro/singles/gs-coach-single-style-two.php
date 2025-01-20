@@ -26,7 +26,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
         <div class="gs-col-md-4 gs-col-xs-12">
 
-            <div class="gs_member_img">
+            <div class="gs_coach_img">
                 
                 <div class="gs_ribon_wrapper">
                     
@@ -45,7 +45,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
         <div class="gs-col-md-8 gs-col-xs-12">
 
-            <div class="gs_member_details">
+            <div class="gs_coach_details">
         
                 <!-- Member Name -->
                 <h1 class="gs-sin-mem-name" itemprop="name"><?php the_title(); ?></h1>
@@ -72,7 +72,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
                 <?php if ( ! empty( get_social_links( get_the_id() ) ) ) : ?>
                     <div class="gs-tm-sicons">
                         <div class="gs-tm-sicons-lable"><?php echo esc_html($gs_coach_follow_me_on); ?></div>
-                        <?php $gs_member_connect = 'on'; ?>
+                        <?php $gs_coach_connect = 'on'; ?>
                         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
                     </div>
                 <?php endif; ?>
@@ -87,7 +87,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
     </div>
 
-    <div class="gs_member_certificates">
+    <div class="gs_coach_certificates">
         <!-- Certificates -->
          <?php $is_certificates_enabled = 'on'; ?>
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>

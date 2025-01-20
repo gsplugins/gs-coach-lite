@@ -41,7 +41,7 @@ class Cpt {
 			'not_found_in_trash' => __( 'No Coaches found in Trash.', 'gscoach' ),
 		);
 
-		$gs_coachmembers_slug = getoption( 'gs_coachmembers_slug', 'coaches' );
+		$gs_coaches_slug = getoption( 'gs_coaches_slug', 'coaches' );
 		$replace_custom_slug = getoption( 'replace_custom_slug', 'off' ) === 'off';
 
 		$args = array(
@@ -51,7 +51,7 @@ class Cpt {
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => $gs_coachmembers_slug, 'with_front' => $replace_custom_slug ),
+			'rewrite'            => array( 'slug' => $gs_coaches_slug, 'with_front' => $replace_custom_slug ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,

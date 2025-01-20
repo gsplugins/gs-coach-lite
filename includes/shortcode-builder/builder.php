@@ -738,6 +738,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'vcard-txt' => __('vCard Text', 'gscoach'),
                 'vcard-txt-details' => __('Replace with preferred text for vCard Text', 'gscoach'),
 
+                'enable-breadcumb' => __('Enable Breadcumb for Single page', 'gscoach'),
+                'enable-breadcumb--details' => __('Enable Breadcumb for Single page', 'gscoach'),
+
                 'land-phone-link' => __('Link Land Phone', 'gscoach'),
                 'land-phone-link--details' => __('Enable link for land phone number', 'gscoach'),
 
@@ -835,12 +838,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'columns_mobile_details' => __('Enter the slides number for mobile', 'gscoach'),
                 'style-theming' => __('Style & Theming', 'gscoach'),
                 'member-name' => __('Coach Name', 'gscoach'),
-                'gs_member_name_is_linked' => __('Link Coaches', 'gscoach'),
-                'gs_member_name_is_linked__details' => __('Add links to the Coaches name, description & image to display popup or to single member page', 'gscoach'),
-                'gs_member_thumbnail_sizes' => __('Thumbnail Sizes', 'gscoach'),
-                'gs_member_thumbnail_sizes_details' => __('Select a thumbnail size', 'gscoach'),
-                'gs_member_link_type' => __('Link Type', 'gscoach'),
-                'gs_member_link_type__details' => __('Choose the link type of team members', 'gscoach'),
+                'gs_coach_name_is_linked' => __('Link Coaches', 'gscoach'),
+                'gs_coach_name_is_linked__details' => __('Add links to the Coaches name, description & image to display popup or to single member page', 'gscoach'),
+                'gs_coach_thumbnail_sizes' => __('Thumbnail Sizes', 'gscoach'),
+                'gs_coach_thumbnail_sizes_details' => __('Select a thumbnail size', 'gscoach'),
+                'gs_coach_link_type' => __('Link Type', 'gscoach'),
+                'gs_coach_link_type__details' => __('Choose the link type of team members', 'gscoach'),
                 
                 'member-designation' => __('Designation', 'gscoach'),
                 'member-details' => __('Details', 'gscoach'),
@@ -1701,14 +1704,14 @@ if ( ! class_exists( 'Builder' ) ) {
                 'panel_style' => $this->get_panel_styles(),
                 'popup_style' => $this->get_popup_styles(),
                 'filter_style' => $this->get_filter_styles(),
-                'gs_member_thumbnail_sizes' => $this->getPossibleThumbnailSizes(),
+                'gs_coach_thumbnail_sizes' => $this->getPossibleThumbnailSizes(),
                 'gs_coach_cols_tablet' => $this->get_columns(),
                 'gs_coach_cols_mobile_portrait' => $this->get_columns(),
                 'gs_coach_cols_mobile' => $this->get_columns(),
                 'gs_coach_theme' => $this->get_shortcode_options_themes(),
-                'gs_member_link_type' => $this->get_shortcode_options_link_types(),
+                'gs_coach_link_type' => $this->get_shortcode_options_link_types(),
                 'acf_fields_position' => $this->get_acf_fields_position(),
-                'gs_coachmembers_pop_clm' => [
+                'gs_coaches_pop_clm' => [
                     [
                         'label' => __( 'One', 'gscoach' ),
                         'value' => 'one'
@@ -1923,8 +1926,8 @@ if ( ! class_exists( 'Builder' ) ) {
                 'group'                           => '',
                 'exclude_group'                   => '',
                 'panel'                           => 'right',
-                'gs_coachmembers_pop_clm'          => 'two',
-                'gs_member_connect'               => 'on',
+                'gs_coaches_pop_clm'          => 'two',
+                'gs_coach_connect'               => 'on',
                 'display_ribbon'                  => 'on',        
                 'gs_slider_nav_color'             => '',
                 'gs_slider_nav_bg_color'          => '',
@@ -1952,12 +1955,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_tm_ribon_color'               => '',
                 'gs_tm_role_color'                => '',
                 'gs_tm_arrow_color'               => '',
-                'gs_member_name'                  => 'on',
-                'gs_member_name_is_linked'        => 'on',
-                'gs_member_link_type'             => 'default',
-                'gs_member_role'                  => 'on',
-                'gs_member_pagination'            => 'off',
-                'gs_member_details'               => 'on',
+                'gs_coach_name'                  => 'on',
+                'gs_coach_name_is_linked'        => 'on',
+                'gs_coach_link_type'             => 'default',
+                'gs_coach_role'                  => 'on',
+                'gs_coach_pagination'            => 'off',
+                'gs_coach_details'               => 'on',
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
                 'gs_details_area_height'          => 'off',
@@ -1974,23 +1977,23 @@ if ( ! class_exists( 'Builder' ) ) {
                 'filter_style'                    => 'default',
                 'gs_desc_allow_html'              => 'off',
                 'gs_tm_details_contl'             => 100,
-                'gs_member_srch_by_name'          => 'on',
-                'gs_member_srch_by_zip'           => 'on',
-                'gs_member_srch_by_tag'           => 'off',
-                'gs_member_srch_by_company'       => 'off',
-                'gs_member_filter_by_desig'       => 'on',
-                'gs_member_filter_by_location'    => 'on',
-                'gs_member_filter_by_language'    => 'on',
-                'gs_member_filter_by_gender'      => 'on',
-                'gs_member_filter_by_speciality'  => 'on',
-                'gs_member_filter_by_extra_one'  => 'off',
-                'gs_member_filter_by_extra_two'  => 'off',
-                'gs_member_filter_by_extra_three'  => 'off',
-                'gs_member_filter_by_extra_four'  => 'off',
-                'gs_member_filter_by_extra_five'  => 'off',
-                'gs_member_enable_clear_filters'  => 'off',
-                'gs_member_enable_multi_select'   => 'off',
-                'gs_member_multi_select_ellipsis' => 'off',
+                'gs_coach_srch_by_name'          => 'on',
+                'gs_coach_srch_by_zip'           => 'on',
+                'gs_coach_srch_by_tag'           => 'off',
+                'gs_coach_srch_by_company'       => 'off',
+                'gs_coach_filter_by_desig'       => 'on',
+                'gs_coach_filter_by_location'    => 'on',
+                'gs_coach_filter_by_language'    => 'on',
+                'gs_coach_filter_by_gender'      => 'on',
+                'gs_coach_filter_by_speciality'  => 'on',
+                'gs_coach_filter_by_extra_one'  => 'off',
+                'gs_coach_filter_by_extra_two'  => 'off',
+                'gs_coach_filter_by_extra_three'  => 'off',
+                'gs_coach_filter_by_extra_four'  => 'off',
+                'gs_coach_filter_by_extra_five'  => 'off',
+                'gs_coach_enable_clear_filters'  => 'off',
+                'gs_coach_enable_multi_select'   => 'off',
+                'gs_coach_multi_select_ellipsis' => 'off',
                 'gs_filter_all_enabled'           => 'on',
                 'enable_child_cats'               => 'off',
                 'enable_scroll_animation'         => 'on',
@@ -2005,7 +2008,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_tm_role_fntw'                 => '',
                 'gs_tm_role_fnstyl'               => '',
                 'gs_tm_filter_cat_pos'            => 'center',
-                'gs_member_thumbnail_sizes'       => 'large',
+                'gs_coach_thumbnail_sizes'       => 'large',
                 'show_acf_fields'                 => 'off',
                 'acf_fields_position'             => 'after_skills',
                 'location'                        => '',
@@ -2028,7 +2031,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             $prefs = $this->_get_shortcode_pref( false );
 
-            if ( $prefs['gs_member_enable_multilingual'] === 'on' ) return $translations[$translation_name];
+            if ( $prefs['gs_coach_enable_multilingual'] === 'on' ) return $translations[$translation_name];
         
             return $prefs[ $translation_name ];
         }
@@ -2061,12 +2064,12 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function get_shortcode_default_prefs() {
             $prefs = [
-                'gs_member_nxt_prev'            => 'off',
+                'gs_coach_nxt_prev'            => 'off',
                 'single_page_style'             => 'default',
                 'single_link_type'              => 'single_page',
-                'gs_member_search_all_fields'   => 'off',
-                'gs_member_enable_multilingual' => 'off',
-                'gs_coachmembers_slug'           => 'coaches',
+                'gs_coach_search_all_fields'   => 'off',
+                'gs_coach_enable_multilingual' => 'off',
+                'gs_coaches_slug'               => 'coaches',
                 'replace_custom_slug'           => 'off',
                 'archive_page_slug'             => '',
                 'archive_page_title'            => '',
@@ -2074,6 +2077,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'show_acf_fields'               => 'off',
                 'disable_lazy_load'             => 'off',
 
+                'enable_breadcumb'              => 'off',
                 'land_phone_link'               => 'off',
                 'cell_phone_link'               => 'off',
                 'email_link'                    => 'off',
@@ -2180,7 +2184,7 @@ if ( ! class_exists( 'Builder' ) ) {
             $defaults = $this->get_taxonomy_default_settings();
             $options = array_merge($defaults, $options);
 
-            if ( str_contains($option, '_label') && ( getoption('gs_member_enable_multilingual', 'off') == 'on' ) ) {
+            if ( str_contains($option, '_label') && ( getoption('gs_coach_enable_multilingual', 'off') == 'on' ) ) {
                 return $defaults[$option];
             }
 
@@ -2376,7 +2380,7 @@ if ( ! class_exists( 'Builder' ) ) {
         }
 
         public function is_multilingual_enabled() {
-            return $this->_get_shortcode_pref( false )['gs_member_enable_multilingual'] == 'on';
+            return $this->_get_shortcode_pref( false )['gs_coach_enable_multilingual'] == 'on';
         }
 
         public function validate_shortcode_prefs( Array $settings ) {
@@ -2610,7 +2614,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 }
 
-                if ( empty($shortcode_settings['gs_member_link_type']) ) $shortcode_settings['gs_member_link_type'] = 'default';
+                if ( empty($shortcode_settings['gs_coach_link_type']) ) $shortcode_settings['gs_coach_link_type'] = 'default';
 
                 unset( $shortcode_settings['gs_coach_cols_desktop'] );
 

@@ -47,7 +47,7 @@ global $gs_coach_loop;
 
 							<!-- Coach Image -->
 							<div class="gs_coach_image__wrapper">
-								<?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+								<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 							</div>
 							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
 							
@@ -87,7 +87,7 @@ global $gs_coach_loop;
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_member_pagination ) : ?>
+	<?php if ( 'on' == $gs_coach_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

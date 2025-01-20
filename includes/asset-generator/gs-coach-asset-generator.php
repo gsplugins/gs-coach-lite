@@ -76,10 +76,10 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		}
 		
 		if ( !empty($settings['gs_tm_info_background']) ) {
-			$targets = [' .info-card', ' .single-member-div .gs_member_info', ' .gridder .overlay-area .overlay', '.gs_tm_theme22 .tittle_container', '.gs_tm_theme1 .single-mem-desc-social', '.gs_tm_theme2 .single-mem-desc-social', '.gs_tm_theme7 .single-mem-desc-social', '.gs_tm_theme8 .gs_coach_overlay', '.gs_tm_theme9 .gs_coach_overlay', '.gs_tm_theme11 .gs_coach_overlay', '.gs_tm_theme12 .gs_coach_overlay', '.gs_tm_theme19 .gs_coach_overlay', '.gs-coach-circle-four .single-member-div .gs_coach_image__overlay'];
+			$targets = [' .info-card', ' .single-member-div .gs_coach_info', ' .gridder .overlay-area .overlay', '.gs_tm_theme22 .tittle_container', '.gs_tm_theme1 .single-mem-desc-social', '.gs_tm_theme2 .single-mem-desc-social', '.gs_tm_theme7 .single-mem-desc-social', '.gs_tm_theme8 .gs_coach_overlay', '.gs_tm_theme9 .gs_coach_overlay', '.gs_tm_theme11 .gs_coach_overlay', '.gs_tm_theme12 .gs_coach_overlay', '.gs_tm_theme19 .gs_coach_overlay', '.gs-coach-circle-four .single-member-div .gs_coach_image__overlay'];
 			$this->generateStyle( $selector, $selector_divi, $targets, 'background', $settings['gs_tm_info_background'] );
 
-			$targets = [' .single-member-div .gs_member_info > svg path', ' .single-member-div .single-mem-desc-social svg path'];
+			$targets = [' .single-member-div .gs_coach_info > svg path', ' .single-member-div .single-mem-desc-social svg path'];
 			$this->generateStyle( $selector, '', $targets, 'fill', $settings['gs_tm_info_background'] );
 		}
 
@@ -94,19 +94,19 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		}
 
 		if ( !empty($settings['description_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_member_info .gs-member-desc', 'color', $settings['description_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-desc', 'color', $settings['description_color'] );
 		}
 
 		if ( !empty($settings['description_link_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_member_info .gs-member-desc a', 'color', $settings['description_link_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-desc a', 'color', $settings['description_link_color'] );
 		}
 
 		if ( !empty($settings['info_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_member_info .gs-member-contact', 'color', $settings['info_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-contact', 'color', $settings['info_color'] );
 		}
 
 		if ( !empty($settings['info_icon_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_member_info .gs-member-contact i', 'color', $settings['info_icon_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-contact i', 'color', $settings['info_icon_color'] );
 		}
 
 		if ( !empty($settings['gs_tm_hover_icon_background']) ) {
@@ -220,8 +220,8 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		if ( empty($settings) || !empty($settings['is_preview']) ) return;
 
 		$theme 						= $settings['gs_coach_theme'];
-		$link_type 					= $settings['gs_member_link_type'];
-		$member_name_linked 		= $settings['gs_member_name_is_linked'];
+		$link_type 					= $settings['gs_coach_link_type'];
+		$member_name_linked 		= $settings['gs_coach_name_is_linked'];
 		$enable_scroll_animation 	= $settings['enable_scroll_animation'];
 
 		$carousel_enabled 	= $settings['carousel_enabled'];

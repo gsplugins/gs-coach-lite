@@ -1765,12 +1765,12 @@ span.progressText {
 }
 
 .gs_coach_popup_img,
-.single-gs_coach .gs_member_img {
+.single-gs_coach .gs_coach_img {
   width: 33%;
   text-align: left;
 }
 .gs_coach_popup_img img,
-.single-gs_coach .gs_member_img img {
+.single-gs_coach .gs_coach_img img {
   max-width: 100% !important;
   height: auto !important;
 }
@@ -1802,7 +1802,7 @@ span.progressText {
   color: #535353;
 }
 
-.gs-single-container .gs_member_img img {
+.gs-single-container .gs_coach_img img {
   width: 100%;
 }
 
@@ -1813,8 +1813,8 @@ span.progressText {
 
 .gs_coach_popup_img,
 .gs_coach_popup_details,
-.single-gs_coach .gs_member_img,
-.single-gs_coach .gs_member_details {
+.single-gs_coach .gs_coach_img,
+.single-gs_coach .gs_coach_details {
   display: inline-block;
   vertical-align: top;
 }
@@ -2874,7 +2874,7 @@ li.gridder-list {
   margin: 80px auto 100px !important;
 }
 
-.single-gs_coach .gs_member_details {
+.single-gs_coach .gs_coach_details {
   width: 67%;
   padding-left: 24px;
 }
@@ -2972,7 +2972,7 @@ li.gridder-list {
   margin: 10px 0 0 0;
 }
 
-.gs-archive-container .gs_member_details a {
+.gs-archive-container .gs_coach_details a {
   text-decoration: none;
 }
 
@@ -3641,7 +3641,7 @@ li.gridder-list {
   margin: 0 4px;
 }
 .rtl .gs_coach_popup_img,
-.rtl .single-gs_coach .gs_member_img {
+.rtl .single-gs_coach .gs_coach_img {
   text-align: right;
 }
 .rtl .gs_coach_popup_details.popup-one-column {
@@ -3651,7 +3651,7 @@ li.gridder-list {
   right: auto !important;
   left: 10px !important;
 }
-.rtl.single-gs_coach .gs_member_details {
+.rtl.single-gs_coach .gs_coach_details {
   padding-left: 0;
   padding-right: 24px;
 }
@@ -3762,17 +3762,17 @@ li.gridder-list {
     margin-bottom: 13px;
   }
   .gs_coach_popup_img,
-  .single-gs_coach .gs_member_img {
+  .single-gs_coach .gs_coach_img {
     width: 100%;
     max-width: 500px;
   }
   .gs_coach_popup_details,
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     width: 100%;
     margin-left: 0;
     padding-left: 0;
   }
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     padding-top: 20px;
   }
   .gs_tm_grid2 .staff-meta {
@@ -3874,19 +3874,19 @@ li.gridder-list {
   }
   .gs_coach_popup .gs-member-name,
   .gs_coach_popup .gs-member-desig,
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     text-align: center;
   }
   .gs_coach_popup .gs-coach-social {
     display: table;
   }
   .gs_coach_popup_img,
-  .single-gs_coach .gs_member_img {
+  .single-gs_coach .gs_coach_img {
     width: 100%;
     max-width: 500px;
   }
   .gs_coach_popup_details,
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     width: 100%;
     margin-left: 0%;
   }
@@ -3979,19 +3979,19 @@ li.gridder-list {
   }
   .gs_coach_popup .gs-member-name,
   .gs_coach_popup .gs-member-desig,
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     text-align: center;
   }
   .gs_coach_popup .gs-coach-social {
     display: table;
   }
   .gs_coach_popup_img,
-  .single-gs_coach .gs_member_img {
+  .single-gs_coach .gs_coach_img {
     width: 100%;
     max-width: 500px;
   }
   .gs_coach_popup_details,
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     width: 100%;
     margin-left: 0%;
   }
@@ -4130,18 +4130,18 @@ li.gridder-list {
   }
   .gs_coach_popup .gs-member-name,
   .gs_coach_popup .gs-member-desig,
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     text-align: center;
   }
   .gs_coach_popup .gs-coach-social {
     display: table;
   }
   .gs_coach_popup_img,
-  .single-gs_coach .gs_member_img {
+  .single-gs_coach .gs_coach_img {
     width: 100%;
   }
   .gs_coach_popup_details,
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     width: 100%;
     margin-left: 0%;
   }
@@ -4446,7 +4446,7 @@ body {
 .gs_tm_theme_v_2 .single-member-div .gs_coach_image__wrapper {
   position: relative;
 }
-.gs_tm_theme_v_2 .single-member-div .gs_member_info-top--inner {
+.gs_tm_theme_v_2 .single-member-div .gs_coach_info-top--inner {
   width: 100%;
 }
 .gs_tm_theme_v_2 .single-member-div .single-member .gs_coach_image__wrapper:after {
@@ -4486,12 +4486,12 @@ body {
 .gs_tm_theme_v_2 .single-member-div .single-member:hover .gs_coach_image__overlay {
   opacity: 1;
 }
-.gs_tm_theme_v_2 .single-member-div .gs_member_info {
+.gs_tm_theme_v_2 .single-member-div .gs_coach_info {
   background-color: #fff;
   padding: 32px;
   text-align: center;
 }
-.gs_tm_theme_v_2 .single-member-div .gs_member_info .gs-member-name {
+.gs_tm_theme_v_2 .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-family: "Poppins", sans-serif;
@@ -4514,7 +4514,7 @@ body {
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-.gs_tm_theme_v_2 .single-member-div .gs_member_info .gs-member-desig {
+.gs_tm_theme_v_2 .single-member-div .gs_coach_info .gs-member-desig {
   color: #808080;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
@@ -4704,7 +4704,7 @@ body {
   transition: 0.35s;
   opacity: 0;
 }
-.gs-grid-style-one .single-member-div .gs_member_info {
+.gs-grid-style-one .single-member-div .gs_coach_info {
   width: 230px;
   height: 180px;
   background-color: transparent !important;
@@ -4723,7 +4723,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.gs-grid-style-one .single-member-div .gs_member_info > svg {
+.gs-grid-style-one .single-member-div .gs_coach_info > svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -4732,18 +4732,18 @@ body {
   -webkit-filter: drop-shadow(0px 20px 50px rgba(12, 21, 41, 0.1));
           filter: drop-shadow(0px 20px 50px rgba(12, 21, 41, 0.1));
 }
-.gs-grid-style-one .single-member-div .gs_member_info > svg path {
+.gs-grid-style-one .single-member-div .gs_coach_info > svg path {
   fill: #ffffff !important;
 }
-.gs-grid-style-one .single-member-div .gs_member_info .gs_member_info--inner {
+.gs-grid-style-one .single-member-div .gs_coach_info .gs_coach_info--inner {
   position: relative;
   margin-top: -5px;
 }
-.gs-grid-style-one .single-member-div .gs_member_info .gs-member-name {
+.gs-grid-style-one .single-member-div .gs_coach_info .gs-member-name {
   font-weight: 500;
   line-height: 1;
 }
-.gs-grid-style-one .single-member-div .gs_member_info .gs-member-desig {
+.gs-grid-style-one .single-member-div .gs_coach_info .gs-member-desig {
   margin-top: 10px;
 }
 .gs-grid-style-one .single-member-div .gs-coach-social {
@@ -4826,27 +4826,27 @@ body {
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
-.gs-grid-style-two .single-member-div .gs_member_info {
+.gs-grid-style-two .single-member-div .gs_coach_info {
   padding: 22px 0px 10px;
   background: none !important;
 }
-.gs-grid-style-two .single-member-div .gs_member_info .gs-member-desig {
+.gs-grid-style-two .single-member-div .gs_coach_info .gs-member-desig {
   margin-top: 4px;
 }
-.gs-grid-style-two .single-member-div .gs_member_info .gs-member-desc {
+.gs-grid-style-two .single-member-div .gs_coach_info .gs-member-desc {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
   color: #808080;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.gs-grid-style-two .single-member-div .gs_member_info .gs-member-desc a {
+.gs-grid-style-two .single-member-div .gs_coach_info .gs-member-desc a {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
   color: #aea8ff;
   text-decoration: underline;
 }
-.gs-grid-style-two .single-member-div .gs_member_info .gs-member-name {
+.gs-grid-style-two .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-family: Playfair Display;
@@ -4922,12 +4922,12 @@ body {
   background-color: rgba(0, 0, 0, 0.3019607843);
   opacity: 0;
 }
-.gs-grid-style-three .single-member-div .gs_member_info {
+.gs-grid-style-three .single-member-div .gs_coach_info {
   background-color: #f5f8f9 !important;
   text-align: left;
   padding: 30px;
 }
-.gs-grid-style-three .single-member-div .gs_member_info .gs-member-name {
+.gs-grid-style-three .single-member-div .gs_coach_info .gs-member-name {
   font-family: "Spartan", sans-serif;
   font-weight: 600;
   font-size: 20px;
@@ -5036,7 +5036,7 @@ body {
 .gs-grid-style-four .single-member-div .gs_coach_image__wrapper::after {
   padding-bottom: 100% !important;
 }
-.gs-grid-style-four .single-member-div .gs_member_info {
+.gs-grid-style-four .single-member-div .gs_coach_info {
   background: #fff !important;
   text-align: center;
   padding: 22px 0px;
@@ -5048,7 +5048,7 @@ body {
   border-radius: 0 0 8px 8px;
   min-height: 115px;
 }
-.gs-grid-style-four .single-member-div .gs_member_info .gs-member-name {
+.gs-grid-style-four .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 22px;
   text-transform: uppercase;
@@ -5056,7 +5056,7 @@ body {
   font-weight: 600;
   margin-top: 2px;
 }
-.gs-grid-style-four .single-member-div .gs_member_info .gs-member-desig {
+.gs-grid-style-four .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Work Sans", sans-serif;
   margin-top: 2px;
 }
@@ -5126,7 +5126,7 @@ body {
   width: 100% !important;
   border-radius: 8px;
 }
-.gs-grid-style-five .single-member-div .gs_member_info {
+.gs-grid-style-five .single-member-div .gs_coach_info {
   background: #fff;
   text-align: center;
   padding: 24px 0px;
@@ -5142,13 +5142,13 @@ body {
           box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
   min-height: 83px;
 }
-.gs-grid-style-five .single-member-div .gs_member_info .gs-member-name {
+.gs-grid-style-five .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 22px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
-.gs-grid-style-five .single-member-div .gs_member_info .gs-member-desig {
+.gs-grid-style-five .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   margin-bottom: 14px;
   margin-top: 4px;
@@ -5214,7 +5214,7 @@ body {
 .gs-grid-style-six .single-member-div .gs_coach_image__overlay {
   background: rgba(255, 255, 255, 0.94);
 }
-.gs-grid-style-six .single-member-div .gs_member_info {
+.gs-grid-style-six .single-member-div .gs_coach_info {
   background: transparent;
   text-align: center;
   padding: 24px 0px;
@@ -5246,13 +5246,13 @@ body {
   z-index: 99;
   line-height: 1.5;
 }
-.gs-grid-style-six .single-member-div .gs_member_info .gs-member-name {
+.gs-grid-style-six .single-member-div .gs_coach_info .gs-member-name {
   color: #7a7a7a;
   font-size: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
-.gs-grid-style-six .single-member-div .gs_member_info .gs-member-desig {
+.gs-grid-style-six .single-member-div .gs_coach_info .gs-member-desig {
   color: #7a7a7a;
   font-family: "Nunito", sans-serif;
   margin-top: 4px;
@@ -5274,7 +5274,7 @@ body {
 .gs-grid-style-six .single-member-div .gs-coach-social li a i, .gs-grid-style-six .single-member-div .gs-coach-social li a svg {
   color: #808080;
 }
-.gs-grid-style-six .single-member-div .single-member:hover .gs_member_info {
+.gs-grid-style-six .single-member-div .single-member:hover .gs_coach_info {
   opacity: 1;
   visibility: visible;
 }
@@ -5329,23 +5329,23 @@ body {
       -ms-transform: scale(1);
           transform: scale(1);
 }
-.gs-coach-circle-one .single-member-div .gs_member_info {
+.gs-coach-circle-one .single-member-div .gs_coach_info {
   text-align: center;
   background: none !important;
   padding: 20px 0 0 0;
 }
-.gs-coach-circle-one .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-circle-one .single-member-div .gs_coach_info .gs-member-name {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   margin-bottom: 4px;
 }
-.gs-coach-circle-one .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-circle-one .single-member-div .gs_coach_info .gs-member-desc {
   color: #808080;
   margin-top: 18px;
   margin-bottom: 20px;
   line-height: 1.6;
 }
-.gs-coach-circle-one .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-circle-one .single-member-div .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
@@ -5368,7 +5368,7 @@ body {
   padding-right: 53px !important;
   margin-bottom: 64px;
 }
-.gs_coach_area.gs-coach-circle-one .single-member-div .gs_member_info .gs-member-desc {
+.gs_coach_area.gs-coach-circle-one .single-member-div .gs_coach_info .gs-member-desc {
   font-family: "Rubik", sans-serif;
   font-size: 16px;
 }
@@ -5421,26 +5421,26 @@ body {
   background-color: rgba(11, 7, 46, 0.6901960784);
   opacity: 0;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info {
+.gs-coach-circle-two .single-member-div .gs_coach_info {
   background: none !important;
   text-align: center;
   padding: 24px 0;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-circle-two .single-member-div .gs_coach_info .gs-member-contact {
   color: #182338;
   font-weight: 600;
   font-family: Poppins;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-circle-two .single-member-div .gs_coach_info .gs-member-name {
   color: #182338;
   font-weight: 600;
   font-family: Poppins;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-circle-two .single-member-div .gs_coach_info .gs-member-desig {
   margin-top: 6px;
   margin-bottom: 6px;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-circle-two .single-member-div .gs_coach_info .gs-member-desc {
   font-family: "Rubik", sans-serif;
   color: #808080;
   font-size: 18px;
@@ -5448,19 +5448,19 @@ body {
   margin-top: 16px;
   line-height: 1.625;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-circle-two .single-member-div .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
   text-decoration: underline;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-circle-two .single-member-div .gs_coach_info .gs-member-contact {
   color: #182338;
   font-weight: 600;
   font-family: Poppins;
   font-size: 18px;
 }
-.gs-coach-circle-two .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-circle-two .single-member-div .gs_coach_info .gs-member-contact i {
   color: #F77674;
 }
 .gs-coach-circle-two .single-member-div .gs-coach-social {
@@ -5537,22 +5537,22 @@ body {
   background-color: rgba(0, 0, 0, 0.3019607843);
   opacity: 0;
 }
-.gs-coach-circle-three .single-member-div .gs_member_info {
+.gs-coach-circle-three .single-member-div .gs_coach_info {
   background: none !important;
   text-align: center;
   padding: 23px 32px !important;
 }
-.gs-coach-circle-three .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-circle-three .single-member-div .gs_coach_info .gs-member-contact {
   color: #182338;
   font-weight: 600;
   font-family: Poppins;
 }
-.gs-coach-circle-three .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-circle-three .single-member-div .gs_coach_info .gs-member-name {
   color: #182338;
   font-weight: 600;
   font-family: "Barlow", sans-serif;
 }
-.gs-coach-circle-three .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-circle-three .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Rubik", sans-serif;
   margin-top: 3px;
 }
@@ -5651,21 +5651,21 @@ body {
   width: 100%;
   height: auto;
 }
-.gs-coach-circle-four .single-member-div .gs_member_info {
+.gs-coach-circle-four .single-member-div .gs_coach_info {
   background: none !important;
   text-align: center;
   padding: 32px 0 32px 0;
 }
-.gs-coach-circle-four .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-circle-four .single-member-div .gs_coach_info .gs-member-name {
   color: #182338;
   font-weight: 600;
   font-family: "Jost", sans-serif;
 }
-.gs-coach-circle-four .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-circle-four .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Rubik", sans-serif;
   margin-top: 4px;
 }
-.gs-coach-circle-four .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-circle-four .single-member-div .gs_coach_info .gs-member-desc {
   font-family: "Rubik", sans-serif;
   color: #808080;
   font-size: 16px;
@@ -5673,18 +5673,18 @@ body {
   margin-bottom: 20px;
   margin-top: 18px;
 }
-.gs-coach-circle-four .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-circle-four .single-member-div .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
   text-decoration: underline;
 }
-.gs-coach-circle-four .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-circle-four .single-member-div .gs_coach_info .gs-member-contact {
   color: #182338;
   font-weight: 600;
   font-family: "Jost", sans-serif;
 }
-.gs-coach-circle-four .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-circle-four .single-member-div .gs_coach_info .gs-member-contact i {
   color: #F77674;
 }
 .gs-coach-circle-four .single-member-div .gs-coach-social {
@@ -5772,21 +5772,21 @@ body {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.gs-coach-circle-five .single-member-div .gs_member_info {
+.gs-coach-circle-five .single-member-div .gs_coach_info {
   background: none !important;
   text-align: center;
   padding: 24px 32px;
 }
-.gs-coach-circle-five .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-circle-five .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-weight: 700;
   font-family: "DM Sans", sans-serif;
 }
-.gs-coach-circle-five .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-circle-five .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Rubik", sans-serif;
   margin-top: 4px;
 }
-.gs-coach-circle-five .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-circle-five .single-member-div .gs_coach_info .gs-member-contact {
   color: #182338;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
@@ -5887,7 +5887,7 @@ body {
       -ms-transform: scale(1);
           transform: scale(1);
 }
-.gs-coach-horizontal-one .single-member-div .gs_member_info {
+.gs-coach-horizontal-one .single-member-div .gs_coach_info {
   position: relative;
   text-align: left;
   -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
@@ -6003,7 +6003,7 @@ body {
       -ms-transform: scale(1);
           transform: scale(1);
 }
-.gs-coach-horizontal-two .single-member-div .gs_member_info {
+.gs-coach-horizontal-two .single-member-div .gs_coach_info {
   border-radius: 50%;
   padding: 0;
   text-align: left;
@@ -6011,35 +6011,35 @@ body {
   width: 100%;
   background: none !important;
 }
-.gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 700;
   font-family: "DM Sans", sans-serif;
 }
-.gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   padding-top: 4px;
 }
-.gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-desc {
   font-family: "Nunito", sans-serif;
   margin-bottom: 15px;
   margin-top: 13px;
   color: #808080;
   line-height: 1.5;
 }
-.gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-desc a {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   color: #959595;
 }
-.gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-contact {
   color: #030d1e;
   font-size: 16px;
   font-weight: 600;
   font-family: "DM Sans", sans-serif;
 }
-.gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-contact i {
   color: #d2d2d2;
   font-size: 16px;
   font-weight: 700;
@@ -6093,7 +6093,7 @@ body {
       -ms-transform: scale(1);
           transform: scale(1);
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info {
   padding: 42px 14px 46px 40px;
   text-align: left;
   border: 1px solid #e5e5e5;
@@ -6104,16 +6104,16 @@ body {
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 600;
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   margin-top: 5px;
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-desc {
   font-family: "Nunito", sans-serif;
   color: #808080;
   line-height: 1.625;
@@ -6121,18 +6121,18 @@ body {
   margin-bottom: 19px;
   margin-top: 17px;
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-desc a {
   color: #161616;
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-desc a:hover {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-desc a:hover {
   color: #b9b9b9;
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-address {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-address {
   color: #030d1e;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
-.gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-address i {
+.gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-address i {
   color: #20BBBC;
   font-size: 18px;
   margin-right: 2px;
@@ -6158,7 +6158,7 @@ body {
       -ms-transform: scale(1.2);
           transform: scale(1.2);
 }
-.gs-coach-horizontal-three .single-member-div .single-member:hover .gs_member_info {
+.gs-coach-horizontal-three .single-member-div .single-member:hover .gs_coach_info {
   border-color: transparent;
 }
 
@@ -6206,23 +6206,23 @@ body {
   border: 7px solid #fff;
   border-radius: inherit;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info {
   padding: 0;
   text-align: left;
   background: none !important;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-name {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
   font-family: "DM Sans", sans-serif;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-desig {
   color: #fff;
   font-family: "Nunito", sans-serif;
   margin-top: 5px;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-desc {
   color: #fff;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
@@ -6230,24 +6230,24 @@ body {
   margin-bottom: 15px;
   margin-top: 12px;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-desc a {
   color: rgb(233, 233, 233);
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-desc a:hover {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-desc a:hover {
   color: #ffffff;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-contact {
   color: #fff;
   font-size: 16px;
   font-weight: 700;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-contact {
   color: #fff;
   font-size: 16px;
   font-weight: 700;
 }
-.gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-contact i {
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -6329,41 +6329,41 @@ body {
       -ms-transform: scale(1);
           transform: scale(1);
 }
-.gs-coach-horizontal-five .single-member-div .gs_member_info {
+.gs-coach-horizontal-five .single-member-div .gs_coach_info {
   border-radius: 50%;
   padding: 0;
   text-align: left;
   background: none !important;
   margin-top: -38px;
 }
-.gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 600;
 }
-.gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   margin-top: 5px;
 }
-.gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-desc {
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
   color: #808080;
   margin-top: 19px;
 }
-.gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-desc a {
   color: #fff;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
   text-decoration: underline;
 }
-.gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-contact {
   color: #030d1e;
   font-size: 16px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
-.gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-contact i {
   color: #15B7B9;
   font-size: 16px;
   font-weight: 700;
@@ -6424,7 +6424,7 @@ body {
   -webkit-transform: rotateY(180deg) translateZ(60px) scale(0.94);
           transform: rotateY(180deg) translateZ(60px) scale(0.94);
 }
-.single-member--flip.single-member-div .gs_member_info-bottom {
+.single-member--flip.single-member-div .gs_coach_info-bottom {
   background: none !important;
 }
 .single-member--flip.single-member-div:hover .single-member--front {
@@ -6454,11 +6454,11 @@ body {
   padding-left: 0px;
   padding-right: 0px;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-flip-one .single-member-div .gs_coach_info .gs-member-name {
   font-size: 22px;
   font-weight: 600;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-flip-one .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   margin-top: 6px;
 }
@@ -6469,7 +6469,7 @@ body {
 .gs-coach-flip-one .single-member-div .single-member--back {
   border-radius: 0px 35px 0px 35px;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info-top {
+.gs-coach-flip-one .single-member-div .gs_coach_info-top {
   position: absolute;
   left: 0;
   top: 0;
@@ -6483,7 +6483,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info-top .gs-member-desc {
+.gs-coach-flip-one .single-member-div .gs_coach_info-top .gs-member-desc {
   color: #e6e6e6;
   line-height: 1.625;
   margin-top: 0px;
@@ -6491,25 +6491,25 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info-top .gs-member-desc a {
+.gs-coach-flip-one .single-member-div .gs_coach_info-top .gs-member-desc a {
   color: #e6e6e6;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info-top .gs-member-desc a:hover {
+.gs-coach-flip-one .single-member-div .gs_coach_info-top .gs-member-desc a:hover {
   color: #fff;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info-top .gs-member-contact {
+.gs-coach-flip-one .single-member-div .gs_coach_info-top .gs-member-contact {
   color: #e6e6e6;
   line-height: 1.5;
   font-weight: 700;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info-top .gs-member-contact i {
+.gs-coach-flip-one .single-member-div .gs_coach_info-top .gs-member-contact i {
   color: #15b7b9;
   font-weight: 700;
   font-size: 16px;
 }
-.gs-coach-flip-one .single-member-div .gs_member_info-bottom {
+.gs-coach-flip-one .single-member-div .gs_coach_info-bottom {
   background: none;
   padding: 20px 0 0;
 }
@@ -6563,7 +6563,7 @@ body {
 .gs-coach-flip-two .single-member-div .single-member--back {
   border-radius: 50%;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-top {
+.gs-coach-flip-two .single-member-div .gs_coach_info-top {
   position: absolute;
   left: 0;
   top: 0;
@@ -6577,7 +6577,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-top .gs-member-desc {
+.gs-coach-flip-two .single-member-div .gs_coach_info-top .gs-member-desc {
   color: #fff;
   line-height: 1.5;
   margin-top: 0px;
@@ -6586,34 +6586,34 @@ body {
   font-size: 16px;
   padding: 0px 24px 5px;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-top .gs-member-desc a {
+.gs-coach-flip-two .single-member-div .gs_coach_info-top .gs-member-desc a {
   color: #fff;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-top .gs-member-desc a:hover {
+.gs-coach-flip-two .single-member-div .gs_coach_info-top .gs-member-desc a:hover {
   color: #f5d4d4;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-top .gs-member-contact {
+.gs-coach-flip-two .single-member-div .gs_coach_info-top .gs-member-contact {
   color: #fff;
   line-height: 1.5;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-top .gs-member-contact i {
+.gs-coach-flip-two .single-member-div .gs_coach_info-top .gs-member-contact i {
   color: #fff;
   font-weight: 700;
   font-size: 16px;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-bottom {
+.gs-coach-flip-two .single-member-div .gs_coach_info-bottom {
   background: none;
   padding: 26px 0 0;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-bottom .gs-member-name {
+.gs-coach-flip-two .single-member-div .gs_coach_info-bottom .gs-member-name {
   font-size: 22px;
   font-weight: 500;
 }
-.gs-coach-flip-two .single-member-div .gs_member_info-bottom .gs-member-desig {
+.gs-coach-flip-two .single-member-div .gs_coach_info-bottom .gs-member-desig {
   margin-top: 4px;
 }
 .gs-coach-flip-two .single-member-div .single-mem-desc-social {
@@ -6669,7 +6669,7 @@ body {
 .gs-coach-flip-three .single-member-div .gs_coach_image__wrapper {
   border-radius: 0;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-top {
+.gs-coach-flip-three .single-member-div .gs_coach_info-top {
   position: absolute;
   left: 0;
   top: 0;
@@ -6689,7 +6689,7 @@ body {
           align-items: center;
   padding: 32px 72px !important;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-top .gs-member-desc {
+.gs-coach-flip-three .single-member-div .gs_coach_info-top .gs-member-desc {
   color: #e6e6e6;
   line-height: 1.5;
   margin-top: 0px;
@@ -6697,20 +6697,20 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-top .gs-member-desc a {
+.gs-coach-flip-three .single-member-div .gs_coach_info-top .gs-member-desc a {
   color: #fff;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-top .gs-member-desc a:hover {
+.gs-coach-flip-three .single-member-div .gs_coach_info-top .gs-member-desc a:hover {
   color: #15B7B9;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-top .gs-member-contact {
+.gs-coach-flip-three .single-member-div .gs_coach_info-top .gs-member-contact {
   color: #e6e6e6;
   line-height: 1.6;
   font-weight: 700;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-top .gs-member-contact i {
+.gs-coach-flip-three .single-member-div .gs_coach_info-top .gs-member-contact i {
   color: #15B7B9;
   font-weight: 700;
   font-size: 18px;
@@ -6718,15 +6718,15 @@ body {
 .gs-coach-flip-three .single-member-div .single-mem-desc-social {
   margin-top: 24px;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-bottom {
+.gs-coach-flip-three .single-member-div .gs_coach_info-bottom {
   background: none;
   padding: 22px 32px 32px 32px;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-bottom .gs-member-name {
+.gs-coach-flip-three .single-member-div .gs_coach_info-bottom .gs-member-name {
   font-size: 22px;
   font-weight: 600;
 }
-.gs-coach-flip-three .single-member-div .gs_member_info-bottom .gs-member-desig {
+.gs-coach-flip-three .single-member-div .gs_coach_info-bottom .gs-member-desig {
   margin-top: 5px;
 }
 
@@ -6778,13 +6778,13 @@ body {
 .gs-coach-flip-four .single-member-div .single-member--back {
   border-radius: 134px;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info-top--inner {
+.gs-coach-flip-four .single-member-div .gs_coach_info-top--inner {
   margin-top: 20px;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info {
+.gs-coach-flip-four .single-member-div .gs_coach_info {
   padding: 22px 32px;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info-top {
+.gs-coach-flip-four .single-member-div .gs_coach_info-top {
   position: absolute;
   left: 0;
   top: 0;
@@ -6801,28 +6801,28 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info-top .gs-member-name {
+.gs-coach-flip-four .single-member-div .gs_coach_info-top .gs-member-name {
   line-height: 1.5;
   color: #fff;
   font-size: 22px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info-top .gs-member-desig {
+.gs-coach-flip-four .single-member-div .gs_coach_info-top .gs-member-desig {
   line-height: 1.5;
   color: #fff;
   margin-bottom: 1.3em;
   margin-top: 8px;
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info-top .gs-member-contact {
+.gs-coach-flip-four .single-member-div .gs_coach_info-top .gs-member-contact {
   color: #e6e6e6;
   line-height: 1.5;
   font-weight: 500;
   margin-bottom: 0.5em;
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info-top .gs-member-contact i {
+.gs-coach-flip-four .single-member-div .gs_coach_info-top .gs-member-contact i {
   color: #fff;
   font-weight: 500;
   font-size: 16px;
@@ -6830,7 +6830,7 @@ body {
 .gs-coach-flip-four .single-member-div .single-mem-desc-social {
   margin-top: 12px;
 }
-.gs-coach-flip-four .single-member-div .gs_member_info-bottom {
+.gs-coach-flip-four .single-member-div .gs_coach_info-bottom {
   background: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -6886,7 +6886,7 @@ body {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
 }
-.gs-coach-flip-five .single-member-div .gs_member_info {
+.gs-coach-flip-five .single-member-div .gs_coach_info {
   position: absolute;
   left: 0;
   top: 100%;
@@ -6905,7 +6905,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.gs-coach-flip-five .single-member-div .gs_member_info .gs_coach_image__wrapper {
+.gs-coach-flip-five .single-member-div .gs_coach_info .gs_coach_image__wrapper {
   display: inline-block;
   width: 52%;
   max-width: 200px;
@@ -6913,14 +6913,14 @@ body {
   border-radius: 50%;
   margin-bottom: 16px;
 }
-.gs-coach-flip-five .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-flip-five .single-member-div .gs_coach_info .gs-member-name {
   line-height: 1.5;
   color: #fff;
   font-size: 22px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
 }
-.gs-coach-flip-five .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-flip-five .single-member-div .gs_coach_info .gs-member-desig {
   line-height: 1.5;
   color: #fff;
   font-family: "Nunito", sans-serif;
@@ -6932,7 +6932,7 @@ body {
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
-.gs-coach-flip-five .single-member-div .single-member:hover .gs_member_info {
+.gs-coach-flip-five .single-member-div .single-member:hover .gs_coach_info {
   top: 0;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
@@ -7439,28 +7439,28 @@ body {
   height: 200px;
   margin-right: 30px;
 }
-.gs-coach-list-style-one .single-member-div .gs_member_info {
+.gs-coach-list-style-one .single-member-div .gs_coach_info {
   padding: 0;
   text-align: left;
   background: none !important;
   width: 100%;
 }
-.gs-coach-list-style-one .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-list-style-one .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 600;
 }
-.gs-coach-list-style-one .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-list-style-one .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   margin-top: 5px;
 }
-.gs-coach-list-style-one .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-list-style-one .single-member-div .gs_coach_info .gs-member-desc {
   color: #808080;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
   margin-bottom: 16px;
 }
-.gs-coach-list-style-one .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-list-style-one .single-member-div .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
@@ -7526,39 +7526,39 @@ body {
   width: 200px;
   height: 200px;
 }
-.gs-coach-list-style-two .single-member-div .gs_member_info {
+.gs-coach-list-style-two .single-member-div .gs_coach_info {
   padding: 0;
   text-align: left;
   background: none !important;
   width: 100%;
 }
-.gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 600;
 }
-.gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   margin-top: 6px;
 }
-.gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-desc {
   color: #808080;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
   text-decoration: underline;
 }
-.gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-contact {
   color: #030d1e;
   font-size: 16px;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-contact i {
   color: #d2d2d2;
   font-size: 16px;
 }
@@ -7602,44 +7602,44 @@ body {
       -ms-flex-order: 2;
           order: 2;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-contact i {
   color: #F77674;
   font-size: 16px;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info {
+.gs-coach-list-style-three .single-member-div .gs_coach_info {
   padding: 0;
   text-align: left;
   background: none !important;
   width: 100%;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 600;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Nunito", sans-serif;
   margin-top: 6px;
   font-size: 15px;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-desc {
   color: #808080;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
   text-decoration: underline;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-contact {
   color: #030d1e;
   font-size: 16px;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-contact i {
   color: #F77674;
   font-size: 16px;
 }
@@ -7647,7 +7647,7 @@ body {
   background-color: #F77674;
   border-color: transparent;
 }
-.gs-coach-list-style-three .single-member-div .single-member:hover .gs_member_info .gs-member-name {
+.gs-coach-list-style-three .single-member-div .single-member:hover .gs_coach_info .gs-member-name {
   color: #fff;
 }
 .gs-coach-list-style-three .single-member-div .single-member:hover .gs-member-desig {
@@ -7700,52 +7700,52 @@ body {
   height: 250px;
   margin-right: 30px;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info {
+.gs-coach-list-style-four .single-member-div .gs_coach_info {
   padding: 0;
   text-align: left;
   background: none !important;
   width: 100%;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-name {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 600;
   font-family: "Playfair Display", serif;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-desig {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-desig {
   font-family: "Poppins", sans-serif;
   margin-top: 6px;
   font-size: 15px;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-contact-wrapper {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-contact-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-desc {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-desc {
   color: #808080;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-desc a {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   text-decoration: underline;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-contact {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-contact {
   color: #182338;
   font-size: 15px;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-contact:not(:last-child) {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-contact:not(:last-child) {
   margin-right: 20px;
   padding-right: 20px;
   border-right: 1px solid #ddd;
 }
-.gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-contact i {
+.gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-contact i {
   color: #15B7B9;
   font-size: 16px;
 }
@@ -7778,28 +7778,28 @@ body {
   width: 260px;
   height: 260px;
 }
-.gs-coach-list-style-five .single-member-div .single-member .gs_member_info {
+.gs-coach-list-style-five .single-member-div .single-member .gs_coach_info {
   padding: 0;
   text-align: left;
   background: none !important;
   width: 100%;
   padding: 30px;
 }
-.gs-coach-list-style-five .single-member-div .single-member .gs_member_info .gs-member-name {
+.gs-coach-list-style-five .single-member-div .single-member .gs_coach_info .gs-member-name {
   color: #030d1e;
   font-size: 24px;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
   margin-top: -12px;
 }
-.gs-coach-list-style-five .single-member-div .single-member .gs_member_info .gs-member-desc {
+.gs-coach-list-style-five .single-member-div .single-member .gs_coach_info .gs-member-desc {
   color: #808080;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   margin-top: 4px;
 }
-.gs-coach-list-style-five .single-member-div .single-member .gs_member_info .gs-member-desc a {
+.gs-coach-list-style-five .single-member-div .single-member .gs_coach_info .gs-member-desc a {
   color: #808080;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
@@ -9868,10 +9868,10 @@ body {
 .gs-single-style-one .gs-coach-single-content .gs-roow .gs-col-md-9 {
   width: 73% !important;
 }
-.gs-single-style-one .gs-coach-single-content .gs_member_img {
+.gs-single-style-one .gs-coach-single-content .gs_coach_img {
   width: 100%;
 }
-.gs-single-style-one .gs-coach-single-content .gs_member_details {
+.gs-single-style-one .gs-coach-single-content .gs_coach_details {
   width: 100%;
   padding-left: 24px;
   margin-top: -44px;
@@ -9989,10 +9989,10 @@ body {
   left: 0 !important;
   text-align: right;
 }
-.gs-single-style-two .gs_member_details {
+.gs-single-style-two .gs_coach_details {
   width: 100%;
 }
-.gs-single-style-two .gs_member_img {
+.gs-single-style-two .gs_coach_img {
   width: 100%;
 }
 .gs-single-style-two .gs_ribon_wrapper {
@@ -10043,7 +10043,7 @@ body {
   padding-right: 62px;
   border-right: 2px solid #f2f2f2;
 }
-.gs-single-style-three .gs_member_img {
+.gs-single-style-three .gs_coach_img {
   width: 100%;
 }
 .gs-single-style-three .gs-sin-mem-name {
@@ -10062,7 +10062,7 @@ body {
 .gs-single-style-three .gstm-content-top-right {
   padding-left: 64px !important;
 }
-.gs-single-style-three .gs_member_details {
+.gs-single-style-three .gs_coach_details {
   padding-left: 0 !important;
 }
 .gs-single-style-three .gstm-details > div i {
@@ -10144,19 +10144,19 @@ body {
 .gs-single-style-four .gs-coach-single-content .gstm-silde-icon a:not(.gs-arrow-disabled):hover svg path {
   fill: #AB1AEA;
 }
-.gs-single-style-four .gs_member_img {
+.gs-single-style-four .gs_coach_img {
   -webkit-box-shadow: 0px 5px 30px 0px rgba(12, 21, 41, 0.12);
           box-shadow: 0px 5px 30px 0px rgba(12, 21, 41, 0.12);
   padding: 30px;
   border-radius: 10px;
   width: 100%;
 }
-.gs-single-style-four .gs_member_details {
+.gs-single-style-four .gs_coach_details {
   padding-right: 60px;
   padding-left: 0;
   width: 100%;
 }
-.gs-single-style-four .gs_member_details .gs-member-desc {
+.gs-single-style-four .gs_coach_details .gs-member-desc {
   color: #030d1e;
 }
 .gs-single-style-four .gs-member-desc p {
@@ -10245,24 +10245,24 @@ body {
 
 /* gs-coach-single-style-five
 ========================*/
-.gs-single-style-five .gs_member_details {
+.gs-single-style-five .gs_coach_details {
   padding-left: 50px !important;
   width: 100%;
 }
-.gs-single-style-five .gs_member_details .gsmd-left {
+.gs-single-style-five .gs_coach_details .gsmd-left {
   padding-right: 30px;
   border-right: 1px solid #f2f2f2;
 }
-.gs-single-style-five .gs_member_details .gsmd-right {
+.gs-single-style-five .gs_coach_details .gsmd-right {
   padding: 0%;
   padding-left: 44px;
 }
-.gs-single-style-five .gs_member_details .gsmd-top {
+.gs-single-style-five .gs_coach_details .gsmd-top {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 48px;
   padding-bottom: 24px;
 }
-.gs-single-style-five .gs_member_details .gsmd-top .gstm-silde-icon {
+.gs-single-style-five .gs_coach_details .gsmd-top .gstm-silde-icon {
   position: absolute;
   top: 0;
   right: 0;
@@ -10274,7 +10274,7 @@ body {
 .gs-single-style-five .gstm-details > div:not(:last-child) {
   margin-bottom: 18px !important;
 }
-.gs-single-style-five .gs_member_img {
+.gs-single-style-five .gs_coach_img {
   position: relative;
   -webkit-box-shadow: 0px 5px 30px 0px rgba(12, 21, 41, 0.12);
           box-shadow: 0px 5px 30px 0px rgba(12, 21, 41, 0.12);
@@ -10282,7 +10282,7 @@ body {
   border: 10px solid #fff;
   width: 100%;
 }
-.gs-single-style-five .gs_member_img::after {
+.gs-single-style-five .gs_coach_img::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -10854,7 +10854,7 @@ body {
   width: 70%;
   padding-left: 22px;
 }
-.gs-coach-popup--style-one .gs-containeer-f .gs_member_img {
+.gs-coach-popup--style-one .gs-containeer-f .gs_coach_img {
   width: 100%;
 }
 .gs-coach-popup--style-one .gs-containeer-f .gs-sin-mem-name {
@@ -10863,7 +10863,7 @@ body {
 .gs-coach-popup--style-one .gs-containeer-f .gs-sin-mem-desig {
   margin-bottom: 25px;
 }
-.gs-coach-popup--style-one .gs-containeer-f .gs_member_details {
+.gs-coach-popup--style-one .gs-containeer-f .gs_coach_details {
   width: 100%;
   padding-left: 0;
   margin-top: -7px;
@@ -10972,7 +10972,7 @@ body {
 .gs-coach-popup--style-two .gs-containeer-f .popup-navigation .popup-nav svg:hover path {
   fill: #33cccc;
 }
-.gs-coach-popup--style-two .gs-containeer-f .gs_member_img {
+.gs-coach-popup--style-two .gs-containeer-f .gs_coach_img {
   width: 100%;
 }
 .gs-coach-popup--style-two .gs-containeer-f .gs-sin-mem-name {
@@ -10984,7 +10984,7 @@ body {
 .gs-coach-popup--style-two .gs-containeer-f .gs-member-desc {
   max-height: initial;
 }
-.gs-coach-popup--style-two .gs-containeer-f .gs_member_details {
+.gs-coach-popup--style-two .gs-containeer-f .gs_coach_details {
   width: 100%;
   padding-left: 0%;
 }
@@ -11126,7 +11126,7 @@ body {
 .gs-coach-popup--style-three .gs-containeer-f .gs-tm-sicons .gs-coach-social li a:hover i, .gs-coach-popup--style-three .gs-containeer-f .gs-tm-sicons .gs-coach-social li a:hover svg {
   color: #ffffff;
 }
-.gs-coach-popup--style-three .gs_member_img {
+.gs-coach-popup--style-three .gs_coach_img {
   width: 100%;
 }
 .gs-coach-popup--style-three .gs-sin-mem-name {
@@ -11212,7 +11212,7 @@ body {
   width: 70%;
   padding-left: 26px;
 }
-.gs-coach-popup--style-four .gs-containeer-f .gs_member_img {
+.gs-coach-popup--style-four .gs-containeer-f .gs_coach_img {
   width: 100%;
 }
 .gs-coach-popup--style-four .gs-containeer-f .gs-sin-mem-name {
@@ -11225,7 +11225,7 @@ body {
 .gs-coach-popup--style-four .gs-containeer-f .gs-member-desc p {
   margin-bottom: 0;
 }
-.gs-coach-popup--style-four .gs-containeer-f .gs_member_details {
+.gs-coach-popup--style-four .gs-containeer-f .gs_coach_details {
   width: 100%;
   padding-left: 0;
   margin-top: -13px;
@@ -11792,7 +11792,7 @@ body {
 }
 
 @media (min-width: 1024px) and (max-width: 1220px) {
-  .gs-grid-style-one .single-member-div .gs_member_info {
+  .gs-grid-style-one .single-member-div .gs_coach_info {
     right: -18px;
   }
   .mfp-gscoach .mfp-arrow {
@@ -11803,14 +11803,14 @@ body {
   .gs-coach-horizontal-one .single-member-div .gs_coach_image__wrapper {
     width: 100%;
   }
-  .gs-coach-horizontal-one .single-member-div .gs_member_info {
+  .gs-coach-horizontal-one .single-member-div .gs_coach_info {
     width: 100%;
   }
   /* Single Page Style */
   .gs-single-style-one .gs-coach-single-content {
     padding: 0 16px !important;
   }
-  .gs-single-style-one .gs-coach-single-content .gs_member_details {
+  .gs-single-style-one .gs-coach-single-content .gs_coach_details {
     padding-left: 0 !important;
     text-align: left;
     margin-top: 0 !important;
@@ -11818,7 +11818,7 @@ body {
 }
 @media (max-width: 992px) {
   /* Grid One */
-  .gs-grid-style-one .single-member-div .gs_member_info {
+  .gs-grid-style-one .single-member-div .gs_coach_info {
     right: -20px;
   }
   .gs-coach-horizontal-two .single-member-div .gs_coach_image__wrapper {
@@ -11955,7 +11955,7 @@ body {
     top: 0;
   }
   /* Single Page Style */
-  .gs_member_details {
+  .gs_coach_details {
     margin-bottom: 20px !important;
   }
   .gs-single-default .gs-coach-single-content {
@@ -11968,7 +11968,7 @@ body {
   .gs-single-container {
     margin-bottom: 20px !important;
   }
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     padding-left: 0;
     padding-top: 30px;
     text-align: left;
@@ -11976,7 +11976,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   /* Grid One */
-  .gs-grid-style-one .single-member-div .gs_member_info {
+  .gs-grid-style-one .single-member-div .gs_coach_info {
     right: -20px;
   }
   .gs-coach-horizontal-one .single-member-div .single-member {
@@ -11989,7 +11989,7 @@ body {
     margin-right: 0;
     width: 100%;
   }
-  .gs-coach-horizontal-one .single-member-div .gs_member_info {
+  .gs-coach-horizontal-one .single-member-div .gs_coach_info {
     width: 100%;
   }
   /* Horizontal Three */
@@ -12008,7 +12008,7 @@ body {
         -ms-flex: 1 0 274px;
             flex: 1 0 274px;
   }
-  .gs-coach-horizontal-two .single-member-div .gs_member_info {
+  .gs-coach-horizontal-two .single-member-div .gs_coach_info {
     width: 100%;
     padding: 32px 32px 0px 32px;
   }
@@ -12027,7 +12027,7 @@ body {
     margin-right: 0;
     width: 260px;
   }
-  .gs-coach-horizontal-three .single-member-div .gs_member_info {
+  .gs-coach-horizontal-three .single-member-div .gs_coach_info {
     width: 100%;
   }
   .gs-coach-horizontal-four .single-member-div {
@@ -12057,7 +12057,7 @@ body {
         -ms-flex-positive: 0;
             flex-grow: 0;
   }
-  .gs-coach-horizontal-five .single-member-div .gs_member_info {
+  .gs-coach-horizontal-five .single-member-div .gs_coach_info {
     margin-top: 18px;
   }
   /* Flip Style */
@@ -12247,7 +12247,7 @@ body {
     width: 38%;
   }
   /* Single Page Style */
-  .gs_member_details {
+  .gs_coach_details {
     margin-bottom: 20px !important;
   }
   .gs-single-default .gs-coach-single-content {
@@ -12266,7 +12266,7 @@ body {
   .gs-single-style-one .gs-coach-single-content .gs-roow .gs-col-md-3 {
     width: 100% !important;
   }
-  .gs-single-style-one .gs-coach-single-content .gs_member_details {
+  .gs-single-style-one .gs-coach-single-content .gs_coach_details {
     padding-left: 0 !important;
     text-align: left;
     margin-top: 0 !important;
@@ -12276,7 +12276,7 @@ body {
     right: -31%;
     top: -31%;
   }
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     padding-left: 0;
     padding-top: 30px;
     text-align: left;
@@ -12284,7 +12284,7 @@ body {
 }
 @media (min-width: 481px) and (max-width: 767px) {
   /* Grid One */
-  .gs-grid-style-one .single-member-div .gs_member_info {
+  .gs-grid-style-one .single-member-div .gs_coach_info {
     right: -20px;
   }
   /* Horizontal */
@@ -12296,11 +12296,11 @@ body {
     width: 50%;
     margin-right: 0;
   }
-  .gs-coach-horizontal-one .single-member-div .gs_member_info,
-  .gs-coach-horizontal-two .single-member-div .gs_member_info,
-  .gs-coach-horizontal-three .single-member-div .gs_member_info,
-  .gs-coach-horizontal-four .single-member-div .gs_member_info,
-  .gs-coach-horizontal-five .single-member-div .gs_member_info {
+  .gs-coach-horizontal-one .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-two .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-three .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-four .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-five .single-member-div .gs_coach_info {
     width: 60%;
     padding: 18px 18px;
   }
@@ -12314,7 +12314,7 @@ body {
   .gs-coach-horizontal-three .single-member-div .gs_coach_image__wrapper {
     width: 52%;
   }
-  .gs-coach-horizontal-three .single-member-div .gs_member_info {
+  .gs-coach-horizontal-three .single-member-div .gs_coach_info {
     width: 100%;
   }
   .gs-coach-horizontal-four .single-member-div .single-member {
@@ -12323,7 +12323,7 @@ body {
   .gs-coach-horizontal-four .single-member-div .gs_coach_image__wrapper {
     width: 32%;
   }
-  .gs-coach-horizontal-four .single-member-div .gs_member_info {
+  .gs-coach-horizontal-four .single-member-div .gs_coach_info {
     width: 100%;
   }
   /* List Style */
@@ -12349,11 +12349,11 @@ body {
     height: 300px;
     margin-right: 0;
   }
-  .gs-coach-list-style-one .single-member-div .gs_member_info,
-  .gs-coach-list-style-two .single-member-div .gs_member_info,
-  .gs-coach-list-style-three .single-member-div .gs_member_info,
-  .gs-coach-list-style-four .single-member-div .gs_member_info,
-  .gs-coach-list-style-five .single-member-div .gs_member_info {
+  .gs-coach-list-style-one .single-member-div .gs_coach_info,
+  .gs-coach-list-style-two .single-member-div .gs_coach_info,
+  .gs-coach-list-style-three .single-member-div .gs_coach_info,
+  .gs-coach-list-style-four .single-member-div .gs_coach_info,
+  .gs-coach-list-style-five .single-member-div .gs_coach_info {
     padding: 20px;
   }
   .gs-coach-list-style-three .single-member-div .single-member--wrapper {
@@ -12416,7 +12416,7 @@ body {
     width: 100%;
     padding-left: 15px;
   }
-  .gs-coach-popup--style-one .gs-containeer-f .gs_member_details {
+  .gs-coach-popup--style-one .gs-containeer-f .gs_coach_details {
     margin-top: 16px;
   }
   .gs-coach-popup--style-one .gs_coach_popup {
@@ -12485,7 +12485,7 @@ body {
     padding-left: 0 !important;
     border: none;
   }
-  .gs-coach-popup--style-three .gs-containeer-f .gs_member_img {
+  .gs-coach-popup--style-three .gs-containeer-f .gs_coach_img {
     padding-right: 0;
     padding-left: 0;
   }
@@ -12506,7 +12506,7 @@ body {
     width: 100%;
     padding-left: 15px;
   }
-  .gs-coach-popup--style-four .gs-containeer-f .gs_member_details {
+  .gs-coach-popup--style-four .gs-containeer-f .gs_coach_details {
     margin-left: 0px;
     margin-top: 0px;
   }
@@ -12690,7 +12690,7 @@ body {
     padding-top: 20px;
   }
   /* Single Page Style */
-  .gs_member_details {
+  .gs_coach_details {
     margin-bottom: 20px !important;
   }
   .gs-single-default .gs-coach-single-content {
@@ -12709,7 +12709,7 @@ body {
   .gs-single-style-one .gs-coach-single-content .gs-roow .gs-col-md-3 {
     width: 100% !important;
   }
-  .gs-single-style-one .gs-coach-single-content .gs_member_details {
+  .gs-single-style-one .gs-coach-single-content .gs_coach_details {
     padding-left: 0 !important;
     text-align: left;
     margin-top: 0 !important;
@@ -12722,7 +12722,7 @@ body {
   .gs-single-style-two .gs-coach-single-content {
     padding: 16px;
   }
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     padding-left: 0;
     padding-top: 30px;
     text-align: left;
@@ -12733,7 +12733,7 @@ body {
   .gs-single-style-three .gs-coach-single-content .gs-roow .gs-col-md-3 {
     width: 100% !important;
   }
-  .gs-single-style-three .gs-coach-single-content .gs_member_details {
+  .gs-single-style-three .gs-coach-single-content .gs_coach_details {
     padding-left: 0 !important;
     text-align: left;
     margin-top: 0 !important;
@@ -12754,7 +12754,7 @@ body {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .gs-single-style-four .gs_member_details {
+  .gs-single-style-four .gs_coach_details {
     padding-right: 0;
     margin-top: 86px;
   }
@@ -12767,21 +12767,21 @@ body {
   .gs-single-style-five .gs-coach-single-content .gs-roow .gs-col-md-4 {
     width: 100% !important;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details {
     text-align: left;
     margin-top: 0 !important;
     padding-left: 20px !important;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-top {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-top {
     margin-bottom: 0;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-top .gstm-silde-icon {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-top .gstm-silde-icon {
     top: 5%;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-bottom .gs-col-md-6 {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-bottom .gs-col-md-6 {
     width: 100%;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-right {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-right {
     padding-left: 16px !important;
     padding-left: 16px !important;
     margin-top: 20px;
@@ -12942,42 +12942,42 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .gs-grid-style-one .single-member-div .gs_member_info .gs-member-name,
-  .gs-grid-style-two .single-member-div .gs_member_info .gs-member-name,
-  .gs-grid-style-three .single-member-div .gs_member_info .gs-member-name,
-  .gs-grid-style-four .single-member-div .gs_member_info .gs-member-name,
-  .gs-grid-style-five .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-circle-one .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-horizontal-one .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-list-style-one .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-name,
-  .gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-name {
+  .gs-grid-style-one .single-member-div .gs_coach_info .gs-member-name,
+  .gs-grid-style-two .single-member-div .gs_coach_info .gs-member-name,
+  .gs-grid-style-three .single-member-div .gs_coach_info .gs-member-name,
+  .gs-grid-style-four .single-member-div .gs_coach_info .gs-member-name,
+  .gs-grid-style-five .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-circle-one .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-horizontal-one .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-list-style-one .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-name,
+  .gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-name {
     font-size: 20px;
   }
-  .gs-grid-style-one .single-member-div .gs_member_info .gs-member-desig,
-  .gs-grid-style-two .single-member-div .gs_member_info .gs-member-desig,
-  .gs-grid-style-three .single-member-div .gs_member_info .gs-member-desig,
-  .gs-grid-style-four .single-member-div .gs_member_info .gs-member-desig,
-  .gs-grid-style-five .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-circle-one .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-horizontal-one .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-horizontal-two .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-horizontal-three .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-horizontal-four .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-horizontal-five .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-list-style-one .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-list-style-two .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-list-style-three .single-member-div .gs_member_info .gs-member-desig,
-  .gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-desig {
+  .gs-grid-style-one .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-grid-style-two .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-grid-style-three .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-grid-style-four .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-grid-style-five .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-circle-one .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-horizontal-one .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-horizontal-two .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-horizontal-three .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-horizontal-four .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-horizontal-five .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-list-style-one .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-list-style-two .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-list-style-three .single-member-div .gs_coach_info .gs-member-desig,
+  .gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-desig {
     font-size: 14px;
   }
   /* Grid One */
-  .gs-grid-style-one .single-member-div .gs_member_info {
+  .gs-grid-style-one .single-member-div .gs_coach_info {
     right: -20px;
     padding: 16px;
     width: 200px;
@@ -13002,11 +13002,11 @@ body {
     width: 100%;
     margin-right: 0;
   }
-  .gs-coach-horizontal-one .single-member-div .gs_member_info,
-  .gs-coach-horizontal-two .single-member-div .gs_member_info,
-  .gs-coach-horizontal-three .single-member-div .gs_member_info,
-  .gs-coach-horizontal-four .single-member-div .gs_member_info,
-  .gs-coach-horizontal-five .single-member-div .gs_member_info {
+  .gs-coach-horizontal-one .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-two .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-three .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-four .single-member-div .gs_coach_info,
+  .gs-coach-horizontal-five .single-member-div .gs_coach_info {
     width: 100%;
   }
   .gs-coach-horizontal-two .single-member-div .single-member {
@@ -13018,7 +13018,7 @@ body {
             flex: 1 0 220px;
     height: 220px;
   }
-  .gs-coach-horizontal-two .single-member-div .gs_member_info {
+  .gs-coach-horizontal-two .single-member-div .gs_coach_info {
     padding: 20px;
   }
   .gs-coach-horizontal-three .single-member-div .single-member {
@@ -13031,7 +13031,7 @@ body {
     border-radius: 10px 10px 0 0px;
     height: auto;
   }
-  .gs-coach-horizontal-three .single-member-div .gs_member_info {
+  .gs-coach-horizontal-three .single-member-div .gs_coach_info {
     padding: 20px;
     border-radius: 0;
     border: none;
@@ -13063,7 +13063,7 @@ body {
   .gs-coach-horizontal-five .single-member-div .single-member {
     border-radius: 14px;
   }
-  .gs-coach-horizontal-five .single-member-div .gs_member_info {
+  .gs-coach-horizontal-five .single-member-div .gs_coach_info {
     margin-top: 18px;
   }
   .gs-coach-list-style-one .single-member-div,
@@ -13093,11 +13093,11 @@ body {
     height: 220px !important;
     margin-right: 0 !important;
   }
-  .gs-coach-list-style-one .gs_member_info,
-  .gs-coach-list-style-two .gs_member_info,
-  .gs-coach-list-style-three .gs_member_info,
-  .gs-coach-list-style-four .gs_member_info,
-  .gs-coach-list-style-five .gs_member_info {
+  .gs-coach-list-style-one .gs_coach_info,
+  .gs-coach-list-style-two .gs_coach_info,
+  .gs-coach-list-style-three .gs_coach_info,
+  .gs-coach-list-style-four .gs_coach_info,
+  .gs-coach-list-style-five .gs_coach_info {
     margin-top: 20px;
   }
   .gs-coach-list-style-three .single-member-div .single-member--wrapper {
@@ -13114,7 +13114,7 @@ body {
     width: 220px !important;
     height: 220px !important;
   }
-  .gs-coach-list-style-four .single-member-div .gs_member_info .gs-member-contact-wrapper {
+  .gs-coach-list-style-four .single-member-div .gs_coach_info .gs-member-contact-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -13128,19 +13128,19 @@ body {
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
-  .gs-coach-flip-two .single-member-div .gs_member_info {
+  .gs-coach-flip-two .single-member-div .gs_coach_info {
     padding: 16px;
   }
-  .gs-coach-flip-two .single-member-div .gs_member_info-top .gs-member-desc {
+  .gs-coach-flip-two .single-member-div .gs_coach_info-top .gs-member-desc {
     margin-bottom: 4px;
   }
   .gs-coach-flip-two .single-member-div .single-mem-desc-social {
     margin-top: 10px;
   }
-  .gs-coach-flip-three .single-member-div .gs_member_info {
+  .gs-coach-flip-three .single-member-div .gs_coach_info {
     padding: 16px;
   }
-  .gs-coach-flip-three .single-member-div .gs_member_info-top {
+  .gs-coach-flip-three .single-member-div .gs_coach_info-top {
     padding: 24px 24px !important;
   }
   /* Popup Style */
@@ -13186,7 +13186,7 @@ body {
     width: 100%;
     padding-left: 15px;
   }
-  .gs-coach-popup--style-one .gs-containeer-f .gs_member_details {
+  .gs-coach-popup--style-one .gs-containeer-f .gs_coach_details {
     margin-top: 16px;
   }
   .gs-coach-popup--style-one .mfp-container .mfp-content .mfp-close {
@@ -13240,7 +13240,7 @@ body {
     padding-left: 0 !important;
     border: none;
   }
-  .gs-coach-popup--style-three .gs-containeer-f .gs_member_img {
+  .gs-coach-popup--style-three .gs-containeer-f .gs_coach_img {
     padding-right: 0;
     padding-left: 0;
   }
@@ -13261,7 +13261,7 @@ body {
     width: 100%;
     padding-left: 15px;
   }
-  .gs-coach-popup--style-four .gs-containeer-f .gs_member_details {
+  .gs-coach-popup--style-four .gs-containeer-f .gs_coach_details {
     margin-left: 0px;
     margin-top: 10px;
   }
@@ -13479,7 +13479,7 @@ body {
     top: 8px;
   }
   /* Single Page Style */
-  .gs_member_details {
+  .gs_coach_details {
     margin-bottom: 20px !important;
   }
   .gs-single-default .gs-coach-single-content {
@@ -13498,7 +13498,7 @@ body {
   .gs-single-style-one .gs-coach-single-content .gs-roow .gs-col-md-3 {
     width: 100% !important;
   }
-  .gs-single-style-one .gs-coach-single-content .gs_member_details {
+  .gs-single-style-one .gs-coach-single-content .gs_coach_details {
     padding-left: 0 !important;
     text-align: left;
     margin-top: 0 !important;
@@ -13511,7 +13511,7 @@ body {
   .gs-single-style-two .gs-coach-single-content {
     padding: 16px;
   }
-  .single-gs_coach .gs_member_details {
+  .single-gs_coach .gs_coach_details {
     padding-left: 0;
     padding-top: 30px;
     text-align: left;
@@ -13522,7 +13522,7 @@ body {
   .gs-single-style-three .gs-coach-single-content .gs-roow .gs-col-md-3 {
     width: 100% !important;
   }
-  .gs-single-style-three .gs-coach-single-content .gs_member_details {
+  .gs-single-style-three .gs-coach-single-content .gs_coach_details {
     padding-left: 0 !important;
     text-align: left;
     margin-top: 0 !important;
@@ -13546,7 +13546,7 @@ body {
   .gs-single-style-four .gs-coach-single-content .gstm-silde-icon {
     top: 7%;
   }
-  .gs-single-style-four .gs_member_details {
+  .gs-single-style-four .gs_coach_details {
     padding-right: 0;
   }
   .gs-single-style-five .gs-coach-single-content {
@@ -13555,21 +13555,21 @@ body {
   .gs-single-style-five .gs-coach-single-content .gs-roow .gs-col-md-4 {
     width: 100% !important;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details {
     padding-left: 0 !important;
     text-align: left;
     margin-top: 0 !important;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-top {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-top {
     margin-bottom: 0;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-top .gstm-silde-icon {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-top .gstm-silde-icon {
     top: 5%;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-bottom .gs-col-md-6 {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-bottom .gs-col-md-6 {
     width: 100%;
   }
-  .gs-single-style-five .gs-coach-single-content .gs_member_details .gsmd-right {
+  .gs-single-style-five .gs-coach-single-content .gs_coach_details .gsmd-right {
     padding-left: 16px !important;
     padding-left: 16px !important;
     margin-top: 20px;

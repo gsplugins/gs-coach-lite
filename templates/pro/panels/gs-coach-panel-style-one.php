@@ -30,7 +30,7 @@ namespace GSCOACH; ?>
 
                     <!-- Coach Image -->
                     <div class="gs_coach_image__wrapper">
-                        <?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+                        <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
                         <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
                     </div>
 
@@ -55,7 +55,7 @@ namespace GSCOACH; ?>
                     <?php if ( ! empty( get_social_links( get_the_id() ) ) ) : ?>
                         <div class="gs-tm-sicons">
                             <div class="gs-tm-sicons-lable"><?php echo esc_html($gs_coach_follow_me_on); ?></div>
-                            <?php $gs_member_connect = 'on'; ?>
+                            <?php $gs_coach_connect = 'on'; ?>
                             <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
                         </div>
                     <?php endif; ?>
@@ -63,7 +63,7 @@ namespace GSCOACH; ?>
                     <!-- Meta Details -->
                     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>
 
-                    <div class="gs_member_certificates">
+                    <div class="gs_coach_certificates">
                         <!-- Certificates -->
                         <?php $is_certificates_enabled = 'on'; ?>
                         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>

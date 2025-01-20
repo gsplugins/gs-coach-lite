@@ -32,7 +32,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 			$classes = ['gs-col-xs-12 single-member-div'];
 
-			if ( $gs_member_link_type == 'popup' ) $classes[] = 'single-member-pop';
+			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 
 			?>
@@ -56,7 +56,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 									<!-- Ribbon -->
 									<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 
-									<?php echo member_thumbnail_with_link( $id, $gs_member_thumbnail_sizes, $gs_member_name_is_linked == 'on', $gs_member_link_type, 'gs_coach_image__wrapper' ); ?>
+									<?php echo member_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'gs_coach_image__wrapper' ); ?>
 
 								</div>
 								<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
@@ -68,7 +68,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 									<div class="gs-coach-info gs-tm-sicons">
 
 										<!-- Single member name -->
-										<?php member_name( $id, true, $gs_member_name_is_linked == 'on', $gs_member_link_type, 'div', 'gs-coach-name' ); ?>
+										<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'div', 'gs-coach-name' ); ?>
 										<?php do_action( 'gs_coach_after_member_name' ); ?>
 
 										<!-- Single member designation -->
@@ -119,7 +119,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_member_pagination ) : ?>
+	<?php if ( 'on' == $gs_coach_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

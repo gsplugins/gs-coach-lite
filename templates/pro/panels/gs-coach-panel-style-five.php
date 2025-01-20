@@ -17,7 +17,7 @@ namespace GSCOACH; ?>
 
                 <!-- Coach Image -->
                 <div class="gs_coach_image__wrapper">
-                    <?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+                    <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
                     <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
                 </div>
                 
@@ -50,7 +50,7 @@ namespace GSCOACH; ?>
                     <?php $is_skills_title = true; ?>
                     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-skills.php' ); ?>
 
-                    <div class="gs_member_certificates">
+                    <div class="gs_coach_certificates">
                         <!-- Certificates -->
                         <?php $is_certificates_enabled = 'on'; ?>
                         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>

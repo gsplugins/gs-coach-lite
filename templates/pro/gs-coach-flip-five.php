@@ -61,7 +61,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 			$classes = ['single-member-div single-member--flip', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 
-			if ( $gs_member_link_type == 'popup' ) $classes[] = 'single-member-pop';
+			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 			if ( $_drawer_enabled ) $classes[] = 'gridder-list';
 			if ( $_filter_enabled ) {
@@ -100,20 +100,20 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 						<!-- Member Image -->
 						<div class="gs_coach_image__wrapper">
 							<!-- Image -->
-							<?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+							<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 							<!-- Ribbon -->
 							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 						</div>
 						
-						<div class="gs_member_info gs_member_info-top">
+						<div class="gs_coach_info gs_coach_info-top">
 							
-							<div class="gs_member_info-top--inner">
+							<div class="gs_coach_info-top--inner">
 								
 								<!-- Member Image -->
-								<div class="gs_coach_image__wrapper"><?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?></div>
+								<div class="gs_coach_image__wrapper"><?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?></div>
 
 								<!-- Member Name -->
-								<?php member_name( $id, true, $gs_member_name_is_linked == 'on', $gs_member_link_type ); ?>
+								<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
 								<?php do_action( 'gs_coach_after_member_name' ); ?>
 
 								<!-- Member Designation -->
@@ -152,7 +152,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_member_pagination ) : ?>
+	<?php if ( 'on' == $gs_coach_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

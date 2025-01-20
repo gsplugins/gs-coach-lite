@@ -13,8 +13,8 @@ namespace GSCOACH;
 
 remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 
-if ( empty($gs_member_thumbnail_sizes) ) {
-	$gs_member_thumbnail_sizes = 'large';
+if ( empty($gs_coach_thumbnail_sizes) ) {
+	$gs_coach_thumbnail_sizes = 'large';
 }
 
 $display_ribbon = 'on';
@@ -40,7 +40,7 @@ get_header(); ?>
 				<div class="gs-arc-mem-img gs_ribon_wrapper">
 					
 					<a href="<?php the_permalink(); ?>">
-						<?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+						<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 					</a>
 
 					<!-- Ribbon -->
@@ -50,7 +50,7 @@ get_header(); ?>
 				<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
 
 
-				<div class="gs_member_details gs-tm-sicons">
+				<div class="gs_coach_details gs-tm-sicons">
 
 					<a href="<?php the_permalink(); ?>"><h3 class="gs-arc-mem-name" itemprop="name"><?php the_title(); ?></h3></a>
 					<?php do_action( 'gs_coach_after_member_name' ); ?>
@@ -59,7 +59,7 @@ get_header(); ?>
 					<?php do_action( 'gs_coach_after_member_designation' ); ?>
 
 					<!-- Social Links -->
-					<?php $gs_member_connect = 'on'; ?>
+					<?php $gs_coach_connect = 'on'; ?>
 					<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
 
 				</div>

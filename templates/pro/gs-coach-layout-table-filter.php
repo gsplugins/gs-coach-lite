@@ -54,14 +54,14 @@ global $gs_coach_loop;
 
 							$classes = ['single-member-div'];
 				
-							if ( $gs_member_link_type == 'popup' ) $classes[] = 'single-member-pop';
+							if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
 
 							?>
 
 							<tr class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 								<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
 
-								<?php member_name( $id, true, $gs_member_name_is_linked == 'on', $gs_member_link_type, 'td', '', true ); ?>
+								<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'td', '', true ); ?>
 								<td><?php echo wp_kses_post($designation); ?></td>
 								<td><a href="tel:<?php echo esc_attr( $cell ); ?>"><?php echo esc_html( $cell ); ?></a> | <a href="mailto:<?php echo sanitize_email($email); ?>"><?php _e( 'SEND EMAIL', 'gscoach' ); ?></a></td>
 								
@@ -91,7 +91,7 @@ global $gs_coach_loop;
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_member_pagination ) : ?>
+	<?php if ( 'on' == $gs_coach_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

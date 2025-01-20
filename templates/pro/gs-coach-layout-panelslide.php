@@ -25,7 +25,7 @@ $panel_enabled = 'on';
 		<div class="search-filter">
 			<div class="gs-roow justify-content-center">
 
-				<?php if ( 'on' ==  $gs_member_srch_by_name ) : ?>
+				<?php if ( 'on' ==  $gs_coach_srch_by_name ) : ?>
 
 					<?php do_action( 'gs_coach_before_search_filter' ); ?>
 
@@ -35,7 +35,7 @@ $panel_enabled = 'on';
 
 				<?php endif; ?>
 
-				<?php if ( 'on' ==  $gs_member_srch_by_company ) : ?>
+				<?php if ( 'on' ==  $gs_coach_srch_by_company ) : ?>
 
 					<?php do_action( 'gs_coach_before_company_search_filter' ); ?>
 
@@ -45,7 +45,7 @@ $panel_enabled = 'on';
 
 				<?php endif; ?>
 
-				<?php if ( 'on' ==  $gs_member_srch_by_zip ) : ?>
+				<?php if ( 'on' ==  $gs_coach_srch_by_zip ) : ?>
 
 					<?php do_action( 'gs_coach_before_zip_search_filter' ); ?>
 
@@ -55,7 +55,7 @@ $panel_enabled = 'on';
 
 				<?php endif; ?>
 
-				<?php if ( 'on' ==  $gs_member_srch_by_tag ) : ?>
+				<?php if ( 'on' ==  $gs_coach_srch_by_tag ) : ?>
 
 					<?php do_action( 'gs_coach_before_tag_search_filter' ); ?>
 
@@ -96,7 +96,7 @@ $panel_enabled = 'on';
 
 							<!-- Coach Image -->
 							<div class="gs_coach_image__wrapper">
-								<?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+								<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 							</div>
 							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
 
@@ -106,13 +106,13 @@ $panel_enabled = 'on';
 							<div class="single-member-name-desig">
 
 								<!-- Single member name -->
-								<?php if ( 'on' ==  $gs_member_name ): ?>
+								<?php if ( 'on' ==  $gs_coach_name ): ?>
 									<?php member_name( $id, true, false ); ?>
 									<?php do_action( 'gs_coach_after_member_name' ); ?>
 								<?php endif; ?>
 								
 								<!-- Single member designation -->
-								<?php if ( !empty( $designation ) && 'on' == $gs_member_role ): ?>
+								<?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
 									<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
 									<?php do_action( 'gs_coach_after_member_designation' ); ?>
 								<?php endif; ?>
@@ -142,7 +142,7 @@ $panel_enabled = 'on';
 	<?php endif; ?>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_member_pagination ) : ?>
+	<?php if ( 'on' == $gs_coach_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

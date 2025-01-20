@@ -12,7 +12,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
         <!-- Coach Image -->
         <div class="gs_coach_image__wrapper">
-            <?php member_thumbnail( $gs_member_thumbnail_sizes, true ); ?>
+            <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
             <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
         </div>
 
@@ -22,7 +22,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
     <div class="gs-col-md-8 gstm-drawer-right">
 
         <!-- Single member name -->
-        <?php member_name( $id, true, false, $gs_member_link_type, 'h2', 'title', true ); ?>
+        <?php member_name( $id, true, false, $gs_coach_link_type, 'h2', 'title', true ); ?>
         <?php do_action( 'gs_coach_after_member_name' ); ?>
         
         <!-- Single member designation -->
@@ -43,7 +43,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 </div>
 
-<div class="gs_member_certificates">
+<div class="gs_coach_certificates">
     <!-- Certificates -->
     <?php $is_certificates_enabled = 'on'; ?>
     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
