@@ -28,14 +28,15 @@ if( 'on' === $is_breadcumb_enabled ):
     $current_page = get_the_title();
 
 ?>
+
 <!-- Temporary style -->
 <style>
     ul.gs-coach-breadcumb-list li {
-    display: inline-block;
-}
-ul.gs-coach-breadcumb-list {
-    padding: 0;
-}
+        display: inline-block;
+    }
+    ul.gs-coach-breadcumb-list {
+        padding: 0;
+    }
 </style>
 
 <div class="gs-breadcumb-container">
