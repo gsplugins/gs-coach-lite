@@ -16,7 +16,7 @@ do_action( 'gs_coach_before_filters' );
 $filter_col_class = $gs_coach_filter_columns == 'three' ? 'gs-col-md-4 gs-col-sm-6' : 'gs-col-md-6 gs-col-sm-6';
 $filter_col_class .= ' gs-col-xs-12';
 
-$filters_order = array_keys( Sortable::get_team_filters() );
+$filters_order = array_keys( Sortable::get_coach_filters() );
 
 ob_start();
 

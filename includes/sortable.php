@@ -31,7 +31,7 @@ class Sortable {
 		add_action('wp_ajax_update_taxonomy_order', array($this, 'update_taxonomy_order'));
 		
 		// Update team filters order via AJAX
-		add_action('wp_ajax_update_team_filters_order', array($this, 'update_team_filters_order'));
+		add_action('wp_ajax_update_coach_filters_order', array($this, 'update_coach_filters_order'));
 		
 		// Enqueue admin scripts for sorting
 		add_action('admin_enqueue_scripts', array($this, 'sort_scripts'));
@@ -67,7 +67,7 @@ class Sortable {
 	/**
 	 * Update Coach Filters Order
 	 */
-	public function update_team_filters_order() {
+	public function update_coach_filters_order() {
 
 		if (!$this->is_pro()) wp_send_json_error();
 
@@ -113,7 +113,7 @@ class Sortable {
 			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_coach' ) {
 				$action = 'update_coaches_order';
 			} else if ( $_GET['object_type'] == 'gs_coach_filters' ) {
-				$action = 'update_team_filters_order';
+				$action = 'update_coach_filters_order';
 			} else {
 				$action = 'update_taxonomy_order';
 			}
@@ -290,6 +290,7 @@ class Sortable {
 				<a class="<?php echo $object_type === 'gs_coach' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach') ); ?>">Coaches</a>
 				<a class="<?php echo $object_type === 'gs_coach_group' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_group') ); ?>">Groups</a>
 				<a class="<?php echo $object_type === 'gs_coach_filters' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_filters') ); ?>">Coach Filters</a>
+				<a class="<?php echo $object_type === 'gs_coach_meta' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_meta') ); ?>">Meta Fields</a>
 			</div>
 
 			<div class="gs-plugins--sort-content">
@@ -302,11 +303,15 @@ class Sortable {
 
 				<?php elseif ($object_type === 'gs_coach_filters') : ?>
 
-					<?php $this->sort_team_filters(); ?>
+					<?php $this->sort_coach_filters(); ?>
+
+				<?php elseif ($object_type === 'gs_coach_meta') : ?>
+
+					<?php $this->sort_coach_meta(); ?>
 
 				<?php else : ?>
 
-					<?php $this->sort_team_taxonomies(); ?>
+					<?php $this->sort_coach_taxonomies(); ?>
 
 				<?php endif; ?>
 			</div>
@@ -415,9 +420,9 @@ class Sortable {
 	/**
 	 * Get Coach Filters Strings
 	 */
-	public static function get_team_filters_strings() {
+	public static function get_coach_filters_strings() {
 		$translations = plugin()->builder->get_translation_srtings();
-		$team_filters = [
+		$coach_filters = [
 			'search_by_name' => $translations['instant-search-by-name'],
 			'search_by_company' => $translations['gs-member-srch-by-company'],
 			'search_by_zip' => $translations['gs-member-srch-by-zip'],
@@ -433,13 +438,13 @@ class Sortable {
 			'gs_coach_extra_four' => $translations['filter-by-extra-four'],
 			'gs_coach_extra_five' => $translations['filter-by-extra-five']
 		];
-		return $team_filters;
+		return $coach_filters;
 	}
 
 	/**
 	 * Get Coach Filters
 	 */
-	public static function get_team_filters() {
+	public static function get_coach_filters() {
 		$defaults = [
 			'search_by_name',
 			'search_by_company',
@@ -457,14 +462,14 @@ class Sortable {
 			'gs_coach_extra_five',
 		];
 		$saved = get_option( 'gs_coach_filters_order', $defaults );
-		$filter_strings = self::get_team_filters_strings();
+		$filter_strings = self::get_coach_filters_strings();
 		return array_merge(array_flip($saved), $filter_strings);
 	}
 
 	/**
 	 * Sort Coach Filters
 	 */
-	public function sort_team_filters() {
+	public function sort_coach_filters() {
 
 		if (!$this->is_pro()) : ?>
 
@@ -476,7 +481,7 @@ class Sortable {
 
 		<?php endif;
 
-		$filters = self::get_team_filters();
+		$filters = self::get_coach_filters();
 
 		?>
 
@@ -512,10 +517,64 @@ class Sortable {
 		<?php
 	}
 
+
+	/**
+	 * Sort Coach Meta
+	 */
+	public function sort_coach_meta() {
+
+		if (!$this->is_pro()) : ?>
+
+			<div class="gs-coach-disable--term-pages">
+				<div class="gs-coach-disable--term-inner">
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
+				</div>
+			</div>
+
+		<?php endif;
+
+		
+
+		// $filters = ;
+
+		?>
+
+		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
+
+			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
+
+				<div class="gscoach-sort--left-area" style="flex: 1 0 auto; width: 570px;">
+
+					<h3><?php esc_html_e('Meta field Orders', 'gscoach'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
+
+					<?php if (!empty($filters)) : ?>
+
+						<ul id="sortable-list" style="max-width: 600px;">
+							<?php foreach ($filters as $filter => $filter_title) : ?>
+
+								<li id="<?php echo esc_attr($filter); ?>">
+									<div class="sortable-content sortable-icon"><i class="fas fa-arrows-alt" aria-hidden="true"></i></div>
+									<div class="sortable-content sortable-title"><?php echo esc_html($filter_title); ?></div>
+								</li>
+
+							<?php endforeach; ?>
+						</ul>
+
+					<?php endif; ?>
+
+				</div>
+
+			</div>
+
+		</div><!-- #wrap -->
+
+		<?php
+	}
+
 	/**
 	 * Sort Coach Taxonomies
 	 */
-	public function sort_team_taxonomies() {
+	public function sort_coach_taxonomies() {
 
 		if (!$this->is_pro()) : ?>
 

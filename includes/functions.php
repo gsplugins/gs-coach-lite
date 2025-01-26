@@ -16,10 +16,6 @@ function is_divi_editor() {
     if (!empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_coach_members') return true;
 }
 
-function is_pro_active() {
-    return gtm_fs()->can_use_premium_code();
-}
-
 function gs_wp_kses($content) {
 
     $allowed_tags = wp_kses_allowed_html('post');
@@ -947,4 +943,23 @@ function gs_star_rating( $args = array() ) {
 	}
 
 	return $output;
+}
+
+function get_all_meta_values( $meta_key,  $post_type = 'post' ) {
+
+    $posts = get_posts(
+        array(
+            'post_type' => $post_type,
+            'meta_key' => $meta_key,
+            'posts_per_page' => -1,
+        )
+    );
+
+    $meta_values = array();
+    foreach( $posts as $post ) {
+        $meta_values[] = get_post_meta( $post->ID, $meta_key, true );
+    }
+
+    return $meta_values;
+
 }
