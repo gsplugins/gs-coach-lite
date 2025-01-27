@@ -39,7 +39,7 @@ foreach ( gs_get_sort_metas() as $meta ) {
         ?>
             <div class="gs-coach-rating">
                 <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
-                <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta['key'] ) ) ); ?></span>
+                <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta_value ) ) ); ?></span>
             </div>
         <?php
     }
