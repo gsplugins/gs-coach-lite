@@ -11,6 +11,7 @@ namespace GSCOACH;
  * @version 1.0.0
  */
 
+//  Translation Strings
 $gs_coach_experience_meta   = 'Experience:';
 $gs_coach_education_meta    = 'Education:';
 $gs_coach_state_meta        = 'State:';
@@ -23,18 +24,27 @@ $gs_coach_fee_meta          = 'Fee:';
 $gs_coach_review_meta       = 'Review:';
 $gs_coach_rating_meta       = 'Rating:';
 
+foreach ( gs_get_sort_metas() as $meta ) {
+    $meta_value = get_post_meta( get_the_id(), $meta['key'], true );
+    if ( empty( $meta['name'] ) ) continue;
 
-$experience            = get_post_meta( get_the_id(), '_gscoach_experience', true );
-$education             = get_post_meta( get_the_id(), '_gscoach_education', true );
-$state                 = get_post_meta( get_the_id(), '_gscoach_state', true );
-$country               = get_post_meta( get_the_id(), '_gscoach_country', true );
-$schedule              = get_post_meta( get_the_id(), '_gscoach_shedule', true );
-$availablity           = get_post_meta( get_the_id(), '_gscoach_available', true );
-$personal_site         = get_post_meta( get_the_id(), '_gscoach_psite', true );
-$course_link           = get_post_meta( get_the_id(), '_gscoach_courselink', true );
-$fee                   = get_post_meta( get_the_id(), '_gscoach_fee', true );
-$review                = get_post_meta( get_the_id(), '_gscoach_review', true );
-$rating                = get_post_meta( get_the_id(), '_gscoach_rating', true );
+    if( '_gscoach_rating' !== $meta['key'] ){
+        ?>
+            <div class="gs-coach-meta-fields">
+                <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                <span class="gs-coach-meta-info"><?php echo esc_html( $meta_value ); ?></span>
+            </div>
+        <?php
+    } else {
+        ?>
+            <div class="gs-coach-rating">
+                <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta['key'] ) ) ); ?></span>
+            </div>
+        <?php
+    }
+}
+
 
 ?>
 
