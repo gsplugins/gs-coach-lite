@@ -535,7 +535,7 @@ class Sortable {
 
 		
 
-		// $filters = ;
+		$metas = gs_get_sort_metas();
 
 		?>
 
@@ -547,14 +547,14 @@ class Sortable {
 
 					<h3><?php esc_html_e('Meta field Orders', 'gscoach'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
 
-					<?php if (!empty($filters)) : ?>
+					<?php if (!empty($metas)) : ?>
 
 						<ul id="sortable-list" style="max-width: 600px;">
-							<?php foreach ($filters as $filter => $filter_title) : ?>
+							<?php foreach ($metas as $meta) : ?>
 
-								<li id="<?php echo esc_attr($filter); ?>">
+								<li id="<?php echo esc_attr($meta['key']); ?>">
 									<div class="sortable-content sortable-icon"><i class="fas fa-arrows-alt" aria-hidden="true"></i></div>
-									<div class="sortable-content sortable-title"><?php echo esc_html($filter_title); ?></div>
+									<div class="sortable-content sortable-title"><?php echo esc_html($meta['name']); ?></div>
 								</li>
 
 							<?php endforeach; ?>

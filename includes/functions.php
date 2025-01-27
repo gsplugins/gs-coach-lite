@@ -945,21 +945,75 @@ function gs_star_rating( $args = array() ) {
 	return $output;
 }
 
-function get_all_meta_values( $meta_key,  $post_type = 'post' ) {
 
-    $posts = get_posts(
-        array(
-            'post_type' => $post_type,
-            'meta_key' => $meta_key,
-            'posts_per_page' => -1,
-        )
-    );
+function get_meta_field_name( $field_key ) {
+    $fields = [
+        '_gscoach_profession' => __('Profession', 'gscoach'),
+        '_gscoach_experience' => __('Experience', 'gscoach'),
+        '_gscoach_education' => __('Education', 'gscoach'),
+        '_gscoach_address' => __('Address', 'gscoach'),
+        '_gscoach_state' => __('State/ City', 'gscoach'),
+        '_gscoach_country' => __('Country', 'gscoach'),
+        '_gscoach_contact' => __('Contact', 'gscoach'),
+        '_gscoach_email' => __('Email Address', 'gscoach'),
+        '_gscoach_shedule' => __('Schedule', 'gscoach'),
+        '_gscoach_available' => __('Availability', 'gscoach'),
+        '_gscoach_psite' => __('Personal Site', 'gscoach'),
+        '_gscoach_courselink' => __('Course Link', 'gscoach'),
+        '_gscoach_fee' => __('Fee', 'gscoach'),
+        '_gscoach_review' => __('Review', 'gscoach'),
+        '_gscoach_rating' => __('Rating', 'gscoach'),
+        '_gscoach_custom_page' => __('Custom Page', 'gscoach'),
+        '_gscoach_socials' => __('Socials', 'gscoach'),
+        '_gscoach_skills' => __('Skills', 'gscoach'),
+        'gscoach_certif_gallery' => __('Certificates', 'gscoach'),
+    ];
+    
+    return isset($fields[$field_key]) ? $fields[$field_key] : '';
+}
 
-    $meta_values = array();
-    foreach( $posts as $post ) {
-        $meta_values[] = get_post_meta( $post->ID, $meta_key, true );
+function generate_meta_items( $fields ) {
+
+    $array = [];
+
+    foreach ($fields as $field) {
+        $array[] = [
+            'name' => get_meta_field_name($field),
+            'key' => $field
+        ];
     }
 
-    return $meta_values;
+    return $array;
+}
 
+function gs_get_sort_metas_default(){
+    return [
+        '_gscoach_profession',
+        '_gscoach_experience',
+        '_gscoach_education',
+        '_gscoach_address',
+        '_gscoach_state',
+        '_gscoach_country',
+        '_gscoach_contact',
+        '_gscoach_email',
+        '_gscoach_shedule',
+        '_gscoach_available',
+        '_gscoach_psite',
+        '_gscoach_courselink',
+        '_gscoach_fee',
+        '_gscoach_review',
+        '_gscoach_rating',
+        '_gscoach_custom_page',
+        '_gscoach_socials',
+        '_gscoach_skills',
+        'gscoach_certif_gallery'
+    ];
+}
+
+function gs_get_sort_metas() {
+    $saved_meta = getoption('gs_coach_meta_order', []);
+    $saved_meta = array_merge( $saved_meta, gs_get_sort_metas_default() );
+    $saved_meta = array_unique($saved_meta);
+    $saved_meta = generate_meta_items($saved_meta);
+    return $saved_meta;
 }

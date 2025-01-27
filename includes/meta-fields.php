@@ -77,85 +77,85 @@ class Meta_Fields {
 			<div style="height: 20px;"></div>
 
 			<div class="form-group">
-				<label for="gsProf"><?php _e('Profession', 'gscoach'); ?></label>
+				<label for="gsProf"><?php echo get_meta_field_name('_gscoach_profession'); ?></label>
 				<input type="text" id="gsProf" class="form-control" name="gs_prof" value="<?php echo isset($gs_prof) ? esc_attr($gs_prof) : ''; ?>">
 			</div>
 
 			<div class="gs-coach-pro-field">
 
 			<div class="form-group">
-					<label for="gsCoachExperience"><?php _e('Experience', 'gscoach'); ?></label>
+					<label for="gsCoachExperience"><?php echo get_meta_field_name('_gscoach_experience'); ?></label>
 					<input type="text" id="gsCoachExperience" class="form-control" name="gs_coach_experience" placeholder="Experience" value="<?php echo isset($gs_coach_experience) ? esc_attr($gs_coach_experience) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachEducation"><?php _e('Education', 'gscoach'); ?></label>
+					<label for="gsCoachEducation"><?php echo get_meta_field_name('_gscoach_education'); ?></label>
 					<input type="text" id="gsCoachEducation" class="form-control" name="gs_coach_education" placeholder="Education" value="<?php echo isset($gs_coach_education) ? esc_attr($gs_coach_education) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachAddress"><?php _e('Address', 'gscoach'); ?></label>
+					<label for="gsCoachAddress"><?php echo get_meta_field_name('_gscoach_address'); ?></label>
 					<input type="text" id="gsCoachAddress" class="form-control" name="gs_coach_address" placeholder="Address" value="<?php echo isset($gs_coach_address) ? esc_attr($gs_coach_address) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachState"><?php _e('State/City', 'gscoach'); ?></label>
+					<label for="gsCoachState"><?php echo get_meta_field_name('_gscoach_state'); ?></label>
 					<input type="text" id="gsCoachState" class="form-control" name="gs_coach_state" placeholder="State/City" value="<?php echo isset($gs_coach_state) ? esc_attr($gs_coach_state) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachCountry"><?php _e('Country', 'gscoach'); ?></label>
+					<label for="gsCoachCountry"><?php echo get_meta_field_name('_gscoach_country'); ?></label>
 					<input type="text" id="gsCoachCountry" class="form-control" name="gs_coach_country" placeholder="Country" value="<?php echo isset($gs_coach_country) ? esc_attr($gs_coach_country) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachContactNumber"><?php _e('Contact Number', 'gscoach'); ?></label>
+					<label for="gsCoachContactNumber"><?php echo get_meta_field_name('_gscoach_contact'); ?></label>
 					<input type="text" id="gsCoachContactNumber" class="form-control" name="gs_coach_contact_number" placeholder="Contact Number" value="<?php echo isset($gs_coach_contact_number) ? esc_attr($gs_coach_contact_number) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachEmail"><?php _e('Email Address', 'gscoach'); ?></label>
+					<label for="gsCoachEmail"><?php echo get_meta_field_name('_gscoach_email'); ?></label>
 					<input type="email" id="gsCoachEmail" class="form-control" name="gs_coach_email" placeholder="Email Address" value="<?php echo isset($gs_coach_email) ? esc_attr($gs_coach_email) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachSchedule"><?php _e('Schedule Time', 'gscoach'); ?></label>
+					<label for="gsCoachSchedule"><?php echo get_meta_field_name('_gscoach_shedule'); ?></label>
 					<input type="time" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachAvailable"><?php _e('Availablity', 'gscoach'); ?></label>
+					<label for="gsCoachAvailable"><?php echo get_meta_field_name('_gscoach_available'); ?></label>
 					<input type="date" id="gsCoachAvailable" class="form-control" name="gs_coach_available" placeholder="Available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachPersonalSite"><?php _e('Personal Site', 'gscoach'); ?></label>
+					<label for="gsCoachPersonalSite"><?php echo get_meta_field_name('_gscoach_psite'); ?></label>
 					<input type="url" id="gsCoachPersonalSite" class="form-control" name="gs_coach_psite" placeholder="Personal Site" value="<?php echo isset($gs_coach_psite) ? esc_attr($gs_coach_psite) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachCourseLink"><?php _e('Course Link', 'gscoach'); ?></label>
+					<label for="gsCoachCourseLink"><?php echo get_meta_field_name('_gscoach_courselink'); ?></label>
 					<input type="url" id="gsCoachCourseLink" class="form-control" name="gs_coach_courselink" placeholder="Course Link" value="<?php echo isset($gs_coach_courselink) ? esc_attr($gs_coach_courselink) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachFee"><?php _e('Fee', 'gscoach'); ?></label>
+					<label for="gsCoachFee"><?php echo get_meta_field_name('_gscoach_fee'); ?></label>
 					<input type="text" id="gsCoachFee" class="form-control" name="gs_coach_fee" placeholder="Fee" value="<?php echo isset($gs_coach_fee) ? esc_attr($gs_coach_fee) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachReview"><?php _e('Review', 'gscoach'); ?></label>
+					<label for="gsCoachReview"><?php echo get_meta_field_name('_gscoach_review'); ?></label>
 					<input type="text" id="gsCoachReview" class="form-control" name="gs_coach_review" placeholder="Review" value="<?php echo isset($gs_coach_review) ? esc_attr($gs_coach_review) : ''; ?>">
 				</div>
 
 				<div class="form-group gs-star-rating">
-					<label for="gsCoachRating"><b><?php _e('Rating:', 'gscoach'); ?></b></label>
+					<label for="gsCoachRating"><b><?php echo get_meta_field_name('_gscoach_rating'); ?></b></label>
 					<input name="gs_coach_rating" type="range" value="<?php echo esc_attr($gs_coach_rating); ?>" step="0.25" id="gsCoachRating" class="form-control" style="display:none" />
 					<div class="rateit bigstars" data-rateit-starwidth="32" data-rateit-starheight="32" data-rateit-backingfld="#gsCoachRating" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5"></div>
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachCustomPage"><?php _e('Custom Page Link', 'gscoach'); ?></label>
+					<label for="gsCoachCustomPage"><?php echo get_meta_field_name('_gscoach_custom_page'); ?></label>
 					<input type="url" id="gsCoachCustomPage" class="form-control" name="gs_coach_custom_page" placeholder="Custom Page Link" value="<?php echo isset($gs_coach_custom_page) ? esc_attr($gs_coach_custom_page) : ''; ?>">
 				</div>
 
