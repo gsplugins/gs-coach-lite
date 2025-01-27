@@ -1004,10 +1004,13 @@ function gs_get_sort_metas_default(){
     ];
 }
 
-function gs_get_sort_metas() {
-    $saved_meta = getoption('gs_coach_meta_order', []);
+function gs_get_sort_meta_keys() {
+    $saved_meta = get_option('gs_coach_meta_order', gs_get_sort_metas_default());
     $saved_meta = array_merge( $saved_meta, gs_get_sort_metas_default() );
-    $saved_meta = array_unique($saved_meta);
-    $saved_meta = generate_meta_items($saved_meta);
-    return $saved_meta;
+    return array_unique($saved_meta);
+}
+
+function gs_get_sort_metas() {
+    $saved_meta = gs_get_sort_meta_keys();
+    return generate_meta_items($saved_meta);
 }

@@ -33,6 +33,9 @@ class Sortable {
 		// Update team filters order via AJAX
 		add_action('wp_ajax_update_coach_filters_order', array($this, 'update_coach_filters_order'));
 		
+		// Update team filters order via AJAX
+		add_action('wp_ajax_update_coach_meta_order', array($this, 'update_coach_meta_order'));
+		
 		// Enqueue admin scripts for sorting
 		add_action('admin_enqueue_scripts', array($this, 'sort_scripts'));
 		
@@ -82,6 +85,23 @@ class Sortable {
 	}
 
 	/**
+	 * Update Coach Metas Order
+	 */
+	public function update_coach_meta_order() {
+
+		if (!$this->is_pro()) wp_send_json_error();
+
+		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
+			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
+		}
+
+		$order = explode(',', sanitize_text_field($_POST['order']));
+		update_option('gs_coach_meta_order', $order);
+
+		wp_send_json_success();
+	}
+
+	/**
 	 * Order Posts
 	 */
 	public function order_posts($orderby) {
@@ -114,6 +134,8 @@ class Sortable {
 				$action = 'update_coaches_order';
 			} else if ( $_GET['object_type'] == 'gs_coach_filters' ) {
 				$action = 'update_coach_filters_order';
+			} else if ( $_GET['object_type'] == 'gs_coach_meta' ) {
+				$action = 'update_coach_meta_order';
 			} else {
 				$action = 'update_taxonomy_order';
 			}
