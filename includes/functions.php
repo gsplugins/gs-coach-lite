@@ -948,22 +948,21 @@ function gs_star_rating( $args = array() ) {
 
 function get_meta_field_name( $field_key ) {
     $fields = [
-        '_gscoach_profession' => __('Profession', 'gscoach'),
-        '_gscoach_experience' => __('Experience', 'gscoach'),
-        '_gscoach_education' => __('Education', 'gscoach'),
-        '_gscoach_address' => __('Address', 'gscoach'),
-        '_gscoach_state' => __('State/ City', 'gscoach'),
-        '_gscoach_country' => __('Country', 'gscoach'),
-        '_gscoach_contact' => __('Contact', 'gscoach'),
-        '_gscoach_email' => __('Email Address', 'gscoach'),
-        '_gscoach_shedule' => __('Schedule', 'gscoach'),
-        '_gscoach_available' => __('Availability', 'gscoach'),
-        '_gscoach_psite' => __('Personal Site', 'gscoach'),
-        '_gscoach_courselink' => __('Course Link', 'gscoach'),
-        '_gscoach_fee' => __('Fee', 'gscoach'),
-        '_gscoach_review' => __('Review', 'gscoach'),
-        '_gscoach_custom_page' => __('Custom Page', 'gscoach'),
-        '_gscoach_rating' => __('Rating', 'gscoach')
+        '_gscoach_profession' => get_translation('gs_coach_profession'),
+        '_gscoach_experience' => get_translation('gs_coach_experience'),
+        '_gscoach_education' => get_translation('gs_coach_education'),
+        '_gscoach_address' => get_translation('gs_coach_address'),
+        '_gscoach_state' => get_translation('gs_coach_state'),
+        '_gscoach_country' => get_translation('gs_coach_country'),
+        '_gscoach_contact' => get_translation('gs_coach_contact'),
+        '_gscoach_email' => get_translation('gs_coach_email'),
+        '_gscoach_shedule' => get_translation('gs_coach_schedule'),
+        '_gscoach_available' => get_translation('gs_coach_availablity'),
+        '_gscoach_psite' => get_translation('gs_coach_personal_site'),
+        '_gscoach_courselink' => get_translation('gs_coach_course_link'),
+        '_gscoach_fee' => get_translation('gs_coach_fee'),
+        '_gscoach_review' => get_translation('gs_coach_review'),
+        '_gscoach_rating' => get_translation('gs_coach_rating')
     ];
     
     return isset($fields[$field_key]) ? $fields[$field_key] : '';
@@ -999,7 +998,6 @@ function gs_get_sort_metas_default(){
         '_gscoach_courselink',
         '_gscoach_fee',
         '_gscoach_review',
-        '_gscoach_custom_page',
         '_gscoach_rating'
     ];
 }

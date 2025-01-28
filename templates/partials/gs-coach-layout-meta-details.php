@@ -12,12 +12,11 @@ namespace GSCOACH;
  */
 
 
-$gs_coachcom_meta 		= get_translation( 'gs_coachcom_meta' );
-$gs_coachadd_meta 		= get_translation( 'gs_coachadd_meta' );
-$gs_coachlandphone_meta 	= get_translation( 'gs_coachlandphone_meta' );
+$gs_coachcom_meta 		    = get_translation( 'gs_coachcom_meta' );
+$gs_coachadd_meta 		    = get_translation( 'gs_coachadd_meta' );
 $gs_coachcellPhone_meta 	= get_translation( 'gs_coachcellPhone_meta' );
 $gs_coachemail_meta 		= get_translation( 'gs_coachemail_meta' );
-$gs_coach_zipcode_meta 	= get_translation( 'gs_coach_zipcode_meta' );
+$gs_coach_zipcode_meta 	    = get_translation( 'gs_coach_zipcode_meta' );
 
 $gs_coach_location_label     = plugin()->builder->get_tax_option( 'location_tax_label' );
 $gs_coach_language_label     = plugin()->builder->get_tax_option( 'language_tax_label' );
@@ -32,10 +31,7 @@ $gs_coach_extra_five_label  = 'Extra Five';
 
 $address            = get_post_meta( get_the_id(), '_gscoach_address', true );
 $email              = get_post_meta( get_the_id(), '_gscoach_email', true );
-$land               = get_post_meta( get_the_id(), '_gs_land', true );
 $cell               = get_post_meta( get_the_id(), '_gscoach_contact', true );
-$company            = get_post_meta( get_the_id(), '_gs_com', true );
-$company_website    = get_post_meta( get_the_id(), '_gs_com_website', true );
 $gs_zip_code        = is_pro_valid() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';
 $location           = is_pro_valid() ? gs_coach_member_location() : '';
 $language           = is_pro_valid() ? gs_coach_member_language() : '';
@@ -50,45 +46,11 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
 ?>
 
 <div class="gstm-details">
-    
-    <?php if ( !empty($company) || !empty($company_website) ) : ?>
-
-        <div class="gs-member-company">
-            
-            <span class="levels"><?php echo esc_html($gs_coachcom_meta); ?></span>
-            <span class="level-info-company">
-                <?php if ( empty($company_website) ) :
-                    echo esc_html($company);
-                elseif ( empty($company) ) :
-                    printf( '<a href="%s" target="_blank" rel="nofollow noopener">%s</a>', esc_url_raw( $company_website ), esc_html($company_website) );
-                else :
-                    printf( '<a href="%s" target="_blank" rel="nofollow noopener">%s</a>', esc_url_raw( $company_website ), esc_html($company) );
-                endif; ?>
-            </span>
-                
-        </div>
-    <?php endif; ?>
 
     <?php if ( !empty($address) ) : ?>
         <div class="gs-member-address">
             <span class="levels"><?php echo esc_html($gs_coachadd_meta); ?></span>
             <span class="level-info-address"><?php echo wp_kses_post( $address ); ?></span>
-        </div>
-    <?php endif; ?>
-
-    <?php if ( !empty($land) ) : ?>
-        <div class="gs-member-lphon">
-            <span class="levels"><?php echo esc_html($gs_coachlandphone_meta); ?></span>
-            <span class="level-info-lphon">
-                <?php
-                $land_phone_link = getoption( 'land_phone_link', 'off' );
-                if ( $land_phone_link == 'on' ) {
-                    printf( '<a href="callto:%1$s">%1$s</a>', esc_html($land) );
-                } else {
-                    echo esc_html($land);
-                }
-                ?>
-            </span>
         </div>
     <?php endif; ?>
 

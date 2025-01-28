@@ -24,6 +24,10 @@ namespace GSCOACH;
 foreach ( gs_get_sort_metas() as $meta ) {
     $meta_value = get_post_meta( get_the_id(), $meta['key'], true );
     if ( empty( $meta['name'] ) ) continue;
+    if ( '_gscoach_address' === $meta['key'] ) continue;
+    if ( '_gscoach_contact' === $meta['key'] ) continue;
+    if ( '_gscoach_email' === $meta['key'] ) continue;
+    if ( '_gscoach_custom_page' === $meta['key'] ) continue;
 
     if( '_gscoach_rating' !== $meta['key'] ){
         ?>

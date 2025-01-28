@@ -182,27 +182,6 @@
 					<div class="gs-roow row-20">
 
 						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-							<label class="m-t-10" for="land_phone_link">{{translation('land-phone-link')}}:</label>
-							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-						</div>
-
-						<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-							<input-toggle class="m-t-6" name="land_phone_link" v-model="preference.land_phone_link" offLabel="Off" onLabel="On"></input-toggle>
-						</div>
-
-						<div class="gs-col-xs-12 bi-text-help--area">
-							<p class="bi-text-help">{{translation('land-phone-link--details')}}</p>
-						</div>
-
-					</div>
-
-				</div>
-				
-				<div class="shortcode-setting--row">
-
-					<div class="gs-roow row-20">
-
-						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
 							<label class="m-t-10" for="cell_phone_link">{{translation('cell-phone-link')}}:</label>
 							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 						</div>
@@ -443,27 +422,6 @@
 						<div class="gs-roow row-20">
 
 							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-								<label class="m-t-10" for="gs_coachfliter_company">{{translation('gs_coachfliter_company-text')}}:</label>
-								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-							</div>
-
-							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-								<input type="text" class="bi-input-control" name="gs_coachfliter_company" v-model="preference.gs_coachfliter_company" />
-							</div>
-
-							<div class="gs-col-xs-12 bi-text-help--area">
-								<p class="bi-text-help">{{translation('gs_coachfliter_company-text-details')}}</p>
-							</div>
-
-						</div>
-					
-					</div>
-
-					<div class="shortcode-setting--row">
-
-						<div class="gs-roow row-20">
-
-							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
 								<label class="m-t-10" for="gs_coachfliter_zip">{{translation('gs_coachfliter_zip-text')}}:</label>
 								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 							</div>
@@ -506,27 +464,6 @@
 						<div class="gs-roow row-20">
 
 							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-								<label class="m-t-10" for="gs_coachcom_meta">{{translation('pref-company')}}:</label>
-								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-							</div>
-
-							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-								<input type="text" class="bi-input-control" name="gs_coachcom_meta" v-model="preference.gs_coachcom_meta" />
-							</div>
-
-							<div class="gs-col-xs-12 bi-text-help--area">
-								<p class="bi-text-help">{{translation('pref-company-details')}}</p>
-							</div>
-
-						</div>
-					
-					</div>
-
-					<div class="shortcode-setting--row">
-
-						<div class="gs-roow row-20">
-
-							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
 								<label class="m-t-10" for="gs_coachadd_meta">{{translation('pref-address')}}:</label>
 								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 							</div>
@@ -537,48 +474,6 @@
 
 							<div class="gs-col-xs-12 bi-text-help--area">
 								<p class="bi-text-help">{{translation('pref-address-details')}}</p>
-							</div>
-
-						</div>
-					
-					</div>
-
-					<div class="shortcode-setting--row">
-
-						<div class="gs-roow row-20">
-
-							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-								<label class="m-t-10" for="gs_coachlandphone_meta">{{translation('pref-land-phone')}}:</label>
-								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-							</div>
-
-							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-								<input type="text" class="bi-input-control" name="gs_coachlandphone_meta" v-model="preference.gs_coachlandphone_meta" />
-							</div>
-
-							<div class="gs-col-xs-12 bi-text-help--area">
-								<p class="bi-text-help">{{translation('pref-land-phone-details')}}</p>
-							</div>
-
-						</div>
-					
-					</div>
-
-					<div class="shortcode-setting--row">
-
-						<div class="gs-roow row-20">
-
-							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-								<label class="m-t-10" for="gs_coachcellPhone_meta">{{translation('pref-cell-phone')}}:</label>
-								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-							</div>
-
-							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-								<input type="text" class="bi-input-control" name="gs_coachcellPhone_meta" v-model="preference.gs_coachcellPhone_meta" />
-							</div>
-
-							<div class="gs-col-xs-12 bi-text-help--area">
-								<p class="bi-text-help">{{translation('pref-cell-phone-details')}}</p>
 							</div>
 
 						</div>
@@ -674,27 +569,6 @@
 						<div class="gs-roow row-20">
 
 							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-								<label class="m-t-10" for="gs_coach_read_on">{{translation('pref-read-on')}}:</label>
-								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-							</div>
-
-							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-								<input type="text" class="bi-input-control" name="gs_coach_read_on" v-model="preference.gs_coach_read_on" />
-							</div>
-
-							<div class="gs-col-xs-12 bi-text-help--area">
-								<p class="bi-text-help">{{translation('pref-read-on-details')}}</p>
-							</div>
-
-						</div>
-					
-					</div>
-
-					<div class="shortcode-setting--row">
-
-						<div class="gs-roow row-20">
-
-							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
 								<label class="m-t-10" for="gs_coach_more">{{translation('pref-more')}}:</label>
 								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 							</div>
@@ -716,16 +590,247 @@
 						<div class="gs-roow row-20">
 
 							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-								<label class="m-t-10" for="gs_coach_vcard_txt">{{translation('vcard-txt')}}:</label>
+								<label class="m-t-10" for="gs_coach_profession">{{translation('pref-profession')}}:</label>
 								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 							</div>
 
 							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-								<input type="text" class="bi-input-control" name="gs_coach_vcard_txt" v-model="preference.gs_coach_vcard_txt" />
+								<input type="text" class="bi-input-control" name="gs_coach_profession" v-model="preference.gs_coach_profession" />
 							</div>
 
 							<div class="gs-col-xs-12 bi-text-help--area">
-								<p class="bi-text-help">{{translation('vcard-txt-details')}}</p>
+								<p class="bi-text-help">{{translation('pref-profession-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_experience">{{translation('pref-experience')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_experience" v-model="preference.gs_coach_experience" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-experience-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_education">{{translation('pref-education')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_education" v-model="preference.gs_coach_education" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-education-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_state">{{translation('pref-state')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_state" v-model="preference.gs_coach_state" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-state-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_country">{{translation('pref-country')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_country" v-model="preference.gs_coach_country" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-country-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_schedule">{{translation('pref-schedule')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_schedule" v-model="preference.gs_coach_schedule" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-schedule-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_availablity">{{translation('pref-availablity')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_availablity" v-model="preference.gs_coach_availablity" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-availablity-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_personal-site">{{translation('pref-personal-site')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_personal-site" v-model="preference.gs_coach_personal_site" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-personal-site-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_course-link">{{translation('pref-course-link')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_course-link" v-model="preference.gs_coach_course_link" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-course-link-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_fee">{{translation('pref-fee')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_fee" v-model="preference.gs_coach_fee" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-fee-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_review">{{translation('pref-review')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_review" v-model="preference.gs_coach_review" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-review-details')}}</p>
+							</div>
+
+						</div>
+					
+					</div>
+
+					<div class="shortcode-setting--row">
+
+						<div class="gs-roow row-20">
+
+							<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
+								<label class="m-t-10" for="gs_coach_rating">{{translation('pref-rating')}}:</label>
+								<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+							</div>
+
+							<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
+								<input type="text" class="bi-input-control" name="gs_coach_rating" v-model="preference.gs_coach_rating" />
+							</div>
+
+							<div class="gs-col-xs-12 bi-text-help--area">
+								<p class="bi-text-help">{{translation('pref-rating-details')}}</p>
 							</div>
 
 						</div>
