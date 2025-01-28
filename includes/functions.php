@@ -962,8 +962,8 @@ function get_meta_field_name( $field_key ) {
         '_gscoach_courselink' => __('Course Link', 'gscoach'),
         '_gscoach_fee' => __('Fee', 'gscoach'),
         '_gscoach_review' => __('Review', 'gscoach'),
-        '_gscoach_rating' => __('Rating', 'gscoach'),
-        '_gscoach_custom_page' => __('Custom Page', 'gscoach')
+        '_gscoach_custom_page' => __('Custom Page', 'gscoach'),
+        '_gscoach_rating' => __('Rating', 'gscoach')
     ];
     
     return isset($fields[$field_key]) ? $fields[$field_key] : '';
@@ -999,8 +999,8 @@ function gs_get_sort_metas_default(){
         '_gscoach_courselink',
         '_gscoach_fee',
         '_gscoach_review',
-        '_gscoach_rating',
-        '_gscoach_custom_page'
+        '_gscoach_custom_page',
+        '_gscoach_rating'
     ];
 }
 
