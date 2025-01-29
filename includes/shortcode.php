@@ -23,12 +23,6 @@ class Shortcode {
 		return $html;
 	}
 
-	function add_company_search_element( $theme ) {
-		if ( in_array( $theme, ['gs_tm_theme21_dense'] ) ) return;
-		$tag = 'div';
-		printf( '<%1$s class="gs-coach-member--company" style="display:none!important">%2$s</%1$s>', $tag, get_post_meta( get_the_ID(), '_gs_com', true ) );
-	}
-
 	function add_zip_codes_search_element( $theme ) {
 		if ( in_array( $theme, ['gs_tm_theme21_dense'] ) ) return;
 		$tag = 'div';
@@ -303,9 +297,6 @@ class Shortcode {
 		}
 		if ( 'on' ==  $gs_coach_srch_by_tag ) {
 			add_action( 'gs_coach_before_member_content', [ $this, 'add_tags_search_element' ] );
-		}
-		if ( 'on' ==  $gs_coach_srch_by_company ) {
-			add_action( 'gs_coach_before_member_content', [ $this, 'add_company_search_element' ] );
 		}
 
 		$img_effect_class = '';

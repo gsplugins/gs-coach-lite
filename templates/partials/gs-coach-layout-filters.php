@@ -29,13 +29,6 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'search_by_company' && 'on' ==  $gs_coach_srch_by_company ) : ?>
-        <?php do_action( 'gs_coach_before_company_search_filter' ); ?>
-        <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <input type="text" class="search-by-company" placeholder="<?php echo esc_attr( $gs_coachfliter_company ); ?>" />
-        </div>
-    <?php continue; endif; ?>
-
     <?php if ( $filter_order == 'search_by_zip' && 'on' ==  $gs_coach_srch_by_zip ) : ?>
         <?php do_action( 'gs_coach_before_zip_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">

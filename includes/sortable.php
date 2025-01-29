@@ -446,7 +446,6 @@ class Sortable {
 		$translations = plugin()->builder->get_translation_srtings();
 		$coach_filters = [
 			'search_by_name' => $translations['instant-search-by-name'],
-			'search_by_company' => $translations['gs-member-srch-by-company'],
 			'search_by_zip' => $translations['gs-member-srch-by-zip'],
 			'gs_coach_tag' => $translations['gs-member-srch-by-tag'],
 			'filter_by_designation' => $translations['filter-by-designation'],
