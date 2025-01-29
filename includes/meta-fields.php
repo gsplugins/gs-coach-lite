@@ -20,6 +20,7 @@ class Meta_Fields {
 		add_meta_box('gsCoachSectionSocial', 'Coach\'s Social Links', [ $this, 'cmb_social_cb' ], 'gs_coach', 'normal', 'high');
 		add_meta_box('gsCoachSectionSkill', 'Coach\'s Skills', [ $this, 'cmb_skill_cb' ], 'gs_coach', 'normal', 'high');
 		add_meta_box('gsCoachSectionCertificate', 'Coach\'s Certificates', [ $this, 'cmb_certificate_cb' ], 'gs_coach', 'normal', 'high');
+		add_meta_box('gsCoachSectionCV', 'Coach\'s CV', [ $this, 'cmb_cv_cb' ], 'gs_coach', 'normal', 'high');
 	}
 
 	function gs_image_uploader_field($name, $value = '') {
@@ -349,7 +350,6 @@ class Meta_Fields {
 		?>
 	
 		<div class="gs-coach-pro-field gs_coach-metafields">
-			<div style="height: 20px;"></div>
 			<div class="gs_coach_gallery_certifs">
 				<?php
 				$img_array = (isset($gscoach_certif_gallery) && $gscoach_certif_gallery != '') ? explode(',', $gscoach_certif_gallery) : '';
@@ -362,15 +362,36 @@ class Meta_Fields {
 			</div>
 			<p class="separator">
 				<input id="gscoach_certif_gal_input" type="hidden" name="gscoach_certif_gallery" value="<?php echo $gscoach_certif_gallery; ?>" data-urls=""/>
-				<input id="manage_certificate" class="button" title="Add / Edit Certificates" type="button" value="Add / Edit Certificates" />
-				<input id="gscoach_empty_certif" class="button" title="Empty Certificates" type="button" value="Empty Certificates" />
+				<input id="manage_certificate" class="button gs-meta-button" title="Add / Edit Certificates" type="button" value="Add / Edit Certificates" />
+				<input id="gscoach_empty_certif" class="button gs-meta-button" title="Empty Certificates" type="button" value="Empty Certificates" />
 			</p>
 		</div>
 		<?php
 	}
 
 
-	function save_gs_coach_metadata($post_id) {
+	public function cmb_cv_cb( $post ){
+		// Add a nonce field so we can check for it later.
+		wp_nonce_field('gs_coach_nonce_name', 'gs_coach_cmb_token');
+
+		$cv_url = get_post_meta($post->ID, '_gscoach_cv', true);
+
+		?>
+		<div class="gs-coach-pro-field gs_coach-metafields">
+			<p>
+				<input type="text" id="gs_coach_cv" name="gs_coach_cv" value="<?php echo esc_url($cv_url); ?>" placeholder="Select or Upload CV" readonly />
+				<button type="button" class="button gs-meta-button gs-coach-upload-cv"><?php esc_html_e('Upload CV', 'gscoach'); ?></button>
+				<button type="button" class="button gs-meta-button gs-coach-remove-cv"><?php esc_html_e('Remove', 'gscoach'); ?></button>
+			</p>
+			<?php if ($cv_url) : ?>
+				<p><a href="<?php echo esc_url($cv_url); ?>" target="_blank"><?php esc_html_e('View CV', 'gscoach'); ?></a></p>
+			<?php endif; ?>
+		</div>
+		<?php
+	}
+
+
+	public function save_gs_coach_metadata($post_id) {
 
 		/*
 		 * We need to verify this came from our screen and with proper authorization,
