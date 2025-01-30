@@ -73,4 +73,10 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
     </div>
 
+    <div class="gs_coach_cv">
+        <!-- Certificates -->
+        <?php $is_cv_enabled = 'on'; ?>
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-cv.php' ); ?>
+    </div>
+
 </div>
