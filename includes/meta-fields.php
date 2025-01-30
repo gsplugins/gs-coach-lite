@@ -68,7 +68,7 @@ class Meta_Fields {
 		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
 		$gs_coach_review           = get_post_meta($post->ID, '_gscoach_review', true);
 		$gs_coach_rating 		   = get_post_meta($post->ID, '_gscoach_rating', true);
-		$gs_coach_rating		   = $gs_coach_rating ?? 2;
+		$gs_coach_rating		   = '' !== $gs_coach_rating ? $gs_coach_rating : '2';
 		$gs_coach_custom_page 	   = get_post_meta($post->ID, '_gscoach_custom_page', true);
 
 		?>

@@ -962,7 +962,8 @@ function get_meta_field_name( $field_key ) {
         '_gscoach_courselink' => get_translation('gs_coach_course_link'),
         '_gscoach_fee' => get_translation('gs_coach_fee'),
         '_gscoach_review' => get_translation('gs_coach_review'),
-        '_gscoach_rating' => get_translation('gs_coach_rating')
+        '_gscoach_rating' => get_translation('gs_coach_rating'),
+        '_gscoach_custom_page' => get_translation('gs_coach_custom_page')
     ];
     
     return isset($fields[$field_key]) ? $fields[$field_key] : '';

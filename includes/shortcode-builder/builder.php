@@ -2074,6 +2074,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_fee' => __('Fee', 'gscoach'),
                 'gs_coach_review' => __('Review', 'gscoach'),
                 'gs_coach_rating' => __('Rating', 'gscoach'),
+                'gs_coach_custom_page' => __('Custom Page Link', 'gscoach'),
                 'gs_coach_reset_filters_txt' => __('Reset Filters', 'gscoach'),
                 'gs_coach_prev_txt' => __('Prev', 'gscoach'),
                 'gs_coach_next_txt' => __('Next', 'gscoach')
