@@ -12,6 +12,7 @@ class Meta_Fields {
 	public function __construct() {
 
 		add_action('add_meta_boxes', [ $this, 'add_gs_coach_metaboxes' ] );
+		add_action('admin_enqueue_scripts', [ $this, 'gs_coach_enqueue_admin_scripts' ]);
 		add_action('save_post', [ $this, 'save_gs_coach_metadata' ] );
 	}
 
@@ -21,6 +22,16 @@ class Meta_Fields {
 		add_meta_box('gsCoachSectionSkill', 'Coach\'s Skills', [ $this, 'cmb_skill_cb' ], 'gs_coach', 'normal', 'high');
 		add_meta_box('gsCoachSectionCertificate', 'Coach\'s Certificates', [ $this, 'cmb_certificate_cb' ], 'gs_coach', 'normal', 'high');
 		add_meta_box('gsCoachSectionCV', 'Coach\'s CV', [ $this, 'cmb_cv_cb' ], 'gs_coach', 'normal', 'high');
+	}
+
+	function gs_coach_enqueue_admin_scripts($hook) {
+		global $post;
+		if ($hook === 'post.php' || $hook === 'post-new.php') {
+			if ('gs_coach' === get_post_type($post)) {
+				wp_enqueue_media();
+				wp_enqueue_script('gs-coach-cv-uploader', GSCOACH_PLUGIN_URI . '/assets/admin/js/cv-uploader.js', array('jquery'), GSCOACH_VERSION, true);
+			}
+		}
 	}
 
 	function gs_image_uploader_field($name, $value = '') {
@@ -384,7 +395,7 @@ class Meta_Fields {
 				<button type="button" class="button gs-meta-button gs-coach-remove-cv"><?php esc_html_e('Remove', 'gscoach'); ?></button>
 			</p>
 			<?php if ($cv_url) : ?>
-				<p><a href="<?php echo esc_url($cv_url); ?>" target="_blank"><?php esc_html_e('View CV', 'gscoach'); ?></a></p>
+				<p><a class="gs-coach-view-cv-link" href="<?php echo esc_url($cv_url); ?>" target="_blank"><?php esc_html_e('View CV', 'gscoach'); ?></a></p>
 			<?php endif; ?>
 		</div>
 		<?php
@@ -509,6 +520,13 @@ class Meta_Fields {
 			   
 				$gscoach_certif_gallery = (isset($_POST["gscoach_certif_gallery"])) ? $_POST["gscoach_certif_gallery"] : '';
 				update_post_meta($post->ID, "gscoach_certif_gallery", $gscoach_certif_gallery);
+			}
+
+			// Save CV
+			if (isset($_POST['gs_coach_cv'])) {
+				update_post_meta($post_id, '_gscoach_cv', esc_url_raw($_POST['gs_coach_cv']));
+			} else {
+				delete_post_meta($post_id, '_gscoach_cv');
 			}
 		}
 	}
