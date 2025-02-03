@@ -1349,6 +1349,12 @@ if ( ! class_exists( 'Builder' ) ) {
                     'type' => 'pro',
                     'version' => 1
                 ],
+                [
+                    'label' => __( 'Ticker', 'gscoach' ),
+                    'value' => 'gs_tm_theme26',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
             ];
         }
 

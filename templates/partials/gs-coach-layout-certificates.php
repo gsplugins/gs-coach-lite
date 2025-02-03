@@ -24,6 +24,16 @@ if( 'on' === $is_certificates_enabled ):
 $certificates_title = 'Certificates';
 ?>
 
+
+<!-- Temporary Styles -->
+<style>
+	.gs-coach-certificates-wrapper {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 10px;
+	}
+</style>
+
 <h2 class="gs-coach-certificates-title"><?php echo esc_html( $certificates_title ); ?></h2>
 <div class="gs-coach-certificates-wrapper">
     <?php foreach ( $certificates as $certificate ) : ?>

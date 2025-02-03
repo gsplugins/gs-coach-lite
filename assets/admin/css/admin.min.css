@@ -243,39 +243,3 @@
   color: #ffffff;
   text-decoration: none;
 }
-
-.gs_coach_gallery_certifs{
-  padding-top: 10px;
-}
-
-.gs_coach_gallery_certifs .gallery-item {
-  display: inline-block;
-  margin-right: 5px;
-}
-
-#gs_coach_cv{
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.gs-meta-button{
-  font-size: 14px !important;
-  height: 36px !important;
-  line-height: 34px !important;
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-  color: #6472ef !important;
-  border-color: #6472ef !important;
-  background: rgba(100, 114, 239, 0.05) !important;
-}
-
-#gs_coach_cv {
-  width: 100%;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  padding: 5px 15px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  height: auto;
-  border: 1px solid #e1e1e1;
-}

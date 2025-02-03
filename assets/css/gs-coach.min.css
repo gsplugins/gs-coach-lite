@@ -7825,6 +7825,96 @@ body {
   color: #fff;
 }
 
+/* gs_tm_theme26
+========================*/
+.gs_tm_theme26 .single-member-div .single-member {
+  padding-bottom: 115px;
+  background: none !important;
+}
+.gs_tm_theme26 .single-member-div .gs_coach_image__overlay {
+  border-radius: inherit;
+  background-color: rgba(0, 0, 0, 0.3019607843);
+  opacity: 0;
+}
+.gs_tm_theme26 .single-member-div .gs_coach_image__wrapper {
+  border-radius: 8px 8px 0 0;
+}
+.gs_tm_theme26 .single-member-div .gs_coach_image__wrapper::after {
+  padding-bottom: 100% !important;
+}
+.gs_tm_theme26 .single-member-div .gs_coach_info {
+  background: #fff !important;
+  text-align: center;
+  padding: 22px 0px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
+  min-height: 115px;
+}
+.gs_tm_theme26 .single-member-div .gs_coach_info .gs-member-name {
+  color: #030d1e;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.gs_tm_theme26 .single-member-div .gs_coach_info .gs-member-desig {
+  font-family: "Work Sans", sans-serif;
+  margin-top: 2px;
+}
+.gs_tm_theme26 .single-member-div .single-mem-desc-social {
+  padding-top: 17px;
+  -webkit-transform: translateY(40px);
+      -ms-transform: translateY(40px);
+          transform: translateY(40px);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  visibility: hidden;
+  opacity: 0;
+  margin-bottom: -50px;
+}
+.gs_tm_theme26 .single-member-div .gs-coach-social li a {
+  border: 1px solid #e5e5e5 !important;
+  width: 40px;
+  height: 40px;
+}
+.gs_tm_theme26 .single-member-div .gs-coach-social li a i, .gs_tm_theme26 .single-member-div .gs-coach-social li a svg {
+  color: #808080;
+}
+.gs_tm_theme26 .single-member-div .gs-coach-social li a:hover {
+  background: #ff4c4c !important;
+  color: #fff !important;
+  border: 1px solid transparent !important;
+}
+.gs_tm_theme26 .single-member-div .gs-coach-social li a:hover i, .gs_tm_theme26 .single-member-div .gs-coach-social li a:hover svg {
+  color: #fff;
+}
+.gs_tm_theme26 .single-member-div .single-member:hover .gs_coach_image__overlay {
+  opacity: 1;
+}
+.gs_tm_theme26 .single-member-div .single-member:hover .single-mem-desc-social {
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+.gs_coach_area.gs_tm_theme26 .single-member-div {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  padding-bottom: 32px;
+}
+.gs_coach_area.gs_tm_theme26 .single-member-div .gs-containeer .gs-roow {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
 /* gs-coach-panel
 ========================*/
 .gs-coach-panel--default .gstm-panel {

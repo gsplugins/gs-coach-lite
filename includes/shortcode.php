@@ -755,6 +755,10 @@ class Shortcode {
 				if ( $gs_coach_theme == 'gs_tm_theme25' ) {
 					include Template_Loader::locate_template( 'pro/gs-coach-layout-group-filter.php' );
 				}
+
+				if ( $gs_coach_theme == 'gs_tm_theme26' ) {
+					include Template_Loader::locate_template( 'pro/gs-coach-layout-ticker.php' );
+				}
 	
 			}
 			
