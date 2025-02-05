@@ -28,7 +28,7 @@ class Sortable {
 		add_action('wp_ajax_update_coaches_order', array($this, 'update_coaches_order'));
 		
 		// Update taxonomy order via AJAX
-		add_action('wp_ajax_update_taxonomy_order', array($this, 'update_taxonomy_order'));
+		add_action('wp_ajax_update_coach_taxonomy_order', array($this, 'update_coach_taxonomy_order'));
 		
 		// Update team filters order via AJAX
 		add_action('wp_ajax_update_coach_filters_order', array($this, 'update_coach_filters_order'));
@@ -46,7 +46,7 @@ class Sortable {
 	/**
 	 * Update taxonomy order
 	 */
-	public function update_taxonomy_order() {
+	public function update_coach_taxonomy_order() {
 
 		if (!$this->is_pro()) wp_send_json_error();
 
@@ -137,7 +137,7 @@ class Sortable {
 			} else if ( $_GET['object_type'] == 'gs_coach_meta' ) {
 				$action = 'update_coach_meta_order';
 			} else {
-				$action = 'update_taxonomy_order';
+				$action = 'update_coach_taxonomy_order';
 			}
 
 			$data = [
