@@ -18,7 +18,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
     <div class="gs-roow">
     
-        <div class="gs-col-md-4 gstm-popup-left">
+        <div class="gs-col-md-4 gscoach-popup-left">
     
             <!-- Coach Image -->
             <div class="gs_coach_image__wrapper">
@@ -28,9 +28,9 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
     
         </div>
     
-        <div class="gs-col-md-8 gstm-popup-right">
+        <div class="gs-col-md-8 gscoach-popup-right">
     
-            <div class="gstm-popup-right-top <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>">
+            <div class="gscoach-popup-right-top <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>">
 
                 <div class="gs-roow">
 
@@ -73,7 +73,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
     
             <div class="gs-roow">
 
-                <div class="gs-col-md-6 gs-col-xs-12 gstm-dsf-bottom-left">
+                <div class="gs-col-md-6 gs-col-xs-12 gscoach-dsf-bottom-left">
                 
                     <!-- Meta Fields -->
                     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
@@ -92,7 +92,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
     
                 </div>
 
-                <div class="gs-col-md-6 gs-col-xs-12 gstm-dsf-bottom-right">
+                <div class="gs-col-md-6 gs-col-xs-12 gscoach-dsf-bottom-right">
     
                     <!-- Skills -->
                     <?php $is_skills_title = true; ?>

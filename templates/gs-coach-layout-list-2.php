@@ -50,7 +50,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 							<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
 
-							<div class="gs-col-md-8 gs-col-sm-8 gs-col-xs-12 cbp-so-side cbp-so-side-left gstm-img-div">
+							<div class="gs-col-md-8 gs-col-sm-8 gs-col-xs-12 cbp-so-side cbp-so-side-left gscoach-img-div">
 								<div class="single-team-rightinfo">
 									<div class="gs-coach-info gs-tm-sicons">
 
@@ -80,7 +80,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 								</div>
 							</div>
 							
-							<div class="gs-col-md-4 gs-col-sm-4 gs-col-xs-12 cbp-so-side cbp-so-side-right gstm-img-div">
+							<div class="gs-col-md-4 gs-col-sm-4 gs-col-xs-12 cbp-so-side cbp-so-side-right gscoach-img-div">
 
 								<!-- Coach Image -->
 								<div class="zoomin image">

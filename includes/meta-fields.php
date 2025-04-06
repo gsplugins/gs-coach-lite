@@ -206,7 +206,7 @@ class Meta_Fields {
 
 				<div class="member-details-section">
 
-					<table id="repeatable-fieldset-two" width="100%" class="gstm-sorable-table">
+					<table id="repeatable-fieldset-two" width="100%" class="gscoach-sorable-table">
 						<thead>
 							<tr>
 								<td width="3%"></td>
@@ -222,9 +222,9 @@ class Meta_Fields {
 									<tr>
 										<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 										<td>
-											<?php select_builder('gstm-team-icon[]', $social_icons, $field['icon'], __('Select icon', 'gscoach'), 'widefat gstm-icon-select'); ?>
+											<?php select_builder('gscoach-team-icon[]', $social_icons, $field['icon'], __('Select icon', 'gscoach'), 'widefat gscoach-icon-select'); ?>
 										</td>
-										<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gstm-team-link[]" value="<?php if (isset($field['link'])) echo esc_attr($field['link']); ?>" /></td>
+										<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach-team-link[]" value="<?php if (isset($field['link'])) echo esc_attr($field['link']); ?>" /></td>
 										<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 									</tr>
 
@@ -234,9 +234,9 @@ class Meta_Fields {
 								<tr>
 									<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 									<td>
-										<?php select_builder('gstm-team-icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat gstm-icon-select'); ?>
+										<?php select_builder('gscoach-team-icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat gscoach-icon-select'); ?>
 									</td>
-									<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gstm-team-link[]" value="" /></td>
+									<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach-team-link[]" value="" /></td>
 									<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 								</tr>
 
@@ -245,16 +245,16 @@ class Meta_Fields {
 							<tr class="empty-row screen-reader-text">
 								<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 								<td>
-									<?php select_builder('gstm-team-icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat'); ?>
+									<?php select_builder('gscoach-team-icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat'); ?>
 								</td>
-								<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gstm-team-link[]" value="" /></td>
+								<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach-team-link[]" value="" /></td>
 								<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 							</tr>
 
 						</tbody>
 					</table>
 
-					<p><a class="button gstm-add-row" href="#" data-table="repeatable-fieldset-two"><?php _e('Add Row', 'gscoach'); ?></a></p>
+					<p><a class="button gscoach-add-row" href="#" data-table="repeatable-fieldset-two"><?php _e('Add Row', 'gscoach'); ?></a></p>
 
 				</div>
 
@@ -286,7 +286,7 @@ class Meta_Fields {
 			<div class="gs-coach-skills--section gs-coach-pro-field">
 
 				<div class="member-details-section">
-					<table id="repeatable-fieldset-skill" width="100%" class="gstm-sorable-table">
+					<table id="repeatable-fieldset-skill" width="100%" class="gscoach-sorable-table">
 						<thead>
 							<tr>
 								<td width="3%"></td>
@@ -302,9 +302,9 @@ class Meta_Fields {
 									<tr>
 										<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 										<td>
-											<input type="text" placeholder="html" class="widefat" name="gstm-skill-name[]" value="<?php if (isset($field['skill'])) echo esc_attr($field['skill']); ?>" />
+											<input type="text" placeholder="html" class="widefat" name="gscoach-skill-name[]" value="<?php if (isset($field['skill'])) echo esc_attr($field['skill']); ?>" />
 										</td>
-										<td><input type="text" placeholder="85" class="widefat" name="gstm-skill-percent[]" value="<?php if (isset($field['percent'])) echo esc_attr($field['percent']); ?>" /></td>
+										<td><input type="text" placeholder="85" class="widefat" name="gscoach-skill-percent[]" value="<?php if (isset($field['percent'])) echo esc_attr($field['percent']); ?>" /></td>
 										<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 									</tr>
 
@@ -314,9 +314,9 @@ class Meta_Fields {
 								<tr>
 									<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 									<td>
-										<input type="text" placeholder="html" class="widefat" name="gstm-skill-name[]" value="<?php if (isset($field['skill'])) echo esc_attr($field['skill']); ?>" />
+										<input type="text" placeholder="html" class="widefat" name="gscoach-skill-name[]" value="<?php if (isset($field['skill'])) echo esc_attr($field['skill']); ?>" />
 									</td>
-									<td><input type="text" placeholder="85" class="widefat" name="gstm-skill-percent[]" value="<?php if (isset($field['percent'])) echo esc_attr($field['percent']); ?>" /></td>
+									<td><input type="text" placeholder="85" class="widefat" name="gscoach-skill-percent[]" value="<?php if (isset($field['percent'])) echo esc_attr($field['percent']); ?>" /></td>
 									<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 								</tr>
 
@@ -325,16 +325,16 @@ class Meta_Fields {
 							<tr class="empty-skill screen-reader-text">
 								<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 								<td>
-									<input type="text" placeholder="<?php _e('ex: Wordpress', 'gscoach'); ?>" class="widefat" name="gstm-skill-name[]" value="<?php if (isset($field['link'])) echo esc_attr($field['link']); ?>" />
+									<input type="text" placeholder="<?php _e('ex: Wordpress', 'gscoach'); ?>" class="widefat" name="gscoach-skill-name[]" value="<?php if (isset($field['link'])) echo esc_attr($field['link']); ?>" />
 								</td>
-								<td><input type="text" placeholder="<?php _e('ex: 90', 'gscoach'); ?>" class="widefat" name="gstm-skill-percent[]" value="" /></td>
+								<td><input type="text" placeholder="<?php _e('ex: 90', 'gscoach'); ?>" class="widefat" name="gscoach-skill-percent[]" value="" /></td>
 								<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 							</tr>
 
 						</tbody>
 					</table>
 
-					<p><a class="button gstm-add-skill" href="#" data-table="repeatable-fieldset-skill"><?php _e('Add Row', 'gscoach'); ?></a></p>
+					<p><a class="button gscoach-add-skill" href="#" data-table="repeatable-fieldset-skill"><?php _e('Add Row', 'gscoach'); ?></a></p>
 
 				</div>
 
@@ -437,7 +437,7 @@ class Meta_Fields {
 			}
 		}
 
-		if (!empty($social_icons = $_POST['gstm-team-icon']) && !empty($social_links = $_POST['gstm-team-link'])) {
+		if (!empty($social_icons = $_POST['gscoach-team-icon']) && !empty($social_links = $_POST['gscoach-team-link'])) {
 
 			$social_icons = array_map('sanitize_text_field', $social_icons);
 			$social_links = array_map('sanitize_text_field', $social_links);
@@ -461,7 +461,7 @@ class Meta_Fields {
 
 		if (is_pro_valid()) {
 
-			if (!empty($member_skill = $_POST['gstm-skill-name']) && !empty($members_percent = $_POST['gstm-skill-percent'])) {
+			if (!empty($member_skill = $_POST['gscoach-skill-name']) && !empty($members_percent = $_POST['gscoach-skill-percent'])) {
 
 				$member_skill = array_map('sanitize_text_field', $member_skill);
 				$members_percent = array_map('absint', $members_percent);

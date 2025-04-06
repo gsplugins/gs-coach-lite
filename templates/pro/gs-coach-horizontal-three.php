@@ -35,7 +35,7 @@ if ( $_carousel_enabled ) {
 	}
 }
 
-if ( $_drawer_enabled ) $gs_row_classes[] = 'gstm-gridder gstm-gridder-' . $drawer_style;
+if ( $_drawer_enabled ) $gs_row_classes[] = 'gscoach-gridder gscoach-gridder-' . $drawer_style;
 if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 ?>

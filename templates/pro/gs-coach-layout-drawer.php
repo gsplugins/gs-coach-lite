@@ -18,7 +18,7 @@ global $gs_coach_loop;
 <!-- Container for Coaches -->
 <div class="gs-containeer cbp-so-scroller">
 	
-	<div class="gs-roow clearfix gs_coach gstm-gridder gstm-gridder-default">
+	<div class="gs-roow clearfix gs_coach gscoach-gridder gscoach-gridder-default">
 
 		<?php if ( $gs_coach_loop->have_posts() ):
 

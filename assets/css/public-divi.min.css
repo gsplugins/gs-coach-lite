@@ -704,20 +704,20 @@
   font-size: 14px;
   display: inline-block;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel {
   background-color: #313131;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel-left {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-left {
   background-color: #212121;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel-right {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-right {
   padding-left: 40px;
   color: #fff;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel-inner {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-inner {
   padding: 25px;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel-inner .member-skill h3 {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-inner .member-skill h3 {
   margin-top: 25px;
   border-top: 1px solid #484747;
   padding-top: 25px;
@@ -725,30 +725,30 @@
   font-size: 22px;
   font-weight: bold;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel-title {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-title {
   color: #fff;
   padding: 15px 60px 15px 30px;
 }
-.et-db #et-boc .et-l .et_pb_module .close-gstm-panel-bt {
+.et-db #et-boc .et-l .et_pb_module .close-gscoach-panel-bt {
   padding: 10px 45px 10px 30px;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel ul.gs-coach-social li {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel ul.gs-coach-social li {
   text-align: center;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel i {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel i {
   font-size: 20px;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel-info {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-info {
   background-color: #414141;
   color: #fff;
   padding: 15px 30px;
 }
-.et-db #et-boc .et-l .et_pb_module #gstm-overlay {
+.et-db #et-boc .et-l .et_pb_module #gscoach-overlay {
   background-color: #212121;
 }
-.et-db #et-boc .et-l .et_pb_module .gstm-panel-inner #toc_container {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-inner #toc_container {
   display: none;
 }
 .et-db #et-boc .et-l .et_pb_module .info-card {

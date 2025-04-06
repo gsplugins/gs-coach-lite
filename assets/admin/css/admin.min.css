@@ -191,7 +191,7 @@
 
 .gs-coach-social--section select,
 .gs-coach-social--section select + .select2-container,
-#select2-gstm-team-icon-results {
+#select2-gscoach-team-icon-results {
   text-transform: capitalize;
 }
 
@@ -234,8 +234,8 @@
   width: auto;
 }
 
-.gs_coach-metafields a.gstm-add-row,
-.gs_coach-metafields a.gstm-add-skill {
+.gs_coach-metafields a.gscoach-add-row,
+.gs_coach-metafields a.gscoach-add-skill {
   margin-left: 45px;
 }
 

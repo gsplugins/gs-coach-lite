@@ -4266,17 +4266,17 @@ body {
 
 .gs-coach-panel--default {
 
-    .gstm-panel {
+    .gscoach-panel {
         width: 500px;
         background-color: #fff;
         // overflow: initial;
     }
 
-    .gstm-panel-info {
+    .gscoach-panel-info {
         padding: 10px 50px 32px 50px;
     }
 
-    .close-gstm-panel-bt {
+    .close-gscoach-panel-bt {
         width: 50px;
         height: 50px;
         position: absolute;
@@ -4291,14 +4291,14 @@ body {
         }
     }
 
-    .gstm-panel-title {
+    .gscoach-panel-title {
         font-family: 'DM Sans', sans-serif;
         font-size: 28px;
         font-weight: 700;
         color: #030d1e;
     }
 
-    .gstm-panel-desig {
+    .gscoach-panel-desig {
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
         color: #808080;
@@ -4306,7 +4306,7 @@ body {
         margin-top: 2px;
     }
 
-    .gstm-panel-right {
+    .gscoach-panel-right {
         padding-right: 0 !important;
 
         .gs-member-desc {
@@ -4330,7 +4330,7 @@ body {
             }
         }
 
-        .gstm-panel-right_bottom__wrap {
+        .gscoach-panel-right_bottom__wrap {
             padding: 20px 30px;
         }
 
@@ -4364,7 +4364,7 @@ body {
 
                 .progress-bar {
                     background-color: #030d1e;
-                    width: var(--gstm-progress-width);
+                    width: var(--gscoach-progress-width);
                     max-width: 100%;
                     transition: width 0.6s ease;
                 }
@@ -4377,7 +4377,7 @@ body {
                     font-family: 'Nunito', sans-serif;
                     font-size: 16px;
                     font-weight: 600;
-                    width: calc(var(--gstm-progress-width) + 17px);
+                    width: calc(var(--gscoach-progress-width) + 17px);
                     max-width: 100%;
                     transition: width 0.6s ease;
                     right: inherit !important;
@@ -4386,7 +4386,7 @@ body {
             }
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
             color: #182338;
             font-family: 'Poppins', sans-serif;
             font-size: 17px;
@@ -4416,13 +4416,13 @@ body {
 .gs-coach-panel--style-four,
 .gs-coach-panel--style-five {
 
-    .gstm-panel {
+    .gscoach-panel {
         width: 500px;
         background-color: #fff;
         // overflow: initial;
     }
 
-    .gstm-panel-info {
+    .gscoach-panel-info {
         background-color: #ffffff;
         padding: 10px 50px 32px 50px;
     }
@@ -4451,7 +4451,7 @@ body {
 
     }
 
-    .gstm-panel-title {
+    .gscoach-panel-title {
         font-family: 'DM Sans', sans-serif;
         font-size: 28px;
         font-weight: 700;
@@ -4459,7 +4459,7 @@ body {
         margin-top: 32px;
     }
 
-    .gstm-panel-desig {
+    .gscoach-panel-desig {
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
         color: #808080;
@@ -4527,7 +4527,7 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 20px;
         }
 
@@ -4580,11 +4580,11 @@ body {
         }
     }
 
-    .gstm-details>div:not(:last-child) {
+    .gscoach-details>div:not(:last-child) {
         margin-bottom: 18px !important;
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
         color: #182338;
         font-family: 'Poppins', sans-serif;
         font-size: 17px;
@@ -4607,13 +4607,13 @@ body {
 .gs-coach-panel--style-one,
 .gs-coach-panel--style-two {
 
-    .gstm-panel-top {
+    .gscoach-panel-top {
         padding: 0px;
         padding-bottom: 5px;
         display: flex;
         justify-content: space-between;
 
-        .gstm-pt-left {
+        .gscoach-pt-left {
             margin-left: -20px;
 
             button {
@@ -4640,12 +4640,12 @@ body {
             height: 20px;
         }
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
             width: 50px;
             height: 50px;
         }
 
-        .gstm-panel-bt-arrow {
+        .gscoach-panel-bt-arrow {
             width: 54px;
             height: 54px;
         }
@@ -4656,9 +4656,9 @@ body {
 .gs-coach-panel--style-three,
 .gs-coach-panel--style-five {
 
-    .gstm-panel-top {
+    .gscoach-panel-top {
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
             position: absolute;
             left: 6px;
             top: 4px;
@@ -4667,9 +4667,9 @@ body {
             height: 48px;
         }
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
 
-            .close-gstm-panel-bt {
+            .close-gscoach-panel-bt {
                 width: 50px;
                 height: 50px;
             }
@@ -4677,7 +4677,7 @@ body {
     }
 }
 
-/* gstm-panel--style-one
+/* gscoach-panel--style-one
 ========================*/
 .gs-coach-panel--style-one {
 
@@ -4687,9 +4687,9 @@ body {
         }
     }
 
-    .gstm-pt-right {
+    .gscoach-pt-right {
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
 
             svg {
 
@@ -4704,12 +4704,12 @@ body {
         }
     }
 
-    .gstm-panel-top {
+    .gscoach-panel-top {
         border-bottom: 1px solid #e5e5e5;
         margin-bottom: 30px;
 
 
-        .gstm-pt-left {
+        .gscoach-pt-left {
 
             button {
 
@@ -4767,11 +4767,11 @@ body {
         }
     }
 
-    .gstm-details>div:not(:last-child) {
+    .gscoach-details>div:not(:last-child) {
         margin-bottom: 20px;
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
         i, svg {
             color: #7948ff;
         }
@@ -4779,16 +4779,16 @@ body {
 
 }
 
-/* gstm-panel--style-two
+/* gscoach-panel--style-two
 ========================*/
 .gs-coach-panel--style-two {
 
     /* Panel Top */
-    .gstm-panel-top {
+    .gscoach-panel-top {
         padding: 14px 24px;
         background-color: #0d2758;
 
-        .gstm-pt-left {
+        .gscoach-pt-left {
 
             button {
 
@@ -4824,13 +4824,13 @@ body {
 
             .progress-bar {
                 background-image: linear-gradient(-101deg, rgb(252, 165, 100) 0%, rgb(253, 128, 114) 38%, rgb(253, 90, 128) 100%);
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -4863,20 +4863,20 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 20px;
         }
 
     }
 }
 
-/* gstm-panel--style-three
+/* gscoach-panel--style-three
 ========================*/
 .gs-coach-panel--style-three {
 
-    .gstm-panel-top {
+    .gscoach-panel-top {
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
 
             svg {
 
@@ -4932,20 +4932,20 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 20px;
         }
 
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
 
         i {
             color: #1fd2bc;
         }
     }
 
-    .gstm-details {
+    .gscoach-details {
         margin-top: 40px !important;
     }
 
@@ -4955,13 +4955,13 @@ body {
 
             .progress-bar {
                 background-color: #1fd2bc;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -4972,13 +4972,13 @@ body {
     }
 }
 
-/* gstm-panel--style-four
+/* gscoach-panel--style-four
 ========================*/
 .gs-coach-panel--style-four {
 
-    .gstm-panel-top {
+    .gscoach-panel-top {
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
             position: absolute;
             right: 0 !important;
             top: 8px;
@@ -5002,20 +5002,20 @@ body {
         }
     }
 
-    .gstm-panel-info {
+    .gscoach-panel-info {
         padding-top: 28px !important;
     }
 
-    .gstm-panel-td-wrapper {
+    .gscoach-panel-td-wrapper {
         padding: 14px 32px;
         background-color: #8055fb;
 
-        .gstm-panel-title {
+        .gscoach-panel-title {
             margin-top: 0;
             color: #fff;
         }
 
-        .gstm-panel-desig {
+        .gscoach-panel-desig {
             color: #fff;
             margin-bottom: 3px !important;
         }
@@ -5033,7 +5033,7 @@ body {
         }
     }
 
-    .gstm-details {
+    .gscoach-details {
         margin-top: 40px !important;
     }
 
@@ -5063,13 +5063,13 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 20px;
         }
 
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
 
         i {
             color: #7948ff;
@@ -5082,13 +5082,13 @@ body {
 
             .progress-bar {
                 background-color: #7948ff;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -5100,13 +5100,13 @@ body {
     }
 }
 
-/* gstm-panel--style-five
+/* gscoach-panel--style-five
 ========================*/
 .gs-coach-panel--style-five {
 
-    .gstm-panel-top {
+    .gscoach-panel-top {
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
 
             svg {
                 width: 20px;
@@ -5123,7 +5123,7 @@ body {
         }
     }
 
-    .gstm-panel-desig {
+    .gscoach-panel-desig {
         margin-bottom: 28px;
     }
 
@@ -5167,13 +5167,13 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 20px;
         }
 
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
 
         i {
             color: #1d2534;
@@ -5187,13 +5187,13 @@ body {
 
             .progress-bar {
                 background-color: #1d2534;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -5217,7 +5217,7 @@ body {
     }
 }
 
-.gstm-gridder-default {
+.gscoach-gridder-default {
 
     .team-description {
 
@@ -5283,13 +5283,13 @@ body {
 
             .progress-bar {
                 background-color: #030d1e;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -5349,11 +5349,11 @@ body {
 
 }
 
-.gstm-gridder-style-one,
-.gstm-gridder-style-two,
-.gstm-gridder-style-three,
-.gstm-gridder-style-four,
-.gstm-gridder-style-five {
+.gscoach-gridder-style-one,
+.gscoach-gridder-style-two,
+.gscoach-gridder-style-three,
+.gscoach-gridder-style-four,
+.gscoach-gridder-style-five {
 
     .gridder-list {
         padding-top: 0;
@@ -5400,11 +5400,11 @@ body {
             height: auto;
         }
 
-        .gstm-drawer-left {
+        .gscoach-drawer-left {
             padding-right: 20px !important;
         }
 
-        .gstm-drawer-right {
+        .gscoach-drawer-right {
             padding-left: 20px !important;
         }
 
@@ -5511,11 +5511,11 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 20px;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
             color: #182338;
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
@@ -5579,7 +5579,7 @@ body {
 
 /* gs-coach-style-one
 ========================*/
-.gstm-gridder-style-one {
+.gscoach-gridder-style-one {
 
     .gridder-show {
 
@@ -5656,12 +5656,12 @@ body {
             }
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
             margin-top: 30px !important;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i, svg {
                 color: #7948ff;
@@ -5672,7 +5672,7 @@ body {
 
 /* gs-coach-style-Two
 ========================*/
-.gstm-gridder-style-two {
+.gscoach-gridder-style-two {
 
     .gridder-show {
 
@@ -5733,12 +5733,12 @@ body {
             }
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
             margin-top: 50px !important;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #15b7b9;
@@ -5785,13 +5785,13 @@ body {
 
                 .progress-bar {
                     background-color: #15b7b9;
-                    width: var(--gstm-progress-width);
+                    width: var(--gscoach-progress-width);
                     max-width: 100%;
                     transition: width 0.6s ease;
                 }
 
                 .progress-completed {
-                    width: calc(var(--gstm-progress-width) + 17px);
+                    width: calc(var(--gscoach-progress-width) + 17px);
                     max-width: 100%;
                     transition: width 0.6s ease;
                     right: inherit !important;
@@ -5803,9 +5803,9 @@ body {
         }
     }
 
-    .gstm-drawer-right {
+    .gscoach-drawer-right {
 
-        .gstm-details {
+        .gscoach-details {
             display: none;
         }
     }
@@ -5813,16 +5813,16 @@ body {
 
 /* gs-coach-style-three
 ========================*/
-.gstm-gridder-style-three {
+.gscoach-gridder-style-three {
 
     .gridder-show {
 
-        .gstm-drawer-left {
+        .gscoach-drawer-left {
             padding-right: 30px !important;
             border-right: 1px solid #f2f2f2;
         }
 
-        .gstm-drawer-right {
+        .gscoach-drawer-right {
             padding-left: 30px !important;
         }
 
@@ -5872,12 +5872,12 @@ body {
             }
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
             margin-top: 0 !important;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #fd5a80;
@@ -5907,7 +5907,7 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 20px;
         }
 
@@ -5927,13 +5927,13 @@ body {
 
                 .progress-bar {
                     background-image: linear-gradient(-101deg, rgb(252, 165, 100) 0%, rgb(253, 128, 114) 38%, rgb(253, 90, 128) 100%) !important;
-                    width: var(--gstm-progress-width);
+                    width: var(--gscoach-progress-width);
                     max-width: 100%;
                     transition: width 0.6s ease;
                 }
 
                 .progress-completed {
-                    width: calc(var(--gstm-progress-width) + 17px);
+                    width: calc(var(--gscoach-progress-width) + 17px);
                     max-width: 100%;
                     transition: width 0.6s ease;
                     right: inherit !important;
@@ -5949,7 +5949,7 @@ body {
 
 /* gs-coach-style-four
 ========================*/
-.gstm-gridder-style-four {
+.gscoach-gridder-style-four {
 
     .gridder-show {
 
@@ -6003,11 +6003,11 @@ body {
             }
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #b71cea;
@@ -6018,7 +6018,7 @@ body {
 
 /* gs-coach-style-five
 ========================*/
-.gstm-gridder-style-five {
+.gscoach-gridder-style-five {
 
     .gridder-show {
 
@@ -6043,7 +6043,7 @@ body {
             }
         }
 
-        .gstm-drawer-right {
+        .gscoach-drawer-right {
 
             .gs-roow {
                 border-top: 1px solid #f2f2f2;
@@ -6080,12 +6080,12 @@ body {
             border-radius: 50%;
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
             margin-top: 0 !important;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #b71cea;
@@ -6133,13 +6133,13 @@ body {
                 .progress-bar {
                     // background-color: #b71cea;
                     background-image: linear-gradient(-92deg, rgb(183, 28, 234) 0%, rgb(104, 11, 236) 100%) !important;
-                    width: var(--gstm-progress-width);
+                    width: var(--gscoach-progress-width);
                     max-width: 100%;
                     transition: width 0.6s ease;
                 }
 
                 .progress-completed {
-                    width: calc(var(--gstm-progress-width) + 17px);
+                    width: calc(var(--gscoach-progress-width) + 17px);
                     max-width: 100%;
                     transition: width 0.6s ease;
                     right: inherit !important;
@@ -6149,12 +6149,12 @@ body {
             }
         }
 
-        .gstm-dsf-bottom-left {
+        .gscoach-dsf-bottom-left {
             padding-right: 32px !important;
             border-right: 1px solid #f2f2f2;
         }
 
-        .gstm-dsf-bottom-right {
+        .gscoach-dsf-bottom-right {
             padding-left: 32px !important;
         }
     }
@@ -6214,7 +6214,7 @@ body {
 
         .contact-title {
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 0 !important;
             }
 
@@ -6297,11 +6297,11 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 10px;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
             color: #182338;
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
@@ -6398,13 +6398,13 @@ body {
 
                 .progress-bar {
                     background-color: #030d1e;
-                    width: var(--gstm-progress-width);
+                    width: var(--gscoach-progress-width);
                     max-width: 100%;
                     transition: width 0.6s ease;
                 }
 
                 .progress-completed {
-                    width: calc(var(--gstm-progress-width) + 17px);
+                    width: calc(var(--gscoach-progress-width) + 17px);
                     max-width: 100%;
                     transition: width 0.6s ease;
                     right: inherit !important;
@@ -6421,20 +6421,20 @@ body {
 .gs-single-style-five {
     .gs-coach-single-content {
 
-        .gstm-silde-icon {
+        .gscoach-silde-icon {
             text-align: right;
         }
 
-        .gstm-silde-icon a svg path {
+        .gscoach-silde-icon a svg path {
             fill: #cccccc;
             transition: all .15s ease-in-out;
         }
 
-        .gstm-silde-icon a:not(.gs-arrow-disabled):hover svg path {
+        .gscoach-silde-icon a:not(.gs-arrow-disabled):hover svg path {
             fill: #7948ff;
         }
 
-        .gstm-silde-icon a {
+        .gscoach-silde-icon a {
             display: inline-block;
 
             &:not(:last-child) {
@@ -6565,13 +6565,13 @@ body {
 
             .progress-bar {
                 background-color: #7948ff !important;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -6588,7 +6588,7 @@ body {
 
     .gs-coach-single-content {
 
-        .gstm-content-top {
+        .gscoach-content-top {
             padding-bottom: 60px;
 
             .gs-col-md-6 {
@@ -6646,13 +6646,13 @@ body {
 
                 .progress-bar {
                     background-color: #f77674 !important;
-                    width: var(--gstm-progress-width);
+                    width: var(--gscoach-progress-width);
                     max-width: 100%;
                     transition: width 0.6s ease;
                 }
 
                 .progress-completed {
-                    width: calc(var(--gstm-progress-width) + 17px);
+                    width: calc(var(--gscoach-progress-width) + 17px);
                     max-width: 100%;
                     transition: width 0.6s ease;
                     right: inherit !important;
@@ -6728,8 +6728,8 @@ body {
         margin-bottom: 40px;
         padding-bottom: 40px;
 
-        .gstm-content-top {
-            .gstm-content-top-left {
+        .gscoach-content-top {
+            .gscoach-content-top-left {
                 padding-right: 62px;
                 border-right: 2px solid #f2f2f2;
             }
@@ -6757,7 +6757,7 @@ body {
         }
     }
 
-    .gstm-content-top-right {
+    .gscoach-content-top-right {
         padding-left: 64px !important;
     }
 
@@ -6765,7 +6765,7 @@ body {
         padding-left: 0 !important;
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
         i {
             color: #FD5A80 !important;
         }
@@ -6833,13 +6833,13 @@ body {
 
             .progress-bar {
                 background-image: linear-gradient(-101deg, rgb(252, 165, 100) 0%, rgb(253, 128, 114) 38%, rgb(253, 90, 128) 100%) !important;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -6856,14 +6856,14 @@ body {
 .gs-single-style-four {
 
     .gs-coach-single-content {
-        .gstm-silde-icon {
+        .gscoach-silde-icon {
             position: absolute;
             top: 3%;
             right: 10%;
             cursor: pointer;
         }
 
-        .gstm-silde-icon a:not(.gs-arrow-disabled):hover svg path {
+        .gscoach-silde-icon a:not(.gs-arrow-disabled):hover svg path {
             fill: #AB1AEA;
         }
     }
@@ -6904,18 +6904,18 @@ body {
             margin-bottom: 24px !important;
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
         }
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
         i {
             color: #AB1AEA !important;
         }
     }
 
-    .gstm-details>div:not(:last-child) {
+    .gscoach-details>div:not(:last-child) {
         margin-bottom: 13px !important;
     }
 
@@ -6975,13 +6975,13 @@ body {
 
             .progress-bar {
                 background-image: linear-gradient(35deg, rgb(183, 28, 234) 0%, rgb(104, 11, 236) 100%);
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -7015,7 +7015,7 @@ body {
             margin-bottom: 48px;
             padding-bottom: 24px;
 
-            .gstm-silde-icon {
+            .gscoach-silde-icon {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -7024,7 +7024,7 @@ body {
         }
     }
 
-    .gstm-details>div {
+    .gscoach-details>div {
 
         i {
             color: #FD5A80 !important;
@@ -7032,7 +7032,7 @@ body {
         }
     }
 
-    .gstm-details>div:not(:last-child) {
+    .gscoach-details>div:not(:last-child) {
         margin-bottom: 18px !important;
     }
 
@@ -7057,24 +7057,24 @@ body {
     }
 
 
-    .gstm-silde-icon a,
-    .gstm-silde-icon a {
+    .gscoach-silde-icon a,
+    .gscoach-silde-icon a {
         display: inline-flex;
         align-items: center;
     }
 
-    .gstm-silde-icon path,
-    .gstm-silde-icon path {
+    .gscoach-silde-icon path,
+    .gscoach-silde-icon path {
         fill: #cccccc;
     }
 
-    .gstm-silde-icon path:hover,
-    .gstm-silde-icon path:hover {
+    .gscoach-silde-icon path:hover,
+    .gscoach-silde-icon path:hover {
         fill: #AB1AEA;
     }
 
-    .gstm-silde-icon svg,
-    .gstm-silde-icon svg {
+    .gscoach-silde-icon svg,
+    .gscoach-silde-icon svg {
         width: 14px;
     }
 
@@ -7139,13 +7139,13 @@ body {
 
             .progress-bar {
                 background-image: linear-gradient(-101deg, rgb(252, 165, 100) 0%, rgb(253, 128, 114) 38%, rgb(253, 90, 128) 100%) !important;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -7282,7 +7282,7 @@ body {
 
             .progress-bar {
                 background-color: #030d1e;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
@@ -7295,7 +7295,7 @@ body {
                 font-family: 'Nunito', sans-serif;
                 font-size: 16px;
                 font-weight: 600;
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -7382,7 +7382,7 @@ body {
 
         .contact-title {
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 0 !important;
             }
 
@@ -7471,11 +7471,11 @@ body {
             }
         }
 
-        .gstm-details>div:not(:last-child) {
+        .gscoach-details>div:not(:last-child) {
             margin-bottom: 16px;
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
             color: #182338;
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
@@ -7597,7 +7597,7 @@ body {
             margin-top: -7px;
         }
 
-        .gstm-silde-icon {
+        .gscoach-silde-icon {
             position: absolute;
             top: 0;
             right: 0;
@@ -7612,14 +7612,14 @@ body {
             }
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #7948ff;
             }
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
             margin-top: 32px !important;
         }
@@ -7784,7 +7784,7 @@ body {
             padding-left: 0%;
         }
 
-        .gstm-silde-icon {
+        .gscoach-silde-icon {
             position: absolute;
             top: 0;
             right: 0;
@@ -7799,14 +7799,14 @@ body {
             }
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #33cccc;
             }
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
         }
     }
@@ -7889,13 +7889,13 @@ body {
 
             .progress-bar {
                 background-color: #33cccc !important;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -7947,7 +7947,7 @@ body {
 
     .gs-containeer-f {
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #fd5a80;
@@ -8001,12 +8001,12 @@ body {
         margin-bottom: 25px;
     }
 
-    .gstm-content-left {
+    .gscoach-content-left {
         padding-right: 30px;
         border-right: 1px solid #e2e2e2;
     }
 
-    .gstm-content-right {
+    .gscoach-content-right {
 
         padding-left: 30px;
 
@@ -8040,14 +8040,14 @@ body {
 
             .progress-bar {
                 background-image: linear-gradient(-101deg, rgb(252, 165, 100) 0%, rgb(253, 128, 114) 38%, rgb(253, 90, 128) 100%) !important;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
 
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -8138,7 +8138,7 @@ body {
             margin-top: -13px;
         }
 
-        .gstm-silde-icon {
+        .gscoach-silde-icon {
             position: absolute;
             top: 0;
             right: 0;
@@ -8153,14 +8153,14 @@ body {
             }
         }
 
-        .gstm-details>div {
+        .gscoach-details>div {
 
             i {
                 color: #7948ff;
             }
         }
 
-        .gstm-details {
+        .gscoach-details {
             margin-bottom: 0 !important;
             margin-top: 32px !important;
         }
@@ -8224,13 +8224,13 @@ body {
 
             .progress-bar {
                 background-color: #7948ff;
-                width: var(--gstm-progress-width);
+                width: var(--gscoach-progress-width);
                 max-width: 100%;
                 transition: width 0.6s ease;
             }
 
             .progress-completed {
-                width: calc(var(--gstm-progress-width) + 17px);
+                width: calc(var(--gscoach-progress-width) + 17px);
                 max-width: 100%;
                 transition: width 0.6s ease;
                 right: inherit !important;
@@ -8298,7 +8298,7 @@ body {
                 }
             }
 
-            .gstm-popup-right-top {
+            .gscoach-popup-right-top {
                 margin-bottom: 40px;
                 margin-top: -12px;
 
@@ -8315,7 +8315,7 @@ body {
                 }
             }
 
-            .gstm-popup-left {
+            .gscoach-popup-left {
                 padding-right: 15px;
                 margin-top: -12px;
 
@@ -8343,9 +8343,9 @@ body {
                 }
             }
 
-            /* End of gstm-popup left */
+            /* End of gscoach-popup left */
 
-            .gstm-popup-right {
+            .gscoach-popup-right {
 
                 .gs-roow:nth-child(2) {
                     padding-top: 50px;
@@ -8447,11 +8447,11 @@ body {
                     }
                 }
 
-                .gstm-details>div:not(:last-child) {
+                .gscoach-details>div:not(:last-child) {
                     margin-bottom: 16px;
                 }
 
-                .gstm-details>div {
+                .gscoach-details>div {
                     color: #182338;
                     font-family: 'Poppins', sans-serif;
                     font-size: 16px;
@@ -8467,7 +8467,7 @@ body {
                     }
                 }
 
-                .gstm-details {
+                .gscoach-details {
                     margin-top: 0 !important;
                 }
 
@@ -8503,7 +8503,7 @@ body {
 
                         .progress-bar {
                             background-image: linear-gradient(-92deg, rgb(183, 28, 234) 0%, rgb(104, 11, 236) 100%) !important;
-                            width: var(--gstm-progress-width);
+                            width: var(--gscoach-progress-width);
                             max-width: 100%;
                             transition: width 0.6s ease;
                         }
@@ -8515,7 +8515,7 @@ body {
                             font-family: 'Nunito', sans-serif;
                             font-size: 16px;
                             font-weight: 600;
-                            width: calc(var(--gstm-progress-width) + 17px);
+                            width: calc(var(--gscoach-progress-width) + 17px);
                             max-width: 100%;
                             transition: width 0.6s ease;
                             right: inherit !important;
@@ -8527,16 +8527,16 @@ body {
 
             }
 
-            /* End of gstm-popup right */
+            /* End of gscoach-popup right */
 
 
-            .gstm-dsf-bottom-left {
+            .gscoach-dsf-bottom-left {
                 padding-right: 32px !important;
                 border-right: 1px solid #f2f2f2;
                 padding-left: 0;
             }
 
-            .gstm-dsf-bottom-right {
+            .gscoach-dsf-bottom-right {
                 padding-left: 32px !important;
             }
         }
@@ -9008,9 +9008,9 @@ body {
 
         .gs-containeer-f {
 
-            .gstm-popup-right {
+            .gscoach-popup-right {
 
-                .gstm-popup-right-top {
+                .gscoach-popup-right-top {
                     .gs-member-desc {
                         p {
                             margin-bottom: 0 !important;
@@ -9027,7 +9027,7 @@ body {
 
     /* Drawer Style 
     ==================*/
-    .gstm-gridder-default {
+    .gscoach-gridder-default {
 
         .gridder-show {
 
@@ -9038,8 +9038,8 @@ body {
     }
 
     /* Drawer Common*/
-    .gstm-gridder-style-one,
-    .gstm-gridder-style-two {
+    .gscoach-gridder-style-one,
+    .gscoach-gridder-style-two {
 
         .gridder-show {
             .gridder-padding {
@@ -9053,11 +9053,11 @@ body {
                 }
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 padding-right: 0 !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 padding-left: 0 !important;
                 padding-top: 32px;
                 padding-bottom: 20px;
@@ -9078,14 +9078,14 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 20px;
             }
         }
     }
 
     /* Drawer Two*/
-    .gstm-gridder-style-two {
+    .gscoach-gridder-style-two {
 
         .gridder-show {
 
@@ -9096,30 +9096,30 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 30px !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 width: 100%;
             }
         }
 
-        .gstm-drawer-right {
+        .gscoach-drawer-right {
 
-            .gstm-details {
+            .gscoach-details {
                 display: block;
             }
         }
 
-        .gstm-drawer-left {
-            .gstm-details {
+        .gscoach-drawer-left {
+            .gscoach-details {
                 display: none;
             }
         }
     }
 
-    .gstm-gridder-style-three {
+    .gscoach-gridder-style-three {
 
         .gridder-show {
 
@@ -9127,12 +9127,12 @@ body {
                 padding-top: 44px;
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 border-right: none;
                 padding-right: 0 !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 padding-left: 0 !important;
                 width: 100%;
             }
@@ -9155,15 +9155,15 @@ body {
 
     }
 
-    .gstm-gridder-style-four {
+    .gscoach-gridder-style-four {
 
         .gridder-show {
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 width: 50%;
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 width: 50%;
             }
 
@@ -9431,9 +9431,9 @@ body {
 
         .gs-containeer-f {
 
-            .gstm-popup-right {
+            .gscoach-popup-right {
 
-                .gstm-popup-right-top {
+                .gscoach-popup-right-top {
                     .gs-member-desc {
                         p {
                             margin-bottom: 0 !important;
@@ -9447,7 +9447,7 @@ body {
     /* Drawer Style 
     ==================*/
 
-    .gstm-gridder-default {
+    .gscoach-gridder-default {
 
         .gridder-show {
 
@@ -9458,9 +9458,9 @@ body {
     }
 
     /* Drawer Common*/
-    .gstm-gridder-style-one,
-    .gstm-gridder-style-two,
-    .gstm-gridder-style-four {
+    .gscoach-gridder-style-one,
+    .gscoach-gridder-style-two,
+    .gscoach-gridder-style-four {
 
         .gridder-show {
             .gridder-padding {
@@ -9474,11 +9474,11 @@ body {
                 }
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 padding-right: 0 !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 padding-left: 0 !important;
                 padding-top: 32px;
                 padding-bottom: 20px;
@@ -9499,14 +9499,14 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 20px;
             }
         }
     }
 
     /* Drawer Two*/
-    .gstm-gridder-style-two {
+    .gscoach-gridder-style-two {
 
         .gridder-show {
 
@@ -9517,42 +9517,42 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 30px !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 width: 100%;
             }
         }
 
-        .gstm-drawer-right {
+        .gscoach-drawer-right {
 
-            .gstm-details {
+            .gscoach-details {
                 display: block;
             }
         }
 
-        .gstm-drawer-left {
-            .gstm-details {
+        .gscoach-drawer-left {
+            .gscoach-details {
                 display: none;
             }
         }
     }
 
-    .gstm-gridder-style-three {
+    .gscoach-gridder-style-three {
         .gridder-show {
 
             .gridder-padding {
                 padding-top: 44px;
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 border-right: none;
                 padding-right: 0 !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 padding-left: 0 !important;
             }
 
@@ -9573,15 +9573,15 @@ body {
         }
     }
 
-    .gstm-gridder-style-four {
+    .gscoach-gridder-style-four {
 
         .gridder-show {
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 width: 30%;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 width: 70%;
                 padding-left: 42px !important;
             }
@@ -9686,7 +9686,7 @@ body {
                 margin-top: 0 !important;
             }
 
-            .gstm-silde-icon {
+            .gscoach-silde-icon {
                 position: absolute;
                 right: -31%;
                 top: -31%;
@@ -10017,7 +10017,7 @@ body {
             padding: 40px 10px !important;
         }
 
-        .gstm-content-left {
+        .gscoach-content-left {
             padding-right: 0 !important;
             padding-left: 0 !important;
             border: none;
@@ -10031,7 +10031,7 @@ body {
             }
         }
 
-        .gstm-content-right {
+        .gscoach-content-right {
             padding-left: 0;
         }
     }
@@ -10119,11 +10119,11 @@ body {
                     }
                 }
 
-                .gstm-dsf-bottom-right {
+                .gscoach-dsf-bottom-right {
                     padding-left: 15px !important;
                 }
 
-                .gstm-popup-right {
+                .gscoach-popup-right {
                     margin-left: 0 !important;
 
                     .popup-navigation {
@@ -10136,7 +10136,7 @@ body {
                         margin-top: 32px !important;
                     }
 
-                    .gstm-popup-right-top {
+                    .gscoach-popup-right-top {
                         margin-top: 26px;
 
                         .gs-member-desc {
@@ -10147,7 +10147,7 @@ body {
                     }
                 }
 
-                .gstm-popup-left {
+                .gscoach-popup-left {
                     padding-right: 15px;
                 }
             }
@@ -10174,14 +10174,14 @@ body {
             text-align: left;
         }
 
-        .gstm-panel-info {
+        .gscoach-panel-info {
             padding: 0px 16px 32px 16px;
         }
     }
 
     .gs-coach-panel--style-four {
-        .gstm-panel-top {
-            .close-gstm-panel-bt {
+        .gscoach-panel-top {
+            .close-gscoach-panel-bt {
                 left: 8px;
                 top: 8px;
             }
@@ -10191,7 +10191,7 @@ body {
     /* Drawer Style 
     ==================*/
 
-    .gstm-gridder-default {
+    .gscoach-gridder-default {
 
         .gridder-show {
 
@@ -10202,9 +10202,9 @@ body {
     }
 
     /* Drawer Common*/
-    .gstm-gridder-style-one,
-    .gstm-gridder-style-two,
-    .gstm-gridder-style-four {
+    .gscoach-gridder-style-one,
+    .gscoach-gridder-style-two,
+    .gscoach-gridder-style-four {
 
         .gridder-show {
             .gridder-padding {
@@ -10218,11 +10218,11 @@ body {
                 }
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 padding-right: 0 !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 padding-left: 0 !important;
                 padding-top: 32px;
                 padding-bottom: 20px;
@@ -10243,14 +10243,14 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 20px;
             }
         }
     }
 
     /* Drawer Two*/
-    .gstm-gridder-style-two {
+    .gscoach-gridder-style-two {
 
         .gridder-show {
 
@@ -10261,38 +10261,38 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 30px !important;
             }
         }
 
-        .gstm-drawer-right {
+        .gscoach-drawer-right {
 
-            .gstm-details {
+            .gscoach-details {
                 display: block;
             }
         }
 
-        .gstm-drawer-left {
-            .gstm-details {
+        .gscoach-drawer-left {
+            .gscoach-details {
                 display: none;
             }
         }
     }
 
-    .gstm-gridder-style-three {
+    .gscoach-gridder-style-three {
         .gridder-show {
 
             .gridder-padding {
                 padding-top: 44px;
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 border-right: none;
                 padding-right: 0 !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 padding-left: 0 !important;
             }
 
@@ -10314,15 +10314,15 @@ body {
     }
 
     /* Drawer Four*/
-    .gstm-gridder-style-four {
+    .gscoach-gridder-style-four {
 
         .gridder-show {
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 width: 100%;
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 width: 100%;
             }
 
@@ -10333,11 +10333,11 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 30px !important;
             }
 
-            .gstm-drawer-righ {
+            .gscoach-drawer-righ {
                 padding-top: 20px;
             }
         }
@@ -10379,7 +10379,7 @@ body {
                 margin-top: 0 !important;
             }
 
-            .gstm-silde-icon {
+            .gscoach-silde-icon {
                 position: absolute;
                 right: -31%;
                 top: -31%;
@@ -10416,16 +10416,16 @@ body {
                 margin-top: 0 !important;
             }
 
-            .gstm-content-top {
+            .gscoach-content-top {
                 margin-bottom: 0;
 
-                .gstm-content-top-left {
+                .gscoach-content-top-left {
                     padding-right: 0;
                     border-right: 0;
                 }
             }
 
-            .gstm-content-top-right {
+            .gscoach-content-top-right {
                 padding-left: 0 !important;
             }
         }
@@ -10444,7 +10444,7 @@ body {
         }
 
         .gs-coach-single-content {
-            .gstm-silde-icon {
+            .gscoach-silde-icon {
                 top: 7%;
             }
         }
@@ -10469,7 +10469,7 @@ body {
                 .gsmd-top {
                     margin-bottom: 0;
 
-                    .gstm-silde-icon {
+                    .gscoach-silde-icon {
                         top: 5%;
                     }
                 }
@@ -11093,7 +11093,7 @@ body {
             }
         }
 
-        .gstm-content-left {
+        .gscoach-content-left {
             padding-right: 0 !important;
             padding-left: 0 !important;
             border: none;
@@ -11107,7 +11107,7 @@ body {
             }
         }
 
-        .gstm-content-right {
+        .gscoach-content-right {
             padding-left: 0;
         }
     }
@@ -11201,11 +11201,11 @@ body {
                     }
                 }
 
-                .gstm-dsf-bottom-right {
+                .gscoach-dsf-bottom-right {
                     padding-left: 0 !important;
                 }
 
-                .gstm-popup-right {
+                .gscoach-popup-right {
                     margin-left: 0 !important;
 
 
@@ -11221,7 +11221,7 @@ body {
                         margin-top: 32px !important;
                     }
 
-                    .gstm-popup-right-top {
+                    .gscoach-popup-right-top {
                         margin-top: 32px;
 
                         .gs-member-desc {
@@ -11248,7 +11248,7 @@ body {
 
     /* gs-coach-drawer--style
 ========================*/
-    .gstm-gridder-default {
+    .gscoach-gridder-default {
 
         .gridder-show {
 
@@ -11266,11 +11266,11 @@ body {
     }
 
     /* Drawer Common*/
-    .gstm-gridder-style-one,
-    .gstm-gridder-style-two,
-    .gstm-gridder-style-three,
-    .gstm-gridder-style-four,
-    .gstm-gridder-style-five {
+    .gscoach-gridder-style-one,
+    .gscoach-gridder-style-two,
+    .gscoach-gridder-style-three,
+    .gscoach-gridder-style-four,
+    .gscoach-gridder-style-five {
 
         .gridder-show {
             .gridder-padding {
@@ -11284,11 +11284,11 @@ body {
                 }
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 padding-right: 0 !important;
             }
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 padding-left: 0 !important;
                 padding-top: 32px;
                 padding-bottom: 20px;
@@ -11309,14 +11309,14 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 20px;
             }
         }
     }
 
     /* Drawer Two*/
-    .gstm-gridder-style-two {
+    .gscoach-gridder-style-two {
 
         .gridder-show {
 
@@ -11327,33 +11327,33 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 30px !important;
             }
         }
 
-        .gstm-drawer-right {
+        .gscoach-drawer-right {
 
-            .gstm-details {
+            .gscoach-details {
                 display: block;
             }
         }
 
-        .gstm-drawer-left {
-            .gstm-details {
+        .gscoach-drawer-left {
+            .gscoach-details {
                 display: none;
             }
         }
     }
 
-    .gstm-gridder-style-three {
+    .gscoach-gridder-style-three {
         .gridder-show {
 
             .gridder-padding {
                 padding-top: 44px;
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 border-right: none;
             }
 
@@ -11367,15 +11367,15 @@ body {
     }
 
     /* Drawer Four*/
-    .gstm-gridder-style-four {
+    .gscoach-gridder-style-four {
 
         .gridder-show {
 
-            .gstm-drawer-right {
+            .gscoach-drawer-right {
                 width: 100%;
             }
 
-            .gstm-drawer-left {
+            .gscoach-drawer-left {
                 width: 100%;
             }
 
@@ -11393,17 +11393,17 @@ body {
                 }
             }
 
-            .gstm-details {
+            .gscoach-details {
                 margin-top: 30px !important;
             }
 
-            .gstm-drawer-righ {
+            .gscoach-drawer-righ {
                 padding-top: 20px;
             }
         }
     }
 
-    .gstm-gridder-style-five {
+    .gscoach-gridder-style-five {
 
         .gridder-show {
 
@@ -11416,13 +11416,13 @@ body {
             }
 
 
-            .gstm-dsf-bottom-left {
+            .gscoach-dsf-bottom-left {
                 padding-right: 0 !important;
                 border-right: none;
                 width: 100%;
             }
 
-            .gstm-dsf-bottom-right {
+            .gscoach-dsf-bottom-right {
                 padding-left: 0 !important;
                 width: 100%;
             }
@@ -11440,14 +11440,14 @@ body {
             text-align: left;
         }
 
-        .gstm-panel-info {
+        .gscoach-panel-info {
             padding: 0px 16px 32px 16px;
         }
     }
 
     .gs-coach-panel--style-four {
-        .gstm-panel-top {
-            .close-gstm-panel-bt {
+        .gscoach-panel-top {
+            .close-gscoach-panel-bt {
                 left: 8px;
                 top: 8px;
             }
@@ -11490,7 +11490,7 @@ body {
                 margin-top: 0 !important;
             }
 
-            .gstm-silde-icon {
+            .gscoach-silde-icon {
                 position: absolute;
                 right: -31%;
                 top: -31%;
@@ -11528,16 +11528,16 @@ body {
                 margin-top: 0 !important;
             }
 
-            .gstm-content-top {
+            .gscoach-content-top {
                 margin-bottom: 0;
 
-                .gstm-content-top-left {
+                .gscoach-content-top-left {
                     padding-right: 0;
                     border-right: 0;
                 }
             }
 
-            .gstm-content-top-right {
+            .gscoach-content-top-right {
                 padding-left: 0 !important;
             }
         }
@@ -11549,7 +11549,7 @@ body {
         }
 
         .gs-coach-single-content {
-            .gstm-silde-icon {
+            .gscoach-silde-icon {
                 top: 7%;
             }
         }
@@ -11578,7 +11578,7 @@ body {
                 .gsmd-top {
                     margin-bottom: 0;
 
-                    .gstm-silde-icon {
+                    .gscoach-silde-icon {
                         top: 5%;
                     }
                 }
@@ -11718,17 +11718,17 @@ body {
 
     .gs-coach-panel--default {
 
-        .gstm-panel-info {
+        .gscoach-panel-info {
             padding: 10px 50px 32px 50px;
         }
 
-        .close-gstm-panel-bt {
+        .close-gscoach-panel-bt {
             width: 48px;
             height: 48px;
             top: 0;
         }
 
-        .gstm-panel-title {
+        .gscoach-panel-title {
             font-size: 18px;
         }
     }
