@@ -39,7 +39,7 @@ foreach( $field_groups as $field_group ) {
 
         <?php if ( !empty($title) ) printf( '<h3 class="gs-coach--acf_group-title">%s</h3>', esc_html($title) ); ?>
         
-        <div class="gs-coach--acf_group-fields gstm-details">
+        <div class="gs-coach--acf_group-fields gscoach-details">
             
             <?php foreach ($fields as $field) :
                 

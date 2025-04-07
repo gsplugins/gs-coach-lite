@@ -44,13 +44,13 @@ jQuery(function($) {
     });
 
 
-    $('.gstm-icon-select').select2({
+    $('.gscoach-icon-select').select2({
         width: "100%",
-        templateResult: gstm_formaticon,
-        templateSelection: gstm_formaticon
+        templateResult: gscoach_formaticon,
+        templateSelection: gscoach_formaticon
     });
 
-    $('.gstm-add-row').on('click', function(e) {
+    $('.gscoach-add-row').on('click', function(e) {
         e.preventDefault();
         var table = $(this).data('table'),
             row = $('#' + table + ' .empty-row.screen-reader-text').clone(true);
@@ -58,13 +58,13 @@ jQuery(function($) {
         row.insertBefore('#' + table + ' tbody>tr:last');
         row.find('select').select2({
             width: "100%",
-            templateResult: gstm_formaticon,
-            templateSelection: gstm_formaticon
+            templateResult: gscoach_formaticon,
+            templateSelection: gscoach_formaticon
         });
         return false;
     });
 
-    $('.gstm-add-skill').on('click', function(e) {
+    $('.gscoach-add-skill').on('click', function(e) {
         e.preventDefault();
         var skill = $(this).data('table'),
             row = $('#' + skill + ' .empty-skill.screen-reader-text').clone(true);
@@ -72,8 +72,8 @@ jQuery(function($) {
         row.insertBefore('#' + skill + ' tbody>tr:last');
         row.find('select').select2({
             width: "100%",
-            templateResult: gstm_formaticon,
-            templateSelection: gstm_formaticon
+            templateResult: gscoach_formaticon,
+            templateSelection: gscoach_formaticon
         });
         return false;
     });
@@ -84,13 +84,13 @@ jQuery(function($) {
         return false;
     });
     
-    $('.gstm-sorable-table tbody').sortable({
+    $('.gscoach-sorable-table tbody').sortable({
         items: "tr",
         axis: "y",
         cursor: 'move',
     });
    
-    function gstm_formaticon(icon) {
+    function gscoach_formaticon(icon) {
         if (!icon.id) {
             return icon.text; }
         var $icon = $(

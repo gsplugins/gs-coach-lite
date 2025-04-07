@@ -49,7 +49,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
 
 ?>
 
-<div class="gstm-details">
+<div class="gscoach-details">
     
     <?php if ( !empty($company) || !empty($company_website) ) : ?>
         <div class="gs-member-company">

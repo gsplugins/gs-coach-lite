@@ -18,7 +18,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
     <div class="gs-roow">
 
-            <div class="gs-col-md-6 gstm-content-left">
+            <div class="gs-col-md-6 gscoach-content-left">
 
                 <div class="gs_coach_img">
 
@@ -49,7 +49,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
             </div> <!--End Of gs-col-md-6 -->
 
-            <div class="gs-col-md-6 gstm-content-right">
+            <div class="gs-col-md-6 gscoach-content-right">
 
                 <div class="gs_coach_details">
 

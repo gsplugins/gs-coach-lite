@@ -50,7 +50,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
             <div class="gs_coach_details">
 
-                <div class="gstm-silde-icon">
+                <div class="gscoach-silde-icon">
 
                     <?php
 

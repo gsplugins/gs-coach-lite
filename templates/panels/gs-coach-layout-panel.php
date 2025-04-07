@@ -46,7 +46,7 @@ if ( $gs_coach_loop->have_posts() ) : ?>
         
         endwhile; ?>
 
-        <div id="gstm-overlay"></div>
+        <div id="gscoach-overlay"></div>
 
     </div>
     

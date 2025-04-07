@@ -15,7 +15,7 @@ global $gs_coach_loop;
 
 $gs_row_classes = ['gs-roow clearfix gs_coach'];
 
-if ( $_drawer_enabled ) $gs_row_classes[] = 'gstm-gridder gstm-gridder-' . $drawer_style;
+if ( $_drawer_enabled ) $gs_row_classes[] = 'gscoach-gridder gscoach-gridder-' . $drawer_style;
 
 ?>
 

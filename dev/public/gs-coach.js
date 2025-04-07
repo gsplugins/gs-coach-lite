@@ -701,7 +701,7 @@ jQuery(function($) {
 
 			$gs_themes.each(function() {
 
-				if ( $gs_themes.hasClass('gs-coach-circle-three') && ! $gs_themes.find('.gstm-gridder').length ) return;
+				if ( $gs_themes.hasClass('gs-coach-circle-three') && ! $gs_themes.find('.gscoach-gridder').length ) return;
 	
 				var $elements = $(this).removeClass('gs-coach--fixed-height');
 	
@@ -800,17 +800,17 @@ jQuery(function($) {
 
 	if ( $.panelslider !== undefined ) {
 
-		$('.close-gstm-panel-bt').on( 'click', function () {
+		$('.close-gscoach-panel-bt').on( 'click', function () {
 			$.panelslider.close();
 		});
 	
-		$('.next-gstm-panel-bt').on( 'click', function (e) {
+		$('.next-gscoach-panel-bt').on( 'click', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 			$.panelslider.next();
 		});
 	
-		$('.prev-gstm-panel-bt').on( 'click', function (e) {
+		$('.prev-gscoach-panel-bt').on( 'click', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 			$.panelslider.prev();

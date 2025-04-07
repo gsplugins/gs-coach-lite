@@ -22,9 +22,9 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 <div class="gs-coach-single-content" itemscope="" itemtype="http://schema.org/Person">
 
-    <div class="gs-roow gstm-content-top">
+    <div class="gs-roow gscoach-content-top">
 
-            <div class="gs-col-md-6 gs-col-xs-12 gstm-content-top-left">
+            <div class="gs-col-md-6 gs-col-xs-12 gscoach-content-top-left">
 
                 <div class="gs_coach_img">
 
@@ -55,7 +55,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
             </div> <!--End Of gs-col-md-6 -->
 
-            <div class="gs-col-md-6 gs-col-xs-12 gstm-content-top-right">
+            <div class="gs-col-md-6 gs-col-xs-12 gscoach-content-top-right">
 
                 <div class="gs_coach_details">
                     

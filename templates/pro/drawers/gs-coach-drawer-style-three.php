@@ -8,7 +8,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 <div class="gs-roow">
 
-    <div class="gs-col-md-6 team-description gstm-drawer-left">
+    <div class="gs-col-md-6 team-description gscoach-drawer-left">
 
             <!-- Single member name -->
             <?php member_name( $id, true, false, $gs_coach_link_type, 'h2', 'title', true ); ?>
@@ -28,7 +28,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
     </div>
 
 
-    <div class="gs-col-md-6 gstm-drawer-right">
+    <div class="gs-col-md-6 gscoach-drawer-right">
 
         <!-- Meta Details -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>

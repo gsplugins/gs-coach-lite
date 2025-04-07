@@ -89,7 +89,7 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		}
 		
 		if ( !empty($settings['gs_tm_mname_background']) ) {
-			$targets = ['.gs_tm_theme8 .gs-member-name', '.gs_tm_theme9 .gs-member-name', '.gs_tm_theme11 .gs-member-name', '.gs_tm_theme12 .gs-member-name', '.gs_tm_theme19 .gs-member-name', ' .gstm-panel-title'];
+			$targets = ['.gs_tm_theme8 .gs-member-name', '.gs_tm_theme9 .gs-member-name', '.gs_tm_theme11 .gs-member-name', '.gs_tm_theme12 .gs-member-name', '.gs_tm_theme19 .gs-member-name', ' .gscoach-panel-title'];
 			$this->generateStyle( $selector, $selector_divi, $targets, 'background-color', $settings['gs_tm_mname_background'] );
 		}
 

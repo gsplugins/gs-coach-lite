@@ -36,7 +36,7 @@ if ( !empty($skills) ) : ?>
                         <b><?php echo esc_html($skill['skill']); ?></b>
                     </span>
 
-                    <div class="progress" style="--gstm-progress-width: <?php echo esc_attr($skill['percent']); ?>%">
+                    <div class="progress" style="--gscoach-progress-width: <?php echo esc_attr($skill['percent']); ?>%">
                         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                         <span class="progress-completed"><?php echo esc_html($skill['percent']); ?>%</span>
                     </div>
