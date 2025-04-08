@@ -1978,9 +1978,9 @@
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select id="tags" key="tags"
-													v-model="shortcode_settings.tags"
-													:options="shortcode_options.tags"
+												<input-select id="tag" key="tag"
+													v-model="shortcode_settings.tag"
+													:options="shortcode_options.tag"
 													:placeholder="translation('tags')" multiple></input-select>
 											</div>
 
@@ -2185,7 +2185,7 @@
 
 								<template v-if="active_query_tab == 'exclude'">
 
-									<div class="shortcode-setting--row">
+									<div v-if="this.tax_settings.enable_group_tax == 'on'" class="shortcode-setting--row">
 
 										<div class="gs-roow row-20">
 
@@ -2211,7 +2211,7 @@
 
 									</div>
 
-									<div class="shortcode-setting--row">
+									<div v-if="this.tax_settings.enable_tag_tax == 'on'" class="shortcode-setting--row">
 
 										<div class="gs-roow row-20">
 
@@ -2237,9 +2237,199 @@
 
 									</div>
 
-								</template>
+									
+									<div v-if="this.tax_settings.enable_language_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="exclude_language">{{translation('exclude_language')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="exclude_language" id="exclude_language" v-model="shortcode_settings.exclude_language" :options="shortcode_options.exclude_language" :placeholder="translation('exclude_language')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('exclude_language__help')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_location_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="exclude_location">{{translation('exclude_location')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="exclude_location" id="exclude_location" v-model="shortcode_settings.exclude_location" :options="shortcode_options.exclude_location" :placeholder="translation('exclude_location')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('exclude_location__help')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_specialty_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="specialty">{{translation('specialty')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="specialty" id="specialty" v-model="shortcode_settings.specialty" :options="shortcode_options.specialty" :placeholder="translation('specialty')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('specialty--details')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_gender_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="gender">{{translation('gender')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="gender" id="gender" v-model="shortcode_settings.gender" :options="shortcode_options.gender" :placeholder="translation('gender')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('gender--details')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_extra_one_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="include_extra_one">{{translation('include_extra_one')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="include_extra_one" id="include_extra_one" v-model="shortcode_settings.include_extra_one" :options="shortcode_options.extra_one" :placeholder="translation('include_extra_one')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('include_extra_one--details')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_extra_two_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="include_extra_two">{{translation('include_extra_two')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="include_extra_two" id="include_extra_two" v-model="shortcode_settings.include_extra_two" :options="shortcode_options.extra_two" :placeholder="translation('include_extra_two')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('include_extra_two--details')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_extra_three_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="include_extra_three">{{translation('include_extra_three')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="include_extra_three" id="include_extra_three" v-model="shortcode_settings.include_extra_three" :options="shortcode_options.extra_three" :placeholder="translation('include_extra_three')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('include_extra_three--details')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_extra_four_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="include_extra_four">{{translation('include_extra_four')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="include_extra_four" id="include_extra_four" v-model="shortcode_settings.include_extra_four" :options="shortcode_options.extra_four" :placeholder="translation('include_extra_four')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('include_extra_four--details')}}</p>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div v-if="this.tax_settings.enable_extra_five_tax == 'on'" class="shortcode-setting--row">
+
+										<div class="gs-roow row-20">
+
+											<div class="gs-col-xs-5">
+												<label class="m-t-10" for="include_extra_five">{{translation('include_extra_five')}}:</label>
+												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+											</div>
+
+											<div class="gs-col-xs-7">
+												<input-select key="include_extra_five" id="include_extra_five" v-model="shortcode_settings.include_extra_five" :options="shortcode_options.extra_five" :placeholder="translation('include_extra_five')" multiple></input-select>
+											</div>
+											
+											<div class="gs-col-xs-12 bi-text-help--area">
+												<p class="bi-text-help">{{translation('include_extra_five--details')}}</p>
+											</div>
+
+										</div>
+
+									</div>
 
 								</template>
+
+							</template>
 						</div>
 
 					</div>
@@ -2353,7 +2543,6 @@
 
 			this.tax_settings = this._getTaxSettings();
 
-			console.log(this.tax_settings);
 
 			this.resetLinkTypes();
 
@@ -2517,6 +2706,7 @@
 				
 				let shortcode_settings  = this.nonReactive( this.shortcode_settings );
 				let group               = shortcode_settings.group;
+				let tag                 = shortcode_settings.tag;
 				let exclude_group       = shortcode_settings.exclude_group;
 				let location            = shortcode_settings.location;
 				let language            = shortcode_settings.language;
@@ -2530,6 +2720,10 @@
 
 				if ( group && typeof group == 'object' && group.length ) {
 					shortcode_settings.group = group.join(',');
+				}
+
+				if ( tag && typeof tag == 'object' && tag.length ) {
+					shortcode_settings.tag = tag.join(',');
 				}
 
 				if ( exclude_group && typeof exclude_group == 'object' && exclude_group.length ) {

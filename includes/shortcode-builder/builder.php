@@ -158,7 +158,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         }
 
-        public static function get_team_terms( $term_name, $idsOnly = false ) {
+        public static function get_coach_terms( $term_name, $idsOnly = false ) {
 
             $taxonomies = get_taxonomies([ 'type' => 'restricted', 'enabled' => true ]);
 
@@ -924,10 +924,28 @@ if ( ! class_exists( 'Builder' ) ) {
                 'group__help' => __('Select specific group to show that specific group members', 'gscoach'),
                 'tags' => __('Tags', 'gscoach'),
                 'tags__help' => __('Select specific tag to show that specific tagged members', 'gscoach'),
-                'exclude_group' => __('Exclude Group', 'gscoach'),
+                'exclude_group' => __('Group', 'gscoach'),
                 'exclude_group__help' => __('Select a specific team group to hide that specific group members', 'gscoach'),
-                'exclude_tags' => __('Exclude Tags', 'gscoach'),
+                'exclude_tags' => __('Tags', 'gscoach'),
                 'exclude_tags__help' => __('Select a specific tag to hide that specific tagged members', 'gscoach'),
+                'exclude_language' => __('Language', 'gscoach'),
+                'exclude_language__help' => __('Select a specific language to hide that specific language members', 'gscoach'),
+                'exclude_location' => __('Location', 'gscoach'),
+                'exclude_location__help' => __('Select a specific location to hide that specific location members', 'gscoach'),
+                'exclude_specialty' => __('Specialty', 'gscoach'),
+                'exclude_specialty__help' => __('Select a specific specialty to hide that specific specialty members', 'gscoach'),
+                'exclude_gender' => __('Gender', 'gscoach'),
+                'exclude_gender__help' => __('Select a specific gender to hide that specific gender members', 'gscoach'),
+                'exclude_extra_one' => __('Extra One', 'gscoach'),
+                'exclude_extra_one__help' => __('Select a specific extra one to hide that specific extra one members', 'gscoach'),
+                'exclude_extra_two' => __('Extra Two', 'gscoach'),
+                'exclude_extra_two__help' => __('Select a specific extra two to hide that specific extra two members', 'gscoach'),
+                'exclude_extra_three' => __('Extra Three', 'gscoach'),
+                'exclude_extra_three__help' => __('Select a specific extra three to hide that specific extra three members', 'gscoach'),
+                'exclude_extra_four' => __('Extra Four', 'gscoach'),
+                'exclude_extra_four__help' => __('Select a specific extra four to hide that specific extra four members', 'gscoach'),
+                'exclude_extra_five' => __('Extra Five', 'gscoach'),
+                'exclude_extra_five__help' => __('Select a specific extra five to hide that specific extra five members', 'gscoach'),
 
                 'theme' => __('Theme', 'gscoach'),
                 'font-size' => __('Font Size', 'gscoach'),
@@ -956,7 +974,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'filter-by-extra-three--des' => __('Show or Hide Filter by Extra Three', 'gscoach'),
                 'filter-by-extra-four--des' => __('Show or Hide Filter by Extra Four', 'gscoach'),
                 'filter-by-extra-five--des' => __('Show or Hide Filter by Extra Five', 'gscoach'),
-                'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gscoach'),
                 'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gscoach'),
                 'define-maximum-number-of-characters' => __('Define the maximum number of characters in details. Default 100', 'gscoach'),
                 'set-column-for-popup' => __('Set column for popup', 'gscoach'),
@@ -1708,17 +1725,18 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function get_shortcode_default_options() {
             return [
-                'location' => self::get_team_terms('gs_coach_location'),
-                'specialty' => self::get_team_terms('gs_coach_specialty'),
-                'language' => self::get_team_terms('gs_coach_language'),
-                'gender' => self::get_team_terms('gs_coach_gender'),
-                'group' => self::get_team_terms('gs_coach_group'),
-                'exclude_group' => self::get_team_terms('gs_coach_group'),
-                'extra_one' => self::get_team_terms('gs_coach_extra_one'),
-                'extra_two' => self::get_team_terms('gs_coach_extra_two'),
-                'extra_three' => self::get_team_terms('gs_coach_extra_three'),
-                'extra_four' => self::get_team_terms('gs_coach_extra_four'),
-                'extra_five' => self::get_team_terms('gs_coach_extra_five'),
+                'location' => self::get_coach_terms('gs_coach_location'),
+                'specialty' => self::get_coach_terms('gs_coach_specialty'),
+                'language' => self::get_coach_terms('gs_coach_language'),
+                'gender' => self::get_coach_terms('gs_coach_gender'),
+                'group' => self::get_coach_terms('gs_coach_group'),
+                'tag' => self::get_coach_terms('gs_coach_tag'),
+                'extra_one' => self::get_coach_terms('gs_coach_extra_one'),
+                'extra_two' => self::get_coach_terms('gs_coach_extra_two'),
+                'extra_three' => self::get_coach_terms('gs_coach_extra_three'),
+                'extra_four' => self::get_coach_terms('gs_coach_extra_four'),
+                'exclude_group' => self::get_coach_terms('gs_coach_group'),
+                'extra_five' => self::get_coach_terms('gs_coach_extra_five'),
                 'gs_coach_cols' => $this->get_columns(),
                 'drawer_style' => $this->get_drawer_styles(),
                 'carousel_navs_style' => $this->get_carousel_navs_styles(),
