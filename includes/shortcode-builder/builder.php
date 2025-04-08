@@ -207,7 +207,8 @@ if ( ! class_exists( 'Builder' ) ) {
             $data['translations']       = $this->get_translation_srtings();
             $data['preference']         = $this->get_shortcode_default_prefs();
             $data['preference_options'] = $this->get_shortcode_prefs_options();
-            $data['taxonomy_settings']  = $this->get_taxonomy_default_settings();
+            $data['taxonomy_default_settings']  = $this->get_taxonomy_default_settings();
+            $data['taxonomy_settings']  = $this->get_taxonomy_settings();
             $data['enabled_plugins']    = $this->get_enabled_plugins();
             $data['is_multilingual']    = $this->is_multilingual_enabled();
 
@@ -920,8 +921,13 @@ if ( ! class_exists( 'Builder' ) ) {
                 'group_hide_empty' => __('Hide Empty Filters', 'gscoach'),
                 'group_hide_empty__details' => __('Enable to hide the empty filters', 'gscoach'),
                 'group' => __('Group', 'gscoach'),
+                'group__help' => __('Select specific group to show that specific group members', 'gscoach'),
+                'tags' => __('Tags', 'gscoach'),
+                'tags__help' => __('Select specific tag to show that specific tagged members', 'gscoach'),
                 'exclude_group' => __('Exclude Group', 'gscoach'),
                 'exclude_group__help' => __('Select a specific team group to hide that specific group members', 'gscoach'),
+                'exclude_tags' => __('Exclude Tags', 'gscoach'),
+                'exclude_tags__help' => __('Select a specific tag to hide that specific tagged members', 'gscoach'),
 
                 'theme' => __('Theme', 'gscoach'),
                 'font-size' => __('Font Size', 'gscoach'),
