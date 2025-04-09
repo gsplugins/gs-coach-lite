@@ -5710,13 +5710,14 @@ ul.gs-coach--tab-links li.is-active button {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
+
 .gs-she-tabs--buttons button {
   background: #ecedf0;
   border: none;
@@ -5725,6 +5726,7 @@ ul.gs-coach--tab-links li.is-active button {
   border-top: 2px solid #e4e6e9;
   cursor: pointer;
 }
+
 .gs-she-tabs--buttons button.is-active {
   border-color: #5E6BE5;
   background: transparent;

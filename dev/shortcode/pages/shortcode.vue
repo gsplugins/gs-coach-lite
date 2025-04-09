@@ -2199,7 +2199,7 @@
 											<div class="gs-col-xs-7">
 												<input-select id="exclude_group" key="exclude_group"
 													v-model="shortcode_settings.exclude_group"
-													:options="shortcode_options.exclude_group"
+													:options="shortcode_options.group"
 													:placeholder="translation('exclude_group')" multiple></input-select>
 											</div>
 
@@ -2225,7 +2225,7 @@
 											<div class="gs-col-xs-7">
 												<input-select id="exclude_tags" key="exclude_tags"
 													v-model="shortcode_settings.exclude_tags"
-													:options="shortcode_options.exclude_tags"
+													:options="shortcode_options.tag"
 													:placeholder="translation('exclude_tags')" multiple></input-select>
 											</div>
 
@@ -2248,7 +2248,7 @@
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="exclude_language" id="exclude_language" v-model="shortcode_settings.exclude_language" :options="shortcode_options.exclude_language" :placeholder="translation('exclude_language')" multiple></input-select>
+												<input-select key="exclude_language" id="exclude_language" v-model="shortcode_settings.exclude_language" :options="shortcode_options.language" :placeholder="translation('exclude_language')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
@@ -2269,7 +2269,7 @@
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="exclude_location" id="exclude_location" v-model="shortcode_settings.exclude_location" :options="shortcode_options.exclude_location" :placeholder="translation('exclude_location')" multiple></input-select>
+												<input-select key="exclude_location" id="exclude_location" v-model="shortcode_settings.exclude_location" :options="shortcode_options.location" :placeholder="translation('exclude_location')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
@@ -2285,16 +2285,16 @@
 										<div class="gs-roow row-20">
 
 											<div class="gs-col-xs-5">
-												<label class="m-t-10" for="specialty">{{translation('specialty')}}:</label>
+												<label class="m-t-10" for="exclude_specialty">{{translation('exclude_specialty')}}:</label>
 												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="specialty" id="specialty" v-model="shortcode_settings.specialty" :options="shortcode_options.specialty" :placeholder="translation('specialty')" multiple></input-select>
+												<input-select key="exclude_specialty" id="exclude_specialty" v-model="shortcode_settings.exclude_specialty" :options="shortcode_options.specialty" :placeholder="translation('exclude_specialty')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
-												<p class="bi-text-help">{{translation('specialty--details')}}</p>
+												<p class="bi-text-help">{{translation('exclude_specialty__help')}}</p>
 											</div>
 
 										</div>
@@ -2306,16 +2306,16 @@
 										<div class="gs-roow row-20">
 
 											<div class="gs-col-xs-5">
-												<label class="m-t-10" for="gender">{{translation('gender')}}:</label>
+												<label class="m-t-10" for="exclude_gender">{{translation('exclude_gender')}}:</label>
 												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="gender" id="gender" v-model="shortcode_settings.gender" :options="shortcode_options.gender" :placeholder="translation('gender')" multiple></input-select>
+												<input-select key="exclude_gender" id="exclude_gender" v-model="shortcode_settings.exclude_gender" :options="shortcode_options.gender" :placeholder="translation('exclude_gender')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
-												<p class="bi-text-help">{{translation('gender--details')}}</p>
+												<p class="bi-text-help">{{translation('exclude_gender__help')}}</p>
 											</div>
 
 										</div>
@@ -2327,16 +2327,16 @@
 										<div class="gs-roow row-20">
 
 											<div class="gs-col-xs-5">
-												<label class="m-t-10" for="include_extra_one">{{translation('include_extra_one')}}:</label>
+												<label class="m-t-10" for="include_extra_one">{{translation('exclude_extra_one')}}:</label>
 												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="include_extra_one" id="include_extra_one" v-model="shortcode_settings.include_extra_one" :options="shortcode_options.extra_one" :placeholder="translation('include_extra_one')" multiple></input-select>
+												<input-select key="exclude_extra_one" id="exclude_extra_one" v-model="shortcode_settings.exclude_extra_one" :options="shortcode_options.extra_one" :placeholder="translation('exclude_extra_one')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
-												<p class="bi-text-help">{{translation('include_extra_one--details')}}</p>
+												<p class="bi-text-help">{{translation('exclude_extra_one__help')}}</p>
 											</div>
 
 										</div>
@@ -2348,16 +2348,16 @@
 										<div class="gs-roow row-20">
 
 											<div class="gs-col-xs-5">
-												<label class="m-t-10" for="include_extra_two">{{translation('include_extra_two')}}:</label>
+												<label class="m-t-10" for="exclude_extra_two">{{translation('exclude_extra_two')}}:</label>
 												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="include_extra_two" id="include_extra_two" v-model="shortcode_settings.include_extra_two" :options="shortcode_options.extra_two" :placeholder="translation('include_extra_two')" multiple></input-select>
+												<input-select key="exclude_extra_two" id="exclude_extra_two" v-model="shortcode_settings.exclude_extra_two" :options="shortcode_options.extra_two" :placeholder="translation('exclude_extra_two')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
-												<p class="bi-text-help">{{translation('include_extra_two--details')}}</p>
+												<p class="bi-text-help">{{translation('exclude_extra_two__help')}}</p>
 											</div>
 
 										</div>
@@ -2369,16 +2369,16 @@
 										<div class="gs-roow row-20">
 
 											<div class="gs-col-xs-5">
-												<label class="m-t-10" for="include_extra_three">{{translation('include_extra_three')}}:</label>
+												<label class="m-t-10" for="exclude_extra_three">{{translation('exclude_extra_three')}}:</label>
 												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="include_extra_three" id="include_extra_three" v-model="shortcode_settings.include_extra_three" :options="shortcode_options.extra_three" :placeholder="translation('include_extra_three')" multiple></input-select>
+												<input-select key="exclude_extra_three" id="exclude_extra_three" v-model="shortcode_settings.exclude_extra_three" :options="shortcode_options.extra_three" :placeholder="translation('exclude_extra_three')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
-												<p class="bi-text-help">{{translation('include_extra_three--details')}}</p>
+												<p class="bi-text-help">{{translation('exclude_extra_three__help')}}</p>
 											</div>
 
 										</div>
@@ -2390,16 +2390,16 @@
 										<div class="gs-roow row-20">
 
 											<div class="gs-col-xs-5">
-												<label class="m-t-10" for="include_extra_four">{{translation('include_extra_four')}}:</label>
+												<label class="m-t-10" for="exclude_extra_four">{{translation('exclude_extra_four')}}:</label>
 												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="include_extra_four" id="include_extra_four" v-model="shortcode_settings.include_extra_four" :options="shortcode_options.extra_four" :placeholder="translation('include_extra_four')" multiple></input-select>
+												<input-select key="exclude_extra_four" id="exclude_extra_four" v-model="shortcode_settings.exclude_extra_four" :options="shortcode_options.extra_four" :placeholder="translation('exclude_extra_four')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
-												<p class="bi-text-help">{{translation('include_extra_four--details')}}</p>
+												<p class="bi-text-help">{{translation('exclude_extra_four__help')}}</p>
 											</div>
 
 										</div>
@@ -2411,16 +2411,16 @@
 										<div class="gs-roow row-20">
 
 											<div class="gs-col-xs-5">
-												<label class="m-t-10" for="include_extra_five">{{translation('include_extra_five')}}:</label>
+												<label class="m-t-10" for="exclude_extra_five">{{translation('exclude_extra_five')}}:</label>
 												<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 											</div>
 
 											<div class="gs-col-xs-7">
-												<input-select key="include_extra_five" id="include_extra_five" v-model="shortcode_settings.include_extra_five" :options="shortcode_options.extra_five" :placeholder="translation('include_extra_five')" multiple></input-select>
+												<input-select key="exclude_extra_five" id="exclude_extra_five" v-model="shortcode_settings.exclude_extra_five" :options="shortcode_options.extra_five" :placeholder="translation('exclude_extra_five')" multiple></input-select>
 											</div>
 											
 											<div class="gs-col-xs-12 bi-text-help--area">
-												<p class="bi-text-help">{{translation('include_extra_five--details')}}</p>
+												<p class="bi-text-help">{{translation('exclude_extra_five__help')}}</p>
 											</div>
 
 										</div>
@@ -2707,7 +2707,6 @@
 				let shortcode_settings  = this.nonReactive( this.shortcode_settings );
 				let group               = shortcode_settings.group;
 				let tag                 = shortcode_settings.tag;
-				let exclude_group       = shortcode_settings.exclude_group;
 				let location            = shortcode_settings.location;
 				let language            = shortcode_settings.language;
 				let specialty           = shortcode_settings.specialty;
@@ -2717,17 +2716,25 @@
 				let include_extra_three = shortcode_settings.include_extra_three;
 				let include_extra_four  = shortcode_settings.include_extra_four;
 				let include_extra_five  = shortcode_settings.include_extra_five;
+				let exclude_group       = shortcode_settings.exclude_group;
+				let exclude_tags        = shortcode_settings.exclude_tags;
+				let exclude_language    = shortcode_settings.exclude_language;
+				let exclude_location    = shortcode_settings.exclude_location;
+				let exclude_specialty   = shortcode_settings.exclude_specialty;
+				let exclude_gender      = shortcode_settings.exclude_gender;
+				let exclude_extra_one   = shortcode_settings.exclude_extra_one;
+				let exclude_extra_two   = shortcode_settings.exclude_extra_two;
+				let exclude_extra_three = shortcode_settings.exclude_extra_three;
+				let exclude_extra_four  = shortcode_settings.exclude_extra_four;
+				let exclude_extra_five  = shortcode_settings.exclude_extra_five;
 
+				console.log(exclude_extra_five);
 				if ( group && typeof group == 'object' && group.length ) {
 					shortcode_settings.group = group.join(',');
 				}
 
 				if ( tag && typeof tag == 'object' && tag.length ) {
 					shortcode_settings.tag = tag.join(',');
-				}
-
-				if ( exclude_group && typeof exclude_group == 'object' && exclude_group.length ) {
-					shortcode_settings.exclude_group = exclude_group.join(',');
 				}
 
 				if ( location && typeof location == 'object' && location.length ) {
@@ -2765,6 +2772,50 @@
 				if ( include_extra_five && typeof include_extra_five == 'object' && include_extra_five.length ) {
 					shortcode_settings.include_extra_five = include_extra_five.join(',');
 				}
+				
+				if ( exclude_group && typeof exclude_group == 'object' && exclude_group.length ) {
+					shortcode_settings.exclude_group = exclude_group.join(',');
+				}
+				
+				if ( exclude_tags && typeof exclude_tags == 'object' && exclude_tags.length ) {
+					shortcode_settings.exclude_tags = exclude_tags.join(',');
+				}
+				
+				if ( exclude_language && typeof exclude_language == 'object' && exclude_language.length ) {
+					shortcode_settings.exclude_language = exclude_language.join(',');
+				}
+				
+				if ( exclude_location && typeof exclude_location == 'object' && exclude_location.length ) {
+					shortcode_settings.exclude_location = exclude_location.join(',');
+				}
+				
+				if ( exclude_specialty && typeof exclude_specialty == 'object' && exclude_specialty.length ) {
+					shortcode_settings.exclude_specialty = exclude_specialty.join(',');
+				}
+				
+				if ( exclude_gender && typeof exclude_gender == 'object' && exclude_gender.length ) {
+					shortcode_settings.exclude_gender = exclude_gender.join(',');
+				}
+				
+				if ( exclude_extra_one && typeof exclude_extra_one == 'object' && exclude_extra_one.length ) {
+					shortcode_settings.exclude_extra_one = exclude_extra_one.join(',');
+				}
+				
+				if ( exclude_extra_two && typeof exclude_extra_two == 'object' && exclude_extra_two.length ) {
+					shortcode_settings.exclude_extra_two = exclude_extra_two.join(',');
+				}
+				
+				if ( exclude_extra_three && typeof exclude_extra_three == 'object' && exclude_extra_three.length ) {
+					shortcode_settings.exclude_extra_three = exclude_extra_three.join(',');
+				}
+				
+				if ( exclude_extra_four && typeof exclude_extra_four == 'object' && exclude_extra_four.length ) {
+					shortcode_settings.exclude_extra_four = exclude_extra_four.join(',');
+				}
+				
+				if ( exclude_extra_five && typeof exclude_extra_five == 'object' && exclude_extra_five.length ) {
+					shortcode_settings.exclude_extra_five = exclude_extra_five.join(',');
+				}
 
 				for ( let field in shortcode_settings ) {
 					if ( typeof shortcode_settings[field] === "boolean" ) {
@@ -2792,10 +2843,6 @@
 
 				if ( settings.group && typeof settings.group == 'string' ) {
 					this.shortcode_settings.group = settings.group.split(',').map(Number);
-				}
-
-				if ( settings.exclude_group && typeof settings.exclude_group == 'string' ) {
-					this.shortcode_settings.exclude_group = settings.exclude_group.split(',').map(Number);
 				}
 
 				if ( settings.location && typeof settings.location == 'string' ) {
@@ -2832,6 +2879,50 @@
 
 				if ( settings.include_extra_five && typeof settings.include_extra_five == 'string' ) {
 					this.shortcode_settings.include_extra_five = settings.include_extra_five.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_group && typeof settings.exclude_group == 'string' ) {
+					this.shortcode_settings.exclude_group = settings.exclude_group.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_tag && typeof settings.exclude_tag == 'string' ) {
+					this.shortcode_settings.exclude_tag = settings.exclude_tag.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_language && typeof settings.exclude_language == 'string' ) {
+					this.shortcode_settings.exclude_language = settings.exclude_language.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_location && typeof settings.exclude_location == 'string' ) {
+					this.shortcode_settings.exclude_location = settings.exclude_location.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_specialty && typeof settings.exclude_specialty == 'string' ) {
+					this.shortcode_settings.exclude_specialty = settings.exclude_specialty.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_gender && typeof settings.exclude_gender == 'string' ) {
+					this.shortcode_settings.exclude_gender = settings.exclude_gender.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_extra_one && typeof settings.exclude_extra_one == 'string' ) {
+					this.shortcode_settings.exclude_extra_one = settings.exclude_extra_one.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_extra_two && typeof settings.exclude_extra_two == 'string' ) {
+					this.shortcode_settings.exclude_extra_two = settings.exclude_extra_two.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_extra_three && typeof settings.exclude_extra_three == 'string' ) {
+					this.shortcode_settings.exclude_extra_three = settings.exclude_extra_three.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_extra_four && typeof settings.exclude_extra_four == 'string' ) {
+					this.shortcode_settings.exclude_extra_four = settings.exclude_extra_four.split(',').map(Number);
+				}
+				
+				if ( settings.exclude_extra_five && typeof settings.exclude_extra_five == 'string' ) {
+					this.shortcode_settings.exclude_extra_five = settings.exclude_extra_five.split(',').map(Number);
 				}
 
 				this.$forceUpdate();
