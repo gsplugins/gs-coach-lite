@@ -69,7 +69,7 @@
 						<input type="file" name="import_file" id="import_file" :disabled="!isPro()" @change="submitForm" />
 					</div>
 
-					<div class="pro-block" v-if="!isPro()"><div class="pro-block--content"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div></div>
+					<div class="pro-block" v-if="!isPro()"><div class="pro-block--content"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div></div>
 
 				</form>
 

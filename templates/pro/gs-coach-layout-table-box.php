@@ -28,7 +28,7 @@ global $gs_coach_loop;
 
 				<div class="gs-coach-table-row gsc-table-head">
 
-					<?php do_action( 'gs_coach_before_member_content_table_heads' ); ?>
+					<?php do_action( 'gs_coach_before_coach_content_table_heads' ); ?>
 
 					<div class="gs-coach-table-cell"><?php _e( 'Image', 'gscoach' ); ?></div>
 					<div class="gs-coach-table-cell"><?php _e( 'Name', 'gscoach' ); ?></div>
@@ -39,7 +39,7 @@ global $gs_coach_loop;
 						<div class="gs-coach-table-cell"><?php _e( 'Social Links', 'gscoach' ); ?></div>
 					<?php endif; ?>
 
-					<?php do_action( 'gs_coach_after_member_content_table_heads' ); ?>
+					<?php do_action( 'gs_coach_after_coach_content_table_heads' ); ?>
 
 				</div>
 
@@ -48,35 +48,35 @@ global $gs_coach_loop;
 					$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 					$ribon = get_post_meta( get_the_id(), '_gs_ribon', true );
 
-					$classes = ['gs-coach-table-row single-member-div'];
+					$classes = ['gs-coach-table-row single-coach-div'];
 
-					if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
+					if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-coach-pop';
 
 					?>
 
 					<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 
-						<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+						<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 
 						<!-- Coach Image -->
 						<div class="gs-coach-table-cell gsc-image">
-							<?php echo member_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'gs_coach_image__wrapper' ); ?>
-							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+							<?php echo coach_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'gs_coach_image__wrapper' ); ?>
+							<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 						</div>
 
-						<!-- Single member name -->
+						<!-- Single coach name -->
 						<div class="gs-coach-table-cell gsc-name">
 							<div class="gs-coach-table-cell-inner">
-								<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
-								<?php do_action( 'gs_coach_after_member_name' ); ?>
+								<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+								<?php do_action( 'gs_coach_after_coach_name' ); ?>
 							</div>
 						</div>
 
-						<!-- Single member designation -->
+						<!-- Single coach designation -->
 						<div class="gs-coach-table-cell gsc-desig">
 							<div class="gs-coach-table-cell-inner">
-								<div class="gs-member-profession" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-								<?php do_action( 'gs_coach_after_member_designation' ); ?>
+								<div class="gs-coach-profession" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+								<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 							</div>
 						</div>
 
@@ -85,12 +85,12 @@ global $gs_coach_loop;
 							<div class="gs-coach-table-cell-inner">
 								
 								<?php if ( 'on' === $gs_desc_allow_html ) : ?>
-									<div class="gs-member-details justify" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+									<div class="gs-coach-details justify" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
 								<?php else : ?>
-									<div class="gs-member-details justify" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></div>
+									<div class="gs-coach-details justify" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></div>
 								<?php endif; ?>
 
-								<?php do_action( 'gs_coach_after_member_details' ); ?>
+								<?php do_action( 'gs_coach_after_coach_details' ); ?>
 							</div>
 						</div>
 
@@ -101,7 +101,7 @@ global $gs_coach_loop;
 							</div>
 						<?php endif; ?>
 
-						<?php do_action( 'gs_coach_after_member_content' ); ?>
+						<?php do_action( 'gs_coach_after_coach_content' ); ?>
 
 					</div>
 
@@ -120,8 +120,8 @@ global $gs_coach_loop;
 
 		<div class="gs-roow clearfix gs_coach">
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		</div>
 	

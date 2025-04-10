@@ -19,7 +19,7 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 	}
 
 	public function get_assets_key() {
-		return 'gs-coach-members';
+		return 'gs-coach-coachs';
 	}
 
 	public function generateStyle( $selector, $selector_divi, $targets, $prop, $value ) {
@@ -48,27 +48,27 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		$selector_divi = '#et-boc .et-l div ' . $selector;
 
 		if ( !empty($settings['gs_tm_m_fz']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'font-size', $settings['gs_tm_m_fz'] . 'px' );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-coach-name', ' .gs-coach-name a'], 'font-size', $settings['gs_tm_m_fz'] . 'px' );
 		}
 
 		if ( !empty($settings['gs_tm_m_fntw']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'font-weight', $settings['gs_tm_m_fntw'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-coach-name', ' .gs-coach-name a'], 'font-weight', $settings['gs_tm_m_fntw'] );
 		}
 
 		if ( !empty($settings['gs_tm_m_fnstyl']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'font-style', $settings['gs_tm_m_fnstyl'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-coach-name', ' .gs-coach-name a'], 'font-style', $settings['gs_tm_m_fnstyl'] );
 		}
 
 		if ( !empty($settings['gs_tm_mname_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, [' .gs-member-name', ' .gs-member-name a'], 'color', $settings['gs_tm_mname_color'] );
+			$this->generateStyle( $selector, $selector_divi, [' .gs-coach-name', ' .gs-coach-name a'], 'color', $settings['gs_tm_mname_color'] );
 		}
 
 		if ( !empty($settings['tm_bg_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .single-member', 'background', $settings['tm_bg_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-coach-div .single-coach', 'background', $settings['tm_bg_color'] );
 		}
 		
 		if ( !empty($settings['tm_bg_color_hover']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .single-member:hover', 'background', $settings['tm_bg_color_hover'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-coach-div .single-coach:hover', 'background', $settings['tm_bg_color_hover'] );
 		}
 
 		if ( !empty($settings['gs_tm_ribon_color']) ) {
@@ -76,10 +76,10 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		}
 		
 		if ( !empty($settings['gs_tm_info_background']) ) {
-			$targets = [' .info-card', ' .single-member-div .gs_coach_info', ' .gridder .overlay-area .overlay', '.gs_tm_theme22 .tittle_container', '.gs_tm_theme1 .single-mem-desc-social', '.gs_tm_theme2 .single-mem-desc-social', '.gs_tm_theme7 .single-mem-desc-social', '.gs_tm_theme8 .gs_coach_overlay', '.gs_tm_theme9 .gs_coach_overlay', '.gs_tm_theme11 .gs_coach_overlay', '.gs_tm_theme12 .gs_coach_overlay', '.gs_tm_theme19 .gs_coach_overlay', '.gs-coach-circle-four .single-member-div .gs_coach_image__overlay'];
+			$targets = [' .info-card', ' .single-coach-div .gs_coach_info', ' .gridder .overlay-area .overlay', '.gs_tm_theme22 .tittle_container', '.gs_tm_theme1 .single-mem-desc-social', '.gs_tm_theme2 .single-mem-desc-social', '.gs_tm_theme7 .single-mem-desc-social', '.gs_tm_theme8 .gs_coach_overlay', '.gs_tm_theme9 .gs_coach_overlay', '.gs_tm_theme11 .gs_coach_overlay', '.gs_tm_theme12 .gs_coach_overlay', '.gs_tm_theme19 .gs_coach_overlay', '.gs-coach-circle-four .single-coach-div .gs_coach_image__overlay'];
 			$this->generateStyle( $selector, $selector_divi, $targets, 'background', $settings['gs_tm_info_background'] );
 
-			$targets = [' .single-member-div .gs_coach_info > svg path', ' .single-member-div .single-mem-desc-social svg path'];
+			$targets = [' .single-coach-div .gs_coach_info > svg path', ' .single-coach-div .single-mem-desc-social svg path'];
 			$this->generateStyle( $selector, '', $targets, 'fill', $settings['gs_tm_info_background'] );
 		}
 
@@ -89,44 +89,44 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		}
 		
 		if ( !empty($settings['gs_tm_mname_background']) ) {
-			$targets = ['.gs_tm_theme8 .gs-member-name', '.gs_tm_theme9 .gs-member-name', '.gs_tm_theme11 .gs-member-name', '.gs_tm_theme12 .gs-member-name', '.gs_tm_theme19 .gs-member-name', ' .gscoach-panel-title'];
+			$targets = ['.gs_tm_theme8 .gs-coach-name', '.gs_tm_theme9 .gs-coach-name', '.gs_tm_theme11 .gs-coach-name', '.gs_tm_theme12 .gs-coach-name', '.gs_tm_theme19 .gs-coach-name', ' .gscoach-panel-title'];
 			$this->generateStyle( $selector, $selector_divi, $targets, 'background-color', $settings['gs_tm_mname_background'] );
 		}
 
 		if ( !empty($settings['description_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-desc', 'color', $settings['description_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-coach-div .gs_coach_info .gs-coach-desc', 'color', $settings['description_color'] );
 		}
 
 		if ( !empty($settings['description_link_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-desc a', 'color', $settings['description_link_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-coach-div .gs_coach_info .gs-coach-desc a', 'color', $settings['description_link_color'] );
 		}
 
 		if ( !empty($settings['info_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-contact', 'color', $settings['info_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-coach-div .gs_coach_info .gs-coach-contact', 'color', $settings['info_color'] );
 		}
 
 		if ( !empty($settings['info_icon_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member-div .gs_coach_info .gs-member-contact i', 'color', $settings['info_icon_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-coach-div .gs_coach_info .gs-coach-contact i', 'color', $settings['info_icon_color'] );
 		}
 
 		if ( !empty($settings['gs_tm_hover_icon_background']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .single-member .gs_coach_overlay i', 'background-color', $settings['gs_tm_hover_icon_background'] );
+			$this->generateStyle( $selector, $selector_divi, ' .single-coach .gs_coach_overlay i', 'background-color', $settings['gs_tm_hover_icon_background'] );
 		}
 
 		if ( !empty($settings['gs_tm_role_fz']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'font-size', $settings['gs_tm_role_fz'] . 'px' );
+			$this->generateStyle( $selector, $selector_divi, ' .gs-coach-desig', 'font-size', $settings['gs_tm_role_fz'] . 'px' );
 		}
 
 		if ( !empty($settings['gs_tm_role_fntw']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'font-weight', $settings['gs_tm_role_fntw'] );
+			$this->generateStyle( $selector, $selector_divi, ' .gs-coach-desig', 'font-weight', $settings['gs_tm_role_fntw'] );
 		}
 
 		if ( !empty($settings['gs_tm_role_fnstyl']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'font-style', $settings['gs_tm_role_fnstyl'] );
+			$this->generateStyle( $selector, $selector_divi, ' .gs-coach-desig', 'font-style', $settings['gs_tm_role_fnstyl'] );
 		}
 
 		if ( !empty($settings['gs_tm_role_color']) ) {
-			$this->generateStyle( $selector, $selector_divi, ' .gs-member-desig', 'color', $settings['gs_tm_role_color'] );
+			$this->generateStyle( $selector, $selector_divi, ' .gs-coach-desig', 'color', $settings['gs_tm_role_color'] );
 		}
 		
 		if ( !empty($settings['gs_slider_nav_color']) ) {
@@ -221,7 +221,7 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 
 		$theme 						= $settings['gs_coach_theme'];
 		$link_type 					= $settings['gs_coach_link_type'];
-		$member_name_linked 		= $settings['gs_coach_name_is_linked'];
+		$coach_name_linked 		= $settings['gs_coach_name_is_linked'];
 		$enable_scroll_animation 	= $settings['enable_scroll_animation'];
 
 		$carousel_enabled 	= $settings['carousel_enabled'];
@@ -244,7 +244,7 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 			$_filter_enabled = true;
 		}
 
-		if ( $member_name_linked == 'on' ) {
+		if ( $coach_name_linked == 'on' ) {
 			$_drawer_enabled = ( ! $_carousel_enabled && ! $_filter_enabled && $link_type == 'drawer' );
 			$_panel_enabled = $link_type == 'panel';
 		}
@@ -263,7 +263,7 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		}
 
 		if ( $link_type == 'default' ) $link_type = 'single_page';
-		if ( $member_name_linked != 'on' ) $link_type = '';
+		if ( $coach_name_linked != 'on' ) $link_type = '';
 
 		$_popup_enabled = $link_type == 'popup';
 

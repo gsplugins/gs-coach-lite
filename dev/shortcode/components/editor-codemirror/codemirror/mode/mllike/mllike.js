@@ -251,7 +251,7 @@ CodeMirror.defineMIME('text/x-fsharp', {
     'lazy': 'keyword',
     'let!': 'keyword',
     'match': 'keyword',
-    'member': 'keyword',
+    'coach': 'keyword',
     'module': 'keyword',
     'mutable': 'keyword',
     'namespace': 'keyword',

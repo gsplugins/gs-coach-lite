@@ -22,8 +22,8 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
     
             <!-- Coach Image -->
             <div class="gs_coach_image__wrapper">
-                <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
-                <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
+                <?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+                <?php do_action( 'gs_coach_after_coach_thumbnail_popup' ); ?>
             </div>
     
         </div>
@@ -36,13 +36,13 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
                     <div class="gs-col-md-8">
 
-                        <!-- Single member name -->
+                        <!-- Single coach name -->
                         <h2 class="gs-sin-mem-name" itemprop="name"><?php the_title(); ?></h2>
-                        <?php do_action( 'gs_coach_after_member_name' ); ?>
+                        <?php do_action( 'gs_coach_after_coach_name' ); ?>
                         
-                        <!-- Single member designation -->
-                        <p class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
-                        <?php do_action( 'gs_coach_after_member_designation' ); ?>
+                        <!-- Single coach designation -->
+                        <p class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
+                        <?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
                     </div>
 
@@ -66,8 +66,8 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
         
                 <!-- Description -->
-                <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-                <?php do_action( 'gs_coach_after_member_details' ); ?>
+                <div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+                <?php do_action( 'gs_coach_after_coach_details' ); ?>
     
             </div>
     

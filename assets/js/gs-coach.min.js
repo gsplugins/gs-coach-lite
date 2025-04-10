@@ -210,8 +210,8 @@ jQuery(function($) {
 
 				searchString = searchString.toLocaleLowerCase().replaceAll('-', ' ').replaceAll('_', ' ');
 
-				if ( $item.find('.gs-member-name').length ) {
-					searchFilter = $item.find('.gs-member-name').text().toLocaleLowerCase().match( searchString );
+				if ( $item.find('.gs-coach-name').length ) {
+					searchFilter = $item.find('.gs-coach-name').text().toLocaleLowerCase().match( searchString );
 				}
 
 				if ( !searchFilter && this.wrapperOptions.search_through_all_fields == 'on' ) {
@@ -232,8 +232,8 @@ jQuery(function($) {
 			var companySearchFilter = true;
 			if ( companySearchString ) {
 				companySearchString = companySearchString.toLocaleLowerCase();
-				if ( $item.find('.gs-coach-member--company').length ) {
-					companySearchFilter = $item.find('.gs-coach-member--company').text().toLocaleLowerCase().match( companySearchString );
+				if ( $item.find('.gs-coach-coach--company').length ) {
+					companySearchFilter = $item.find('.gs-coach-coach--company').text().toLocaleLowerCase().match( companySearchString );
 				}
 			}
 			
@@ -242,8 +242,8 @@ jQuery(function($) {
 			var zipSearchFilter = true;
 			if ( zipSearchString ) {
 				zipSearchString = zipSearchString.toLocaleLowerCase();
-				if ( $item.find('.gs-coach-member--zip-codes').length ) {
-					zipSearchFilter = $item.find('.gs-coach-member--zip-codes').text().toLocaleLowerCase().match( zipSearchString );
+				if ( $item.find('.gs-coach-coach--zip-codes').length ) {
+					zipSearchFilter = $item.find('.gs-coach-coach--zip-codes').text().toLocaleLowerCase().match( zipSearchString );
 				}
 			}
 			
@@ -252,8 +252,8 @@ jQuery(function($) {
 			var tagSearchFilter = true;
 			if ( tagSearchString ) {
 				tagSearchString = tagSearchString.toLocaleLowerCase();
-				if ( $item.find('.gs-coach-member--tags').length ) {
-					tagSearchFilter = $item.find('.gs-coach-member--tags').text().toLocaleLowerCase().match( tagSearchString );
+				if ( $item.find('.gs-coach-coach--tags').length ) {
+					tagSearchFilter = $item.find('.gs-coach-coach--tags').text().toLocaleLowerCase().match( tagSearchString );
 				}
 			}
 	
@@ -585,9 +585,9 @@ jQuery(function($) {
 	}
 
 	// Popup
-	function do_popup( $single_member_pop, $gs_coach_area ) {
+	function do_popup( $single_coach_pop, $gs_coach_area ) {
 
-		if ( ! $single_member_pop.length ) return;
+		if ( ! $single_coach_pop.length ) return;
 
 		$gs_coach_area.each(function() {
 
@@ -597,7 +597,7 @@ jQuery(function($) {
 				gallery: {
 					enabled:true
 				},
-				delegate: '.single-member-pop a.gs_coach_pop:visible',
+				delegate: '.single-coach-pop a.gs_coach_pop:visible',
 
 				closeMarkup: '<button title="%title%" type="button" class="mfp-close"><svg xmlns="http://www.w3.org/2000/svg" width="22.62" height="22.62" viewBox="0 0 22.62 22.62"><path fill="#c1c1c7" d="M1474.1,7297.69l21.21,21.21-1.41,1.41-21.21-21.21Zm-1.41,21.21,21.21-21.21,1.41,1.41-21.21,21.21Z" transform="translate(-1472.69 -7297.69)"/></svg></button>',
 
@@ -685,7 +685,7 @@ jQuery(function($) {
 	}
 
 	// Auto Height Fixing
-	function fix_members_height( $gs_themes ) {
+	function fix_coachs_height( $gs_themes ) {
 
 		$('.gs_coach_area .gs_coach_image__wrapper img').removeAttr('style');
 
@@ -705,7 +705,7 @@ jQuery(function($) {
 	
 				var $elements = $(this).removeClass('gs-coach--fixed-height');
 	
-				var $elements = $(this).find('.single-member').css({
+				var $elements = $(this).find('.single-coach').css({
 					'min-height': '0',
 					'max-height': 'none',
 					'height': 'auto'
@@ -772,7 +772,7 @@ jQuery(function($) {
 
 		if ( ! $staff_category.length ) return;
 
-		$staff_category.delegate(".staff-member", "mouseover mouseout", function(e) {
+		$staff_category.delegate(".staff-coach", "mouseover mouseout", function(e) {
 			
 			if ( e.type == 'mouseover' ) {
 				$(this).not(this).dequeue().animate({opacity: "0.4"}, 600);
@@ -857,7 +857,7 @@ jQuery(function($) {
 	
 		do_filter( $('.gs-all-items-filter-wrapper', $widget_box) );
 	
-		do_popup( $('.single-member-pop', $widget_box ), $widget_box );
+		do_popup( $('.single-coach-pop', $widget_box ), $widget_box );
 	
 		fix_tooltip( $('.staff-meta', $widget_box) );
 	
@@ -865,7 +865,7 @@ jQuery(function($) {
 	
 		do_panel_slide( $('.gs_coach_panelslide_link', $widget_box) );
 	
-		fix_members_height( $widget_box );
+		fix_coachs_height( $widget_box );
 
 		update_blob_effects_anims( $widget_box );
 
@@ -904,18 +904,18 @@ jQuery(function($) {
 
 	// Init on Load
 	$(window).on('load', function() {
-		fix_members_height();
+		fix_coachs_height();
 		gs_coach_init();
 	});
 
 	// Fix sizes on resize
 	$(window).on( 'resize', debounce(function() {
-		fix_members_height();
+		fix_coachs_height();
 	}) );
 
 	// Fix with other plugins
 	$('body').on( 'click', function() {
-		fix_members_height();
+		fix_coachs_height();
 		gs_coach_init();
 		jQuery(window).trigger('resize');
 	});

@@ -28,44 +28,44 @@ global $gs_coach_loop;
 
 			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
-			$classes = ['single-member-div', 'gs-single-member', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
+			$classes = ['single-coach-div', 'gs-single-coach', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 
-			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
+			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-coach-pop';
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 
 			?>
 
-			<!-- Start single member -->
+			<!-- Start single coach -->
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 
-				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
+				<!-- Sehema & Single coach wrapper -->
+				<div class="single-coach--wrapper" itemscope itemtype="http://schema.org/Organization">
 
-					<!-- Single member thumbnail and more -->
-					<div class="single-member cbp-so-side cbp-so-side-left">
+					<!-- Single coach thumbnail and more -->
+					<div class="single-coach cbp-so-side cbp-so-side-left">
 
-						<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+						<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 						
 						<!-- Coach Image -->
 						<div class="gs_coach_image__wrapper">
-							<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+							<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 						</div>
-						<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+						<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 						
 					</div>
 
                     <div class="gs-coach-bottom" >
 
-                        <!-- Single member name -->
+                        <!-- Single coach name -->
                         <?php if ( 'on' ==  $gs_coach_name ): ?>
-                            <?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
-                            <?php do_action( 'gs_coach_after_member_name' ); ?>
+                            <?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+                            <?php do_action( 'gs_coach_after_coach_name' ); ?>
                         <?php endif; ?>
                         
-                        <!-- Single member designation -->
+                        <!-- Single coach designation -->
                         <?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
-                            <div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-                            <?php do_action( 'gs_coach_after_member_designation' ); ?>
+                            <div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+                            <?php do_action( 'gs_coach_after_coach_designation' ); ?>
                         <?php endif; ?>
 
                     </div>
@@ -85,8 +85,8 @@ global $gs_coach_loop;
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		<?php endif; ?>
 

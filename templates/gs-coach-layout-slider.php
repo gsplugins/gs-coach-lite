@@ -44,26 +44,26 @@ global $gs_coach_loop;
 
 					$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
-					$classes = ['single-member--wrapper single-member-div'];
+					$classes = ['single-coach--wrapper single-coach-div'];
 		
-					if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
+					if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-coach-pop';
 
 					?>
 					
 					<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" itemscope itemtype="http://schema.org/Organization">
 
-						<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+						<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 
-						<div class="single-member">
+						<div class="single-coach">
 
 							<!-- Ribbon -->
 							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 
 							<!-- Coach Image -->
 							<div class="gs_coach_image__wrapper">
-								<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+								<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 							</div>
-							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+							<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 
 							<div class="single-mem-desc-social flex-align-justify-center">
 
@@ -73,12 +73,12 @@ global $gs_coach_loop;
 									<?php if ( 'on' ==  $gs_coach_details ) : ?>
 
 										<?php if ( 'on' === $gs_desc_allow_html ) : ?>
-											<div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+											<div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
 										<?php else : ?>
-											<p class="gs-member-desc" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
+											<p class="gs-coach-desc" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
 										<?php endif; ?>
 										
-										<?php do_action( 'gs_coach_after_member_details' ); ?>
+										<?php do_action( 'gs_coach_after_coach_details' ); ?>
 									<?php endif; ?>
 	
 									<!-- Social Links -->
@@ -90,19 +90,19 @@ global $gs_coach_loop;
 
 						</div>
 
-						<!-- Single member name -->
+						<!-- Single coach name -->
 						<?php if ( 'on' ==  $gs_coach_name ): ?>
-							<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
-							<?php do_action( 'gs_coach_after_member_name' ); ?>
+							<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+							<?php do_action( 'gs_coach_after_coach_name' ); ?>
 						<?php endif; ?>
 
-						<!-- Single member designation -->
+						<!-- Single coach designation -->
 						<?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
-							<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-							<?php do_action( 'gs_coach_after_member_designation' ); ?>
+							<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+							<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 						<?php endif; ?>
 
-						<?php do_action( 'gs_coach_after_member_content' ); ?>
+						<?php do_action( 'gs_coach_after_coach_content' ); ?>
 
 						<!-- Popup -->
 						<?php include Template_Loader::locate_template( 'popups/gs-coach-layout-popup.php' ); ?>
@@ -117,8 +117,8 @@ global $gs_coach_loop;
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		<?php endif; ?>
 

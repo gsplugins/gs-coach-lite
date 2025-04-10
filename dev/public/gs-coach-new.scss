@@ -38,13 +38,13 @@ body {
         margin-right: -16px;
     }
 
-    .single-member-div {
+    .single-coach-div {
 
-        .single-member {
+        .single-coach {
             position: relative;
         }
 
-        .member-relative-div {
+        .coach-relative-div {
             position: relative;
         }
 
@@ -56,14 +56,14 @@ body {
             width: 100%;
         }
 
-        .single-member .gs_coach_image__wrapper:after {
+        .single-coach .gs_coach_image__wrapper:after {
             content: "";
             width: 100%;
             display: block;
             padding-bottom: 100%;
         }
 
-        .single-member .gs_coach_image__wrapper > a {
+        .single-coach .gs_coach_image__wrapper > a {
             height: 100%;
             left: 0;
             position: absolute !important;
@@ -71,7 +71,7 @@ body {
             width: 100%;
         }
 
-        .single-member .gs_coach_image__wrapper img {
+        .single-coach .gs_coach_image__wrapper img {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -91,11 +91,11 @@ body {
             transition: .35s;
         }
 
-        .single-member:hover .gs_coach_image__overlay {
+        .single-coach:hover .gs_coach_image__overlay {
             opacity: 1;
         }
 
-        /* Gs Member Info */
+        /* Gs coach Info */
 
         .gs_coach_info {
             background-color: #fff;
@@ -103,13 +103,13 @@ body {
             text-align: center;
         }
 
-        .gs_coach_info .gs-member-name {
+        .gs_coach_info .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-family: 'Poppins', sans-serif;
         }
 
-        .gs-member-name {
+        .gs-coach-name {
             transition: all .15s ease;
 
             a {
@@ -123,18 +123,18 @@ body {
             }
         }
 
-        .gs-member-desig,
-        .gs-member-desc {
+        .gs-coach-desig,
+        .gs-coach-desc {
             transition: all .15s ease;
         }
 
-        .gs_coach_info .gs-member-desig {
+        .gs_coach_info .gs-coach-desig {
             color: #808080;
             font-size: 16px;
             font-family: 'Rubik', sans-serif;
         }
 
-        .gs-member-contact i {
+        .gs-coach-contact i {
             margin-right: 3px;
         }
 
@@ -164,42 +164,42 @@ body {
 
     }
 
-    .gst-social-zoom-effect .single-member .gs-coach-social li {
+    .gst-social-zoom-effect .single-coach .gs-coach-social li {
         transform: scale(0);
         opacity: 0;
     }
 
-    .gst-social-zoom-effect .single-member:hover .gs-coach-social li {
+    .gst-social-zoom-effect .single-coach:hover .gs-coach-social li {
         opacity: 1;
         transform: scale(1);
         transition: .35s ease;
     }
 
-    .gst-social-delayed .single-member:hover .gs-coach-social li:nth-child(2) {
+    .gst-social-delayed .single-coach:hover .gs-coach-social li:nth-child(2) {
         transition-delay: .1s !important;
     }
 
-    .gst-social-delayed .single-member:hover .gs-coach-social li:nth-child(3) {
+    .gst-social-delayed .single-coach:hover .gs-coach-social li:nth-child(3) {
         transition-delay: .14s !important;
     }
 
-    .gst-social-delayed .single-member:hover .gs-coach-social li:nth-child(4) {
+    .gst-social-delayed .single-coach:hover .gs-coach-social li:nth-child(4) {
         transition-delay: .18s !important;
     }
 
-    .gst-social-delayed .single-member:hover .gs-coach-social li:nth-child(5) {
+    .gst-social-delayed .single-coach:hover .gs-coach-social li:nth-child(5) {
         transition-delay: .22s !important;
     }
 
-    .gst-social-delayed .single-member:hover .gs-coach-social li:nth-child(6) {
+    .gst-social-delayed .single-coach:hover .gs-coach-social li:nth-child(6) {
         transition-delay: .26s !important;
     }
 
-    .gst-social-delayed .single-member:hover .gs-coach-social li:nth-child(7) {
+    .gst-social-delayed .single-coach:hover .gs-coach-social li:nth-child(7) {
         transition-delay: .3s !important;
     }
 
-    .gst-social-delayed .single-member:hover .gs-coach-social li:nth-child(8) {
+    .gst-social-delayed .single-coach:hover .gs-coach-social li:nth-child(8) {
         transition-delay: .34s !important;
     }
 
@@ -209,7 +209,7 @@ body {
     }
 
     .owl-stage-outer .owl-stage .owl-item {
-        .single-member-div {
+        .single-coach-div {
             width: 100% !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -235,8 +235,8 @@ body {
 
 }
 
-.gs_coach_area.gs_tm_theme22 .gs-member-name a,
-.gs_coach_area.gs_tm_theme24 .gs-member-name a {
+.gs_coach_area.gs_tm_theme22 .gs-coach-name a,
+.gs_coach_area.gs_tm_theme24 .gs-coach-name a {
     font-size: 18px;
     font-weight: 700;
 }
@@ -306,9 +306,9 @@ body {
     }
 }
 
-.gs-grid-style-one .single-member-div {
+.gs-grid-style-one .single-coach-div {
 
-    .single-member {
+    .single-coach {
         background: none !important;
     }
 
@@ -356,12 +356,12 @@ body {
             margin-top: -5px;
         }
 
-        .gs-member-name {
+        .gs-coach-name {
             font-weight: 500;
             line-height: 1;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-top: 10px;
         }
 
@@ -376,16 +376,16 @@ body {
         transition: .5s;
     }
 
-    .single-member:hover .gs_coach_image__overlay {
+    .single-coach:hover .gs_coach_image__overlay {
         transform: scale(1);
         opacity: 1;
     }
 
-    .single-member:hover .gs-coach-social {
+    .single-coach:hover .gs-coach-social {
         opacity: 1;
     }
 
-    .single-member:hover .gs-coach-social li a {
+    .single-coach:hover .gs-coach-social li a {
         i, svg {
             color: #111A2E;
         }
@@ -393,7 +393,7 @@ body {
 
 }
 
-.gs_coach_area.gs-grid-style-one .single-member-div {
+.gs_coach_area.gs-grid-style-one .single-coach-div {
 
     padding-left: 45px !important;
     padding-right: 45px !important;
@@ -437,9 +437,9 @@ body {
 
 /* gs-grid-style-two
 ========================*/
-.gs-grid-style-two .single-member-div {
+.gs-grid-style-two .single-coach-div {
 
-    .single-member {
+    .single-coach {
         box-shadow: 0px 20px 50px 0px rgb(12 21 41 / 13%);
         padding: 32px 30px;
         background: #fff;
@@ -468,11 +468,11 @@ body {
         padding: 22px 0px 10px;
         background: none !important;
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-top: 4px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             font-size: 16px;
             font-family: 'Rubik', sans-serif;
             color: #808080;
@@ -488,7 +488,7 @@ body {
         }
     }
 
-    .gs_coach_info .gs-member-name {
+    .gs_coach_info .gs-coach-name {
         color: #030d1e;
         font-size: 24px;
         font-family: Playfair Display;
@@ -518,18 +518,18 @@ body {
         }
     }
 
-    .gs-member-contact {
+    .gs-coach-contact {
         color: #182338;
         font-family: Poppins;
         font-size: 18px;
         font-weight: 600;
     }
 
-    .gs-member-contact i {
+    .gs-coach-contact i {
         color: #7948FF;
     }
 
-    .single-member:hover {
+    .single-coach:hover {
         .gs_coach_image__overlay {
             opacity: 1;
         }
@@ -541,7 +541,7 @@ body {
     }
 }
 
-.gs_coach_area.gs-grid-style-two .single-member-div {
+.gs_coach_area.gs-grid-style-two .single-coach-div {
 
     padding-left: 16px !important;
     padding-right: 16px !important;
@@ -568,9 +568,9 @@ body {
 /* gs-coach-Three
 ========================*/
 
-.gs-grid-style-three .single-member-div {
+.gs-grid-style-three .single-coach-div {
 
-    .single-member {
+    .single-coach {
         // box-shadow: 0px 20px 50px 0px rgb(12 21 41 / 13%);
         background: #f5f8f9;
         border-radius: 5px;
@@ -588,7 +588,7 @@ body {
         text-align: left;
         padding: 30px;
 
-        .gs-member-name {
+        .gs-coach-name {
             font-family: 'Spartan', sans-serif;
             font-weight: 600;
             font-size: 20px;
@@ -649,7 +649,7 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         .gs_coach_image__overlay {
             opacity: 1;
@@ -674,7 +674,7 @@ body {
 
 }
 
-.gs_coach_area.gs-grid-style-three .single-member-div {
+.gs_coach_area.gs-grid-style-three .single-coach-div {
 
     padding-left: 14px !important;
     padding-right: 14px !important;
@@ -702,9 +702,9 @@ body {
 /* gs-grid-style-four
 ========================*/
 
-.gs-grid-style-four .single-member-div {
+.gs-grid-style-four .single-coach-div {
 
-    .single-member {
+    .single-coach {
         padding-bottom: 115px;
         background: none !important;
     }
@@ -735,7 +735,7 @@ body {
         border-radius: 0 0 8px 8px;
         min-height: 115px;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 22px;
             text-transform: uppercase;
@@ -744,7 +744,7 @@ body {
             margin-top: 2px;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Work Sans', sans-serif;
             margin-top: 2px;
         }
@@ -784,7 +784,7 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         .gs_coach_image__overlay {
             opacity: 1;
@@ -801,7 +801,7 @@ body {
 
 }
 
-.gs_coach_area.gs-grid-style-four .single-member-div {
+.gs_coach_area.gs-grid-style-four .single-coach-div {
 
     padding-left: 16px !important;
     padding-right: 16px !important;
@@ -816,9 +816,9 @@ body {
 
 /* gs-coach-five
 ========================*/
-.gs-grid-style-five .single-member-div {
+.gs-grid-style-five .single-coach-div {
 
-    .single-member {
+    .single-coach {
         background: none !important;
     }
 
@@ -828,7 +828,7 @@ body {
         opacity: 0;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         position: relative;
     }
 
@@ -851,14 +851,14 @@ body {
         box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
         min-height: 83px;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 22px;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             margin-bottom: 14px;
             margin-top: 4px;
@@ -886,7 +886,7 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         padding-bottom: 0;
 
@@ -904,7 +904,7 @@ body {
 
 }
 
-.gs_coach_area.gs-grid-style-five .single-member-div {
+.gs_coach_area.gs-grid-style-five .single-coach-div {
 
     padding-left: 16px !important;
     padding-right: 16px !important;
@@ -931,13 +931,13 @@ body {
 
 /* gs-coach-six
 ========================*/
-.gs-grid-style-six .single-member-div {
+.gs-grid-style-six .single-coach-div {
 
-    .single-member {
+    .single-coach {
         background: none !important;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         position: relative;
     }
 
@@ -969,14 +969,14 @@ body {
         z-index: 99;
         line-height: 1.5;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #7a7a7a;
             font-size: 18px;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             color: #7a7a7a;
             font-family: 'Nunito', sans-serif;
             margin-top: 4px;
@@ -1004,7 +1004,7 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         .gs_coach_info {
             opacity: 1;
@@ -1023,7 +1023,7 @@ body {
 
 .gs_coach_area.gs-grid-style-six {
 
-    .single-member-div {
+    .single-coach-div {
         padding-left: 10px !important;
         padding-right: 10px !important;
         margin-bottom: 20px;
@@ -1059,13 +1059,13 @@ body {
     }
 }
 
-.gs-coach-circle-one .single-member-div {
+.gs-coach-circle-one .single-coach-div {
 
-    .single-member {
+    .single-coach {
         background: none !important;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         height: 100%;
     }
 
@@ -1089,13 +1089,13 @@ body {
         background: none !important;
         padding: 20px 0 0 0;
 
-        .gs-member-name {
+        .gs-coach-name {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             margin-bottom: 4px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             margin-top: 18px;
             margin-bottom: 20px;
@@ -1115,24 +1115,24 @@ body {
         text-align: center;
     }
 
-    .single-member:hover .gs_coach_image__overlay {
+    .single-coach:hover .gs_coach_image__overlay {
         opacity: 1;
     }
 
-    .single-member:hover .gs_coach_image__wrapper img {
+    .single-coach:hover .gs_coach_image__wrapper img {
         transform: scale(1.2);
     }
 
 }
 
-.gs_coach_area.gs-coach-circle-one .single-member-div {
+.gs_coach_area.gs-coach-circle-one .single-coach-div {
 
     padding-left: 53px !important;
     padding-right: 53px !important;
     margin-bottom: 64px;
 
     .gs_coach_info {
-        .gs-member-desc {
+        .gs-coach-desc {
             font-family: 'Rubik', sans-serif;
             font-size: 16px;
         }
@@ -1188,9 +1188,9 @@ body {
     }
 }
 
-.gs-coach-circle-two .single-member-div {
+.gs-coach-circle-two .single-coach-div {
 
-    .single-member {
+    .single-coach {
         background: none !important;
         overflow: hidden;
     }
@@ -1210,24 +1210,24 @@ body {
         text-align: center;
         padding: 24px 0;
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #182338;
             font-weight: 600;
             font-family: Poppins;
         }
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #182338;
             font-weight: 600;
             font-family: Poppins;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-top: 6px;
             margin-bottom: 6px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             font-family: 'Rubik', sans-serif;
             color: #808080;
             font-size: 18px;
@@ -1243,7 +1243,7 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #182338;
             font-weight: 600;
             font-family: Poppins;
@@ -1265,7 +1265,7 @@ body {
         opacity: 0;
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         .gs_coach_image__overlay {
             opacity: 1;
@@ -1280,7 +1280,7 @@ body {
 
 }
 
-.gs_coach_area.gs-coach-circle-two .single-member-div {
+.gs_coach_area.gs-coach-circle-two .single-coach-div {
 
     padding-left: 57px !important;
     padding-right: 57px !important;
@@ -1326,16 +1326,16 @@ body {
     }
 }
 
-.gs-coach-circle-three .single-member-div {
+.gs-coach-circle-three .single-coach-div {
 
     padding-left: 53px !important;
     padding-right: 53px !important;
 
-    .single-member {
+    .single-coach {
         background: none !important;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         height: 100%;
     }
 
@@ -1355,19 +1355,19 @@ body {
         text-align: center;
         padding: 23px 32px !important;
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #182338;
             font-weight: 600;
             font-family: Poppins;
         }
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #182338;
             font-weight: 600;
             font-family: 'Barlow', sans-serif;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Rubik', sans-serif;
             margin-top: 3px;
         }
@@ -1401,17 +1401,17 @@ body {
         }
     }
 
-    .single-member:hover .gs_coach_image__overlay {
+    .single-coach:hover .gs_coach_image__overlay {
         opacity: 1;
     }
 
-    .single-member:hover .single-mem-desc-social {
+    .single-coach:hover .single-mem-desc-social {
         bottom: 3%;
     }
 
 }
 
-.gs_coach_area.gs-coach-circle-three .single-member-div {
+.gs_coach_area.gs-coach-circle-three .single-coach-div {
 
     .gs-coach-social li a {
         border: 1px solid #f3f3f3 !important;
@@ -1455,7 +1455,7 @@ body {
         margin-left: -15px;
         margin-right: -15px;
 
-        .single-member-div {
+        .single-coach-div {
             padding-left: 15px !important;
             padding-right: 15px !important;
             margin-bottom: 20px;
@@ -1463,9 +1463,9 @@ body {
     }
 }
 
-.gs-coach-circle-four .single-member-div {
+.gs-coach-circle-four .single-coach-div {
 
-    .single-member {
+    .single-coach {
         background: none !important;
         overflow: hidden;
     }
@@ -1482,7 +1482,7 @@ body {
         opacity: 0;
     }
 
-    .single-member--inner {
+    .single-coach--inner {
         position: relative;
         padding: 46px;
 
@@ -1500,18 +1500,18 @@ body {
         text-align: center;
         padding: 32px 0 32px 0;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #182338;
             font-weight: 600;
             font-family: 'Jost', sans-serif;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Rubik', sans-serif;
             margin-top: 4px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             font-family: "Rubik", sans-serif;
             color: #808080;
             font-size: 16px;
@@ -1527,7 +1527,7 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #182338;
             font-weight: 600;
             font-family: 'Jost', sans-serif;
@@ -1547,7 +1547,7 @@ body {
         transform: translate(-50%, -50%);
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         .gs_coach_image__overlay {
             opacity: 1;
@@ -1557,7 +1557,7 @@ body {
 
 }
 
-.gs_coach_area.gs-coach-circle-four .single-member-div {
+.gs_coach_area.gs-coach-circle-four .single-coach-div {
 
     .gs-coach-social {
         li {
@@ -1599,7 +1599,7 @@ body {
     margin-right: -53px !important;
 }
 
-.gs-coach-circle-five .single-member-div {
+.gs-coach-circle-five .single-coach-div {
     padding-left: 53px !important;
     padding-right: 53px !important;
 
@@ -1616,11 +1616,11 @@ body {
         border: 7px solid rgb(0 0 0 / 7%);
     }
 
-    .single-member {
+    .single-coach {
         background: none !important;
     }
 
-    .single-member:before {
+    .single-coach:before {
         position: absolute;
         content: "";
         width: 4px;
@@ -1652,25 +1652,25 @@ body {
         text-align: center;
         padding: 24px 32px;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-weight: 700;
             font-family: 'DM Sans', sans-serif;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: "Rubik", sans-serif;
             margin-top: 4px;
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #182338;
             font-weight: 600;
             font-family: 'Poppins', sans-serif;
         }
     }
 
-    .gs-member-desc {
+    .gs-coach-desc {
         font-family: 'Rubik', sans-serif;
         color: #808080;
         font-size: 16px;
@@ -1698,7 +1698,7 @@ body {
         transition: .5s;
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         .single-mem-desc-social {
             opacity: 1;
@@ -1712,7 +1712,7 @@ body {
 
 }
 
-.gs_coach_area.gs-coach-circle-five .single-member-div {
+.gs_coach_area.gs-coach-circle-five .single-coach-div {
 
     .gs-coach-social {
 
@@ -1769,14 +1769,14 @@ body {
     }
 }
 
-.gs-coach-horizontal-one .single-member-div {
+.gs-coach-horizontal-one .single-coach-div {
 
     padding-left: 20px !important;
     padding-right: 20px !important;
     min-width: 50%;
     margin-bottom: 40px;
 
-    .single-member {
+    .single-coach {
         position: relative;
         display: flex;
         align-items: center;
@@ -1790,7 +1790,7 @@ body {
         margin-right: -14%;
     }
 
-    .single-member .gs_coach_image__wrapper img {
+    .single-coach .gs_coach_image__wrapper img {
         transform: scale(1);
     }
 
@@ -1817,30 +1817,30 @@ body {
 
     }
 
-    .single-member:hover .gs_coach_image__wrapper img {
+    .single-coach:hover .gs_coach_image__wrapper img {
         transform: scale(1.2);
     }
 
 }
 
-.gs_coach_area.gs-coach-horizontal-one .single-member-div {
+.gs_coach_area.gs-coach-horizontal-one .single-coach-div {
 
-    .single-member .gs_coach_image__wrapper:after {
+    .single-coach .gs_coach_image__wrapper:after {
         padding-bottom: 130%;
     }
 
-    .gs-member-name {
+    .gs-coach-name {
         font-weight: 600;
     }
 
-    .gs-member-desig {
+    .gs-coach-desig {
         font-family: 'Nunito', sans-serif;
         font-size: 16px;
         color: #808080;
         margin-top: 5px;
     }
 
-    .gs-member-desc {
+    .gs-coach-desc {
         font-family: "Nunito", sans-serif;
         font-size: 16px;
         color: #959595;
@@ -1894,13 +1894,13 @@ body {
     }
 }
 
-.gs-coach-horizontal-two .single-member-div {
+.gs-coach-horizontal-two .single-coach-div {
     margin-bottom: 30px;
     min-width: 50%;
     padding-left: 15px !important;
     padding-right: 15px !important;
 
-    .single-member {
+    .single-coach {
         display: flex;
         align-items: center;
         padding: 37px 40px;
@@ -1917,11 +1917,11 @@ body {
         height: 170px;
     }
 
-    .single-member .gs_coach_image__wrapper img {
+    .single-coach .gs_coach_image__wrapper img {
         transform: scale(1.2);
     }
 
-    .single-member:hover .gs_coach_image__wrapper img {
+    .single-coach:hover .gs_coach_image__wrapper img {
         transform: scale(1);
     }
 
@@ -1933,19 +1933,19 @@ body {
         width: 100%;
         background: none !important;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-weight: 700;
             font-family: 'DM Sans', sans-serif;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             padding-top: 4px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             font-family: "Nunito", sans-serif;
             margin-bottom: 15px;
             margin-top: 13px;
@@ -1959,14 +1959,14 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #030d1e;
             font-size: 16px;
             font-weight: 600;
             font-family: 'DM Sans', sans-serif;
         }
 
-        .gs-member-contact i {
+        .gs-coach-contact i {
             color: #d2d2d2;
             font-size: 16px;
             font-weight: 700;
@@ -1995,18 +1995,18 @@ body {
     }
 }
 
-.gs-coach-horizontal-three .single-member-div {
+.gs-coach-horizontal-three .single-coach-div {
 
     min-width: 50%;
     margin-bottom: 30px;
     padding-left: 15px !important;
     padding-right: 15px !important;
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         height: 100%;
     }
 
-    .single-member {
+    .single-coach {
         border-radius: 10px;
         transition: 0.5s ease;
         position: relative;
@@ -2040,18 +2040,18 @@ body {
         height: 100%;
         transition: all .25s ease;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             margin-top: 5px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             font-family: 'Nunito', sans-serif;
             color: #808080;
             line-height: 1.625;
@@ -2068,7 +2068,7 @@ body {
             }
         }
 
-        .gs-member-address {
+        .gs-coach-address {
             color: #030d1e;
             font-size: 16px;
             font-family: 'Poppins', sans-serif;
@@ -2095,7 +2095,7 @@ body {
         transform: scale(1.2);
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
 
@@ -2123,19 +2123,19 @@ body {
     }
 }
 
-.gs-coach-horizontal-four .single-member-div {
+.gs-coach-horizontal-four .single-coach-div {
 
     padding-left: 20px !important;
     padding-right: 20px !important;
     min-width: 50%;
     margin-bottom: 40px;
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         position: relative;
         padding-left: 75px;
     }
 
-    .single-member {
+    .single-coach {
         padding: 41px 32px 46px 105px;
         border-radius: 28px;
         background: rgb(252, 165, 100);
@@ -2168,20 +2168,20 @@ body {
         text-align: left;
         background: none !important;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #fff;
             font-size: 24px;
             font-weight: 700;
             font-family: 'DM Sans', sans-serif;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             color: #fff;
             font-family: 'Nunito', sans-serif;
             margin-top: 5px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #fff;
             font-family: 'Nunito', sans-serif;
             line-height: 1.5;
@@ -2199,13 +2199,13 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #fff;
             font-size: 16px;
             font-weight: 700;
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #fff;
             font-size: 16px;
             font-weight: 700;
@@ -2243,7 +2243,7 @@ body {
     }
 }
 
-.gs_coach_area.gs-coach-horizontal-four .single-member-div {
+.gs_coach_area.gs-coach-horizontal-four .single-coach-div {
 
     .gs-coach-social li a {
         border: 1px solid transparent !important;
@@ -2276,14 +2276,14 @@ body {
     }
 }
 
-.gs-coach-horizontal-five .single-member-div {
+.gs-coach-horizontal-five .single-coach-div {
 
     padding-left: 15px !important;
     padding-right: 15px !important;
     min-width: 50%;
     margin-bottom: 30px;
 
-    .single-member {
+    .single-coach {
         padding: 30px;
         background-color: rgb(255, 255, 255);
         border-radius: 100px;
@@ -2301,7 +2301,7 @@ body {
         flex: 1 0 160px;
     }
 
-    .single-member .gs_coach_image__wrapper img {
+    .single-coach .gs_coach_image__wrapper img {
         transform: scale(1);
     }
 
@@ -2312,18 +2312,18 @@ body {
         background: none !important;
         margin-top: -38px;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             margin-top: 5px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             font-family: 'Nunito', sans-serif;
             line-height: 1.5;
             color: #808080;
@@ -2337,14 +2337,14 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #030d1e;
             font-size: 16px;
             font-weight: 500;
             font-family: 'Poppins', sans-serif;
         }
 
-        .gs-member-contact i {
+        .gs-coach-contact i {
             color: #15B7B9;
             font-size: 16px;
             font-weight: 700;
@@ -2360,7 +2360,7 @@ body {
         margin: 0;
     }
 
-    .single-member:hover {
+    .single-coach:hover {
         box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
         border: 1px solid transparent;
 
@@ -2376,9 +2376,9 @@ body {
 /* gs-coach-flip-one 
 ========================*/
 
-.single-member--flip.single-member-div {
+.single-coach--flip.single-coach-div {
 
-    .single-member {
+    .single-coach {
         transform-style: preserve-3d;
         perspective: 1000px;
         overflow: visible;
@@ -2386,8 +2386,8 @@ body {
         transition: all .25s ease-in-out;
     }
 
-    .single-member--front,
-    .single-member--back {
+    .single-coach--front,
+    .single-coach--back {
         backface-visibility: hidden;
         transform-style: preserve-3d;
         transition: transform .7s cubic-bezier(.6, .2, .4, .8), visibility .7s cubic-bezier(.6, .2, .4, .8), opacity .55s cubic-bezier(.6, .2, .4, .8), -webkit-transform .7s cubic-bezier(.6, .2, .4, .8);
@@ -2395,13 +2395,13 @@ body {
         visibility: visible;
     }
 
-    .single-member--front {
+    .single-coach--front {
         transform: rotateY(0deg) translateZ(60px) scale(.94);
         opacity: 1;
         z-index: 4;
     }
 
-    .single-member--back {
+    .single-coach--back {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -2417,12 +2417,12 @@ body {
 
     &:hover {
 
-        .single-member--front {
+        .single-coach--front {
             transform: rotateY(-180deg) translateZ(60px) scale(.94);
             opacity: 0;
         }
 
-        .single-member--back {
+        .single-coach--back {
             transform: rotateY(0deg) translateZ(60px) scale(.94);
             opacity: 1;
         }
@@ -2438,27 +2438,27 @@ body {
     }
 }
 
-.gs-coach-flip-one .single-member-div {
+.gs-coach-flip-one .single-coach-div {
     margin-bottom: 30px;
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .single-member {
+    .single-coach {
         padding-left: 0px;
         padding-right: 0px;
     }
 
     .gs_coach_info {
 
-        .gs-member-name {
+        .gs-coach-name {
             font-size: 22px;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             margin-top: 6px;
         }
@@ -2470,8 +2470,8 @@ body {
         }
     }
 
-    .single-member--front,
-    .single-member--back {
+    .single-coach--front,
+    .single-coach--back {
         border-radius: 0px 35px 0px 35px;
     }
 
@@ -2486,7 +2486,7 @@ body {
         align-items: center;
     }
 
-    .gs_coach_info-top .gs-member-desc {
+    .gs_coach_info-top .gs-coach-desc {
         color: #e6e6e6;
         line-height: 1.625;
         margin-top: 0px;
@@ -2505,7 +2505,7 @@ body {
         }
     }
 
-    .gs_coach_info-top .gs-member-contact {
+    .gs_coach_info-top .gs-coach-contact {
         color: #e6e6e6;
         line-height: 1.5;
         font-weight: 700;
@@ -2533,7 +2533,7 @@ body {
 
 }
 
-.gs_coach_area.gs-coach-flip-one .single-member-div {
+.gs_coach_area.gs-coach-flip-one .single-coach-div {
 
     .gs-coach-social li {
         margin-right: 8px;
@@ -2579,14 +2579,14 @@ body {
     }
 }
 
-.gs-coach-flip-two .single-member-div {
+.gs-coach-flip-two .single-coach-div {
 
     margin-bottom: 48px;
     padding-left: 54px !important;
     padding-right: 54px !important;
 
-    .single-member--front,
-    .single-member--back {
+    .single-coach--front,
+    .single-coach--back {
         border-radius: 50%;
     }
 
@@ -2600,7 +2600,7 @@ body {
         display: flex;
         align-items: center;
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #fff;
             line-height: 1.5;
             margin-top: 0px;
@@ -2620,7 +2620,7 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #fff;
             line-height: 1.5;
             font-weight: 400;
@@ -2638,12 +2638,12 @@ body {
         background: none;
         padding: 26px 0 0;
 
-        .gs-member-name {
+        .gs-coach-name {
             font-size: 22px;
             font-weight: 500;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-top: 4px;
         }
     }
@@ -2670,7 +2670,7 @@ body {
 
 }
 
-.gs_coach_area.gs-coach-flip-two .single-member-div {
+.gs_coach_area.gs-coach-flip-two .single-coach-div {
 
     .gs-coach-social li a {
         border: 1px solid #f3f3f3 !important;
@@ -2705,14 +2705,14 @@ body {
     }
 }
 
-.gs-coach-flip-three .single-member-div {
+.gs-coach-flip-three .single-coach-div {
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .single-member {
+    .single-coach {
         padding-left: 0px;
         padding-right: 0px;
     }
@@ -2738,7 +2738,7 @@ body {
         padding: 32px 72px !important;
     }
 
-    .gs_coach_info-top .gs-member-desc {
+    .gs_coach_info-top .gs-coach-desc {
         color: #e6e6e6;
         line-height: 1.5;
         margin-top: 0px;
@@ -2757,7 +2757,7 @@ body {
         }
     }
 
-    .gs_coach_info-top .gs-member-contact {
+    .gs_coach_info-top .gs-coach-contact {
         color: #e6e6e6;
         line-height: 1.6;
         font-weight: 700;
@@ -2778,19 +2778,19 @@ body {
         background: none;
         padding: 22px 32px 32px 32px;
 
-        .gs-member-name {
+        .gs-coach-name {
             font-size: 22px;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-top: 5px;
         }
     }
 
 }
 
-.gs_coach_area.gs-coach-flip-three .single-member-div {
+.gs_coach_area.gs-coach-flip-three .single-coach-div {
 
     .gs-coach-social li {
         margin-right: 8px;
@@ -2835,14 +2835,14 @@ body {
     }
 }
 
-.gs-coach-flip-four .single-member-div {
+.gs-coach-flip-four .single-coach-div {
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .single-member {
+    .single-coach {
         padding-left: 0px;
         padding-right: 0px;
     }
@@ -2854,8 +2854,8 @@ body {
     }
 
 
-    .single-member--front,
-    .single-member--back {
+    .single-coach--front,
+    .single-coach--back {
         border-radius: 134px;
     }
 
@@ -2879,7 +2879,7 @@ body {
         display: flex;
         align-items: center;
 
-        .gs-member-name {
+        .gs-coach-name {
             line-height: 1.5;
             color: #fff;
             font-size: 22px;
@@ -2887,7 +2887,7 @@ body {
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             line-height: 1.5;
             color: #fff;
             margin-bottom: 1.3em;
@@ -2895,7 +2895,7 @@ body {
             font-family: 'Nunito', sans-serif;
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #e6e6e6;
             line-height: 1.5;
             font-weight: 500;
@@ -2921,7 +2921,7 @@ body {
 
 }
 
-.gs_coach_area.gs-coach-flip-four .single-member-div {
+.gs_coach_area.gs-coach-flip-four .single-coach-div {
 
     .gs-coach-social li {
         margin: 0;
@@ -2960,21 +2960,21 @@ body {
     }
 }
 
-.gs-coach-flip-five .single-member-div {
+.gs-coach-flip-five .single-coach-div {
     margin-bottom: 30px;
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .single-member {
+    .single-coach {
         padding-left: 0px;
         padding-right: 0px;
     }
 
 
-    .single-member {
+    .single-coach {
         overflow: hidden;
         border-radius: 20px;
 
@@ -3007,7 +3007,7 @@ body {
             margin-bottom: 16px;
         }
 
-        .gs-member-name {
+        .gs-coach-name {
             line-height: 1.5;
             color: #fff;
             font-size: 22px;
@@ -3015,14 +3015,14 @@ body {
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             line-height: 1.5;
             color: #fff;
             font-family: 'Nunito', sans-serif;
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         >.gs_coach_image__wrapper img {
             transform: translateY(-40%);
@@ -3082,25 +3082,25 @@ body {
         border: none;
     }
 
-    img.gs_coach_member--image {
+    img.gs_coach_coach--image {
         object-fit: cover;
         object-position: center;
         aspect-ratio: 1;
     }
 
-    .gs-member-name {
+    .gs-coach-name {
         font-family: 'Poppins', sans-serif;
         font-size: 17px;
         color: #030d1e;
         font-weight: 600;
     }
 
-    .gs-member-desig {
+    .gs-coach-desig {
         font-family: Poppins;
         font-size: 15px;
     }
 
-    .gs-member-desc {
+    .gs-coach-desc {
         font-family: Poppins;
         font-size: 16px;
         color: #808080;
@@ -3198,7 +3198,7 @@ body {
             border-bottom: 1px solid #E5E5E5;
         }
 
-        .gs-member-desc a {
+        .gs-coach-desc a {
             font-family: Poppins;
             font-size: 16px;
             color: #808080;
@@ -3285,7 +3285,7 @@ body {
             }
         }
 
-        .gs-member-desc a {
+        .gs-coach-desc a {
             text-decoration: none;
 
             &:hover {
@@ -3379,7 +3379,7 @@ body {
             background: #fff;
         }
 
-        .gs-member-desc a {
+        .gs-coach-desc a {
 
             &:hover {
                 color: #f5d4d4;
@@ -3534,15 +3534,15 @@ body {
     }
 
 
-    .single-member:hover .gs-member-name {
+    .single-coach:hover .gs-coach-name {
         color: #F77674;
     }
 
-    .single-member:hover .gs-coach-social li a {
+    .single-coach:hover .gs-coach-social li a {
         background: #fff;
     }
 
-    .single-member .gs-coach-social li:hover a {
+    .single-coach .gs-coach-social li:hover a {
         background: #F77674 !important;
         border: 1px solid #F77674 !important;
     }
@@ -3619,7 +3619,7 @@ body {
             }
         }
 
-        .single-member:hover .gs-coach-social li a {
+        .single-coach:hover .gs-coach-social li a {
             border-color: transparent !important;
             background: rgba(255, 255, 255, 0.18);
 
@@ -3628,19 +3628,19 @@ body {
             }
         }
 
-        .single-member:hover .gs-member-name {
+        .single-coach:hover .gs-coach-name {
             color: #fff;
         }
 
-        .single-member .gs-member-desig {
+        .single-coach .gs-coach-desig {
             color: rgb(87, 87, 87);
         }
 
-        .single-member:hover .gs-member-desig {
+        .single-coach:hover .gs-coach-desig {
             color: #ffffffb3;
         }
 
-        .single-member:hover .gs-member-desc {
+        .single-coach:hover .gs-coach-desc {
             color: #ffffffb3;
 
             a {
@@ -3648,7 +3648,7 @@ body {
             }
         }
 
-        .single-member:hover .gs-coach-social li a:hover {
+        .single-coach:hover .gs-coach-social li a:hover {
             background: #fff !important;
 
             i, svg {
@@ -3670,18 +3670,18 @@ body {
 .gs-coach-list-style-four,
 .gs-coach-list-style-five {
 
-    .single-member-div {
+    .single-coach-div {
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
 
 }
 
-.gs-coach-list-style-one .single-member-div {
+.gs-coach-list-style-one .single-coach-div {
 
     min-width: 100%;
 
-    .single-member {
+    .single-coach {
         width: 100%;
         padding: 30px;
         background-color: #fff;
@@ -3691,7 +3691,7 @@ body {
         transition: .25s;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         display: flex;
         align-items: center;
     }
@@ -3710,18 +3710,18 @@ body {
         background: none !important;
         width: 100%;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             margin-top: 5px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 16px;
             font-family: 'Nunito', sans-serif;
@@ -3741,7 +3741,7 @@ body {
         text-align: left;
     }
 
-    .single-member .gs-coach-social li a {
+    .single-coach .gs-coach-social li a {
         margin: 0;
         background: #EDF2F2;
         border-radius: 50%;
@@ -3754,7 +3754,7 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
         background-color: #E6F2F2;
         border-color: #E6F2F2;
 
@@ -3763,7 +3763,7 @@ body {
         }
     }
 
-    .single-member .gs-coach-social li a {
+    .single-coach .gs-coach-social li a {
         &:hover {
             background: #F77674 !important;
 
@@ -3779,11 +3779,11 @@ body {
 /* gs-coach-List-Style-Two
 ========================*/
 
-.gs-coach-list-style-two .single-member-div {
+.gs-coach-list-style-two .single-coach-div {
 
     min-width: 100%;
 
-    .single-member {
+    .single-coach {
         width: 100%;
         padding: 30px;
         background-color: #fff;
@@ -3793,7 +3793,7 @@ body {
         transition: .25s;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         display: flex;
         align-items: center;
     }
@@ -3812,18 +3812,18 @@ body {
         background: none !important;
         width: 100%;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             margin-top: 6px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 16px;
             font-family: 'Nunito', sans-serif;
@@ -3836,7 +3836,7 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #030d1e;
             font-size: 16px;
             font-weight: 600;
@@ -3849,7 +3849,7 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
         background-color: #E6F2F2;
         border-color: transparent;
     }
@@ -3861,11 +3861,11 @@ body {
 /* gs-coach-List-Style-Three
 ========================*/
 
-.gs-coach-list-style-three .single-member-div {
+.gs-coach-list-style-three .single-coach-div {
 
     min-width: 100%;
 
-    .single-member {
+    .single-coach {
         width: 100%;
         padding: 30px;
         background-color: #fff;
@@ -3875,7 +3875,7 @@ body {
         transition: .25s;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         display: flex;
         align-items: center;
     }
@@ -3889,7 +3889,7 @@ body {
         order: 2;
     }
 
-    .gs_coach_info .gs-member-contact i {
+    .gs_coach_info .gs-coach-contact i {
         color: #F77674;
         font-size: 16px;
     }
@@ -3900,19 +3900,19 @@ body {
         background: none !important;
         width: 100%;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-weight: 600;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Nunito', sans-serif;
             margin-top: 6px;
             font-size: 15px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 16px;
             font-family: 'Nunito', sans-serif;
@@ -3925,7 +3925,7 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #030d1e;
             font-size: 16px;
             font-weight: 600;
@@ -3938,28 +3938,28 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         background-color: #F77674;
         border-color: transparent;
 
-        .gs_coach_info .gs-member-name {
+        .gs_coach_info .gs-coach-name {
             color: #fff;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             color: #fff;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #fff;
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #fff;
         }
 
-        .gs-member-contact i {
+        .gs-coach-contact i {
             color: #fff;
         }
 
@@ -3970,11 +3970,11 @@ body {
 /* gs-coach-List-Style-Four
 ========================*/
 
-.gs-coach-list-style-four .single-member-div {
+.gs-coach-list-style-four .single-coach-div {
 
     min-width: 100%;
 
-    .single-member {
+    .single-coach {
         width: 100%;
         border-radius: 0;
         margin-bottom: 30px;
@@ -3984,13 +3984,13 @@ body {
         padding-bottom: 30px;
     }
 
-    .single-member-div:last-child .single-member {
+    .single-coach-div:last-child .single-coach {
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 0;
     }
 
-    .single-member--wrapper {
+    .single-coach--wrapper {
         display: flex;
         align-items: center;
     }
@@ -4010,24 +4010,24 @@ body {
         background: none !important;
         width: 100%;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 24px;
             font-weight: 600;
             font-family: 'Playfair Display', serif;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Poppins', sans-serif;
             margin-top: 6px;
             font-size: 15px;
         }
 
-        .gs-member-contact-wrapper {
+        .gs-coach-contact-wrapper {
             display: flex;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 15px;
             font-family: 'Poppins', sans-serif;
@@ -4041,7 +4041,7 @@ body {
             }
         }
 
-        .gs-member-contact {
+        .gs-coach-contact {
             color: #182338;
             font-size: 15px;
             font-weight: 600;
@@ -4065,18 +4065,18 @@ body {
 
 /* gs-coach-List-Style-Five
 ========================*/
-.gs-coach-list-style-five .single-member-div {
+.gs-coach-list-style-five .single-coach-div {
 
     min-width: 100%;
 
-    .single-member {
+    .single-coach {
         width: 100%;
         background: none !important;
         margin-bottom: 20px;
         border: 1px solid #ededed;
         transition: .25s;
 
-        .single-member--wrapper {
+        .single-coach--wrapper {
             display: flex;
             align-items: center;
 
@@ -4094,7 +4094,7 @@ body {
             width: 100%;
             padding: 30px;
 
-            .gs-member-name {
+            .gs-coach-name {
                 color: #030d1e;
                 font-size: 24px;
                 font-weight: 600;
@@ -4102,7 +4102,7 @@ body {
                 margin-top: -12px;
             }
 
-            .gs-member-desc {
+            .gs-coach-desc {
                 color: #808080;
                 font-size: 15px;
                 font-family: 'Poppins', sans-serif;
@@ -4148,9 +4148,9 @@ body {
 /* gs_tm_theme26
 ========================*/
 
-.gs_tm_theme26 .single-member-div {
+.gs_tm_theme26 .single-coach-div {
 
-    .single-member {
+    .single-coach {
         padding-bottom: 115px;
         background: none !important;
     }
@@ -4181,7 +4181,7 @@ body {
         border-radius: 0 0 8px 8px;
         min-height: 115px;
 
-        .gs-member-name {
+        .gs-coach-name {
             color: #030d1e;
             font-size: 22px;
             text-transform: uppercase;
@@ -4190,7 +4190,7 @@ body {
             margin-top: 2px;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             font-family: 'Work Sans', sans-serif;
             margin-top: 2px;
         }
@@ -4230,7 +4230,7 @@ body {
         }
     }
 
-    .single-member:hover {
+    .single-coach:hover {
 
         .gs_coach_image__overlay {
             opacity: 1;
@@ -4247,7 +4247,7 @@ body {
 
 }
 
-.gs_coach_area.gs_tm_theme26 .single-member-div {
+.gs_coach_area.gs_tm_theme26 .single-coach-div {
 
     padding-left: 16px !important;
     padding-right: 16px !important;
@@ -4309,7 +4309,7 @@ body {
     .gscoach-panel-right {
         padding-right: 0 !important;
 
-        .gs-member-desc {
+        .gs-coach-desc {
 
             p {
                 font-family: 'Poppins', sans-serif;
@@ -4334,7 +4334,7 @@ body {
             padding: 20px 30px;
         }
 
-        .member-skill {
+        .coach-skill {
             margin-top: 32px;
 
             h3 {
@@ -4467,7 +4467,7 @@ body {
         margin-top: 2px;
     }
 
-    .gs-member-desc {
+    .gs-coach-desc {
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
         color: #808080;
@@ -4533,7 +4533,7 @@ body {
 
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 32px;
 
         h3 {
@@ -4731,7 +4731,7 @@ body {
         border-radius: 10px;
     }
 
-    .gs-member-desc.gs-coach--scrollbar {
+    .gs-coach-desc.gs-coach--scrollbar {
         max-height: 170px;
         overflow: hidden;
         overflow-y: auto;
@@ -4806,7 +4806,7 @@ body {
         }
     }
 
-    .gs-member-desc.gs-coach--scrollbar {
+    .gs-coach-desc.gs-coach--scrollbar {
         max-height: 170px;
         overflow: hidden;
         overflow-y: auto;
@@ -4818,7 +4818,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
 
         .progress {
 
@@ -4894,7 +4894,7 @@ body {
         }
     }
 
-    .gs-member-desc.gs-coach--scrollbar {
+    .gs-coach-desc.gs-coach--scrollbar {
         max-height: 170px;
         overflow: hidden;
         overflow-y: auto;
@@ -4949,7 +4949,7 @@ body {
         margin-top: 40px !important;
     }
 
-    .member-skill {
+    .coach-skill {
 
         .progress {
 
@@ -5021,7 +5021,7 @@ body {
         }
     }
 
-    .gs-member-desc.gs-coach--scrollbar {
+    .gs-coach-desc.gs-coach--scrollbar {
         max-height: 170px;
         overflow: hidden;
         overflow-y: auto;
@@ -5076,7 +5076,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
 
         .progress {
 
@@ -5127,7 +5127,7 @@ body {
         margin-bottom: 28px;
     }
 
-    .gs-member-desc.gs-coach--scrollbar {
+    .gs-coach-desc.gs-coach--scrollbar {
         max-height: 170px;
         overflow: hidden;
         overflow-y: auto;
@@ -5180,7 +5180,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 42px;
 
         .progress {
@@ -5232,7 +5232,7 @@ body {
             }
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             color: #808080;
             font-size: 16px;
             font-weight: 400;
@@ -5241,7 +5241,7 @@ body {
             margin-bottom: 16px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 16px;
             font-weight: 400;
@@ -5263,7 +5263,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 29px !important;
 
         h3 {
@@ -5442,7 +5442,7 @@ body {
             }
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             color: #808080;
             font-size: 16px;
             font-weight: 400;
@@ -5451,7 +5451,7 @@ body {
             margin-bottom: 16px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 16px;
             font-weight: 400;
@@ -5531,7 +5531,7 @@ body {
             }
         }
 
-        .member-skill {
+        .coach-skill {
             margin-top: 32px;
 
             h3 {
@@ -5614,11 +5614,11 @@ body {
 
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-bottom: 32px;
         }
 
-        .gs-member-desc.gs-coach--scrollbar {
+        .gs-coach-desc.gs-coach--scrollbar {
             max-height: 116px;
             overflow: hidden;
             overflow-y: auto;
@@ -5717,11 +5717,11 @@ body {
 
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-bottom: 25px;
         }
 
-        .gs-member-desc.gs-coach--scrollbar {
+        .gs-coach-desc.gs-coach--scrollbar {
             max-height: 204px;
             overflow: hidden;
             overflow-y: auto;
@@ -5769,7 +5769,7 @@ body {
             }
         }
 
-        .member-skill {
+        .coach-skill {
             margin-top: 29px !important;
 
             h3 {
@@ -5856,11 +5856,11 @@ body {
             margin-top: -12px;
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-bottom: 25px;
         }
 
-        .gs-member-desc.gs-coach--scrollbar {
+        .gs-coach-desc.gs-coach--scrollbar {
             max-height: 202px;
             overflow: hidden;
             overflow-y: auto;
@@ -5911,7 +5911,7 @@ body {
             margin-bottom: 20px;
         }
 
-        .member-skill {
+        .coach-skill {
             margin-top: 42px !important;
 
             h3 {
@@ -5987,11 +5987,11 @@ body {
 
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-bottom: 0 !important;
         }
 
-        .gs-member-desc.gs-coach--scrollbar {
+        .gs-coach-desc.gs-coach--scrollbar {
             max-height: 116px;
             overflow: hidden;
             overflow-y: auto;
@@ -6056,7 +6056,7 @@ body {
 
         }
 
-        .gs-member-desig {
+        .gs-coach-desig {
             margin-bottom: 25px;
         }
 
@@ -6064,7 +6064,7 @@ body {
             margin-bottom: 60px;
         }
 
-        .gs-member-desc.gs-coach--scrollbar {
+        .gs-coach-desc.gs-coach--scrollbar {
             max-height: 202px;
             overflow: hidden;
             overflow-y: auto;
@@ -6116,7 +6116,7 @@ body {
         }
 
 
-        .member-skill {
+        .coach-skill {
             margin-top: 0;
 
             h3 {
@@ -6237,7 +6237,7 @@ body {
             margin-top: 7px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 16px;
             font-weight: 400;
@@ -6317,7 +6317,7 @@ body {
             }
         }
 
-        .member-skill {
+        .coach-skill {
             margin-top: 32px;
 
             h3 {
@@ -6388,7 +6388,7 @@ body {
             }
         }
 
-        .member-skill {
+        .coach-skill {
             .progress {
                 margin-bottom: 15px !important;
                 position: relative;
@@ -6545,7 +6545,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 32px;
 
         h3 {
@@ -6557,7 +6557,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 0px !important;
 
         .progress {
@@ -6596,12 +6596,12 @@ body {
             }
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #030d1e;
             font-family: 'Nunito', sans-serif;
         }
 
-        .gs-member-desc p {
+        .gs-coach-desc p {
             color: #030d1e;
             font-size: 16px;
             font-weight: 400;
@@ -6631,7 +6631,7 @@ body {
             margin-top: 30px;
         }
 
-        .member-skill {
+        .coach-skill {
             margin-top: 0px !important;
 
             .progressText {
@@ -6706,7 +6706,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 24px;
 
         h3 {
@@ -6745,11 +6745,11 @@ body {
         margin-bottom: 6px !important;
     }
 
-    .gs-member-desc {
+    .gs-coach-desc {
         margin-top: 24px;
     }
 
-    .gs-member-desc p {
+    .gs-coach-desc p {
         margin-bottom: 20px;
 
         &:last-child {
@@ -6808,7 +6808,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 42px;
 
         h3 {
@@ -6820,7 +6820,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 0px !important;
 
         .progressText {
@@ -6880,12 +6880,12 @@ body {
         padding-left: 0;
         width: 100%;
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #030d1e;
         }
     }
 
-    .gs-member-desc p {
+    .gs-coach-desc p {
         margin-bottom: 20px;
 
         &:last-child {
@@ -6950,7 +6950,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 30px;
 
         h3 {
@@ -6962,7 +6962,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 0px !important;
 
         .progressText {
@@ -7114,7 +7114,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 0;
 
         h3 {
@@ -7126,7 +7126,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 0px !important;
 
         .progressText {
@@ -7205,7 +7205,7 @@ body {
         }
     }
 
-    .gs-member-name {
+    .gs-coach-name {
         color: #030d1e;
         font-size: 28px;
         font-weight: 700;
@@ -7215,7 +7215,7 @@ body {
         padding: 0;
     }
 
-    .gs-member-desig {
+    .gs-coach-desig {
         color: #808080;
         font-size: 16px;
         font-weight: 400;
@@ -7224,7 +7224,7 @@ body {
         margin-bottom: 16px;
     }
 
-    .gs-member-desc {
+    .gs-coach-desc {
         color: #808080;
         font-size: 16px;
         font-weight: 400;
@@ -7252,7 +7252,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 32px;
 
         h3 {
@@ -7404,7 +7404,7 @@ body {
             margin-bottom: 16px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             color: #808080;
             font-size: 16px;
             font-weight: 400;
@@ -7493,7 +7493,7 @@ body {
             }
         }
 
-        .member-skill {
+        .coach-skill {
             margin-top: 32px;
 
             h3 {
@@ -7659,7 +7659,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 24px;
 
         h3 {
@@ -7671,7 +7671,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 0px !important;
 
         .progress {
@@ -7775,7 +7775,7 @@ body {
             margin-bottom: 25px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             max-height: initial;
         }
 
@@ -7870,7 +7870,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 24px;
 
         h3 {
@@ -7882,7 +7882,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 36px !important;
 
         .progress {
@@ -8016,7 +8016,7 @@ body {
         border-radius: 0;
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 40px;
 
         h3 {
@@ -8028,7 +8028,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 0px !important;
 
         .progressText {
@@ -8126,7 +8126,7 @@ body {
             margin-top: -10px;
         }
 
-        .gs-member-desc {
+        .gs-coach-desc {
             p {
                 margin-bottom: 0;
             }
@@ -8205,7 +8205,7 @@ body {
         }
     }
 
-    .member-skill-wraaper {
+    .coach-skill-wraaper {
         margin-top: 24px;
 
         h3 {
@@ -8217,7 +8217,7 @@ body {
         }
     }
 
-    .member-skill {
+    .coach-skill {
         margin-top: 0px !important;
 
         .progress {
@@ -8308,7 +8308,7 @@ body {
                     overflow-y: auto;
                 }
 
-                .gs-member-desc {
+                .gs-coach-desc {
                     max-height: initial;
                     overflow: initial;
                     overflow-y: initial;
@@ -8376,7 +8376,7 @@ body {
 
                 }
 
-                .gs-member-desig {
+                .gs-coach-desig {
                     color: #808080;
                     font-size: 16px;
                     font-weight: 400;
@@ -8385,7 +8385,7 @@ body {
                     margin-bottom: 26px;
                 }
 
-                .gs-member-desc {
+                .gs-coach-desc {
                     color: #808080;
                     font-size: 16px;
                     font-weight: 400;
@@ -8471,7 +8471,7 @@ body {
                     margin-top: 0 !important;
                 }
 
-                .member-skill {
+                .coach-skill {
                     margin-top: 0 !important;
 
                     h3 {
@@ -8881,7 +8881,7 @@ body {
 
 @media (min-width: 1024px) and (max-width: 1220px) {
 
-    .gs-grid-style-one .single-member-div .gs_coach_info {
+    .gs-grid-style-one .single-coach-div .gs_coach_info {
         right: -18px;
     }
 
@@ -8895,7 +8895,7 @@ body {
 
     .gs-coach-horizontal-one {
 
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_image__wrapper {
                 width: 100%;
@@ -8927,7 +8927,7 @@ body {
 
     /* Grid One */
     .gs-grid-style-one {
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_info {
                 right: -20px;
@@ -8936,14 +8936,14 @@ body {
     }
 
     .gs-coach-horizontal-two {
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_image__wrapper {
                 flex: 1 0 170px;
                 height: 170px;
             }
 
-            .single-member {
+            .single-coach {
                 padding: 28px 28px;
             }
         }
@@ -8957,7 +8957,7 @@ body {
             margin-right: -30px;
         }
 
-        .single-member-div {
+        .single-coach-div {
             padding-left: 16px !important;
             padding-right: 16px !important;
         }
@@ -8977,11 +8977,11 @@ body {
                         .gs_coach_popup_details {
                             padding-left: 18px !important;
 
-                            .gs-member-name {
+                            .gs-coach-name {
                                 text-align: left !important;
                             }
 
-                            .gs-member-desig {
+                            .gs-coach-desig {
                                 text-align: left !important;
                             }
                         }
@@ -9001,7 +9001,7 @@ body {
 
         .gs_coach_popup {
 
-            .gs-member-desig {
+            .gs-coach-desig {
                 text-align: left;
             }
         }
@@ -9011,7 +9011,7 @@ body {
             .gscoach-popup-right {
 
                 .gscoach-popup-right-top {
-                    .gs-member-desc {
+                    .gs-coach-desc {
                         p {
                             margin-bottom: 0 !important;
                         }
@@ -9072,7 +9072,7 @@ body {
                 text-align: left;
             }
 
-            .gs-member-desc {
+            .gs-coach-desc {
                 p {
                     margin-bottom: 0 !important;
                 }
@@ -9206,7 +9206,7 @@ body {
 
     /* Grid One */
     .gs-grid-style-one {
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_info {
                 right: -20px;
@@ -9216,9 +9216,9 @@ body {
 
     .gs-coach-horizontal-one {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 flex-direction: column;
             }
 
@@ -9236,9 +9236,9 @@ body {
     /* Horizontal Three */
     .gs-coach-horizontal-two {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 flex-direction: column;
                 padding: 32px 40px;
                 border-radius: 20px;
@@ -9260,10 +9260,10 @@ body {
     /* Horizontal Three */
     .gs-coach-horizontal-three {
 
-        .single-member-div {
+        .single-coach-div {
             width: 100%;
 
-            .single-member {
+            .single-coach {
                 flex-direction: column;
                 padding-left: 252px;
             }
@@ -9281,14 +9281,14 @@ body {
 
     .gs-coach-horizontal-four {
 
-        .single-member-div {
+        .single-coach-div {
             margin-bottom: 100px;
 
-            .single-member--wrapper {
+            .single-coach--wrapper {
                 padding-left: 0;
             }
 
-            .single-member {
+            .single-coach {
                 padding: 84px 32px 42px 32px;
             }
 
@@ -9303,10 +9303,10 @@ body {
 
     .gs-coach-horizontal-five {
 
-        .single-member-div {
+        .single-coach-div {
             width: 100%;
 
-            .single-member {
+            .single-coach {
                 padding: 16px;
                 border-radius: 20px;
             }
@@ -9329,7 +9329,7 @@ body {
             margin-right: -30px;
         }
 
-        .single-member-div {
+        .single-coach-div {
             padding-left: 16px !important;
             padding-right: 16px !important;
         }
@@ -9351,11 +9351,11 @@ body {
                         .gs_coach_popup_details {
                             padding-left: 18px !important;
 
-                            .gs-member-name {
+                            .gs-coach-name {
                                 text-align: left !important;
                             }
 
-                            .gs-member-desig {
+                            .gs-coach-desig {
                                 text-align: left !important;
                             }
                         }
@@ -9424,7 +9424,7 @@ body {
         .gs_coach_popup {
             padding: 48px 14px !important;
 
-            .gs-member-desig {
+            .gs-coach-desig {
                 text-align: left;
             }
         }
@@ -9434,7 +9434,7 @@ body {
             .gscoach-popup-right {
 
                 .gscoach-popup-right-top {
-                    .gs-member-desc {
+                    .gs-coach-desc {
                         p {
                             margin-bottom: 0 !important;
                         }
@@ -9493,7 +9493,7 @@ body {
                 text-align: left;
             }
 
-            .gs-member-desc {
+            .gs-coach-desc {
                 p {
                     margin-bottom: 0 !important;
                 }
@@ -9705,7 +9705,7 @@ body {
 
     /* Grid One */
     .gs-grid-style-one {
-        .single-member-div {
+        .single-coach-div {
             .gs_coach_info {
                 right: -20px;
             }
@@ -9719,7 +9719,7 @@ body {
     .gs-coach-horizontal-four,
     .gs-coach-horizontal-five {
 
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_image__wrapper {
                 width: 50%;
@@ -9735,9 +9735,9 @@ body {
 
     .gs-coach-horizontal-two {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 padding: 20px 20px;
             }
         }
@@ -9745,9 +9745,9 @@ body {
 
     .gs-coach-horizontal-three {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 box-shadow: 0px 20px 50px 0px rgb(12 21 41 / 10%);
             }
 
@@ -9763,9 +9763,9 @@ body {
 
     .gs-coach-horizontal-four {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 padding: 20px 32px 20px 82px;
             }
 
@@ -9786,9 +9786,9 @@ body {
     .gs-coach-list-style-four,
     .gs-coach-list-style-five {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member--wrapper {
+            .single-coach--wrapper {
                 flex-direction: column;
 
                 .gs_coach_image__wrapper {
@@ -9809,8 +9809,8 @@ body {
     }
 
     .gs-coach-list-style-three {
-        .single-member-div {
-            .single-member--wrapper {
+        .single-coach-div {
+            .single-coach--wrapper {
                 flex-direction: column-reverse;
 
                 .gs_coach_image__wrapper {
@@ -9832,7 +9832,7 @@ body {
             margin-right: -30px;
         }
 
-        .single-member-div {
+        .single-coach-div {
             padding-left: 16px !important;
             padding-right: 16px !important;
         }
@@ -9854,11 +9854,11 @@ body {
                         .gs_coach_popup_details {
                             padding-left: 0 !important;
 
-                            .gs-member-name {
+                            .gs-coach-name {
                                 text-align: left !important;
                             }
 
-                            .gs-member-desig {
+                            .gs-coach-desig {
                                 text-align: left !important;
                             }
                         }
@@ -10066,7 +10066,7 @@ body {
                 margin-top: 0px;
             }
 
-            .gs-member-desc {
+            .gs-coach-desc {
                 margin-bottom: 0;
             }
 
@@ -10100,7 +10100,7 @@ body {
                 right: 0px !important;
             }
 
-            .gs-member-desig {
+            .gs-coach-desig {
                 text-align: left;
             }
 
@@ -10132,14 +10132,14 @@ body {
                         right: 12px
                     }
 
-                    .member-skill {
+                    .coach-skill {
                         margin-top: 32px !important;
                     }
 
                     .gscoach-popup-right-top {
                         margin-top: 26px;
 
-                        .gs-member-desc {
+                        .gs-coach-desc {
                             p {
                                 margin-bottom: 0 !important;
                             }
@@ -10237,7 +10237,7 @@ body {
                 text-align: left;
             }
 
-            .gs-member-desc {
+            .gs-coach-desc {
                 p {
                     margin-bottom: 0 !important;
                 }
@@ -10533,7 +10533,7 @@ body {
             }
 
             tbody {
-                tr.single-member-div {
+                tr.single-coach-div {
                     display: block;
                     margin-bottom: 40px;
 
@@ -10594,7 +10594,7 @@ body {
             }
 
             tbody {
-                tr.single-member-div {
+                tr.single-coach-div {
                     display: block;
                     margin-bottom: 40px;
 
@@ -10690,15 +10690,15 @@ body {
     .gs-coach-list-style-three,
     .gs-coach-list-style-four {
 
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_info {
 
-                .gs-member-name {
+                .gs-coach-name {
                     font-size: 20px;
                 }
 
-                .gs-member-desig {
+                .gs-coach-desig {
                     font-size: 14px;
                 }
             }
@@ -10707,7 +10707,7 @@ body {
 
     /* Grid One */
     .gs-grid-style-one {
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_info {
                 right: -20px;
@@ -10726,9 +10726,9 @@ body {
     .gs-coach-horizontal-four,
     .gs-coach-horizontal-five {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 flex-direction: column;
             }
 
@@ -10745,9 +10745,9 @@ body {
 
     .gs-coach-horizontal-two {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 padding: 34px 32px;
             }
 
@@ -10764,9 +10764,9 @@ body {
 
     .gs-coach-horizontal-three {
 
-        .single-member-div {
+        .single-coach-div {
 
-            .single-member {
+            .single-coach {
                 padding: 0;
                 padding-top: 285px;
                 box-shadow: 0px 20px 50px 0px rgb(12 21 41 / 10%);
@@ -10787,14 +10787,14 @@ body {
 
     .gs-coach-horizontal-four {
 
-        .single-member-div {
+        .single-coach-div {
             margin-bottom: 100px;
 
-            .single-member--wrapper {
+            .single-coach--wrapper {
                 padding-left: 0;
             }
 
-            .single-member {
+            .single-coach {
                 padding: 84px 32px 42px 32px;
             }
 
@@ -10809,7 +10809,7 @@ body {
 
     .gs-coach-horizontal-five {
 
-        .single-member-div {
+        .single-coach-div {
             margin-bottom: 100px;
 
             .gs_coach_image__wrapper {
@@ -10817,7 +10817,7 @@ body {
                 height: 220px;
             }
 
-            .single-member {
+            .single-coach {
                 border-radius: 14px;
             }
 
@@ -10834,12 +10834,12 @@ body {
     .gs-coach-list-style-four,
     .gs-coach-list-style-five {
 
-        .single-member-div {
+        .single-coach-div {
             padding-left: 15px !important;
             padding-right: 15px !important;
         }
 
-        .single-member--wrapper {
+        .single-coach--wrapper {
             flex-direction: column;
         }
 
@@ -10856,8 +10856,8 @@ body {
     }
 
     .gs-coach-list-style-three {
-        .single-member-div {
-            .single-member--wrapper {
+        .single-coach-div {
+            .single-coach--wrapper {
                 flex-direction: column-reverse;
             }
 
@@ -10871,9 +10871,9 @@ body {
     }
 
     .gs-coach-list-style-four {
-        .single-member-div {
+        .single-coach-div {
             .gs_coach_info {
-                .gs-member-contact-wrapper {
+                .gs-coach-contact-wrapper {
                     flex-direction: column;
                 }
             }
@@ -10887,21 +10887,21 @@ body {
             margin-right: -30px;
         }
 
-        .single-member-div {
+        .single-coach-div {
             padding-left: 16px !important;
             padding-right: 16px !important;
         }
     }
 
     .gs-coach-flip-two {
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_info {
                 padding: 16px;
             }
 
             .gs_coach_info-top {
-                .gs-member-desc {
+                .gs-coach-desc {
                     margin-bottom: 4px;
                 }
             }
@@ -10913,7 +10913,7 @@ body {
     }
 
     .gs-coach-flip-three {
-        .single-member-div {
+        .single-coach-div {
 
             .gs_coach_info {
                 padding: 16px;
@@ -10946,11 +10946,11 @@ body {
                             padding-left: 0 !important;
                             width: 100%;
 
-                            .gs-member-name {
+                            .gs-coach-name {
                                 text-align: left !important;
                             }
 
-                            .gs-member-desig {
+                            .gs-coach-desig {
                                 text-align: left !important;
                             }
                         }
@@ -11142,7 +11142,7 @@ body {
                 margin-top: 10px;
             }
 
-            .gs-member-desc {
+            .gs-coach-desc {
                 margin-bottom: 0;
             }
 
@@ -11180,7 +11180,7 @@ body {
                 display: none;
             }
 
-            .gs-member-desig {
+            .gs-coach-desig {
                 text-align: left;
                 font-size: 18px;
                 margin-bottom: 0 !important;
@@ -11217,14 +11217,14 @@ body {
                         }
                     }
 
-                    .member-skill {
+                    .coach-skill {
                         margin-top: 32px !important;
                     }
 
                     .gscoach-popup-right-top {
                         margin-top: 32px;
 
-                        .gs-member-desc {
+                        .gs-coach-desc {
                             p {
                                 margin-bottom: 0 !important;
                             }
@@ -11303,7 +11303,7 @@ body {
                 text-align: left;
             }
 
-            .gs-member-desc {
+            .gs-coach-desc {
                 p {
                     margin-bottom: 0 !important;
                 }
@@ -11427,7 +11427,7 @@ body {
                 width: 100%;
             }
 
-            .member-skill {
+            .coach-skill {
                 margin-top: 20px;
             }
         }
@@ -11640,7 +11640,7 @@ body {
             }
 
             tbody {
-                tr.single-member-div {
+                tr.single-coach-div {
                     display: block;
                     margin-bottom: 40px;
 
@@ -11747,7 +11747,7 @@ body {
         }
     }
 
-    .gs-coach-horizontal-one .single-member-div .single-member {
+    .gs-coach-horizontal-one .single-coach-div .single-coach {
         display: block;
     }
 }
@@ -11756,7 +11756,7 @@ body {
 .gs_coach_area,
 .gs_coach_popup,
 .gs-single-container {
-    .gs-member-desc {
+    .gs-coach-desc {
         ul, ol {
             margin: 20px 0;
             padding-left: 20px;

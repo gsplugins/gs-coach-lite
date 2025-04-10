@@ -45,9 +45,9 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
                 <div class="gs_ribon_wrapper">
                     
                     <!-- Coach Image -->
-                    <?php member_thumbnail( 'full', true ); ?>
+                    <?php coach_thumbnail( 'full', true ); ?>
                     
-                    <?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+                    <?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
         
                     <!-- Ribbon -->
                     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
@@ -62,17 +62,17 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
             <div class="gs_coach_details">
         
-                <!-- Member Name -->
+                <!-- coach Name -->
                 <h2 class="gs-sin-mem-name" itemprop="name"><?php the_title(); ?></h2>
-                <?php do_action( 'gs_coach_after_member_name' ); ?>
+                <?php do_action( 'gs_coach_after_coach_name' ); ?>
         
-                <!-- Member Designation -->
+                <!-- coach Designation -->
                 <div class="gs-sin-mem-desig" itemprop="jobtitle"><?php echo esc_html( $designation ); ?></div>
-                <?php do_action( 'gs_coach_after_member_designation' ); ?>
+                <?php do_action( 'gs_coach_after_coach_designation' ); ?>
         
                 <!-- Description -->
-                <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-                <?php do_action( 'gs_coach_after_member_details' ); ?>
+                <div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+                <?php do_action( 'gs_coach_after_coach_details' ); ?>
 
                 <!-- Meta Fields -->
                 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>

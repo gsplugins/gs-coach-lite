@@ -11,23 +11,23 @@ namespace GSCOACH;
  * @version 1.0.0
  */
 
-$member_id = get_the_id();
+$coach_id = get_the_id();
 
 
-$skills = get_skills( $member_id );
+$skills = get_skills( $coach_id );
 
 $is_skills_title = empty($is_skills_title) ? false : wp_validate_boolean($is_skills_title);
-$is_skills_title = apply_filters( 'gs_coach_member_is_skills_title', $is_skills_title, $skills, $member_id );
+$is_skills_title = apply_filters( 'gs_coach_coach_is_skills_title', $is_skills_title, $skills, $coach_id );
 $skills_text = get_translation( 'gs_coach_skills' );
 
 if ( !empty($skills) ) : ?>
 
-    <div class="member-skill-wraaper">
+    <div class="coach-skill-wraaper">
         <?php if ( $is_skills_title && !empty($skills_text) ) : ?>
             <h3><?php echo esc_html($skills_text); ?></h3>
         <?php endif; ?>
 
-        <div class="member-skill">
+        <div class="coach-skill">
             <?php foreach( $skills as $skill ) : ?>
                 
                 <?php if ( !empty($skill['percent']) ) : ?>
@@ -47,6 +47,6 @@ if ( !empty($skills) ) : ?>
         </div>
     </div>
 
-    <?php do_action( 'gs_coach_after_member_skills' ); ?>
+    <?php do_action( 'gs_coach_after_coach_skills' ); ?>
 
 <?php endif; ?>

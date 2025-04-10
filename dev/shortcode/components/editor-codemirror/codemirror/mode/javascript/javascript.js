@@ -817,9 +817,9 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     return pass(commasep(expressionNoComma, "]"));
   }
   function enumdef() {
-    return pass(pushlex("form"), pattern, expect("{"), pushlex("}"), commasep(enummember, "}"), poplex, poplex)
+    return pass(pushlex("form"), pattern, expect("{"), pushlex("}"), commasep(enumcoach, "}"), poplex, poplex)
   }
-  function enummember() {
+  function enumcoach() {
     return pass(pattern, maybeAssign);
   }
 

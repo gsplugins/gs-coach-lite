@@ -196,7 +196,7 @@
 
 				this.$confirm({
 					title: 'Are you sure?',
-					message: 'This action will delete all unmodified shortcodes & team members including attachments & texonomies, that inserted by gscoach dummy data importer',
+					message: 'This action will delete all unmodified shortcodes & team coachs including attachments & texonomies, that inserted by gscoach dummy data importer',
 					button: {
 						yes: 'Yes',
 						no: 'Cancel'
@@ -229,7 +229,7 @@
 
 				this.$confirm({
 					title: 'Are you sure?',
-					message: 'This action will delete all unmodified team members including attachments & texonomies, that inserted by gscoach dummy data importer',
+					message: 'This action will delete all unmodified team coachs including attachments & texonomies, that inserted by gscoach dummy data importer',
 					button: {
 						yes: 'Yes',
 						no: 'Cancel'

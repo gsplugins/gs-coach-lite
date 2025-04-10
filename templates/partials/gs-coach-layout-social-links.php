@@ -36,6 +36,6 @@ if ( 'on' == $gs_coach_connect && !empty($social_links) ): ?>
         
     </ul>
 
-    <?php do_action( 'gs_coach_after_member_social_links' ); ?>
+    <?php do_action( 'gs_coach_after_coach_social_links' ); ?>
 
 <?php endif; ?>

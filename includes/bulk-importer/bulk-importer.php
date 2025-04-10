@@ -46,7 +46,7 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
 
             if ( empty($row['name']) ) wp_send_json_error();
 
-            $member = [
+            $coach = [
                 'post_title'    => $row['name'],
                 'post_content'  => empty($row['description']) ? '' : $row['description'],
                 'post_status'   => 'publish',
@@ -55,7 +55,7 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
                 'meta_input'    => $this->get_row_meta_input( $row )
             ];
 
-            $post_id = wp_insert_post( $member );
+            $post_id = wp_insert_post( $coach );
 
             if ( $post_id ) wp_send_json_success();
 
