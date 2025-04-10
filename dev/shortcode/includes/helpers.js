@@ -59,6 +59,10 @@ const helpers = {
 		return config.preference;
 	},
 
+	_getDefaultTaxSettings() {
+		return config.taxonomy_default_settings;
+	},
+
 	_getTaxSettings() {
 		return config.taxonomy_settings;
 	},

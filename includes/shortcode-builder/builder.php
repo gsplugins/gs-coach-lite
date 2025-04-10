@@ -158,7 +158,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         }
 
-        public static function get_team_terms( $term_name, $idsOnly = false ) {
+        public static function get_coach_terms( $term_name, $idsOnly = false ) {
 
             $taxonomies = get_taxonomies([ 'type' => 'restricted', 'enabled' => true ]);
 
@@ -207,7 +207,8 @@ if ( ! class_exists( 'Builder' ) ) {
             $data['translations']       = $this->get_translation_srtings();
             $data['preference']         = $this->get_shortcode_default_prefs();
             $data['preference_options'] = $this->get_shortcode_prefs_options();
-            $data['taxonomy_settings']  = $this->get_taxonomy_default_settings();
+            $data['taxonomy_default_settings']  = $this->get_taxonomy_default_settings();
+            $data['taxonomy_settings']  = $this->get_taxonomy_settings();
             $data['enabled_plugins']    = $this->get_enabled_plugins();
             $data['is_multilingual']    = $this->is_multilingual_enabled();
 
@@ -595,31 +596,31 @@ if ( ! class_exists( 'Builder' ) ) {
                 'hover_image_filter' => __( 'Image Filter on Hover', 'gscoach' ),
 
                 'location'  => __('Location', 'gscoach'),
-                'location--details'  => __('Select specific team location to show that specific location members', 'gscoach'),
+                'location--details'  => __('Select specific coach location to show that specific location coaches', 'gscoach'),
 
                 'specialty'  => __('Specialty', 'gscoach'),
-                'specialty--details'  => __('Select specific team specialty to show that specific specialty members', 'gscoach'),
+                'specialty--details'  => __('Select specific coach specialty to show that specific specialty coaches', 'gscoach'),
 
                 'language'  => __('Language', 'gscoach'),
-                'language--details'  => __('Select specific team language to show that specific language members', 'gscoach'),
+                'language--details'  => __('Select specific coach language to show that specific language coaches', 'gscoach'),
 
                 'gender'  => __('Gender', 'gscoach'),
-                'gender--details'  => __('Select specific team gender to show that specific gender members', 'gscoach'),
+                'gender--details'  => __('Select specific coach gender to show that specific gender coaches', 'gscoach'),
 
                 'include_extra_one'  => __('Extra One', 'gscoach'),
-                'include_extra_one--details'  => __('Select specific team extra one to show that specific extra one members', 'gscoach'),
+                'include_extra_one--details'  => __('Select specific coach extra one to show that specific extra one coaches', 'gscoach'),
 
                 'include_extra_two'  => __('Extra Two', 'gscoach'),
-                'include_extra_two--details'  => __('Select specific team extra two to show that specific extra two members', 'gscoach'),
+                'include_extra_two--details'  => __('Select specific coach extra two to show that specific extra two coaches', 'gscoach'),
 
                 'include_extra_three'  => __('Extra Three', 'gscoach'),
-                'include_extra_three--details'  => __('Select specific team extra three to show that specific extra three members', 'gscoach'),
+                'include_extra_three--details'  => __('Select specific coach extra three to show that specific extra three coaches', 'gscoach'),
 
                 'include_extra_four'  => __('Extra Four', 'gscoach'),
-                'include_extra_four--details'  => __('Select specific team extra four to show that specific extra four members', 'gscoach'),
+                'include_extra_four--details'  => __('Select specific coach extra four to show that specific extra four coaches', 'gscoach'),
 
                 'include_extra_five'  => __('Extra Five', 'gscoach'),
-                'include_extra_five--details'  => __('Select specific team extra five to show that specific extra five members', 'gscoach'),
+                'include_extra_five--details'  => __('Select specific coach extra five to show that specific extra five coaches', 'gscoach'),
 
                 'install-demo-data' => __('Install Demo Data', 'gscoach'),
                 'install-demo-data-description' => __('Quick start with GS Plugins by installing the demo data', 'gscoach'),
@@ -920,8 +921,31 @@ if ( ! class_exists( 'Builder' ) ) {
                 'group_hide_empty' => __('Hide Empty Filters', 'gscoach'),
                 'group_hide_empty__details' => __('Enable to hide the empty filters', 'gscoach'),
                 'group' => __('Group', 'gscoach'),
-                'exclude_group' => __('Exclude Group', 'gscoach'),
-                'exclude_group__help' => __('Select a specific team group to hide that specific group members', 'gscoach'),
+                'group__help' => __('Select specific group to show that specific group coaches', 'gscoach'),
+                'tags' => __('Tags', 'gscoach'),
+                'tags__help' => __('Select specific tag to show that specific tagged coaches', 'gscoach'),
+                'exclude_group' => __('Group', 'gscoach'),
+                'exclude_group__help' => __('Select a specific team group to hide that specific group coaches', 'gscoach'),
+                'exclude_tags' => __('Tags', 'gscoach'),
+                'exclude_tags__help' => __('Select a specific tag to hide that specific tagged coaches', 'gscoach'),
+                'exclude_language' => __('Language', 'gscoach'),
+                'exclude_language__help' => __('Select a specific language to hide that specific language coaches', 'gscoach'),
+                'exclude_location' => __('Location', 'gscoach'),
+                'exclude_location__help' => __('Select a specific location to hide that specific location coaches', 'gscoach'),
+                'exclude_specialty' => __('Specialty', 'gscoach'),
+                'exclude_specialty__help' => __('Select a specific specialty to hide that specific specialty coaches', 'gscoach'),
+                'exclude_gender' => __('Gender', 'gscoach'),
+                'exclude_gender__help' => __('Select a specific gender to hide that specific gender coaches', 'gscoach'),
+                'exclude_extra_one' => __('Extra One', 'gscoach'),
+                'exclude_extra_one__help' => __('Select a specific extra one to hide that specific extra one coaches', 'gscoach'),
+                'exclude_extra_two' => __('Extra Two', 'gscoach'),
+                'exclude_extra_two__help' => __('Select a specific extra two to hide that specific extra two coaches', 'gscoach'),
+                'exclude_extra_three' => __('Extra Three', 'gscoach'),
+                'exclude_extra_three__help' => __('Select a specific extra three to hide that specific extra three coaches', 'gscoach'),
+                'exclude_extra_four' => __('Extra Four', 'gscoach'),
+                'exclude_extra_four__help' => __('Select a specific extra four to hide that specific extra four coaches', 'gscoach'),
+                'exclude_extra_five' => __('Extra Five', 'gscoach'),
+                'exclude_extra_five__help' => __('Select a specific extra five to hide that specific extra five coaches', 'gscoach'),
 
                 'theme' => __('Theme', 'gscoach'),
                 'font-size' => __('Font Size', 'gscoach'),
@@ -950,7 +974,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'filter-by-extra-three--des' => __('Show or Hide Filter by Extra Three', 'gscoach'),
                 'filter-by-extra-four--des' => __('Show or Hide Filter by Extra Four', 'gscoach'),
                 'filter-by-extra-five--des' => __('Show or Hide Filter by Extra Five', 'gscoach'),
-                'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gscoach'),
                 'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gscoach'),
                 'define-maximum-number-of-characters' => __('Define the maximum number of characters in details. Default 100', 'gscoach'),
                 'set-column-for-popup' => __('Set column for popup', 'gscoach'),
@@ -1702,17 +1725,17 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function get_shortcode_default_options() {
             return [
-                'location' => self::get_team_terms('gs_coach_location'),
-                'specialty' => self::get_team_terms('gs_coach_specialty'),
-                'language' => self::get_team_terms('gs_coach_language'),
-                'gender' => self::get_team_terms('gs_coach_gender'),
-                'group' => self::get_team_terms('gs_coach_group'),
-                'exclude_group' => self::get_team_terms('gs_coach_group'),
-                'extra_one' => self::get_team_terms('gs_coach_extra_one'),
-                'extra_two' => self::get_team_terms('gs_coach_extra_two'),
-                'extra_three' => self::get_team_terms('gs_coach_extra_three'),
-                'extra_four' => self::get_team_terms('gs_coach_extra_four'),
-                'extra_five' => self::get_team_terms('gs_coach_extra_five'),
+                'location' => self::get_coach_terms('gs_coach_location'),
+                'specialty' => self::get_coach_terms('gs_coach_specialty'),
+                'language' => self::get_coach_terms('gs_coach_language'),
+                'gender' => self::get_coach_terms('gs_coach_gender'),
+                'group' => self::get_coach_terms('gs_coach_group'),
+                'tag' => self::get_coach_terms('gs_coach_tag'),
+                'extra_one' => self::get_coach_terms('gs_coach_extra_one'),
+                'extra_two' => self::get_coach_terms('gs_coach_extra_two'),
+                'extra_three' => self::get_coach_terms('gs_coach_extra_three'),
+                'extra_four' => self::get_coach_terms('gs_coach_extra_four'),
+                'extra_five' => self::get_coach_terms('gs_coach_extra_five'),
                 'gs_coach_cols' => $this->get_columns(),
                 'drawer_style' => $this->get_drawer_styles(),
                 'carousel_navs_style' => $this->get_carousel_navs_styles(),
@@ -1934,16 +1957,36 @@ if ( ! class_exists( 'Builder' ) ) {
                 'group_orderby'                   => 'term_order',
                 'group_order'                     => 'ASC',
                 'group_hide_empty'                => 'off',
-                'gs_coach_theme'                   => 'gs-grid-style-five',
-                'gs_coach_cols'                    => '3',
-                'gs_coach_cols_tablet'             => '4',
-                'gs_coach_cols_mobile_portrait'    => '6',
-                'gs_coach_cols_mobile'             => '12',
+                'gs_coach_theme'                  => 'gs-grid-style-five',
+                'gs_coach_cols'                   => '3',
+                'gs_coach_cols_tablet'            => '4',
+                'gs_coach_cols_mobile_portrait'   => '6',
+                'gs_coach_cols_mobile'            => '12',
                 'group'                           => '',
+                'tag'                            => '',
+                'language'                        => '',
+                'location'                        => '',
+                'specialty'                       => '',
+                'gender'                          => '',
+                'include_extra_one'               => '',
+                'include_extra_two'               => '',
+                'include_extra_three'             => '',
+                'include_extra_four'              => '',
+                'include_extra_five'              => '',
                 'exclude_group'                   => '',
+                'exclude_tags'                    => '',
+                'exclude_language'                => '',
+                'exclude_location'                => '',
+                'exclude_specialty'               => '',
+                'exclude_gender'                  => '',
+                'exclude_extra_one'               => '',
+                'exclude_extra_two'               => '',
+                'exclude_extra_three'             => '',
+                'exclude_extra_four'              => '',
+                'exclude_extra_five'              => '',
                 'panel'                           => 'right',
-                'gs_coaches_pop_clm'          => 'two',
-                'gs_coach_connect'               => 'on',
+                'gs_coaches_pop_clm'              => 'two',
+                'gs_coach_connect'                => 'on',
                 'display_ribbon'                  => 'on',        
                 'gs_slider_nav_color'             => '',
                 'gs_slider_nav_bg_color'          => '',
@@ -1971,12 +2014,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_tm_ribon_color'               => '',
                 'gs_tm_role_color'                => '',
                 'gs_tm_arrow_color'               => '',
-                'gs_coach_name'                  => 'on',
-                'gs_coach_name_is_linked'        => 'on',
-                'gs_coach_link_type'             => 'default',
-                'gs_coach_role'                  => 'on',
-                'gs_coach_pagination'            => 'off',
-                'gs_coach_details'               => 'on',
+                'gs_coach_name'                   => 'on',
+                'gs_coach_name_is_linked'         => 'on',
+                'gs_coach_link_type'              => 'default',
+                'gs_coach_role'                   => 'on',
+                'gs_coach_pagination'             => 'off',
+                'gs_coach_details'                => 'on',
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
                 'gs_details_area_height'          => 'off',
@@ -2001,9 +2044,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_filter_by_language'    => 'on',
                 'gs_coach_filter_by_gender'      => 'on',
                 'gs_coach_filter_by_speciality'  => 'on',
-                'gs_coach_filter_by_extra_one'  => 'off',
-                'gs_coach_filter_by_extra_two'  => 'off',
-                'gs_coach_filter_by_extra_three'  => 'off',
+                'gs_coach_filter_by_extra_one'   => 'off',
+                'gs_coach_filter_by_extra_two'   => 'off',
+                'gs_coach_filter_by_extra_three' => 'off',
                 'gs_coach_filter_by_extra_four'  => 'off',
                 'gs_coach_filter_by_extra_five'  => 'off',
                 'gs_coach_enable_clear_filters'  => 'off',
@@ -2026,15 +2069,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_thumbnail_sizes'       => 'large',
                 'show_acf_fields'                 => 'off',
                 'acf_fields_position'             => 'after_skills',
-                'location'                        => '',
-                'specialty'                       => '',
-                'language'                        => '',
-                'gender'                          => '',
-                'include_extra_one'               => '',
-                'include_extra_two'               => '',
-                'include_extra_three'             => '',
-                'include_extra_four'              => '',
-                'include_extra_five'              => '',
             ];
         }
 
