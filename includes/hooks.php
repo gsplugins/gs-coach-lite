@@ -57,7 +57,7 @@ class Hooks {
 
     public function change_image_box() {
         remove_meta_box('postimagediv', 'gs_coach', 'side');
-        add_meta_box('postimagediv', __('Coach Member Image'), 'post_thumbnail_meta_box', 'gs_coach', 'side', 'low');
+        add_meta_box('postimagediv', __('Coach coach Image'), 'post_thumbnail_meta_box', 'gs_coach', 'side', 'low');
     }
     
     public function img_size_note($content) {
@@ -82,15 +82,15 @@ class Hooks {
         switch ($position) {
     
             case 'after_meta_details':
-                $action = 'gs_coach_after_member_details_popup';
+                $action = 'gs_coach_after_coach_details_popup';
                 break;
     
             case 'after_description':
-                $action = 'gs_coach_after_member_details';
+                $action = 'gs_coach_after_coach_details';
                 break;
     
             default:
-                $action = 'gs_coach_after_member_skills';
+                $action = 'gs_coach_after_coach_skills';
         }
     
         add_action($action, [ $this, 'display_acf_fields' ]);

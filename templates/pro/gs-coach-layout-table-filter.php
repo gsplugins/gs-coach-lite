@@ -31,13 +31,13 @@ global $gs_coach_loop;
 					<thead class="thead-dark">
 
 						<tr>
-							<?php do_action( 'gs_coach_before_member_content_table_heads' ); ?>
+							<?php do_action( 'gs_coach_before_coach_content_table_heads' ); ?>
 
 							<th data-sortable="true"><?php _e( 'Name', 'gscoach' ); ?></th>
 							<th data-sortable="true"><?php _e( 'Department', 'gscoach' ); ?></th>
 							<th data-sortable="true"><?php _e( 'Contact', 'gscoach' ); ?></th>
 
-							<?php do_action( 'gs_coach_after_member_content_table_heads' ); ?>
+							<?php do_action( 'gs_coach_after_coach_content_table_heads' ); ?>
 						</tr>
 
 					</thead>
@@ -52,20 +52,20 @@ global $gs_coach_loop;
 							$cell = get_post_meta( get_the_id(), '_gscoach_contact', true );
 							$cell = format_phone($cell);
 
-							$classes = ['single-member-div'];
+							$classes = ['single-coach-div'];
 				
-							if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
+							if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-coach-pop';
 
 							?>
 
 							<tr class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
-								<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+								<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 
-								<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'td', '', true ); ?>
+								<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'td', '', true ); ?>
 								<td><?php echo wp_kses_post($designation); ?></td>
 								<td><a href="tel:<?php echo esc_attr( $cell ); ?>"><?php echo esc_html( $cell ); ?></a> | <a href="mailto:<?php echo sanitize_email($email); ?>"><?php _e( 'SEND EMAIL', 'gscoach' ); ?></a></td>
 								
-								<?php do_action( 'gs_coach_after_member_content' ); ?>
+								<?php do_action( 'gs_coach_after_coach_content' ); ?>
 							</tr>
 
 							<!-- Popup -->
@@ -83,8 +83,8 @@ global $gs_coach_loop;
 				
 		<?php else: ?>
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		<?php endif; ?>
 

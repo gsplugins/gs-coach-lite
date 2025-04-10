@@ -14,11 +14,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../includes/column.php:51, ../includes/shortcode-builder/builder.php:837
-msgid "Member Name"
+msgid "coach Name"
 msgstr ""
 
 #: ../includes/column.php:52
-msgid "Member Image"
+msgid "coach Image"
 msgstr ""
 
 #: ../includes/column.php:53, ../includes/meta-fields.php:74
@@ -44,7 +44,7 @@ msgid "GS Coach"
 msgstr ""
 
 #: ../includes/cpt.php:32, ../includes/cpt.php:33
-msgid "Add New Member"
+msgid "Add New coach"
 msgstr ""
 
 #: ../includes/cpt.php:34
@@ -244,15 +244,15 @@ msgid "Step 1: Drag & Drop to rearrangees"
 msgstr ""
 
 #: ../includes/sortable.php:376, ../includes/sortable.php:559
-msgid "No Coach Member Found!"
+msgid "No Coach coach Found!"
 msgstr ""
 
 #: ../includes/sortable.php:377, ../includes/sortable.php:560
-msgid "We didn't find any team member.</br>Please add some team members to sort them."
+msgid "We didn't find any team coach.</br>Please add some team coachs to sort them."
 msgstr ""
 
 #: ../includes/sortable.php:378, ../includes/sortable.php:561
-msgid "Add Member"
+msgid "Add coach"
 msgstr ""
 
 #: ../includes/sortable.php:387
@@ -398,7 +398,7 @@ msgid "GS Coach Shortcode"
 msgstr ""
 
 #: ../includes/integrations/integration-gutenberg.php:101
-msgid "GS Single Coach Member Page"
+msgid "GS Single Coach coach Page"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:71
@@ -488,7 +488,7 @@ msgid "Location"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:598
-msgid "Select specific team location to show that specific location members"
+msgid "Select specific team location to show that specific location coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:600, ../includes/shortcode-builder/builder.php:711, ../includes/shortcode-builder/builder.php:2134
@@ -496,7 +496,7 @@ msgid "Specialty"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:601
-msgid "Select specific team specialty to show that specific specialty members"
+msgid "Select specific team specialty to show that specific specialty coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:603, ../includes/shortcode-builder/builder.php:710, ../includes/shortcode-builder/builder.php:2113
@@ -504,7 +504,7 @@ msgid "Language"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:604
-msgid "Select specific team language to show that specific language members"
+msgid "Select specific team language to show that specific language coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:606, ../includes/shortcode-builder/builder.php:712, ../includes/shortcode-builder/builder.php:2127
@@ -512,7 +512,7 @@ msgid "Gender"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:607
-msgid "Select specific team gender to show that specific gender members"
+msgid "Select specific team gender to show that specific gender coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:609
@@ -520,7 +520,7 @@ msgid "Extra One"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:610
-msgid "Select specific team extra one to show that specific extra one members"
+msgid "Select specific team extra one to show that specific extra one coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:612
@@ -528,7 +528,7 @@ msgid "Extra Two"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:613
-msgid "Select specific team extra two to show that specific extra two members"
+msgid "Select specific team extra two to show that specific extra two coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:615
@@ -536,7 +536,7 @@ msgid "Extra Three"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:616
-msgid "Select specific team extra three to show that specific extra three members"
+msgid "Select specific team extra three to show that specific extra three coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:618
@@ -544,7 +544,7 @@ msgid "Extra Four"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:619
-msgid "Select specific team extra four to show that specific extra four members"
+msgid "Select specific team extra four to show that specific extra four coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:621
@@ -552,7 +552,7 @@ msgid "Extra Five"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:622
-msgid "Select specific team extra five to show that specific extra five members"
+msgid "Select specific team extra five to show that specific extra five coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:624
@@ -584,7 +584,7 @@ msgid "Bulk Import"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:634
-msgid "Add team members faster by GS Bulk Import feature"
+msgid "Add team coachs faster by GS Bulk Import feature"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:636
@@ -644,7 +644,7 @@ msgid "Enable Taxonomy"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:667
-msgid "Enable Taxonomy for team members"
+msgid "Enable Taxonomy for team coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:668
@@ -696,7 +696,7 @@ msgid "Disable Lazy Load"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:684
-msgid "Disable Lazy Load for team member images"
+msgid "Disable Lazy Load for team coach images"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:686
@@ -1036,7 +1036,7 @@ msgid "Global Settings for GS Coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:807
-msgid "All shortcodes for GS Coach Member"
+msgid "All shortcodes for GS Coach coach"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:808
@@ -1152,7 +1152,7 @@ msgid "Link Coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:839
-msgid "Add links to the Member's name, description & image to display popup or to single member page"
+msgid "Add links to the coach's name, description & image to display popup or to single coach page"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:840
@@ -1168,15 +1168,15 @@ msgid "Link Type"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:843
-msgid "Choose the link type of team members"
+msgid "Choose the link type of team coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:845
-msgid "Member Designation"
+msgid "coach Designation"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:846
-msgid "Member Details"
+msgid "coach Details"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:847
@@ -1208,7 +1208,7 @@ msgid "Set the default link type for link behaviour"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:854
-msgid "Next / Prev Member"
+msgid "Next / Prev coach"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:855
@@ -1280,7 +1280,7 @@ msgid "Allow HTML for Details"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:872
-msgid "Enable/Disable HTML content for the single team member descript, this will load whole content from the post type."
+msgid "Enable/Disable HTML content for the single team coach descript, this will load whole content from the post type."
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:873
@@ -1432,7 +1432,7 @@ msgid "Exclude Group"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:910
-msgid "Select a specific team group to hide that specific group members"
+msgid "Select a specific team group to hide that specific group coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:912
@@ -1464,27 +1464,27 @@ msgid "Select the preferred Style & Theme"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:920
-msgid "Show or Hide Coach Member Name"
+msgid "Show or Hide Coach coach Name"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:921
-msgid "Show or Hide Coach Member Designation"
+msgid "Show or Hide Coach coach Designation"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:922
-msgid "Show or Hide Coach Member Details"
+msgid "Show or Hide Coach coach Details"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:923
-msgid "Show or Hide Coach Member Social Connections"
+msgid "Show or Hide Coach coach Social Connections"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:924
-msgid "Show or Hide Coach Member Paginations"
+msgid "Show or Hide Coach coach Paginations"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:925
-msgid "Show or Hide Next / Prev Member link at Single Coach Template"
+msgid "Show or Hide Next / Prev coach link at Single Coach Template"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:926
@@ -1548,7 +1548,7 @@ msgid "Specify the target to load the Links, Default New Tab"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:942
-msgid "Define the maximum number of characters in Member details. Default 100"
+msgid "Define the maximum number of characters in coach details. Default 100"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:943
@@ -1556,11 +1556,11 @@ msgid "Set column for popup"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:944
-msgid "Set max team numbers you want to show, set -1 for all members"
+msgid "Set max team numbers you want to show, set -1 for all coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:945
-msgid "Select a specific team group to show that specific group members"
+msgid "Select a specific team group to show that specific group coachs"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:947
@@ -2239,8 +2239,8 @@ msgstr ""
 msgid "Basic"
 msgstr ""
 
-#: ../templates/partials/gs-coach-layout-no-team-member.php:17
-msgid "No team member found"
+#: ../templates/partials/gs-coach-layout-no-team-coach.php:17
+msgid "No team coach found"
 msgstr ""
 
 #: ../templates/pro/gs-coach-layout-table-box.php:33, ../templates/pro/gs-coach-layout-table-odd-even.php:33, ../templates/pro/gs-coach-layout-table.php:33

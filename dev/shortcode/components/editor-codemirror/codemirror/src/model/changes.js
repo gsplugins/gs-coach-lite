@@ -245,7 +245,7 @@ function makeChangeSingleDocInEditor(cm, change, spans) {
   startWorker(cm, 400)
 
   let lendiff = change.text.length - (to.line - from.line) - 1
-  // Remember that these lines changed, for updating the display
+  // Recoach that these lines changed, for updating the display
   if (change.full)
     regChange(cm)
   else if (from.line == to.line && change.text.length == 1 && !isWholeLineUpdate(cm.doc, change))

@@ -204,7 +204,7 @@ class Meta_Fields {
 
 			<div class="gs-coach-social--section">
 
-				<div class="member-details-section">
+				<div class="coach-details-section">
 
 					<table id="repeatable-fieldset-two" width="100%" class="gscoach-sorable-table">
 						<thead>
@@ -285,7 +285,7 @@ class Meta_Fields {
 
 			<div class="gs-coach-skills--section gs-coach-pro-field">
 
-				<div class="member-details-section">
+				<div class="coach-details-section">
 					<table id="repeatable-fieldset-skill" width="100%" class="gscoach-sorable-table">
 						<thead>
 							<tr>
@@ -461,14 +461,14 @@ class Meta_Fields {
 
 		if (is_pro_valid()) {
 
-			if (!empty($member_skill = $_POST['gscoach-skill-name']) && !empty($members_percent = $_POST['gscoach-skill-percent'])) {
+			if (!empty($coach_skill = $_POST['gscoach-skill-name']) && !empty($coachs_percent = $_POST['gscoach-skill-percent'])) {
 
-				$member_skill = array_map('sanitize_text_field', $member_skill);
-				$members_percent = array_map('absint', $members_percent);
+				$coach_skill = array_map('sanitize_text_field', $coach_skill);
+				$coachs_percent = array_map('absint', $coachs_percent);
 
 				$newdata = array_map(function ($skill, $percent) {
 					if (!empty($skill) && !empty($percent)) return ['skill' => $skill, 'percent' => $percent];
-				}, $member_skill, $members_percent);
+				}, $coach_skill, $coachs_percent);
 
 				$meta_key = '_gscoach_skills';
 

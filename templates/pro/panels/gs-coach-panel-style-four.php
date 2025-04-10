@@ -17,21 +17,21 @@ namespace GSCOACH; ?>
 
                 <!-- Coach Image -->
                 <div class="gs_coach_image__wrapper">
-                    <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
-                    <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
+                    <?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+                    <?php do_action( 'gs_coach_after_coach_thumbnail_popup' ); ?>
                 </div>
 
                 <div class="gscoach-panel-td-wrapper">
 
                     <div class="gscoach-panel-title">
-                        <!-- Member Name -->    
+                        <!-- coach Name -->    
                         <?php the_title(); ?>
-                        <?php do_action( 'gs_coach_after_member_name' ); ?>
+                        <?php do_action( 'gs_coach_after_coach_name' ); ?>
                     </div>
                     
-                    <!-- Member Designation -->
+                    <!-- coach Designation -->
                     <div class="gscoach-panel-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-                    <?php do_action( 'gs_coach_after_member_designation' ); ?>
+                    <?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
                 </div>
                 
@@ -39,8 +39,8 @@ namespace GSCOACH; ?>
                 <div class="gscoach-panel-info">
     
                     <!-- Description -->
-                    <div class="gs-member-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-                    <?php do_action( 'gs_coach_after_member_details' ); ?>
+                    <div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+                    <?php do_action( 'gs_coach_after_coach_details' ); ?>
 
                     <!-- Meta Fields -->
                     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>

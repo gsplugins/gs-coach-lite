@@ -180,7 +180,7 @@ export default class ContentEditableInput {
       if (old && sel.anchorNode == null) sel.addRange(old)
       else if (gecko) this.startGracePeriod()
     }
-    this.rememberSelection()
+    this.recoachSelection()
   }
 
   startGracePeriod() {
@@ -197,7 +197,7 @@ export default class ContentEditableInput {
     removeChildrenAndAdd(this.cm.display.selectionDiv, info.selection)
   }
 
-  rememberSelection() {
+  recoachSelection() {
     let sel = this.getSelection()
     this.lastAnchorNode = sel.anchorNode; this.lastAnchorOffset = sel.anchorOffset
     this.lastFocusNode = sel.focusNode; this.lastFocusOffset = sel.focusOffset
@@ -260,7 +260,7 @@ export default class ContentEditableInput {
       return
     }
     if (this.composing) return
-    this.rememberSelection()
+    this.recoachSelection()
     let anchor = domToPos(cm, sel.anchorNode, sel.anchorOffset)
     let head = domToPos(cm, sel.focusNode, sel.focusOffset)
     if (anchor && head) runInOp(cm, () => {

@@ -380,7 +380,7 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_coach_name">{{translation('member-name')}}:</label>
+									<label class="m-t-10" for="gs_coach_name">{{translation('coach-name')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
@@ -389,7 +389,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-member-name')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-team-coach-name')}}</p>
 								</div>
 
 							</div>
@@ -401,7 +401,7 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_coach_role">{{translation('member-designation')}}:</label>
+									<label class="m-t-10" for="gs_coach_role">{{translation('coach-designation')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
@@ -410,7 +410,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-member-designation')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-team-coach-designation')}}</p>
 								</div>
 
 							</div>
@@ -422,7 +422,7 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_coach_details">{{translation('member-details')}}:</label>
+									<label class="m-t-10" for="gs_coach_details">{{translation('coach-details')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
@@ -431,7 +431,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-member-details')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-team-coach-details')}}</p>
 								</div>
 
 							</div>
@@ -452,7 +452,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-member-social-connections')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-team-coach-social-connections')}}</p>
 								</div>
 
 							</div>
@@ -489,7 +489,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-member-paginations')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-team-coach-paginations')}}</p>
 								</div>
 
 							</div>
@@ -528,7 +528,7 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_coach_srch_by_company">{{translation('gs-member-srch-by-company')}}:</label>
+									<label class="m-t-10" for="gs_coach_srch_by_company">{{translation('gs-coach-srch-by-company')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
@@ -537,7 +537,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('gs-member-srch-by-company--details')}}</p>
+									<p class="bi-text-help">{{translation('gs-coach-srch-by-company--details')}}</p>
 								</div>
 
 							</div>
@@ -552,7 +552,7 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_coach_srch_by_zip">{{translation('gs-member-srch-by-zip')}}:</label>
+									<label class="m-t-10" for="gs_coach_srch_by_zip">{{translation('gs-coach-srch-by-zip')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
@@ -561,7 +561,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('gs-member-srch-by-zip--details')}}</p>
+									<p class="bi-text-help">{{translation('gs-coach-srch-by-zip--details')}}</p>
 								</div>
 
 							</div>
@@ -576,7 +576,7 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="gs_coach_srch_by_tag">{{translation('gs-member-srch-by-tag')}}:</label>
+									<label class="m-t-10" for="gs_coach_srch_by_tag">{{translation('gs-coach-srch-by-tag')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
@@ -585,7 +585,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('gs-member-srch-by-tag--details')}}</p>
+									<p class="bi-text-help">{{translation('gs-coach-srch-by-tag--details')}}</p>
 								</div>
 
 							</div>

@@ -31,7 +31,7 @@ CodeMirror.defineMode("asterisk", function() {
   var atoms    = ["exten", "same", "include","ignorepat","switch"],
       dpcmd    = ["#include","#exec"],
       apps     = [
-                  "addqueuemember","adsiprog","aelsub","agentlogin","agentmonitoroutgoing","agi",
+                  "addqueuecoach","adsiprog","aelsub","agentlogin","agentmonitoroutgoing","agi",
                   "alarmreceiver","amd","answer","authenticate","background","backgrounddetect",
                   "bridge","busy","callcompletioncancel","callcompletionrequest","celgenuserevent",
                   "changemonitor","chanisavail","channelredirect","chanspy","clearhash","confbridge",
@@ -47,9 +47,9 @@ CodeMirror.defineMode("asterisk", function() {
                   "minivmgreet","minivmmwi","minivmnotify","minivmrecord","mixmonitor","monitor","morsecode",
                   "mp3player","mset","musiconhold","nbscat","nocdr","noop","odbc","odbc","odbcfinish",
                   "originate","ospauth","ospfinish","osplookup","ospnext","page","park","parkandannounce",
-                  "parkedcall","pausemonitor","pausequeuemember","pickup","pickupchan","playback","playtones",
+                  "parkedcall","pausemonitor","pausequeuecoach","pickup","pickupchan","playback","playtones",
                   "privacymanager","proceeding","progress","queue","queuelog","raiseexception","read","readexten",
-                  "readfile","receivefax","receivefax","receivefax","record","removequeuemember",
+                  "readfile","receivefax","receivefax","receivefax","record","removequeuecoach",
                   "resetcdr","retrydial","return","ringing","sayalpha","saycountedadj","saycountednoun",
                   "saycountpl","saydigits","saynumber","sayphonetic","sayunixtime","senddtmf","sendfax",
                   "sendfax","sendfax","sendimage","sendtext","sendurl","set","setamaflags",
@@ -58,7 +58,7 @@ CodeMirror.defineMode("asterisk", function() {
                   "speechcreate","speechdeactivategrammar","speechdestroy","speechloadgrammar","speechprocessingsound",
                   "speechstart","speechunloadgrammar","stackpop","startmusiconhold","stopmixmonitor","stopmonitor",
                   "stopmusiconhold","stopplaytones","system","testclient","testserver","transfer","tryexec",
-                  "trysystem","unpausemonitor","unpausequeuemember","userevent","verbose","vmauthenticate",
+                  "trysystem","unpausemonitor","unpausequeuecoach","userevent","verbose","vmauthenticate",
                   "vmsayname","voicemail","voicemailmain","wait","waitexten","waitfornoise","waitforring",
                   "waitforsilence","waitmusiconhold","waituntil","while","zapateller"
                  ];

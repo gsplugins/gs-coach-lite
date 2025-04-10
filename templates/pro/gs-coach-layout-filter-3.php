@@ -40,33 +40,33 @@ global $gs_coach_loop;
 				$designation_slug = sanitize_title( $designation );
 
 				$classes = [
-					'gs-filter-single-item single-member-div',
+					'gs-filter-single-item single-coach-div',
 					$designation_slug,
 					get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ),
-					get_member_terms_slugs( 'gs_coach_group' ),
-					get_member_terms_slugs( 'gs_coach_location' ),
-					get_member_terms_slugs( 'gs_coach_language' ),
-					get_member_terms_slugs( 'gs_coach_gender' ),
-					get_member_terms_slugs( 'gs_coach_specialty' ),
-					get_member_terms_slugs( 'gs_coach_extra_one' ),
-					get_member_terms_slugs( 'gs_coach_extra_two' ),
-					get_member_terms_slugs( 'gs_coach_extra_three' ),
-					get_member_terms_slugs( 'gs_coach_extra_four' ),
-					get_member_terms_slugs( 'gs_coach_extra_five' ),
+					get_coach_terms_slugs( 'gs_coach_group' ),
+					get_coach_terms_slugs( 'gs_coach_location' ),
+					get_coach_terms_slugs( 'gs_coach_language' ),
+					get_coach_terms_slugs( 'gs_coach_gender' ),
+					get_coach_terms_slugs( 'gs_coach_specialty' ),
+					get_coach_terms_slugs( 'gs_coach_extra_one' ),
+					get_coach_terms_slugs( 'gs_coach_extra_two' ),
+					get_coach_terms_slugs( 'gs_coach_extra_three' ),
+					get_coach_terms_slugs( 'gs_coach_extra_four' ),
+					get_coach_terms_slugs( 'gs_coach_extra_five' ),
 				];
 
 				if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 
 			?>
 			
-			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" data-category="<?php echo get_member_terms_slugs( 'gs_coach_group' ); ?>">
+			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" data-category="<?php echo get_coach_terms_slugs( 'gs_coach_group' ); ?>">
 				
-				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
-					<div class="single-member cbp-so-side cbp-so-side-left">
+				<!-- Sehema & Single coach wrapper -->
+				<div class="single-coach--wrapper" itemscope itemtype="http://schema.org/Organization">
+					<div class="single-coach cbp-so-side cbp-so-side-left">
 						<div class="card">
 
-							<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+							<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 
 							<div class="banner">
 
@@ -75,22 +75,22 @@ global $gs_coach_loop;
 
 								<!-- Coach Image -->
 								<div class="gs_coach_image__wrapper">
-									<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+									<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 								</div>
-								<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+								<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 								
 								<div class="tittle_container">
 
-									<!-- Single member name -->
+									<!-- Single coach name -->
 									<?php if ( 'on' ==  $gs_coach_name ): ?>
-										<?php member_name( $id, true, true, 'single_page', 'h5', 'card-title' ); ?>
-										<?php do_action( 'gs_coach_after_member_name' ); ?>
+										<?php coach_name( $id, true, true, 'single_page', 'h5', 'card-title' ); ?>
+										<?php do_action( 'gs_coach_after_coach_name' ); ?>
 									<?php endif; ?>
 									
-									<!-- Single member designation -->
+									<!-- Single coach designation -->
 									<?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
-										<p class="card-text gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
-										<?php do_action( 'gs_coach_after_member_designation' ); ?>
+										<p class="card-text gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
+										<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 									<?php endif; ?>
 
 								</div>
@@ -121,7 +121,7 @@ global $gs_coach_loop;
 
 							</div>
 								
-							<?php do_action( 'gs_coach_after_member_content' ); ?>
+							<?php do_action( 'gs_coach_after_coach_content' ); ?>
 
 						</div>
 					</div>
@@ -139,8 +139,8 @@ global $gs_coach_loop;
 
 		<div class="gs-roow clearfix gs_coach">
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		</div>
 

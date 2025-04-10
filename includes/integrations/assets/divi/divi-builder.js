@@ -1,8 +1,8 @@
 (function($) {
 
-    class GsCoachMembers extends React.Component {
+    class GsCoachcoachs extends React.Component {
 
-        static slug = 'gs_coach_members';
+        static slug = 'gs_coach_coachs';
 
         componentDidUpdate() {
             this.triggerScriptProcess();
@@ -19,12 +19,12 @@
         }
       
         render() {
-            return <div className='gs-coach-members' dangerouslySetInnerHTML={{ __html: this.props.__shortcode }}></div>
+            return <div className='gs-coach-coachs' dangerouslySetInnerHTML={{ __html: this.props.__shortcode }}></div>
         }
     }
 
     $(window).on('et_builder_api_ready', (event, API) => {
-        API.registerModules([GsCoachMembers]);
+        API.registerModules([GsCoachcoachs]);
     });
 
 })(jQuery);

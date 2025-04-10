@@ -115,7 +115,7 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   outline: none;
 }
-.et-db #et-boc .et-l .et_pb_module .gs-member-desc {
+.et-db #et-boc .et-l .et_pb_module .gs-coach-desc {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -136,7 +136,7 @@
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.et-db #et-boc .et-l .et_pb_module .single-member .gs-member-desc a:hover {
+.et-db #et-boc .et-l .et_pb_module .single-coach .gs-coach-desc a:hover {
   color: #e1e1e1;
 }
 .et-db #et-boc .et-l .et_pb_module .gs-multi-select--wrapper {
@@ -183,22 +183,22 @@
 .et-db #et-boc .et-l .et_pb_module .gs-multi-select--single:hover span.gs-select--indicator {
   border-color: rgba(0, 0, 0, 0.5);
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .gs-coach-desig {
   text-align: center;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .gs-member-name {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .gs-coach-name {
   margin-top: 6px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .single-mem-desc-social,
@@ -210,9 +210,9 @@
   transition: all 450ms ease-out 0s;
   padding: 23% 10px 0;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-member-desc a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desc a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desc a {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .gs-coach-desc a,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-desc a,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-desc a {
   margin-left: 5px;
   font-weight: bold;
   font-style: italic;
@@ -220,12 +220,12 @@
   -webkit-transition: 1s;
   transition: 1s;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .single-member-div,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-member-div,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member-div,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member-div,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member-div,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member-div {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme1 .single-coach-div,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-coach-div,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-coach-div,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-coach-div,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-coach-div,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach-div {
   margin-bottom: 30px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs-coach-social li a {
@@ -269,10 +269,10 @@
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-social li a i {
   color: #D3D3D3;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-coach,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-coach,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-coach,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,13 +287,13 @@
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-social li a:hover i {
   color: #fff;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-member .gs_coach_image__wrapper {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-coach .gs_coach_image__wrapper {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
   display: block;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-member .gs_coach_image__wrapper img {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-coach .gs_coach_image__wrapper img {
   position: absolute;
   top: 0;
   left: 0;
@@ -317,37 +317,37 @@
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-social li a i {
   color: #141414;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .single-member .img-area {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .single-coach .img-area {
   margin-bottom: 20px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member img,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member img {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-coach img,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-coach img {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-desig {
   margin-bottom: 10px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc a,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-member-desc a {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc a,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc a,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desc a,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc a,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-desc a {
   color: #141414;
   font-style: italic;
   font-weight: bold;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc a:hover,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-member-desc a:hover {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc a:hover,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-desc a:hover {
   color: #f15123;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member .gs_coach_image__wrapper {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-coach .gs_coach_image__wrapper {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -361,13 +361,13 @@
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member .gs_coach_image__wrapper {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach .gs_coach_image__wrapper {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
   display: block;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member .gs_coach_image__wrapper img {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach .gs_coach_image__wrapper img {
   position: absolute;
   top: 0;
   left: 0;
@@ -392,48 +392,48 @@
 .et-db #et-boc .et-l .et_pb_module span.progressText {
   margin-bottom: 3px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .single-member {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-coach,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .single-coach,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-coach,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .single-coach {
   margin-bottom: 10px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-member-div,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-member-div,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-member-div {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-coach-div,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-coach-div,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-coach-div {
   margin-bottom: 0px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-member img,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .single-member img,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-member img,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .single-member img {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-coach img,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .single-coach img,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-coach img,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .single-coach img {
   width: 100%;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-coach-desig {
   padding: 5px 10px;
   color: #fff;
   -webkit-transition: all 0.6s linear;
   transition: all 0.6s linear;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-member-name {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-coach-name {
   background-color: rgba(0, 185, 235, 0.8);
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-member-desig,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .gs-coach-desig,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-coach-desig {
   background-color: #141412;
 }
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .gs_coach_overlay,
@@ -444,11 +444,11 @@
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-member .gs_coach_overlay i,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .single-member .gs_coach_overlay i,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-member .gs_coach_overlay i,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .single-member .gs_coach_overlay i,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-member .gs_coach_overlay i {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme8 .single-coach .gs_coach_overlay i,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .single-coach .gs_coach_overlay i,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme11 .single-coach .gs_coach_overlay i,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme12 .single-coach .gs_coach_overlay i,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-coach .gs_coach_overlay i {
   background-color: #00B9EB;
   border-radius: 50%;
 }
@@ -466,16 +466,16 @@
   padding: 16px;
   width: 100%;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .single-member img {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .single-coach img {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-member-desc {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-desc {
   text-align: center;
   line-height: 1.2;
   font-size: 16px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-member-name {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 .gs-coach-name {
   margin-top: 6px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme10 ul.gs-coach-social {
@@ -609,8 +609,8 @@
 .et-db #et-boc .et-l .et_pb_module .fullcolumn {
   background-color: #f0f0f5;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme17 .single-member,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme18 .single-member {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme17 .single-coach,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme18 .single-coach {
   margin-bottom: 20px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme17 .gs-coach-name a,
@@ -636,7 +636,7 @@
   text-align: left;
   padding: 20px;
 }
-.et-db #et-boc .et-l .et_pb_module .single-member .image {
+.et-db #et-boc .et-l .et_pb_module .single-coach .image {
   margin: 20px;
   vertical-align: middle;
 }
@@ -647,7 +647,7 @@
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-member {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-coach {
   position: relative;
   overflow: hidden;
   margin-bottom: 10px;
@@ -665,18 +665,18 @@
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-member-name,
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-coach-name,
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-coach-desig {
   padding: 5px 10px;
   color: #fff;
   -webkit-transition: all 0.6s linear;
   transition: all 0.6s linear;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-member img {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-coach img {
   -webkit-transition: all 0.6s linear;
   transition: all 0.6s linear;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-member .gs_coach_overlay i {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-coach .gs_coach_overlay i {
   width: 50px;
   height: 50px;
   display: block;
@@ -697,10 +697,10 @@
           backface-visibility: hidden;
   text-align: center;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-member-name-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .single-coach-name-desig {
   text-align: left;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme19 .gs-coach-desig {
   font-size: 14px;
   display: inline-block;
 }
@@ -717,7 +717,7 @@
 .et-db #et-boc .et-l .et_pb_module .gscoach-panel-inner {
   padding: 25px;
 }
-.et-db #et-boc .et-l .et_pb_module .gscoach-panel-inner .member-skill h3 {
+.et-db #et-boc .et-l .et_pb_module .gscoach-panel-inner .coach-skill h3 {
   margin-top: 25px;
   border-top: 1px solid #484747;
   padding-top: 25px;
@@ -760,7 +760,7 @@
   text-align: center;
   margin: 3%;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme20 .single-member-div {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme20 .single-coach-div {
   margin-bottom: 10px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs_coach_ribbon {
@@ -769,7 +769,7 @@
   color: white;
   padding: 7px 50px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .staff-member {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .staff-coach {
   padding: 4px;
   background: #fff;
   border: 1px solid #ddd;
@@ -790,7 +790,7 @@
   font-size: 13px;
   color: #fff;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .single-member-div {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .single-coach-div {
   margin-bottom: 15px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .gs_coach_image__wrapper a {
@@ -857,7 +857,7 @@
   padding: 4px;
   margin: 0 5px 0 0;
 }
-.et-db #et-boc .et-l .et_pb_module .gs-coach-widget .gs-member-name {
+.et-db #et-boc .et-l .et_pb_module .gs-coach-widget .gs-coach-name {
   font-weight: 400;
 }
 .et-db #et-boc .et-l .et_pb_module .gs-coach-widget .gs-coach-social li a {
@@ -868,14 +868,14 @@
 .et-db #et-boc .et-l .et_pb_module .gs-coach-widget .gs-coach-table-cell {
   padding: 6px 0 0;
 }
-.et-db #et-boc .et-l .et_pb_module .gs-coach-widget .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs-coach-widget .gs-coach-desig {
   font-style: italic;
   font-size: 16px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs-coach-widget ul.gs-coach-social li {
   margin-bottom: 0;
 }
-.et-db #et-boc .et-l .et_pb_module .footer-widgets .gs-coach-widget .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .footer-widgets .gs-coach-widget .gs-coach-desig {
   margin: 5px 0;
 }
 .et-db #et-boc .et-l .et_pb_module .footer-widgets .gs-tm-sicons .gs-coach-social a.github:hover {
@@ -960,7 +960,7 @@
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme22 .card-body {
   padding: 0;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme22 .single-member {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme22 .single-coach {
   margin-bottom: 10px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs_tm_theme22 .social_cont {
@@ -985,7 +985,7 @@
 .et-db #et-boc .et-l .et_pb_module .flip-vertical .back img {
   height: 100%;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .single-member-div {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme23 .single-coach-div {
   margin-bottom: 30px;
 }
 .et-db #et-boc .et-l .et_pb_module .flip-info {
@@ -1000,18 +1000,18 @@
 .et-db #et-boc .et-l .et_pb_module .flip-info div {
   color: #fff;
 }
-.et-db #et-boc .et-l .et_pb_module .gs-member-name a {
+.et-db #et-boc .et-l .et_pb_module .gs-coach-name a {
   color: inherit;
   font-style: inherit;
   padding-bottom: 0px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme24 .gs-member-name {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme24 .gs-coach-name {
   margin: 20px 0 10px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme24 .gs-member-desig {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme24 .gs-coach-desig {
   margin: 0 0 10px;
 }
-.et-db #et-boc .et-l .et_pb_module .gs_tm_theme24 .single-member-div {
+.et-db #et-boc .et-l .et_pb_module .gs_tm_theme24 .single-coach-div {
   margin-bottom: 40px;
 }
 .et-db #et-boc .et-l .et_pb_module .gs-filter--group-title {
@@ -1038,9 +1038,9 @@
     height: 25px;
     font-size: 10px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc {
     margin-bottom: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs-coach-social li a {
@@ -1059,11 +1059,11 @@
     width: 30px;
     height: 30px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-desc {
     margin-bottom: 15px;
     font-size: 15px;
   }
@@ -1086,27 +1086,27 @@
   .et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .staff-meta {
     width: 342.5px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach {
     display: initial;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-name {
     text-align: center;
     margin: 15px 0 6px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc {
     text-align: center;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_drawer2 .gridder .gridder-list {
@@ -1118,7 +1118,7 @@
   .et-db #et-boc .et-l .et_pb_module .team-description {
     border-right: none;
   }
-  .et-db #et-boc .et-l .et_pb_module .member-skill {
+  .et-db #et-boc .et-l .et_pb_module .coach-skill {
     margin-top: 20px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme9 .search-by-name {
@@ -1130,7 +1130,7 @@
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .single-mem-desc-social {
     padding: 29% 10px 0;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-desc {
     margin-bottom: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-social li a,
@@ -1138,39 +1138,39 @@
     width: 30px;
     height: 30px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc {
     margin-bottom: 15px;
     font-size: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 ul.gs-coach-social {
     float: left;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-name {
     margin-top: 5px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach {
     display: initial;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-name {
     text-align: center;
     margin: 15px 0 6px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc,
   .et-db #et-boc .et-l .et_pb_module .gs-coach-social {
     text-align: center;
   }
@@ -1183,7 +1183,7 @@
   .et-db #et-boc .et-l .et_pb_module .team-description {
     border-right: none;
   }
-  .et-db #et-boc .et-l .et_pb_module .member-skill {
+  .et-db #et-boc .et-l .et_pb_module .coach-skill {
     margin-top: 20px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme17 .image img,
@@ -1222,18 +1222,18 @@
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .single-mem-desc-social {
     padding: 28% 10px 0;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme7 .gs-coach-desc {
     font-size: 15px;
     margin-bottom: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 ul.gs-coach-social {
     float: left;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-name {
     margin-top: 5px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-social {
@@ -1245,27 +1245,27 @@
   .et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .staff-meta {
     width: 209.5px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach {
     display: initial;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-name {
     text-align: center;
     margin: 15px 0 6px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc,
   .et-db #et-boc .et-l .et_pb_module .gs-coach-social {
     text-align: center;
   }
@@ -1278,7 +1278,7 @@
   .et-db #et-boc .et-l .et_pb_module .team-description {
     border-right: none;
   }
-  .et-db #et-boc .et-l .et_pb_module .member-skill {
+  .et-db #et-boc .et-l .et_pb_module .coach-skill {
     margin-top: 20px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-table-head,
@@ -1346,10 +1346,10 @@
   .et-db #et-boc .et-l .et_pb_module .gs-col-xs-6 {
     width: 100% !important;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc {
     margin-bottom: 15px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme2 .gs-coach-social li a,
@@ -1360,33 +1360,33 @@
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 ul.gs-coach-social {
     float: left;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-name {
     margin-top: 5px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_grid2 .staff-meta {
     width: 320px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-member,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-member {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .single-coach,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .single-coach {
     display: initial;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-name,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-name {
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-name,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-name {
     text-align: center;
     margin: 15px 0 6px;
   }
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desig,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-member-desc,
-  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-member-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desig,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme3 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme4 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme5 .gs-coach-desc,
+  .et-db #et-boc .et-l .et_pb_module .gs_tm_theme6 .gs-coach-desc,
   .et-db #et-boc .et-l .et_pb_module .gs-coach-social {
     text-align: center;
   }
@@ -1400,7 +1400,7 @@
   .et-db #et-boc .et-l .et_pb_module .team-description {
     border-right: none;
   }
-  .et-db #et-boc .et-l .et_pb_module .member-skill {
+  .et-db #et-boc .et-l .et_pb_module .coach-skill {
     margin-top: 20px;
   }
   .et-db #et-boc .et-l .et_pb_module .gs_tm_theme14 .gsc-table-head,

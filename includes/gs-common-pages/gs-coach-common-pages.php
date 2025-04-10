@@ -15,8 +15,8 @@ new GS_Plugins_Common_Pages([
 	'help_page_slug' 	=> 'gs-coach-plugins-help',
 
 	'links' => [
-		'docs_link' 	=> 'https://docs.gsplugins.com/gs-coach-members/',
-		'rating_link' 	=> 'https://wordpress.org/support/plugin/gs-coach-members/reviews/#new-post',
+		'docs_link' 	=> 'https://docs.gsplugins.com/gs-coach-coachs/',
+		'rating_link' 	=> 'https://wordpress.org/support/plugin/gs-coach-coachs/reviews/#new-post',
 		// 'tutorial_link' => 'https://team.gsplugins.com/',
 	]
 

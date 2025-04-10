@@ -4,7 +4,7 @@
 
 			<div class="top-section head-section">
 				<h2>{{translation('preference')}}</h2>
-				<p>{{translation('global-settings-for-gs-coach-members')}}</p>
+				<p>{{translation('global-settings-for-gs-coach-coachs')}}</p>
 			</div>
 
 			<div class="bottom-section">
@@ -14,12 +14,12 @@
 					<div class="gs-roow row-20">
 
 						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-							<label class="m-t-10" for="gs_coachmembers_slug">{{translation('coaches-slug')}}:</label>
+							<label class="m-t-10" for="gs_coachcoachs_slug">{{translation('coaches-slug')}}:</label>
 							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 						</div>
 
 						<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-							<input type="text" class="bi-input-control" name="gs_coachmembers_slug" v-model="preference.gs_coachmembers_slug" />
+							<input type="text" class="bi-input-control" name="gs_coachcoachs_slug" v-model="preference.gs_coachcoachs_slug" />
 						</div>
 
 						<div class="gs-col-xs-12 bi-text-help--area">  
@@ -228,16 +228,16 @@
 					<div class="gs-roow row-20">
 
 						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-							<label class="m-t-10" for="gs_member_nxt_prev">{{translation('next-prev-member')}}:</label>
+							<label class="m-t-10" for="gs_coach_nxt_prev">{{translation('next-prev-coach')}}:</label>
 							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 						</div>
 
 						<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-							<input-toggle class="m-t-6" name="gs_member_nxt_prev" v-model="preference.gs_member_nxt_prev" offLabel="Off" onLabel="On"></input-toggle>
+							<input-toggle class="m-t-6" name="gs_coach_nxt_prev" v-model="preference.gs_coach_nxt_prev" offLabel="Off" onLabel="On"></input-toggle>
 						</div>
 
 						<div class="gs-col-xs-12 bi-text-help--area">
-							<p class="bi-text-help">{{translation('show-or-hide-next-prev-member-link-at-single-team-template')}}</p>
+							<p class="bi-text-help">{{translation('show-or-hide-next-prev-coach-link-at-single-team-template')}}</p>
 						</div>
 
 					</div>
@@ -249,12 +249,12 @@
 					<div class="gs-roow row-20">
 
 						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-							<label class="m-t-10" for="gs_member_search_all_fields">{{translation('pref-search-all-fields')}}:</label>
+							<label class="m-t-10" for="gs_coach_search_all_fields">{{translation('pref-search-all-fields')}}:</label>
 							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 						</div>
 
 						<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-							<input-toggle class="m-t-6" name="gs_member_search_all_fields" v-model="preference.gs_member_search_all_fields" offLabel="Off" onLabel="On"></input-toggle>
+							<input-toggle class="m-t-6" name="gs_coach_search_all_fields" v-model="preference.gs_coach_search_all_fields" offLabel="Off" onLabel="On"></input-toggle>
 						</div>
 
 						<div class="gs-col-xs-12 bi-text-help--area">
@@ -357,12 +357,12 @@
 					<div class="gs-roow row-20">
 
 						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-							<label class="m-t-10" for="gs_member_enable_multilingual">{{translation('enable-multilingual')}}:</label>
+							<label class="m-t-10" for="gs_coach_enable_multilingual">{{translation('enable-multilingual')}}:</label>
 							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 						</div>
 
 						<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-							<input-toggle class="m-t-6" name="gs_member_enable_multilingual" v-model="preference.gs_member_enable_multilingual" offLabel="Off" onLabel="On"></input-toggle>
+							<input-toggle class="m-t-6" name="gs_coach_enable_multilingual" v-model="preference.gs_coach_enable_multilingual" offLabel="Off" onLabel="On"></input-toggle>
 						</div>
 
 						<div class="gs-col-xs-12 bi-text-help--area">
@@ -373,7 +373,7 @@
 
 				</div>
 
-				<template v-if="! preference.gs_member_enable_multilingual">
+				<template v-if="! preference.gs_coach_enable_multilingual">
 				
 					<div class="shortcode-setting--row">
 
@@ -1085,7 +1085,7 @@
 
 				handler: function() {
 					if ( Object.keys( this.preference ).length ) {
-						_gscoach_data.is_multilingual = this.preference.gs_member_enable_multilingual;
+						_gscoach_data.is_multilingual = this.preference.gs_coach_enable_multilingual;
 					}
 				},
 
