@@ -1633,7 +1633,7 @@
 
 			setInitialTaxSettings() {
 
-				this.setTaxSettings( this._getTaxSettings() );
+				this.setTaxSettings( this._getDefaultTaxSettings() );
 
 			},
 
@@ -1711,6 +1711,7 @@
 							type: 'success',
 							message: response.data
 						});
+						window.location.reload();
 					}
 
 				})

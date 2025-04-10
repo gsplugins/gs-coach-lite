@@ -164,12 +164,11 @@ class Shortcode {
 			];
 		}
 	
-		if ( !empty($exclude_group) ) {
+		if ( !empty($tag) ) {
 			$args['tax_query'][] = [
-				'taxonomy' => 'gs_coach_group',
+				'taxonomy' => 'gs_coach_tag',
 				'field'    => 'term_id',
-				'terms'    => explode( ',', $exclude_group ),
-				'operator' => 'NOT IN',
+				'terms'    => explode( ',', $tag ),
 			];
 		}
 	
@@ -242,6 +241,106 @@ class Shortcode {
 				'taxonomy' => 'gs_coach_extra_five',
 				'field'    => 'term_id',
 				'terms'    => explode( ',', $include_extra_five ),
+			];
+		}
+
+			
+		if ( !empty($exclude_group) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_group',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_group ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_tags) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_tag',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_tags ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_language) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_language',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_language ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_location) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_location',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_location ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_specialty) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_specialty',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_specialty ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_gender) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_gender',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_gender ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_extra_one) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_extra_one',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_extra_one ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_extra_two) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_extra_two',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_extra_two ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_extra_three) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_extra_three',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_extra_three ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_extra_four) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_extra_four',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_extra_four ),
+				'operator' => 'NOT IN',
+			];
+		}
+			
+		if ( !empty($exclude_extra_five) ) {
+			$args['tax_query'][] = [
+				'taxonomy' => 'gs_coach_extra_five',
+				'field'    => 'term_id',
+				'terms'    => explode( ',', $exclude_extra_five ),
+				'operator' => 'NOT IN',
 			];
 		}
 	
