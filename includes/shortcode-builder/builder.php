@@ -1963,7 +1963,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_cols_mobile_portrait'   => '6',
                 'gs_coach_cols_mobile'            => '12',
                 'group'                           => '',
-                'tags'                            => '',
+                'tag'                            => '',
                 'language'                        => '',
                 'location'                        => '',
                 'specialty'                       => '',

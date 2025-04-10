@@ -2728,7 +2728,6 @@
 				let exclude_extra_four  = shortcode_settings.exclude_extra_four;
 				let exclude_extra_five  = shortcode_settings.exclude_extra_five;
 
-				console.log(exclude_extra_five);
 				if ( group && typeof group == 'object' && group.length ) {
 					shortcode_settings.group = group.join(',');
 				}
@@ -2843,6 +2842,10 @@
 
 				if ( settings.group && typeof settings.group == 'string' ) {
 					this.shortcode_settings.group = settings.group.split(',').map(Number);
+				}
+
+				if ( settings.tag && typeof settings.tag == 'string' ) {
+					this.shortcode_settings.tag = settings.tag.split(',').map(Number);
 				}
 
 				if ( settings.location && typeof settings.location == 'string' ) {
