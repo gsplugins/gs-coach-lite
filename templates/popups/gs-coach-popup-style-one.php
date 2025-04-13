@@ -49,9 +49,6 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
                 <div class="gs-sin-mem-desig" itemprop="jobtitle"><?php echo esc_html( $designation ); ?></div>
                 <?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
-                <!-- Meta Fields -->
-                <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
-
                 <!-- Description -->
                 <div class="gs-coach-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
                 <?php do_action( 'gs_coach_after_coach_details' ); ?>

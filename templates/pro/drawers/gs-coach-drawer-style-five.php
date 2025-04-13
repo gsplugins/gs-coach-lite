@@ -16,9 +16,6 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
             <?php do_action( 'gs_coach_after_coach_thumbnail_popup' ); ?>
         </div>
 
-        <!-- Meta Fields -->
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
-
     </div>
 
 

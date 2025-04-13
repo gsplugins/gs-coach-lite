@@ -55,9 +55,6 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
         <?php $gs_coach_connect = 'on'; ?>
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
 
-        <!-- Meta Fields -->
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
-
         <!-- Description -->
         <div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
         <?php do_action( 'gs_coach_after_coach_details' ); ?>

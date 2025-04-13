@@ -12,11 +12,9 @@ namespace GSCOACH;
  */
 
 
-$gs_coachcom_meta 		    = get_translation( 'gs_coachcom_meta' );
 $gs_coachadd_meta 		    = get_translation( 'gs_coachadd_meta' );
 $gs_coachcellPhone_meta 	= get_translation( 'gs_coachcellPhone_meta' );
 $gs_coachemail_meta 		= get_translation( 'gs_coachemail_meta' );
-$gs_coach_zipcode_meta 	    = get_translation( 'gs_coach_zipcode_meta' );
 
 $gs_coach_location_label     = plugin()->builder->get_tax_option( 'location_tax_label' );
 $gs_coach_language_label     = plugin()->builder->get_tax_option( 'language_tax_label' );
@@ -29,10 +27,6 @@ $gs_coach_extra_three_label = 'Extra Three';
 $gs_coach_extra_four_label  = 'Extra Four';
 $gs_coach_extra_five_label  = 'Extra Five';
 
-$address            = get_post_meta( get_the_id(), '_gscoach_address', true );
-$email              = get_post_meta( get_the_id(), '_gscoach_email', true );
-$cell               = get_post_meta( get_the_id(), '_gscoach_contact', true );
-$gs_zip_code        = is_pro_valid() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';
 $location           = is_pro_valid() ? gs_coach_coach_location() : '';
 $language           = is_pro_valid() ? gs_coach_coach_language() : '';
 $specialty          = is_pro_valid() ? gs_coach_coach_specialty() : '';
@@ -44,6 +38,13 @@ $extra_four         = is_pro_valid() ? gs_coach_coach_extra_four() : '';
 $extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
 
 ?>
+
+<!-- Temporary style -->
+<style>
+    .star-rating {
+        display: inline-block;
+    }
+</style>
 
 <div class="gscoach-details">
 
@@ -149,12 +150,33 @@ $extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
         </div>
     <?php endif; ?>
 
-    <?php if ( !empty( $gs_zip_code ) ) : ?>
-        <div class="gs-coach-zipcode">
-            <span class="levels"><?php echo esc_html($gs_coach_zipcode_meta); ?></span>
-            <span class="level-info-zipcode"><?php echo esc_html($gs_zip_code); ?></span>
-        </div>
-    <?php endif; ?>
+    <!-- Meta Fields -->
+    <?php
+
+    foreach ( gs_get_sort_metas() as $meta ) {
+        $meta_value = get_post_meta( get_the_id(), $meta['key'], true );
+        if ( empty( $meta['name'] ) ) continue;
+        if ( '_gscoach_custom_page' === $meta['key'] ) continue;
+
+        if( '_gscoach_rating' !== $meta['key'] ){
+            ?>
+                <div class="gs-coach-meta-fields">
+                    <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                    <span class="gs-coach-meta-info"><?php echo esc_html( $meta_value ); ?></span>
+                </div>
+            <?php
+        } else {
+            ?>
+                <div class="gs-coach-rating">
+                    <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                    <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta_value ) ) ); ?></span>
+                </div>
+            <?php
+        }
+    }
+
+
+    ?>
     
 </div>
 

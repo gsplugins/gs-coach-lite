@@ -49,6 +49,13 @@ $extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
 
 ?>
 
+<!-- Temporary style -->
+<style>
+    .star-rating {
+        display: inline-block;
+    }
+</style>
+
 <div class="gscoach-details">
     
     <?php if ( !empty($company) || !empty($company_website) ) : ?>
@@ -199,14 +206,35 @@ $extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
             <span class="level-info-extra_five"><?php echo esc_html($extra_five); ?></span>
         </div>
     <?php endif; ?>
+    
 
-    <?php if ( !empty( $gs_zip_code ) ) : ?>
-        <div class="gs-coach-zipcode">
-            <i class="fas fa-map-marker" aria-hidden="true"></i>
-            <span class="levels"><?php echo esc_html($gs_coach_zipcode_meta); ?></span>
-            <span class="level-info-zipcode"><?php echo esc_html($gs_zip_code); ?></span>
-        </div>
-    <?php endif; ?>
+        <!-- Meta Fields -->
+        <?php
+
+        foreach ( gs_get_sort_metas() as $meta ) {
+            $meta_value = get_post_meta( get_the_id(), $meta['key'], true );
+            if ( empty( $meta['name'] ) ) continue;
+            if ( '_gscoach_custom_page' === $meta['key'] ) continue;
+
+            if( '_gscoach_rating' !== $meta['key'] ){
+                ?>
+                    <div class="gs-coach-meta-fields">
+                        <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                        <span class="gs-coach-meta-info"><?php echo esc_html( $meta_value ); ?></span>
+                    </div>
+                <?php
+            } else {
+                ?>
+                    <div class="gs-coach-rating">
+                        <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                        <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta_value ) ) ); ?></span>
+                    </div>
+                <?php
+            }
+        }
+
+
+        ?>
     
 </div>
 
