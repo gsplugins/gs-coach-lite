@@ -869,6 +869,8 @@ if ( ! class_exists( 'Builder' ) ) {
                 'single_link_type__details' => __('Set the default link type for link behaviour', 'gscoach'),
                 'next-prev-coach' => __('Next / Prev Coach', 'gscoach'),
                 'instant-search-by-name' => __('Search by Name', 'gscoach'),
+                'gs-coach-srch-by-company' => __('Search by Company', 'gscoach'),
+                'gs-coach-srch-by-company--details' => __('Show or Hide by Company', 'gscoach'),
                 'gs-coach-srch-by-zip' => __('Search by Zip', 'gscoach'),
                 'gs-coach-srch-by-tag' => __('Search by Tag', 'gscoach'),
                 'filter-by-designation' => __('Filter by Designation', 'gscoach'),

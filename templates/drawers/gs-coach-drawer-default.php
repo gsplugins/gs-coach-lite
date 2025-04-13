@@ -27,8 +27,8 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
     <div class="gs-col-md-6 gs-tm-sicons">
 
-        <!-- Meta Fields -->
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
+        <!-- Meta Details -->
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details.php' ); ?>
 
         <!-- Social Links -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>

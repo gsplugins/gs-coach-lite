@@ -36,9 +36,6 @@ namespace GSCOACH;
                     <div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
                     <?php do_action( 'gs_coach_after_coach_details' ); ?>
 
-                    <!-- Meta Fields -->
-                    <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
-
                     <!-- Meta Details -->
                     <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>
     
