@@ -108,11 +108,20 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
     </div>
 
-    <div class="gs_coach_certificates">
-        <!-- Certificates -->
-         <?php $is_certificates_enabled = 'on'; ?>
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
+    <div class="gs-roow">
+
+        <div class="gs-col-md-12">
+
+            <div class="gs_coach_certificates">
+                <!-- Certificates -->
+                 <?php $is_certificates_enabled = 'on'; ?>
+                <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-certificates.php' ); ?>
+            </div>
+            
+        </div>
+
     </div>
+
 
 
 </div>
