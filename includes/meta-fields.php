@@ -63,10 +63,11 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_prof        = get_post_meta($post->ID, '_gscoach_profession', true);
 
+		$gs_prof                   = get_post_meta($post->ID, '_gscoach_profession', true);
 		$gs_coach_experience       = get_post_meta($post->ID, '_gscoach_experience', true);
 		$gs_coach_education        = get_post_meta($post->ID, '_gscoach_education', true);
+		$gs_coach_ribbon           = get_post_meta($post->ID, '_gscoach_ribbon', true);
 		$gs_coach_address          = get_post_meta($post->ID, '_gscoach_address', true);
 		$gs_coach_state            = get_post_meta($post->ID, '_gscoach_state', true);
 		$gs_coach_country          = get_post_meta($post->ID, '_gscoach_country', true);
@@ -103,6 +104,11 @@ class Meta_Fields {
 				<div class="form-group">
 					<label for="gsCoachEducation"><?php echo get_meta_field_name('_gscoach_education'); ?></label>
 					<input type="text" id="gsCoachEducation" class="form-control" name="gs_coach_education" placeholder="Education" value="<?php echo isset($gs_coach_education) ? esc_attr($gs_coach_education) : ''; ?>">
+				</div>
+			
+				<div class="form-group">
+					<label for="gsCoachRibbon"><?php echo get_meta_field_name('_gscoach_ribbon'); ?></label>
+					<input type="text" id="gsCoachRibbon" class="form-control" name="gs_coach_ribbon" value="<?php echo isset($gs_coach_ribbon) ? esc_attr($gs_coach_ribbon) : ''; ?>">
 				</div>
 
 				<div class="form-group">
@@ -498,6 +504,7 @@ class Meta_Fields {
 
 			update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
 			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));
+			update_post_meta($post_id, '_gscoach_ribbon', sanitize_text_field($_POST['gs_coach_ribbon']));
 			update_post_meta($post_id, '_gscoach_address', sanitize_text_field($_POST['gs_coach_address']));
 			update_post_meta($post_id, '_gscoach_state', sanitize_text_field($_POST['gs_coach_state']));
 			update_post_meta($post_id, '_gscoach_country', sanitize_text_field($_POST['gs_coach_country']));

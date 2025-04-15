@@ -2104,6 +2104,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_profession' => __('Profession', 'gscoach'),
                 'gs_coach_experience' => __('Experience', 'gscoach'),
                 'gs_coach_education' => __('Education', 'gscoach'),
+                'gs_coach_ribbon' => __('Ribbon', 'gscoach'),
                 'gs_coach_address' => __('Address', 'gscoach'),
                 'gs_coach_state' => __('State/ City', 'gscoach'),
                 'gs_coach_country' => __('Country', 'gscoach'),
