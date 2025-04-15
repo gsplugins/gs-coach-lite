@@ -21,11 +21,11 @@ $gs_coach_language_label     = plugin()->builder->get_tax_option( 'language_tax_
 $gs_coach_specialty_label    = plugin()->builder->get_tax_option( 'specialty_tax_label' );
 $gs_coach_gender_label       = plugin()->builder->get_tax_option( 'gender_tax_label' );
 
-$gs_coach_extra_one_label   = 'Extra One';
-$gs_coach_extra_two_label   = 'Extra Two';
-$gs_coach_extra_three_label = 'Extra Three';
-$gs_coach_extra_four_label  = 'Extra Four';
-$gs_coach_extra_five_label  = 'Extra Five';
+$gs_coach_extra_one_label   = plugin()->builder->get_tax_option( 'extra_one_tax_label' );
+$gs_coach_extra_two_label   = plugin()->builder->get_tax_option( 'extra_two_tax_label' );
+$gs_coach_extra_three_label = plugin()->builder->get_tax_option( 'extra_three_tax_label' );
+$gs_coach_extra_four_label  = plugin()->builder->get_tax_option( 'extra_four_tax_label' );
+$gs_coach_extra_five_label  = plugin()->builder->get_tax_option( 'extra_five_tax_label' );
 
 $location           = is_pro_valid() ? gs_coach_coach_location() : '';
 $language           = is_pro_valid() ? gs_coach_coach_language() : '';

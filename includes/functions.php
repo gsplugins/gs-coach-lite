@@ -951,6 +951,7 @@ function get_meta_field_name( $field_key ) {
         '_gscoach_profession' => get_translation('gs_coach_profession'),
         '_gscoach_experience' => get_translation('gs_coach_experience'),
         '_gscoach_education' => get_translation('gs_coach_education'),
+        '_gscoach_ribbon' => get_translation('gs_coach_ribbon'),
         '_gscoach_address' => get_translation('gs_coach_address'),
         '_gscoach_state' => get_translation('gs_coach_state'),
         '_gscoach_country' => get_translation('gs_coach_country'),
