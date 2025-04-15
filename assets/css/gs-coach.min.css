@@ -1772,7 +1772,6 @@ span.progressText {
 .gs_coach_popup_img img,
 .single-gs_coach .gs_coach_img img {
   max-width: 100% !important;
-  height: auto !important;
 }
 
 .style-six .gs-coach-name {
@@ -13865,4 +13864,68 @@ body {
 .gs-single-container .gs-coach-desc input,
 .gs-single-container .gs-coach-desc textarea {
   border-color: rgba(0, 0, 0, 0.2);
+}
+.gs_coach_area .gs_coach_certificates,
+.gs_coach_popup .gs_coach_certificates,
+.gs-single-container .gs_coach_certificates {
+  margin-top: 40px;
+}
+.gs_coach_area .gs_coach_certificates .gs-coach-certificates-title,
+.gs_coach_popup .gs_coach_certificates .gs-coach-certificates-title,
+.gs-single-container .gs_coach_certificates .gs-coach-certificates-title {
+  color: #030d1e;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.gs_coach_area .gs_coach_certificates .gs-coach-certificates-wrapper,
+.gs_coach_popup .gs_coach_certificates .gs-coach-certificates-wrapper,
+.gs-single-container .gs_coach_certificates .gs-coach-certificates-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.gs_coach_area .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate,
+.gs_coach_popup .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate,
+.gs-single-container .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate {
+  height: 270px;
+  width: calc((100% - 32px) / 3);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.gs_coach_area .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate img,
+.gs_coach_popup .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate img,
+.gs-single-container .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.gs_coach_area .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate:hover,
+.gs_coach_popup .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate:hover,
+.gs-single-container .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate:hover {
+  -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+          box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+}
+.gs_coach_area .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate:hover img,
+.gs_coach_popup .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate:hover img,
+.gs-single-container .gs_coach_certificates .gs-coach-certificates-wrapper .gs-coach-certificate:hover img {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }

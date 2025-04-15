@@ -219,14 +219,14 @@ $extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
             if( '_gscoach_rating' !== $meta['key'] ){
                 ?>
                     <div class="gs-coach-meta-fields">
-                        <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                        <span class="levels"><?php echo get_meta_field_name($meta['key']); ?></span>
                         <span class="gs-coach-meta-info"><?php echo esc_html( $meta_value ); ?></span>
                     </div>
                 <?php
             } else {
                 ?>
                     <div class="gs-coach-rating">
-                        <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                        <span class="levels"><?php echo get_meta_field_name($meta['key']); ?></span>
                         <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta_value ) ) ); ?></span>
                     </div>
                 <?php
