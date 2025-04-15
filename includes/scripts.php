@@ -357,7 +357,7 @@ final class Scripts {
 	public function print_plugin_icon_css() {
 		?>
 		<style>
-			#adminmenu .toplevel_page_gs-coach-members .wp-menu-image img,
+			#adminmenu .toplevel_page_gs-coach-coachs .wp-menu-image img,
 			#adminmenu .menu-icon-gs_coach .wp-menu-image img {
 				padding-top: 7px;
 				width: 22px;
@@ -369,14 +369,14 @@ final class Scripts {
 				clear: both
 			}
 
-			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-members-affiliation"] ),
+			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-coachs-affiliation"] ),
 			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-shortcode#/taxonomies"] ),
 			#menu-posts-gs_coach li:nth-last-child(2) {
 				position: relative;
 				margin-top: 16px;
 			}
 			
-			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-members-affiliation"] ):before,
+			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-coachs-affiliation"] ):before,
 			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-shortcode#/taxonomies"] ):before,
 			#menu-posts-gs_coach li:nth-last-child(2):before {
 				content: "";
@@ -429,13 +429,13 @@ final class Scripts {
 		// Register Scripts
 		$this->wp_register_script_all('admin');
 
-		// Allow scripts loading in new gs_coach member page
+		// Allow scripts loading in new gs_coach coach page
 		if ($hook == 'post-new.php' && $_GET['post_type'] == 'gs_coach') $load_script = true;
 
-		// Allow scripts loading in gs_coach member edit page
+		// Allow scripts loading in gs_coach coach edit page
 		if ($hook == 'post.php' && $post->post_type == 'gs_coach') $load_script = true;
 
-		// Allow scripts loading in gs_coach member edit page
+		// Allow scripts loading in gs_coach coach edit page
 		if ($hook == 'edit-tags.php' && $_GET['post_type'] == 'gs_coach') $load_script = true;
 		if ($hook == 'term.php' && $_GET['post_type'] == 'gs_coach') $load_script = true;
 

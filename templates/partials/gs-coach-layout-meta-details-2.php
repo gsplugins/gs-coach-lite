@@ -24,11 +24,11 @@ $gs_coach_language_label     = plugin()->builder->get_tax_option( 'language_tax_
 $gs_coach_specialty_label    = plugin()->builder->get_tax_option( 'specialty_tax_label' );
 $gs_coach_gender_label       = plugin()->builder->get_tax_option( 'gender_tax_label' );
 
-$gs_coach_extra_one_label   = 'Extra One';
-$gs_coach_extra_two_label   = 'Extra Two';
-$gs_coach_extra_three_label = 'Extra Three';
-$gs_coach_extra_four_label  = 'Extra Four';
-$gs_coach_extra_five_label  = 'Extra Five';
+$gs_coach_extra_one_label   = plugin()->builder->get_tax_option( 'extra_one_tax_label' );
+$gs_coach_extra_two_label   = plugin()->builder->get_tax_option( 'extra_two_tax_label' );
+$gs_coach_extra_three_label = plugin()->builder->get_tax_option( 'extra_three_tax_label' );
+$gs_coach_extra_four_label  = plugin()->builder->get_tax_option( 'extra_four_tax_label' );
+$gs_coach_extra_five_label  = plugin()->builder->get_tax_option( 'extra_five_tax_label' );
 
 $address            = get_post_meta( get_the_id(), '_gscoach_address', true );
 $email              = get_post_meta( get_the_id(), '_gscoach_email', true );
@@ -37,22 +37,29 @@ $cell               = get_post_meta( get_the_id(), '_gscoach_contact', true );
 $company            = get_post_meta( get_the_id(), '_gs_com', true );
 $company_website    = get_post_meta( get_the_id(), '_gs_com_website', true );
 $gs_zip_code        = is_pro_valid() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';
-$location           = is_pro_valid() ? gs_coach_member_location() : '';
-$language           = is_pro_valid() ? gs_coach_member_language() : '';
-$specialty          = is_pro_valid() ? gs_coach_member_specialty() : '';
-$gender             = is_pro_valid() ? gs_coach_member_gender() : '';
-$extra_one          = is_pro_valid() ? gs_coach_member_extra_one() : '';
-$extra_two          = is_pro_valid() ? gs_coach_member_extra_two() : '';
-$extra_three        = is_pro_valid() ? gs_coach_member_extra_three() : '';
-$extra_four         = is_pro_valid() ? gs_coach_member_extra_four() : '';
-$extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
+$location           = is_pro_valid() ? gs_coach_coach_location() : '';
+$language           = is_pro_valid() ? gs_coach_coach_language() : '';
+$specialty          = is_pro_valid() ? gs_coach_coach_specialty() : '';
+$gender             = is_pro_valid() ? gs_coach_coach_gender() : '';
+$extra_one          = is_pro_valid() ? gs_coach_coach_extra_one() : '';
+$extra_two          = is_pro_valid() ? gs_coach_coach_extra_two() : '';
+$extra_three        = is_pro_valid() ? gs_coach_coach_extra_three() : '';
+$extra_four         = is_pro_valid() ? gs_coach_coach_extra_four() : '';
+$extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
 
 ?>
+
+<!-- Temporary style -->
+<style>
+    .star-rating {
+        display: inline-block;
+    }
+</style>
 
 <div class="gscoach-details">
     
     <?php if ( !empty($company) || !empty($company_website) ) : ?>
-        <div class="gs-member-company">
+        <div class="gs-coach-company">
 
             <i class="fas fa-users" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coachcom_meta); ?></span>
@@ -70,7 +77,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty($address) ) : ?>
-        <div class="gs-member-address">
+        <div class="gs-coach-address">
             <i class="fas fa-book" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coachadd_meta); ?></span>
             <span class="level-info-address"><?php echo wp_kses_post( $address ); ?></span>
@@ -78,7 +85,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty($land) ) : ?>
-        <div class="gs-member-lphon">
+        <div class="gs-coach-lphon">
             <i class="fas fa-phone-square" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coachlandphone_meta); ?></span>
             <span class="level-info-lphon">
@@ -95,7 +102,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty($cell) ) : ?>
-        <div class="gs-member-cphon">
+        <div class="gs-coach-cphon">
             <i class="fas fa-phone"></i>
             <span class="levels"><?php echo esc_html($gs_coachcellPhone_meta); ?></span>
             <span class="level-info-cphon">
@@ -112,14 +119,14 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty($email) ) : ?>
-        <div class="gs-member-email">
+        <div class="gs-coach-email">
             <i class="fas fa-envelope" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coachemail_meta); ?></span>
             <span class="level-info-email">
                 <?php
                 $email_link = getoption( 'email_link', 'off' );
                 if ( $email_link == 'on' ) {
-                    member_email_mailto('', true);
+                    coach_email_mailto('', true);
                 } else {
                     echo sanitize_email($email);
                 }
@@ -129,7 +136,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $location )) : ?>
-        <div class="gs-member-loc">
+        <div class="gs-coach-loc">
             <i class="fas fa-map-marker" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_location_label); ?></span>
             <span class="level-info-loc"><?php echo esc_html($location); ?></span>
@@ -137,7 +144,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $language ) ) : ?>
-        <div class="gs-member-lang">
+        <div class="gs-coach-lang">
             <i class="fas fa-language" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_language_label); ?></span>
             <span class="level-info-lang"><?php echo esc_html($language); ?></span>
@@ -145,7 +152,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $specialty ) ) : ?>
-        <div class="gs-member-specialty">
+        <div class="gs-coach-specialty">
             <i class="fas fa-plus-square" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_specialty_label); ?></span>
             <span class="level-info-specialty"><?php echo esc_html($specialty); ?></span>
@@ -153,7 +160,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $gender ) ) : ?>
-        <div class="gs-member-gender">
+        <div class="gs-coach-gender">
             <i class="fas fa-user" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_gender_label); ?></span>
             <span class="level-info-gender"><?php echo esc_html($gender); ?></span>
@@ -161,7 +168,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $extra_one ) ) : ?>
-        <div class="gs-member-extra_one">
+        <div class="gs-coach-extra_one">
             <i class="fas fa-tag" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_extra_one_label); ?></span>
             <span class="level-info-extra_one"><?php echo esc_html($extra_one); ?></span>
@@ -169,7 +176,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $extra_two ) ) : ?>
-        <div class="gs-member-extra_two">
+        <div class="gs-coach-extra_two">
             <i class="fas fa-tag" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_extra_two_label); ?></span>
             <span class="level-info-extra_two"><?php echo esc_html($extra_two); ?></span>
@@ -177,7 +184,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $extra_three ) ) : ?>
-        <div class="gs-member-extra_three">
+        <div class="gs-coach-extra_three">
             <i class="fas fa-tag" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_extra_three_label); ?></span>
             <span class="level-info-extra_three"><?php echo esc_html($extra_three); ?></span>
@@ -185,7 +192,7 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $extra_four ) ) : ?>
-        <div class="gs-member-extra_four">
+        <div class="gs-coach-extra_four">
             <i class="fas fa-tag" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_extra_four_label); ?></span>
             <span class="level-info-extra_four"><?php echo esc_html($extra_four); ?></span>
@@ -193,21 +200,42 @@ $extra_five         = is_pro_valid() ? gs_coach_member_extra_five() : '';
     <?php endif; ?>
 
     <?php if ( !empty( $extra_five ) ) : ?>
-        <div class="gs-member-extra_five">
+        <div class="gs-coach-extra_five">
             <i class="fas fa-tag" aria-hidden="true"></i>
             <span class="levels"><?php echo esc_html($gs_coach_extra_five_label); ?></span>
             <span class="level-info-extra_five"><?php echo esc_html($extra_five); ?></span>
         </div>
     <?php endif; ?>
+    
 
-    <?php if ( !empty( $gs_zip_code ) ) : ?>
-        <div class="gs-member-zipcode">
-            <i class="fas fa-map-marker" aria-hidden="true"></i>
-            <span class="levels"><?php echo esc_html($gs_coach_zipcode_meta); ?></span>
-            <span class="level-info-zipcode"><?php echo esc_html($gs_zip_code); ?></span>
-        </div>
-    <?php endif; ?>
+        <!-- Meta Fields -->
+        <?php
+
+        foreach ( gs_get_sort_metas() as $meta ) {
+            $meta_value = get_post_meta( get_the_id(), $meta['key'], true );
+            if ( empty( $meta['name'] ) ) continue;
+            if ( '_gscoach_custom_page' === $meta['key'] ) continue;
+
+            if( '_gscoach_rating' !== $meta['key'] ){
+                ?>
+                    <div class="gs-coach-meta-fields">
+                        <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                        <span class="gs-coach-meta-info"><?php echo esc_html( $meta_value ); ?></span>
+                    </div>
+                <?php
+            } else {
+                ?>
+                    <div class="gs-coach-rating">
+                        <span class="gs-coach-meta-label"><?php echo get_meta_field_name($meta['key']) . ': '; ?></span>
+                        <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta_value ) ) ); ?></span>
+                    </div>
+                <?php
+            }
+        }
+
+
+        ?>
     
 </div>
 
-<?php do_action( 'gs_coach_after_member_meta_details' ); ?>
+<?php do_action( 'gs_coach_after_coach_meta_details' ); ?>

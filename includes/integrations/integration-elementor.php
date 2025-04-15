@@ -61,7 +61,7 @@ class Integration_Elementor {
             
             window.onload = function() {
 
-                elementor.hooks.addAction( 'panel/open_editor/widget/gs-coach-members', function( panel, model, view ) {
+                elementor.hooks.addAction( 'panel/open_editor/widget/gs-coach-coachs', function( panel, model, view ) {
 
                     var $shortcode_field = jQuery('.elementor-control-gs_coach_shortcode .elementor-control-input-wrapper select');
                     var $edit_link = jQuery('.elementor-control-gs_coach_shortcode .gs-coach-edit-link');
@@ -99,7 +99,7 @@ class Integration_Elementor {
                 line-height: 1.8;
             }
 
-            body #elementor-panel-elements-wrapper .icon .gs-coach-members {
+            body #elementor-panel-elements-wrapper .icon .gs-coach-coachs {
                 background: url('<?php echo esc_url( $icon ); ?>') no-repeat center center;
                 background-size: contain;
                 height: 29px;
@@ -133,7 +133,7 @@ function load_elementor_widget_class() {
     class Elementor_Widget extends \Elementor\Widget_Base {
 
         public function get_name() {
-            return 'gs-coach-members';
+            return 'gs-coach-coachs';
         }
 
         public function get_title() {
@@ -141,7 +141,7 @@ function load_elementor_widget_class() {
         }
 
         public function get_icon() {
-            return 'gs-coach-members';
+            return 'gs-coach-coachs';
         }
 
         public function get_categories() {

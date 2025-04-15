@@ -76,50 +76,50 @@ $panel_enabled = 'on';
 			
 			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
-			$classes = ['gs-filter-single-item single-member-div gs-filter-single-item', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
+			$classes = ['gs-filter-single-item single-coach-div gs-filter-single-item', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 
 			?>
 
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 				
-				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
-					<div class="single-member cbp-so-side cbp-so-side-left">
+				<!-- Sehema & Single coach wrapper -->
+				<div class="single-coach--wrapper" itemscope itemtype="http://schema.org/Organization">
+					<div class="single-coach cbp-so-side cbp-so-side-left">
 
 						<a class="gs_coach_pop gs_coach_panelslide_link" id="gscoachlink_<?php echo esc_attr(get_the_id()); ?>_<?php echo esc_attr($id); ?>" href="#gscoach_<?php echo esc_attr(get_the_id()); ?>_<?php echo esc_attr($id); ?>">
 
-							<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+							<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 
 							<!-- Ribbon -->
 							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 
 							<!-- Coach Image -->
 							<div class="gs_coach_image__wrapper">
-								<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+								<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 							</div>
-							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+							<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 
 							<!-- Indicator -->
 							<div class="gs_coach_overlay"><i class="fas fa-bolt"></i></div>
 
-							<div class="single-member-name-desig">
+							<div class="single-coach-name-desig">
 
-								<!-- Single member name -->
+								<!-- Single coach name -->
 								<?php if ( 'on' ==  $gs_coach_name ): ?>
-									<?php member_name( $id, true, false ); ?>
-									<?php do_action( 'gs_coach_after_member_name' ); ?>
+									<?php coach_name( $id, true, false ); ?>
+									<?php do_action( 'gs_coach_after_coach_name' ); ?>
 								<?php endif; ?>
 								
-								<!-- Single member designation -->
+								<!-- Single coach designation -->
 								<?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
-									<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-									<?php do_action( 'gs_coach_after_member_designation' ); ?>
+									<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+									<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 								<?php endif; ?>
 
 							</div>
 
-							<?php do_action( 'gs_coach_after_member_content' ); ?>
+							<?php do_action( 'gs_coach_after_coach_content' ); ?>
 
 						</a>
 					
@@ -136,8 +136,8 @@ $panel_enabled = 'on';
 		
 	<?php else: ?>
 
-		<!--es not found - Load no-team-member template -->
-		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+		<!--es not found - Load no-team-coach template -->
+		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 	<?php endif; ?>
 

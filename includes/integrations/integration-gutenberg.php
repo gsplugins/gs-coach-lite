@@ -98,7 +98,7 @@ class Integration_Gutenberg {
         if ( empty($post) ) {
             ?>
             <div class="container gs-single-container" style="padding:3em 2em;background: rgba(126, 126, 126, 0.35);">
-                <h4><?php echo __( 'GS Single Coach Member Page', 'gscoach' ) ?></h4>
+                <h4><?php echo __( 'GS Single Coach coach Page', 'gscoach' ) ?></h4>
             </div>
             <?php
         } else {
@@ -113,34 +113,34 @@ class Integration_Gutenberg {
 
         ob_start(); ?>
     
-        .gscoach-members--toolbar {
+        .gscoach-coachs--toolbar {
             padding: 20px;
             border: 1px solid #1f1f1f;
             border-radius: 2px;
         }
 
-        .gscoach-members--toolbar label {
+        .gscoach-coachs--toolbar label {
             display: block;
             margin-bottom: 6px;
             margin-top: -6px;
         }
 
-        .gscoach-members--toolbar select {
+        .gscoach-coachs--toolbar select {
             width: 250px;
             max-width: 100% !important;
             line-height: 42px !important;
         }
 
-        .gscoach-members--toolbar .gs-coach-block--des {
+        .gscoach-coachs--toolbar .gs-coach-block--des {
             margin: 10px 0 0;
             font-size: 16px;
         }
 
-        .gscoach-members--toolbar .gs-coach-block--des span {
+        .gscoach-coachs--toolbar .gs-coach-block--des span {
             display: block;
         }
 
-        .gscoach-members--toolbar p.gs-coach-block--des a {
+        .gscoach-coachs--toolbar p.gs-coach-block--des a {
             margin-left: 4px;
         }
     

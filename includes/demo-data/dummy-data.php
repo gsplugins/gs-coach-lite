@@ -49,11 +49,11 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             
             add_action( 'gscoach_dummy_terms_process_finished', function() {
 
-                $this->create_dummy_members();
+                $this->create_dummy_coachs();
 
             });
             
-            add_action( 'gscoach_dummy_members_process_finished', function() {
+            add_action( 'gscoach_dummy_coachs_process_finished', function() {
 
                 // clean the record that we have started a process
                 delete_transient( 'gscoach_dummy_team_data_creating' );
@@ -129,7 +129,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             
             // Remove dummy indicator from post
             delete_post_meta( $post_id, 'gscoach-demo_data', 1 );
-            delete_transient( 'gscoach_dummy_members' );
+            delete_transient( 'gscoach_dummy_coachs' );
 
         }
 
@@ -263,7 +263,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             $this->delete_dummy_attachments();
             $this->delete_dummy_terms();
-            $this->delete_dummy_members();
+            $this->delete_dummy_coachs();
 
             delete_option( 'gscoach_dummy_team_data_created' );
             delete_transient( 'gscoach_dummy_team_data_creating' );
@@ -391,16 +391,16 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         }
 
         //es
-        public function create_dummy_members() {
+        public function create_dummy_coachs() {
 
-            do_action( 'gscoach_dummy_members_process_start' );
+            do_action( 'gscoach_dummy_coachs_process_start' );
 
             $post_status = 'publish';
             $post_type = 'gs_coach';
 
-            $members = [];
+            $coachs = [];
 
-            $members[] = array(
+            $coachs[] = array(
                 'post_title'    => "Morgan Freman",
                 'post_content'  => "Experienced and innovative Web Developer with a passion for creating elegant and functional web solutions. Proficient in frontend and backend technologies, I excel at translating complex design and functionality requirements into clean, efficient, and user-friendly websites.\r\n\r\nWith a strong foundation in coding and problem-solving, I am dedicated to delivering high-quality projects on time and within scope.",
                 'post_status'   => $post_status,
@@ -415,7 +415,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     "gs_coach_specialty" => ['graphic-design', 'marketing-ninja']
                 ]),
                 'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gscoach-member-1',
+                    '_thumbnail_id' => 'gscoach-coach-1',
                     '_gscoach_profession' => "Web Developer",
                     '_gscoach_experience' => "3 Years",
                     '_gscoach_education' => "BBA",
@@ -446,7 +446,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $members[] = array(
+            $coachs[] = array(
                 'post_title'    => "Samuel Oliver",
                 'post_content'  => "Dedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.\r\n\r\nDedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.",
                 'post_status'   => $post_status,
@@ -461,7 +461,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     "gs_coach_specialty" => ['graphic-design']
                 ]),
                 'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gscoach-member-2',
+                    '_thumbnail_id' => 'gscoach-coach-2',
                     '_gscoach_profession' => "Web Developer",
                     '_gscoach_experience' => "3 Years",
                     '_gscoach_education' => "BBA",
@@ -492,7 +492,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $members[] = array(
+            $coachs[] = array(
                 'post_title'    => "Orlando Bloom",
                 'post_content'  => "Dedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.\r\n\r\nDedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.",
                 'post_status'   => $post_status,
@@ -507,7 +507,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     "gs_coach_specialty" => ['graphic-design', 'marketing-ninja']
                 ]),
                 'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gscoach-member-3',
+                    '_thumbnail_id' => 'gscoach-coach-3',
                     '_gscoach_profession' => "Web Developer",
                     '_gscoach_experience' => "3 Years",
                     '_gscoach_education' => "BBA",
@@ -538,7 +538,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $members[] = array(
+            $coachs[] = array(
                 'post_title'    => "Juri Sepp",
                 'post_content'  => "Creative and detail-oriented UI\/UX Designer with a passion for crafting exceptional user experiences. Proficient in translating user needs into visually appealing and intuitive designs. Strong collaborator who thrives in interdisciplinary teams to deliver innovative digital solutions that combine aesthetics with functionality.\r\n\r\nPassionate UI Designer with a keen eye for detail and a drive to create exceptional digital experiences. Leveraging a strong foundation in design principles and an understanding of user behavior, I specialize in crafting interfaces that seamlessly blend aesthetics with usability.\r\n\r\nBy collaborating closely with cross-functional teams, I consistently deliver innovative solutions that captivate users and elevate brands. With a dedication to staying at the forefront of design trends and technologies, I am committed to pushing the boundaries of visual and interactive design to create meaningful connections between users and products.",
                 'post_status'   => $post_status,
@@ -553,7 +553,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     "gs_coach_specialty" => ['4g-expert', 'health-and-aging']
                 ]),
                 'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gscoach-member-4',
+                    '_thumbnail_id' => 'gscoach-coach-4',
                     '_gscoach_profession' => "Web Developer",
                     '_gscoach_experience' => "3 Years",
                     '_gscoach_education' => "BBA",
@@ -584,7 +584,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $members[] = array(
+            $coachs[] = array(
                 'post_title'    => "Richard Gere",
                 'post_content'  => "Results-driven SEO Manager with a proven track record of developing and executing successful search engine optimization strategies.\r\n\r\nAdept at analyzing data, identifying trends, and implementing actionable insights to improve organic search rankings and drive targeted traffic. Strong leadership skills and a passion for staying updated with industry trends, algorithms, and best practices.",
                 'post_status'   => $post_status,
@@ -599,7 +599,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     "gs_coach_specialty" => ['4g-expert', 'graphic-design', 'transmission']
                 ]),
                 'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gscoach-member-5',
+                    '_thumbnail_id' => 'gscoach-coach-5',
                     '_gscoach_profession' => "Web Developer",
                     '_gscoach_experience' => "3 Years",
                     '_gscoach_education' => "BBA",
@@ -630,7 +630,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $members[] = array(
+            $coachs[] = array(
                 'post_title'    => "Hugh Jakman",
                 'post_content'  => "Experienced and innovative Web Developer with a passion for creating elegant and functional web solutions. Proficient in frontend and backend technologies, I excel at translating complex design and functionality requirements into clean, efficient, and user-friendly websites.\r\n\r\nWith a strong foundation in coding and problem-solving, I am dedicated to delivering high-quality projects on time and within scope.",
                 'post_status'   => $post_status,
@@ -645,7 +645,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                     "gs_coach_specialty" => ['executive-recruiter', 'networking', 'transmission', 'web-development']
                 ]),
                 'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gscoach-member-6',
+                    '_thumbnail_id' => 'gscoach-coach-6',
                     '_gscoach_profession' => "Web Developer",
                     '_gscoach_experience' => "3 Years",
                     '_gscoach_education' => "BBA",
@@ -676,52 +676,52 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            foreach ( $members as $member ) {
+            foreach ( $coachs as $coach ) {
                 // Insert the post into the database
-                $post_id = wp_insert_post( $member );
+                $post_id = wp_insert_post( $coach );
                 // Add meta value for demo
                 if ( $post_id ) add_post_meta( $post_id, 'gscoach-demo_data', 1 );
             }
 
-            do_action( 'gscoach_dummy_members_process_finished' );
+            do_action( 'gscoach_dummy_coachs_process_finished' );
 
         }
 
-        public function delete_dummy_members() {
+        public function delete_dummy_coachs() {
             
-            $members = $this->get_dummy_members();
+            $coachs = $this->get_dummy_coachs();
 
-            if ( empty($members) ) return;
+            if ( empty($coachs) ) return;
 
-            foreach ($members as $member) {
-                wp_delete_post( $member->ID, true );
+            foreach ($coachs as $coach) {
+                wp_delete_post( $coach->ID, true );
             }
 
-            delete_transient( 'gscoach_dummy_members' );
+            delete_transient( 'gscoach_dummy_coachs' );
 
         }
 
-        public function get_dummy_members() {
+        public function get_dummy_coachs() {
 
-            $members = get_transient( 'gscoach_dummy_members' );
+            $coachs = get_transient( 'gscoach_dummy_coachs' );
 
-            if ( false !== $members ) return $members;
+            if ( false !== $coachs ) return $coachs;
 
-            $members = get_posts( array(
+            $coachs = get_posts( array(
                 'numberposts' => -1,
                 'post_type'   => 'gs_coach',
                 'meta_key' => 'gscoach-demo_data',
                 'meta_value' => 1,
             ));
             
-            if ( is_wp_error($members) || empty($members) ) {
-                delete_transient( 'gscoach_dummy_members' );
+            if ( is_wp_error($coachs) || empty($coachs) ) {
+                delete_transient( 'gscoach_dummy_coachs' );
                 return [];
             }
             
-            set_transient( 'gscoach_dummy_members', $members, 3 * MINUTE_IN_SECONDS );
+            set_transient( 'gscoach_dummy_coachs', $coachs, 3 * MINUTE_IN_SECONDS );
 
-            return $members;
+            return $coachs;
 
         }
 
@@ -741,18 +741,18 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             require_once( ABSPATH . 'wp-admin/includes/image.php' );
 
             $attachment_files = [
-                'gscoach-member-1.jpg',
-                'gscoach-member-2.jpg',
-                'gscoach-member-3.jpg',
-                'gscoach-member-4.jpg',
-                'gscoach-member-5.jpg',
-                'gscoach-member-6.jpg',
-                'gscoach-member-flip-1.jpg',
-                'gscoach-member-flip-2.jpg',
-                'gscoach-member-flip-3.jpg',
-                'gscoach-member-flip-4.jpg',
-                'gscoach-member-flip-5.jpg',
-                'gscoach-member-flip-6.jpg'
+                'gscoach-coach-1.jpg',
+                'gscoach-coach-2.jpg',
+                'gscoach-coach-3.jpg',
+                'gscoach-coach-4.jpg',
+                'gscoach-coach-5.jpg',
+                'gscoach-coach-6.jpg',
+                'gscoach-coach-flip-1.jpg',
+                'gscoach-coach-flip-2.jpg',
+                'gscoach-coach-flip-3.jpg',
+                'gscoach-coach-flip-4.jpg',
+                'gscoach-coach-flip-5.jpg',
+                'gscoach-coach-flip-6.jpg'
             ];
 
             add_filter( 'http_request_args', [ $this, 'http_request_args' ] );

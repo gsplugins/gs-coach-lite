@@ -85,7 +85,7 @@ class Import_Export {
 
         if ($file_extension != 'zip') wp_send_json_error(__('Invalid file type', 'gscoach'), 400);
 
-        $upload_file_dir = get_temp_dir() . 'gs-plugins/gs-coach-members';
+        $upload_file_dir = get_temp_dir() . 'gs-plugins/gs-coach-coachs';
 
         if (is_dir($upload_file_dir)) $this->delete_directory($upload_file_dir);
 

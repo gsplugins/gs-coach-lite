@@ -26,7 +26,7 @@ class Shortcode {
 	function add_zip_codes_search_element( $theme ) {
 		if ( in_array( $theme, ['gs_tm_theme21_dense'] ) ) return;
 		$tag = 'div';
-		printf( '<%1$s class="gs-coach-member--zip-codes" style="display:none!important">%2$s</%1$s>', $tag, get_post_meta( get_the_ID(), '_gs_zip_code', true ) );
+		printf( '<%1$s class="gs-coach-coach--zip-codes" style="display:none!important">%2$s</%1$s>', $tag, get_post_meta( get_the_ID(), '_gs_zip_code', true ) );
 	}
 
 	function add_tags_search_element( $theme ) {
@@ -36,7 +36,7 @@ class Shortcode {
         $terms = get_the_terms( get_the_ID(), 'gs_coach_tag' );
         $terms = join( ' ', wp_list_pluck($terms, 'name') );
 		
-		printf( '<%1$s class="gs-coach-member--tags" style="display:none!important">%2$s</%1$s>', $tag, $terms );
+		printf( '<%1$s class="gs-coach-coach--tags" style="display:none!important">%2$s</%1$s>', $tag, $terms );
 	}
 	
 	function shortcode( $atts ) {
@@ -392,10 +392,10 @@ class Shortcode {
 		
 		// Load Template Hooks
 		if ( 'on' ==  $gs_coach_srch_by_zip ) {
-			add_action( 'gs_coach_before_member_content', [ $this, 'add_zip_codes_search_element' ] );
+			add_action( 'gs_coach_before_coach_content', [ $this, 'add_zip_codes_search_element' ] );
 		}
 		if ( 'on' ==  $gs_coach_srch_by_tag ) {
-			add_action( 'gs_coach_before_member_content', [ $this, 'add_tags_search_element' ] );
+			add_action( 'gs_coach_before_coach_content', [ $this, 'add_tags_search_element' ] );
 		}
 
 		$img_effect_class = '';

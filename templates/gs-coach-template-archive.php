@@ -40,23 +40,23 @@ get_header(); ?>
 				<div class="gs-arc-mem-img gs_ribon_wrapper">
 					
 					<a href="<?php the_permalink(); ?>">
-						<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+						<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 					</a>
 
 					<!-- Ribbon -->
 					<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 
 				</div>
-				<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+				<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 
 
 				<div class="gs_coach_details gs-tm-sicons">
 
 					<a href="<?php the_permalink(); ?>"><h3 class="gs-arc-mem-name" itemprop="name"><?php the_title(); ?></h3></a>
-					<?php do_action( 'gs_coach_after_member_name' ); ?>
+					<?php do_action( 'gs_coach_after_coach_name' ); ?>
 					
 					<div class="gs-arc-mem-desig" itemprop="jobtitle"><?php echo esc_html( $designation ); ?></div>
-					<?php do_action( 'gs_coach_after_member_designation' ); ?>
+					<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
 					<!-- Social Links -->
 					<?php $gs_coach_connect = 'on'; ?>

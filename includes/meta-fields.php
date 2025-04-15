@@ -63,10 +63,11 @@ class Meta_Fields {
 		 * Use get_post_meta() to retrieve an existing value
 		 * from the database and use the value for the form.
 		 */
-		$gs_prof        = get_post_meta($post->ID, '_gscoach_profession', true);
 
+		$gs_prof                   = get_post_meta($post->ID, '_gscoach_profession', true);
 		$gs_coach_experience       = get_post_meta($post->ID, '_gscoach_experience', true);
 		$gs_coach_education        = get_post_meta($post->ID, '_gscoach_education', true);
+		$gs_coach_ribbon           = get_post_meta($post->ID, '_gscoach_ribbon', true);
 		$gs_coach_address          = get_post_meta($post->ID, '_gscoach_address', true);
 		$gs_coach_state            = get_post_meta($post->ID, '_gscoach_state', true);
 		$gs_coach_country          = get_post_meta($post->ID, '_gscoach_country', true);
@@ -75,7 +76,11 @@ class Meta_Fields {
 		$gs_coach_schedule         = get_post_meta($post->ID, '_gscoach_shedule', true);
 		$gs_coach_available        = get_post_meta($post->ID, '_gscoach_available', true);
 		$gs_coach_psite            = get_post_meta($post->ID, '_gscoach_psite', true);
+		$gs_coach_psite_btn_text   = get_post_meta($post->ID, '_gscoach_psite_btn_text', true);
+		$gs_coach_psite_target     = get_post_meta($post->ID, '_gscoach_psite_target', true);
 		$gs_coach_courselink       = get_post_meta($post->ID, '_gscoach_courselink', true);
+		$gs_coach_courselink_btn_text = get_post_meta($post->ID, '_gscoach_courselink_btn_text', true);
+		$gs_coach_courselink_target   = get_post_meta($post->ID, '_gscoach_courselink_target', true);
 		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
 		$gs_coach_review           = get_post_meta($post->ID, '_gscoach_review', true);
 		$gs_coach_rating 		   = get_post_meta($post->ID, '_gscoach_rating', true);
@@ -103,6 +108,11 @@ class Meta_Fields {
 				<div class="form-group">
 					<label for="gsCoachEducation"><?php echo get_meta_field_name('_gscoach_education'); ?></label>
 					<input type="text" id="gsCoachEducation" class="form-control" name="gs_coach_education" placeholder="Education" value="<?php echo isset($gs_coach_education) ? esc_attr($gs_coach_education) : ''; ?>">
+				</div>
+			
+				<div class="form-group">
+					<label for="gsCoachRibbon"><?php echo get_meta_field_name('_gscoach_ribbon'); ?></label>
+					<input type="text" id="gsCoachRibbon" class="form-control" name="gs_coach_ribbon" value="<?php echo isset($gs_coach_ribbon) ? esc_attr($gs_coach_ribbon) : ''; ?>">
 				</div>
 
 				<div class="form-group">
@@ -141,13 +151,73 @@ class Meta_Fields {
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachPersonalSite"><?php echo get_meta_field_name('_gscoach_psite'); ?></label>
-					<input type="url" id="gsCoachPersonalSite" class="form-control" name="gs_coach_psite" placeholder="Personal Site" value="<?php echo isset($gs_coach_psite) ? esc_attr($gs_coach_psite) : ''; ?>">
+					<label><?php echo get_meta_field_name('_gscoach_psite'); ?></label>
+					<div class="gs-coach-form-input-grid-wrapper">
+						<div class="gs-coach-form-input-grid">
+							<label for="gsCoachPersonalSiteUrl"><?php echo get_meta_field_name('_gscoach_psite_url'); ?></label>
+							<input type="url" id="gsCoachPersonalSiteUrl" class="form-control" name="gs_coach_psite" placeholder="Site Url" value="<?php echo isset($gs_coach_psite) ? esc_attr($gs_coach_psite) : ''; ?>">
+						</div>
+						<div class="gs-coach-form-input-grid">
+							<label for="gsCoachPersonalSiteBtnText"><?php echo get_meta_field_name('_gscoach_psite_btn_text'); ?></label>
+							<input type="text" id="gsCoachPersonalSiteBtnText" class="form-control" name="gs_coach_psite_btn_text" placeholder="Button Text" value="<?php echo isset($gs_coach_psite_btn_text) ? esc_attr($gs_coach_psite_btn_text) : ''; ?>">
+						</div>
+						<div class="gs-coach-form-input-grid">
+							<label for="gsCoachPersonalSiteTarget"><?php echo get_meta_field_name('_gscoach_psite_target'); ?></label>
+							<select id="gsCoachPersonalSiteTarget" class="form-control" name="gs_coach_psite_target">
+								<?php
+									echo sprintf(
+										'<option value="%s" %s>%s</option>', 
+										esc_attr('_blank'), 
+										selected($gs_coach_psite_target, esc_attr('_blank')),
+										esc_html('New Tab')
+									);
+								?>
+								<?php
+									echo sprintf(
+										'<option value="%s" %s>%s</option>', 
+										esc_attr('_self'), 
+										selected($gs_coach_psite_target, esc_attr('_self')),
+										esc_html('Same Tab')
+									);
+								?>
+							</select>
+						</div>
+					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachCourseLink"><?php echo get_meta_field_name('_gscoach_courselink'); ?></label>
-					<input type="url" id="gsCoachCourseLink" class="form-control" name="gs_coach_courselink" placeholder="Course Link" value="<?php echo isset($gs_coach_courselink) ? esc_attr($gs_coach_courselink) : ''; ?>">
+					<label><?php echo get_meta_field_name('_gscoach_courselink'); ?></label>
+					<div class="gs-coach-form-input-grid-wrapper">
+						<div class="gs-coach-form-input-grid">
+							<label for="gsCoachCourseLinkUrl"><?php echo get_meta_field_name('_gscoach_courselink_url'); ?></label>
+							<input type="url" id="gsCoachCourseLinkUrl" class="form-control" name="gs_coach_courselink" placeholder="Course Url" value="<?php echo isset($gs_coach_courselink) ? esc_attr($gs_coach_courselink) : ''; ?>">
+						</div>
+						<div class="gs-coach-form-input-grid">
+							<label for="gsCoachCourseLinkBtnText"><?php echo get_meta_field_name('_gscoach_courselink_btn_text'); ?></label>
+							<input type="text" id="gsCoachCourseLinkBtnText" class="form-control" name="gs_coach_courselink_btn_text" placeholder="Button Text" value="<?php echo isset($gs_coach_courselink_btn_text) ? esc_attr($gs_coach_courselink_btn_text) : ''; ?>">
+						</div>
+						<div class="gs-coach-form-input-grid">
+							<label for="gsCoachCourseLinkTarget"><?php echo get_meta_field_name('_gscoach_courselink_target'); ?></label>
+							<select id="gsCoachCourseLinkTarget" class="form-control" name="gs_coach_courselink_target">
+								<?php
+									echo sprintf(
+										'<option value="%s" %s>%s</option>',
+										esc_attr('_blank'), 
+										selected($gs_coach_courselink_target, esc_attr('_blank')),
+										esc_html('New Tab')
+									);
+								?>
+								<?php
+									echo sprintf(
+										'<option value="%s" %s>%s</option>', 
+										esc_attr('_self'), 
+										selected($gs_coach_courselink_target, esc_attr('_self')),
+										esc_html('Same Tab')
+									);
+								?>
+							</select>
+						</div>
+					</div>
 				</div>
 
 				<div class="form-group">
@@ -204,7 +274,7 @@ class Meta_Fields {
 
 			<div class="gs-coach-social--section">
 
-				<div class="member-details-section">
+				<div class="coach-details-section">
 
 					<table id="repeatable-fieldset-two" width="100%" class="gscoach-sorable-table">
 						<thead>
@@ -285,7 +355,7 @@ class Meta_Fields {
 
 			<div class="gs-coach-skills--section gs-coach-pro-field">
 
-				<div class="member-details-section">
+				<div class="coach-details-section">
 					<table id="repeatable-fieldset-skill" width="100%" class="gscoach-sorable-table">
 						<thead>
 							<tr>
@@ -461,14 +531,14 @@ class Meta_Fields {
 
 		if (is_pro_valid()) {
 
-			if (!empty($member_skill = $_POST['gscoach-skill-name']) && !empty($members_percent = $_POST['gscoach-skill-percent'])) {
+			if (!empty($coach_skill = $_POST['gscoach-skill-name']) && !empty($coachs_percent = $_POST['gscoach-skill-percent'])) {
 
-				$member_skill = array_map('sanitize_text_field', $member_skill);
-				$members_percent = array_map('absint', $members_percent);
+				$coach_skill = array_map('sanitize_text_field', $coach_skill);
+				$coachs_percent = array_map('absint', $coachs_percent);
 
 				$newdata = array_map(function ($skill, $percent) {
 					if (!empty($skill) && !empty($percent)) return ['skill' => $skill, 'percent' => $percent];
-				}, $member_skill, $members_percent);
+				}, $coach_skill, $coachs_percent);
 
 				$meta_key = '_gscoach_skills';
 
@@ -498,6 +568,7 @@ class Meta_Fields {
 
 			update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
 			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));
+			update_post_meta($post_id, '_gscoach_ribbon', sanitize_text_field($_POST['gs_coach_ribbon']));
 			update_post_meta($post_id, '_gscoach_address', sanitize_text_field($_POST['gs_coach_address']));
 			update_post_meta($post_id, '_gscoach_state', sanitize_text_field($_POST['gs_coach_state']));
 			update_post_meta($post_id, '_gscoach_country', sanitize_text_field($_POST['gs_coach_country']));
@@ -506,7 +577,11 @@ class Meta_Fields {
 			update_post_meta($post_id, '_gscoach_shedule', sanitize_text_field($_POST['gs_coach_schedule']));
 			update_post_meta($post_id, '_gscoach_available', sanitize_text_field($_POST['gs_coach_available']));
 			update_post_meta($post_id, '_gscoach_psite', sanitize_text_field($_POST['gs_coach_psite']));
+			update_post_meta($post_id, '_gscoach_psite_btn_text', sanitize_text_field($_POST['gs_coach_psite_btn_text']));
+			update_post_meta($post_id, '_gscoach_psite_target', sanitize_text_field($_POST['gs_coach_psite_target']));
 			update_post_meta($post_id, '_gscoach_courselink', sanitize_text_field($_POST['gs_coach_courselink']));
+			update_post_meta($post_id, '_gscoach_courselink_btn_text', sanitize_text_field($_POST['gs_coach_courselink_btn_text']));
+			update_post_meta($post_id, '_gscoach_courselink_target', sanitize_text_field($_POST['gs_coach_courselink_target']));
 			update_post_meta($post_id, '_gscoach_fee', sanitize_text_field($_POST['gs_coach_fee']));
 			update_post_meta($post_id, '_gscoach_review', sanitize_text_field($_POST['gs_coach_review']));
 			update_post_meta($post_id, '_gscoach_rating', sanitize_text_field($_POST['gs_coach_rating']));

@@ -35,25 +35,25 @@ if ( $gs_coach_loop_side->have_posts() ) : while ( $gs_coach_loop_side->have_pos
 
         <div class="gs-coach-widget">
 
-            <div class="gs-coach-widget--member-image">
+            <div class="gs-coach-widget--coach-image">
                 
                 <!-- Coach Image -->
                 <a class="gs_coach_image__wrapper" href="<?php the_permalink(); ?>">
-                    <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+                    <?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
                 </a>
 
             </div>
 
-            <div class="gs-coach-widget--member-info">
+            <div class="gs-coach-widget--coach-info">
 
-                <!-- Single member name -->
+                <!-- Single coach name -->
                 <?php if ( 'on' ==  $gs_coach_name ): ?>
-                    <?php member_name( $id, true, $gs_coach_name_is_linked == 'on' ); ?>
+                    <?php coach_name( $id, true, $gs_coach_name_is_linked == 'on' ); ?>
                 <?php endif; ?>
 
-                <!-- Single member designation -->
+                <!-- Single coach designation -->
                 <?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
-                    <div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+                    <div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
                 <?php endif; ?>
 
                 <!-- Social Links -->
@@ -69,7 +69,7 @@ if ( $gs_coach_loop_side->have_posts() ) : while ( $gs_coach_loop_side->have_pos
 
 <?php endwhile; else: ?>
 
-    <!--es not found - Load no-team-member template -->
-	<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+    <!--es not found - Load no-team-coach template -->
+	<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 <?php endif; ?>

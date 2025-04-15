@@ -59,9 +59,9 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
-			$classes = ['single-member-div single-member--flip', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
+			$classes = ['single-coach-div single-coach--flip', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 
-			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
+			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-coach-pop';
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 			if ( $_drawer_enabled ) $classes[] = 'gridder-list';
 			if ( $_filter_enabled ) {
@@ -71,36 +71,36 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 				$classes[] = 'gs-filter-single-item';
 				$classes[] = sanitize_title( $designation );
 				$classes[] = get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile );
-				$classes[] = get_member_terms_slugs( 'gs_coach_group' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_location' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_language' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_gender' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_specialty' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_extra_one' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_extra_two' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_extra_three' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_extra_four' );
-				$classes[] = get_member_terms_slugs( 'gs_coach_extra_five' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_group' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_location' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_language' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_gender' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_specialty' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_extra_one' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_extra_two' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_extra_three' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_extra_four' );
+				$classes[] = get_coach_terms_slugs( 'gs_coach_extra_five' );
 			}
 			$single_item_attr = '';
 			if ( $_drawer_enabled ) $single_item_attr = sprintf( 'data-griddercontent="#gs-coach-drawer-%s-%s"', get_the_ID(), $id );
 
 			?>
 
-			<!-- Start single member -->
+			<!-- Start single coach -->
 			<div class="<?php echo esc_attr( implode(' ', $classes) ); ?>" <?php echo wp_kses_post( $single_item_attr ); ?>>
 				
-				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
+				<!-- Sehema & Single coach wrapper -->
+				<div class="single-coach--wrapper" itemscope itemtype="http://schema.org/Organization">
 
-					<div class="single-member">
+					<div class="single-coach">
 
-						<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+						<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 						
-						<!-- Member Image -->
+						<!-- coach Image -->
 						<div class="gs_coach_image__wrapper">
 							<!-- Image -->
-							<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+							<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 							<!-- Ribbon -->
 							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 						</div>
@@ -109,16 +109,16 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 							
 							<div class="gs_coach_info-top--inner">
 								
-								<!-- Member Image -->
-								<div class="gs_coach_image__wrapper"><?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?></div>
+								<!-- coach Image -->
+								<div class="gs_coach_image__wrapper"><?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?></div>
 
-								<!-- Member Name -->
-								<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
-								<?php do_action( 'gs_coach_after_member_name' ); ?>
+								<!-- coach Name -->
+								<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+								<?php do_action( 'gs_coach_after_coach_name' ); ?>
 
-								<!-- Member Designation -->
-								<div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-								<?php do_action( 'gs_coach_after_member_designation' ); ?>
+								<!-- coach Designation -->
+								<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+								<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
 							</div>
 
@@ -141,8 +141,8 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		<?php endif; ?>
 

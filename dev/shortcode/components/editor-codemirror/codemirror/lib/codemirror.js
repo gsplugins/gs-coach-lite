@@ -5455,7 +5455,7 @@
     startWorker(cm, 400);
 
     var lendiff = change.text.length - (to.line - from.line) - 1;
-    // Remember that these lines changed, for updating the display
+    // Recoach that these lines changed, for updating the display
     if (change.full)
       { regChange(cm); }
     else if (from.line == to.line && change.text.length == 1 && !isWholeLineUpdate(cm.doc, change))
@@ -8906,7 +8906,7 @@
       if (old && sel.anchorNode == null) { sel.addRange(old); }
       else if (gecko) { this.startGracePeriod(); }
     }
-    this.rememberSelection();
+    this.recoachSelection();
   };
 
   ContentEditableInput.prototype.startGracePeriod = function () {
@@ -8925,7 +8925,7 @@
     removeChildrenAndAdd(this.cm.display.selectionDiv, info.selection);
   };
 
-  ContentEditableInput.prototype.rememberSelection = function () {
+  ContentEditableInput.prototype.recoachSelection = function () {
     var sel = this.getSelection();
     this.lastAnchorNode = sel.anchorNode; this.lastAnchorOffset = sel.anchorOffset;
     this.lastFocusNode = sel.focusNode; this.lastFocusOffset = sel.focusOffset;
@@ -8988,7 +8988,7 @@
       return
     }
     if (this.composing) { return }
-    this.rememberSelection();
+    this.recoachSelection();
     var anchor = domToPos(cm, sel.anchorNode, sel.anchorOffset);
     var head = domToPos(cm, sel.focusNode, sel.focusOffset);
     if (anchor && head) { runInOp(cm, function () {

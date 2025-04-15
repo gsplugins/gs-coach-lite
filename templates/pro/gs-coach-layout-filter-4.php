@@ -42,58 +42,58 @@ global $gs_coach_loop;
 				$designation_slug = sanitize_title( $designation );
 
 				$classes = [
-					'gs-filter-single-item single-member-div',
+					'gs-filter-single-item single-coach-div',
 					$designation_slug,
 					get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ),
-					get_member_terms_slugs( 'gs_coach_group' ),
-					get_member_terms_slugs( 'gs_coach_location' ),
-					get_member_terms_slugs( 'gs_coach_language' ),
-					get_member_terms_slugs( 'gs_coach_gender' ),
-					get_member_terms_slugs( 'gs_coach_specialty' ),
-					get_member_terms_slugs( 'gs_coach_extra_one' ),
-					get_member_terms_slugs( 'gs_coach_extra_two' ),
-					get_member_terms_slugs( 'gs_coach_extra_three' ),
-					get_member_terms_slugs( 'gs_coach_extra_four' ),
-					get_member_terms_slugs( 'gs_coach_extra_five' ),
+					get_coach_terms_slugs( 'gs_coach_group' ),
+					get_coach_terms_slugs( 'gs_coach_location' ),
+					get_coach_terms_slugs( 'gs_coach_language' ),
+					get_coach_terms_slugs( 'gs_coach_gender' ),
+					get_coach_terms_slugs( 'gs_coach_specialty' ),
+					get_coach_terms_slugs( 'gs_coach_extra_one' ),
+					get_coach_terms_slugs( 'gs_coach_extra_two' ),
+					get_coach_terms_slugs( 'gs_coach_extra_three' ),
+					get_coach_terms_slugs( 'gs_coach_extra_four' ),
+					get_coach_terms_slugs( 'gs_coach_extra_five' ),
 				];
 	
-				if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
+				if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-coach-pop';
 				if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 
 			?>
 			
-			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" data-category="<?php echo get_member_terms_slugs( 'gs_coach_group' ); ?>">
+			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" data-category="<?php echo get_coach_terms_slugs( 'gs_coach_group' ); ?>">
 				
-				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
+				<!-- Sehema & Single coach wrapper -->
+				<div class="single-coach--wrapper" itemscope itemtype="http://schema.org/Organization">
 					<div class="card">
 
-						<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+						<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 
-						<div class="single-member cbp-so-side cbp-so-side-left">
+						<div class="single-coach cbp-so-side cbp-so-side-left">
 
 							<!-- Coach Image -->
 							<div class="gs_coach_image__wrapper">
-								<?php echo member_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+								<?php echo coach_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
 							</div>
-							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+							<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 							
 						</div>
 							
-						<!-- Single member name -->
+						<!-- Single coach name -->
 						<?php if ( 'on' ==  $gs_coach_name ): ?>
-							<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'h5' ); ?>
-							<?php do_action( 'gs_coach_after_member_name' ); ?>
+							<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'h5' ); ?>
+							<?php do_action( 'gs_coach_after_coach_name' ); ?>
 						<?php endif; ?>
 
-						<!-- Single member designation -->
+						<!-- Single coach designation -->
 						<?php if ( !empty( $designation ) && 'on' == $gs_coach_role ): ?>
-							<p class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
-							<?php do_action( 'gs_coach_after_member_designation' ); ?>
+							<p class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
+							<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 						<?php endif; ?>
 
 						<?php if ( !empty($cell) ) : ?>
-							<div class="gs-member-cphon">
+							<div class="gs-coach-cphon">
 
 								<?php if ( is_rtl() ) : ?>
 									<span class="level-info-cphon"><a href="tel:<?php echo esc_attr( $cell ); ?>"><?php echo esc_html( $cell ); ?></a></span>
@@ -109,7 +109,7 @@ global $gs_coach_loop;
 						<?php endif; ?>
 
 						<?php if ( !empty($email) ) : ?>
-							<div class="gs-member-email">
+							<div class="gs-coach-email">
 
 								<?php if ( is_rtl() ) : ?>
 									<span class="level-info-email"><a href="mailto:<?php echo sanitize_email( $email ); ?>"><?php echo sanitize_email( $email ); ?></a></span>
@@ -130,7 +130,7 @@ global $gs_coach_loop;
 							</a>
 						<?php endif; ?>
 							
-						<?php do_action( 'gs_coach_after_member_content' ); ?>
+						<?php do_action( 'gs_coach_after_coach_content' ); ?>
 					
 					</div>
 				</div>
@@ -150,8 +150,8 @@ global $gs_coach_loop;
 
 		<div class="gs-roow clearfix gs_coach">
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		</div>
 

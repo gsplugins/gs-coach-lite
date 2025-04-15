@@ -12,29 +12,26 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
         <!-- Coach Image -->
         <div class="gs_coach_image__wrapper">
-            <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
-            <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
+            <?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+            <?php do_action( 'gs_coach_after_coach_thumbnail_popup' ); ?>
         </div>
-
-        <!-- Meta Fields -->
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
 
     </div>
 
 
     <div class="gs-col-md-8 gscoach-drawer-right">
 
-        <!-- Single member name -->
-        <?php member_name( $id, true, false, $gs_coach_link_type, 'h2', 'title', true ); ?>
-        <?php do_action( 'gs_coach_after_member_name' ); ?>
+        <!-- Single coach name -->
+        <?php coach_name( $id, true, false, $gs_coach_link_type, 'h2', 'title', true ); ?>
+        <?php do_action( 'gs_coach_after_coach_name' ); ?>
         
-        <!-- Single member designation -->
-        <p class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
-        <?php do_action( 'gs_coach_after_member_designation' ); ?>
+        <!-- Single coach designation -->
+        <p class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></p>
+        <?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
         <!-- Description -->
-        <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-        <?php do_action( 'gs_coach_after_member_details' ); ?>
+        <div class="gs-coach-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+        <?php do_action( 'gs_coach_after_coach_details' ); ?>
 
         <div class="gs-roow">
 

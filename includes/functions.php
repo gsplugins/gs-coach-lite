@@ -13,7 +13,7 @@ function is_divi_active() {
 }
 
 function is_divi_editor() {
-    if (!empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_coach_members') return true;
+    if (!empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_coach_coachs') return true;
 }
 
 function gs_wp_kses($content) {
@@ -69,9 +69,9 @@ function get_translation($translation_name) {
     return plugin()->builder->get_translation($translation_name);
 }
 
-function member_description($shortcode_id, $max_length = 100, $echo = false, $is_excerpt = true, $has_link = true, $link_type = 'single_page') {
+function coach_description($shortcode_id, $max_length = 100, $echo = false, $is_excerpt = true, $has_link = true, $link_type = 'single_page') {
 
-    $member_id = get_the_ID();
+    $coach_id = get_the_ID();
     
     $description = $is_excerpt ? get_the_excerpt() : get_the_content();
 
@@ -82,7 +82,7 @@ function member_description($shortcode_id, $max_length = 100, $echo = false, $is
     $gs_more_link = '';
 
     if ( $link_type == 'custom' ) {
-        $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
+        $custom_page_link = get_post_meta( $coach_id, '_gscoach_custom_page', true );
         if ( empty($custom_page_link) ) {
             $default_link_type = getoption('single_link_type', 'single_page');
             if ( $default_link_type == 'none' ) {
@@ -104,10 +104,10 @@ function member_description($shortcode_id, $max_length = 100, $echo = false, $is
 
             $popup_style = empty($popup_style) ? 'default' : $popup_style;
 
-            $gs_more_link = sprintf('...<a class="gs_coach_pop open-popup-link" data-mfp-src="#gs_coach_popup_%s_%s" href="javascript:void(0)" data-theme="%s">%s</a>', $member_id, $shortcode_id, 'gs-coach-popup--' . esc_attr($popup_style), esc_html($gs_coach_more));
+            $gs_more_link = sprintf('...<a class="gs_coach_pop open-popup-link" data-mfp-src="#gs_coach_popup_%s_%s" href="javascript:void(0)" data-theme="%s">%s</a>', $coach_id, $shortcode_id, 'gs-coach-popup--' . esc_attr($popup_style), esc_html($gs_coach_more));
         } else if ($link_type == 'panel') {
 
-            $gs_more_link = sprintf('...<a class="gs_coach_pop gs_coach_panelslide_link" id="gscoachlink_%1$s_%2$s" href="#gscoach_%1$s_%2$s">%3$s</a>', $member_id, $shortcode_id, esc_html($gs_coach_more));
+            $gs_more_link = sprintf('...<a class="gs_coach_pop gs_coach_panelslide_link" id="gscoachlink_%1$s_%2$s" href="#gscoach_%1$s_%2$s">%3$s</a>', $coach_id, $shortcode_id, esc_html($gs_coach_more));
         } else if ($link_type == 'drawer') {
 
             $gs_more_link = sprintf('...<a href="%s">%s</a>', get_the_permalink(), esc_html($gs_coach_more));
@@ -126,19 +126,19 @@ function member_description($shortcode_id, $max_length = 100, $echo = false, $is
     return echo_return($description, $echo);
 }
 
-function member_thumbnail($size, $echo = false) {
+function coach_thumbnail($size, $echo = false) {
 
     $disable_lazy_load = getoption('disable_lazy_load', 'off');
     $lazy_load_class   = getoption('lazy_load_class', 'skip-lazy');
 
-    $member_id = get_the_ID();
+    $coach_id = get_the_ID();
 
     if (has_post_thumbnail()) {
 
-        $size = apply_filters('gs_coach_member_thumbnail_size', $size, $member_id);
+        $size = apply_filters('gs_coach_coach_thumbnail_size', $size, $coach_id);
         if (empty($size)) $size = 'large';
 
-        $classes = ['gs_coach_member--image'];
+        $classes = ['gs_coach_coach--image'];
 
         if ($disable_lazy_load == 'on' && !empty($lazy_load_class)) {
             $classes[] = $lazy_load_class;
@@ -146,7 +146,7 @@ function member_thumbnail($size, $echo = false) {
 
         $classes = (array) apply_filters('gs_coach_thumbnail_classes', $classes);
 
-        $thumbnail = get_the_post_thumbnail($member_id, $size, [
+        $thumbnail = get_the_post_thumbnail($coach_id, $size, [
             'class' => implode(' ', $classes),
             'alt' => get_the_title(),
             'itemprop' => 'image'
@@ -156,24 +156,24 @@ function member_thumbnail($size, $echo = false) {
         $thumbnail = sprintf('<img src="%s" alt="%s" itemprop="image"/>', GSCOACH_PLUGIN_URI . '/assets/img/no_img.jpg', get_the_title());
     }
 
-    $thumbnail = apply_filters('gs_coach_member_thumbnail_html', $thumbnail, $member_id);
+    $thumbnail = apply_filters('gs_coach_coach_thumbnail_html', $thumbnail, $coach_id);
 
     return echo_return($thumbnail, $echo);
 }
 
-function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_type = 'single_page', $echo = false) {
+function coach_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_type = 'single_page', $echo = false) {
 
     $disable_lazy_load = getoption('disable_lazy_load', 'off');
     $lazy_load_class   = getoption('lazy_load_class', 'skip-lazy');
 
-    $member_id = get_the_ID();
+    $coach_id = get_the_ID();
 
     if (has_post_thumbnail()) {
 
-        $size = apply_filters('gs_coach_member_thumbnail_size', $size, $member_id);
+        $size = apply_filters('gs_coach_coach_thumbnail_size', $size, $coach_id);
         if (empty($size)) $size = 'large';
 
-        $classes = ['gs_coach_member--image'];
+        $classes = ['gs_coach_coach--image'];
 
         if ($disable_lazy_load == 'on' && !empty($lazy_load_class)) {
             $classes[] = $lazy_load_class;
@@ -181,14 +181,14 @@ function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_t
 
         $classes = (array) apply_filters('gs_coach_thumbnail_classes', $classes);
 
-        $thumbnail = get_the_post_thumbnail($member_id, $size, [
+        $thumbnail = get_the_post_thumbnail($coach_id, $size, [
             'class' => implode(' ', $classes),
             'alt' => get_the_title(),
             'itemprop' => 'image'
         ]);
 
         if ( $link_type == 'custom' ) {
-            $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
+            $custom_page_link = get_post_meta( $coach_id, '_gscoach_custom_page', true );
             if ( empty($custom_page_link) ) {
                 $default_link_type = getoption('single_link_type', 'single_page');
                 if ( $default_link_type == 'none' ) {
@@ -229,15 +229,15 @@ function member_thumbnail_custom($size, $shortcode_id, $has_link = true, $link_t
         $thumbnail = sprintf('<img src="%s" alt="%s" itemprop="image"/>', GSCOACH_PLUGIN_URI . '/assets/img/no_img.jpg', get_the_title());
     }
 
-    $thumbnail = apply_filters('gs_coach_member_thumbnail_html', $thumbnail, $member_id);
+    $thumbnail = apply_filters('gs_coach_coach_thumbnail_html', $thumbnail, $coach_id);
 
     return echo_return($thumbnail, $echo);
 }
 
-function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $link_type = 'single_page', $overlay = false, $extra_link_class = '') {
+function coach_thumbnail_with_link($shortcode_id, $size, $has_link = false, $link_type = 'single_page', $overlay = false, $extra_link_class = '') {
 
-    $member_id = get_the_ID();
-    $image_html = member_thumbnail($size, false);
+    $coach_id = get_the_ID();
+    $image_html = coach_thumbnail($size, false);
 
     $img_overlay = '';
     if ($overlay) {
@@ -247,7 +247,7 @@ function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $li
     $before = $after = '';
 
     if ( $link_type == 'custom' ) {
-        $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
+        $custom_page_link = get_post_meta( $coach_id, '_gscoach_custom_page', true );
         if ( empty($custom_page_link) ) {
             $default_link_type = getoption('single_link_type', 'single_page');
             if ( $default_link_type == 'none' ) {
@@ -269,10 +269,10 @@ function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $li
 
             $popup_style = empty($popup_style) ? 'default' : $popup_style;
 
-            $before = sprintf('<a class="gs_coach_pop open-popup-link %s" data-mfp-src="#gs_coach_popup_%s_%s" data-theme="%s" href="javascript:void(0);">', esc_attr($extra_link_class), $member_id, $shortcode_id, 'gs-coach-popup--' . esc_attr($popup_style));
+            $before = sprintf('<a class="gs_coach_pop open-popup-link %s" data-mfp-src="#gs_coach_popup_%s_%s" data-theme="%s" href="javascript:void(0);">', esc_attr($extra_link_class), $coach_id, $shortcode_id, 'gs-coach-popup--' . esc_attr($popup_style));
         } else if ($link_type == 'panel') {
 
-            $before = sprintf('<a class="gs_coach_pop gs_coach_panelslide_link %1$s" id="gscoachlink_%2$s_%3$s" href="#gscoach_%2$s_%3$s">', esc_attr($extra_link_class), $member_id, $shortcode_id);
+            $before = sprintf('<a class="gs_coach_pop gs_coach_panelslide_link %1$s" id="gscoachlink_%2$s_%3$s" href="#gscoach_%2$s_%3$s">', esc_attr($extra_link_class), $coach_id, $shortcode_id);
         } else if ($link_type == 'drawer') {
 
             $before = sprintf('<a class="%s" href="%s">', esc_attr($extra_link_class), get_the_permalink());
@@ -288,16 +288,16 @@ function member_thumbnail_with_link($shortcode_id, $size, $has_link = false, $li
     return $before . $image_html . $img_overlay . $after;
 }
 
-function member_name($shortcode_id, $echo = false, $has_link = true, $link_type = 'single_page', $tag = 'div', $extra_classes = '', $no_default_class = false, $custom_title = '') {
+function coach_name($shortcode_id, $echo = false, $has_link = true, $link_type = 'single_page', $tag = 'div', $extra_classes = '', $no_default_class = false, $custom_title = '') {
 
-    $member_id = get_the_ID();
+    $coach_id = get_the_ID();
 
     if (empty($tag) || !in_array($tag, ['div', 'p', 'span', 'td', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'])) $tag = 'div';
 
     $the_title = $custom_title ?: get_the_title();
 
     if ( $link_type == 'custom' ) {
-        $custom_page_link = get_post_meta( $member_id, '_gscoach_custom_page', true );
+        $custom_page_link = get_post_meta( $coach_id, '_gscoach_custom_page', true );
         if ( empty($custom_page_link) ) {
             $default_link_type = getoption('single_link_type', 'single_page');
             if ( $default_link_type == 'none' ) {
@@ -333,13 +333,13 @@ function member_name($shortcode_id, $echo = false, $has_link = true, $link_type 
         }
     }
 
-    $classes = $no_default_class ? '' : 'gs-member-name ';
+    $classes = $no_default_class ? '' : 'gs-coach-name ';
 
     $classes .= $extra_classes;
 
     $name = sprintf('<%1$s class="%2$s" itemprop="name">%3$s</%1$s>', $tag, $classes, $the_title);
 
-    $name = apply_filters('gs_coach_member_name_html', $name, $member_id);
+    $name = apply_filters('gs_coach_coach_name_html', $name, $coach_id);
 
     return echo_return($name, $echo);
 }
@@ -349,20 +349,20 @@ function getoption($option, $default = '') {
     return isset($prefs[$option]) ? $prefs[$option] : $default;
 }
 
-function member_secondary_thumbnail($size, $echo = false) {
+function coach_secondary_thumbnail($size, $echo = false) {
 
-    $member_id = get_the_ID();
+    $coach_id = get_the_ID();
 
-    $thumbnail_id = get_post_meta($member_id, 'second_featured_img', true);
+    $thumbnail_id = get_post_meta($coach_id, 'second_featured_img', true);
 
-    $size = apply_filters('gs_coach_member_secondary_thumbnail_size', $size, $member_id);
+    $size = apply_filters('gs_coach_coach_secondary_thumbnail_size', $size, $coach_id);
     if (empty($size)) $size = 'large';
 
     $thumbnail = '';
 
     if ($thumbnail_id) {
 
-        $classes = (array) apply_filters('gs_coach_secondary_thumbnail_classes', ['gs_coach_member--image']);
+        $classes = (array) apply_filters('gs_coach_secondary_thumbnail_classes', ['gs_coach_coach--image']);
 
         $thumbnail = wp_get_attachment_image($thumbnail_id, $size, false, [
             'class' => implode(' ', $classes),
@@ -371,18 +371,18 @@ function member_secondary_thumbnail($size, $echo = false) {
         ]);
     }
 
-    $thumbnail = apply_filters('gs_coach_member_secondary_thumbnail_html', $thumbnail, $member_id);
+    $thumbnail = apply_filters('gs_coach_coach_secondary_thumbnail_html', $thumbnail, $coach_id);
 
     return echo_return($thumbnail, $echo);
 }
 
-function member_email_mailto($icon = '', $echo = false) {
+function coach_email_mailto($icon = '', $echo = false) {
 
-    $member_id = get_the_ID();
+    $coach_id = get_the_ID();
 
-    $email = get_post_meta($member_id, '_gscoach_email', true);
-    $email_cc = get_post_meta($member_id, '_gs_cc', true);
-    $email_bcc = get_post_meta($member_id, '_gs_bcc', true);
+    $email = get_post_meta($coach_id, '_gscoach_email', true);
+    $email_cc = get_post_meta($coach_id, '_gs_cc', true);
+    $email_bcc = get_post_meta($coach_id, '_gs_bcc', true);
 
     // Remove spaces from comma separated emails_cc and emails_bcc & validate each email
     $email_cc = implode(',', array_filter(array_map('trim', explode(',', $email_cc)), 'is_email'));
@@ -390,25 +390,25 @@ function member_email_mailto($icon = '', $echo = false) {
 
     $email_link = sprintf('<a href="mailto:%1$s%2$s%3$s">%4$s%1$s</a>', $email, !empty($email_cc) ? '?cc=' . $email_cc : '', !empty($email_bcc) ? '&bcc=' . $email_bcc : '', $icon);
 
-    $email_link = apply_filters('gs_coach_member_email_link', $email_link, $member_id);
+    $email_link = apply_filters('gs_coach_coach_email_link', $email_link, $coach_id);
 
     return echo_return($email_link, $echo);
 }
 
-function member_custom() {
+function coach_custom() {
 
-    $member_id = get_the_ID();
+    $coach_id = get_the_ID();
 
-    $thumbnail_id = get_post_meta($member_id, 'second_featured_img', true);
+    $thumbnail_id = get_post_meta($coach_id, 'second_featured_img', true);
 
-    // $size = apply_filters( 'gs_coach_member_secondary_thumbnail_size', $size, $member_id );
+    // $size = apply_filters( 'gs_coach_coach_secondary_thumbnail_size', $size, $coach_id );
     // if ( empty($size) ) $size = 'large';
 
     $thumbnail = '';
 
     if ($thumbnail_id) {
 
-        $classes = (array) apply_filters('gs_coach_secondary_thumbnail_classes', ['gs_coach_member--image']);
+        $classes = (array) apply_filters('gs_coach_secondary_thumbnail_classes', ['gs_coach_coach--image']);
 
         $thumbnail = wp_get_attachment_image($thumbnail_id, array('50', '50'), false, [
             'class' => implode(' ', $classes),
@@ -417,7 +417,7 @@ function member_custom() {
         ]);
     }
 
-    $thumbnail = apply_filters('gs_coach_member_secondary_thumbnail_html', $thumbnail, $member_id);
+    $thumbnail = apply_filters('gs_coach_coach_secondary_thumbnail_html', $thumbnail, $coach_id);
 
     return echo_return($thumbnail, true);
 }
@@ -635,7 +635,7 @@ function filter_posts_by_term($group_slug, $query_posts) {
     return array_values($posts);
 }
 
-function get_member_terms_slugs($term_name, $separator = ' ') {
+function get_coach_terms_slugs($term_name, $separator = ' ') {
 
     global $post;
 
@@ -797,39 +797,39 @@ if (is_pro_valid()) {
         }
     }
 
-    function gs_coach_member_location($separator = ', ') {
+    function gs_coach_coach_location($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_location', $separator);
     }
 
-    function gs_coach_member_language($separator = ', ') {
+    function gs_coach_coach_language($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_language', $separator);
     }
 
-    function gs_coach_member_specialty($separator = ', ') {
+    function gs_coach_coach_specialty($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_specialty', $separator);
     }
 
-    function gs_coach_member_gender($separator = ', ') {
+    function gs_coach_coach_gender($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_gender', $separator);
     }
 
-    function gs_coach_member_extra_one($separator = ', ') {
+    function gs_coach_coach_extra_one($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_extra_one', $separator);
     }
 
-    function gs_coach_member_extra_two($separator = ', ') {
+    function gs_coach_coach_extra_two($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_extra_two', $separator);
     }
 
-    function gs_coach_member_extra_three($separator = ', ') {
+    function gs_coach_coach_extra_three($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_extra_three', $separator);
     }
 
-    function gs_coach_member_extra_four($separator = ', ') {
+    function gs_coach_coach_extra_four($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_extra_four', $separator);
     }
 
-    function gs_coach_member_extra_five($separator = ', ') {
+    function gs_coach_coach_extra_five($separator = ', ') {
         return gs_coach_get_terms_names('gs_coach_extra_five', $separator);
     }
 }
@@ -854,7 +854,7 @@ function get_social_links($post_id = null) {
     if (empty($post_id)) return [];
     $social_links = (array) get_post_meta($post_id, '_gscoach_socials', true);
     $social_links = array_filter($social_links);
-    return (array) apply_filters('gs_coach_member_social_links', $social_links, $post_id);
+    return (array) apply_filters('gs_coach_coach_social_links', $social_links, $post_id);
 }
 
 function get_skills($post_id = null) {
@@ -862,7 +862,7 @@ function get_skills($post_id = null) {
     if (empty($post_id)) return [];
     $skills = (array) get_post_meta($post_id, '_gscoach_skills', true);
     $skills = array_filter($skills);
-    return (array) apply_filters('gs_coach_member_skills', $skills, $post_id);
+    return (array) apply_filters('gs_coach_coach_skills', $skills, $post_id);
 }
 
 function get_certificate_ids($post_id = null) {
@@ -951,6 +951,7 @@ function get_meta_field_name( $field_key ) {
         '_gscoach_profession' => get_translation('gs_coach_profession'),
         '_gscoach_experience' => get_translation('gs_coach_experience'),
         '_gscoach_education' => get_translation('gs_coach_education'),
+        '_gscoach_ribbon' => get_translation('gs_coach_ribbon'),
         '_gscoach_address' => get_translation('gs_coach_address'),
         '_gscoach_state' => get_translation('gs_coach_state'),
         '_gscoach_country' => get_translation('gs_coach_country'),
@@ -959,7 +960,13 @@ function get_meta_field_name( $field_key ) {
         '_gscoach_shedule' => get_translation('gs_coach_schedule'),
         '_gscoach_available' => get_translation('gs_coach_availablity'),
         '_gscoach_psite' => get_translation('gs_coach_personal_site'),
+        '_gscoach_psite_url' => get_translation('gs_coach_personal_site_url'),
+        '_gscoach_psite_btn_text' => get_translation('gs_coach_personal_site_btn_text'),
+        '_gscoach_psite_target' => get_translation('gs_coach_personal_site_btn_target'),
         '_gscoach_courselink' => get_translation('gs_coach_course_link'),
+        '_gscoach_courselink_url' => get_translation('gs_coach_course_link_url'),
+        '_gscoach_courselink_btn_text' => get_translation('gs_coach_course_link_btn_text'),
+        '_gscoach_courselink_target' => get_translation('gs_coach_course_link_btn_target'),
         '_gscoach_fee' => get_translation('gs_coach_fee'),
         '_gscoach_review' => get_translation('gs_coach_review'),
         '_gscoach_rating' => get_translation('gs_coach_rating'),

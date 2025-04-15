@@ -30,23 +30,23 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 			$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
-			$classes = ['gs-col-xs-12 single-member-div'];
+			$classes = ['gs-col-xs-12 single-coach-div'];
 
-			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-member-pop';
+			if ( $gs_coach_link_type == 'popup' ) $classes[] = 'single-coach-pop';
 			if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 
 			?>
 
-			<!-- Start single member -->
+			<!-- Start single coach -->
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 				
-				<!-- Sehema & Single member wrapper -->
-				<div class="single-member--wrapper" itemscope itemtype="http://schema.org/Organization">
-					<div class="single-member fullcolumn">
+				<!-- Sehema & Single coach wrapper -->
+				<div class="single-coach--wrapper" itemscope itemtype="http://schema.org/Organization">
+					<div class="single-coach fullcolumn">
 
 						<div class="gs-roow">
 
-							<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+							<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 							
 							<div class="gs-col-md-4 gs-col-sm-4 gs-col-xs-12 cbp-so-side cbp-so-side-left gscoach-img-div">
 
@@ -56,10 +56,10 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 									<!-- Ribbon -->
 									<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 
-									<?php echo member_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'gs_coach_image__wrapper' ); ?>
+									<?php echo coach_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'gs_coach_image__wrapper' ); ?>
 
 								</div>
-								<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+								<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 
 							</div>
 
@@ -67,22 +67,22 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 								<div class="single-team-rightinfo">
 									<div class="gs-coach-info gs-tm-sicons">
 
-										<!-- Single member name -->
-										<?php member_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'div', 'gs-coach-name' ); ?>
-										<?php do_action( 'gs_coach_after_member_name' ); ?>
+										<!-- Single coach name -->
+										<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, 'div', 'gs-coach-name' ); ?>
+										<?php do_action( 'gs_coach_after_coach_name' ); ?>
 
-										<!-- Single member designation -->
+										<!-- Single coach designation -->
 										<span class="gs-coach-profession" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></span>
-										<?php do_action( 'gs_coach_after_member_designation' ); ?>
+										<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
 										<!-- Description -->
 										<?php if ( 'on' === $gs_desc_allow_html ) : ?>
 											<div class="gs-coach-details justify" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
 										<?php else : ?>
-											<div class="gs-coach-details justify" itemprop="description"><?php member_description( $id, $gs_tm_details_contl, true, false ); ?></div>
+											<div class="gs-coach-details justify" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, false ); ?></div>
 										<?php endif; ?>
 
-										<?php do_action( 'gs_coach_after_member_details' ); ?>
+										<?php do_action( 'gs_coach_after_coach_details' ); ?>
 
 										<!-- Social Links -->
 										<div class="socialicon">
@@ -93,7 +93,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 								</div>
 							</div>
 
-							<?php do_action( 'gs_coach_after_member_content' ); ?>
+							<?php do_action( 'gs_coach_after_coach_content' ); ?>
 
 						</div>
 						
@@ -111,8 +111,8 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		<?php endif; ?>
 

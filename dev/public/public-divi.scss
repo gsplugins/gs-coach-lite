@@ -57,7 +57,7 @@
         background: #869791;
     }
 
-    // Gs Coach Member
+    // Gs Coach coach
 
     .gs_coach_area {
         line-height: 1.5;
@@ -104,7 +104,7 @@
         outline: none;
     }
     
-    .gs-member-desc {
+    .gs-coach-desc {
         margin-top: 1em;
         margin-bottom: 1em;
     }
@@ -127,7 +127,7 @@
         box-shadow: none;
     }
 
-    .single-member .gs-member-desc a:hover {
+    .single-coach .gs-coach-desc a:hover {
         color: #e1e1e1;
     }
 
@@ -189,22 +189,22 @@
 
     // /*-- GS Coach Theme 1 --*/
     
-    .gs_tm_theme1 .gs-member-name,
-    .gs_tm_theme1 .gs-member-desig,
-    .gs_tm_theme2 .gs-member-name,
-    .gs_tm_theme2 .gs-member-desig,
-    .gs_tm_theme7 .gs-member-name,
-    .gs_tm_theme7 .gs-member-desig,
-    .gs_tm_theme10 .gs-member-name,
-    .gs_tm_theme10 .gs-member-desig,
-    .gs_tm_theme23 .gs-member-name,
-    .gs_tm_theme23 .gs-member-desig {
+    .gs_tm_theme1 .gs-coach-name,
+    .gs_tm_theme1 .gs-coach-desig,
+    .gs_tm_theme2 .gs-coach-name,
+    .gs_tm_theme2 .gs-coach-desig,
+    .gs_tm_theme7 .gs-coach-name,
+    .gs_tm_theme7 .gs-coach-desig,
+    .gs_tm_theme10 .gs-coach-name,
+    .gs_tm_theme10 .gs-coach-desig,
+    .gs_tm_theme23 .gs-coach-name,
+    .gs_tm_theme23 .gs-coach-desig {
         text-align: center;
     }
-    .gs_tm_theme1 .gs-member-name,
-    .gs_tm_theme2 .gs-member-name,
-    .gs_tm_theme7 .gs-member-name,
-    .gs_tm_theme23 .gs-member-name {
+    .gs_tm_theme1 .gs-coach-name,
+    .gs_tm_theme2 .gs-coach-name,
+    .gs_tm_theme7 .gs-coach-name,
+    .gs_tm_theme23 .gs-coach-name {
         margin-top: 6px;
     }
 
@@ -217,9 +217,9 @@
         padding: 23% 10px 0;
     }
 
-    .gs_tm_theme1 .gs-member-desc a,
-    .gs_tm_theme2 .gs-member-desc a,
-    .gs_tm_theme7 .gs-member-desc a {
+    .gs_tm_theme1 .gs-coach-desc a,
+    .gs_tm_theme2 .gs-coach-desc a,
+    .gs_tm_theme7 .gs-coach-desc a {
         margin-left: 5px;
         font-weight: bold;
         font-style: italic;
@@ -227,12 +227,12 @@
         transition: 1s;
     }
 
-    .gs_tm_theme1 .single-member-div,
-    .gs_tm_theme2 .single-member-div,
-    .gs_tm_theme3 .single-member-div,
-    .gs_tm_theme4 .single-member-div,
-    .gs_tm_theme5 .single-member-div,
-    .gs_tm_theme6 .single-member-div {
+    .gs_tm_theme1 .single-coach-div,
+    .gs_tm_theme2 .single-coach-div,
+    .gs_tm_theme3 .single-coach-div,
+    .gs_tm_theme4 .single-coach-div,
+    .gs_tm_theme5 .single-coach-div,
+    .gs_tm_theme6 .single-coach-div {
         margin-bottom: 30px;
     }
 
@@ -281,10 +281,10 @@
     .gs_tm_theme10 .gs-coach-social li a i {
         color: #D3D3D3;
     }
-    .gs_tm_theme3 .single-member,
-    .gs_tm_theme4 .single-member,
-    .gs_tm_theme5 .single-member,
-    .gs_tm_theme6 .single-member {
+    .gs_tm_theme3 .single-coach,
+    .gs_tm_theme4 .single-coach,
+    .gs_tm_theme5 .single-coach,
+    .gs_tm_theme6 .single-coach {
         display: flex;
         align-items: center;
     }
@@ -298,13 +298,13 @@
 
     /*-- GS Coach Theme 2 --*/
     
-    .gs_tm_theme2 .single-member .gs_coach_image__wrapper {
+    .gs_tm_theme2 .single-coach .gs_coach_image__wrapper {
         border-radius: 50%;
         overflow: hidden;
         position: relative;
         display: block;
     }
-    .gs_tm_theme2 .single-member .gs_coach_image__wrapper img {
+    .gs_tm_theme2 .single-coach .gs_coach_image__wrapper img {
         position: absolute;
         top: 0;
         left: 0;
@@ -331,42 +331,42 @@
         color: #141414;
     }
 
-    .gs_tm_theme10 .single-member .img-area {
+    .gs_tm_theme10 .single-coach .img-area {
         margin-bottom: 20px;
     }
     
-    .gs_tm_theme3 .single-member img,
-    .gs_tm_theme4 .single-member img {
+    .gs_tm_theme3 .single-coach img,
+    .gs_tm_theme4 .single-coach img {
         transition: all 1s ease;
     }
 
-    .gs_tm_theme3 .gs-member-desig,
-    .gs_tm_theme4 .gs-member-desig,
-    .gs_tm_theme5 .gs-member-desig,
-    .gs_tm_theme6 .gs-member-desig,
-    .gs_tm_theme10 .gs-member-desig {
+    .gs_tm_theme3 .gs-coach-desig,
+    .gs_tm_theme4 .gs-coach-desig,
+    .gs_tm_theme5 .gs-coach-desig,
+    .gs_tm_theme6 .gs-coach-desig,
+    .gs_tm_theme10 .gs-coach-desig {
         margin-bottom: 10px;
     }
 
-    .gs_tm_theme3 .gs-member-desc a,
-    .gs_tm_theme4 .gs-member-desc a,
-    .gs_tm_theme5 .gs-member-desc a,
-    .gs_tm_theme6 .gs-member-desc a,
-    .gs_tm_theme10 .gs-member-desc a {
+    .gs_tm_theme3 .gs-coach-desc a,
+    .gs_tm_theme4 .gs-coach-desc a,
+    .gs_tm_theme5 .gs-coach-desc a,
+    .gs_tm_theme6 .gs-coach-desc a,
+    .gs_tm_theme10 .gs-coach-desc a {
         color: #141414;
         font-style: italic;
         font-weight: bold;
         transition: .5s;
     }
 
-    .gs_tm_theme3 .gs-member-desc a:hover,
-    .gs_tm_theme10 .gs-member-desc a:hover {
+    .gs_tm_theme3 .gs-coach-desc a:hover,
+    .gs_tm_theme10 .gs-coach-desc a:hover {
         color: #f15123;
     }
     
     /*-- GS Coach Theme 5 --*/
     
-    .gs_tm_theme5 .single-member .gs_coach_image__wrapper {
+    .gs_tm_theme5 .single-coach .gs_coach_image__wrapper {
         border-radius: 50%;
         overflow: hidden;
         position: relative;
@@ -381,13 +381,13 @@
     }
     /*-- GS Coach Theme 6 --*/
     
-    .gs_tm_theme6 .single-member .gs_coach_image__wrapper {
+    .gs_tm_theme6 .single-coach .gs_coach_image__wrapper {
         border-radius: 50%;
         overflow: hidden;
         position: relative;
         display: block;
     }
-    .gs_tm_theme6 .single-member .gs_coach_image__wrapper img {
+    .gs_tm_theme6 .single-coach .gs_coach_image__wrapper img {
         position: absolute;
         top: 0;
         left: 0;
@@ -413,47 +413,47 @@
     }
     /*-- GS Coach Theme 8 --*/
     
-    .gs_tm_theme8 .single-member,
-    .gs_tm_theme9 .single-member,
-    .gs_tm_theme11 .single-member,
-    .gs_tm_theme12 .single-member {
+    .gs_tm_theme8 .single-coach,
+    .gs_tm_theme9 .single-coach,
+    .gs_tm_theme11 .single-coach,
+    .gs_tm_theme12 .single-coach {
         margin-bottom: 10px;
     }
-    .gs_tm_theme8 .single-member-div,
-    .gs_tm_theme11 .single-member-div,
-    .gs_tm_theme19 .single-member-div {
+    .gs_tm_theme8 .single-coach-div,
+    .gs_tm_theme11 .single-coach-div,
+    .gs_tm_theme19 .single-coach-div {
         margin-bottom: 0px;
     }
-    .gs_tm_theme8 .single-member img,
-    .gs_tm_theme9 .single-member img,
-    .gs_tm_theme11 .single-member img,
-    .gs_tm_theme12 .single-member img {
+    .gs_tm_theme8 .single-coach img,
+    .gs_tm_theme9 .single-coach img,
+    .gs_tm_theme11 .single-coach img,
+    .gs_tm_theme12 .single-coach img {
         width: 100%;
     }
-    .gs_tm_theme8 .gs-member-name,
-    .gs_tm_theme8 .gs-member-desig,
-    .gs_tm_theme9 .gs-member-name,
-    .gs_tm_theme9 .gs-member-desig,
-    .gs_tm_theme11 .gs-member-name,
-    .gs_tm_theme11 .gs-member-desig,
-    .gs_tm_theme12 .gs-member-name,
-    .gs_tm_theme12 .gs-member-desig {
+    .gs_tm_theme8 .gs-coach-name,
+    .gs_tm_theme8 .gs-coach-desig,
+    .gs_tm_theme9 .gs-coach-name,
+    .gs_tm_theme9 .gs-coach-desig,
+    .gs_tm_theme11 .gs-coach-name,
+    .gs_tm_theme11 .gs-coach-desig,
+    .gs_tm_theme12 .gs-coach-name,
+    .gs_tm_theme12 .gs-coach-desig {
         padding: 5px 10px;
         color: #fff;
         transition: all 0.6s linear;
     }
-    .gs_tm_theme8 .gs-member-name,
-    .gs_tm_theme9 .gs-member-name,
-    .gs_tm_theme11 .gs-member-name,
-    .gs_tm_theme12 .gs-member-name,
-    .gs_tm_theme19 .gs-member-name {
+    .gs_tm_theme8 .gs-coach-name,
+    .gs_tm_theme9 .gs-coach-name,
+    .gs_tm_theme11 .gs-coach-name,
+    .gs_tm_theme12 .gs-coach-name,
+    .gs_tm_theme19 .gs-coach-name {
         background-color: rgba(0, 185, 235, 0.8);
     }
-    .gs_tm_theme8 .gs-member-desig,
-    .gs_tm_theme9 .gs-member-desig,
-    .gs_tm_theme11 .gs-member-desig,
-    .gs_tm_theme12 .gs-member-desig,
-    .gs_tm_theme19 .gs-member-desig {
+    .gs_tm_theme8 .gs-coach-desig,
+    .gs_tm_theme9 .gs-coach-desig,
+    .gs_tm_theme11 .gs-coach-desig,
+    .gs_tm_theme12 .gs-coach-desig,
+    .gs_tm_theme19 .gs-coach-desig {
         background-color: #141412;
     }
     .gs_tm_theme8 .gs_coach_overlay,
@@ -463,11 +463,11 @@
         background-color: rgba(0, 0, 0, 0.66);
         transition: all 0.4s linear;
     }
-    .gs_tm_theme8 .single-member .gs_coach_overlay i,
-    .gs_tm_theme9 .single-member .gs_coach_overlay i,
-    .gs_tm_theme11 .single-member .gs_coach_overlay i,
-    .gs_tm_theme12 .single-member .gs_coach_overlay i,
-    .gs_tm_theme19 .single-member .gs_coach_overlay i {
+    .gs_tm_theme8 .single-coach .gs_coach_overlay i,
+    .gs_tm_theme9 .single-coach .gs_coach_overlay i,
+    .gs_tm_theme11 .single-coach .gs_coach_overlay i,
+    .gs_tm_theme12 .single-coach .gs_coach_overlay i,
+    .gs_tm_theme19 .single-coach .gs_coach_overlay i {
         background-color: #00B9EB;
         border-radius: 50%;
     }
@@ -488,15 +488,15 @@
     }
     /*-- GS Coach Theme 10 --*/
     
-    .gs_tm_theme10 .single-member img {
+    .gs_tm_theme10 .single-coach img {
         transition: all .4s ease;
     }
-    .gs_tm_theme10 .gs-member-desc {
+    .gs_tm_theme10 .gs-coach-desc {
         text-align: center;
         line-height: 1.2;
         font-size: 16px;
     }
-    .gs_tm_theme10 .gs-member-name {
+    .gs_tm_theme10 .gs-coach-name {
         margin-top: 6px;
     }
     .gs_tm_theme10 ul.gs-coach-social {
@@ -640,8 +640,8 @@
     .fullcolumn {
         background-color: #f0f0f5;
     }
-    .gs_tm_theme17 .single-member,
-    .gs_tm_theme18 .single-member {
+    .gs_tm_theme17 .single-coach,
+    .gs_tm_theme18 .single-coach {
         margin-bottom: 20px;
     }
     .gs_tm_theme17 .gs-coach-name a,
@@ -666,7 +666,7 @@
         text-align: left;
         padding: 20px;
     }
-    .single-member .image {
+    .single-coach .image {
         margin: 20px;
         vertical-align: middle;
     }
@@ -678,7 +678,7 @@
     }
     /* theme-19*/
     
-    .gs_tm_theme19 .single-member {
+    .gs_tm_theme19 .single-coach {
         position: relative;
         overflow: hidden;
         margin-bottom: 10px;
@@ -695,16 +695,16 @@
         visibility: hidden;
         transition: all 0.4s linear;
     }
-    .gs_tm_theme19 .gs-member-name,
-    .gs_tm_theme19 .gs-member-desig {
+    .gs_tm_theme19 .gs-coach-name,
+    .gs_tm_theme19 .gs-coach-desig {
         padding: 5px 10px;
         color: #fff;
         transition: all 0.6s linear;
     }
-    .gs_tm_theme19 .single-member img {
+    .gs_tm_theme19 .single-coach img {
         transition: all 0.6s linear;
     }
-    .gs_tm_theme19 .single-member .gs_coach_overlay i {
+    .gs_tm_theme19 .single-coach .gs_coach_overlay i {
         width: 50px;
         height: 50px;
         display: block;
@@ -723,10 +723,10 @@
         backface-visibility: hidden;
         text-align: center;
     }
-    .gs_tm_theme19 .single-member-name-desig {
+    .gs_tm_theme19 .single-coach-name-desig {
         text-align: left;
     }
-    .gs_tm_theme19 .gs-member-desig {
+    .gs_tm_theme19 .gs-coach-desig {
         font-size: 14px;
         display: inline-block;
     }
@@ -743,7 +743,7 @@
     .gscoach-panel-inner {
         padding: 25px;
     }
-    .gscoach-panel-inner .member-skill h3 {
+    .gscoach-panel-inner .coach-skill h3 {
         margin-top: 25px;
         border-top: 1px solid #484747;
         padding-top: 25px;
@@ -787,7 +787,7 @@
         text-align: center;
         margin: 3%;
     }
-    .gs_tm_theme20 .single-member-div {
+    .gs_tm_theme20 .single-coach-div {
         margin-bottom: 10px;
     }
     .gs_coach_ribbon {
@@ -798,7 +798,7 @@
     }
     /*Theme Grid 2*/
     
-    .gs_tm_grid2 .staff-member {
+    .gs_tm_grid2 .staff-coach {
         padding: 4px;
         background: #fff;
         border: 1px solid #ddd;
@@ -817,7 +817,7 @@
         font-size: 13px;
         color: #fff;
     }
-    .gs_tm_grid2 .single-member-div {
+    .gs_tm_grid2 .single-coach-div {
         margin-bottom: 15px;
     }
     .gs_tm_grid2 .gs_coach_image__wrapper a {
@@ -895,7 +895,7 @@
         padding: 4px;
         margin: 0 5px 0 0;
     }
-    .gs-coach-widget .gs-member-name {
+    .gs-coach-widget .gs-coach-name {
         font-weight: 400;
     }
     .gs-coach-widget .gs-coach-social li a {
@@ -906,14 +906,14 @@
     .gs-coach-widget .gs-coach-table-cell {
         padding: 6px 0 0;
     }
-    .gs-coach-widget .gs-member-desig {
+    .gs-coach-widget .gs-coach-desig {
         font-style: italic;
         font-size: 16px;
     }
     .gs-coach-widget ul.gs-coach-social li {
         margin-bottom: 0;
     }
-    .footer-widgets .gs-coach-widget .gs-member-desig {
+    .footer-widgets .gs-coach-widget .gs-coach-desig {
         margin: 5px 0;
     }
     .footer-widgets .gs-tm-sicons .gs-coach-social a.github:hover {
@@ -1008,7 +1008,7 @@
     .gs_tm_theme22 .card-body {
         padding: 0;
     }
-    .gs_tm_theme22 .single-member {
+    .gs_tm_theme22 .single-coach {
         margin-bottom: 10px;
     }
     .gs_tm_theme22 .social_cont {
@@ -1034,7 +1034,7 @@
     .flip-vertical .back img {
         height: 100%;
     }
-    .gs_tm_theme23 .single-member-div {
+    .gs_tm_theme23 .single-coach-div {
         margin-bottom: 30px;
     }
     .flip-info {
@@ -1049,7 +1049,7 @@
         color: #fff;
     }
     
-    .gs-member-name a {
+    .gs-coach-name a {
         color: inherit;
         font-style: inherit;
         padding-bottom: 0px;
@@ -1057,15 +1057,15 @@
 
     .gs_tm_theme24 {
 
-        .gs-member-name {
+        .gs-coach-name {
             margin: 20px 0 10px;
         }
     
-        .gs-member-desig {
+        .gs-coach-desig {
             margin: 0 0 10px;
         }
     
-        .single-member-div {
+        .single-coach-div {
             margin-bottom: 40px;
         }
 
@@ -1100,9 +1100,9 @@
             height: 25px;
             font-size: 10px;
         }
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme5 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc {
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme5 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc {
             margin-bottom: 15px;
         }
         .gs-coach-social li a {
@@ -1121,11 +1121,11 @@
             width: 30px;
             height: 30px;
         }
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme5 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc,
-        .gs_tm_theme7 .gs-member-desc {
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme5 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc,
+        .gs_tm_theme7 .gs-coach-desc {
             margin-bottom: 15px;
             font-size: 15px;
         }
@@ -1148,27 +1148,27 @@
         .gs_tm_grid2 .staff-meta {
             width: 342.5px;
         }
-        .gs_tm_theme3 .single-member,
-        .gs_tm_theme4 .single-member,
-        .gs_tm_theme5 .single-member,
-        .gs_tm_theme6 .single-member {
+        .gs_tm_theme3 .single-coach,
+        .gs_tm_theme4 .single-coach,
+        .gs_tm_theme5 .single-coach,
+        .gs_tm_theme6 .single-coach {
             display: initial;
         }
-        .gs_tm_theme3 .gs-member-name,
-        .gs_tm_theme4 .gs-member-name,
-        .gs_tm_theme5 .gs-member-name,
-        .gs_tm_theme6 .gs-member-name {
+        .gs_tm_theme3 .gs-coach-name,
+        .gs_tm_theme4 .gs-coach-name,
+        .gs_tm_theme5 .gs-coach-name,
+        .gs_tm_theme6 .gs-coach-name {
             text-align: center;
             margin: 15px 0 6px;
         }
-        .gs_tm_theme3 .gs-member-desig,
-        .gs_tm_theme4 .gs-member-desig,
-        .gs_tm_theme5 .gs-member-desig,
-        .gs_tm_theme6 .gs-member-desig,
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme5 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc {
+        .gs_tm_theme3 .gs-coach-desig,
+        .gs_tm_theme4 .gs-coach-desig,
+        .gs_tm_theme5 .gs-coach-desig,
+        .gs_tm_theme6 .gs-coach-desig,
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme5 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc {
             text-align: center;
         }
         .gs_tm_drawer2 .gridder .gridder-list {
@@ -1180,7 +1180,7 @@
         .team-description {
             border-right: none;
         }
-        .member-skill {
+        .coach-skill {
             margin-top: 20px;
         }
         .gs_tm_theme9 .search-by-name {
@@ -1192,7 +1192,7 @@
         .gs_tm_theme7 .single-mem-desc-social {
             padding: 29% 10px 0;
         }
-        .gs_tm_theme2 .gs-member-desc {
+        .gs_tm_theme2 .gs-coach-desc {
             margin-bottom: 15px;
         }
         .gs_tm_theme2 .gs-coach-social li a,
@@ -1200,39 +1200,39 @@
             width: 30px;
             height: 30px;
         }
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc {
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc {
             margin-bottom: 15px;
             font-size: 15px;
         }
         .gs_tm_theme4 ul.gs-coach-social {
             float: left;
         }
-        .gs_tm_theme3 .gs-member-name {
+        .gs_tm_theme3 .gs-coach-name {
             margin-top: 5px;
         }
-        .gs_tm_theme3 .single-member,
-        .gs_tm_theme4 .single-member,
-        .gs_tm_theme5 .single-member,
-        .gs_tm_theme6 .single-member {
+        .gs_tm_theme3 .single-coach,
+        .gs_tm_theme4 .single-coach,
+        .gs_tm_theme5 .single-coach,
+        .gs_tm_theme6 .single-coach {
             display: initial;
         }
-        .gs_tm_theme3 .gs-member-name,
-        .gs_tm_theme4 .gs-member-name,
-        .gs_tm_theme5 .gs-member-name,
-        .gs_tm_theme6 .gs-member-name {
+        .gs_tm_theme3 .gs-coach-name,
+        .gs_tm_theme4 .gs-coach-name,
+        .gs_tm_theme5 .gs-coach-name,
+        .gs_tm_theme6 .gs-coach-name {
             text-align: center;
             margin: 15px 0 6px;
         }
-        .gs_tm_theme3 .gs-member-desig,
-        .gs_tm_theme4 .gs-member-desig,
-        .gs_tm_theme5 .gs-member-desig,
-        .gs_tm_theme6 .gs-member-desig,
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme5 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc,
+        .gs_tm_theme3 .gs-coach-desig,
+        .gs_tm_theme4 .gs-coach-desig,
+        .gs_tm_theme5 .gs-coach-desig,
+        .gs_tm_theme6 .gs-coach-desig,
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme5 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc,
         .gs-coach-social {
             text-align: center;
         }
@@ -1245,7 +1245,7 @@
         .team-description {
             border-right: none;
         }
-        .member-skill {
+        .coach-skill {
             margin-top: 20px;
         }
         .gs_tm_theme17 .image img,
@@ -1284,18 +1284,18 @@
         .gs_tm_theme2 .single-mem-desc-social {
             padding: 28% 10px 0;
         }
-        .gs_tm_theme2 .gs-member-desc,
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc,
-        .gs_tm_theme7 .gs-member-desc {
+        .gs_tm_theme2 .gs-coach-desc,
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc,
+        .gs_tm_theme7 .gs-coach-desc {
             font-size: 15px;
             margin-bottom: 15px;
         }
         .gs_tm_theme4 ul.gs-coach-social {
             float: left;
         }
-        .gs_tm_theme3 .gs-member-name {
+        .gs_tm_theme3 .gs-coach-name {
             margin-top: 5px;
         }
         .gs_tm_theme5 .gs-coach-social {
@@ -1307,27 +1307,27 @@
         .gs_tm_grid2 .staff-meta {
             width: 209.5px;
         }
-        .gs_tm_theme3 .single-member,
-        .gs_tm_theme4 .single-member,
-        .gs_tm_theme5 .single-member,
-        .gs_tm_theme6 .single-member {
+        .gs_tm_theme3 .single-coach,
+        .gs_tm_theme4 .single-coach,
+        .gs_tm_theme5 .single-coach,
+        .gs_tm_theme6 .single-coach {
             display: initial;
         }
-        .gs_tm_theme3 .gs-member-name,
-        .gs_tm_theme4 .gs-member-name,
-        .gs_tm_theme5 .gs-member-name,
-        .gs_tm_theme6 .gs-member-name {
+        .gs_tm_theme3 .gs-coach-name,
+        .gs_tm_theme4 .gs-coach-name,
+        .gs_tm_theme5 .gs-coach-name,
+        .gs_tm_theme6 .gs-coach-name {
             text-align: center;
             margin: 15px 0 6px;
         }
-        .gs_tm_theme3 .gs-member-desig,
-        .gs_tm_theme4 .gs-member-desig,
-        .gs_tm_theme5 .gs-member-desig,
-        .gs_tm_theme6 .gs-member-desig,
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme5 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc,
+        .gs_tm_theme3 .gs-coach-desig,
+        .gs_tm_theme4 .gs-coach-desig,
+        .gs_tm_theme5 .gs-coach-desig,
+        .gs_tm_theme6 .gs-coach-desig,
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme5 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc,
         .gs-coach-social {
             text-align: center;
         }
@@ -1340,7 +1340,7 @@
         .team-description {
             border-right: none;
         }
-        .member-skill {
+        .coach-skill {
             margin-top: 20px;
         }
         .gs_tm_theme14 .gsc-table-head,
@@ -1408,10 +1408,10 @@
         .gs-col-xs-6 {
             width: 100% !important;
         }
-        .gs_tm_theme2 .gs-member-desc,
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc {
+        .gs_tm_theme2 .gs-coach-desc,
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc {
             margin-bottom: 15px;
         }
         .gs_tm_theme2 .gs-coach-social li a,
@@ -1422,33 +1422,33 @@
         .gs_tm_theme4 ul.gs-coach-social {
             float: left;
         }
-        .gs_tm_theme3 .gs-member-name {
+        .gs_tm_theme3 .gs-coach-name {
             margin-top: 5px;
         }
         .gs_tm_grid2 .staff-meta {
             width: 320px;
         }
-        .gs_tm_theme3 .single-member,
-        .gs_tm_theme4 .single-member,
-        .gs_tm_theme5 .single-member,
-        .gs_tm_theme6 .single-member {
+        .gs_tm_theme3 .single-coach,
+        .gs_tm_theme4 .single-coach,
+        .gs_tm_theme5 .single-coach,
+        .gs_tm_theme6 .single-coach {
             display: initial;
         }
-        .gs_tm_theme3 .gs-member-name,
-        .gs_tm_theme4 .gs-member-name,
-        .gs_tm_theme5 .gs-member-name,
-        .gs_tm_theme6 .gs-member-name {
+        .gs_tm_theme3 .gs-coach-name,
+        .gs_tm_theme4 .gs-coach-name,
+        .gs_tm_theme5 .gs-coach-name,
+        .gs_tm_theme6 .gs-coach-name {
             text-align: center;
             margin: 15px 0 6px;
         }
-        .gs_tm_theme3 .gs-member-desig,
-        .gs_tm_theme4 .gs-member-desig,
-        .gs_tm_theme5 .gs-member-desig,
-        .gs_tm_theme6 .gs-member-desig,
-        .gs_tm_theme3 .gs-member-desc,
-        .gs_tm_theme4 .gs-member-desc,
-        .gs_tm_theme5 .gs-member-desc,
-        .gs_tm_theme6 .gs-member-desc,
+        .gs_tm_theme3 .gs-coach-desig,
+        .gs_tm_theme4 .gs-coach-desig,
+        .gs_tm_theme5 .gs-coach-desig,
+        .gs_tm_theme6 .gs-coach-desig,
+        .gs_tm_theme3 .gs-coach-desc,
+        .gs_tm_theme4 .gs-coach-desc,
+        .gs_tm_theme5 .gs-coach-desc,
+        .gs_tm_theme6 .gs-coach-desc,
         .gs-coach-social {
             text-align: center;
         }
@@ -1462,7 +1462,7 @@
         .team-description {
             border-right: none;
         }
-        .member-skill {
+        .coach-skill {
             margin-top: 20px;
         }
         .gs_tm_theme14 .gsc-table-head,

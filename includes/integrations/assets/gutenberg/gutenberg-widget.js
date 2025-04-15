@@ -45,9 +45,9 @@
 
         BlockServerRenderScript();
 
-        return <div className='gscoach-members--block'>
+        return <div className='gscoach-coachs--block'>
 
-            <div className='gscoach-members--toolbar'>
+            <div className='gscoach-coachs--toolbar'>
 
                 <label>{ gs_coach_block.select_shortcode }</label>
 
@@ -106,8 +106,8 @@
     });
 
     registerBlockType('gscoach/single-team-block', {
-        title: __( 'GS Single Coach Member', 'gscoach' ),
-        description: __( 'Show Single Coach Member by GS Coach Plugin', 'gscoach' ),
+        title: __( 'GS Single Coach coach', 'gscoach' ),
+        description: __( 'Show Single Coach coach by GS Coach Plugin', 'gscoach' ),
         icon: Icon,
         category: 'layout',
         edit: () => {

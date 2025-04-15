@@ -121,7 +121,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
     // attributes and type specs
     if (!peekToken(state) &&
         stream.match(/-\s*[a-zß-öø-ÿ][\wØ-ÞÀ-Öß-öø-ÿ]*/)) {
-      if (is_member(stream.current(),typeWords)) {
+      if (is_coach(stream.current(),typeWords)) {
         return rval(state,stream,"type");
       }else{
         return rval(state,stream,"attribute");
@@ -205,17 +205,17 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
 
       var w = stream.current();
 
-      if (is_member(w,keywordWords)) {
+      if (is_coach(w,keywordWords)) {
         return rval(state,stream,"keyword");
-      }else if (is_member(w,operatorAtomWords)) {
+      }else if (is_coach(w,operatorAtomWords)) {
         return rval(state,stream,"operator");
       }else if (stream.match(/\s*\(/,false)) {
         // 'put' and 'erlang:put' are bifs, 'foo:put' is not
-        if (is_member(w,bifWords) &&
+        if (is_coach(w,bifWords) &&
             ((peekToken(state).token != ":") ||
              (peekToken(state,2).token == "erlang"))) {
           return rval(state,stream,"builtin");
-        }else if (is_member(w,guardWords)) {
+        }else if (is_coach(w,guardWords)) {
           return rval(state,stream,"guard");
         }else{
           return rval(state,stream,"function");
@@ -226,7 +226,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
         } else {
           return rval(state,stream,"function");
         }
-      }else if (is_member(w,["true","false"])) {
+      }else if (is_coach(w,["true","false"])) {
         return rval(state,stream,"boolean");
       }else{
         return rval(state,stream,"atom");
@@ -292,7 +292,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
       stream.backUp(1);
       while (re.test(stream.peek())) {
         stream.next();
-        if (is_member(stream.current(),words)) {
+        if (is_coach(stream.current(),words)) {
           return true;
         }
       }
@@ -307,7 +307,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
         stream.next();
       }
       while (0 < stream.current().length) {
-        if (is_member(stream.current(),words)) {
+        if (is_coach(stream.current(),words)) {
           return true;
         }else{
           stream.backUp(1);
@@ -343,7 +343,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
     return m ? m.pop() : "";
   }
 
-  function is_member(element,list) {
+  function is_coach(element,list) {
     return (-1 < list.indexOf(element));
   }
 
@@ -466,7 +466,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
     // type is a char, tokens is a list of token strings.
     // The function returns (possibly truncated) stack.
     // It will descend the stack, looking for a Token such that Token.token
-    //  is a member of tokens. If it does not find that, it will normally (but
+    //  is a coach of tokens. If it does not find that, it will normally (but
     //  see "E" below) return stack. If it does find a match, it will remove
     //  all the Tokens between the top and the matched Token.
     // If type is "m", that is all it does.
@@ -481,7 +481,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
       var len = stack.length-1;
       var tokens = tt[type];
       for (var i = len-1; -1 < i ; i--) {
-        if (is_member(stack[i].token,tokens)) {
+        if (is_coach(stack[i].token,tokens)) {
           var ss = stack.slice(0,i);
           switch (type) {
               case "m": return ss.concat(stack[i]).concat(stack[len]);
@@ -519,23 +519,23 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
       return  currT.column+3;
     }else if (wordAfter === "catch" && (t = getToken(state,["try"]))) {
       return t.column;
-    }else if (is_member(wordAfter,["end","after","of"])) {
+    }else if (is_coach(wordAfter,["end","after","of"])) {
       t = getToken(state,["begin","case","fun","if","receive","try"]);
       return t ? t.column : CodeMirror.Pass;
-    }else if (is_member(wordAfter,closeParenWords)) {
+    }else if (is_coach(wordAfter,closeParenWords)) {
       t = getToken(state,openParenWords);
       return t ? t.column : CodeMirror.Pass;
-    }else if (is_member(currT.token,[",","|","||"]) ||
-              is_member(wordAfter,[",","|","||"])) {
+    }else if (is_coach(currT.token,[",","|","||"]) ||
+              is_coach(wordAfter,[",","|","||"])) {
       t = postcommaToken(state);
       return t ? t.column+t.token.length : unit;
     }else if (currT.token == "->") {
-      if (is_member(prevT.token, ["receive","case","if","try"])) {
+      if (is_coach(prevT.token, ["receive","case","if","try"])) {
         return prevT.column+unit+unit;
       }else{
         return prevT.column+unit;
       }
-    }else if (is_member(currT.token,openParenWords)) {
+    }else if (is_coach(currT.token,openParenWords)) {
       return currT.column+currT.token.length;
     }else{
       t = defaultToken(state);
@@ -580,7 +580,7 @@ CodeMirror.defineMode("erlang", function(cmCfg) {
   function getTokenIndex(objs,propname,propvals) {
 
     for (var i = objs.length-1; -1 < i ; i--) {
-      if (is_member(objs[i][propname],propvals)) {
+      if (is_coach(objs[i][propname],propvals)) {
         return i;
       }
     }

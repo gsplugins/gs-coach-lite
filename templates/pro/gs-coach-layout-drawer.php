@@ -30,37 +30,37 @@ global $gs_coach_loop;
 
 					$designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
-					$classes = ['gridder-list gs-filter-single-item single-member-div', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
+					$classes = ['gridder-list gs-filter-single-item single-coach-div', get_col_classes( $gs_coach_cols, $gs_coach_cols_tablet, $gs_coach_cols_mobile_portrait, $gs_coach_cols_mobile ) ];
 					if ( $enable_scroll_animation == 'on' ) $classes[] = 'cbp-so-section';
 
 				?>
 				
 				<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" data-griddercontent="#gs-coach-drawer-<?php echo get_the_id(); ?>-<?php echo $id; ?>" itemscope itemtype="http://schema.org/Organization">
 					
-					<div class="single-member--wrapper cbp-so-side cbp-so-side-left">
-						<div class="overlay-area single-member">
+					<div class="single-coach--wrapper cbp-so-side cbp-so-side-left">
+						<div class="overlay-area single-coach">
 
-							<?php do_action( 'gs_coach_before_member_content', $gs_coach_theme ); ?>
+							<?php do_action( 'gs_coach_before_coach_content', $gs_coach_theme ); ?>
 							
 							<!-- Ribbon -->
 							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 
 							<!-- Coach Image -->
 							<div class="gs_coach_image__wrapper">
-								<?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+								<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 							</div>
-							<?php do_action( 'gs_coach_after_member_thumbnail' ); ?>
+							<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 							
 							<!-- Overlay Contents -->
 							<div class="overlay">
-								<?php member_name( $id, true, false, '', 'h2', 'title', true ); ?>
-								<?php do_action( 'gs_coach_after_member_name' ); ?>
+								<?php coach_name( $id, true, false, '', 'h2', 'title', true ); ?>
+								<?php do_action( 'gs_coach_after_coach_name' ); ?>
 
 								<p class="desig"><?php echo wp_kses_post($designation); ?></p>
-								<?php do_action( 'gs_coach_after_member_designation' ); ?>
+								<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 							</div>
 
-							<?php do_action( 'gs_coach_after_member_content' ); ?>
+							<?php do_action( 'gs_coach_after_coach_content' ); ?>
 
 						</div>
 					</div>
@@ -75,8 +75,8 @@ global $gs_coach_loop;
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-member template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-member.php' ); ?>
+			<!--es not found - Load no-team-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
 
 		<?php endif; ?>
 

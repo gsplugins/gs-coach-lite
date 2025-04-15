@@ -24,7 +24,7 @@ class Sortable {
 		add_filter('get_terms_orderby', array($this, 'get_terms_orderby'), 1, 2);
 		add_filter('terms_clauses', array($this, 'terms_clauses'), 10, 3);
 		
-		// Update team members order via AJAX
+		// Update team coachs order via AJAX
 		add_action('wp_ajax_update_coaches_order', array($this, 'update_coaches_order'));
 		
 		// Update taxonomy order via AJAX
@@ -356,7 +356,7 @@ class Sortable {
 
 			<div class="gs-coach-disable--term-pages">
 				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
@@ -389,7 +389,7 @@ class Sortable {
 
 								<li id="<?php the_id(); ?>">
 									<div class="sortable-content sortable-icon"><i class="fas fa-arrows-alt" aria-hidden="true"></i></div>
-									<div class="sortable-content sortable-thumbnail"><span><?php member_thumbnail('thumbnail', true); ?></span></div>
+									<div class="sortable-content sortable-thumbnail"><span><?php coach_thumbnail('thumbnail', true); ?></span></div>
 									<div class="sortable-content sortable-title"><?php the_title(); ?></div>
 									<div class="sortable-content sortable-group"><?php echo wp_kses_post($terms_string); ?></div>
 								</li>
@@ -400,9 +400,9 @@ class Sortable {
 					<?php else : ?>
 
 						<div class="notice notice-warning" style="margin-top: 30px;">
-							<h3><?php _e('No Coach Member Found!', 'gscoach'); ?></h3>
-							<p style="font-size: 14px;"><?php _e('We didn\'t find any team member.</br>Please add some team members to sort them.', 'gscoach'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add Member', 'gscoach'); ?></a>
+							<h3><?php _e('No Coach coach Found!', 'gscoach'); ?></h3>
+							<p style="font-size: 14px;"><?php _e('We didn\'t find any team coach.</br>Please add some team coachs to sort them.', 'gscoach'); ?></p>
+							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
 						</div>
 
 					<?php endif; ?>
@@ -423,7 +423,7 @@ class Sortable {
 						</ol>
 	
 						<ul style="list-style: circle; padding-left: 20px; margin-top: 20px">
-							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-members/manage-gs-coach-member/sort-order/" target="_blank">Documentation</a> to learn more.</li>
+							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-coachs/manage-gs-coach-coach/sort-order/" target="_blank">Documentation</a> to learn more.</li>
 							<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
 						</ul>
 
@@ -446,8 +446,8 @@ class Sortable {
 		$translations = plugin()->builder->get_translation_srtings();
 		$coach_filters = [
 			'search_by_name' => $translations['instant-search-by-name'],
-			'search_by_zip' => $translations['gs-member-srch-by-zip'],
-			'gs_coach_tag' => $translations['gs-member-srch-by-tag'],
+			'search_by_zip' => $translations['gs-coach-srch-by-zip'],
+			'gs_coach_tag' => $translations['gs-coach-srch-by-tag'],
 			'filter_by_designation' => $translations['filter-by-designation'],
 			'gs_coach_language' => $translations['filter-by-language'],
 			'gs_coach_location' => $translations['filter-by-location'],
@@ -496,7 +496,7 @@ class Sortable {
 
 			<div class="gs-coach-disable--term-pages">
 				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
@@ -548,7 +548,7 @@ class Sortable {
 
 			<div class="gs-coach-disable--term-pages">
 				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
@@ -601,7 +601,7 @@ class Sortable {
 
 			<div class="gs-coach-disable--term-pages">
 				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-members/#pricing">Upgrade to PRO</a></div>
+					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
@@ -627,7 +627,7 @@ class Sortable {
 								<li id="<?php echo esc_attr($term->term_id); ?>">
 									<div class="sortable-content sortable-icon"><i class="fas fa-arrows-alt" aria-hidden="true"></i></div>
 									<div class="sortable-content sortable-title"><?php echo esc_html($term->name); ?></div>
-									<div class="sortable-content sortable-group"><span><?php echo absint($term->count) . ' ' . 'Members'; ?></span></div>
+									<div class="sortable-content sortable-group"><span><?php echo absint($term->count) . ' ' . 'coachs'; ?></span></div>
 								</li>
 
 							<?php endforeach; ?>
@@ -636,9 +636,9 @@ class Sortable {
 					<?php else : ?>
 
 						<div class="notice notice-warning" style="margin-top: 30px;">
-							<h3><?php _e('No Coach Member Found!', 'gscoach'); ?></h3>
-							<p style="font-size: 14px;"><?php _e('We didn\'t find any team member.</br>Please add some team members to sort them.', 'gscoach'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add Member', 'gscoach'); ?></a>
+							<h3><?php _e('No Coach coach Found!', 'gscoach'); ?></h3>
+							<p style="font-size: 14px;"><?php _e('We didn\'t find any team coach.</br>Please add some team coachs to sort them.', 'gscoach'); ?></p>
+							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
 						</div>
 
 					<?php endif; ?>
@@ -659,7 +659,7 @@ class Sortable {
 						</ol>
 	
 						<ul style="list-style: circle; padding-left: 20px; margin-top: 20px">
-							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-members/manage-gs-coach-member/sort-order/#reordering-groups-categories" target="_blank">Documentation</a> to learn more.</li>
+							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-coachs/manage-gs-coach-coach/sort-order/#reordering-groups-categories" target="_blank">Documentation</a> to learn more.</li>
 							<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
 						</ul>
 

@@ -46,7 +46,7 @@ foreach( $field_groups as $field_group ) {
                 // If the current field is empty vail early
                 if ( empty( get_field( $field['name'] ) ) ) continue; ?>
                 
-                <div class="gs-member-<?php echo esc_attr($field['name']); ?>">
+                <div class="gs-coach-<?php echo esc_attr($field['name']); ?>">
                     <span class="levels"><?php echo esc_html($field['label']); ?></span>
                     <span class="level-info-company"><?php the_field($field['name']); ?></span>
                 </div>

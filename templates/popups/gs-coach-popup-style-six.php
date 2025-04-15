@@ -7,29 +7,26 @@ if ( $gs_coaches_pop_clm == 'one' ) : ?>
         
         <!-- Coach Image -->
         <div class="clearfix">
-            <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+            <?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
         </div>
-        <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
+        <?php do_action( 'gs_coach_after_coach_thumbnail_popup' ); ?>
 
-        <!-- Member Name -->
-        <?php member_name( $id, true, $gs_coach_name_is_linked == 'on' ); ?>
-        <?php do_action( 'gs_coach_after_member_name' ); ?>
+        <!-- coach Name -->
+        <?php coach_name( $id, true, $gs_coach_name_is_linked == 'on' ); ?>
+        <?php do_action( 'gs_coach_after_coach_name' ); ?>
 
-        <!-- Member Designation -->
+        <!-- coach Designation -->
         <?php if ( !empty( $designation ) ): ?>
-            <div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-            <?php do_action( 'gs_coach_after_member_designation' ); ?>
+            <div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+            <?php do_action( 'gs_coach_after_coach_designation' ); ?>
         <?php endif; ?>
 
         <!-- Social Links -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
 
-        <!-- Meta Fields -->
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
-
         <!-- Description -->
-        <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-        <?php do_action( 'gs_coach_after_member_details' ); ?>
+        <div class="gs-coach-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+        <?php do_action( 'gs_coach_after_coach_details' ); ?>
         
         <!-- Meta Details -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details.php' ); ?>
@@ -51,8 +48,8 @@ if ( $gs_coaches_pop_clm == 'one' ) : ?>
     
         <!-- Coach Image -->
         <div class="gs_coach_popup_img">
-            <?php member_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
-            <?php do_action( 'gs_coach_after_member_thumbnail_popup' ); ?>
+            <?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+            <?php do_action( 'gs_coach_after_coach_thumbnail_popup' ); ?>
         </div>
 
     </div>
@@ -61,30 +58,30 @@ if ( $gs_coaches_pop_clm == 'one' ) : ?>
         
         <div class="name-designation-icon">
             <div class="name-designation">
-                <!-- Single member name -->
-                <?php member_name( $id, true, $gs_coach_name_is_linked == 'on' ); ?>
-                <?php do_action( 'gs_coach_after_member_name' ); ?>
+                <!-- Single coach name -->
+                <?php coach_name( $id, true, $gs_coach_name_is_linked == 'on' ); ?>
+                <?php do_action( 'gs_coach_after_coach_name' ); ?>
 
-                <!-- Single member designation -->
+                <!-- Single coach designation -->
                 <?php if ( !empty( $designation ) ): ?>
-                    <div class="gs-member-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-                    <?php do_action( 'gs_coach_after_member_designation' ); ?>
+                    <div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+                    <?php do_action( 'gs_coach_after_coach_designation' ); ?>
                 <?php endif; ?>
             </div>
 
             <div class="item-icon">
                  <!-- Coach Flip Image -->
                 <div class="gs_coach_img__wrapper">
-                    <?php member_custom(); ?>
+                    <?php coach_custom(); ?>
                 </div>
-                <?php do_action( 'gs_coach_after_member_secondary_thumbnail' ); ?>
+                <?php do_action( 'gs_coach_after_coach_secondary_thumbnail' ); ?>
             </div>
             
         </div>
         
         <!-- Description -->
-        <div class="gs-member-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-        <?php do_action( 'gs_coach_after_member_details' ); ?>
+        <div class="gs-coach-desc <?php echo $gs_desc_scroll_contrl == 'on' ? 'gs-coach--scrollbar' : ''; ?>" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+        <?php do_action( 'gs_coach_after_coach_details' ); ?>
         
         <!-- Meta Fields -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>

@@ -1,6 +1,6 @@
 (function($) {
 
-    var GS_Coach_Member = function( $scope, $ ) {
+    var GS_Coach_coach = function( $scope, $ ) {
 
         var $teamWidget = $scope.find('.gs_coach_area');
 
@@ -12,7 +12,7 @@
 
     $(window).on( 'elementor/frontend/init', function() {
 
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/gs-coach-members.default', GS_Coach_Member );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/gs-coach-coachs.default', GS_Coach_coach );
 
     });
 

@@ -58,7 +58,7 @@ CodeMirror.defineMode('powershell', function() {
 
   var symbolBuiltins = /[A-Z]:|%|\?/i;
   var namedBuiltins = buildRegexp([
-    /Add-(Computer|Content|History|Member|PSSnapin|Type)/,
+    /Add-(Computer|Content|History|coach|PSSnapin|Type)/,
     /Checkpoint-Computer/,
     /Clear-(Content|EventLog|History|Host|Item(Property)?|Variable)/,
     /Compare-Object/,
@@ -73,12 +73,12 @@ CodeMirror.defineMode('powershell', function() {
     /Disconnect-PSSession/,
     /Enable-(ComputerRestore|PSBreakpoint|PSRemoting|PSSessionConfiguration)/,
     /(Enter|Exit)-PSSession/,
-    /Export-(Alias|Clixml|Console|Counter|Csv|FormatData|ModuleMember|PSSession)/,
+    /Export-(Alias|Clixml|Console|Counter|Csv|FormatData|Modulecoach|PSSession)/,
     /ForEach-Object/,
     /Format-(Custom|List|Table|Wide)/,
     new RegExp('Get-(Acl|Alias|AuthenticodeSignature|ChildItem|Command|ComputerRestorePoint|Content|ControlPanelItem|Counter|Credential'
       + '|Culture|Date|Event|EventLog|EventSubscriber|ExecutionPolicy|FormatData|Help|History|Host|HotFix|Item|ItemProperty|Job'
-      + '|Location|Member|Module|PfxCertificate|Process|PSBreakpoint|PSCallStack|PSDrive|PSProvider|PSSession|PSSessionConfiguration'
+      + '|Location|coach|Module|PfxCertificate|Process|PSBreakpoint|PSCallStack|PSDrive|PSProvider|PSSession|PSSessionConfiguration'
       + '|PSSnapin|Random|Service|TraceSource|Transaction|TypeData|UICulture|Unique|Variable|Verb|WinEvent|WmiObject)'),
     /Group-Object/,
     /Import-(Alias|Clixml|Counter|Csv|LocalizedData|Module|PSSession)/,
