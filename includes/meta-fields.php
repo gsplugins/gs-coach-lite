@@ -95,7 +95,7 @@ class Meta_Fields {
 
 			<div class="form-group">
 				<label for="gsProf"><?php echo get_meta_field_name('_gscoach_profession'); ?></label>
-				<input type="text" id="gsProf" class="form-control" name="gs_prof" value="<?php echo isset($gs_prof) ? esc_attr($gs_prof) : ''; ?>">
+				<input type="text" id="gsProf" class="form-control" name="gs_prof" placeholder="Profession" value="<?php echo isset($gs_prof) ? esc_attr($gs_prof) : ''; ?>">
 			</div>
 
 			<div class="gs-coach-pro-field">
@@ -112,7 +112,7 @@ class Meta_Fields {
 			
 				<div class="form-group">
 					<label for="gsCoachRibbon"><?php echo get_meta_field_name('_gscoach_ribbon'); ?></label>
-					<input type="text" id="gsCoachRibbon" class="form-control" name="gs_coach_ribbon" value="<?php echo isset($gs_coach_ribbon) ? esc_attr($gs_coach_ribbon) : ''; ?>">
+					<input type="text" id="gsCoachRibbon" class="form-control" name="gs_coach_ribbon" placeholder="Ribbon" value="<?php echo isset($gs_coach_ribbon) ? esc_attr($gs_coach_ribbon) : ''; ?>">
 				</div>
 
 				<div class="form-group">

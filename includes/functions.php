@@ -1020,3 +1020,25 @@ function gs_get_sort_metas() {
     $saved_meta = gs_get_sort_meta_keys();
     return generate_meta_items($saved_meta);
 }
+
+function gs_get_icon_class_by_meta_key( $key ){
+    $icons = array(
+        '_gscoach_profession' => 'fas fa-user-tie',
+        '_gscoach_experience' => 'fas fa-cogs',
+        '_gscoach_education' => 'fas fa-school',
+        '_gscoach_address' => 'fas fa-address-book',
+        '_gscoach_state' => 'fas fa-city',
+        '_gscoach_country' => 'fas fa-globe',
+        '_gscoach_contact' => 'far fa-id-badge',
+        '_gscoach_email' => 'fas fa-at',
+        '_gscoach_shedule' => 'fas fa-calendar-alt',
+        '_gscoach_available' => 'fas fa-history',
+        '_gscoach_psite' => 'fas fa-link',
+        '_gscoach_courselink' => 'fas fa-book-reader',
+        '_gscoach_fee' => 'fas fa-comment-dollar',
+        '_gscoach_review' => 'fas fa-award',
+        '_gscoach_rating' => 'fas fa-star-half-alt'
+    );
+
+    return isset($icons[$key]) ? $icons[$key] : '';
+}
