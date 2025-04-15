@@ -161,7 +161,6 @@ $extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
             if( '_gscoach_rating' !== $meta['key'] && $meta_value !== '' ){
                 ?>
                     <div class="gs-coach-meta-fields">
-                        <i class="<?php echo gs_get_icon_class_by_meta_key( $meta['key'] ) ?>" aria-hidden="true"></i>
                         <span class="levels"><?php echo get_meta_field_name($meta['key']); ?></span>
                         <span class="gs-coach-meta-info"><?php echo esc_html( $meta_value ); ?></span>
                     </div>
@@ -171,7 +170,6 @@ $extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
             if ('_gscoach_rating' === $meta['key']) {
                 ?>
                     <div class="gs-coach-rating">
-                        <i class="<?php echo gs_get_icon_class_by_meta_key( $meta['key'] ) ?>" aria-hidden="true"></i>
                         <span class="levels"><?php echo get_meta_field_name($meta['key']); ?></span>
                         <span class="gs-coach-meta-rating"><?php esc_html( gs_star_rating( array( 'rating' => $meta_value ) ) ); ?></span>
                     </div>
