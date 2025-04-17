@@ -398,10 +398,6 @@ body {
                     top: 20px;
                     right: calc(-1*var(--r));
                     left: inherit;
-                    // padding: 0 .5em calc(2*var(--r));
-                    // padding-top: 6px;
-                    // padding-bottom: 18px;
-                    // padding-left: 30px;
                     padding: 6px 24px 18px 30px;
                     border-radius: 0 var(--r) var(--r) 0;
                     background: 
@@ -413,6 +409,7 @@ body {
                     100% 0/calc(101% - .5lh) 100% !important;
                     background-repeat: no-repeat !important;   
                 }
+
                 .gs-coach-ribbon-style-five {}
             }
     }
