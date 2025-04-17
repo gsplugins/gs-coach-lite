@@ -14,7 +14,6 @@ $classmaps = [
 	'Meta_Fields'        => 'includes/meta-fields.php',
 	'Template_Loader'    => 'includes/template-loader.php',
 	'Scripts'            => 'includes/scripts.php',
-	'Widgets'            => 'includes/widgets.php',
 	'Sortable'           => 'includes/sortable.php',
 	'Bulk_Importer'      => 'includes/bulk-importer/bulk-importer.php',
 	'Dummy_Data'         => 'includes/demo-data/dummy-data.php',
