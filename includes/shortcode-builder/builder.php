@@ -2435,20 +2435,44 @@ if ( ! class_exists( 'Builder' ) ) {
                     'value' => 'default'
                 ],
                 [
-                    'label' => __( 'Style One', 'gscoach' ),
+                    'label' => __( 'Style - 01', 'gscoach' ),
                     'value' => 'style-one'
                 ],
                 [
-                    'label' => __( 'Style Two', 'gscoach' ),
+                    'label' => __( 'Style - 02', 'gscoach' ),
                     'value' => 'style-two'
                 ],
                 [
-                    'label' => __( 'Style Three', 'gscoach' ),
+                    'label' => __( 'Style - 03', 'gscoach' ),
                     'value' => 'style-three'
                 ],
                 [
-                    'label' => __( 'Style Four', 'gscoach' ),
+                    'label' => __( 'Style - 04', 'gscoach' ),
                     'value' => 'style-four'
+                ],
+                [
+                    'label' => __( 'Style - 05', 'gscoach' ),
+                    'value' => 'style-five'
+                ],
+                [
+                    'label' => __( 'Style - 06', 'gscoach' ),
+                    'value' => 'style-six'
+                ],
+                [
+                    'label' => __( 'Style - 07', 'gscoach' ),
+                    'value' => 'style-seven'
+                ],
+                [
+                    'label' => __( 'Style - 08', 'gscoach' ),
+                    'value' => 'style-eight'
+                ],
+                [
+                    'label' => __( 'Style - 09', 'gscoach' ),
+                    'value' => 'style-nine'
+                ],
+                [
+                    'label' => __( 'Style - 10', 'gscoach' ),
+                    'value' => 'style-ten'
                 ]
 
             ];
