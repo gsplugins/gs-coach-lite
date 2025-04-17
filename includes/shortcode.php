@@ -109,6 +109,7 @@ class Shortcode {
 		}
 	
 		global $popup_style;
+		global $gs_coach_ribbon_style;
 	
 		// Extracting shortcode attributes.
 		extract( $settings );
@@ -146,6 +147,8 @@ class Shortcode {
 	
 		if ( empty($fitler_all_text) ) $fitler_all_text = 'All';
 	
+		if ( ! is_pro_valid() && $display_ribbon == 'on' ) $gs_coach_ribbon_style = 'default';
+
 		if ( ! is_pro_valid() && $gs_coach_link_type == 'popup' ) $popup_style = 'default';
 	
 		$args = [

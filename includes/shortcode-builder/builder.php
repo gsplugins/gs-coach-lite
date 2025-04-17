@@ -862,6 +862,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'coach-details' => __('Details', 'gscoach'),
                 'social-connection' => __('Social Connection', 'gscoach'),
                 'display-ribbon' => __('Display Ribbon', 'gscoach'),
+                'show-or-hide-ribbon__details' => __('Show or Hide Ribbon', 'gscoach'),
+                'ribbon_style' => __('Ribbon Style', 'gscoach'),
+                'ribbon_style__details' => __('Select Preferred Ribbon Style', 'gscoach'),
                 'pagination' => __('Pagination', 'gscoach'),
                 'single_page_style' => __('Single Page Style', 'gscoach'),
                 'single_link_type' => __('Single Link Type', 'gscoach'),
@@ -953,7 +956,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'font-size' => __('Font Size', 'gscoach'),
                 'font-weight' => __('Font Weight', 'gscoach'),
                 'font-style' => __('Font Style', 'gscoach'),
-                'shortcode-name' => __('Shortcode Name', 'gscoach'),
 
                 'select-number-of-team-columns' => __('Select the number of Coach columns', 'gscoach'),
                 'select-preffered-style-theme' => __('Select the preferred Style & Theme', 'gscoach'),
@@ -1746,6 +1748,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'popup_style' => $this->get_popup_styles(),
                 'filter_style' => $this->get_filter_styles(),
                 'gs_coach_thumbnail_sizes' => $this->getPossibleThumbnailSizes(),
+                'gs_coach_ribbon_styles' => $this->get_ribbon_styles(),
                 'gs_coach_cols_tablet' => $this->get_columns(),
                 'gs_coach_cols_mobile_portrait' => $this->get_columns(),
                 'gs_coach_cols_mobile' => $this->get_columns(),
@@ -1990,6 +1993,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coaches_pop_clm'              => 'two',
                 'gs_coach_connect'                => 'on',
                 'display_ribbon'                  => 'on',        
+                'gs_coach_ribbon_style'           => 'default',        
                 'gs_slider_nav_color'             => '',
                 'gs_slider_nav_bg_color'          => '',
                 'gs_slider_nav_hover_color'       => '',
@@ -2421,6 +2425,42 @@ if ( ! class_exists( 'Builder' ) ) {
             }
             
             return $result;
+        }
+
+        public function get_ribbon_styles() {
+
+            $styles = [
+                [
+                    'label' => __( 'Default', 'gscoach' ),
+                    'value' => 'default'
+                ],
+                [
+                    'label' => __( 'Style One', 'gscoach' ),
+                    'value' => 'style-one'
+                ],
+                [
+                    'label' => __( 'Style Two', 'gscoach' ),
+                    'value' => 'style-two'
+                ],
+                [
+                    'label' => __( 'Style Three', 'gscoach' ),
+                    'value' => 'style-three'
+                ],
+                [
+                    'label' => __( 'Style Four', 'gscoach' ),
+                    'value' => 'style-four'
+                ]
+
+            ];
+
+            if ( ! is_pro_valid() ) {
+
+                $default = array_shift( $styles );
+                $styles = array_merge( [$default], self::add_pro_to_options($styles) );
+            }
+
+            return $styles;
+
         }
 
         public function get_shortcode_prefs_options() {
