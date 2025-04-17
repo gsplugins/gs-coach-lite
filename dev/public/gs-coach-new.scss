@@ -410,7 +410,19 @@ body {
                     background-repeat: no-repeat !important;   
                 }
 
-                .gs-coach-ribbon-style-five {}
+                .gs-coach-ribbon-style-five {
+                    --s: 1.8em; /* the ribbon size */
+                    --d: .8em;  /* the depth */
+                    --c: .8em;  /* the cutout part */
+                    left: inherit;
+                    right: 0;
+                    // padding: 0 calc(var(--s) + .5em) var(--d) var(--c);
+                    padding: 4px 40px 16px 32px;
+                    background: conic-gradient(at right var(--s) bottom var(--d),#0004 62.5%,#0008 0 75%,#0000 0);
+                    clip-path: polygon(var(--c) 0,  calc(100% - var(--s)) 0,calc(100% - var(--s)) var(--d),100% var(--d),calc(100% - var(--c)) calc(50% + var(--d)/2),100% 100%,calc(100% - var(--s) - var(--d)) 100%,calc(100% - var(--s) - var(--d)) calc(100% - var(--d)),var(--c) calc(100% - var(--d)),0 calc(50% - var(--d)/2));
+                    background-color: #CC333F; /* the main color */
+                    width: fit-content;
+                }
             }
     }
 }

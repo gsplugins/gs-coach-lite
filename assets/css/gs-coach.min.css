@@ -5059,6 +5059,67 @@ body {
   background: radial-gradient(100% 50% at right, var(--c) 98%, rgba(0, 0, 0, 0) 101%) 0 0/0.5lh calc(100% - 2 * var(--r)), radial-gradient(100% 50% at left, rgba(0, 0, 0, 0.3333333333) 98%, rgba(0, 0, 0, 0) 101%) 100% 100%/var(--r) calc(2 * var(--r)), conic-gradient(from 180deg at calc(100% - var(--r)) calc(100% - 2 * var(--r)), rgba(0, 0, 0, 0) 25%, var(--c) 0) 100% 0/calc(101% - 0.5lh) 100% !important;
   background-repeat: no-repeat !important;
 }
+.gs-grid-style-two .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-two .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-grid-style-three .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-three .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-grid-style-four .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-four .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-grid-style-five .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-five .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-grid-style-six .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme3 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme4 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme4 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme8 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme8 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme9 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme9 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme10 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme10 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme11 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme11 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme22 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme22 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme23 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme23 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme20 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme20 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme12 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme12 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme19 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme19 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_theme13 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_theme13 .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs_tm_drawer2 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs_tm_drawer2 .single-coach-div .back .gs-coach-ribbon-style-five {
+  --s: 1.8em; /* the ribbon size */
+  --d: .8em; /* the depth */
+  --c: .8em; /* the cutout part */
+  left: inherit;
+  right: 0;
+  padding: 4px 40px 16px 32px;
+  background: conic-gradient(at right var(--s) bottom var(--d), rgba(0, 0, 0, 0.2666666667) 62.5%, rgba(0, 0, 0, 0.5333333333) 0 75%, rgba(0, 0, 0, 0) 0);
+  -webkit-clip-path: polygon(var(--c) 0, calc(100% - var(--s)) 0, calc(100% - var(--s)) var(--d), 100% var(--d), calc(100% - var(--c)) calc(50% + var(--d) / 2), 100% 100%, calc(100% - var(--s) - var(--d)) 100%, calc(100% - var(--s) - var(--d)) calc(100% - var(--d)), var(--c) calc(100% - var(--d)), 0 calc(50% - var(--d) / 2));
+          clip-path: polygon(var(--c) 0, calc(100% - var(--s)) 0, calc(100% - var(--s)) var(--d), 100% var(--d), calc(100% - var(--c)) calc(50% + var(--d) / 2), 100% 100%, calc(100% - var(--s) - var(--d)) 100%, calc(100% - var(--s) - var(--d)) calc(100% - var(--d)), var(--c) calc(100% - var(--d)), 0 calc(50% - var(--d) / 2));
+  background-color: #CC333F; /* the main color */
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 /* gs-coach-ribbon Old */
 .gs_tm_theme1 .single-coach-div .single-coach .gs_coach_ribbon,
 .gs_tm_theme3 .single-coach-div .single-coach .gs_coach_ribbon,
