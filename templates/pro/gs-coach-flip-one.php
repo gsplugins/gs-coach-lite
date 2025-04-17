@@ -103,6 +103,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 							<div class="gs_coach_image__wrapper">
 								<!-- Image -->
 								<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+								
 								<!-- Ribbon -->
 								<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
 							</div>
