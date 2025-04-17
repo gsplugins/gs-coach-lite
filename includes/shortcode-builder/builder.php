@@ -956,7 +956,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'font-size' => __('Font Size', 'gscoach'),
                 'font-weight' => __('Font Weight', 'gscoach'),
                 'font-style' => __('Font Style', 'gscoach'),
-                'shortcode-name' => __('Shortcode Name', 'gscoach'),
 
                 'select-number-of-team-columns' => __('Select the number of Coach columns', 'gscoach'),
                 'select-preffered-style-theme' => __('Select the preferred Style & Theme', 'gscoach'),
@@ -2455,7 +2454,9 @@ if ( ! class_exists( 'Builder' ) ) {
             ];
 
             if ( ! is_pro_valid() ) {
-                $styles = self::add_pro_to_options( $styles );
+
+                $default = array_shift( $styles );
+                $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
 
             return $styles;
