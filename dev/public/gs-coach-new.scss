@@ -326,7 +326,7 @@ body {
             .single-coach,
             .back {
                 
-                /* Default Ribbon Style */
+                /* Ribbon Style Common */
                 .gs_coach_ribbon {
                     --f: 1.3em; /* control the folded part*/
                     --r: .8em; /* control the ribbon shape */
@@ -342,17 +342,19 @@ body {
                     color: #fff;
                     text-transform: uppercase;
                     line-height: 1.8;
+                    z-index: 999;
                 }
 
+                /* Ribbon Style Default */
                 .gs-coach-ribbon-default {
                     --r: .8em; /* control the cutout */
                     padding-right: calc(var(--r) + .25em);
-                    line-height: 1.8;
                     clip-path: polygon(-100vw 0,calc(100% - var(--r)) 0,100% 50%,calc(100% - var(--r)) 100%,-100vw 100%);
-                    border-image: conic-gradient(#45ada8 0 0) fill 0/100vw;
-                    // width: fit-content;
+                    // border-image: conic-gradient(#45ada8 0 0) fill 0/100vw;
+                    width: fit-content;
                 }
 
+                /* Ribbon Style 1 */
                 .gs-coach-ribbon-style-one {
                     left: -19px;
                     border-top: var(--f) solid rgba(0, 0, 0, 0.3333333333);
@@ -360,6 +362,7 @@ body {
                     clip-path: polygon(0 100%, 0 var(--f), var(--f) 0, var(--f) var(--f), 100% var(--f), calc(100% - var(--r)) calc(50% + var(--f) / 2), 100% 100%);
                 }
 
+                /* Ribbon Style 2 */
                 .gs-coach-ribbon-style-two {
 
                     --f: .5em; /* control the folded part */
@@ -376,6 +379,7 @@ body {
                     background-color: #BD1550;
                 }
 
+                /* Ribbon Style 3 */
                 .gs-coach-ribbon-style-three {
                     --f: .5em; /* control the folded part */
                     top: 0;
@@ -390,6 +394,8 @@ body {
                     transform-origin: 100% 100%;
                     background-color: #F07818; /* the main color  */
                 }
+
+                /* Ribbon Style 4 */
                 .gs-coach-ribbon-style-four {
                     --r: .4em; /* control the ribbon shape (the radius) */
                     --c: #ff5146;
@@ -398,10 +404,6 @@ body {
                     top: 20px;
                     right: calc(-1*var(--r));
                     left: inherit;
-                    // padding: 0 .5em calc(2*var(--r));
-                    // padding-top: 6px;
-                    // padding-bottom: 18px;
-                    // padding-left: 30px;
                     padding: 6px 24px 18px 30px;
                     border-radius: 0 var(--r) var(--r) 0;
                     background: 
@@ -413,7 +415,43 @@ body {
                     100% 0/calc(101% - .5lh) 100% !important;
                     background-repeat: no-repeat !important;   
                 }
-                .gs-coach-ribbon-style-five {}
+
+                /* Ribbon Style 5 */
+                .gs-coach-ribbon-style-five {
+                    --s: 1.8em; /* the ribbon size */
+                    --d: .8em;  /* the depth */
+                    --c: .8em;  /* the cutout part */
+                    left: inherit;
+                    right: 0;
+                    // padding: 0 calc(var(--s) + .5em) var(--d) var(--c);
+                    padding: 4px 40px 16px 32px;
+                    background: conic-gradient(at right var(--s) bottom var(--d),#0004 62.5%,#0008 0 75%,#0000 0);
+                    clip-path: polygon(var(--c) 0,  calc(100% - var(--s)) 0,calc(100% - var(--s)) var(--d),100% var(--d),calc(100% - var(--c)) calc(50% + var(--d)/2),100% 100%,calc(100% - var(--s) - var(--d)) 100%,calc(100% - var(--s) - var(--d)) calc(100% - var(--d)),var(--c) calc(100% - var(--d)),0 calc(50% - var(--d)/2));
+                    background-color: #CC333F; /* the main color */
+                    width: fit-content;
+                }
+
+                /* Ribbon Style 6 */
+                .gs-coach-ribbon-style-six {
+
+                    --r: .6em; /* control the ribbon shape (the radius) */
+
+                    position: absolute;
+                    bottom: 20px;
+                    inset-inline: calc(-1*var(--r));
+                    text-align: center;
+                    line-height: 1.8; 
+                    padding: calc(2*var(--r)) .5em 0;
+                    border-radius: var(--r);
+                    --_g:0/var(--r) calc(2*var(--r)) no-repeat;
+                    background: 
+                      radial-gradient(100% 50% at right,#0005 98%,#0000 101%) 0    var(--_g),
+                      radial-gradient(100% 50% at left ,#0005 98%,#0000 101%) 100% var(--_g),
+                      conic-gradient(at var(--r) calc(2*var(--r)),#0000 25%,#25c4ea 0)
+                       0 0/calc(100% - var(--r)) 100% !important;
+                       height: min-content;
+                    // background-color: radial-gradient(100% 50% at right, rgba(0, 0, 0, 0.3333333333) 98%, rgba(0, 0, 0, 0) 101%) 0 var(--_g), radial-gradient(100% 50% at left, rgba(0, 0, 0, 0.3333333333) 98%, rgba(0, 0, 0, 0) 101%) 100% var(--_g), conic-gradient(at var(--r) calc(2 * var(--r)), rgba(0, 0, 0, 0) 25%, #8FBE00 0) 0 0/calc(100% - var(--r)) 100% !important;
+                }
             }
     }
 }
@@ -994,6 +1032,10 @@ body {
         width: 100% !important;
         border-radius: 8px;
         overflow: inherit;
+
+        img {
+            border-radius: 8px;
+        }
     }
 
     .gs_coach_info {
@@ -1754,10 +1796,8 @@ body {
 
 }
 
-
 /* gs-coach-circle-five
 ========================*/
-
 
 .gs-coach-circle-five>.gs-containeer>.gs-roow {
     margin-left: -53px !important;
@@ -2543,6 +2583,10 @@ body {
         overflow: visible;
         background: none !important;
         transition: all .25s ease-in-out;
+
+        .gs-coach-ribbon-style-six {
+            top: 40px;
+        }
     }
 
     .single-coach--front,
