@@ -132,7 +132,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="displayCondition( shortcode_settings.gs_coach_theme, [ 'gs-grid-style-one', 'gs-grid-style-two', 'gs-grid-style-three', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-grid-style-six' ] )">
+						<div class="shortcode-setting--row" v-if="displayCondition( shortcode_settings.gs_coach_theme, [ 'gs-grid-style-one', 'gs-grid-style-two', 'gs-grid-style-three', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-grid-style-six', 'gs-grid-style-seven', 'gs-grid-style-eight', 'gs-grid-style-nine', ] )">
 
 							<div class="gs-roow row-20">
 
