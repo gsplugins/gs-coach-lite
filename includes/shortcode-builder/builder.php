@@ -1053,6 +1053,96 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 2
                 ],
                 [
+                    'label' => __( 'Grid 6', 'gscoach' ),
+                    'value' => 'gs_tm_theme1',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 7', 'gscoach' ),
+                    'value' => 'gs_tm_grid2',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 8', 'gscoach' ),
+                    'value' => 'gs_tm_theme20',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 9', 'gscoach' ),
+                    'value' => 'gs_tm_theme10',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid 10', 'gscoach' ),
+                    'value' => 'gs_tm_theme_custom_10',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Popup', 'gscoach' ),
+                    'value' => 'gs_tm_theme8',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Single', 'gscoach' ),
+                    'value' => 'gs_tm_theme11',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter Single', 'gscoach' ),
+                    'value' => 'gs_tm_theme22',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter Popup', 'gscoach' ),
+                    'value' => 'gs_tm_theme9',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Slider', 'gscoach' ),
+                    'value' => 'gs_tm_theme7',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter - Selected Cats', 'gscoach' ),
+                    'value' => 'gs_tm_theme12',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Filter with vcard', 'gscoach' ),
+                    'value' => 'gs_tm_theme24',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Panel Slide', 'gscoach' ),
+                    'value' => 'gs_tm_theme19',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Drawer 1', 'gscoach' ),
+                    'value' => 'gs_tm_theme13',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Grid Drawer 2', 'gscoach' ),
+                    'value' => 'gs_tm_drawer2',
+                    'type' => 'pro',
+                    'version' => 1
+                ],
+                [
                     'label' => __( 'Circle 1', 'gscoach' ),
                     'value' => 'gs-coach-circle-one',
                     'type' => 'free',
@@ -1203,96 +1293,6 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 2
                 ],
                 [
-                    'label' => __( 'Grid 6', 'gscoach' ),
-                    'value' => 'gs_tm_theme1',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid 7', 'gscoach' ),
-                    'value' => 'gs_tm_grid2',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid 8', 'gscoach' ),
-                    'value' => 'gs_tm_theme20',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid 9', 'gscoach' ),
-                    'value' => 'gs_tm_theme10',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid 10', 'gscoach' ),
-                    'value' => 'gs_tm_theme_custom_10',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Popup', 'gscoach' ),
-                    'value' => 'gs_tm_theme8',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Single', 'gscoach' ),
-                    'value' => 'gs_tm_theme11',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Filter Single', 'gscoach' ),
-                    'value' => 'gs_tm_theme22',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Filter Popup', 'gscoach' ),
-                    'value' => 'gs_tm_theme9',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Slider', 'gscoach' ),
-                    'value' => 'gs_tm_theme7',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Filter - Selected Cats', 'gscoach' ),
-                    'value' => 'gs_tm_theme12',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Filter with vcard', 'gscoach' ),
-                    'value' => 'gs_tm_theme24',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Panel Slide', 'gscoach' ),
-                    'value' => 'gs_tm_theme19',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Drawer 1', 'gscoach' ),
-                    'value' => 'gs_tm_theme13',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Grid Drawer 2', 'gscoach' ),
-                    'value' => 'gs_tm_drawer2',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
-                [
                     'label' => __( 'Circle 6', 'gscoach' ),
                     'value' => 'gs_tm_theme2',
                     'type' => 'free',
@@ -1436,15 +1436,6 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 $_themes = shortcode_atts( $themes, $_themes );
                 $themes = wp_list_sort( $_themes, 'type', 'ASC' );
-
-            } else {
-
-                $_themes = array_map( function( $theme ) {
-                    $theme['label'] = $theme['label'] . __(' (New)', 'gscoach');
-                    return $theme;
-                }, wp_list_filter( $themes, [ 'version' => 2 ] ) );
-                
-                $themes = shortcode_atts( $themes, $_themes );
 
             }
 
