@@ -49,7 +49,7 @@ class Plugin {
         new Import_Export();
 
         if (is_pro_valid()) {
-            $this->widget = new Widgets();
+            require_once GSCOACH_PLUGIN_DIR . 'includes/widgets.php';
         }
 
         require_once GSCOACH_PLUGIN_DIR . 'includes/asset-generator/gs-load-asset-generator.php';

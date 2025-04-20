@@ -465,10 +465,36 @@
 
 								<div class="gs-col-xs-7">
 									<label class="m-t-10" for="display_ribbon">{{translation('display-ribbon')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
 									<input-toggle class="m-t-6" name="display_ribbon" v-model="shortcode_settings.display_ribbon" offLabel="Off" onLabel="On"></input-toggle>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('show-or-hide-ribbon__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.display_ribbon && ! displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme3'] )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="gs_coach_ribbon_style">{{translation('ribbon_style')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input-select key="gs_coach_ribbon_style" id="gs_coach_ribbon_style" v-model="shortcode_settings.gs_coach_ribbon_style" :options="shortcode_options.gs_coach_ribbon_styles"></input-select>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('ribbon_style__details')}}</p>
 								</div>
 
 							</div>
