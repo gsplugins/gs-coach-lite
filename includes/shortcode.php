@@ -549,6 +549,30 @@ class Shortcode {
 					
 					include Template_Loader::locate_template( 'pro/gs-grid-style-six.php' );
 				}
+					
+				if ( $gs_coach_theme == 'gs-grid-style-seven') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-grid-style-seven.php' );
+				}
+					
+				if ( $gs_coach_theme == 'gs-grid-style-eight') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-grid-style-eight.php' );
+				}
+					
+				if ( $gs_coach_theme == 'gs-grid-style-nine') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-grid-style-nine.php' );
+				}
 				
 				if ( $gs_coach_theme == 'gs-coach-circle-two') {
 					
