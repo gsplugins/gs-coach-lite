@@ -435,13 +435,13 @@ body {
                 .gs-coach-ribbon-style-six {
 
                     --r: .6em; /* control the ribbon shape (the radius) */
-
-                    position: absolute;
-                    bottom: 20px;
+                    top: 8px;
                     inset-inline: calc(-1*var(--r));
                     text-align: center;
                     line-height: 1.8; 
                     padding: calc(2*var(--r)) .5em 0;
+                    padding-bottom: 6px;
+                    padding-top: 24px;
                     border-radius: var(--r);
                     --_g:0/var(--r) calc(2*var(--r)) no-repeat;
                     background: 
@@ -700,7 +700,7 @@ body {
         text-align: center;
 
         li {
-            margin-right: 10px;
+            // margin-right: 10px;
 
             &:last-child {
                 margin-right: 0;
@@ -913,6 +913,10 @@ body {
     .gs_coach_image__wrapper {
         border-radius: 8px 8px 0 0;
         overflow: inherit;
+
+        img {
+            border-radius: 8px 8px 0 0;
+        }
 
         &::after {
             padding-bottom: 100% !important;
@@ -1348,7 +1352,7 @@ body {
     }
 
     .gs-coach-social li {
-        margin-right: 12px;
+        // margin-right: 12px;
 
         &:last-child {
             margin-right: 0;
@@ -1922,11 +1926,11 @@ body {
     .gs-coach-social {
 
         li {
-            margin-right: 10px !important;
+            // margin-right: 10px !important;
 
-            &:last-child {
-                margin-right: 0;
-            }
+            // &:last-child {
+            //     margin-right: 0;
+            // }
 
             a {
                 border: 1px solid #e5e5e5 !important;
@@ -2011,7 +2015,7 @@ body {
         text-align: left;
 
         li {
-            margin-right: 10px !important;
+            // margin-right: 10px !important;
 
             &:last-child {
                 margin-right: 0;

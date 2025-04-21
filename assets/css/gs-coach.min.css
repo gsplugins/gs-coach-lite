@@ -5174,12 +5174,13 @@ body {
 .gs_tm_drawer2 .single-coach-div .single-coach .gs-coach-ribbon-style-six,
 .gs_tm_drawer2 .single-coach-div .back .gs-coach-ribbon-style-six {
   --r: .6em; /* control the ribbon shape (the radius) */
-  position: absolute;
-  bottom: 20px;
+  top: 8px;
   inset-inline: calc(-1 * var(--r));
   text-align: center;
   line-height: 1.8;
   padding: calc(2 * var(--r)) 0.5em 0;
+  padding-bottom: 6px;
+  padding-top: 24px;
   border-radius: var(--r);
   --_g:0/var(--r) calc(2*var(--r)) no-repeat;
   background: radial-gradient(100% 50% at right, rgba(0, 0, 0, 0.3333333333) 98%, rgba(0, 0, 0, 0) 101%) 0 var(--_g), radial-gradient(100% 50% at left, rgba(0, 0, 0, 0.3333333333) 98%, rgba(0, 0, 0, 0) 101%) 100% var(--_g), conic-gradient(at var(--r) calc(2 * var(--r)), rgba(0, 0, 0, 0) 25%, #25c4ea 0) 0 0/calc(100% - var(--r)) 100% !important;
@@ -5394,9 +5395,6 @@ body {
   transition: 0.3s;
   text-align: center;
 }
-.gs-grid-style-two .single-coach-div .gs-coach-social li {
-  margin-right: 10px;
-}
 .gs-grid-style-two .single-coach-div .gs-coach-social li:last-child {
   margin-right: 0;
 }
@@ -5562,6 +5560,9 @@ body {
 .gs-grid-style-four .single-coach-div .gs_coach_image__wrapper {
   border-radius: 8px 8px 0 0;
   overflow: inherit;
+}
+.gs-grid-style-four .single-coach-div .gs_coach_image__wrapper img {
+  border-radius: 8px 8px 0 0;
 }
 .gs-grid-style-four .single-coach-div .gs_coach_image__wrapper::after {
   padding-bottom: 100% !important;
@@ -5910,9 +5911,6 @@ body {
 .gs_coach_area.gs-coach-circle-one .single-coach-div .gs_coach_info .gs-coach-desc {
   font-family: "Rubik", sans-serif;
   font-size: 16px;
-}
-.gs_coach_area.gs-coach-circle-one .single-coach-div .gs-coach-social li {
-  margin-right: 12px;
 }
 .gs_coach_area.gs-coach-circle-one .single-coach-div .gs-coach-social li:last-child {
   margin-right: 0;
@@ -6362,12 +6360,6 @@ body {
   opacity: 1;
 }
 
-.gs_coach_area.gs-coach-circle-five .single-coach-div .gs-coach-social li {
-  margin-right: 10px !important;
-}
-.gs_coach_area.gs-coach-circle-five .single-coach-div .gs-coach-social li:last-child {
-  margin-right: 0;
-}
 .gs_coach_area.gs-coach-circle-five .single-coach-div .gs-coach-social li a {
   border: 1px solid #e5e5e5 !important;
   background: #fff;
@@ -6438,9 +6430,6 @@ body {
 }
 .gs-coach-horizontal-one .single-coach-div .gs-coach-social {
   text-align: left;
-}
-.gs-coach-horizontal-one .single-coach-div .gs-coach-social li {
-  margin-right: 10px !important;
 }
 .gs-coach-horizontal-one .single-coach-div .gs-coach-social li:last-child {
   margin-right: 0;
