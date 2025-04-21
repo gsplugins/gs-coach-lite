@@ -4677,6 +4677,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back,
 .gs-coach-flip-five .single-coach-div .single-coach,
 .gs-coach-flip-five .single-coach-div .back,
+.gs-grid-style-seven .single-coach-div .single-coach,
+.gs-grid-style-seven .single-coach-div .back,
+.gs-grid-style-eight .single-coach-div .single-coach,
+.gs-grid-style-eight .single-coach-div .back,
+.gs-grid-style-nine .single-coach-div .single-coach,
+.gs-grid-style-nine .single-coach-div .back,
 .gs_tm_theme1 .single-coach-div .single-coach,
 .gs_tm_theme1 .single-coach-div .back,
 .gs_tm_theme3 .single-coach-div .single-coach,
@@ -4732,6 +4738,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs_coach_ribbon,
 .gs-coach-flip-five .single-coach-div .single-coach .gs_coach_ribbon,
 .gs-coach-flip-five .single-coach-div .back .gs_coach_ribbon,
+.gs-grid-style-seven .single-coach-div .single-coach .gs_coach_ribbon,
+.gs-grid-style-seven .single-coach-div .back .gs_coach_ribbon,
+.gs-grid-style-eight .single-coach-div .single-coach .gs_coach_ribbon,
+.gs-grid-style-eight .single-coach-div .back .gs_coach_ribbon,
+.gs-grid-style-nine .single-coach-div .single-coach .gs_coach_ribbon,
+.gs-grid-style-nine .single-coach-div .back .gs_coach_ribbon,
 .gs_tm_theme1 .single-coach-div .single-coach .gs_coach_ribbon,
 .gs_tm_theme1 .single-coach-div .back .gs_coach_ribbon,
 .gs_tm_theme3 .single-coach-div .single-coach .gs_coach_ribbon,
@@ -4794,6 +4806,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-default,
 .gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-default,
 .gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-default,
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-default,
+.gs-grid-style-seven .single-coach-div .back .gs-coach-ribbon-default,
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-default,
+.gs-grid-style-eight .single-coach-div .back .gs-coach-ribbon-default,
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-default,
+.gs-grid-style-nine .single-coach-div .back .gs-coach-ribbon-default,
 .gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-default,
 .gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-default,
 .gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-default,
@@ -4848,6 +4866,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-style-one,
 .gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-style-one,
 .gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-style-one,
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-style-one,
+.gs-grid-style-seven .single-coach-div .back .gs-coach-ribbon-style-one,
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-style-one,
+.gs-grid-style-eight .single-coach-div .back .gs-coach-ribbon-style-one,
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-style-one,
+.gs-grid-style-nine .single-coach-div .back .gs-coach-ribbon-style-one,
 .gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-style-one,
 .gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-style-one,
 .gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-style-one,
@@ -4900,6 +4924,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-style-two,
 .gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-style-two,
 .gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-style-two,
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-style-two,
+.gs-grid-style-seven .single-coach-div .back .gs-coach-ribbon-style-two,
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-style-two,
+.gs-grid-style-eight .single-coach-div .back .gs-coach-ribbon-style-two,
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-style-two,
+.gs-grid-style-nine .single-coach-div .back .gs-coach-ribbon-style-two,
 .gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-style-two,
 .gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-style-two,
 .gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-style-two,
@@ -4964,6 +4994,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-style-three,
 .gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-style-three,
 .gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-style-three,
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-style-three,
+.gs-grid-style-seven .single-coach-div .back .gs-coach-ribbon-style-three,
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-style-three,
+.gs-grid-style-eight .single-coach-div .back .gs-coach-ribbon-style-three,
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-style-three,
+.gs-grid-style-nine .single-coach-div .back .gs-coach-ribbon-style-three,
 .gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-style-three,
 .gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-style-three,
 .gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-style-three,
@@ -5028,6 +5064,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-style-four,
 .gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-style-four,
 .gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-style-four,
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-style-four,
+.gs-grid-style-seven .single-coach-div .back .gs-coach-ribbon-style-four,
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-style-four,
+.gs-grid-style-eight .single-coach-div .back .gs-coach-ribbon-style-four,
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-style-four,
+.gs-grid-style-nine .single-coach-div .back .gs-coach-ribbon-style-four,
 .gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-style-four,
 .gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-style-four,
 .gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-style-four,
@@ -5085,6 +5127,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-style-five,
 .gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-style-five,
 .gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-seven .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-eight .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-grid-style-nine .single-coach-div .back .gs-coach-ribbon-style-five,
 .gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
 .gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-style-five,
 .gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-style-five,
@@ -5145,6 +5193,12 @@ body {
 .gs-coach-flip-three .single-coach-div .back .gs-coach-ribbon-style-six,
 .gs-coach-flip-five .single-coach-div .single-coach .gs-coach-ribbon-style-six,
 .gs-coach-flip-five .single-coach-div .back .gs-coach-ribbon-style-six,
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-style-six,
+.gs-grid-style-seven .single-coach-div .back .gs-coach-ribbon-style-six,
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-style-six,
+.gs-grid-style-eight .single-coach-div .back .gs-coach-ribbon-style-six,
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-style-six,
+.gs-grid-style-nine .single-coach-div .back .gs-coach-ribbon-style-six,
 .gs_tm_theme1 .single-coach-div .single-coach .gs-coach-ribbon-style-six,
 .gs_tm_theme1 .single-coach-div .back .gs-coach-ribbon-style-six,
 .gs_tm_theme3 .single-coach-div .single-coach .gs-coach-ribbon-style-six,
@@ -5174,12 +5228,13 @@ body {
 .gs_tm_drawer2 .single-coach-div .single-coach .gs-coach-ribbon-style-six,
 .gs_tm_drawer2 .single-coach-div .back .gs-coach-ribbon-style-six {
   --r: .6em; /* control the ribbon shape (the radius) */
-  position: absolute;
-  bottom: 20px;
+  top: 8px;
   inset-inline: calc(-1 * var(--r));
   text-align: center;
   line-height: 1.8;
   padding: calc(2 * var(--r)) 0.5em 0;
+  padding-bottom: 6px;
+  padding-top: 24px;
   border-radius: var(--r);
   --_g:0/var(--r) calc(2*var(--r)) no-repeat;
   background: radial-gradient(100% 50% at right, rgba(0, 0, 0, 0.3333333333) 98%, rgba(0, 0, 0, 0) 101%) 0 var(--_g), radial-gradient(100% 50% at left, rgba(0, 0, 0, 0.3333333333) 98%, rgba(0, 0, 0, 0) 101%) 100% var(--_g), conic-gradient(at var(--r) calc(2 * var(--r)), rgba(0, 0, 0, 0) 25%, #25c4ea 0) 0 0/calc(100% - var(--r)) 100% !important;
@@ -5394,9 +5449,6 @@ body {
   transition: 0.3s;
   text-align: center;
 }
-.gs-grid-style-two .single-coach-div .gs-coach-social li {
-  margin-right: 10px;
-}
 .gs-grid-style-two .single-coach-div .gs-coach-social li:last-child {
   margin-right: 0;
 }
@@ -5562,6 +5614,9 @@ body {
 .gs-grid-style-four .single-coach-div .gs_coach_image__wrapper {
   border-radius: 8px 8px 0 0;
   overflow: inherit;
+}
+.gs-grid-style-four .single-coach-div .gs_coach_image__wrapper img {
+  border-radius: 8px 8px 0 0;
 }
 .gs-grid-style-four .single-coach-div .gs_coach_image__wrapper::after {
   padding-bottom: 100% !important;
@@ -5841,6 +5896,127 @@ body {
   padding-left: 14px !important;
   padding-right: 14px !important;
 }
+/* gs-coach-seven
+========================*/
+.gs-grid-style-seven .single-coach-div .single-coach {
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.gs-grid-style-seven .single-coach-div .single-coach .gs_coach_image__overlay {
+  background: rgba(0, 188, 212, 0.7019607843);
+  padding: 23% 10px 0;
+  text-align: center;
+  -webkit-transform: translate(0, 80px);
+      -ms-transform: translate(0, 80px);
+          transform: translate(0, 80px);
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
+}
+.gs-grid-style-seven .single-coach-div .single-coach .gs_coach_image__overlay .gs-coach-desc {
+  color: #fff;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5;
+}
+.gs-grid-style-seven .single-coach-div .single-coach .gs_coach_image__overlay .gs-coach-desc a {
+  color: #fff;
+}
+.gs-grid-style-seven .single-coach-div .single-coach .gs_coach_image__overlay .gs-coach-social li a {
+  background-color: #02899A;
+  border-radius: 0 !important;
+}
+.gs-grid-style-seven .single-coach-div .single-coach .gs_coach_image__overlay .gs-coach-social li a i {
+  color: #fff;
+}
+.gs-grid-style-seven .single-coach-div .single-coach .gs-coach-ribbon-style-one {
+  left: 0;
+}
+.gs-grid-style-seven .single-coach-div .single-coach:hover .gs_coach_image__overlay {
+  -webkit-transform: rotateY(0deg) scale(1, 1);
+          transform: rotateY(0deg) scale(1, 1);
+}
+
+/* gs-coach-eight
+========================*/
+.gs-grid-style-eight .single-coach-div .single-coach {
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.gs-grid-style-eight .single-coach-div .single-coach .gs_coach_info-overlay {
+  position: absolute;
+  left: 0;
+  bottom: -56px;
+  width: 100%;
+  background-color: #000;
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
+  opacity: 0;
+}
+.gs-grid-style-eight .single-coach-div .single-coach .gs_coach_info-overlay .gs-coach-name {
+  color: #fff;
+}
+.gs-grid-style-eight .single-coach-div .single-coach .gs_coach_info-overlay .gs-coach-desig {
+  color: #fff;
+}
+.gs-grid-style-eight .single-coach-div .single-coach .gs_coach_info-overlay .gs-coach-social li {
+  margin-top: 20px;
+  -webkit-transform: scale(1) !important;
+      -ms-transform: scale(1) !important;
+          transform: scale(1) !important;
+  opacity: 1 !important;
+}
+.gs-grid-style-eight .single-coach-div .single-coach .gs_coach_info-overlay .gs-coach-social li a {
+  background-color: #02899A;
+  border-radius: 0 !important;
+}
+.gs-grid-style-eight .single-coach-div .single-coach .gs_coach_info-overlay .gs-coach-social li a i {
+  color: #fff;
+}
+.gs-grid-style-eight .single-coach-div .single-coach .gs-coach-ribbon-style-one {
+  left: 0;
+}
+.gs-grid-style-eight .single-coach-div .single-coach:hover .gs_coach_info-overlay {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* gs-coach-nine
+========================*/
+.gs-grid-style-nine .single-coach-div .single-coach {
+  margin-bottom: 32px;
+}
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-social li {
+  margin-top: 20px;
+  -webkit-transform: scale(1) !important;
+      -ms-transform: scale(1) !important;
+          transform: scale(1) !important;
+  opacity: 1 !important;
+}
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-social li a {
+  background-color: #3650e2;
+  border-radius: 0 !important;
+}
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-social li a i {
+  color: #fff;
+}
+.gs-grid-style-nine .single-coach-div .single-coach .gs_coach_info {
+  background-color: rgba(57, 84, 234, 0.8509803922);
+}
+.gs-grid-style-nine .single-coach-div .single-coach .gs_coach_info .gs-coach-name {
+  color: #fff;
+}
+.gs-grid-style-nine .single-coach-div .single-coach .gs_coach_info .gs-coach-desig {
+  color: #fff;
+}
+.gs-grid-style-nine .single-coach-div .single-coach .gs-coach-ribbon-style-one {
+  left: 0;
+}
+
+.gs-grid-style-nine .single-coach-div.gs-col-lg-4.gs-col-md-4.gs-col-sm-6.gs-col-xs-12 {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
 /* gs-coach-circle-one 
 ========================*/
 .gs_coach_area.gs-coach-circle-one > .gs-containeer > .gs-roow {
@@ -5910,9 +6086,6 @@ body {
 .gs_coach_area.gs-coach-circle-one .single-coach-div .gs_coach_info .gs-coach-desc {
   font-family: "Rubik", sans-serif;
   font-size: 16px;
-}
-.gs_coach_area.gs-coach-circle-one .single-coach-div .gs-coach-social li {
-  margin-right: 12px;
 }
 .gs_coach_area.gs-coach-circle-one .single-coach-div .gs-coach-social li:last-child {
   margin-right: 0;
@@ -6362,12 +6535,6 @@ body {
   opacity: 1;
 }
 
-.gs_coach_area.gs-coach-circle-five .single-coach-div .gs-coach-social li {
-  margin-right: 10px !important;
-}
-.gs_coach_area.gs-coach-circle-five .single-coach-div .gs-coach-social li:last-child {
-  margin-right: 0;
-}
 .gs_coach_area.gs-coach-circle-five .single-coach-div .gs-coach-social li a {
   border: 1px solid #e5e5e5 !important;
   background: #fff;
@@ -6438,9 +6605,6 @@ body {
 }
 .gs-coach-horizontal-one .single-coach-div .gs-coach-social {
   text-align: left;
-}
-.gs-coach-horizontal-one .single-coach-div .gs-coach-social li {
-  margin-right: 10px !important;
 }
 .gs-coach-horizontal-one .single-coach-div .gs-coach-social li:last-child {
   margin-right: 0;

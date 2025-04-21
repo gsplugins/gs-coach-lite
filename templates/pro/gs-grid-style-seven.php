@@ -98,38 +98,55 @@ namespace GSCOACH;
 					 <!-- Coach Image -->
 					 <div class="coach-relative-div">
  
-						 <div class="gs_coach_image__wrapper"> 
+						<div class="gs_coach_image__wrapper"> 
 							 <!-- Image -->
 							 <?php echo coach_thumbnail_with_link( $id, $gs_coach_thumbnail_sizes, $gs_coach_name_is_linked == 'on', $gs_coach_link_type, $link_preview_image == 'on' ); ?>
+
+							 <!-- Ribbon -->
+							 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
+
+						</div>
  
-							 <!-- Overlay -->
-							 <?php if( $link_preview_image == 'off' ) { ?>
-								 <div class="gs_coach_image__overlay"></div>
-							 <?php } ?>
-						 </div>
- 
-						 <!-- Ribbon -->
-						 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
- 
-						 <!-- Social Links -->
-						 <div class="share-icon"><i class="fas fa-share-alt"></i></div>
-						 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
+						<!-- coach Name -->
+						<div class="gs_coach_info">
+	
+							<!-- coach Name -->
+							<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+							<?php do_action( 'gs_coach_after_coach_name' ); ?>
+	
+							<!-- coach Designation -->
+							<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+							<?php do_action( 'gs_coach_after_coach_designation' ); ?>
+							
+						</div>
+
+
+						<!-- Overlay -->
+						<?php if( $link_preview_image == 'off' ) { ?>
+
+							<div class="gs_coach_image__overlay">
+
+								<!-- Description -->
+								<?php if ( 'on' ==  $gs_coach_details ) : ?>
+									
+									<?php if ( 'on' === $gs_desc_allow_html ) : ?>
+										<div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+									<?php else : ?>
+										<p class="gs-coach-desc" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
+									<?php endif; ?>
+
+									<?php do_action( 'gs_coach_after_coach_details' ); ?>
+								<?php endif; ?>
+
+								<!-- Social Links -->
+								<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
+
+							</div>
+
+						<?php } ?>
  
 					 </div>
- 
-					 <!-- coach Name -->
- 
-					 <div class="gs_coach_info">
- 
-						 <!-- coach Name -->
-						 <?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
-						 <?php do_action( 'gs_coach_after_coach_name' ); ?>
- 
-						 <!-- coach Designation -->
-						 <div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-						 <?php do_action( 'gs_coach_after_coach_designation' ); ?>
-						 
-					 </div>
+
  
 				 </div>
  
