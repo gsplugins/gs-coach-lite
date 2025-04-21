@@ -1191,6 +1191,36 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 2
                 ],
                 [
+                    'label' => __( 'Circle 6', 'gscoach' ),
+                    'value' => 'gs_tm_theme2',
+                    'type' => 'free',
+                    'version' => 1
+                ],
+                [
+                    'label' => __( 'Circle 7', 'gscoach' ),
+                    'value' => 'gs-coach-circle-seven',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 8', 'gscoach' ),
+                    'value' => 'gs-coach-circle-eight',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 9', 'gscoach' ),
+                    'value' => 'gs-coach-circle-nine',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Circle 10', 'gscoach' ),
+                    'value' => 'gs-coach-circle-ten',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
                     'label' => __( 'Horizontal 1', 'gscoach' ),
                     'value' => 'gs-coach-horizontal-one',
                     'type' => 'pro',
@@ -1309,12 +1339,6 @@ if ( ! class_exists( 'Builder' ) ) {
                     'value' => 'gs-coach-list-style-five',
                     'type' => 'pro',
                     'version' => 2
-                ],
-                [
-                    'label' => __( 'Circle 6', 'gscoach' ),
-                    'value' => 'gs_tm_theme2',
-                    'type' => 'free',
-                    'version' => 1
                 ],
                 [
                     'label' => __( 'Horizontal 6', 'gscoach' ), // Horizontal 1 (Square Right Info)

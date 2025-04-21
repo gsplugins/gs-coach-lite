@@ -605,7 +605,39 @@ class Shortcode {
 					
 					include Template_Loader::locate_template( 'pro/gs-coach-circle-five.php' );
 				}
+				
+				if ( $gs_coach_theme == 'gs-coach-circle-seven') {
 					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-circle-seven.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-circle-eight') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-circle-eight.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-circle-nine') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-circle-nine.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-circle-ten') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-circle-ten.php' );
+				}
+				
 				if ( $gs_coach_theme == 'gs-coach-horizontal-one') {
 					
 					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
