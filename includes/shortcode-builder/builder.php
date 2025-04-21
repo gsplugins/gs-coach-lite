@@ -1053,31 +1053,49 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 2
                 ],
                 [
-                    'label' => __( 'Grid 6', 'gscoach' ),
+                    'label' => __( 'Grid 7', 'gscoach' ),
+                    'value' => 'gs-grid-style-seven',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 8', 'gscoach' ),
+                    'value' => 'gs-grid-style-eight',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 9', 'gscoach' ),
+                    'value' => 'gs-grid-style-nine',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Grid 10', 'gscoach' ),
                     'value' => 'gs_tm_theme1',
                     'type' => 'free',
                     'version' => 1
                 ],
                 [
-                    'label' => __( 'Grid 7', 'gscoach' ),
+                    'label' => __( 'Grid 11', 'gscoach' ),
                     'value' => 'gs_tm_grid2',
                     'type' => 'free',
                     'version' => 1
                 ],
                 [
-                    'label' => __( 'Grid 8', 'gscoach' ),
+                    'label' => __( 'Grid 12', 'gscoach' ),
                     'value' => 'gs_tm_theme20',
                     'type' => 'free',
                     'version' => 1
                 ],
                 [
-                    'label' => __( 'Grid 9', 'gscoach' ),
+                    'label' => __( 'Grid 13', 'gscoach' ),
                     'value' => 'gs_tm_theme10',
                     'type' => 'pro',
                     'version' => 1
                 ],
                 [
-                    'label' => __( 'Grid 10', 'gscoach' ),
+                    'label' => __( 'Grid 14', 'gscoach' ),
                     'value' => 'gs_tm_theme_custom_10',
                     'type' => 'pro',
                     'version' => 1
@@ -1426,7 +1444,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 $themes = shortcode_atts( $themes, $_themes );
     
                 $_themes = array_map( function( $theme ) {
-                    $theme['label'] = $theme['label'] . __(' (New - Pro)', 'gscoach');
+                    $theme['label'] = $theme['label'] . __(' (Pro)', 'gscoach');
                     return $theme;
                 }, wp_list_filter( $themes, [ 'version' => 2, 'type' => 'pro' ] ) );
                 $themes = shortcode_atts( $themes, $_themes );
