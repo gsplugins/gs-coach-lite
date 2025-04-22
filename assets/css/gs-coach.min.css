@@ -487,12 +487,6 @@ ul.gs-coach-social li {
           justify-content: center;
 }
 
-.gs-coach-bottom {
-  text-align: center;
-  background-color: #FCC015;
-  padding: 10px 0px;
-}
-
 .name-designation-icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6025,6 +6019,63 @@ body {
 .gs-grid-style-nine .single-coach-div.gs-col-lg-4.gs-col-md-4.gs-col-sm-6.gs-col-xs-12 {
   padding-left: 16px !important;
   padding-right: 16px !important;
+}
+
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper {
+  margin-bottom: 32px;
+  padding: 20px;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  overflow: hidden;
+  position: relative;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs-coach-bottom {
+  text-align: center;
+  padding: 24px 10px 10px 10px;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs-coach-bottom .gs-coach-name {
+  color: #030d1e;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs-coach-bottom .gs-coach-desig {
+  color: #808080;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs-coach-ten-circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -50px;
+  bottom: -60px;
+  border-radius: 50%;
+  background-color: rgba(135, 59, 59, 0.1019607843);
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs_coach_image__wrapper img {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper:hover .gs-coach-ten-circle {
+  width: 120px;
+  height: 120px;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper:hover .gs_coach_image__wrapper img {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
 }
 
 /* gs-coach-circle-one 

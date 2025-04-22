@@ -1440,6 +1440,80 @@ body {
     padding-right: 16px !important;
 }
 
+.gs_tm_theme_custom_10 {
+   
+    .gs-custom-layout-ten {
+
+        .single-coach-div {
+
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+
+            .single-coach--wrapper {
+                margin-bottom: 32px;
+                padding: 20px;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                overflow: hidden;
+                position: relative;
+
+                .gs-coach-bottom {
+                    text-align: center;
+                    padding: 24px 10px 10px 10px;
+
+                    .gs-coach-name {
+                        color: #030d1e;
+                        font-size: 20px;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 500;
+                    }
+
+                    .gs-coach-desig {
+                        color: #808080;
+                        font-size: 16px;
+                        font-family: "Rubik", sans-serif;
+                    }
+                }
+
+                .gs-coach-ten-circle {
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    right: -50px;
+                    bottom: -60px;
+                    border-radius: 50%;
+                    background-color: #873b3b1a;
+                    transition: all 450ms ease-out 0s;
+                }
+
+                .gs_coach_image__wrapper {
+
+                    img {
+                        transform: scale(1);
+                        transition: all 450ms ease-out 0s;
+                    }
+                }
+
+                &:hover {
+
+                    .gs-coach-ten-circle {
+                        width: 120px;
+                        height: 120px;
+                    }
+
+                    .gs_coach_image__wrapper {
+
+                        img {
+                            transform: scale(1.2);
+                            transition: all 450ms ease-out 0s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 /* gs-coach-circle-one 
 ========================*/
