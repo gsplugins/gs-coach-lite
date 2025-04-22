@@ -1455,6 +1455,8 @@ body {
                 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
                 overflow: hidden;
                 position: relative;
+                background-color: #ffffff;
+                border-radius: 0 32px 0 32px;
 
                 .gs-coach-bottom {
                     text-align: center;
@@ -1486,6 +1488,7 @@ body {
                 }
 
                 .gs_coach_image__wrapper {
+                    border-radius: 0 20px 0 20px;
 
                     img {
                         transform: scale(1);

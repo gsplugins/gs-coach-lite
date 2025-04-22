@@ -6032,6 +6032,8 @@ body {
           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   overflow: hidden;
   position: relative;
+  background-color: #ffffff;
+  border-radius: 0 32px 0 32px;
 }
 .gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs-coach-bottom {
   text-align: center;
@@ -6058,6 +6060,9 @@ body {
   background-color: rgba(135, 59, 59, 0.1019607843);
   -webkit-transition: all 450ms ease-out 0s;
   transition: all 450ms ease-out 0s;
+}
+.gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs_coach_image__wrapper {
+  border-radius: 0 20px 0 20px;
 }
 .gs_tm_theme_custom_10 .gs-custom-layout-ten .single-coach-div .single-coach--wrapper .gs_coach_image__wrapper img {
   -webkit-transform: scale(1);
