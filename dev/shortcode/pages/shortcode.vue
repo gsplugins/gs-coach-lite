@@ -459,7 +459,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="! displayCondition( shortcode_settings.gs_coach_theme, circle_themes() )">
+						<div class="shortcode-setting--row" v-if="! displayCondition( shortcode_settings.gs_coach_theme, no_ribbon_themes() )">
 
 							<div class="gs-roow row-20">
 
@@ -480,7 +480,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.display_ribbon && ! displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme3'] ) && ! displayCondition( shortcode_settings.gs_coach_theme, circle_themes() )">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.display_ribbon && ! displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme3'] ) && ! displayCondition( shortcode_settings.gs_coach_theme, no_ribbon_themes() )">
 
 							<div class="gs-roow row-20">
 
@@ -2604,7 +2604,7 @@
 
 		methods: {
 
-			circle_themes(){
+			no_ribbon_themes(){
 				return ['gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs_tm_theme2', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten'];
 			},
 
@@ -2617,7 +2617,7 @@
 			},
 
 			no_bg_color_themes() {
-				return ['gs-grid-style-one', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten', 'gs-coach-horizontal-one', 'gs-coach-horizontal-three', 'gs-coach-flip-one', 'gs-coach-flip-two', 'gs-coach-flip-three', 'gs-coach-flip-four', 'gs-coach-flip-five', 'gs-coach-table-one', 'gs-coach-table-two', 'gs-coach-table-three', 'gs-coach-table-four', 'gs-coach-table-five', 'gs-coach-list-style-four', 'gs-coach-list-style-five', 'gs_tm_theme1', 'gs_tm_theme2', 'gs_tm_theme3', 'gs_tm_theme4', 'gs_tm_theme5', 'gs_tm_theme6', 'gs_tm_theme7', 'gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme10', 'gs_tm_theme11', 'gs_tm_theme12', 'gs_tm_theme13', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme21_dense', 'gs_tm_theme19', 'gs_tm_theme20', 'gs_tm_theme22', 'gs_tm_theme23', 'gs_tm_theme24', 'gs_tm_theme25', 'gs_tm_grid2', 'gs_tm_drawer2'];
+				return ['gs-grid-style-one', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten', 'gs-coach-horizontal-one', 'gs-coach-horizontal-three', 'gs-coach-flip-one', 'gs-coach-flip-two', 'gs-coach-flip-three', 'gs-coach-flip-four', 'gs-coach-flip-five', 'gs-coach-table-one', 'gs-coach-table-two', 'gs-coach-table-three', 'gs-coach-table-four', 'gs-coach-table-five', 'gs-coach-list-style-four', 'gs-coach-list-style-five', 'gs_tm_theme1', 'gs_tm_theme2', 'gs_tm_theme7', 'gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme10', 'gs_tm_theme11', 'gs_tm_theme12', 'gs_tm_theme13', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme21_dense', 'gs_tm_theme19', 'gs_tm_theme20', 'gs_tm_theme22', 'gs_tm_theme23', 'gs_tm_theme24', 'gs_tm_theme25', 'gs_tm_grid2', 'gs_tm_drawer2'];
 			},
 
 			info_bg_color_themes() {

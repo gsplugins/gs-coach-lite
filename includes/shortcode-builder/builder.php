@@ -1251,6 +1251,36 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 2
                 ],
                 [
+                    'label' => __( 'Horizontal 6', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-six',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 7', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-seven',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 8', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-eight',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 9', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-nine',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'Horizontal 10', 'gscoach' ),
+                    'value' => 'gs-coach-horizontal-ten',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
                     'label' => __( 'Flip 1', 'gscoach' ),
                     'value' => 'gs-coach-flip-one',
                     'type' => 'pro',
@@ -1339,30 +1369,6 @@ if ( ! class_exists( 'Builder' ) ) {
                     'value' => 'gs-coach-list-style-five',
                     'type' => 'pro',
                     'version' => 2
-                ],
-                [
-                    'label' => __( 'Horizontal 6', 'gscoach' ), // Horizontal 1 (Square Right Info)
-                    'value' => 'gs_tm_theme3',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Horizontal 7', 'gscoach' ), // Horizontal 2 (Square Left Info)
-                    'value' => 'gs_tm_theme4',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Horizontal 8', 'gscoach' ), // Horizontal 3 (Circle Right Info)
-                    'value' => 'gs_tm_theme5',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'Horizontal 9', 'gscoach' ), // Horizontal 4 (Circle Left Info)
-                    'value' => 'gs_tm_theme6',
-                    'type' => 'free',
-                    'version' => 1
                 ],
                 [
                     'label' => __( 'Flip', 'gscoach' ),
