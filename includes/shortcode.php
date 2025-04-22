@@ -451,22 +451,6 @@ class Shortcode {
 				include Template_Loader::locate_template( 'gs-coach-layout-default-1.php' );
 			}
 	
-			if ( $gs_coach_theme == 'gs_tm_theme3' || $gs_coach_theme == 'gs_tm_theme5' ) {
-				
-				if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
-				if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
-	
-				include Template_Loader::locate_template( 'gs-coach-layout-default-2.php' );
-			}
-	
-			if ( $gs_coach_theme == 'gs_tm_theme4' || $gs_coach_theme == 'gs_tm_theme6' ) {
-				
-				if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
-				if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
-	
-				include Template_Loader::locate_template( 'gs-coach-layout-default-3.php' );
-			}
-	
 			if ( $gs_coach_theme == 'gs_tm_theme20' ) {
 				
 				if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
@@ -676,6 +660,46 @@ class Shortcode {
 					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
 					
 					include Template_Loader::locate_template( 'pro/gs-coach-horizontal-five.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-horizontal-six') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-horizontal-six.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-horizontal-seven') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-horizontal-seven.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-horizontal-eight') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-horizontal-eight.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-horizontal-nine') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-horizontal-nine.php' );
+				}
+				
+				if ( $gs_coach_theme == 'gs-coach-horizontal-ten') {
+					
+					if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
+					if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
+					
+					include Template_Loader::locate_template( 'pro/gs-coach-horizontal-ten.php' );
 				}
 				
 				if ( $gs_coach_theme == 'gs-coach-flip-one') {
