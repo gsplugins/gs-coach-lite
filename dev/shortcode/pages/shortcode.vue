@@ -153,7 +153,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -174,7 +174,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -195,7 +195,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -216,7 +216,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -375,7 +375,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -396,7 +396,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -417,7 +417,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme23', 'gs_tm_theme_custom_10', 'gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18', 'gs_tm_theme20', 'gs_tm_grid2', 'gs_tm_theme22', 'gs_tm_theme11'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme23', 'gs_tm_theme_custom_10', 'gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme20', 'gs_tm_grid2', 'gs_tm_theme22', 'gs_tm_theme11'] )">
 
 							<div class="gs-roow row-20">
 
@@ -2617,7 +2617,7 @@
 			},
 
 			no_bg_color_themes() {
-				return ['gs-grid-style-one', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten', 'gs-coach-horizontal-one', 'gs-coach-horizontal-three', 'gs-coach-flip-one', 'gs-coach-flip-two', 'gs-coach-flip-three', 'gs-coach-flip-four', 'gs-coach-flip-five', 'gs-coach-table-one', 'gs-coach-table-two', 'gs-coach-table-three', 'gs-coach-table-four', 'gs-coach-table-five', 'gs-coach-list-style-four', 'gs-coach-list-style-five', 'gs_tm_theme1', 'gs_tm_theme2', 'gs_tm_theme7', 'gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme10', 'gs_tm_theme11', 'gs_tm_theme12', 'gs_tm_theme13', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme21_dense', 'gs_tm_theme19', 'gs_tm_theme20', 'gs_tm_theme22', 'gs_tm_theme23', 'gs_tm_theme24', 'gs_tm_theme25', 'gs_tm_grid2', 'gs_tm_drawer2'];
+				return ['gs-grid-style-one', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten', 'gs-coach-horizontal-one', 'gs-coach-horizontal-three', 'gs-coach-flip-one', 'gs-coach-flip-two', 'gs-coach-flip-three', 'gs-coach-flip-four', 'gs-coach-flip-five', 'gs-coach-table-one', 'gs-coach-table-two', 'gs-coach-table-three', 'gs-coach-table-four', 'gs-coach-table-five', 'gs-coach-list-style-four', 'gs-coach-list-style-five', 'gs-coach-list-style-six', 'gs-coach-list-style-seven', 'gs-coach-list-style-eight', 'gs-coach-list-style-nine', 'gs_tm_theme1', 'gs_tm_theme2', 'gs_tm_theme7', 'gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme10', 'gs_tm_theme11', 'gs_tm_theme12', 'gs_tm_theme13', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme21_dense', 'gs_tm_theme19', 'gs_tm_theme20', 'gs_tm_theme22', 'gs_tm_theme23', 'gs_tm_theme24', 'gs_tm_theme25', 'gs_tm_grid2', 'gs_tm_drawer2'];
 			},
 
 			info_bg_color_themes() {
