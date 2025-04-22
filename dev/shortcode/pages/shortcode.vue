@@ -153,6 +153,40 @@
 
 						</div>
 
+						<div class="shortcode-settings--row">
+							<template>
+
+								<div class="gs-she-tabs--buttons">
+									<button :class="active_column_tab == 'desktop' && 'is-active'" @click="active_column_tab = 'desktop'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="3" y="4" width="18" height="12" stroke="currentColor" stroke-width="2"/>
+											<rect x="9" y="18" width="6" height="2" stroke="currentColor" stroke-width="2"/>
+											<line x1="9" y1="16" x2="15" y2="16" stroke="currentColor" stroke-width="2"/>
+										</svg>
+									</button>
+									<button :class="active_column_tab == 'tablet' && 'is-active'" @click="active_column_tab = 'tablet'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="6" y="3" width="12" height="18" stroke="currentColor" stroke-width="2"/>
+											<circle cx="12" cy="19" r="1" fill="currentColor"/>
+										</svg>
+									</button>
+									<button :class="active_column_tab == 'large-mobile' && 'is-active'" @click="active_column_tab = 'large-mobile'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="3" y="8" width="18" height="8" stroke="currentColor" stroke-width="2"/>
+											<circle cx="5" cy="12" r="1" fill="currentColor"/>
+										</svg>
+									</button>
+									<button :class="active_column_tab == 'mobile' && 'is-active'" @click="active_column_tab = 'mobile'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="8" y="2" width="8" height="20" stroke="currentColor" stroke-width="2"/>
+											<circle cx="12" cy="18" r="1" fill="currentColor"/>
+										</svg>
+									</button>
+								</div>
+
+							</template>
+						</div>
+
 						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
@@ -2509,6 +2543,8 @@
 				shortcode_name: null,
 				
 				active_query_tab: 'include',
+
+				active_column_tab: 'desktop',
 
 				shortcode_settings: {},
 
