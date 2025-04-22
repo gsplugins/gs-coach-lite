@@ -1407,18 +1407,6 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 1
                 ],
                 [
-                    'label' => __( 'List 6', 'gscoach' ),
-                    'value' => 'gs_tm_theme17',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'List 7', 'gscoach' ),
-                    'value' => 'gs_tm_theme18',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
                     'label' => __( 'Group Filter 1', 'gscoach' ),
                     'value' => 'gs_tm_theme25',
                     'type' => 'pro',

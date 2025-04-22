@@ -153,7 +153,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -174,7 +174,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -195,7 +195,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -216,7 +216,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -375,7 +375,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -396,7 +396,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -417,7 +417,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme23', 'gs_tm_theme_custom_10', 'gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18', 'gs_tm_theme20', 'gs_tm_grid2', 'gs_tm_theme22', 'gs_tm_theme11'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme23', 'gs_tm_theme_custom_10', 'gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme20', 'gs_tm_grid2', 'gs_tm_theme22', 'gs_tm_theme11'] )">
 
 							<div class="gs-roow row-20">
 

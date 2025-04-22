@@ -482,23 +482,6 @@ class Shortcode {
 	
 				include Template_Loader::locate_template( 'gs-coach-layout-grid-2.php' );
 			}
-			
-			if ( $gs_coach_theme == 'gs_tm_theme18' ) {
-				
-				if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
-				if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
-	
-				include Template_Loader::locate_template( 'gs-coach-layout-list-2.php' );
-			}
-			
-			if ( $gs_coach_theme == 'gs_tm_theme17' ) {
-				
-				if ( $gs_coach_link_type == 'default' ) $gs_coach_link_type = 'single_page';
-				if ( $gs_coach_name_is_linked != 'on' ) $gs_coach_link_type = '';
-	
-				include Template_Loader::locate_template( 'gs-coach-layout-list.php' );
-			}
-
 	
 			if ( is_pro_valid() ) {
 
