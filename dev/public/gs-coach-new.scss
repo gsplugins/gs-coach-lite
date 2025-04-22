@@ -1520,7 +1520,6 @@ body {
 
 /* gs-coach-circle-one 
 ========================*/
-
 .gs_coach_area.gs-coach-circle-one {
     &>.gs-containeer>.gs-roow {
         margin-left: -53px;
@@ -1781,8 +1780,6 @@ body {
 
 }
 
-
-
 /* gs-coach-circle-three 
 ========================*/
 
@@ -1911,8 +1908,6 @@ body {
     }
 
 }
-
-
 
 /* gs-coach-circle-Four 
 ========================*/
@@ -2174,7 +2169,6 @@ body {
         }
 
     }
-
 }
 
 .gs_coach_area.gs-coach-circle-five .single-coach-div {
@@ -2221,6 +2215,481 @@ body {
     }
 
 }
+
+/* gs-coach-circle-Seven
+========================*/
+// .gs-coach-circle-seven {
+
+//     .single-coach-div {
+//         padding-left: 16px !important;
+//         padding-right: 16px !important;
+    
+//         .gs-coach--scrollbar {
+    
+//             &::-webkit-scrollbar-thumb {
+//                 background-color: #F77674;
+//             }
+//         }
+
+//         .single-coach--wrapper {
+
+//             .gs_coach_image__wrapper {
+//                 border-radius: 50%;
+//                 width: 100% !important;
+//                 height: 358px;
+//             }
+//         }
+//     }
+
+// }
+
+
+.gs_coach_area.gs-coach-circle-seven {
+    &>.gs-containeer>.gs-roow {
+        margin-left: -53px;
+        margin-right: -53px;
+    }
+}
+
+.gs-coach-circle-seven {
+
+    .single-coach-div {
+    
+        .single-coach--wrapper {
+
+            .single-coach {
+                padding: 16px;
+                border-radius: 50%;
+                box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+                transition: all 450ms ease-out 0s;
+
+                .gs_coach_image__wrapper {
+                    border-radius: 50%;
+                    width: 100% !important;
+
+                    img {
+                        transform: scale(1);
+                        transition: all 450ms ease-out 0s;
+                    }
+
+                    .gs_coach_image__overlay {
+                        background-color: #0000009c;
+                    }
+                }
+
+                .gs_coach_info {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 40px;
+                    padding: 0;
+                    text-align: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+
+                    .gs-coach-name,
+                    .gs-coach-desig {
+                        padding: 2px 12px;
+                        border-radius: 3px;
+                        transition: all 450ms ease-out 0s;
+                        transform: translateX(0);
+                    }
+
+                    .gs-coach-name  {
+                        background-color: #000;
+                        color: #ffffff;
+                        margin-bottom: 5px;
+                        font-size: 20px;
+                    }
+
+                    .gs-coach-desig {
+                        background-color: #084eca;
+                        color: #ffffff;
+                    }
+                }
+
+                &:hover {
+                    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+
+                    .gs_coach_image__wrapper {
+
+                        img {
+                            transform: scale(1.2);
+                        }
+
+                        .gs_coach_image__overlay {
+                            opacity: 1;
+                        }
+                    }
+
+                    .gs-coach-name  {
+                        transform: translateX(16px);
+                    }
+
+                    .gs-coach-desig {
+                        transform: translateX(-16px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gs_coach_area.gs-coach-circle-seven .single-coach-div {
+
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    margin-bottom: 32px;
+
+    .gs_coach_info {
+        .gs-coach-desc {
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+        }
+    }
+
+    .gs-containeer .gs-roow {
+        margin-left: -32px;
+        margin-right: -32px;
+    }
+
+}
+
+/* gs-coach-circle-Eight
+========================*/
+.gs-coach-circle-eight>.gs-containeer>.gs-roow {
+    margin-left: -53px !important;
+    margin-right: -53px !important;
+}
+
+.gs-coach-circle-eight {
+
+    .single-coach-div {
+        padding-left: 53px !important;
+        padding-right: 53px !important;
+    
+        .gs-coach--scrollbar {
+            &::-webkit-scrollbar-thumb {
+                background-color: #F77674;
+            }
+        }
+    
+        .gs_coach_image__wrapper {
+            border-radius: 50%;
+            width: 100% !important;
+            line-height: 1.5;
+            border: 7px solid rgb(0 0 0 / 7%);
+        }
+    
+        .single-coach {
+            background: none !important;
+            margin-bottom: 32px;
+        }
+    
+        .gs_coach_image__overlay {
+            border-radius: 50%;
+            top: 12px;
+            right: 12px;
+            bottom: 12px;
+            left: 12px;
+            background-color: #ffffff;
+            opacity: 0;
+            width: auto;
+            height: auto;
+            transition: all 450ms ease-out 0s;
+        }
+    
+        .gs_coach_info {
+            background: none !important;
+            text-align: center;
+            padding: 0;
+    
+            .gs-coach-name {
+                color: #030d1e;
+                font-weight: 700;
+                font-family: 'DM Sans', sans-serif;
+                font-size: 20px;
+            }
+    
+            .gs-coach-desig {
+                font-family: "Rubik", sans-serif;
+                margin-top: 4px;
+            }
+    
+            .gs-coach-contact {
+                color: #182338;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+            }
+        }
+
+        .gs-coach_info--circle-eight {
+            position: absolute;
+            width: 100%;
+            bottom: 40px;
+            padding: 0;
+            text-align: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            opacity: 1;
+            transition: all 450ms ease-out 0s;
+
+            .gs-coach-name,
+            .gs-coach-desig {
+                padding: 2px 12px;
+                border-radius: 3px;
+                transition: all 450ms ease-out 0s;
+                transform: translateX(0);
+            }
+
+            .gs-coach-name  {
+                background-color: #000;
+                color: #ffffff;
+                margin-bottom: 5px;
+                font-size: 20px;
+            }
+
+            .gs-coach-desig {
+                background-color: #084eca;
+                color: #ffffff;
+            }
+        }
+    
+        .gs-coach-desc {
+            font-family: 'Rubik', sans-serif;
+            color: #808080;
+            font-size: 16px;
+            height: calc(1.5em*3);
+            overflow: hidden auto;
+    
+            a {
+                color: #808080;
+                font-size: 16px;
+                font-family: "Rubik", sans-serif;
+                text-decoration: underline;
+            }
+        }
+    
+        /* Gs Coach Socials */
+        .single-mem-desc-social {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            opacity: 0;
+            transition: all 450ms ease-out 0s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+
+            .gs-coach-social {
+                margin-top: 6px !important;
+            }
+        }
+    
+        .single-coach:hover {
+    
+            .single-mem-desc-social {
+                opacity: 1;
+            }
+
+            .gs-coach_info--circle-eight {
+                opacity: 0;
+            }
+    
+            &:before {
+                opacity: 1;
+            }
+    
+        }
+    }
+}
+
+
+.gs_coach_area.gs-coach-circle-eight .single-coach-div {
+
+    .gs-coach-social {
+
+        li {
+            // margin-right: 10px !important;
+
+            // &:last-child {
+            //     margin-right: 0;
+            // }
+
+            a {
+                border: 1px solid #e5e5e5 !important;
+                background: #fff;
+                border-radius: 50% !important;
+                width: 40px;
+                height: 40px;
+
+                i {
+                    font-size: 16px;
+                }
+                
+                i, svg {
+                    color: #808080;
+                }
+
+                &:hover {
+                    background: #F77674 !important;
+                    color: #fff !important;
+                    border: 1px solid transparent !important;
+
+                    i, svg {
+                        color: #fff !important;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/* gs-coach-circle-Nine
+========================*/
+
+.gs-coach-circle-nine {
+    &>.gs-containeer>.gs-roow {
+        margin-left: -53px !important;
+        margin-right: -53px !important;
+    }
+}
+
+.gs-coach-circle-nine .single-coach-div {
+
+    padding-left: 53px !important;
+    padding-right: 53px !important;
+
+    .single-coach {
+        background: none !important;
+    }
+
+    .single-coach--wrapper {
+        height: 100%;
+    }
+
+    .gs_coach_image__wrapper {
+        border-radius: 50%;
+        width: 100% !important;
+    }
+
+    .gs_coach_image__overlay {
+        border-radius: 50%;
+        background-color: #0000004d;
+        opacity: 0;
+    }
+
+    .gs_coach_info {
+        background: none !important;
+        text-align: center;
+        padding: 23px 32px !important;
+
+        .gs-coach-contact {
+            color: #182338;
+            font-weight: 600;
+            font-family: Poppins;
+        }
+
+        .gs-coach-name {
+            color: #182338;
+            font-weight: 600;
+            font-family: 'Barlow', sans-serif;
+        }
+
+        .gs-coach-desig {
+            font-family: 'Rubik', sans-serif;
+            margin-top: 3px;
+        }
+    }
+
+    .single-mem-desc-social {
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        width: 100%;
+        height: 115px;
+        text-align: center;
+        padding-top: 36px;
+        transition: 0.32s;
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            max-height: unset;
+
+            path {
+                fill: #ddd;
+            }
+        }
+
+        .gs-coach-social {
+            position: relative;
+        }
+    }
+
+    .single-coach:hover .gs_coach_image__overlay {
+        opacity: 1;
+    }
+
+    .single-coach:hover .single-mem-desc-social {
+        bottom: 3%;
+    }
+
+}
+
+.gs_coach_area.gs-coach-circle-nine .single-coach-div {
+
+    .gs-coach-social li a {
+        border: 1px solid #f3f3f3 !important;
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 5px 20px 0px rgba(42, 35, 78, 0.1) !important;
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .gs-coach-social li a {
+        i, svg {
+            color: #808080;
+        }
+        i {
+            font-size: 16px;
+        }
+    }
+
+    .gs-coach-social li a:hover {
+        background: #15B7B9 !important;
+        color: #fff !important;
+        border: 1px solid transparent !important;
+    }
+
+    .gs-coach-social li a:hover {
+        i, svg {
+            color: #fff !important;
+        }
+    }
+
+}
+
+
 
 /* gs-coach-horizontal-one
 ========================*/
