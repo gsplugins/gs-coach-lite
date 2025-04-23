@@ -6623,6 +6623,28 @@ body {
   color: #fff !important;
 }
 
+/* gs-coach-circle-Six
+========================*/
+.gs_tm_theme2 .single-coach-div .single-coach--wrapper .single-coach {
+  margin-bottom: 16px;
+}
+.gs_tm_theme2 .single-coach-div .single-coach--wrapper .single-coach .single-mem-desc-social .single-mem-desc-social--inner .gs-coach-desc {
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.gs_tm_theme2 .single-coach-div .single-coach--wrapper .gs-coach-name {
+  color: #030d1e;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+}
+.gs_tm_theme2 .single-coach-div .single-coach--wrapper .gs-coach-desig {
+  color: #808080;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+}
+
 /* gs-coach-circle-Seven
 ========================*/
 .gs_coach_area.gs-coach-circle-seven > .gs-containeer > .gs-roow {
@@ -6749,24 +6771,22 @@ body {
   border-radius: 50%;
   width: 100% !important;
   line-height: 1.5;
-  border: 7px solid rgba(0, 0, 0, 0.07);
 }
 .gs-coach-circle-eight .single-coach-div .single-coach {
   background: none !important;
   margin-bottom: 32px;
+  overflow: hidden;
 }
 .gs-coach-circle-eight .single-coach-div .gs_coach_image__overlay {
   border-radius: 50%;
-  top: 12px;
-  right: 12px;
-  bottom: 12px;
-  left: 12px;
   background-color: #ffffff;
   opacity: 0;
   width: auto;
   height: auto;
   -webkit-transition: all 450ms ease-out 0s;
   transition: all 450ms ease-out 0s;
+  left: 0;
+  top: 0;
 }
 .gs-coach-circle-eight .single-coach-div .gs_coach_info {
   background: none !important;
@@ -6811,6 +6831,9 @@ body {
   opacity: 1;
   -webkit-transition: all 450ms ease-out 0s;
   transition: all 450ms ease-out 0s;
+  -webkit-transform: scaleX(1) scaleY(1);
+      -ms-transform: scaleX(1) scaleY(1);
+          transform: scaleX(1) scaleY(1);
 }
 .gs-coach-circle-eight .single-coach-div .gs-coach_info--circle-eight .gs-coach-name,
 .gs-coach-circle-eight .single-coach-div .gs-coach_info--circle-eight .gs-coach-desig {
@@ -6848,7 +6871,7 @@ body {
 .gs-coach-circle-eight .single-coach-div .single-mem-desc-social {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -320px;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -6869,15 +6892,20 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #fff;
+  border-radius: 50%;
 }
 .gs-coach-circle-eight .single-coach-div .single-mem-desc-social .gs-coach-social {
   margin-top: 6px !important;
 }
 .gs-coach-circle-eight .single-coach-div .single-coach:hover .single-mem-desc-social {
   opacity: 1;
+  top: 0;
 }
 .gs-coach-circle-eight .single-coach-div .single-coach:hover .gs-coach_info--circle-eight {
   opacity: 0;
+  -webkit-transform: scaleX(0) scaleY(0);
+      -ms-transform: scaleX(0) scaleY(0);
+          transform: scaleX(0) scaleY(0);
 }
 .gs-coach-circle-eight .single-coach-div .single-coach:hover:before {
   opacity: 1;
@@ -6953,13 +6981,23 @@ body {
 .gs-coach-circle-nine .single-coach-div .single-mem-desc-social {
   position: absolute;
   left: 0;
-  bottom: -100%;
   width: 100%;
-  height: 115px;
+  height: 100%;
   text-align: center;
-  padding-top: 36px;
   -webkit-transition: 0.32s;
   transition: 0.32s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(80px);
+      -ms-transform: translateY(80px);
+          transform: translateY(80px);
+  opacity: 0;
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
 }
 .gs-coach-circle-nine .single-coach-div .single-mem-desc-social svg {
   position: absolute;
@@ -6979,7 +7017,10 @@ body {
   opacity: 1;
 }
 .gs-coach-circle-nine .single-coach-div .single-coach:hover .single-mem-desc-social {
-  bottom: 3%;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
 }
 
 .gs_coach_area.gs-coach-circle-nine .single-coach-div .gs-coach-social li a {
@@ -7003,6 +7044,105 @@ body {
 }
 .gs_coach_area.gs-coach-circle-nine .single-coach-div .gs-coach-social li a:hover i, .gs_coach_area.gs-coach-circle-nine .single-coach-div .gs-coach-social li a:hover svg {
   color: #fff !important;
+}
+
+/* gs-coach-circle-Ten
+======================*/
+.gs-coach-circle-ten .single-coach-div {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.gs-coach-circle-ten .single-coach-div .gs-coach--scrollbar::-webkit-scrollbar-thumb {
+  background-color: #F77674;
+}
+.gs-coach-circle-ten .single-coach-div .single-coach {
+  background: none !important;
+  margin-bottom: 32px;
+  /* Gs Coach Socials */
+}
+.gs-coach-circle-ten .single-coach-div .single-coach .gs_coach_image__wrapper {
+  border-radius: 50%;
+  width: 100% !important;
+  line-height: 1.5;
+  -webkit-transform: scale(1) translateY(0);
+      -ms-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0);
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
+}
+.gs-coach-circle-ten .single-coach-div .single-coach .gs_coach_image__overlay {
+  border-radius: 50%;
+  background-color: #ffffff;
+  opacity: 0;
+  width: auto;
+  height: auto;
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
+  left: 0;
+  top: 0;
+}
+.gs-coach-circle-ten .single-coach-div .single-coach .gs_coach_info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 450ms ease-out 0s;
+  transition: all 450ms ease-out 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #8314ec;
+  border-radius: 50%;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: scale(0.4) translateY(-258px);
+      -ms-transform: scale(0.4) translateY(-258px);
+          transform: scale(0.4) translateY(-258px);
+}
+.gs-coach-circle-ten .single-coach-div .single-coach .gs_coach_info .gs-coach-name {
+  color: #fff;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+}
+.gs-coach-circle-ten .single-coach-div .single-coach .gs_coach_info .gs-coach-desig {
+  font-family: "Rubik", sans-serif;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.gs-coach-circle-ten .single-coach-div .single-coach:hover .gs_coach_image__wrapper {
+  -webkit-transform: scale(0.3) translateY(117%);
+      -ms-transform: scale(0.3) translateY(117%);
+          transform: scale(0.3) translateY(117%);
+  z-index: 2;
+}
+.gs-coach-circle-ten .single-coach-div .single-coach:hover .gs_coach_info {
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-transform: scale(1) translateY(0);
+      -ms-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0);
+}
+.gs-coach-circle-ten .single-coach-div .single-coach:hover .gs_coach_info .gs-coach-social li a {
+  color: #fff;
 }
 
 /* gs-coach-horizontal-one

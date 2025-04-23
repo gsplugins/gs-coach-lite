@@ -109,7 +109,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 							<!-- Social Links -->
 							<div class="single-mem-desc-social">
-								<svg viewBox="0 0 284 127" xmlns="http://www.w3.org/2000/svg"><path d="M141.7 127C203.3 127 256.7 92.2 283.4 41.3C256.7 7.1 203.3 0 141.7 0C80.1 0 26.8 7.1 0 41.3C26.8 92.2 80.2 127 141.7 127Z"/></svg>
+								
 								<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
 							</div>
 
