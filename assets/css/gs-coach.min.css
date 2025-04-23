@@ -4665,6 +4665,10 @@ body {
 .gs-grid-style-six .single-coach-div .back,
 .gs-coach-horizontal-three .single-coach-div .single-coach,
 .gs-coach-horizontal-three .single-coach-div .back,
+.gs-coach-horizontal-six .single-coach-div .single-coach,
+.gs-coach-horizontal-six .single-coach-div .back,
+.gs-coach-horizontal-seven .single-coach-div .single-coach,
+.gs-coach-horizontal-seven .single-coach-div .back,
 .gs-coach-flip-one .single-coach-div .single-coach,
 .gs-coach-flip-one .single-coach-div .back,
 .gs-coach-flip-three .single-coach-div .single-coach,
@@ -4726,6 +4730,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs_coach_ribbon,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs_coach_ribbon,
 .gs-coach-horizontal-three .single-coach-div .back .gs_coach_ribbon,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs_coach_ribbon,
+.gs-coach-horizontal-six .single-coach-div .back .gs_coach_ribbon,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs_coach_ribbon,
+.gs-coach-horizontal-seven .single-coach-div .back .gs_coach_ribbon,
 .gs-coach-flip-one .single-coach-div .single-coach .gs_coach_ribbon,
 .gs-coach-flip-one .single-coach-div .back .gs_coach_ribbon,
 .gs-coach-flip-three .single-coach-div .single-coach .gs_coach_ribbon,
@@ -4794,6 +4802,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-default,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-default,
 .gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-default,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs-coach-ribbon-default,
+.gs-coach-horizontal-six .single-coach-div .back .gs-coach-ribbon-default,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs-coach-ribbon-default,
+.gs-coach-horizontal-seven .single-coach-div .back .gs-coach-ribbon-default,
 .gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-default,
 .gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-default,
 .gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-default,
@@ -4854,6 +4866,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-style-one,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-style-one,
 .gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-style-one,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs-coach-ribbon-style-one,
+.gs-coach-horizontal-six .single-coach-div .back .gs-coach-ribbon-style-one,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs-coach-ribbon-style-one,
+.gs-coach-horizontal-seven .single-coach-div .back .gs-coach-ribbon-style-one,
 .gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-style-one,
 .gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-style-one,
 .gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-style-one,
@@ -4912,6 +4928,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-style-two,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-style-two,
 .gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-style-two,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs-coach-ribbon-style-two,
+.gs-coach-horizontal-six .single-coach-div .back .gs-coach-ribbon-style-two,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs-coach-ribbon-style-two,
+.gs-coach-horizontal-seven .single-coach-div .back .gs-coach-ribbon-style-two,
 .gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-style-two,
 .gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-style-two,
 .gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-style-two,
@@ -4982,6 +5002,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-style-three,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-style-three,
 .gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-style-three,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs-coach-ribbon-style-three,
+.gs-coach-horizontal-six .single-coach-div .back .gs-coach-ribbon-style-three,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs-coach-ribbon-style-three,
+.gs-coach-horizontal-seven .single-coach-div .back .gs-coach-ribbon-style-three,
 .gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-style-three,
 .gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-style-three,
 .gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-style-three,
@@ -5052,6 +5076,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-style-four,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-style-four,
 .gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-style-four,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs-coach-ribbon-style-four,
+.gs-coach-horizontal-six .single-coach-div .back .gs-coach-ribbon-style-four,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs-coach-ribbon-style-four,
+.gs-coach-horizontal-seven .single-coach-div .back .gs-coach-ribbon-style-four,
 .gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-style-four,
 .gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-style-four,
 .gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-style-four,
@@ -5115,6 +5143,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-style-five,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-style-five,
 .gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-coach-horizontal-six .single-coach-div .back .gs-coach-ribbon-style-five,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs-coach-ribbon-style-five,
+.gs-coach-horizontal-seven .single-coach-div .back .gs-coach-ribbon-style-five,
 .gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-style-five,
 .gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-style-five,
 .gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-style-five,
@@ -5181,6 +5213,10 @@ body {
 .gs-grid-style-six .single-coach-div .back .gs-coach-ribbon-style-six,
 .gs-coach-horizontal-three .single-coach-div .single-coach .gs-coach-ribbon-style-six,
 .gs-coach-horizontal-three .single-coach-div .back .gs-coach-ribbon-style-six,
+.gs-coach-horizontal-six .single-coach-div .single-coach .gs-coach-ribbon-style-six,
+.gs-coach-horizontal-six .single-coach-div .back .gs-coach-ribbon-style-six,
+.gs-coach-horizontal-seven .single-coach-div .single-coach .gs-coach-ribbon-style-six,
+.gs-coach-horizontal-seven .single-coach-div .back .gs-coach-ribbon-style-six,
 .gs-coach-flip-one .single-coach-div .single-coach .gs-coach-ribbon-style-six,
 .gs-coach-flip-one .single-coach-div .back .gs-coach-ribbon-style-six,
 .gs-coach-flip-three .single-coach-div .single-coach .gs-coach-ribbon-style-six,
@@ -7664,6 +7700,315 @@ body {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+/* gs-coach-horizontal-Six
+========================*/
+.gs-coach-horizontal-six > .gs-containeer > .gs-roow {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.gs-coach-horizontal-six .single-coach-div {
+  min-width: 50%;
+  margin-bottom: 30px;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.gs-coach-horizontal-six .single-coach-div .single-coach--wrapper {
+  height: 100%;
+}
+.gs-coach-horizontal-six .single-coach-div .single-coach {
+  border-radius: 10px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  position: relative;
+  padding-left: 230px;
+  height: 100%;
+  background: none !important;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_image__wrapper {
+  border-radius: 10px 0 0 10px;
+  -ms-flex-preferred-size: 240px;
+      flex-basis: 240px;
+  margin-right: 30px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  overflow: inherit;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info {
+  padding: 42px 14px 46px 40px;
+  text-align: left;
+  background: #fff;
+  border-radius: 0px 6px 6px 0px;
+  height: 100%;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-name {
+  color: #030d1e;
+  font-size: 24px;
+  font-weight: 600;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-desig {
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 14px;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-address {
+  color: #030d1e;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 14px;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-address i {
+  color: #20BBBC;
+  font-size: 18px;
+  margin-right: 2px;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-social {
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  padding: 6px 0 !important;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-social li {
+  border-radius: 0 !important;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-social li a {
+  margin: 0;
+  background-color: grey;
+  color: #fff !important;
+  border-radius: 0 !important;
+}
+.gs-coach-horizontal-six .single-coach-div .gs_coach_info .gs-coach-social li a i {
+  color: #fff !important;
+}
+.gs-coach-horizontal-six .single-coach-div .single-coach:hover {
+  -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+          box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+}
+.gs-coach-horizontal-six .single-coach-div .single-coach:hover .gs_coach_info {
+  border-color: transparent;
+}
+
+/* gs-coach-horizontal-Seven
+========================*/
+.gs-coach-horizontal-seven > .gs-containeer > .gs-roow {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.gs-coach-horizontal-seven .single-coach-div {
+  min-width: 50%;
+  margin-bottom: 30px;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.gs-coach-horizontal-seven .single-coach-div .single-coach--wrapper {
+  height: 100%;
+}
+.gs-coach-horizontal-seven .single-coach-div .single-coach {
+  border-radius: 10px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  position: relative;
+  height: 100%;
+  background: none !important;
+  -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+          box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+  margin-bottom: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_image__wrapper {
+  width: 40%;
+  overflow: inherit;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info {
+  background: #fff;
+  border-radius: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-name {
+  color: #030d1e;
+  font-size: 24px;
+  font-weight: 600;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-desig {
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 14px;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-address {
+  color: #030d1e;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 14px;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-address i {
+  color: #20BBBC;
+  font-size: 18px;
+  margin-right: 2px;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-social {
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  padding: 6px 0 !important;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-social li {
+  border-radius: 0 !important;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-social li a {
+  margin: 0;
+  background-color: grey;
+  color: #fff !important;
+  border-radius: 0 !important;
+}
+.gs-coach-horizontal-seven .single-coach-div .gs_coach_info .gs-coach-social li a i {
+  color: #fff !important;
+}
+.gs-coach-horizontal-seven .single-coach-div .single-coach:hover {
+  -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+          box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+}
+.gs-coach-horizontal-seven .single-coach-div .single-coach:hover .gs_coach_info {
+  border-color: transparent;
+}
+
+/* gs-coach-horizontal-Eight
+========================*/
+.gs-coach-horizontal-eight > .gs-containeer > .gs-roow {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.gs-coach-horizontal-eight .single-coach-div {
+  min-width: 50%;
+  margin-bottom: 30px;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.gs-coach-horizontal-eight .single-coach-div .single-coach--wrapper {
+  height: 100%;
+}
+.gs-coach-horizontal-eight .single-coach-div .single-coach {
+  border-radius: 10px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  position: relative;
+  height: 100%;
+  background: none !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_image__wrapper {
+  border-radius: 10px 0 0 10px;
+  height: 100%;
+  width: 40%;
+  overflow: inherit;
+  border-radius: 50%;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_image__wrapper img {
+  border-radius: 50%;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info {
+  padding: 42px 14px 46px 40px;
+  text-align: left;
+  background: #fff;
+  border-radius: 0px 6px 6px 0px;
+  height: 100%;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-name {
+  color: #030d1e;
+  font-size: 24px;
+  font-weight: 600;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-desig {
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 14px;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-address {
+  color: #030d1e;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 14px;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-address i {
+  color: #20BBBC;
+  font-size: 18px;
+  margin-right: 2px;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-social {
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  padding: 6px 0 !important;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-social li {
+  border-radius: 0 !important;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-social li a {
+  margin: 0;
+  background-color: grey;
+  color: #fff !important;
+  border-radius: 0 !important;
+}
+.gs-coach-horizontal-eight .single-coach-div .gs_coach_info .gs-coach-social li a i {
+  color: #fff !important;
+}
+.gs-coach-horizontal-eight .single-coach-div .single-coach:hover {
+  -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+          box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+}
+.gs-coach-horizontal-eight .single-coach-div .single-coach:hover .gs_coach_info {
+  border-color: transparent;
 }
 
 /* gs-coach-flip-one 
@@ -13457,6 +13802,24 @@ body {
   .gs-coach-horizontal-five .single-coach-div .gs_coach_info {
     margin-top: 18px;
   }
+  /* Horizontal Three */
+  .gs-coach-horizontal-six .single-coach-div {
+    width: 100%;
+  }
+  .gs-coach-horizontal-six .single-coach-div .single-coach {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 252px;
+  }
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_image__wrapper {
+    margin-right: 0;
+    width: 260px;
+  }
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_info {
+    width: 100%;
+  }
   /* Flip Style */
   .gs-coach-flip-one > .gs-containeer > .gs-roow {
     margin-left: -30px;
@@ -13689,7 +14052,8 @@ body {
   .gs-coach-horizontal-two .single-coach-div .gs_coach_image__wrapper,
   .gs-coach-horizontal-three .single-coach-div .gs_coach_image__wrapper,
   .gs-coach-horizontal-four .single-coach-div .gs_coach_image__wrapper,
-  .gs-coach-horizontal-five .single-coach-div .gs_coach_image__wrapper {
+  .gs-coach-horizontal-five .single-coach-div .gs_coach_image__wrapper,
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_image__wrapper {
     width: 50%;
     margin-right: 0;
   }
@@ -13697,7 +14061,8 @@ body {
   .gs-coach-horizontal-two .single-coach-div .gs_coach_info,
   .gs-coach-horizontal-three .single-coach-div .gs_coach_info,
   .gs-coach-horizontal-four .single-coach-div .gs_coach_info,
-  .gs-coach-horizontal-five .single-coach-div .gs_coach_info {
+  .gs-coach-horizontal-five .single-coach-div .gs_coach_info,
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_info {
     width: 60%;
     padding: 18px 18px;
   }
@@ -13721,6 +14086,16 @@ body {
     width: 32%;
   }
   .gs-coach-horizontal-four .single-coach-div .gs_coach_info {
+    width: 100%;
+  }
+  .gs-coach-horizontal-six .single-coach-div .single-coach {
+    -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+            box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+  }
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_image__wrapper {
+    width: 52%;
+  }
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_info {
     width: 100%;
   }
   /* List Style */
@@ -14385,7 +14760,8 @@ body {
   .gs-coach-horizontal-two .single-coach-div .single-coach,
   .gs-coach-horizontal-three .single-coach-div .single-coach,
   .gs-coach-horizontal-four .single-coach-div .single-coach,
-  .gs-coach-horizontal-five .single-coach-div .single-coach {
+  .gs-coach-horizontal-five .single-coach-div .single-coach,
+  .gs-coach-horizontal-six .single-coach-div .single-coach {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -14395,7 +14771,8 @@ body {
   .gs-coach-horizontal-two .single-coach-div .gs_coach_image__wrapper,
   .gs-coach-horizontal-three .single-coach-div .gs_coach_image__wrapper,
   .gs-coach-horizontal-four .single-coach-div .gs_coach_image__wrapper,
-  .gs-coach-horizontal-five .single-coach-div .gs_coach_image__wrapper {
+  .gs-coach-horizontal-five .single-coach-div .gs_coach_image__wrapper,
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_image__wrapper {
     width: 100%;
     margin-right: 0;
   }
@@ -14403,7 +14780,8 @@ body {
   .gs-coach-horizontal-two .single-coach-div .gs_coach_info,
   .gs-coach-horizontal-three .single-coach-div .gs_coach_info,
   .gs-coach-horizontal-four .single-coach-div .gs_coach_info,
-  .gs-coach-horizontal-five .single-coach-div .gs_coach_info {
+  .gs-coach-horizontal-five .single-coach-div .gs_coach_info,
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_info {
     width: 100%;
   }
   .gs-coach-horizontal-two .single-coach-div .single-coach {
@@ -14462,6 +14840,21 @@ body {
   }
   .gs-coach-horizontal-five .single-coach-div .gs_coach_info {
     margin-top: 18px;
+  }
+  .gs-coach-horizontal-six .single-coach-div .single-coach {
+    padding: 0;
+    padding-top: 285px;
+    -webkit-box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+            box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+  }
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_image__wrapper {
+    border-radius: 10px 10px 0 0px;
+    height: auto;
+  }
+  .gs-coach-horizontal-six .single-coach-div .gs_coach_info {
+    padding: 20px;
+    border-radius: 0;
+    border: none;
   }
   .gs-coach-list-style-one .single-coach-div,
   .gs-coach-list-style-two .single-coach-div,
