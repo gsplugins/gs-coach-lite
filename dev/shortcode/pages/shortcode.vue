@@ -153,7 +153,41 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-settings--row">
+							<template>
+
+								<div class="gs-she-tabs--buttons">
+									<button :class="active_column_tab == 'desktop' && 'is-active'" @click="active_column_tab = 'desktop'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="3" y="4" width="18" height="12" stroke="currentColor" stroke-width="2"/>
+											<rect x="9" y="18" width="6" height="2" stroke="currentColor" stroke-width="2"/>
+											<line x1="9" y1="16" x2="15" y2="16" stroke="currentColor" stroke-width="2"/>
+										</svg>
+									</button>
+									<button :class="active_column_tab == 'tablet' && 'is-active'" @click="active_column_tab = 'tablet'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="6" y="3" width="12" height="18" stroke="currentColor" stroke-width="2"/>
+											<circle cx="12" cy="19" r="1" fill="currentColor"/>
+										</svg>
+									</button>
+									<button :class="active_column_tab == 'large-mobile' && 'is-active'" @click="active_column_tab = 'large-mobile'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="3" y="8" width="18" height="8" stroke="currentColor" stroke-width="2"/>
+											<circle cx="5" cy="12" r="1" fill="currentColor"/>
+										</svg>
+									</button>
+									<button :class="active_column_tab == 'mobile' && 'is-active'" @click="active_column_tab = 'mobile'">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="8" y="2" width="8" height="20" stroke="currentColor" stroke-width="2"/>
+											<circle cx="12" cy="18" r="1" fill="currentColor"/>
+										</svg>
+									</button>
+								</div>
+
+							</template>
+						</div>
+
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -174,7 +208,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -195,7 +229,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -216,7 +250,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -375,7 +409,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -396,7 +430,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -417,7 +451,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme23', 'gs_tm_theme_custom_10', 'gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme17', 'gs_tm_theme18', 'gs_tm_theme20', 'gs_tm_grid2', 'gs_tm_theme22', 'gs_tm_theme11'] )">
+						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme23', 'gs_tm_theme_custom_10', 'gs_tm_theme13', 'gs_tm_drawer2', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme20', 'gs_tm_grid2', 'gs_tm_theme22', 'gs_tm_theme11'] )">
 
 							<div class="gs-roow row-20">
 
@@ -2510,6 +2544,8 @@
 				
 				active_query_tab: 'include',
 
+				active_column_tab: 'desktop',
+
 				shortcode_settings: {},
 
 				tax_settings: {},
@@ -2617,7 +2653,7 @@
 			},
 
 			no_bg_color_themes() {
-				return ['gs-grid-style-one', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten', 'gs-coach-horizontal-one', 'gs-coach-horizontal-three', 'gs-coach-flip-one', 'gs-coach-flip-two', 'gs-coach-flip-three', 'gs-coach-flip-four', 'gs-coach-flip-five', 'gs-coach-table-one', 'gs-coach-table-two', 'gs-coach-table-three', 'gs-coach-table-four', 'gs-coach-table-five', 'gs-coach-list-style-four', 'gs-coach-list-style-five', 'gs_tm_theme1', 'gs_tm_theme2', 'gs_tm_theme7', 'gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme10', 'gs_tm_theme11', 'gs_tm_theme12', 'gs_tm_theme13', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme21_dense', 'gs_tm_theme19', 'gs_tm_theme20', 'gs_tm_theme22', 'gs_tm_theme23', 'gs_tm_theme24', 'gs_tm_theme25', 'gs_tm_grid2', 'gs_tm_drawer2'];
+				return ['gs-grid-style-one', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten', 'gs-coach-horizontal-one', 'gs-coach-horizontal-three', 'gs-coach-flip-one', 'gs-coach-flip-two', 'gs-coach-flip-three', 'gs-coach-flip-four', 'gs-coach-flip-five', 'gs-coach-table-one', 'gs-coach-table-two', 'gs-coach-table-three', 'gs-coach-table-four', 'gs-coach-table-five', 'gs-coach-list-style-four', 'gs-coach-list-style-five', 'gs-coach-list-style-six', 'gs-coach-list-style-seven', 'gs-coach-list-style-eight', 'gs-coach-list-style-nine', 'gs_tm_theme1', 'gs_tm_theme2', 'gs_tm_theme7', 'gs_tm_theme8', 'gs_tm_theme9', 'gs_tm_theme10', 'gs_tm_theme11', 'gs_tm_theme12', 'gs_tm_theme13', 'gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21', 'gs_tm_theme21_dense', 'gs_tm_theme19', 'gs_tm_theme20', 'gs_tm_theme22', 'gs_tm_theme23', 'gs_tm_theme24', 'gs_tm_theme25', 'gs_tm_grid2', 'gs_tm_drawer2'];
 			},
 
 			info_bg_color_themes() {

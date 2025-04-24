@@ -1371,6 +1371,30 @@ if ( ! class_exists( 'Builder' ) ) {
                     'version' => 2
                 ],
                 [
+                    'label' => __( 'List 6', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-six',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 7', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-seven',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 8', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-eight',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
+                    'label' => __( 'List 9', 'gscoach' ),
+                    'value' => 'gs-coach-list-style-nine',
+                    'type' => 'pro',
+                    'version' => 2
+                ],
+                [
                     'label' => __( 'Flip', 'gscoach' ),
                     'value' => 'gs_tm_theme23',
                     'type' => 'pro',
@@ -1404,18 +1428,6 @@ if ( ! class_exists( 'Builder' ) ) {
                     'label' => __( 'Table 10 Filter Dense', 'gscoach' ),
                     'value' => 'gs_tm_theme21_dense',
                     'type' => 'pro',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'List 6', 'gscoach' ),
-                    'value' => 'gs_tm_theme17',
-                    'type' => 'free',
-                    'version' => 1
-                ],
-                [
-                    'label' => __( 'List 7', 'gscoach' ),
-                    'value' => 'gs_tm_theme18',
-                    'type' => 'free',
                     'version' => 1
                 ],
                 [
