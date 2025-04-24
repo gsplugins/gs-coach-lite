@@ -2,10 +2,10 @@
 
 namespace GSCOACH;
 /**
- * GS Coach - Horizontal Ten
+ * GS Coach - Horizontal Six
  * @author GS Plugins <hello@gsplugins.com>
  * 
- * This template can be overridden by copying it to yourtheme/gs-coach/gs-coach-horizontal-ten.php
+ * This template can be overridden by copying it to yourtheme/gs-coach/gs-coach-horizontal-six.php
  * 
  * @package GS_Coach/Templates
  * @version 1.0.2
@@ -104,49 +104,62 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 					<div class="single-coach">
 
-						<!-- Coach Image -->
-						<div class="gs_coach_image__wrapper">
+						<div class="gs-coach-hori-ten-left">
 
-							<!-- Image -->
-							<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+							<!-- Coach Image -->
+							<div class="gs_coach_image__wrapper">
+	
+								<!-- Image -->
+								<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
 
-							<!-- Ribbon -->
-							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
+								<!-- Ribbon -->
+								<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
+	
+							</div>
+
+							<!-- Social Links -->
+							<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
+
 
 						</div>
-	
-						<!-- coach Name -->
-						<div class="gs_coach_info">
-							
+
+						<div class="gs-coach-hori-ten-right">
+
 							<!-- coach Name -->
-							<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
-							<?php do_action( 'gs_coach_after_coach_name' ); ?>
-	
-							<!-- coach Designation -->
-							<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-							<?php do_action( 'gs_coach_after_coach_designation' ); ?>
-	
-							<!-- Description -->
-							<?php if ( 'on' ==  $gs_coach_details ) : ?>
+							<div class="gs_coach_info">
 								
-								<?php if ( 'on' === $gs_desc_allow_html ) : ?>
-									<div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-								<?php else : ?>
-									<p class="gs-coach-desc" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
-								<?php endif; ?>
+								<!-- coach Name -->
+								<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+								<?php do_action( 'gs_coach_after_coach_name' ); ?>
+		
+								<!-- coach Designation -->
+								<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+								<?php do_action( 'gs_coach_after_coach_designation' ); ?>
 
-								<?php do_action( 'gs_coach_after_coach_details' ); ?>
-							<?php endif; ?>
-	
-							<?php if ( !empty($address) ) : ?>
-								<div class="gs-coach-address">
-									<i class="fas fa-map-marker"></i>
-									<?php echo wp_kses_post( $address ); ?>
-								</div>
-								<?php do_action( 'gs_coach_after_coach_address' ); ?>
-							<?php endif; ?>
-							
+								<!-- Description -->
+								<?php if ( 'on' ==  $gs_coach_details ) : ?>
+									<?php if ( 'on' === $gs_desc_allow_html ) : ?>
+										<div class="gs-coach-desc" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
+									<?php else : ?>
+										<p class="gs-coach-desc" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
+									<?php endif; ?>
+									<?php do_action( 'gs_coach_after_coach_details' ); ?>
+								<?php endif; ?>
+								
+		
+								<?php if ( !empty($address) ) : ?>
+									<div class="gs-coach-address">
+										<i class="fas fa-map-marker"></i>
+										<?php echo wp_kses_post( $address ); ?>
+									</div>
+									<?php do_action( 'gs_coach_after_coach_address' ); ?>
+								<?php endif; ?>
+								
+							</div>
+
 						</div>
+
+	
 
 					</div>
 

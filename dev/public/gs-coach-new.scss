@@ -305,6 +305,7 @@ body {
 .gs-coach-horizontal-three,
 .gs-coach-horizontal-six,
 .gs-coach-horizontal-seven,
+.gs-coach-horizontal-ten,
 .gs-coach-flip-one,
 .gs-coach-flip-three,
 .gs-coach-flip-five,
@@ -3743,31 +3744,32 @@ body {
         height: 100%;
         background: none !important;
         display: flex;
+        // border: 2px solid rgb(219, 219, 219);
+        align-items: center;
     }
 
     .gs_coach_image__wrapper {
-        border-radius: 10px 0 0 10px;
-        // flex-basis: 240px;
-        // margin-right: 30px;
-        height: 100%;
-        // position: absolute;
-        // top: 0;
-        // left: 0;
+        height: 220px;
         width: 40%;
         overflow: inherit;
         border-radius: 50%;
 
         img {
             border-radius: 50%;
+            transform: rotate(0deg);
+            transition: all 450ms ease-out 0s;
+            // object-fit: scale-down !important;
+
+            &:hover {
+                transform: rotate(10deg);
+            }
         }
     }
 
     .gs_coach_info {
         padding: 42px 14px 46px 40px;
         text-align: left;
-        // border: 1px solid #e5e5e5;
         background: #fff;
-        // border-left-width: 0px;
         border-radius: 0px 6px 6px 0px;
         height: 100%;
         transition: all .25s ease;
@@ -3826,14 +3828,275 @@ body {
 
     .single-coach:hover {
 
-        box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+        .gs_coach_info {
+            border-color: transparent;
+        }
+    }
+}
 
-        .gs_coach_image__wrapper img {
-            // transform: scale(1.2);
+
+/* gs-coach-horizontal-Nine
+========================*/
+.gs-coach-horizontal-nine {
+    &>.gs-containeer>.gs-roow {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.gs-coach-horizontal-nine .single-coach-div {
+
+    min-width: 50%;
+    margin-bottom: 30px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    .single-coach--wrapper {
+        height: 100%;
+    }
+
+    .single-coach {
+        border-radius: 10px;
+        transition: 0.5s ease;
+        position: relative;
+        height: 100%;
+        background: none !important;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+
+    .gs_coach_image__wrapper {
+        height: 220px;
+        width: 40%;
+        overflow: inherit;
+        border-radius: 50%;
+
+        img {
+            border-radius: 50%;
+            transform: rotate(0deg);
+            transition: all 450ms ease-out 0s;
+            object-fit: scale-down !important;
+
+            &:hover {
+                transform: rotate(10deg);
+            }
+        }
+    }
+
+    .gs_coach_info {
+        padding: 42px 14px 46px 40px;
+        text-align: left;
+        background: #fff;
+        border-radius: 0px 6px 6px 0px;
+        height: 100%;
+        transition: all .25s ease;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+
+        .gs-coach-name {
+            color: #030d1e;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .gs-coach-desig {
+            font-family: 'Nunito', sans-serif;
+            margin-bottom: 14px;
+        }
+
+        .gs-coach-address {
+            color: #030d1e;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 14px;
+
+            i {
+                color: #20BBBC;
+                font-size: 18px;
+                margin-right: 2px;
+            }
+        }
+
+        .gs-coach-social {
+            border-top: 2px solid gray;
+            border-bottom: 2px solid gray;
+            padding: 6px 0 !important;
+
+            li {
+                border-radius: 0 !important;
+
+                a {
+                    margin: 0;
+                    background-color: grey;
+                    color: #fff !important;
+                    border-radius: 0 !important;
+
+                    i {
+                        color: #fff !important;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .single-coach:hover {
+
+        // box-shadow: 0px 20px 50px 0px rgba(12, 21, 41, 0.1);
+
+        .gs_coach_image__wrapper {
+            
+            // img {
+            //     transform: rotate(360deg);
+            // }
+
         }
 
         .gs_coach_info {
             border-color: transparent;
+        }
+    }
+}
+
+/* gs-coach-horizontal-Eight
+========================*/
+.gs-coach-horizontal-ten {
+    &>.gs-containeer>.gs-roow {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.gs-coach-horizontal-ten .single-coach-div {
+
+    min-width: 50%;
+    margin-bottom: 30px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    .single-coach--wrapper {
+        height: 100%;
+    }
+
+    .single-coach {
+        transition: 0.5s ease;
+        position: relative;
+        height: 100%;
+        background: none !important;
+        display: flex;
+        border-bottom: 4px solid #20BBBC;
+        padding: 24px;
+        border-radius: 0 0 5px 5px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        background-color: #ffffff !important;
+
+        .gs-coach-hori-ten-left {
+            width: 40%;
+
+
+            .gs_coach_image__wrapper {
+                height: 220px;
+                overflow: inherit;
+                border-radius: 0;
+        
+                img {
+                    border-radius: 0;
+                    transition: all 450ms ease-out 0s;
+                    object-fit: fill !important;
+                }
+            }
+
+            .gs-coach-social {
+                padding: 6px 0 !important;
+                margin-top: 16px !important;
+    
+                li {
+                    border-radius: 0 !important;
+    
+                    a {
+                        margin: 0;
+                        background-color: #20BBBC;
+                        color: #fff !important;
+                        border-radius: 0 !important;
+    
+                        i {
+                            color: #fff !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .gs-coach-hori-ten-right {
+            width: 60%;
+
+            .gs_coach_info {
+                padding: 24px;
+                padding-top: 8px;
+                text-align: left;
+                background: #fff;
+                height: 100%;
+                transition: all .25s ease;
+        
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+        
+                .gs-coach-name {
+                    color: #030d1e;
+                    font-size: 24px;
+                    font-weight: 600;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 24%;
+                        height: 2px;
+                        background: #15B7B9;
+                        top: -6px;
+                        left: 0;
+                        transition: all .25s ease;
+                    }
+                }
+        
+                .gs-coach-desig {
+                    font-family: 'Nunito', sans-serif;
+                    margin-bottom: 14px;
+                }
+        
+                .gs-coach-address {
+                    color: #030d1e;
+                    font-size: 16px;
+                    font-family: 'Poppins', sans-serif;
+                    margin-top: 14px;
+        
+                    i {
+                        color: #20BBBC;
+                        font-size: 18px;
+                        margin-right: 2px;
+                    }
+                }
+        
+            }        
+        }
+    }
+
+    .single-coach:hover {
+
+        .gs_coach_info {
+
+            .gs-coach-name {
+
+                &::before {
+                    width: 50%;
+                }
+            }
         }
     }
 }
