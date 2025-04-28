@@ -56,6 +56,7 @@ function get_query($atts) {
         'order'                => 'DESC',
         'orderby'              => 'date',
         'posts_per_page'       => -1,
+        'offset'               => 0,
         'paged'                => 1,
         'tax_query'            => [],
     ], $atts);

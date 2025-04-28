@@ -223,7 +223,7 @@ body .gs_coach_area.gs_coach_loading {
 	}
 }
 
-.gs_geam--loaded {
+.gs_coach--loaded {
 	visibility: visible !important;
 	opacity: 1 !important;
 }
@@ -4149,6 +4149,20 @@ li.gridder-list {
 		display: none;
 	}
 
+}
+
+.gs-coach-load-more-btn{
+	width: 200px;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	border: none;
+	background: lightcoral;
+	color: #272829;
+}
+.gs-coach-load-more-wrapper{
+	text-align: center;
 }
 
 // New CSS
