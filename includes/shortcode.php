@@ -425,7 +425,6 @@ class Shortcode {
 		} else {
 			$theme_class .= ' gs_tm_theme_v_1';
 		}
-
 		
 		// Load Template Hooks
 		if ( 'on' ==  $gs_coach_srch_by_zip ) {
