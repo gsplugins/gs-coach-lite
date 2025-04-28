@@ -282,7 +282,7 @@
 						<div class="shortcode-settings--row">
 							<template>
 
-								<div class="gs-she-tabs--buttons">
+								<div class="gs-she-tabs--buttons m-b-20">
 									<button :class="active_column_tab == 'desktop' && 'is-active'" @click="active_column_tab = 'desktop'">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<rect x="3" y="4" width="18" height="12" stroke="currentColor" stroke-width="2"/>
@@ -313,7 +313,7 @@
 							</template>
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
+						<div class="shortcode-setting--row" v-if="active_column_tab === 'desktop' && !displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -334,7 +334,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
+						<div class="shortcode-setting--row" v-if="active_column_tab === 'tablet' && !displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -355,7 +355,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
+						<div class="shortcode-setting--row" v-if="active_column_tab === 'large-mobile' && !displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 
@@ -376,7 +376,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
+						<div class="shortcode-setting--row" v-if="active_column_tab === 'mobile' && !displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme14', 'gs_tm_theme15', 'gs_tm_theme16', 'gs_tm_theme21'] )">
 
 							<div class="gs-roow row-20">
 

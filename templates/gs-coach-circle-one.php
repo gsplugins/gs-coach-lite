@@ -167,7 +167,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 	</div>
 
 	<!-- Load More Button -->
-	<?php if ( 'on' == $enable_pagination ) : ?>
+	<?php if ( 'on' == $enable_pagination && 'load-more-button' === $pagination_type ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-load-more-btn.php' ); ?>
 	<?php endif; ?>
 

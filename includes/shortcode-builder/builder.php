@@ -863,7 +863,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'columns_desktop_details' => __('Enter the slides number for desktop', 'gscoach'),
                 'columns_tablet' => __('Tablet Slides', 'gscoach'),
                 'columns_tablet_details' => __('Enter the slides number for tablet', 'gscoach'),
-                'columns_mobile_portrait' => __('Portrait Mobile Slides', 'gscoach'),
+                'columns_mobile_portrait' => __('Portrait Mobile', 'gscoach'),
                 'columns_mobile_portrait_details' => __('Enter the slides number for portrait or large display mobile', 'gscoach'),
                 'columns_mobile' => __('Mobile Slides', 'gscoach'),
                 'columns_mobile_details' => __('Enter the slides number for mobile', 'gscoach'),
