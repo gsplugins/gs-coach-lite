@@ -973,7 +973,6 @@ jQuery(function($) {
 				$('.gs_coach').append(coachDivs);
 			} else{
 				$('#gs-coach-load-more-coach-btn').hide();
-				$('.gs-coach-load-more-end-message').text(response.data.message);
 			}
 	
 		});
