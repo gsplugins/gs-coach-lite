@@ -2,10 +2,10 @@
 
 namespace GSCOACH;
 /**
- * GS Coach - List Style Seven
+ * GS Coach - Layout One
  * @author GS Plugins <hello@gsplugins.com>
  * 
- * This template can be overridden by copying it to yourtheme/gs-coach/gs-coach-list-style-seven.php
+ * This template can be overridden by copying it to yourtheme/gs-coach/gs-coach-layout-default-1.php
  * 
  * @package GS_Coach/Templates
  * @version 1.0.2
@@ -54,14 +54,20 @@ global $gs_coach_loop;
 						</div>
 
 						<div class="gs_coach_info">
-							
-							<!-- coach Name -->
-							<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
-							<?php do_action( 'gs_coach_after_coach_name' ); ?>
 
-							<!-- coach Designation -->
-							<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
-							<?php do_action( 'gs_coach_after_coach_designation' ); ?>
+							<div class="gs_coach_credential">
+
+								<!-- coach Name -->
+								<?php coach_name( $id, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?>
+								<?php do_action( 'gs_coach_after_coach_name' ); ?>
+	
+								<!-- coach Designation -->
+								<div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
+								<?php do_action( 'gs_coach_after_coach_designation' ); ?>
+
+
+							</div>
+							
 
 							<!-- Description -->
 							<?php if ( 'on' ==  $gs_coach_details ) : ?>
@@ -71,7 +77,7 @@ global $gs_coach_loop;
 								<?php else : ?>
 									<p class="gs-coach-desc" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
 								<?php endif; ?>
-								
+
 								<?php do_action( 'gs_coach_after_coach_details' ); ?>
 							<?php endif; ?>
 
