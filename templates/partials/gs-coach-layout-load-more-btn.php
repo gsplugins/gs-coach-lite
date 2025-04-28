@@ -12,16 +12,8 @@ namespace GSCOACH;
  */
 
  
-
  ?>
 
- <style>
-    .gs-coach-load-more-end-message{
-        font-size: 20px;
-    }
- </style>
-
 <div class="gs-coach-load-more-wrapper">
-    <button id="gs-coach-load-more-coach-btn" class="gs-coach-load-more-btn">Load More</button>
-    <p class="gs-coach-load-more-end-message"></p>
+    <button id="gs-coach-load-more-coach-btn" class="gs-coach-load-more-btn"><?php echo esc_html( $load_button_text ); ?></button>
 </div>
