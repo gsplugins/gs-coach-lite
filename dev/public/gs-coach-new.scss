@@ -13358,759 +13358,758 @@ body {
         }
     }
 
-    /* gs-coach-popup--style
+/* gs-coach-popup--style
 ========================*/
-    .gs-coach-popup--style-one {
+.gs-coach-popup--style-one {
 
-        .gs-containeer-f {
+    .gs-containeer-f {
 
-            .gs-roow {
-
-                .gs-col-md-4 {
-                    width: 100%;
-                }
-
-                .gs-col-md-8 {
-                    width: 100%;
-                    padding-left: 15px;
-                }
-            }
-
-            .gs_coach_details {
-                margin-top: 16px;
-            }
-        }
-
-        .mfp-container {
-
-            .mfp-content {
-
-                .mfp-close {
-                    top: 0px !important;
-                    right: 14px !important;
-
-                    svg {
-                        width: 16px;
-                        height: 16px;
-                    }
-                }
-            }
-        }
-
-        .gs_coach_popup {
-            padding: 40px 10px !important;
-        }
-    }
-
-    .gs-coach-popup--style-two {
-
-        .gs-containeer-f {
-
-            .popup-navigation {
-                position: initial;
-            }
-
-            .gs-roow {
-
-                .gs-col-md-4 {
-                    width: 100%;
-                }
-
-                .gs-col-md-8 {
-                    width: 100%;
-                    padding-left: 15px;
-                    margin-top: 24px;
-                }
-
-                .gs-col-md-12 {
-                    width: 100%;
-                }
-            }
-
-            .gs-sin-mem-name {
-                font-size: 24px;
-            }
-        }
-
-        .gs_coach_popup {
-            padding: 40px 10px !important;
-        }
-
-
-        .mfp-container {
-
-            .mfp-content {
-
-                .mfp-close {
-                    top: 0px !important;
-                    right: 14px !important;
-                }
-            }
-        }
-    }
-
-    .gs-coach-popup--style-three {
-
-        .gs_coach_popup {
-            padding: 28px 16px !important;
-
-        }
-
-        .mfp-container {
-
-            .mfp-content {
-
-                .mfp-close {
-                    top: 32px !important;
-                    right: 22px !important;
-
-                    svg {
-                        width: 16px;
-                        height: 16px;
-                    }
-                }
-            }
-        }
-
-        .gscoach-content-left {
-            padding-right: 0 !important;
-            padding-left: 0 !important;
-            border: none;
-        }
-
-        .gs-containeer-f {
-
-            .gs_coach_img {
-                padding-right: 0;
-                padding-left: 0;
-            }
-        }
-
-        .gscoach-content-right {
-            padding-left: 0;
-        }
-    }
-
-    .gs-coach-popup--style-four {
-
-        .gs_coach_popup {
-            padding: 24px 14px !important;
-
-            .mfp-close {
-                top: 22px !important;
-                right: 14px !important;
-            }
-        }
-
-        .gs-containeer-f {
-
-            .gs-roow {
-
-                .gs-col-md-4 {
-                    width: 100%;
-                }
-
-                .gs-col-md-8 {
-                    width: 100%;
-                    padding-left: 15px;
-                }
-            }
-
-            .gs_coach_details {
-                margin-left: 0px;
-                margin-top: 10px;
-            }
-
-            .gs-coach-desc {
-                margin-bottom: 0;
-            }
-
-            .gs-tm-sicons {
-                margin-top: 0;
-            }
-
-            .gs-sin-mem-name {
-                font-size: 24px;
-            }
-        }
-    }
-
-    .gs-coach-popup--style-five {
-
-        .gs_coach_popup {
-
-            padding: 40px 14px !important;
-
-            .mfp-close {
-                top: 22px !important;
-                right: 14px !important;
-            }
-
-            .gs-coach-social {
-                margin: 0 !important;
-            }
-
-            .mfp-close {
-                top: -54px !important;
-                right: 0px !important;
-            }
-
-            .popup-navigation {
-                display: none;
-            }
-
-            .gs-coach-desig {
-                text-align: left;
-                font-size: 18px;
-                margin-bottom: 0 !important;
-            }
-
-            .gs-containeer-f {
-
-                .gs-roow {
-
-                    .gs-col-md-4 {
-                        width: 100%;
-                    }
-
-                    .gs-col-md-8 {
-                        width: 100%;
-                        padding-left: 15px;
-                        padding-right: 15px;
-                    }
-                }
-
-                .gscoach-dsf-bottom-right {
-                    padding-left: 0 !important;
-                }
-
-                .gscoach-popup-right {
-                    margin-left: 0 !important;
-
-
-                    h2.title {
-                        margin-top: -10px !important;
-
-                        a {
-                            font-size: 18px !important;
-                        }
-                    }
-
-                    .coach-skill {
-                        margin-top: 32px !important;
-                    }
-
-                    .gscoach-popup-right-top {
-                        margin-top: 32px;
-
-                        .gs-coach-desc {
-                            p {
-                                margin-bottom: 0 !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .mfp-gscoach .mfp-arrow.mfp-arrow-right {
-        right: 30px !important;
-    }
-
-    .mfp-gscoach .mfp-arrow.mfp-arrow-left {
-        left: 26px !important;
-    }
-
-    /* Drawer Style 
-    ==================*/
-
-    /* gs-coach-drawer--style
-========================*/
-    .gscoach-gridder-default {
-
-        .gridder-show {
-
-            .team-description {
-                border-right: none !important;
-
-                .title {
-
-                    a {
-                        font-size: 24px;
-                    }
-                }
-            }
-        }
-    }
-
-    /* Drawer Common*/
-    .gscoach-gridder-style-one,
-    .gscoach-gridder-style-two,
-    .gscoach-gridder-style-three,
-    .gscoach-gridder-style-four,
-    .gscoach-gridder-style-five {
-
-        .gridder-show {
-            .gridder-padding {
-                padding: 20px;
-            }
-
-            .gridder-navigation {
-                .gridder-close {
-                    top: -12px;
-                    right: -13px;
-                }
-            }
-
-            .gscoach-drawer-left {
-                padding-right: 0 !important;
-            }
-
-            .gscoach-drawer-right {
-                padding-left: 0 !important;
-                padding-top: 32px;
-                padding-bottom: 20px;
-            }
-
-            .gs-tm-sicons {
-                padding-left: 0 !important;
-                margin-top: 20px;
-            }
-
-            .gs-coach-social {
-                text-align: left;
-            }
-
-            .gs-coach-desc {
-                p {
-                    margin-bottom: 0 !important;
-                }
-            }
-
-            .gscoach-details {
-                margin-top: 20px;
-            }
-        }
-    }
-
-    /* Drawer Two*/
-    .gscoach-gridder-style-two {
-
-        .gridder-show {
-
-            .gridder-navigation {
-                .gridder-close {
-                    top: 0px;
-                    right: 0px;
-                }
-            }
-
-            .gscoach-details {
-                margin-top: 30px !important;
-            }
-        }
-
-        .gscoach-drawer-right {
-
-            .gscoach-details {
-                display: block;
-            }
-        }
-
-        .gscoach-drawer-left {
-            .gscoach-details {
-                display: none;
-            }
-        }
-    }
-
-    .gscoach-gridder-style-three {
-        .gridder-show {
-
-            .gridder-padding {
-                padding-top: 44px;
-            }
-
-            .gscoach-drawer-left {
-                border-right: none;
-            }
-
-            .gridder-navigation {
-                .gridder-close {
-                    top: 0px;
-                    right: 0px;
-                }
-            }
-        }
-    }
-
-    /* Drawer Four*/
-    .gscoach-gridder-style-four {
-
-        .gridder-show {
-
-            .gscoach-drawer-right {
-                width: 100%;
-            }
-
-            .gscoach-drawer-left {
-                width: 100%;
-            }
-
-            .gridder-navigation {
-                .gridder-close {
-                    right: 0;
-                    top: 0;
-                }
-            }
-
-            .gridder-navigation {
-                .gridder-close {
-                    top: 0px;
-                    right: 0px;
-                }
-            }
-
-            .gscoach-details {
-                margin-top: 30px !important;
-            }
-
-            .gscoach-drawer-righ {
-                padding-top: 20px;
-            }
-        }
-    }
-
-    .gscoach-gridder-style-five {
-
-        .gridder-show {
-
-            .gridder-padding {
-                padding: 20px;
-            }
-
-            .gs-roow {
-                margin-top: 20px;
-            }
-
-
-            .gscoach-dsf-bottom-left {
-                padding-right: 0 !important;
-                border-right: none;
-                width: 100%;
-            }
-
-            .gscoach-dsf-bottom-right {
-                padding-left: 0 !important;
-                width: 100%;
-            }
-
-            .coach-skill {
-                margin-top: 20px;
-            }
-        }
-    }
-
-    /* Panel Style */
-    .gs-coach-panel--style-one,
-    .gs-coach-panel--style-two {
-        .gs-coach-social {
-            text-align: left;
-        }
-
-        .gscoach-panel-info {
-            padding: 0px 16px 32px 16px;
-        }
-    }
-
-    .gs-coach-panel--style-four {
-        .gscoach-panel-top {
-            .close-gscoach-panel-bt {
-                left: 8px;
-                top: 8px;
-            }
-        }
-    }
-
-    /* Single Page Style */
-    .gs_coach_details {
-        margin-bottom: 20px !important;
-    }
-
-    .gs-single-default {
-
-        .gs-coach-single-content {
-            width: inherit;
-            padding: 12px;
-            margin: 10px;
-            box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
-        }
-    }
-
-    .gs-single-container {
-        margin-bottom: 20px !important;
-    }
-
-    .gs-single-style-one {
-
-        .gs-coach-single-content {
-            padding: 0 16px !important;
-
-            .gs-roow {
-                .gs-col-md-3 {
-                    width: 100% !important;
-                }
-            }
-
-            .gs_coach_details {
-                padding-left: 0 !important;
-                text-align: left;
-                margin-top: 0 !important;
-            }
-
-            .gscoach-silde-icon {
-                position: absolute;
-                right: -31%;
-                top: -31%;
-            }
-        }
-    }
-
-    .gs-single-style-two {
-
-        .gs-coach-single-content {
-            padding: 16px;
-        }
-    }
-
-    .single-gs_coach .gs_coach_details {
-        padding-left: 0;
-        padding-top: 30px;
-        text-align: left;
-    }
-
-    .gs-single-style-three {
-
-        .gs-coach-single-content {
-            padding: 0 16px !important;
-
-            .gs-roow {
-                .gs-col-md-3 {
-                    width: 100% !important;
-                }
-            }
-
-            .gs_coach_details {
-                padding-left: 0 !important;
-                text-align: left;
-                margin-top: 0 !important;
-            }
-
-            .gscoach-content-top {
-                margin-bottom: 0;
-
-                .gscoach-content-top-left {
-                    padding-right: 0;
-                    border-right: 0;
-                }
-            }
-
-            .gscoach-content-top-right {
-                padding-left: 0 !important;
-            }
-        }
-    }
-
-    .gs-single-style-four {
         .gs-roow {
-            flex-direction: column-reverse;
-        }
 
-        .gs-coach-single-content {
-            .gscoach-silde-icon {
-                top: 7%;
+            .gs-col-md-4 {
+                width: 100%;
+            }
+
+            .gs-col-md-8 {
+                width: 100%;
+                padding-left: 15px;
             }
         }
 
         .gs_coach_details {
-            padding-right: 0;
+            margin-top: 16px;
         }
     }
 
-    .gs-single-style-five {
+    .mfp-container {
 
-        .gs-coach-single-content {
-            padding: 0 16px !important;
+        .mfp-content {
+
+            .mfp-close {
+                top: 0px !important;
+                right: 14px !important;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+    .gs_coach_popup {
+        padding: 40px 10px !important;
+    }
+}
+
+.gs-coach-popup--style-two {
+
+    .gs-containeer-f {
+
+        .popup-navigation {
+            position: initial;
+        }
+
+        .gs-roow {
+
+            .gs-col-md-4 {
+                width: 100%;
+            }
+
+            .gs-col-md-8 {
+                width: 100%;
+                padding-left: 15px;
+                margin-top: 24px;
+            }
+
+            .gs-col-md-12 {
+                width: 100%;
+            }
+        }
+
+        .gs-sin-mem-name {
+            font-size: 24px;
+        }
+    }
+
+    .gs_coach_popup {
+        padding: 40px 10px !important;
+    }
+
+
+    .mfp-container {
+
+        .mfp-content {
+
+            .mfp-close {
+                top: 0px !important;
+                right: 14px !important;
+            }
+        }
+    }
+}
+
+.gs-coach-popup--style-three {
+
+    .gs_coach_popup {
+        padding: 28px 16px !important;
+
+    }
+
+    .mfp-container {
+
+        .mfp-content {
+
+            .mfp-close {
+                top: 32px !important;
+                right: 22px !important;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+    .gscoach-content-left {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        border: none;
+    }
+
+    .gs-containeer-f {
+
+        .gs_coach_img {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .gscoach-content-right {
+        padding-left: 0;
+    }
+}
+
+.gs-coach-popup--style-four {
+
+    .gs_coach_popup {
+        padding: 24px 14px !important;
+
+        .mfp-close {
+            top: 22px !important;
+            right: 14px !important;
+        }
+    }
+
+    .gs-containeer-f {
+
+        .gs-roow {
+
+            .gs-col-md-4 {
+                width: 100%;
+            }
+
+            .gs-col-md-8 {
+                width: 100%;
+                padding-left: 15px;
+            }
+        }
+
+        .gs_coach_details {
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+
+        .gs-coach-desc {
+            margin-bottom: 0;
+        }
+
+        .gs-tm-sicons {
+            margin-top: 0;
+        }
+
+        .gs-sin-mem-name {
+            font-size: 24px;
+        }
+    }
+}
+
+.gs-coach-popup--style-five {
+
+    .gs_coach_popup {
+
+        padding: 40px 14px !important;
+
+        .mfp-close {
+            top: 22px !important;
+            right: 14px !important;
+        }
+
+        .gs-coach-social {
+            margin: 0 !important;
+        }
+
+        .mfp-close {
+            top: -54px !important;
+            right: 0px !important;
+        }
+
+        .popup-navigation {
+            display: none;
+        }
+
+        .gs-coach-desig {
+            text-align: left;
+            font-size: 18px;
+            margin-bottom: 0 !important;
+        }
+
+        .gs-containeer-f {
 
             .gs-roow {
+
                 .gs-col-md-4 {
-                    width: 100% !important;
+                    width: 100%;
+                }
+
+                .gs-col-md-8 {
+                    width: 100%;
+                    padding-left: 15px;
+                    padding-right: 15px;
                 }
             }
 
-            .gs_coach_details {
+            .gscoach-dsf-bottom-right {
                 padding-left: 0 !important;
-                text-align: left;
-                margin-top: 0 !important;
+            }
 
-                .gsmd-top {
-                    margin-bottom: 0;
+            .gscoach-popup-right {
+                margin-left: 0 !important;
 
-                    .gscoach-silde-icon {
-                        top: 5%;
+
+                h2.title {
+                    margin-top: -10px !important;
+
+                    a {
+                        font-size: 18px !important;
                     }
                 }
 
-                .gsmd-bottom {
-                    .gs-col-md-6 {
-                        width: 100%;
-                    }
+                .coach-skill {
+                    margin-top: 32px !important;
                 }
 
-                .gsmd-right {
-                    padding-left: 16px !important;
-                    padding-left: 16px !important;
-                    margin-top: 20px;
+                .gscoach-popup-right-top {
+                    margin-top: 32px;
+
+                    .gs-coach-desc {
+                        p {
+                            margin-bottom: 0 !important;
+                        }
+                    }
                 }
             }
         }
     }
+}
+
+.mfp-gscoach .mfp-arrow.mfp-arrow-right {
+    right: 30px !important;
+}
+
+.mfp-gscoach .mfp-arrow.mfp-arrow-left {
+    left: 26px !important;
+}
+
+/* Drawer Style 
+==================*/
+
+/* gs-coach-drawer--style
+========================*/
+.gscoach-gridder-default {
+
+    .gridder-show {
+
+        .team-description {
+            border-right: none !important;
+
+            .title {
+
+                a {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+/* Drawer Common*/
+.gscoach-gridder-style-one,
+.gscoach-gridder-style-two,
+.gscoach-gridder-style-three,
+.gscoach-gridder-style-four,
+.gscoach-gridder-style-five {
+
+    .gridder-show {
+        .gridder-padding {
+            padding: 20px;
+        }
+
+        .gridder-navigation {
+            .gridder-close {
+                top: -12px;
+                right: -13px;
+            }
+        }
+
+        .gscoach-drawer-left {
+            padding-right: 0 !important;
+        }
+
+        .gscoach-drawer-right {
+            padding-left: 0 !important;
+            padding-top: 32px;
+            padding-bottom: 20px;
+        }
+
+        .gs-tm-sicons {
+            padding-left: 0 !important;
+            margin-top: 20px;
+        }
+
+        .gs-coach-social {
+            text-align: left;
+        }
+
+        .gs-coach-desc {
+            p {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .gscoach-details {
+            margin-top: 20px;
+        }
+    }
+}
+
+/* Drawer Two*/
+.gscoach-gridder-style-two {
+
+    .gridder-show {
+
+        .gridder-navigation {
+            .gridder-close {
+                top: 0px;
+                right: 0px;
+            }
+        }
+
+        .gscoach-details {
+            margin-top: 30px !important;
+        }
+    }
+
+    .gscoach-drawer-right {
+
+        .gscoach-details {
+            display: block;
+        }
+    }
+
+    .gscoach-drawer-left {
+        .gscoach-details {
+            display: none;
+        }
+    }
+}
+
+.gscoach-gridder-style-three {
+    .gridder-show {
+
+        .gridder-padding {
+            padding-top: 44px;
+        }
+
+        .gscoach-drawer-left {
+            border-right: none;
+        }
+
+        .gridder-navigation {
+            .gridder-close {
+                top: 0px;
+                right: 0px;
+            }
+        }
+    }
+}
+
+/* Drawer Four*/
+.gscoach-gridder-style-four {
+
+    .gridder-show {
+
+        .gscoach-drawer-right {
+            width: 100%;
+        }
+
+        .gscoach-drawer-left {
+            width: 100%;
+        }
+
+        .gridder-navigation {
+            .gridder-close {
+                right: 0;
+                top: 0;
+            }
+        }
+
+        .gridder-navigation {
+            .gridder-close {
+                top: 0px;
+                right: 0px;
+            }
+        }
+
+        .gscoach-details {
+            margin-top: 30px !important;
+        }
+
+        .gscoach-drawer-righ {
+            padding-top: 20px;
+        }
+    }
+}
+
+.gscoach-gridder-style-five {
+
+    .gridder-show {
+
+        .gridder-padding {
+            padding: 20px;
+        }
+
+        .gs-roow {
+            margin-top: 20px;
+        }
 
 
+        .gscoach-dsf-bottom-left {
+            padding-right: 0 !important;
+            border-right: none;
+            width: 100%;
+        }
 
-    /* Table */
-    .gs_coach_area.gs-coach-table-one,
-    .gs_coach_area.gs-coach-table-two,
-    .gs_coach_area.gs-coach-table-three,
-    .gs_coach_area.gs-coach-table-four,
-    .gs_coach_area.gs-coach-table-five {
+        .gscoach-dsf-bottom-right {
+            padding-left: 0 !important;
+            width: 100%;
+        }
 
-        table {
-            border-top: none !important;
+        .coach-skill {
+            margin-top: 20px;
+        }
+    }
+}
 
-            .gs_coach_image__wrapper {
+/* Panel Style */
+.gs-coach-panel--style-one,
+.gs-coach-panel--style-two {
+    .gs-coach-social {
+        text-align: left;
+    }
+
+    .gscoach-panel-info {
+        padding: 0px 16px 32px 16px;
+    }
+}
+
+.gs-coach-panel--style-four {
+    .gscoach-panel-top {
+        .close-gscoach-panel-bt {
+            left: 8px;
+            top: 8px;
+        }
+    }
+}
+
+/* Single Page Style */
+.gs_coach_details {
+    margin-bottom: 20px !important;
+}
+
+.gs-single-default {
+
+    .gs-coach-single-content {
+        width: inherit;
+        padding: 12px;
+        margin: 10px;
+        box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    }
+}
+
+.gs-single-container {
+    margin-bottom: 20px !important;
+}
+
+.gs-single-style-one {
+
+    .gs-coach-single-content {
+        padding: 0 16px !important;
+
+        .gs-roow {
+            .gs-col-md-3 {
+                width: 100% !important;
+            }
+        }
+
+        .gs_coach_details {
+            padding-left: 0 !important;
+            text-align: left;
+            margin-top: 0 !important;
+        }
+
+        .gscoach-silde-icon {
+            position: absolute;
+            right: -31%;
+            top: -31%;
+        }
+    }
+}
+
+.gs-single-style-two {
+
+    .gs-coach-single-content {
+        padding: 16px;
+    }
+}
+
+.single-gs_coach .gs_coach_details {
+    padding-left: 0;
+    padding-top: 30px;
+    text-align: left;
+}
+
+.gs-single-style-three {
+
+    .gs-coach-single-content {
+        padding: 0 16px !important;
+
+        .gs-roow {
+            .gs-col-md-3 {
+                width: 100% !important;
+            }
+        }
+
+        .gs_coach_details {
+            padding-left: 0 !important;
+            text-align: left;
+            margin-top: 0 !important;
+        }
+
+        .gscoach-content-top {
+            margin-bottom: 0;
+
+            .gscoach-content-top-left {
+                padding-right: 0;
+                border-right: 0;
+            }
+        }
+
+        .gscoach-content-top-right {
+            padding-left: 0 !important;
+        }
+    }
+}
+
+.gs-single-style-four {
+    .gs-roow {
+        flex-direction: column-reverse;
+    }
+
+    .gs-coach-single-content {
+        .gscoach-silde-icon {
+            top: 7%;
+        }
+    }
+
+    .gs_coach_details {
+        padding-right: 0;
+    }
+}
+
+.gs-single-style-five {
+
+    .gs-coach-single-content {
+        padding: 0 16px !important;
+
+        .gs-roow {
+            .gs-col-md-4 {
+                width: 100% !important;
+            }
+        }
+
+        .gs_coach_details {
+            padding-left: 0 !important;
+            text-align: left;
+            margin-top: 0 !important;
+
+            .gsmd-top {
+                margin-bottom: 0;
+
+                .gscoach-silde-icon {
+                    top: 5%;
+                }
+            }
+
+            .gsmd-bottom {
+                .gs-col-md-6 {
+                    width: 100%;
+                }
+            }
+
+            .gsmd-right {
+                padding-left: 16px !important;
+                padding-left: 16px !important;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+
+/* Table */
+.gs_coach_area.gs-coach-table-one,
+.gs_coach_area.gs-coach-table-two,
+.gs_coach_area.gs-coach-table-three,
+.gs_coach_area.gs-coach-table-four,
+.gs_coach_area.gs-coach-table-five {
+
+    table {
+        border-top: none !important;
+
+        .gs_coach_image__wrapper {
+            width: 100%;
+            height: auto;
+
+            img {
+                position: absolute;
                 width: 100%;
-                height: auto;
+                height: 100%;
+                top: 0;
+                left: 0;
+                -o-object-fit: cover;
+                object-fit: cover;
+                -o-object-position: center;
+                object-position: center;
+            }
 
-                img {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    -o-object-fit: cover;
-                    object-fit: cover;
-                    -o-object-position: center;
-                    object-position: center;
-                }
+            &::after {
+                content: "";
+                width: 100%;
+                display: block;
+                padding-bottom: 100%;
+            }
+        }
 
-                &::after {
-                    content: "";
-                    width: 100%;
-                    display: block;
-                    padding-bottom: 100%;
+        thead {
+
+            display: none !important;
+        }
+
+        tbody {
+            tr.single-coach-div {
+                display: block;
+                margin-bottom: 40px;
+
+                &:last-child {
+                    margin-bottom: 0 !important;
                 }
             }
 
-            thead {
+            td {
+                display: block;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                border-top: none !important;
+                padding-bottom: 0 !important;
+                border: none !important;
 
-                display: none !important;
-            }
-
-            tbody {
-                tr.single-coach-div {
-                    display: block;
-                    margin-bottom: 40px;
-
-                    &:last-child {
-                        margin-bottom: 0 !important;
-                    }
+                &:nth-child(3) {
+                    padding-top: 10px !important;
                 }
+            }
+        }
+    }
+}
+
+/* Table */
+.gs_coach_area.gs-coach-table-three {
+
+    table {
+        border-top: none !important;
+
+        tbody {
+            tr:hover {
+                background: transparent !important;
 
                 td {
-                    display: block;
-                    padding-left: 0 !important;
-                    padding-right: 0 !important;
-                    border-top: none !important;
-                    padding-bottom: 0 !important;
-                    border: none !important;
-
-                    &:nth-child(3) {
-                        padding-top: 10px !important;
-                    }
+                    background: transparent;
                 }
             }
         }
     }
+}
 
-    /* Table */
-    .gs_coach_area.gs-coach-table-three {
+.gs_coach_area.gs-coach-table-four {
 
-        table {
-            border-top: none !important;
+    table {
+        tbody {
 
-            tbody {
-                tr:hover {
+            tr {
+                padding-bottom: 26px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                &:hover::after {
                     background: transparent !important;
-
-                    td {
-                        background: transparent;
-                    }
                 }
             }
         }
     }
+}
 
-    .gs_coach_area.gs-coach-table-four {
+.gs_coach_area.gs-coach-table-five {
 
-        table {
-            tbody {
+    table {
+        tbody {
 
-                tr {
-                    padding-bottom: 26px;
-                    padding-left: 10px;
-                    padding-right: 10px;
-
-                    &:hover::after {
-                        background: transparent !important;
-                    }
-                }
+            tr {
+                box-shadow: none !important;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 26px;
             }
         }
     }
+}
 
-    .gs_coach_area.gs-coach-table-five {
+.gs-coach-panel--default {
 
-        table {
-            tbody {
-
-                tr {
-                    box-shadow: none !important;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    padding-bottom: 26px;
-                }
-            }
-        }
+    .gscoach-panel-info {
+        padding: 10px 50px 32px 50px;
     }
 
-    .gs-coach-panel--default {
-
-        .gscoach-panel-info {
-            padding: 10px 50px 32px 50px;
-        }
-
-        .close-gscoach-panel-bt {
-            width: 48px;
-            height: 48px;
-            top: 0;
-        }
-
-        .gscoach-panel-title {
-            font-size: 18px;
-        }
+    .close-gscoach-panel-bt {
+        width: 48px;
+        height: 48px;
+        top: 0;
     }
+
+    .gscoach-panel-title {
+        font-size: 18px;
+    }
+}
 
 
     /* Filter */
