@@ -223,7 +223,7 @@ body .gs_coach_area.gs_coach_loading {
 	}
 }
 
-.gs_geam--loaded {
+.gs_coach--loaded {
 	visibility: visible !important;
 	opacity: 1 !important;
 }
@@ -566,12 +566,6 @@ ul.gs-coach-social li {
 
 .gs-roow.gs-custom-layout-ten {
     justify-content: center;
-}
-
-.gs-coach-bottom {
-	text-align: center;
-	background-color: #FCC015;
-	padding: 10px 0px;
 }
 
 .name-designation-icon {
@@ -4149,6 +4143,20 @@ li.gridder-list {
 		display: none;
 	}
 
+}
+
+.gs-coach-load-more-btn{
+	min-width: 200px;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	border: none;
+	background: lightcoral;
+	color: #272829;
+}
+.gs-coach-load-more-wrapper{
+	text-align: center;
 }
 
 // New CSS

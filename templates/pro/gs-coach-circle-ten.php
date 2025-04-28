@@ -107,25 +107,6 @@ namespace GSCOACH;
 							 
 							 <div class="gs_coach_image__overlay"></div>
  
-							 <div class="single-mem-desc-social">
- 
-								 <!-- Description -->
-								 <?php if ( 'on' ==  $gs_coach_details ) : ?>
- 
-									 <?php if ( 'on' === $gs_desc_allow_html ) : ?>
-										 <div class="gs-coach-desc gs-coach--scrollbar" itemprop="description"><?php echo wpautop( do_shortcode( get_the_content() ) ); ?></div>
-									 <?php else : ?>
-										 <p class="gs-coach-desc gs-coach--scrollbar" itemprop="description"><?php coach_description( $id, $gs_tm_details_contl, true, true, $gs_coach_name_is_linked == 'on', $gs_coach_link_type ); ?></p>
-									 <?php endif; ?>
-									 
-									 <?php do_action( 'gs_coach_after_coach_details' ); ?>
-								 <?php endif; ?>
-									 
-								 <!-- Social Links -->
-								 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
- 
-							 </div>
- 
 						 </div>
  
 						 <!-- coach Name -->
@@ -139,6 +120,13 @@ namespace GSCOACH;
 							 <!-- coach Designation -->
 							 <div class="gs-coach-desig" itemprop="jobtitle"><?php echo wp_kses_post($designation); ?></div>
 							 <?php do_action( 'gs_coach_after_coach_designation' ); ?>
+
+							 <div class="single-mem-desc-social">
+									 
+								 <!-- Social Links -->
+								 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>
+ 
+							 </div>
 							 
 						 </div>
 						 

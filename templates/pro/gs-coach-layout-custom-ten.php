@@ -49,11 +49,16 @@ global $gs_coach_loop;
 						<!-- Coach Image -->
 						<div class="gs_coach_image__wrapper">
 							<?php coach_thumbnail( $gs_coach_thumbnail_sizes, true ); ?>
+
+							 <!-- Ribbon -->
+							 <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-ribon.php' ); ?>
+
 						</div>
 						<?php do_action( 'gs_coach_after_coach_thumbnail' ); ?>
 						
 					</div>
 
+					<!-- gs coach bottom -->
                     <div class="gs-coach-bottom" >
 
                         <!-- Single coach name -->
@@ -70,7 +75,7 @@ global $gs_coach_loop;
 
                     </div>
 
-					
+					<div class="gs-coach-ten-circle"></div>
 
 				</div>
 				

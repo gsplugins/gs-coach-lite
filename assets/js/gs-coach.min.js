@@ -869,7 +869,7 @@ jQuery(function($) {
 
 		update_blob_effects_anims( $widget_box );
 
-		$widget_box.addClass( 'gs_geam--loaded' );
+		$widget_box.addClass( 'gs_coach--loaded' );
 
 	}
 
@@ -937,5 +937,45 @@ jQuery(function($) {
         e.stopPropagation();
         e.stopImmediatePropagation();
     });
+
+	$('#gs-coach-load-more-coach-btn').on('click', function(e){
+
+		const gsCoachArea = $('.gs_coach_area');
+
+		const shortcodeId = gsCoachArea.attr('data-shortcode-id');
+
+		const coachParent = document.querySelector('.gs_coach');
+		const currentCoachQuantity = coachParent.children.length;
+
+		const dataOptions = gsCoachArea.attr('data-options');
+		const fixedDataOptions = dataOptions.replace(/'/g, '"');
+		const parsedData = JSON.parse(fixedDataOptions);
+		const loadPerClickValue = parsedData.load_per_click;
+
+		$.ajax({
+			url: GSCoachData.ajaxUrl,
+			type: 'POST',
+			data: {
+				action: 'gscoach_load_more_coach',
+				nonce: GSCoachData.nonce,
+				shortcodeId: shortcodeId,
+				loadPerClick: loadPerClickValue,
+				offset: currentCoachQuantity
+			}
+		})
+		.done( response => {
+
+			if( response.data.projects_status !== 'end' ){
+				let dataEls = $.parseHTML( response.data );
+
+				let coachDivs = $(dataEls).find('.single-coach-div');
+	
+				$('.gs_coach').append(coachDivs);
+			} else{
+				$('#gs-coach-load-more-coach-btn').hide();
+			}
+	
+		});
+	});
 
 });

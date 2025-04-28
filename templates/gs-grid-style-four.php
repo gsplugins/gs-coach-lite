@@ -152,6 +152,11 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 		<?php include Template_Loader::locate_template( 'drawers/gs-coach-layout-drawer.php' ); ?>
 
 	</div>
+	
+	<!-- Load More Button -->
+	<?php if ( 'on' == $enable_pagination && 'load-more-button' === $pagination_type ) : ?>
+		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-load-more-btn.php' ); ?>
+	<?php endif; ?>
 
 	<!-- Pagination -->
 	<?php if ( 'on' == $gs_coach_pagination ) : ?>

@@ -772,6 +772,24 @@ if ( ! class_exists( 'Builder' ) ) {
                 'next' => __('Next Text', 'gscoach'),
                 'next-details' => __('Replace with preferred text for carousel Next text', 'gscoach'),
 
+                'enable_pagination' => __('Enable Pagination', 'gscoach'),
+                'enable_pagination__details' => __('Enable paginations like number pagination, load more button, On scroll load etc.', 'gscoach'),
+
+                'pagination_type' => __('Pagination Type', 'gscoach'),
+                'pagination_type__details' => __('Select pagination type.', 'gscoach'),
+
+                'load_per_click' => __('Per Click', 'gscoach'),
+                'load_per_click__details' => __('Load coaches per button click', 'gscoach'),
+
+                'coach_per_page' => __('Per Page', 'gscoach'),
+                'coach_per_page__details' => __('Display coaches per page', 'gscoach'),
+
+                'per_load' => __('Per Load', 'gscoach'),
+                'per_load__details' => __('Display coaches per load', 'gscoach'),
+
+                'load_button_text' => __('Button Text', 'gscoach'),
+                'load_button_text__details' => __('Load more button text', 'gscoach'),
+
                 'carousel_enabled' => __('Enable Carousel', 'gscoach'),
                 'carousel_enabled__details' => __('Enable carousel for this theme, it may not available for certain theme', 'gscoach'),
 
@@ -1512,6 +1530,37 @@ if ( ! class_exists( 'Builder' ) ) {
             return self::get_formated_themes( self::_themes() );
         }
 
+        public function get_shortcode_options_paginations() {
+
+            $styles = [
+                [
+                    'label' => __( 'Normal Pagination', 'gscoach' ),
+                    'value' => 'normal-pagination'
+                ],
+                [
+                    'label' => __( 'Ajax Pagination', 'gscoach' ),
+                    'value' => 'ajax-pagination'
+                ],
+                [
+                    'label' => __( 'Load More Button', 'gscoach' ),
+                    'value' => 'load-more-button'
+                ],
+                [
+                    'label' => __( 'Load More on Scroll', 'gscoach' ),
+                    'value' => 'load-more-scroll'
+                ]
+
+            ];
+
+            if ( ! is_pro_valid() ) {
+                $default = array_shift( $styles );
+                $styles = array_merge( [$default], self::add_pro_to_options($styles) );
+            }
+
+            return $styles;
+
+        }
+
         public function get_shortcode_options_link_types() {
 
             $free_options = [
@@ -1804,6 +1853,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_cols_mobile_portrait' => $this->get_columns(),
                 'gs_coach_cols_mobile' => $this->get_columns(),
                 'gs_coach_theme' => $this->get_shortcode_options_themes(),
+                'pagination_type' => $this->get_shortcode_options_paginations(),
                 'gs_coach_link_type' => $this->get_shortcode_options_link_types(),
                 'acf_fields_position' => $this->get_acf_fields_position(),
                 'gs_coaches_pop_clm' => [
@@ -2080,6 +2130,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
                 'gs_details_area_height'          => 'off',
+                'enable_pagination'               => 'off',
+                'pagination_type'                 => 'load-more-button',
+                'coach_per_page'                  => '6',
+                'load_per_click'                  => '3',
+                'per_load'                        => '3',
+                'load_button_text'                => 'Load More',
                 'carousel_enabled'                => 'off',
                 'link_preview_image'              => 'off',
                 'carousel_navs_enabled'           => 'on',
