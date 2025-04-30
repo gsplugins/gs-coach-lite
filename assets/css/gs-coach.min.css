@@ -16510,45 +16510,129 @@ body {
   }
   .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div,
   .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div,
   .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div,
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div {
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme16 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div {
     margin-bottom: 32px;
   }
   .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
   .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
   .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image {
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme16 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image {
     padding: 0px 16px 0px 0 !important;
     line-height: 0 !important;
   }
   .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
   .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
   .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name {
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme16 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name {
     margin-top: 0 !important;
   }
   .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
   .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
   .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name {
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme16 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name {
     font-size: 20px;
     font-weight: 400;
   }
   .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
   .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
   .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social {
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme16 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social {
     padding-bottom: 10px !important;
   }
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div {
-    margin-bottom: 32px;
-    border: 1px solid #ece6e6;
-    padding: 10px;
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row {
+    margin-bottom: 0px !important;
+    padding: 16px;
+    border-bottom: 1px solid #ece6e6;
+    border-left: 1px solid #ece6e6;
+    border-right: 1px solid #ece6e6;
   }
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-desc {
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row:nth-child(2) {
+    border-top: 1px solid #ece6e6;
+  }
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row .gs-coach-table-cell.gsc-image {
+    height: 60px;
+  }
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row .gs-coach-table-cell.gsc-image img {
+    height: 60px;
+  }
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row .gs-coach-table-cell.gsc-desc {
     padding-left: 0 !important;
+    display: none;
   }
-  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social {
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row .gs-coach-table-cell.socialicon {
+    display: none;
+  }
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row .gs-coach-table-cell.socialicon .gs-coach-social {
+    border-bottom: none;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gsc-table-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border: 1px solid #ece6e6;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gsc-table-head .gs-coach-table-cell:nth-child(4),
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .gsc-table-head .gs-coach-table-cell:nth-child(5) {
+    display: none;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .single-coach-div {
+    margin-bottom: 0px !important;
+    padding: 16px;
+    border-bottom: 1px solid #ece6e6;
+    border-left: 1px solid #ece6e6;
+    border-right: 1px solid #ece6e6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .single-coach-div .gs-coach-table-cell.gsc-image {
+    height: 60px;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .single-coach-div .gs-coach-table-cell.gsc-image img {
+    height: 60px;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .single-coach-div .gs-coach-table-cell.gsc-desc {
+    padding-left: 0 !important;
+    display: none;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .single-coach-div .gs-coach-table-cell.socialicon {
+    display: none;
+  }
+  .gs_coach_area.gs_tm_theme16 .gs_coach_table_oddeven .gs-coach-table .single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social {
     border-bottom: none;
   }
   .gs-coach-panel--default .gscoach-panel-info {

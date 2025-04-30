@@ -14470,10 +14470,12 @@ body {
     }
 
     .gs_coach_area.gs_tm_theme14,
-    .gs_coach_area.gs_tm_theme15 {
+    .gs_coach_area.gs_tm_theme15,
+    .gs_coach_area.gs_tm_theme16 {
 
         .gs_coach,
-        .gs_coach_table_box {
+        .gs_coach_table_box,
+        .gs_coach_table_oddeven {
 
             .gs-coach-table {
 
@@ -14517,13 +14519,30 @@ body {
 
             .gs-coach-table {
 
-                .gs-coach-table-row.single-coach-div {
-                    margin-bottom: 32px;
-                    border: 1px solid #ece6e6;
-                    padding: 10px;
+                // .gs-coach-table-row:first-child {
+                //     border-top: 3px solid #ece6e6;
+                // }
+
+                .gs-coach-table-row {
+                    margin-bottom: 0px !important;
+                    padding: 16px;
+                    border-bottom: 1px solid #ece6e6;
+                    border-left: 1px solid #ece6e6;
+                    border-right: 1px solid #ece6e6;
+                    // border-top: 2px solid red;
+
+                    &:nth-child(2) {
+                        border-top: 1px solid #ece6e6;
+                    }
+
+
 
                     .gs-coach-table-cell.gsc-image {
+                        height: 60px;
 
+                        img {
+                            height: 60px;
+                        }
                     }
 
                     .gs-coach-table-cell.gsc-name {
@@ -14538,9 +14557,11 @@ body {
 
                     .gs-coach-table-cell.gsc-desc {
                         padding-left: 0 !important;
+                        display: none;
                     }
 
                     .gs-coach-table-cell.socialicon {
+                        display: none;
 
 
                         .gs-coach-social {
@@ -14549,10 +14570,63 @@ body {
                         }
                     }
                 }
-
             }
         }
 
+    }
+
+    .gs_coach_area.gs_tm_theme16 {
+
+        .gs_coach_table_oddeven {
+
+            .gs-coach-table {
+
+                .gsc-table-head {
+                    display: flex;
+                    justify-content: space-around;
+                    border: 1px solid #ece6e6;
+
+                    .gs-coach-table-cell:nth-child(4),
+                    .gs-coach-table-cell:nth-child(5) {
+                        display: none;
+                    }
+                }
+
+                .single-coach-div {
+                    margin-bottom: 0px !important;
+                    padding: 16px;
+                    border-bottom: 1px solid #ece6e6;
+                    border-left: 1px solid #ece6e6;
+                    border-right: 1px solid #ece6e6;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .gs-coach-table-cell.gsc-image {
+                        height: 60px;
+
+                        img {
+                            height: 60px;
+                        }
+                    }
+
+                    .gs-coach-table-cell.gsc-desc {
+                        padding-left: 0 !important;
+                        display: none;
+                    }
+
+                    .gs-coach-table-cell.socialicon {
+                        display: none;
+
+
+                        .gs-coach-social {
+
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 
