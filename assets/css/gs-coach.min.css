@@ -15409,76 +15409,102 @@ body {
   .gs_coach_area.gs-coach-table-five table tbody td:nth-child(3) {
     padding-top: 10px;
   }
-  /* Table */
-  .gs_coach_area.gs-coach-table-three table {
-    border-top: none !important;
+  .gs_coach_area.gs-coach-table-one table .single-coach,
+  .gs_coach_area.gs-coach-table-two table .single-coach,
+  .gs_coach_area.gs-coach-table-three table .single-coach,
+  .gs_coach_area.gs-coach-table-four table .single-coach,
+  .gs_coach_area.gs-coach-table-five table .single-coach {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 16px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  .gs_coach_area.gs-coach-table-three table .gs_coach_image__wrapper {
-    width: 100%;
-    height: auto;
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_image__td {
+    width: 100px;
+    padding-top: 0 !important;
   }
-  .gs_coach_area.gs-coach-table-three table .gs_coach_image__wrapper img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    -o-object-fit: cover;
-    object-fit: cover;
-    -o-object-position: center;
-    object-position: center;
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after {
+    content: none;
   }
-  .gs_coach_area.gs-coach-table-three table .gs_coach_image__wrapper::after {
-    content: "";
-    width: 100%;
-    display: block;
-    padding-bottom: 100%;
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img {
+    position: relative;
   }
-  .gs_coach_area.gs-coach-table-three table thead {
-    display: none !important;
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_social__td {
+    padding-top: 0 !important;
   }
-  .gs_coach_area.gs-coach-table-three table tbody tr.single-coach-div {
-    display: block;
-    margin-bottom: 40px;
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_name__td .gs-coach-name {
+    font-size: 20px;
+    font-weight: 400;
   }
-  .gs_coach_area.gs-coach-table-three table tbody tr.single-coach-div:last-child {
-    margin-bottom: 0 !important;
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_desc__td {
+    display: none;
+    visibility: visible;
   }
-  .gs_coach_area.gs-coach-table-three table tbody td {
-    display: block;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    border-top: none !important;
-    padding-bottom: 0 !important;
-    border: none !important;
+  .gs_coach_area.gs-coach-table-four .gs-containeer .gs-roow {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
-  .gs_coach_area.gs-coach-table-three table tbody td:nth-child(3) {
-    padding-top: 10px;
-  }
-  /* Table */
-  .gs_coach_area.gs-coach-table-three table {
-    border-top: none !important;
-  }
-  .gs_coach_area.gs-coach-table-three table tbody tr:hover {
-    background: transparent !important;
-  }
-  .gs_coach_area.gs-coach-table-three table tbody tr:hover td {
-    background-color: transparent;
-  }
-  .gs_coach_area.gs-coach-table-four table tbody tr {
-    padding-bottom: 26px;
+  .gs_coach_area.gs-coach-table-four table tbody tr.single-coach-div {
+    margin-bottom: 0px;
+    padding-bottom: 24px;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .gs_coach_area.gs-coach-table-four table tbody tr:hover::after {
-    background: transparent !important;
+  .gs_coach_area.gs-coach-table-four table tbody .single-coach::after {
+    top: -9px;
   }
-  .gs_coach_area.gs-coach-table-five table tbody tr {
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+  .gs_coach_area.gs-coach-table-five .gs-containeer .gs-roow {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .gs_coach_area.gs-coach-table-five table tbody tr.single-coach-div {
+    margin-bottom: 0px;
+    padding-bottom: 24px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 26px;
+  }
+  .gs_coach_area.gs-coach-table-five table tbody .single-coach::after {
+    top: -9px;
   }
 }
 @media (max-width: 480px) {
@@ -16051,8 +16077,6 @@ body {
   .mfp-gscoach .mfp-arrow.mfp-arrow-left {
     left: 26px !important;
   }
-  /* Drawer Style 
-  ==================*/
   /* gs-coach-drawer--style
   ========================*/
   .gscoach-gridder-default .gridder-show .team-description {
@@ -16384,7 +16408,11 @@ body {
   .gs_coach_area.gs-coach-table-five table tbody td:nth-child(3) {
     padding-top: 10px !important;
   }
-  .gs_coach_area.gs-coach-table-one table .single-coach {
+  .gs_coach_area.gs-coach-table-one table .single-coach,
+  .gs_coach_area.gs-coach-table-two table .single-coach,
+  .gs_coach_area.gs-coach-table-three table .single-coach,
+  .gs_coach_area.gs-coach-table-four table .single-coach,
+  .gs_coach_area.gs-coach-table-five table .single-coach {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -16392,45 +16420,136 @@ body {
         -ms-flex-align: center;
             align-items: center;
     gap: 16px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td {
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_image__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_image__td {
     width: 100px;
+    padding-top: 0 !important;
   }
-  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img {
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_image__td .gs_coach_image__wrapper::after {
+    content: none;
+  }
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_image__td .gs_coach_image__wrapper img {
     position: relative;
   }
-  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_desc__td {
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_desig__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_name__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_desig__td {
+    padding-top: 0 !important;
+  }
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_name__td .gs-coach-name,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_name__td .gs-coach-name {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_desc__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_desc__td {
     display: none;
     visibility: visible;
   }
-  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_social__td {
+  .gs_coach_area.gs-coach-table-one table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-two table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-three table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-four table .single-coach .gs_coach_social__td,
+  .gs_coach_area.gs-coach-table-five table .single-coach .gs_coach_social__td {
     display: none;
     visibility: visible;
   }
-  /* Table */
-  .gs_coach_area.gs-coach-table-three table {
-    border-top: none !important;
+  .gs_coach_area.gs-coach-table-four .gs-containeer .gs-roow {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
-  .gs_coach_area.gs-coach-table-three table tbody tr:hover {
-    background: transparent !important;
-  }
-  .gs_coach_area.gs-coach-table-three table tbody tr:hover td {
-    background: transparent;
-  }
-  .gs_coach_area.gs-coach-table-four table tbody tr {
-    padding-bottom: 26px;
+  .gs_coach_area.gs-coach-table-four table tbody tr.single-coach-div {
+    margin-bottom: 0px;
+    padding-bottom: 24px;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .gs_coach_area.gs-coach-table-four table tbody tr:hover::after {
-    background: transparent !important;
+  .gs_coach_area.gs-coach-table-four table tbody .single-coach::after {
+    top: -9px;
   }
-  .gs_coach_area.gs-coach-table-five table tbody tr {
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+  .gs_coach_area.gs-coach-table-five .gs-containeer .gs-roow {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .gs_coach_area.gs-coach-table-five table tbody tr.single-coach-div {
+    margin-bottom: 0px;
+    padding-bottom: 24px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 26px;
+  }
+  .gs_coach_area.gs-coach-table-five table tbody .single-coach::after {
+    top: -9px;
+  }
+  .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div {
+    margin-bottom: 32px;
+  }
+  .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-image {
+    padding: 0px 16px 0px 0 !important;
+    line-height: 0 !important;
+  }
+  .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name {
+    margin-top: 0 !important;
+  }
+  .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-name .gs-coach-table-cell-inner .gs-coach-name {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .gs_coach_area.gs_tm_theme14 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme14 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme15 .gs_coach .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social,
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social {
+    padding-bottom: 10px !important;
+  }
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div {
+    margin-bottom: 32px;
+    border: 1px solid #ece6e6;
+    padding: 10px;
+  }
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.gsc-desc {
+    padding-left: 0 !important;
+  }
+  .gs_coach_area.gs_tm_theme15 .gs_coach_table_box .gs-coach-table .gs-coach-table-row.single-coach-div .gs-coach-table-cell.socialicon .gs-coach-social {
+    border-bottom: none;
   }
   .gs-coach-panel--default .gscoach-panel-info {
     padding: 10px 50px 32px 50px;

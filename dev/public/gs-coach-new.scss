@@ -12994,80 +12994,61 @@ body {
         }
     }
 
-    /* Table */
-    .gs_coach_area.gs-coach-table-three {
+    .gs_coach_area.gs-coach-table-one,
+    .gs_coach_area.gs-coach-table-two,
+    .gs_coach_area.gs-coach-table-three,
+    .gs_coach_area.gs-coach-table-four,
+    .gs_coach_area.gs-coach-table-five {
+
 
         table {
-            border-top: none !important;
 
-            .gs_coach_image__wrapper {
-                width: 100%;
-                height: auto;
+            .single-coach {
+                display: flex !important;
+                align-items: center;
+                gap: 16px;
+                justify-content: space-between;
 
-                img {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    -o-object-fit: cover;
-                    object-fit: cover;
-                    -o-object-position: center;
-                    object-position: center;
-                }
 
-                &::after {
-                    content: "";
-                    width: 100%;
-                    display: block;
-                    padding-bottom: 100%;
-                }
-            }
+                .gs_coach_image__td {
+                    width: 100px;
+                    padding-top: 0 !important;
+                    
+                    .gs_coach_image__wrapper {
 
-            thead {
+                        &::after {
+                            content: none;
+                        }
 
-                display: none !important;
-            }
-
-            tbody {
-                tr.single-coach-div {
-                    display: block;
-                    margin-bottom: 40px;
-
-                    &:last-child {
-                        margin-bottom: 0 !important;
+                        img {
+                            position: relative;
+                        }
                     }
                 }
 
-                td {
-                    display: block;
-                    padding-left: 0 !important;
-                    padding-right: 0 !important;
-                    border-top: none !important;
-                    padding-bottom: 0 !important;
-                    border: none !important;
+                .gs_coach_name__td,
+                .gs_coach_desig__td,
+                .gs_coach_social__td {
+                    padding-top: 0 !important;
+                }
 
-                    &:nth-child(3) {
-                        padding-top: 10px;
+                .gs_coach_name__td {
+
+                    .gs-coach-name {
+                        font-size: 20px;
+                        font-weight: 400;
                     }
                 }
-            }
-        }
-    }
 
-    /* Table */
-    .gs_coach_area.gs-coach-table-three {
+                .gs_coach_desc__td {
+                    display: none;
+                    visibility: visible;
+                }
 
-        table {
-            border-top: none !important;
-
-            tbody {
-                tr:hover {
-                    background: transparent !important;
-
-                    td {
-                        background-color: transparent;
-                    }
+                .gs_coach_social__td {
+                    // display: none;
+                    // visibility: visible;
+                    
                 }
             }
         }
@@ -13075,16 +13056,26 @@ body {
 
     .gs_coach_area.gs-coach-table-four {
 
+        .gs-containeer .gs-roow {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
         table {
+
             tbody {
 
-                tr {
-                    padding-bottom: 26px;
+                tr.single-coach-div {
+                    margin-bottom: 0px;
+                    padding-bottom: 24px;
                     padding-left: 10px;
                     padding-right: 10px;
+                }
 
-                    &:hover::after {
-                        background: transparent !important;
+                .single-coach {
+
+                    &::after {
+                        top: -9px;
                     }
                 }
             }
@@ -13093,14 +13084,27 @@ body {
 
     .gs_coach_area.gs-coach-table-five {
 
+        .gs-containeer .gs-roow {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
         table {
+
             tbody {
 
-                tr {
-                    box-shadow: none !important;
+                tr.single-coach-div {
+                    margin-bottom: 0px;
+                    padding-bottom: 24px;
                     padding-left: 10px;
                     padding-right: 10px;
-                    padding-bottom: 26px;
+                }
+
+                .single-coach {
+
+                    &::after {
+                        top: -9px;
+                    }
                 }
             }
         }
@@ -13928,9 +13932,6 @@ body {
         left: 26px !important;
     }
 
-    /* Drawer Style 
-    ==================*/
-
     /* gs-coach-drawer--style
     ========================*/
     .gscoach-gridder-default {
@@ -14354,7 +14355,11 @@ body {
         }
     }
 
-    .gs_coach_area.gs-coach-table-one {
+    .gs_coach_area.gs-coach-table-one,
+    .gs_coach_area.gs-coach-table-two,
+    .gs_coach_area.gs-coach-table-three,
+    .gs_coach_area.gs-coach-table-four,
+    .gs_coach_area.gs-coach-table-five {
 
 
         table {
@@ -14363,17 +14368,35 @@ body {
                 display: flex !important;
                 align-items: center;
                 gap: 16px;
+                justify-content: space-between;
 
 
                 .gs_coach_image__td {
                     width: 100px;
+                    padding-top: 0 !important;
                     
                     .gs_coach_image__wrapper {
+
+                        &::after {
+                            content: none;
+                        }
 
                         img {
                             position: relative;
                         }
-        
+                    }
+                }
+
+                .gs_coach_name__td,
+                .gs_coach_desig__td {
+                    padding-top: 0 !important;
+                }
+
+                .gs_coach_name__td {
+
+                    .gs-coach-name {
+                        font-size: 20px;
+                        font-weight: 400;
                     }
                 }
 
@@ -14387,40 +14410,31 @@ body {
                     visibility: visible;
                 }
             }
-
-        }
-    }
-
-    /* Table */
-    .gs_coach_area.gs-coach-table-three {
-
-        table {
-            border-top: none !important;
-
-            tbody {
-                tr:hover {
-                    background: transparent !important;
-
-                    td {
-                        background: transparent;
-                    }
-                }
-            }
         }
     }
 
     .gs_coach_area.gs-coach-table-four {
 
+        .gs-containeer .gs-roow {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
         table {
+
             tbody {
 
-                tr {
-                    padding-bottom: 26px;
+                tr.single-coach-div {
+                    margin-bottom: 0px;
+                    padding-bottom: 24px;
                     padding-left: 10px;
                     padding-right: 10px;
+                }
 
-                    &:hover::after {
-                        background: transparent !important;
+                .single-coach {
+
+                    &::after {
+                        top: -9px;
                     }
                 }
             }
@@ -14429,18 +14443,119 @@ body {
 
     .gs_coach_area.gs-coach-table-five {
 
+        .gs-containeer .gs-roow {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
         table {
+
             tbody {
 
-                tr {
-                    box-shadow: none !important;
+                tr.single-coach-div {
+                    margin-bottom: 0px;
+                    padding-bottom: 24px;
                     padding-left: 10px;
                     padding-right: 10px;
-                    padding-bottom: 26px;
+                }
+
+                .single-coach {
+
+                    &::after {
+                        top: -9px;
+                    }
                 }
             }
         }
     }
+
+    .gs_coach_area.gs_tm_theme14,
+    .gs_coach_area.gs_tm_theme15 {
+
+        .gs_coach,
+        .gs_coach_table_box {
+
+            .gs-coach-table {
+
+                .gs-coach-table-row.single-coach-div {
+                    margin-bottom: 32px;
+
+                    .gs-coach-table-cell.gsc-image {
+                        padding: 0px 16px 0px 0 !important;
+                        line-height: 0 !important;
+                    }
+
+                    .gs-coach-table-cell.gsc-name {
+                        margin-top: 0 !important;
+
+                        .gs-coach-table-cell-inner {
+
+                            .gs-coach-name {
+                                font-size: 20px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+
+                    .gs-coach-table-cell.socialicon {
+
+
+                        .gs-coach-social {
+                            padding-bottom: 10px !important;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .gs_coach_area.gs_tm_theme15 {
+
+        .gs_coach_table_box {
+
+            .gs-coach-table {
+
+                .gs-coach-table-row.single-coach-div {
+                    margin-bottom: 32px;
+                    border: 1px solid #ece6e6;
+                    padding: 10px;
+
+                    .gs-coach-table-cell.gsc-image {
+
+                    }
+
+                    .gs-coach-table-cell.gsc-name {
+
+                        .gs-coach-table-cell-inner {
+
+                            .gs-coach-name {
+
+                            }
+                        }
+                    }
+
+                    .gs-coach-table-cell.gsc-desc {
+                        padding-left: 0 !important;
+                    }
+
+                    .gs-coach-table-cell.socialicon {
+
+
+                        .gs-coach-social {
+
+                            border-bottom: none;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+
 
     .gs-coach-panel--default {
 
