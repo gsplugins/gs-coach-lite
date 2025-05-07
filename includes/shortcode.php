@@ -10,8 +10,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class Shortcode {
 
 	public function __construct() {
-		add_action('wp_ajax_gscoach_load_more_coach', [ $this, 'gscoach_load_more_coach' ]);
-		add_action('wp_ajax_nopriv_gscoach_load_more_coach', [ $this, 'gscoach_load_more_coach' ]);
+		// Load More Button and Infinite Scroll
+		add_action('wp_ajax_gscoach_load_more_coach', [ $this, 'load_more_coach' ]);
+		add_action('wp_ajax_nopriv_gscoach_load_more_coach', [ $this, 'load_more_coach' ]);
+
+		// Ajax Pagination
+		add_action('wp_ajax_gscoach_ajax_pagination', [ $this, 'ajax_pagination' ]);
+		add_action('wp_ajax_nopriv_gscoach_ajax_pagination', [ $this, 'ajax_pagination' ]);
 		add_filter( 'post_thumbnail_html', [ $this, 'gscoach_post_thumbnail_html' ], 999999 );
 		add_shortcode( 'gscoach', [ $this, 'shortcode' ] );		
 
@@ -20,21 +25,36 @@ class Shortcode {
 		}
 	}
 
-	public function gscoach_load_more_coach(){
-		// if( ! check_ajax_referer('gscoach_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+	public function load_more_coach(){
+		if( ! check_ajax_referer('gscoach_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
 		$shortcode_id = $_POST['shortcodeId'];
-		$load_per_click = $_POST['loadPerClick'];
+		$is_preview = is_numeric($shortcode_id) ? false : true;
+
+		$load_per_action = $_POST['loadPerAction'];
 		$offset = $_POST['offset'];
+		
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'load_per_action' => $load_per_action, 'offset' => $offset ) );
 
-		$coaches = $this->get_load_more_coaches( $shortcode_id, $load_per_click, $offset );
+		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
 
-		wp_send_json_success($coaches, 200 );
+		wp_send_json_success(array( 'coaches' => $coaches, 'foundCoaches' => $found_coaches ), 200 );
 		wp_die();
 	}
 
-	public function get_load_more_coaches( $id, $load_per_click, $offset ){
-		return $this->shortcode( array( 'id'=> $id, false ), array( 'action' => 'load-more', 'load_per_click' => $load_per_click, 'offset' => $offset ) );
+	public function ajax_pagination(){
+		if( ! check_ajax_referer('gscoach_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+
+		$shortcode_id = $_POST['shortcode_id'];
+		$posts_per_page = $_POST['posts_per_page'];
+		$paged = $_POST['paged'];
+		
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, false ), array( 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
+
+		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, $paged );
+
+		wp_send_json_success(array( 'coaches' => $coaches, 'pagination' => $pagination ), 200 );
+		wp_die();
 	}
 
 	function gscoach_post_thumbnail_html( $html ) {
@@ -178,11 +198,31 @@ class Shortcode {
 			'tax_query' 	=> [],
 		];
 
-		if( wp_doing_ajax() && 'load-more' === $ajax_datas['action'] ){
-			$args['posts_per_page'] = (int) $ajax_datas['load_per_click'];
+		if( ! wp_doing_ajax() && ('off' !== $enable_pagination) ){
+			if( 'load-more-button' === $pagination_type ){
+				$args['posts_per_page'] = 6;
+			} elseif( 'ajax-pagination' === $pagination_type ){
+				$args['posts_per_page'] = $coach_per_page;
+			} elseif( 'load-more-scroll' === $pagination_type ){
+				$args['posts_per_page'] = 6;
+			}
+		}
+
+		if( 'normal-pagination' === $pagination_type ){
+			$shortcode_id = $id;
+			$paged_var = 'paged' . $shortcode_id;
+			$paged = max( 1, $_GET["$paged_var"] ?? 1 );
+			$args["paged"] = $paged;
+			$args['posts_per_page'] = $coach_per_page;
+		} elseif( wp_doing_ajax() && ('ajax-pagination' === $pagination_type) ){
+			$args["paged"] = $ajax_datas['paged'];
+			$args['posts_per_page'] = $ajax_datas['posts_per_page'];
+		} elseif( wp_doing_ajax() && ('load-more-button' === $pagination_type) ){
+			$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
 			$args['offset'] = (int) $ajax_datas['offset'];
-		} else if( 'off' !== $enable_pagination ){
-			$args['posts_per_page'] = 6;
+		} elseif( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) ){
+			$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+			$args['offset'] = (int) $ajax_datas['offset'];
 		}
 	
 		if ( !empty($group) ) {
@@ -371,11 +411,18 @@ class Shortcode {
 				'terms'    => explode( ',', $exclude_extra_five ),
 				'operator' => 'NOT IN',
 			];
-		}
+		}	
 	
 		$GLOBALS['gs_coach_loop'] = get_query( $args );
 
-		if( wp_doing_ajax() && 'load-more' === $ajax_datas['action'] && ! $GLOBALS['gs_coach_loop']->have_posts() ){
+		if( wp_doing_ajax() && ('load-more-button' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
+			wp_send_json_success( array(
+				'projects_status' => 'end',
+				'message' => __('End of the Coaches', 'gscoach')
+			), 200 );
+		}
+
+		if( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
 			wp_send_json_success( array(
 				'projects_status' => 'end',
 				'message' => __('End of the Coaches', 'gscoach')
@@ -401,7 +448,6 @@ class Shortcode {
 		}
 	
 		$data_options = [
-			'load_per_click' => $load_per_click,
 			'search_through_all_fields' => $gs_coach_search_all_fields,
 			'enable_clear_filters' => $gs_coach_enable_clear_filters,
 			'reset_filters_text' => $gs_coach_reset_filters_txt,
@@ -410,6 +456,14 @@ class Shortcode {
 			'next_txt' => $gs_coach_next_txt,
 			'prev_txt' => $gs_coach_prev_txt,
 		];
+
+		if( 'ajax-pagination' === $pagination_type ){
+			$data_options['coach_per_page'] = $coach_per_page;
+		} elseif( 'load-more-button' === $pagination_type ){
+			$data_options['load_per_click'] = $load_per_click;
+		} elseif( 'load-more-scroll' === $pagination_type ){
+			$data_options['per_load'] = $per_load;
+		}
 	
 		$theme_class = $gs_coach_theme;
 	

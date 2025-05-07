@@ -12,7 +12,31 @@ namespace GSCOACH;
  */
 
 do_action( 'gs_coach_before_pagination' );
+?>
 
-pagination();
+<?php if ( 'normal-pagination' === $pagination_type ) : ?>
 
-do_action( 'gs_coach_after_pagination' );
+    <?php echo get_pagination( $id, $coach_per_page ); ?>
+
+<?php elseif ( 'ajax-pagination' === $pagination_type ) : ?>
+
+    <div id="gs-coach-ajax-pagination-wrapper-<?php echo esc_attr( $id ); ?>" data-posts-per-page="<?php echo esc_attr( $coach_per_page ); ?>">
+        <?php echo get_ajax_pagination( $id, $coach_per_page, 1 ); ?>
+    </div>
+    
+<?php elseif ( 'load-more-button' === $pagination_type ) : ?>
+
+    <div class="gs-coach-load-more-wrapper">
+        <button id="gs-coach-load-more-coach-btn" class="gs-coach-load-more-btn"><?php echo esc_html( $load_button_text ); ?></button>
+    </div>
+
+<?php elseif ( 'load-more-scroll' === $pagination_type ) : ?>
+
+    <div class="gs-coach-load-more-scroll">
+        <div class="gs-coach-loader-spinner" style="display: none;"><img src="<?php echo GSCOACH_PLUGIN_URI . '/assets/img/loader.svg'; ?>" alt="Loader Image"></div>
+    </div>
+
+<?php endif; ?>
+
+
+<?php do_action( 'gs_coach_after_pagination' ); ?>

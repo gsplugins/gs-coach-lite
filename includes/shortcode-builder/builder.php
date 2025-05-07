@@ -2125,7 +2125,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_name_is_linked'         => 'on',
                 'gs_coach_link_type'              => 'default',
                 'gs_coach_role'                   => 'on',
-                'gs_coach_pagination'             => 'off',
+                // 'gs_coach_pagination'             => 'off',
                 'gs_coach_details'                => 'on',
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
@@ -3055,20 +3055,20 @@ if ( ! class_exists( 'Builder' ) ) {
             $taxonomy_settings = $this->_get_taxonomy_settings( false );
 
             // Set the Language Taxonomy Labels
-            $taxonomy_settings['language_tax_label'] = $prefs['gs_coachlanguage_meta'];
-            $taxonomy_settings['language_tax_plural_label'] = $prefs['gs_coachlanguage_meta'];
+            $taxonomy_settings['language_tax_label'] = $prefs['gs_coachlanguage_meta'] ?? '';
+            $taxonomy_settings['language_tax_plural_label'] = $prefs['gs_coachlanguage_meta'] ?? '';
 
             // Set the Location Taxonomy Labels
-            $taxonomy_settings['location_tax_label'] = $prefs['gs_coachlocation_meta'];
-            $taxonomy_settings['location_tax_plural_label'] = $prefs['gs_coachlocation_meta'];
+            $taxonomy_settings['location_tax_label'] = $prefs['gs_coachlocation_meta'] ?? '';
+            $taxonomy_settings['location_tax_plural_label'] = $prefs['gs_coachlocation_meta'] ?? '';
 
             // Set the Specialty Taxonomy Labels
-            $taxonomy_settings['specialty_tax_label'] = $prefs['gs_coachspecialty_meta'];
-            $taxonomy_settings['specialty_tax_plural_label'] = $prefs['gs_coachspecialty_meta'];;
+            $taxonomy_settings['specialty_tax_label'] = $prefs['gs_coachspecialty_meta'] ?? '';
+            $taxonomy_settings['specialty_tax_plural_label'] = $prefs['gs_coachspecialty_meta'] ?? '';
 
             // Set the Gender Taxonomy Labels
-            $taxonomy_settings['gender_tax_label'] = $prefs['gs_coachgender_meta'];
-            $taxonomy_settings['gender_tax_plural_label'] = $prefs['gs_coachgender_meta'];
+            $taxonomy_settings['gender_tax_label'] = $prefs['gs_coachgender_meta'] ?? '';
+            $taxonomy_settings['gender_tax_plural_label'] = $prefs['gs_coachgender_meta'] ?? '';
 
             // Update the taxonomy settings
             $this->_save_taxonomy_settings( $taxonomy_settings, false );

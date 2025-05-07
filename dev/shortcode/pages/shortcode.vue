@@ -661,7 +661,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme7', 'gs_tm_theme9', 'gs_tm_theme12', 'gs_tm_theme21', 'gs_tm_theme22', 'gs_tm_theme25'] )">
+						<!-- <div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme7', 'gs_tm_theme9', 'gs_tm_theme12', 'gs_tm_theme21', 'gs_tm_theme22', 'gs_tm_theme25'] )">
 
 							<div class="gs-roow row-20">
 
@@ -680,7 +680,7 @@
 
 							</div>
 
-						</div>
+						</div> -->
 
 						<div class="shortcode-setting--row" v-if="
 							displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme9', 'gs_tm_theme19', 'gs_tm_theme22', 'gs_tm_theme24', 'gs_tm_theme25'] ) ||

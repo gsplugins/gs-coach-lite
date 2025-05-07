@@ -111,7 +111,7 @@ global $gs_coach_loop;
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_coach_pagination ) : ?>
+	<?php if ( 'on' == $enable_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 
