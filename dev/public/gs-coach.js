@@ -966,16 +966,6 @@ jQuery(function($) {
 			} else{
 				$('.gs_coach').append(coachDivs);
 			}
-
-			// if( response.data.projects_status !== 'end' ){
-			// 	let dataEls = $.parseHTML( response.data.coaches );
-
-			// 	let coachDivs = $(dataEls).find('.single-coach-div');
-	
-			// 	$('.gs_coach').append(coachDivs);
-			// } else{
-			// 	$('#gs-coach-load-more-coach-btn').hide();
-			// }
 	
 		});
 	});
@@ -1101,6 +1091,54 @@ jQuery(function($) {
 
 	// Run only if `.gs-coach-load-more-scroll` exists
 	initGSCoachScrollLoader();
-	
 
+	
+	// AJAX Filter Function (Called on each keyup event)
+
+	function ajaxFilter(){
+		
+		function filterByAjax(inputValues){
+		
+			const gsCoachArea = $('.gs_coach_area');
+			const shortcodeId = gsCoachArea.attr('data-shortcode-id');
+	
+			$.ajax({
+				url: GSCoachData.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'gscoach_filter_coaches',
+					_ajax_nonce: GSCoachData.nonce,
+					shortcodeId: shortcodeId
+				}
+			})
+			.done(response => {
+	
+				console.log(response);
+	
+			});
+		}
+	
+		$('.search-by-name, .search-by-tag').on('keyup', function() {
+			const inputVal = $(this).val();
+			console.log(inputVal);
+		});
+	
+		$('.filters-select-designation').on('change', function() {
+			const designationVal = $(this).val();
+			console.log(designationVal);
+		});
+	
+	
+		$('.filters-select-language, .filters-select-location, .filters-select-gender, .filters-select-specialty').on('change', function(){
+			const selectVal = $(this).val();
+			console.log(selectVal);
+		});
+	}
+
+	const is_ajax_filter = $(".search-filter").hasClass('search-filter-ajax');
+
+	if (is_ajax_filter) {
+		ajaxFilter();
+	}
+	
 });

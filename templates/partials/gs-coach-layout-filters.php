@@ -18,6 +18,8 @@ $filter_col_class .= ' gs-col-xs-12';
 
 $filters_order = array_keys( Sortable::get_coach_filters() );
 
+$is_ajax_filter = true;
+
 ob_start();
 
 foreach ( $filters_order as $filter_order ) : ?>
@@ -25,28 +27,21 @@ foreach ( $filters_order as $filter_order ) : ?>
     <?php if ( $filter_order == 'search_by_name' && 'on' ==  $gs_coach_srch_by_name ) : ?>
         <?php do_action( 'gs_coach_before_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <input type="text" class="search-by-name" placeholder="<?php echo esc_attr( $gs_coachfliter_name ); ?>" />
-        </div>
-    <?php continue; endif; ?>
-
-    <?php if ( $filter_order == 'search_by_zip' && 'on' ==  $gs_coach_srch_by_zip ) : ?>
-        <?php do_action( 'gs_coach_before_zip_search_filter' ); ?>
-        <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <input type="text" class="search-by-zip" placeholder="<?php echo esc_attr( $gs_coachfliter_zip ); ?>" />
+            <input type="text" class="<?php echo $is_ajax_filter ? 'search-by-name-ajax' : 'search-by-name' ?>" placeholder="<?php echo esc_attr( $gs_coachfliter_name ); ?>" />
         </div>
     <?php continue; endif; ?>
 
     <?php if ( $filter_order == 'gs_coach_tag' && plugin()->builder->get_tax_option('enable_tag_tax') == 'on' && $gs_coach_srch_by_tag == 'on' ) : ?>
         <?php do_action( 'gs_coach_before_tag_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <input type="text" class="search-by-tag" placeholder="<?php echo esc_attr( $gs_coachfliter_tag ); ?>" />
+            <input type="text" class="<?php echo $is_ajax_filter ? 'search-by-tag-ajax' : 'search-by-tag' ?>" placeholder="<?php echo esc_attr( $gs_coachfliter_tag ); ?>" />
         </div>
     <?php continue; endif; ?>
 
     <?php if ( $filter_order == 'filter_by_designation' && 'on' == $gs_coach_filter_by_desig ) : ?>
         <?php do_action( 'gs_coach_before_designation_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-designation">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-designation-ajax' : 'filters-select-designation' ?>">
                 <option value="*"><?php echo esc_html($gs_coachfliter_designation); ?></option>
                 <?php get_meta_values_options( '_gscoach_profession', [ 'post_ids' => wp_list_pluck( $gs_coach_loop->posts, 'ID' ) ] ); ?>
             </select>
@@ -60,7 +55,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_language_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-language">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-language-ajax' : 'filters-select-language' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_language_meta); ?></option>
                 <?php get_terms_options( $language_terms ); ?>
             </select>
@@ -74,7 +69,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_location_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-location">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-location-ajax' : 'filters-select-location' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_location_meta); ?></option>
                 <?php get_terms_options( $location_terms ); ?>
             </select>
@@ -88,7 +83,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_gender_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-gender">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-gender-ajax' : 'filters-select-gender' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_gender_meta); ?></option>
                 <?php get_terms_options( $gender_terms ); ?>
             </select>
@@ -102,7 +97,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_speciality_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-specialty">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-specialty-ajax' : 'filters-select-specialty' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_specialty_meta); ?></option>
                 <?php get_terms_options( $specialty_terms ); ?>
             </select>
@@ -116,7 +111,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_extra_one_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-extra_one">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-extra_one-ajax' : 'filters-select-extra_one' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_extra_one_meta); ?></option>
                 <?php get_terms_options( $extra_one_terms ); ?>
             </select>
@@ -130,7 +125,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_extra_two_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-extra_two">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-extra_two-ajax' : 'filters-select-extra_two' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_extra_two_meta); ?></option>
                 <?php get_terms_options( $extra_two_terms ); ?>
             </select>
@@ -144,7 +139,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_extra_three_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-extra_three">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-extra_three-ajax' : 'filters-select-extra_three' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_extra_three_meta); ?></option>
                 <?php get_terms_options( $extra_three_terms ); ?>
             </select>
@@ -158,7 +153,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_extra_four_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-extra_four">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-extra_four-ajax' : 'filters-select-extra_four' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_extra_four_meta); ?></option>
                 <?php get_terms_options( $extra_four_terms ); ?>
             </select>
@@ -172,7 +167,7 @@ foreach ( $filters_order as $filter_order ) : ?>
             do_action( 'gs_coach_before_extra_five_filter' );
         ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <select class="filters-select-extra_five">
+            <select class="<?php echo $is_ajax_filter ? 'filters-select-extra_five-ajax' : 'filters-select-extra_five' ?>">
                 <option value="*"><?php echo esc_html($gs_coach_extra_five_meta); ?></option>
                 <?php get_terms_options( $extra_five_terms ); ?>
             </select>
@@ -184,5 +179,5 @@ foreach ( $filters_order as $filter_order ) : ?>
 <?php $filters_html = ob_get_clean();
 
 if ( !empty(trim($filters_html)) ) : ?>
-    <div class="search-filter"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
+    <div class="search-filter <?php echo $is_ajax_filter ? 'search-filter-ajax' : '' ?>"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
 <?php endif; ?>
