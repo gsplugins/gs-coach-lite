@@ -359,17 +359,6 @@ jQuery(function($) {
 			});
 		
 			// use value of search field to filter
-			var $search_by_zip = this.$wrapper.find('.search-by-zip');
-			$search_by_zip.on( 'keyup', debounce(function() {
-				_this.filters.zipSearch = $search_by_zip.val();
-				_this.refreshIsotope();
-			}) );
-			$search_by_zip.on( 'change', function() {
-				_this.filters.zipSearch = $search_by_zip.val();
-				_this.refreshIsotope();
-			});
-		
-			// use value of search field to filter
 			var $search_by_tag = this.$wrapper.find('.search-by-tag');
 			$search_by_tag.on( 'keyup', debounce(function() {
 				_this.filters.tagSearch = $search_by_tag.val();
