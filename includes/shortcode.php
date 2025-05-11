@@ -10,6 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class Shortcode {
 
 	public function __construct() {
+
+		// Ajax Filter
+		add_action('wp_ajax_gscoach_filter_coaches', [ $this, 'gscoach_filter_coaches' ]);
+		add_action('wp_ajax_nopriv_gscoach_filter_coaches', [ $this, 'gscoach_filter_coaches' ]);
+
 		// Load More Button and Infinite Scroll
 		add_action('wp_ajax_gscoach_load_more_coach', [ $this, 'load_more_coach' ]);
 		add_action('wp_ajax_nopriv_gscoach_load_more_coach', [ $this, 'load_more_coach' ]);
@@ -17,12 +22,27 @@ class Shortcode {
 		// Ajax Pagination
 		add_action('wp_ajax_gscoach_ajax_pagination', [ $this, 'ajax_pagination' ]);
 		add_action('wp_ajax_nopriv_gscoach_ajax_pagination', [ $this, 'ajax_pagination' ]);
+
 		add_filter( 'post_thumbnail_html', [ $this, 'gscoach_post_thumbnail_html' ], 999999 );
-		add_shortcode( 'gscoach', [ $this, 'shortcode' ] );		
+		add_shortcode( 'gscoach', [ $this, 'shortcode' ] );
 
 		if ( is_pro_valid() ) {
 			add_shortcode( 'gs_coach_sidebar', [ $this, 'sidebar_shortcode' ] );		
 		}
+	}
+
+	public function gscoach_filter_coaches(){
+		if( ! check_ajax_referer('gscoach_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
+
+		$shortcode_id = $_POST['shortcodeId'];
+		$is_preview = is_numeric($shortcode_id) ? false : true;
+		
+		$filters = $_POST['filters'];
+		
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters ) );
+
+		wp_send_json_success(array( 'coaches' => $coaches ), 200 );
+		wp_die();
 	}
 
 	public function load_more_coach(){
@@ -46,10 +66,12 @@ class Shortcode {
 		if( ! check_ajax_referer('gscoach_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
 		$shortcode_id = $_POST['shortcode_id'];
+		$is_preview = is_numeric($shortcode_id) ? false : true;
+
 		$posts_per_page = $_POST['posts_per_page'];
 		$paged = $_POST['paged'];
 		
-		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, false ), array( 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
 
 		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, $paged );
 
@@ -208,21 +230,23 @@ class Shortcode {
 			}
 		}
 
-		if( 'normal-pagination' === $pagination_type ){
-			$shortcode_id = $id;
-			$paged_var = 'paged' . $shortcode_id;
-			$paged = max( 1, $_GET["$paged_var"] ?? 1 );
-			$args["paged"] = $paged;
-			$args['posts_per_page'] = $coach_per_page;
-		} elseif( wp_doing_ajax() && ('ajax-pagination' === $pagination_type) ){
-			$args["paged"] = $ajax_datas['paged'];
-			$args['posts_per_page'] = $ajax_datas['posts_per_page'];
-		} elseif( wp_doing_ajax() && ('load-more-button' === $pagination_type) ){
-			$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
-			$args['offset'] = (int) $ajax_datas['offset'];
-		} elseif( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) ){
-			$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
-			$args['offset'] = (int) $ajax_datas['offset'];
+		if( 'on' === $enable_pagination ){
+			if( 'normal-pagination' === $pagination_type ){
+				$shortcode_id = $id;
+				$paged_var = 'paged' . $shortcode_id;
+				$paged = max( 1, $_GET["$paged_var"] ?? 1 );
+				$args["paged"] = $paged;
+				$args['posts_per_page'] = $coach_per_page;
+			} elseif( wp_doing_ajax() && ('ajax-pagination' === $pagination_type) ){
+				$args["paged"] = $ajax_datas['paged'];
+				$args['posts_per_page'] = $ajax_datas['posts_per_page'];
+			} elseif( wp_doing_ajax() && ('load-more-button' === $pagination_type) ){
+				$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+				$args['offset'] = (int) $ajax_datas['offset'];
+			} elseif( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) ){
+				$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+				$args['offset'] = (int) $ajax_datas['offset'];
+			}
 		}
 	
 		if ( !empty($group) ) {
@@ -411,7 +435,33 @@ class Shortcode {
 				'terms'    => explode( ',', $exclude_extra_five ),
 				'operator' => 'NOT IN',
 			];
-		}	
+		}
+
+		if( wp_doing_ajax() && ! empty($ajax_datas['filters']) ){
+			$filters = $ajax_datas['filters'];
+	
+			if ( ! empty($filters) ) {
+
+				// var_dump($filters);
+
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_language',
+					'field'    => 'slug',
+					'terms'    => explode( ',', $filters['language'] )
+				];
+
+				// foreach ( $filters as $key => $value ) {
+				// 	if ( ! empty($value) ) {
+				// 		$args['tax_query'][] = [
+				// 			'taxonomy' => $key,
+				// 			'field'    => 'slug',
+				// 			'terms'    => $value
+				// 		];
+				// 	}
+				// }
+			}
+
+		}
 	
 		$GLOBALS['gs_coach_loop'] = get_query( $args );
 

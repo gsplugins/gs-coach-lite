@@ -172,9 +172,11 @@ jQuery(function($) {
 	
 			this.filters = {};
 	
-			this.initIsotope();
+			// this.initIsotope();
 	
-			this.setFilterEvents();
+			// this.setFilterEvents();
+
+			this.setFilterEventsAjax();
 
 			this.$widget.data( 'gs-coach-filter', this );
 	
@@ -381,6 +383,118 @@ jQuery(function($) {
 				setTimeout(function() {
 					_this.refreshIsotope();
 				}, 200 );
+			});
+		
+		}
+
+		GS_Coach_filter.prototype.renderAjaxTemplate = function() {
+
+			const gsCoachArea = this.$widget.closest('.gs_coach_area');
+			const shortcodeId = gsCoachArea.attr('data-shortcode-id');
+	
+			$.ajax({
+				url: GSCoachData.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'gscoach_filter_coaches',
+					_ajax_nonce: GSCoachData.nonce,
+					shortcodeId: shortcodeId,
+					filters: this.filters
+				}
+			})
+			.done(response => {
+	
+				console.log(response);
+	
+			});
+		}
+		
+		GS_Coach_filter.prototype.setFilterEventsAjax = function() {
+	
+			var _this = this;
+	
+			this.$wrapper.find('.gs-coach-filter-cats').on( 'click', 'a', function() {
+				_this.filters.group = $(this).data('filter').replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+					
+			this.$wrapper.find('.filters-select-designation').on( 'change', function() {
+				_this.filters.designation = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+					
+			this.$wrapper.find('.filters-select-language').on( 'change', function() {
+				_this.filters.language = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-location').on( 'change', function() {
+				_this.filters.location = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-gender').on( 'change', function() {
+				_this.filters.gender = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-specialty').on( 'change', function() {
+				_this.filters.specialty = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-extra_one').on( 'change', function() {
+				_this.filters.extra_one = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-extra_two').on( 'change', function() {
+				_this.filters.extra_two = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-extra_three').on( 'change', function() {
+				_this.filters.extra_three = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-extra_four').on( 'change', function() {
+				_this.filters.extra_four = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			this.$wrapper.find('.filters-select-extra_five').on( 'change', function() {
+				_this.filters.extra_five = $(this).val().replace('.', '');
+				_this.renderAjaxTemplate();
+			});
+		
+			// use value of search field to filter
+			var $search_by_name = this.$wrapper.find('.search-by-name');
+			$search_by_name.on( 'keyup', debounce(function() {
+				_this.filters.search = $search_by_name.val();
+				_this.renderAjaxTemplate();
+			}) );
+			$search_by_name.on( 'change', function() {
+				_this.filters.search = $search_by_name.val();
+				_this.renderAjaxTemplate();
+			});
+		
+			// use value of search field to filter
+			var $search_by_tag = this.$wrapper.find('.search-by-tag');
+			$search_by_tag.on( 'keyup', debounce(function() {
+				_this.filters.tagSearch = $search_by_tag.val();
+				_this.renderAjaxTemplate();
+			}) );
+			$search_by_tag.on( 'change', function() {
+				_this.filters.tagSearch = $search_by_tag.val();
+				_this.renderAjaxTemplate();
+			});
+		
+			// change is-checked class on buttons
+			this.$wrapper.find('.gs-coach-filter-cats').on( 'click', 'a', function(e) {
+				// e.preventDefault();
+				$(this).parents('.gs-coach-filter-cats').find('li').removeClass('active');
+				$(this).parent('li').addClass('active');
 			});
 		
 		}
@@ -1093,52 +1207,5 @@ jQuery(function($) {
 	initGSCoachScrollLoader();
 
 	
-	// AJAX Filter Function (Called on each keyup event)
-
-	function ajaxFilter(){
-		
-		function filterByAjax(inputValues){
-		
-			const gsCoachArea = $('.gs_coach_area');
-			const shortcodeId = gsCoachArea.attr('data-shortcode-id');
-	
-			$.ajax({
-				url: GSCoachData.ajaxUrl,
-				type: 'POST',
-				data: {
-					action: 'gscoach_filter_coaches',
-					_ajax_nonce: GSCoachData.nonce,
-					shortcodeId: shortcodeId
-				}
-			})
-			.done(response => {
-	
-				console.log(response);
-	
-			});
-		}
-	
-		$('.search-by-name, .search-by-tag').on('keyup', function() {
-			const inputVal = $(this).val();
-			console.log(inputVal);
-		});
-	
-		$('.filters-select-designation').on('change', function() {
-			const designationVal = $(this).val();
-			console.log(designationVal);
-		});
-	
-	
-		$('.filters-select-language, .filters-select-location, .filters-select-gender, .filters-select-specialty').on('change', function(){
-			const selectVal = $(this).val();
-			console.log(selectVal);
-		});
-	}
-
-	const is_ajax_filter = $(".search-filter").hasClass('search-filter-ajax');
-
-	if (is_ajax_filter) {
-		ajaxFilter();
-	}
 	
 });
