@@ -171,12 +171,16 @@ jQuery(function($) {
 			}, this.$wrapper.data('options'));
 	
 			this.filters = {};
-	
-			// this.initIsotope();
-	
-			// this.setFilterEvents();
 
-			this.setFilterEventsAjax();
+			const is_ajax_filter = $(".search-filter").hasClass('search-filter-ajax');
+
+			if ( is_ajax_filter ) {
+				this.setFilterEventsAjax();
+			} else {
+				this.initIsotope();
+		
+				this.setFilterEvents();
+			}
 
 			this.$widget.data( 'gs-coach-filter', this );
 	

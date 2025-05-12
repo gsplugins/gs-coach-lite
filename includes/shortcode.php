@@ -442,20 +442,14 @@ class Shortcode {
 	
 			if ( ! empty($filters) ) {
 
-				// var_dump($filters);
-
-				// $args['tax_query'][] = [
-				// 	'taxonomy' => 'gs_coach_language',
-				// 	'field'    => 'slug',
-				// 	'terms'    => explode( ',', $filters['language'] )
-				// ];
-
 				foreach ( $filters as $key => $value ) {
 					$value = ( $value == '*' ) ? '' : $value;
 
-					
-
-					if ( ! empty($value) ) {
+					if( $key == 'search' && ! empty($value) ) {
+						$args['s'] = $value;
+					} elseif( $key == 'tagSearch' && ! empty($value) ) {
+						$args['gs_coach_tag'] = $value;
+					} elseif ( ! empty($value) ) {
 						$args['tax_query'][] = [
 							'taxonomy' => 'gs_coach_' . $key,
 							'field'    => 'slug',
