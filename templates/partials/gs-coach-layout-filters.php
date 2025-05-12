@@ -18,7 +18,7 @@ $filter_col_class .= ' gs-col-xs-12';
 
 $filters_order = array_keys( Sortable::get_coach_filters() );
 
-$is_ajax_filter = true;
+$is_ajax_filter = false;
 
 ob_start();
 

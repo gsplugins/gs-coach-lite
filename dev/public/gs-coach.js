@@ -389,8 +389,8 @@ jQuery(function($) {
 
 		GS_Coach_filter.prototype.renderAjaxTemplate = function() {
 
-			const gsCoachArea = this.$widget.closest('.gs_coach_area');
-			const shortcodeId = gsCoachArea.attr('data-shortcode-id');
+			const gsCoachArea = $('.gs_coach_area');
+			const shortcodeId = gsCoachArea.data('shortcode-id');
 	
 			$.ajax({
 				url: GSCoachData.ajaxUrl,
@@ -404,7 +404,9 @@ jQuery(function($) {
 			})
 			.done(response => {
 	
-				console.log(response);
+				let dataCoaches = $.parseHTML( response.data.coaches );
+				let coachDivs = $(dataCoaches).find('.gs_coach');
+				gsCoachArea.find('.gs_coach').replaceWith(coachDivs);
 	
 			});
 		}
@@ -489,6 +491,8 @@ jQuery(function($) {
 				_this.filters.tagSearch = $search_by_tag.val();
 				_this.renderAjaxTemplate();
 			});
+
+			this.$wrapper.find('.gs-coach-filter-cats > li.filter').first().addClass('active')
 		
 			// change is-checked class on buttons
 			this.$wrapper.find('.gs-coach-filter-cats').on( 'click', 'a', function(e) {
