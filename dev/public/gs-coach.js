@@ -425,7 +425,8 @@ jQuery(function($) {
 			});
 					
 			this.$wrapper.find('.filters-select-designation').on( 'change', function() {
-				_this.filters.designation = $(this).val().replace('.', '');
+				const designationText = $('.filters-select-designation option:selected').text();
+				_this.filters.designation = ( designationText === 'Show All Designation' ) ? '' : designationText ;
 				_this.renderAjaxTemplate();
 			});
 					

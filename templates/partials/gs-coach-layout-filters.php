@@ -18,8 +18,6 @@ $filter_col_class .= ' gs-col-xs-12';
 
 $filters_order = array_keys( Sortable::get_coach_filters() );
 
-$is_ajax_filter = true;
-
 ob_start();
 
 foreach ( $filters_order as $filter_order ) : ?>
@@ -179,5 +177,5 @@ foreach ( $filters_order as $filter_order ) : ?>
 <?php $filters_html = ob_get_clean();
 
 if ( !empty(trim($filters_html)) ) : ?>
-    <div class="search-filter <?php echo $is_ajax_filter ? 'search-filter-ajax' : '' ?>"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
+    <div class="search-filter <?php echo ( $gs_coach_filter_type === 'ajax-filter' ) ? 'search-filter-ajax' : '' ?>"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
 <?php endif; ?>

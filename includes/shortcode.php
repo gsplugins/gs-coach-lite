@@ -449,6 +449,11 @@ class Shortcode {
 						$args['s'] = $value;
 					} elseif( $key == 'tagSearch' && ! empty($value) ) {
 						$args['gs_coach_tag'] = $value;
+					} elseif( $key == 'designation' && ! empty($value) ) {
+						$args['meta_query'][] = [
+							'key'     => '_gscoach_profession',
+							'value'   => $value
+						];
 					} elseif ( ! empty($value) ) {
 						$args['tax_query'][] = [
 							'taxonomy' => 'gs_coach_' . $key,
