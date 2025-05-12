@@ -52,11 +52,10 @@ function echo_return($content, $echo = false) {
 
 function get_query($atts) {
 
-    $args = shortcode_atts([
+    $args = array_merge([
         'order'                => 'DESC',
         'orderby'              => 'date',
         'posts_per_page'       => -1,
-        'offset'               => 0,
         'paged'                => 1,
         'tax_query'            => [],
     ], $atts);
@@ -652,31 +651,6 @@ function get_coach_terms_slugs($term_name, $separator = ' ') {
     return '';
 }
 
-function pagination($echo = true) {
-
-    $gs_tm_paged = get_query_var('paged') ? get_query_var('paged') : get_query_var('page');
-    $gsbig = 999999999; // need an unlikely integer
-
-    $paginate_params = [
-        'base' => str_replace($gsbig, '%#%', esc_url(get_pagenum_link($gsbig))),
-        'format' => '?paged=%#%',
-        'current' => max(1, $gs_tm_paged),
-        'total' => $GLOBALS['gs_coach_loop']->max_num_pages
-    ];
-    $paginate_params = (array) apply_filters('gs_coach_paginate_params', $paginate_params);
-
-    $paginate_links = paginate_links($paginate_params);
-    $paginate_links = apply_filters('gs_coach_paginate_links', $paginate_links);
-
-    $html = '';
-
-    if (!empty($paginate_links)) {
-        $html = sprintf('<div class="gs-roow"><div class="gs-col-md-12 gs-pagination">%s</div></div>', wp_kses_post($paginate_links));
-    }
-
-    return echo_return($html, $echo);
-}
-
 function get_shortcodes() {
 
     return plugin()->builder->fetch_shortcodes(null, false, true);
@@ -1042,4 +1016,73 @@ function gs_get_icon_class_by_meta_key( $key ){
     );
 
     return isset($icons[$key]) ? $icons[$key] : '';
+}
+
+function get_current_full_url() {
+    $protocol = is_ssl() ? 'https://' : 'http://';
+    $host     = $_SERVER['HTTP_HOST'];
+    $request  = $_SERVER['REQUEST_URI'];
+    return $protocol . $host . $request;
+}
+
+function get_pagination( $shortcode_id, $items_per_page = 6 ) {
+
+    // Generate page parameter name
+    $param_name = 'paged' . $shortcode_id;
+    
+    // Current Page Number
+    $current = max( 1, $_GET[$param_name] ?? 1 );
+
+    // Calculate total pages
+    $total_pages = ceil( $GLOBALS['gs_coach_loop']->found_posts / $items_per_page );
+
+    // Generate the current URL with the page placeholder
+    $current_url = get_current_full_url();
+    $current_url = remove_query_arg( $param_name, $current_url );
+    $current_url = add_query_arg( $param_name, '%#%', $current_url );
+    
+    // Print the pagination links
+    $pagination = "<div class='gs-coach-pagination'>";
+    $pagination .= paginate_links( array(
+        'base' => $current_url,
+        'current' => $current,
+        'total' => $total_pages,
+        'prev_next' => true,
+        'next_text' => '<i class="fa fa-angle-right"></i>',
+        'prev_text' => '<i class="fa fa-angle-left"></i>',
+    ));
+    $pagination .= "</div>";
+
+    return $pagination;
+}
+
+function get_ajax_pagination( $shortcode_id, $items_per_page = 6, $paged = 1 ) {
+
+    // Generate page parameter name
+    $param_name = 'paged' . $shortcode_id;
+    
+    // Current Page Number
+    $current = max( 1, $paged ?? 1 );
+
+    // Calculate total pages
+    $total_pages = ceil( $GLOBALS['gs_coach_loop']->found_posts / $items_per_page );
+
+    // Generate the current URL with the page placeholder
+    $current_url = get_current_full_url();
+    $current_url = remove_query_arg( $param_name, $current_url );
+    $current_url = add_query_arg( $param_name, '%#%', $current_url );
+    
+    // Print the pagination links
+    $pagination = "<div class='gs-coach-pagination gs-coach-ajax-pagination-link'>";
+    $pagination .= paginate_links( array(
+        'base' => $current_url,
+        'current' => $current,
+        'total' => $total_pages,
+        'prev_next' => true,
+        'next_text' => '<i class="fa fa-angle-right"></i>',
+        'prev_text' => '<i class="fa fa-angle-left"></i>',
+    ));
+    $pagination .= "</div>";
+
+    return $pagination;
 }

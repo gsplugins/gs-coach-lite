@@ -143,8 +143,8 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-coach template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
+			<!--es not found - Load no-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-coach.php' ); ?>
 
 		<?php endif; ?>
 
@@ -152,14 +152,9 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 		<?php include Template_Loader::locate_template( 'drawers/gs-coach-layout-drawer.php' ); ?>
 
 	</div>
-	
-	<!-- Load More Button -->
-	<?php if ( 'on' == $enable_pagination && 'load-more-button' === $pagination_type ) : ?>
-		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-load-more-btn.php' ); ?>
-	<?php endif; ?>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_coach_pagination ) : ?>
+	<?php if ( 'on' == $enable_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 

@@ -818,6 +818,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'filter_enabled' => __('Enable Filter', 'gscoach'),
                 'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gscoach'),
 
+                'filter_type' => __('Filter Type', 'gscoach'),
+                'filter_type__details' => __('Select filter type', 'gscoach'),
+
                 'drawer_style' => __('Drawer Style', 'gscoach'),
                 'drawer_style__details' => __('Select drawer style, this is available for certain theme', 'gscoach'),
 
@@ -1856,6 +1859,16 @@ if ( ! class_exists( 'Builder' ) ) {
                 'pagination_type' => $this->get_shortcode_options_paginations(),
                 'gs_coach_link_type' => $this->get_shortcode_options_link_types(),
                 'acf_fields_position' => $this->get_acf_fields_position(),
+                'gs_coach_filter_type' => [
+                    [
+                        'label' => __( 'Normal Filter', 'gscoach' ),
+                        'value' => 'normal-filter'
+                    ],
+                    [
+                        'label' => __( 'Ajax Filter', 'gscoach' ),
+                        'value' => 'ajax-filter'
+                    ]
+                ],
                 'gs_coaches_pop_clm' => [
                     [
                         'label' => __( 'One', 'gscoach' ),
@@ -2125,7 +2138,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_name_is_linked'         => 'on',
                 'gs_coach_link_type'              => 'default',
                 'gs_coach_role'                   => 'on',
-                'gs_coach_pagination'             => 'off',
+                // 'gs_coach_pagination'             => 'off',
                 'gs_coach_details'                => 'on',
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
@@ -2143,6 +2156,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'carousel_navs_style'             => 'default',
                 'carousel_dots_style'             => 'default',
                 'filter_enabled'                  => 'off',
+                'gs_coach_filter_type'            => 'normal-filter',
                 'drawer_style'                    => 'default',
                 'panel_style'                     => 'default',
                 'popup_style'                     => 'default',

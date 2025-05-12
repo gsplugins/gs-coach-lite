@@ -241,11 +241,6 @@ class Meta_Fields {
 					<input type="url" id="gsCoachCustomPage" class="form-control" name="gs_coach_custom_page" placeholder="Custom Page Link" value="<?php echo isset($gs_coach_custom_page) ? esc_attr($gs_coach_custom_page) : ''; ?>">
 				</div>
 
-				<!-- <?php
-				// $meta_key = 'second_featured_img';
-				// echo $this->gs_image_uploader_field($meta_key, get_post_meta($post->ID, $meta_key, true));
-				?> -->
-
 			</div>
 
 		</div>

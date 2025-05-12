@@ -29,13 +29,6 @@ foreach ( $filters_order as $filter_order ) : ?>
         </div>
     <?php continue; endif; ?>
 
-    <?php if ( $filter_order == 'search_by_zip' && 'on' ==  $gs_coach_srch_by_zip ) : ?>
-        <?php do_action( 'gs_coach_before_zip_search_filter' ); ?>
-        <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
-            <input type="text" class="search-by-zip" placeholder="<?php echo esc_attr( $gs_coachfliter_zip ); ?>" />
-        </div>
-    <?php continue; endif; ?>
-
     <?php if ( $filter_order == 'gs_coach_tag' && plugin()->builder->get_tax_option('enable_tag_tax') == 'on' && $gs_coach_srch_by_tag == 'on' ) : ?>
         <?php do_action( 'gs_coach_before_tag_search_filter' ); ?>
         <div class="<?php echo esc_attr($filter_col_class); ?> search-fil-nbox">
@@ -184,5 +177,5 @@ foreach ( $filters_order as $filter_order ) : ?>
 <?php $filters_html = ob_get_clean();
 
 if ( !empty(trim($filters_html)) ) : ?>
-    <div class="search-filter"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
+    <div class="search-filter <?php echo ( $gs_coach_filter_type === 'ajax-filter' ) ? 'search-filter-ajax' : '' ?>"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
 <?php endif; ?>

@@ -258,6 +258,27 @@
 
 						</div>
 
+						<div class="shortcode-setting--row" v-if="shortcode_settings.filter_enabled && !shortcode_settings.carousel_enabled && themes_v2_filter().includes( shortcode_settings.gs_coach_theme )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="gs_coach_filter_type">{{translation('filter_type')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input-select key="gs_coach_filter_type" id="gs_coach_filter_type" v-model="shortcode_settings.gs_coach_filter_type" :options="shortcode_options.gs_coach_filter_type" :placeholder="translation('filter_type')"></input-select>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('filter_type__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
 						<div class="shortcode-setting--row" v-if="displayCondition( shortcode_settings.gs_coach_theme, [ 'gs-grid-style-one', 'gs-grid-style-two', 'gs-grid-style-three', 'gs-grid-style-four', 'gs-grid-style-five', 'gs-grid-style-six', 'gs-grid-style-seven', 'gs-grid-style-eight', 'gs-grid-style-nine', ] )">
 
 							<div class="gs-roow row-20">
@@ -661,7 +682,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme7', 'gs_tm_theme9', 'gs_tm_theme12', 'gs_tm_theme21', 'gs_tm_theme22', 'gs_tm_theme25'] )">
+						<!-- <div class="shortcode-setting--row" v-if="!displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme7', 'gs_tm_theme9', 'gs_tm_theme12', 'gs_tm_theme21', 'gs_tm_theme22', 'gs_tm_theme25'] )">
 
 							<div class="gs-roow row-20">
 
@@ -680,7 +701,7 @@
 
 							</div>
 
-						</div>
+						</div> -->
 
 						<div class="shortcode-setting--row" v-if="
 							displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme9', 'gs_tm_theme19', 'gs_tm_theme22', 'gs_tm_theme24', 'gs_tm_theme25'] ) ||
@@ -706,7 +727,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="
+						<!-- <div class="shortcode-setting--row" v-if="
 							displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme9', 'gs_tm_theme19', 'gs_tm_theme22', 'gs_tm_theme24', 'gs_tm_theme25'] ) ||
 							( displayCondition( shortcode_settings.gs_coach_theme, themes_v2_filter() ) && shortcode_settings.filter_enabled )
 						">
@@ -728,9 +749,9 @@
 
 							</div>
 
-						</div>
+						</div> -->
 
-						<div class="shortcode-setting--row" v-if="
+						<!-- <div class="shortcode-setting--row" v-if="
 							displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme9', 'gs_tm_theme19', 'gs_tm_theme22', 'gs_tm_theme24', 'gs_tm_theme25'] ) ||
 							( displayCondition( shortcode_settings.gs_coach_theme, themes_v2_filter() ) && shortcode_settings.filter_enabled )
 						">
@@ -752,7 +773,7 @@
 
 							</div>
 
-						</div>
+						</div> -->
 
 						<div class="shortcode-setting--row" v-if="
 							displayCondition( shortcode_settings.gs_coach_theme, ['gs_tm_theme9', 'gs_tm_theme19', 'gs_tm_theme22', 'gs_tm_theme24', 'gs_tm_theme25'] ) ||

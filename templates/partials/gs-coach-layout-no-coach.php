@@ -13,8 +13,8 @@ namespace GSCOACH;
 
 ?>
 
-<div class="gs-col-md-12 gs-coach--no-team-found">
-    <p><?php _e( 'No team coach found', 'gscoach' ); ?></p>
+<div class="gs-col-md-12 gs-coach-no-coach-found">
+    <p><?php _e( 'No coach found', 'gscoach' ); ?></p>
 </div>
 
-<?php do_action( 'gs_coach_after_no_team_found' ); ?>
+<?php do_action( 'gs_coach_after_no_coach_found' ); ?>

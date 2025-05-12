@@ -180,7 +180,7 @@ if ( $_filter_enabled ) $gs_row_classes[] = 'gs-all-items-filter-wrapper';
 	</div>
 
 	<!-- Pagination -->
-	<?php if ( 'on' == $gs_coach_pagination ) : ?>
+	<?php if ( 'on' == $enable_pagination ) : ?>
 		<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-pagination.php' ); ?>
 	<?php endif; ?>
 
