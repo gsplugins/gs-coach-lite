@@ -395,6 +395,7 @@ jQuery(function($) {
 
 			const gsCoachArea = $('.gs_coach_area');
 			const shortcodeId = gsCoachArea.data('shortcode-id');
+			const loader = gsCoachArea.find('.gs-coach-filter-loader-spinner');
 	
 			$.ajax({
 				url: GSCoachData.ajaxUrl,
@@ -404,13 +405,21 @@ jQuery(function($) {
 					_ajax_nonce: GSCoachData.nonce,
 					shortcodeId: shortcodeId,
 					filters: this.filters
+				},
+				beforeSend: function() {
+					gsCoachArea.find('.gs_coach').hide();
+					loader.show();
 				}
 			})
 			.done(response => {
 	
 				let dataCoaches = $.parseHTML( response.data.coaches );
 				let coachDivs = $(dataCoaches).find('.gs_coach');
-				gsCoachArea.find('.gs_coach').replaceWith(coachDivs);
+
+				setTimeout(() => {
+					loader.hide();
+					gsCoachArea.find('.gs_coach').replaceWith(coachDivs);
+				}, 500);
 	
 			});
 		}
@@ -1177,8 +1186,6 @@ jQuery(function($) {
 			})
 			.done(response => {
 
-
-
 				setTimeout(function() {
 					scrollWrapper.find('.gs-coach-loader-spinner').fadeOut();
 
@@ -1195,6 +1202,7 @@ jQuery(function($) {
 						$('.gs_coach').append(coachDivs);
 					}
 				}, 1000);
+				
 			});
 		}
 
@@ -1213,8 +1221,6 @@ jQuery(function($) {
 	}
 
 	// Run only if `.gs-coach-load-more-scroll` exists
-	initGSCoachScrollLoader();
-
-	
+	initGSCoachScrollLoader();	
 	
 });
