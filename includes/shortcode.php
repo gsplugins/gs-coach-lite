@@ -441,26 +441,128 @@ class Shortcode {
 			$filters = $ajax_datas['filters'];
 	
 			if ( ! empty($filters) ) {
+				
+				if( ! empty($filters['search']) ) {
+					// Search through title
+					$args['s'] = $filters['search'];
+				}
 
-				foreach ( $filters as $key => $value ) {
-					$value = ( $value == '*' ) ? '' : $value;
+				if( ! empty($filters['tagSearch']) ) {
+					// Search through tags
 
-					if( $key == 'search' && ! empty($value) ) {
-						$args['s'] = $value;
-					} elseif( $key == 'tagSearch' && ! empty($value) ) {
-						$args['gs_coach_tag'] = $value;
-					} elseif( $key == 'designation' && ! empty($value) ) {
-						$args['meta_query'][] = [
-							'key'     => '_gscoach_profession',
-							'value'   => $value
-						];
-					} elseif ( ! empty($value) ) {
+					$matched_terms = get_terms([
+						'taxonomy'   => 'gs_coach_tag',
+						'hide_empty' => false,
+						'name__like' => $filters['tagSearch'],
+					]);
+
+					$term_ids = wp_list_pluck($matched_terms, 'term_id');
+
+					if( ! empty($term_ids) ) {
 						$args['tax_query'][] = [
-							'taxonomy' => 'gs_coach_' . $key,
-							'field'    => 'slug',
-							'terms'    => $value
+							'taxonomy' => 'gs_coach_tag',
+							'field'    => 'term_id',
+							'terms'    => $term_ids
 						];
 					}
+				}
+
+				if( ! empty($filters['designation']) ) {
+					// Search through designation
+					$args['meta_query'][] = [
+						'key'     => '_gscoach_profession',
+						'value'   => $filters['designation']
+					];
+				}
+								
+				if( ! empty($filters['group']) ) {
+					// Search through group
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_group',
+						'field'    => 'slug',
+						'terms'    => $filters['group']
+					];
+				}
+
+				if( ! empty($filters['language']) ) {
+					// Search through language
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_language',
+						'field'    => 'slug',
+						'terms'    => $filters['language']
+					];
+				}
+				
+				if( ! empty($filters['location']) ) {
+					// Search through location
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_location',
+						'field'    => 'slug',
+						'terms'    => $filters['location']
+					];
+				}
+
+				if( ! empty($filters['gender']) ) {
+					// Search through gender
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_gender',
+						'field'    => 'slug',
+						'terms'    => $filters['gender']
+					];
+				}
+
+				if( ! empty($filters['specialty']) ) {
+					// Search through specialty
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_specialty',
+						'field'    => 'slug',
+						'terms'    => $filters['specialty']
+					];
+				}
+
+				if( ! empty($filters['extra_one']) ) {
+					// Search through extra_one
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_extra_one',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_one']
+					];
+				}
+
+				if( ! empty($filters['extra_two']) ) {
+					// Search through extra_two
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_extra_two',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_two']
+					];
+				}
+
+				if( ! empty($filters['extra_three']) ) {
+					// Search through extra_three
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_extra_three',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_three']
+					];
+				}
+
+				if( ! empty($filters['extra_four']) ) {
+					// Search through extra_four
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_extra_four',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_four']
+					];
+				}
+
+				if( ! empty($filters['extra_five']) ) {
+					// Search through extra_five
+					$args['tax_query'][] = [
+						'taxonomy' => 'gs_coach_extra_five',
+						'field'    => 'slug',
+						'terms'    => $filters['extra_five']
+					];
 				}
 			}
 

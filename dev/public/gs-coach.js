@@ -429,7 +429,8 @@ jQuery(function($) {
 			var _this = this;
 	
 			this.$wrapper.find('.gs-coach-filter-cats').on( 'click', 'a', function() {
-				_this.filters.group = $(this).data('filter').replace('.', '');
+				const filterGroup = ($(this).data('filter') === '*') ? '' : $(this).data('filter');
+				_this.filters.group = filterGroup.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 					
@@ -440,47 +441,56 @@ jQuery(function($) {
 			});
 					
 			this.$wrapper.find('.filters-select-language').on( 'change', function() {
-				_this.filters.language = $(this).val().replace('.', '');
+				const filterLanguage = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.language = filterLanguage.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-location').on( 'change', function() {
-				_this.filters.location = $(this).val().replace('.', '');
+				const filterLocation = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.location = filterLocation.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-gender').on( 'change', function() {
-				_this.filters.gender = $(this).val().replace('.', '');
+				const filterGender = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.gender = filterGender.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-specialty').on( 'change', function() {
-				_this.filters.specialty = $(this).val().replace('.', '');
+				const filterSpecialty = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.specialty = filterSpecialty.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-extra_one').on( 'change', function() {
-				_this.filters.extra_one = $(this).val().replace('.', '');
+				const filterExtraOne = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.extra_one = filterExtraOne.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-extra_two').on( 'change', function() {
-				_this.filters.extra_two = $(this).val().replace('.', '');
+				const filterExtraTwo = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.extra_two = filterExtraTwo.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-extra_three').on( 'change', function() {
-				_this.filters.extra_three = $(this).val().replace('.', '');
+				const filterExtraThree = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.extra_three = filterExtraThree.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-extra_four').on( 'change', function() {
-				_this.filters.extra_four = $(this).val().replace('.', '');
+				const filterExtraFour = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.extra_four = filterExtraFour.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
 			this.$wrapper.find('.filters-select-extra_five').on( 'change', function() {
-				_this.filters.extra_five = $(this).val().replace('.', '');
+				const filterExtraFive = $(this).val() === '*' ? '' : $(this).val();
+				_this.filters.extra_five = filterExtraFive.replace('.', '');
 				_this.renderAjaxTemplate();
 			});
 		
