@@ -444,6 +444,9 @@ class Shortcode {
 				
 				if( ! empty($filters['search']) ) {
 					// Search through title
+
+					add_filter( 'posts_search', 'GSCOACH\gs_filter_title_search_only', 10, 2 );
+
 					$args['s'] = $filters['search'];
 				}
 
@@ -569,6 +572,8 @@ class Shortcode {
 		}
 	
 		$GLOBALS['gs_coach_loop'] = get_query( $args );
+
+		remove_filter( 'posts_search', 'GSCOACH\gs_filter_title_search_only', 10 );
 
 		if( wp_doing_ajax() && ('load-more-button' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
 			wp_send_json_success( array(
