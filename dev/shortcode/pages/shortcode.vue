@@ -89,132 +89,6 @@
 
 						</div>
 
-						<div class="shortcode-setting--row">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="enable_pagination">{{translation('enable_pagination')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="enable_pagination" v-model="shortcode_settings.enable_pagination" offLabel="Off" onLabel="On"></input-toggle>
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('enable_pagination__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="pagination_type">{{translation('pagination_type')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-7">
-									<input-select key="pagination_type" id="pagination_type" v-model="shortcode_settings.pagination_type" :options="shortcode_options.pagination_type" :placeholder="translation('pagination_type')"></input-select>
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('pagination_type__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && displayCondition( shortcode_settings.pagination_type, [ 'normal-pagination', 'ajax-pagination' ] )">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="coach_per_page">{{translation('coach_per_page')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-7">
-									<input type="number" class="bi-input-control" id="coach_per_page" v-model="shortcode_settings.coach_per_page" placeholder="6">
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('coach_per_page__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-button'">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="load_per_click">{{translation('load_per_click')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-7">
-									<input type="number" class="bi-input-control" id="load_per_click" v-model="shortcode_settings.load_per_click" placeholder="6">
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('load_per_click__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-scroll'">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="per_load">{{translation('per_load')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-7">
-									<input type="number" class="bi-input-control" id="per_load" v-model="shortcode_settings.per_load" placeholder="6">
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('per_load__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-button'">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="load_button_text">{{translation('load_button_text')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-7">
-									<input type="text" class="bi-input-control" id="load_button_text" v-model="shortcode_settings.load_button_text" placeholder="Load More">
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('load_button_text__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
 						<div class="shortcode-setting--row" v-if="themes_v2_carousel().includes( shortcode_settings.gs_coach_theme )">
 
 							<div class="gs-roow row-20">
@@ -273,6 +147,133 @@
 
 								<div class="gs-col-xs-12 bi-text-help--area">
 									<p class="bi-text-help">{{translation('filter_type__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						
+						<div class="shortcode-setting--row" v-if="shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter'">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-7">
+									<label class="m-t-10" for="enable_pagination">{{translation('enable_pagination')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-5">
+									<input-toggle class="m-t-6" name="enable_pagination" v-model="shortcode_settings.enable_pagination" offLabel="Off" onLabel="On"></input-toggle>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('enable_pagination__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter'">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="pagination_type">{{translation('pagination_type')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input-select key="pagination_type" id="pagination_type" v-model="shortcode_settings.pagination_type" :options="shortcode_options.pagination_type" :placeholder="translation('pagination_type')"></input-select>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('pagination_type__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && displayCondition( shortcode_settings.pagination_type, [ 'normal-pagination', 'ajax-pagination' ] )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="coach_per_page">{{translation('coach_per_page')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input type="number" class="bi-input-control" id="coach_per_page" v-model="shortcode_settings.coach_per_page" placeholder="6">
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('coach_per_page__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && shortcode_settings.pagination_type == 'load-more-button'">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="load_per_click">{{translation('load_per_click')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input type="number" class="bi-input-control" id="load_per_click" v-model="shortcode_settings.load_per_click" placeholder="6">
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('load_per_click__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && shortcode_settings.pagination_type == 'load-more-scroll'">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="per_load">{{translation('per_load')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input type="number" class="bi-input-control" id="per_load" v-model="shortcode_settings.per_load" placeholder="6">
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('per_load__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && shortcode_settings.pagination_type == 'load-more-button'">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="load_button_text">{{translation('load_button_text')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input type="text" class="bi-input-control" id="load_button_text" v-model="shortcode_settings.load_button_text" placeholder="Load More">
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('load_button_text__details')}}</p>
 								</div>
 
 							</div>

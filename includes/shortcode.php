@@ -220,7 +220,7 @@ class Shortcode {
 			'tax_query' 	=> [],
 		];
 
-		if( ! wp_doing_ajax() && ('off' !== $enable_pagination) ){
+		if( ! wp_doing_ajax() && ('on' === $enable_pagination) && ( 'ajax-filter' === $gs_coach_filter_type ) ){
 			if( 'load-more-button' === $pagination_type ){
 				$args['posts_per_page'] = 6;
 			} elseif( 'ajax-pagination' === $pagination_type ){
