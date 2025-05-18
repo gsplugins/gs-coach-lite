@@ -5,6 +5,8 @@ jQuery(function($) {
 	var is_rtl = $('html').attr('dir') == "rtl";
 	var popupEventsAdded = false;
 
+	var filterVals;
+
 	// Multi Select Class
 	function load_multi_select_class() {
 
@@ -408,6 +410,7 @@ jQuery(function($) {
 				},
 				beforeSend: function() {
 					gsCoachArea.find('.gs_coach').hide();
+					$('#gs-coach-load-more-coach-btn').hide();
 					loader.show();
 				}
 			})
@@ -419,12 +422,21 @@ jQuery(function($) {
 				setTimeout(() => {
 					loader.hide();
 					gsCoachArea.find('.gs_coach').replaceWith(coachDivs);
+
+					if( response.data.foundCoaches <= 6 ){
+						$('#gs-coach-load-more-coach-btn').hide();
+					} else{
+						$('#gs-coach-load-more-coach-btn').show();
+						initGSCoachScrollLoader();
+					}
 				}, 500);
 	
 			});
 		}
 		
 		GS_Coach_filter.prototype.setFilterEventsAjax = function() {
+
+			filterVals = this.filters;
 	
 			var _this = this;
 	
@@ -1090,6 +1102,7 @@ jQuery(function($) {
 				action: 'gscoach_load_more_coach',
 				_ajax_nonce: GSCoachData.nonce,
 				shortcodeId: shortcodeId,
+				filters: filterVals,
 				loadPerAction: loadPerActionValue,
 				offset: currentCoachQuantity
 			}
@@ -1099,8 +1112,6 @@ jQuery(function($) {
 			let dataEls = $.parseHTML( response.data.coaches );
 
 			let coachDivs = $(dataEls).find('.single-coach-div');
-
-			console.log(currentCoachQuantity + loadPerActionValue);
 
 			if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
 				$('.gs_coach').append(coachDivs);

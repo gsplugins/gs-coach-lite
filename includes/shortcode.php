@@ -41,7 +41,9 @@ class Shortcode {
 		
 		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters ) );
 
-		wp_send_json_success(array( 'coaches' => $coaches ), 200 );
+		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
+
+		wp_send_json_success(array( 'coaches' => $coaches, 'foundCoaches' => $found_coaches ), 200 );
 		wp_die();
 	}
 
@@ -51,10 +53,11 @@ class Shortcode {
 		$shortcode_id = $_POST['shortcodeId'];
 		$is_preview = is_numeric($shortcode_id) ? false : true;
 
+		$filters = $_POST['filters'];
 		$load_per_action = $_POST['loadPerAction'];
 		$offset = $_POST['offset'];
 		
-		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'load_per_action' => $load_per_action, 'offset' => $offset ) );
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'load_per_action' => $load_per_action, 'offset' => $offset ) );
 
 		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
 
@@ -219,35 +222,6 @@ class Shortcode {
 			'paged'          => (int) $gs_tm_paged,
 			'tax_query' 	=> [],
 		];
-
-		if( ! wp_doing_ajax() && ('on' === $enable_pagination) && ( 'ajax-filter' === $gs_coach_filter_type ) ){
-			if( 'load-more-button' === $pagination_type ){
-				$args['posts_per_page'] = 6;
-			} elseif( 'ajax-pagination' === $pagination_type ){
-				$args['posts_per_page'] = $coach_per_page;
-			} elseif( 'load-more-scroll' === $pagination_type ){
-				$args['posts_per_page'] = 6;
-			}
-		}
-
-		if( 'on' === $enable_pagination ){
-			if( 'normal-pagination' === $pagination_type ){
-				$shortcode_id = $id;
-				$paged_var = 'paged' . $shortcode_id;
-				$paged = max( 1, $_GET["$paged_var"] ?? 1 );
-				$args["paged"] = $paged;
-				$args['posts_per_page'] = $coach_per_page;
-			} elseif( wp_doing_ajax() && ('ajax-pagination' === $pagination_type) ){
-				$args["paged"] = $ajax_datas['paged'];
-				$args['posts_per_page'] = $ajax_datas['posts_per_page'];
-			} elseif( wp_doing_ajax() && ('load-more-button' === $pagination_type) ){
-				$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
-				$args['offset'] = (int) $ajax_datas['offset'];
-			} elseif( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) ){
-				$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
-				$args['offset'] = (int) $ajax_datas['offset'];
-			}
-		}
 	
 		if ( !empty($group) ) {
 			$args['tax_query'][] = [
@@ -437,136 +411,169 @@ class Shortcode {
 			];
 		}
 
+		
+		if( ! wp_doing_ajax() && ('on' === $enable_pagination) && ( 'ajax-filter' === $gs_coach_filter_type ) ){
+			if( 'load-more-button' === $pagination_type ){
+				$args['posts_per_page'] = 6;
+			} elseif( 'ajax-pagination' === $pagination_type ){
+				$args['posts_per_page'] = $coach_per_page;
+			} elseif( 'load-more-scroll' === $pagination_type ){
+				$args['posts_per_page'] = 6;
+			}
+		}
+
+		if( 'on' === $enable_pagination ){
+			if( 'normal-pagination' === $pagination_type ){
+				$shortcode_id = $id;
+				$paged_var = 'paged' . $shortcode_id;
+				$paged = max( 1, $_GET["$paged_var"] ?? 1 );
+				$args["paged"] = $paged;
+				$args['posts_per_page'] = $coach_per_page;
+			} elseif( wp_doing_ajax() && ('ajax-pagination' === $pagination_type) ){
+				$args["paged"] = $ajax_datas['paged'];
+				$args['posts_per_page'] = $ajax_datas['posts_per_page'];
+			} elseif( wp_doing_ajax() && ('load-more-button' === $pagination_type) ){
+				$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+				$args['offset'] = (int) $ajax_datas['offset'];
+			} elseif( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) ){
+				$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+				$args['offset'] = (int) $ajax_datas['offset'];
+			}
+		}
+
+
 		if( wp_doing_ajax() && ! empty($ajax_datas['filters']) ){
+
+			if( empty($ajax_datas['load_per_action']) ){
+				$args['posts_per_page'] = 6;
+			}
+
 			$filters = $ajax_datas['filters'];
-	
-			if ( ! empty($filters) ) {
 				
-				if( ! empty($filters['search']) ) {
-					// Search through title
+			if( ! empty($filters['search']) ) {
+				// Search through title
 
-					add_filter( 'posts_search', 'GSCOACH\gs_filter_title_search_only', 10, 2 );
+				add_filter( 'posts_search', 'GSCOACH\gs_filter_title_search_only', 10, 2 );
 
-					$args['s'] = $filters['search'];
-				}
+				$args['s'] = $filters['search'];
+			}
 
-				if( ! empty($filters['tagSearch']) ) {
-					// Search through tags
+			if( ! empty($filters['tagSearch']) ) {
+				// Search through tags
 
-					$matched_terms = get_terms([
-						'taxonomy'   => 'gs_coach_tag',
-						'hide_empty' => false,
-						'name__like' => $filters['tagSearch'],
-					]);
+				$matched_terms = get_terms([
+					'taxonomy'   => 'gs_coach_tag',
+					'hide_empty' => false,
+					'name__like' => $filters['tagSearch'],
+				]);
 
-					$term_ids = wp_list_pluck($matched_terms, 'term_id');
+				$term_ids = wp_list_pluck($matched_terms, 'term_id');
 
-					if( ! empty($term_ids) ) {
-						$args['tax_query'][] = [
-							'taxonomy' => 'gs_coach_tag',
-							'field'    => 'term_id',
-							'terms'    => $term_ids
-						];
-					}
-				}
-
-				if( ! empty($filters['designation']) ) {
-					// Search through designation
-					$args['meta_query'][] = [
-						'key'     => '_gscoach_profession',
-						'value'   => $filters['designation']
-					];
-				}
-								
-				if( ! empty($filters['group']) ) {
-					// Search through group
+				if( ! empty($term_ids) ) {
 					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_group',
-						'field'    => 'slug',
-						'terms'    => $filters['group']
+						'taxonomy' => 'gs_coach_tag',
+						'field'    => 'term_id',
+						'terms'    => $term_ids
 					];
 				}
+			}
 
-				if( ! empty($filters['language']) ) {
-					// Search through language
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_language',
-						'field'    => 'slug',
-						'terms'    => $filters['language']
-					];
-				}
-				
-				if( ! empty($filters['location']) ) {
-					// Search through location
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_location',
-						'field'    => 'slug',
-						'terms'    => $filters['location']
-					];
-				}
+			if( ! empty($filters['designation']) ) {
+				// Search through designation
+				$args['meta_query'][] = [
+					'key'     => '_gscoach_profession',
+					'value'   => $filters['designation']
+				];
+			}
+							
+			if( ! empty($filters['group']) ) {
+				// Search through group
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_group',
+					'field'    => 'slug',
+					'terms'    => $filters['group']
+				];
+			}
 
-				if( ! empty($filters['gender']) ) {
-					// Search through gender
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_gender',
-						'field'    => 'slug',
-						'terms'    => $filters['gender']
-					];
-				}
+			if( ! empty($filters['language']) ) {
+				// Search through language
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_language',
+					'field'    => 'slug',
+					'terms'    => $filters['language']
+				];
+			}
+			
+			if( ! empty($filters['location']) ) {
+				// Search through location
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_location',
+					'field'    => 'slug',
+					'terms'    => $filters['location']
+				];
+			}
 
-				if( ! empty($filters['specialty']) ) {
-					// Search through specialty
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_specialty',
-						'field'    => 'slug',
-						'terms'    => $filters['specialty']
-					];
-				}
+			if( ! empty($filters['gender']) ) {
+				// Search through gender
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_gender',
+					'field'    => 'slug',
+					'terms'    => $filters['gender']
+				];
+			}
 
-				if( ! empty($filters['extra_one']) ) {
-					// Search through extra_one
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_extra_one',
-						'field'    => 'slug',
-						'terms'    => $filters['extra_one']
-					];
-				}
+			if( ! empty($filters['specialty']) ) {
+				// Search through specialty
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_specialty',
+					'field'    => 'slug',
+					'terms'    => $filters['specialty']
+				];
+			}
 
-				if( ! empty($filters['extra_two']) ) {
-					// Search through extra_two
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_extra_two',
-						'field'    => 'slug',
-						'terms'    => $filters['extra_two']
-					];
-				}
+			if( ! empty($filters['extra_one']) ) {
+				// Search through extra_one
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_extra_one',
+					'field'    => 'slug',
+					'terms'    => $filters['extra_one']
+				];
+			}
 
-				if( ! empty($filters['extra_three']) ) {
-					// Search through extra_three
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_extra_three',
-						'field'    => 'slug',
-						'terms'    => $filters['extra_three']
-					];
-				}
+			if( ! empty($filters['extra_two']) ) {
+				// Search through extra_two
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_extra_two',
+					'field'    => 'slug',
+					'terms'    => $filters['extra_two']
+				];
+			}
 
-				if( ! empty($filters['extra_four']) ) {
-					// Search through extra_four
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_extra_four',
-						'field'    => 'slug',
-						'terms'    => $filters['extra_four']
-					];
-				}
+			if( ! empty($filters['extra_three']) ) {
+				// Search through extra_three
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_extra_three',
+					'field'    => 'slug',
+					'terms'    => $filters['extra_three']
+				];
+			}
 
-				if( ! empty($filters['extra_five']) ) {
-					// Search through extra_five
-					$args['tax_query'][] = [
-						'taxonomy' => 'gs_coach_extra_five',
-						'field'    => 'slug',
-						'terms'    => $filters['extra_five']
-					];
-				}
+			if( ! empty($filters['extra_four']) ) {
+				// Search through extra_four
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_extra_four',
+					'field'    => 'slug',
+					'terms'    => $filters['extra_four']
+				];
+			}
+
+			if( ! empty($filters['extra_five']) ) {
+				// Search through extra_five
+				$args['tax_query'][] = [
+					'taxonomy' => 'gs_coach_extra_five',
+					'field'    => 'slug',
+					'terms'    => $filters['extra_five']
+				];
 			}
 
 		}
@@ -575,19 +582,19 @@ class Shortcode {
 
 		remove_filter( 'posts_search', 'GSCOACH\gs_filter_title_search_only', 10 );
 
-		if( wp_doing_ajax() && ('load-more-button' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
-			wp_send_json_success( array(
-				'projects_status' => 'end',
-				'message' => __('End of the Coaches', 'gscoach')
-			), 200 );
-		}
+		// if( wp_doing_ajax() && ('load-more-button' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
+		// 	wp_send_json_success( array(
+		// 		'projects_status' => 'end',
+		// 		'message' => __('End of the Coaches', 'gscoach')
+		// 	), 200 );
+		// }
 
-		if( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
-			wp_send_json_success( array(
-				'projects_status' => 'end',
-				'message' => __('End of the Coaches', 'gscoach')
-			), 200 );
-		}
+		// if( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
+		// 	wp_send_json_success( array(
+		// 		'projects_status' => 'end',
+		// 		'message' => __('End of the Coaches', 'gscoach')
+		// 	), 200 );
+		// }
 	
 		if ( ! is_pro_valid() ) {
 			
