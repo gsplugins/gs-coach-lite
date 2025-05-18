@@ -11,8 +11,6 @@ namespace GSCOACH;
  * @version 1.0.0
  */
 
- if( $gs_coach_filter_type !== 'ajax-filter' ) return;
-
 do_action( 'gs_coach_before_pagination' );
 ?>
 

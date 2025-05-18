@@ -412,7 +412,7 @@ class Shortcode {
 		}
 
 		
-		if( ! wp_doing_ajax() && ('on' === $enable_pagination) && ( 'ajax-filter' === $gs_coach_filter_type ) ){
+		if( ! wp_doing_ajax() && ('on' === $enable_pagination) ){
 			if( 'load-more-button' === $pagination_type ){
 				$args['posts_per_page'] = 6;
 			} elseif( 'ajax-pagination' === $pagination_type ){
@@ -581,20 +581,6 @@ class Shortcode {
 		$GLOBALS['gs_coach_loop'] = get_query( $args );
 
 		remove_filter( 'posts_search', 'GSCOACH\gs_filter_title_search_only', 10 );
-
-		// if( wp_doing_ajax() && ('load-more-button' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
-		// 	wp_send_json_success( array(
-		// 		'projects_status' => 'end',
-		// 		'message' => __('End of the Coaches', 'gscoach')
-		// 	), 200 );
-		// }
-
-		// if( wp_doing_ajax() && ('load-more-scroll' === $pagination_type) && ! $GLOBALS['gs_coach_loop']->have_posts() ){
-		// 	wp_send_json_success( array(
-		// 		'projects_status' => 'end',
-		// 		'message' => __('End of the Coaches', 'gscoach')
-		// 	), 200 );
-		// }
 	
 		if ( ! is_pro_valid() ) {
 			

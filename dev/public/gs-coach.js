@@ -1241,7 +1241,8 @@ jQuery(function($) {
 		});
 	}
 
-	// Run only if `.gs-coach-load-more-scroll` exists
-	initGSCoachScrollLoader();	
+	if( $(".gs-coach-load-more-scroll").length > 0 ){
+		initGSCoachScrollLoader();
+	}
 	
 });

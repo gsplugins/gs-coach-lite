@@ -154,7 +154,7 @@
 						</div>
 
 						
-						<div class="shortcode-setting--row" v-if="shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter'">
+						<div class="shortcode-setting--row">
 
 							<div class="gs-roow row-20">
 
@@ -175,7 +175,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter'">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination">
 
 							<div class="gs-roow row-20">
 
@@ -196,7 +196,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && displayCondition( shortcode_settings.pagination_type, [ 'normal-pagination', 'ajax-pagination' ] )">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && displayCondition( shortcode_settings.pagination_type, [ 'normal-pagination', 'ajax-pagination' ] )">
 
 							<div class="gs-roow row-20">
 
@@ -217,7 +217,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && shortcode_settings.pagination_type == 'load-more-button'">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-button'">
 
 							<div class="gs-roow row-20">
 
@@ -238,7 +238,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && shortcode_settings.pagination_type == 'load-more-scroll'">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-scroll'">
 
 							<div class="gs-roow row-20">
 
@@ -259,7 +259,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.filter_enabled && shortcode_settings.gs_coach_filter_type === 'ajax-filter' && shortcode_settings.pagination_type == 'load-more-button'">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-button'">
 
 							<div class="gs-roow row-20">
 
