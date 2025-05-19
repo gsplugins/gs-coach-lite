@@ -425,6 +425,8 @@ jQuery(function($) {
 
 					if( response.data.foundCoaches <= 6 ){
 						$('#gs-coach-load-more-coach-btn').hide();
+						// Do something here so that "gscoach_load_more_coach" ajax call is not made (On scroll)
+						
 					} else{
 						$('#gs-coach-load-more-coach-btn').show();
 						initGSCoachScrollLoader();
@@ -1168,7 +1170,6 @@ jQuery(function($) {
 	// Load more coaches on scroll
 	function initGSCoachScrollLoader() {
 		const scrollWrapper = $('.gs-coach-load-more-scroll');
-		if (scrollWrapper.length === 0) return; // Exit early if not on this pagination type
 
 		const gsCoachArea = $('.gs_coach_area');
 
@@ -1201,6 +1202,7 @@ jQuery(function($) {
 					action: 'gscoach_load_more_coach',
 					_ajax_nonce: GSCoachData.nonce,
 					shortcodeId: shortcodeId,
+					filters: filterVals,
 					loadPerAction: loadPerActionValue,
 					offset: currentCoachQuantity
 				}
@@ -1214,15 +1216,16 @@ jQuery(function($) {
 					
 					if (response.success) {
 
-						if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
-							noMoreData = true;
-						}
-
 						let dataEls = $.parseHTML(response.data.coaches);
 						let coachDivs = $(dataEls).find('.single-coach-div');
 						$('.gs_coach').append(coachDivs);
 					}
-				}, 1000);
+				}, 600);
+
+				
+				if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
+					noMoreData = true;
+				}
 				
 			});
 		}
@@ -1241,7 +1244,7 @@ jQuery(function($) {
 		});
 	}
 
-	if( $(".gs-coach-load-more-scroll").length > 0 ){
+	if( $(".gs-coach-load-more-scroll").length !== 0 ){
 		initGSCoachScrollLoader();
 	}
 	
