@@ -14,12 +14,12 @@
 					<div class="gs-roow row-20">
 
 						<div class="gs-col-xs-6 gs-col-sm-5 gs-col-md-4">
-							<label class="m-t-10" for="gs_coachcoachs_slug">{{translation('coaches-slug')}}:</label>
+							<label class="m-t-10" for="gs_coaches_slug">{{translation('coaches-slug')}}:</label>
 							<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 						</div>
 
 						<div class="gs-col-xs-6 gs-col-sm-6 gs-col-md-5">
-							<input type="text" class="bi-input-control" name="gs_coachcoachs_slug" v-model="preference.gs_coachcoachs_slug" />
+							<input type="text" class="bi-input-control" name="gs_coaches_slug" v-model="preference.gs_coaches_slug" />
 						</div>
 
 						<div class="gs-col-xs-12 bi-text-help--area">  

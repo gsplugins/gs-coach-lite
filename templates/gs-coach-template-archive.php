@@ -23,7 +23,7 @@ get_header(); ?>
 
 <div class="gs-containeer gs-archive-container">
 	
-	<h1 class="arc-title"><?php the_archive_title(); ?></h1>
+	<h1 class="arc-title"><?php echo gs_get_post_type_archive_title(); ?></h1>
 
 	<div class="gs-roow clearfix gs_coach" id="gs_coach_archive">
 

@@ -628,9 +628,9 @@ class Shortcode {
 		$v_2_themes = get_themes_list( 2, 'both', 'value' );
 	
 		if ( in_array( $gs_coach_theme, $v_2_themes ) ) {
-			$theme_class .= ' gs_tm_theme_v_2';
+			$theme_class .= ' gs_coach_theme_v_2';
 		} else {
-			$theme_class .= ' gs_tm_theme_v_1';
+			$theme_class .= ' gs_coach_theme_v_1';
 		}
 		
 		// Load Template Hooks
