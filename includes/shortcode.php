@@ -413,9 +413,8 @@ class Shortcode {
 				'operator' => 'NOT IN',
 			];
 		}
-
 		
-		if( ! wp_doing_ajax() && ('on' === $enable_pagination) && ( 'normal-filter' !== $gs_coach_filter_type ) ){
+		if( ! wp_doing_ajax() && ('on' === $enable_pagination) ){
 			if( 'load-more-button' === $pagination_type ){
 				$args['posts_per_page'] = 6;
 			} elseif( 'ajax-pagination' === $pagination_type ){
