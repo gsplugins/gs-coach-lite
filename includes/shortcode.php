@@ -43,6 +43,9 @@ class Shortcode {
 
 		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
 
+		
+		// $pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, $paged );
+
 		wp_send_json_success(array( 'coaches' => $coaches, 'foundCoaches' => $found_coaches ), 200 );
 		wp_die();
 	}

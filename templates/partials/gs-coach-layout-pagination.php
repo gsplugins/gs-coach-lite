@@ -11,14 +11,12 @@ namespace GSCOACH;
  * @version 1.0.0
  */
 
- if( ! is_display_pagination( $carousel_enabled, $enable_pagination, $filter_enabled, $gs_coach_filter_type ) ) return;
+if( ! is_display_pagination( $carousel_enabled, $filter_enabled, $gs_coach_filter_type ) ) return;
 
 do_action( 'gs_coach_before_pagination' );
 
-if( 'on' === $filter_enabled && 'ajax-filter' === $gs_coach_filter_type && 'normal-pagination' === $pagination_type ) {
+if( 'on' === $filter_enabled && 'normal-pagination' === $pagination_type ) {
     $pagination_type = 'ajax-pagination';
-} elseif( 'on' === $filter_enabled && 'normal-filter' === $gs_coach_filter_type && 'ajax-pagination' === $pagination_type ){
-    return;
 }
 
 ?>
