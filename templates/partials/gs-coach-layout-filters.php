@@ -178,4 +178,5 @@ foreach ( $filters_order as $filter_order ) : ?>
 
 if ( !empty(trim($filters_html)) ) : ?>
     <div class="search-filter <?php echo ( $gs_coach_filter_type === 'ajax-filter' ) ? 'search-filter-ajax' : '' ?>"><div class="gs-roow"><?php echo gs_wp_kses( $filters_html ); ?></div></div>
+    <div class="gs-coach-filter-loader-spinner" style="display: none;"><img src="<?php echo GSCOACH_PLUGIN_URI . '/assets/img/loader.svg'; ?>" alt="Loader Image"></div>
 <?php endif; ?>

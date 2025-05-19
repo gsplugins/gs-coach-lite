@@ -89,6 +89,71 @@
 
 						</div>
 
+						<div class="shortcode-setting--row" v-if="themes_v2_carousel().includes( shortcode_settings.gs_coach_theme )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-7">
+									<label class="m-t-10" for="carousel_enabled">{{translation('carousel_enabled')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-5">
+									<input-toggle class="m-t-6" name="carousel_enabled" v-model="shortcode_settings.carousel_enabled" offLabel="Off" onLabel="On"></input-toggle>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('carousel_enabled__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+
+						<div class="shortcode-setting--row" v-if="!shortcode_settings.carousel_enabled && themes_v2_filter().includes( shortcode_settings.gs_coach_theme )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-7">
+									<label class="m-t-10" for="filter_enabled">{{translation('filter_enabled')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-5">
+									<input-toggle class="m-t-6" name="filter_enabled" v-model="shortcode_settings.filter_enabled" offLabel="Off" onLabel="On"></input-toggle>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('filter_enabled__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.filter_enabled && !shortcode_settings.carousel_enabled && themes_v2_filter().includes( shortcode_settings.gs_coach_theme )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="gs_coach_filter_type">{{translation('filter_type')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input-select key="gs_coach_filter_type" id="gs_coach_filter_type" v-model="shortcode_settings.gs_coach_filter_type" :options="shortcode_options.gs_coach_filter_type" :placeholder="translation('filter_type')"></input-select>
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('filter_type__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						
 						<div class="shortcode-setting--row">
 
 							<div class="gs-roow row-20">
@@ -209,70 +274,6 @@
 
 								<div class="gs-col-xs-12 bi-text-help--area">
 									<p class="bi-text-help">{{translation('load_button_text__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="shortcode-setting--row" v-if="themes_v2_carousel().includes( shortcode_settings.gs_coach_theme )">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="carousel_enabled">{{translation('carousel_enabled')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="carousel_enabled" v-model="shortcode_settings.carousel_enabled" offLabel="Off" onLabel="On"></input-toggle>
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('carousel_enabled__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-
-						<div class="shortcode-setting--row" v-if="!shortcode_settings.carousel_enabled && themes_v2_filter().includes( shortcode_settings.gs_coach_theme )">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="filter_enabled">{{translation('filter_enabled')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="filter_enabled" v-model="shortcode_settings.filter_enabled" offLabel="Off" onLabel="On"></input-toggle>
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('filter_enabled__details')}}</p>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="shortcode-setting--row" v-if="shortcode_settings.filter_enabled && !shortcode_settings.carousel_enabled && themes_v2_filter().includes( shortcode_settings.gs_coach_theme )">
-
-							<div class="gs-roow row-20">
-
-								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="gs_coach_filter_type">{{translation('filter_type')}}:</label>
-									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
-								</div>
-
-								<div class="gs-col-xs-7">
-									<input-select key="gs_coach_filter_type" id="gs_coach_filter_type" v-model="shortcode_settings.gs_coach_filter_type" :options="shortcode_options.gs_coach_filter_type" :placeholder="translation('filter_type')"></input-select>
-								</div>
-
-								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('filter_type__details')}}</p>
 								</div>
 
 							</div>

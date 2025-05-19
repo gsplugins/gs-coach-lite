@@ -1086,3 +1086,42 @@ function get_ajax_pagination( $shortcode_id, $items_per_page = 6, $paged = 1 ) {
 
     return $pagination;
 }
+
+function gs_filter_title_search_only( $search, $wp_query ) {
+    global $wpdb;
+
+    // Get the search term
+    $search_term = $wp_query->get('s');
+
+    if ( $search_term ) {
+        // Escape for SQL LIKE query
+        $like = '%' . $wpdb->esc_like( $search_term ) . '%';
+
+        // Modify the search to only apply to post_title
+        $search = $wpdb->prepare(" AND {$wpdb->posts}.post_title LIKE %s ", $like);
+    }
+
+    return $search;
+}
+
+function is_display_pagination( $carousel_enabled, $enable_pagination, $filter_enabled, $filter_type ) {
+
+    if( $carousel_enabled === 'on' && $enable_pagination === 'on' ) {
+        return false;
+    }
+    
+    if( 'on' === $filter_enabled && $filter_type === 'normal-filter' && $enable_pagination === 'on' ){
+        return false;
+    }
+    
+    if( $carousel_enabled === 'off' && $enable_pagination === 'on' ) {
+        return true;
+    }
+    
+    if( $carousel_enabled === 'on' && $enable_pagination === 'off' ) {
+        return false;
+    }
+
+    return true;
+    
+}

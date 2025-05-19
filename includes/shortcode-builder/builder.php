@@ -2138,7 +2138,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_name_is_linked'         => 'on',
                 'gs_coach_link_type'              => 'default',
                 'gs_coach_role'                   => 'on',
-                // 'gs_coach_pagination'             => 'off',
                 'gs_coach_details'                => 'on',
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
