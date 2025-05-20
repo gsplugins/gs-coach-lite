@@ -38,15 +38,19 @@ class Shortcode {
 		$is_preview = is_numeric($shortcode_id) ? false : true;
 		
 		$filters = $_POST['filters'];
+		$posts_per_page = $_POST['postsPerPage'];
 		
 		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters ) );
 
 		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
 
-		
-		// $pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, $paged );
 
-		wp_send_json_success(array( 'coaches' => $coaches, 'foundCoaches' => $found_coaches ), 200 );
+		
+		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, 1 );
+
+		// var_dump($pagination);
+
+		wp_send_json_success(array( 'coaches' => $coaches, 'pagination' => $pagination, 'foundCoaches' => $found_coaches ), 200 );
 		wp_die();
 	}
 
@@ -76,8 +80,10 @@ class Shortcode {
 
 		$posts_per_page = $_POST['posts_per_page'];
 		$paged = $_POST['paged'];
+
+		$filters = $_POST['filters'];
 		
-		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
 
 		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, $paged );
 

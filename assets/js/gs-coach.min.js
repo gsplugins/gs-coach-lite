@@ -398,6 +398,11 @@ jQuery(function($) {
 			const gsCoachArea = $('.gs_coach_area');
 			const shortcodeId = gsCoachArea.data('shortcode-id');
 			const loader = gsCoachArea.find('.gs-coach-filter-loader-spinner');
+
+			// Incorrect Selector. Start from here the next day.
+			const paginationDiv = $(`#gs-coach-ajax-pagination-wrapper-${shortcodeId}`);
+
+			const postsPerPage = paginationDiv.data('posts-per-page');
 	
 			$.ajax({
 				url: GSCoachData.ajaxUrl,
@@ -406,11 +411,13 @@ jQuery(function($) {
 					action: 'gscoach_filter_coaches',
 					_ajax_nonce: GSCoachData.nonce,
 					shortcodeId: shortcodeId,
-					filters: this.filters
+					filters: this.filters,
+					postsPerPage: postsPerPage
 				},
 				beforeSend: function() {
 					gsCoachArea.find('.gs_coach').hide();
 					$('#gs-coach-load-more-coach-btn').hide();
+					paginationDiv.hide();
 					loader.show();
 				}
 			})
@@ -425,11 +432,13 @@ jQuery(function($) {
 
 					if( response.data.foundCoaches <= 6 ){
 						$('#gs-coach-load-more-coach-btn').hide();
+						paginationDiv.hide();
 						// Do something here so that "gscoach_load_more_coach" ajax call is not made (On scroll)
 						
 					} else{
 						$('#gs-coach-load-more-coach-btn').show();
-						initGSCoachScrollLoader();
+						paginationDiv.show( response.data.pagination );
+						// initGSCoachScrollLoader();
 					}
 				}, 500);
 	
@@ -1145,8 +1154,9 @@ jQuery(function($) {
 			data: {
                 action: 'gscoach_ajax_pagination',
 				_ajax_nonce: GSCoachData.nonce,
-                paged: paged,
                 shortcode_id: shortcodeId,
+				filters: filterVals,
+                paged: paged,
                 posts_per_page: postsPerPage
 			},
 			beforeSend: function() {
