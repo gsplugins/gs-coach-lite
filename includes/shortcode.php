@@ -497,7 +497,7 @@ class Shortcode {
 
 			// Maybe I have to do something here
 			if( ! empty($ajax_datas['posts_per_page']) ){
-				$args['posts_per_page'] = 6;
+				$args['posts_per_page'] = $ajax_datas['posts_per_page']; // Set initial value here later on
 			} else{
 				$args['posts_per_page'] = 3;
 			}
