@@ -12,8 +12,8 @@ class Shortcode {
 	public function __construct() {
 
 		// Ajax Filter
-		add_action('wp_ajax_gscoach_filter_coaches', [ $this, 'gscoach_filter_coaches' ]);
-		add_action('wp_ajax_nopriv_gscoach_filter_coaches', [ $this, 'gscoach_filter_coaches' ]);
+		add_action('wp_ajax_gscoach_filter_coaches', [ $this, 'filter_coaches' ]);
+		add_action('wp_ajax_nopriv_gscoach_filter_coaches', [ $this, 'filter_coaches' ]);
 
 		// Load More Button and Infinite Scroll
 		add_action('wp_ajax_gscoach_load_more_coach', [ $this, 'load_more_coach' ]);
@@ -31,24 +31,20 @@ class Shortcode {
 		}
 	}
 
-	public function gscoach_filter_coaches(){
+	public function filter_coaches(){
 		if( ! check_ajax_referer('gscoach_user_action') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
-		$shortcode_id = $_POST['shortcodeId'];
+		$shortcode_id = $_POST['shortcode_id'];
 		$is_preview = is_numeric($shortcode_id) ? false : true;
 		
 		$filters = $_POST['filters'];
-		$posts_per_page = $_POST['postsPerPage'];
+		$posts_per_page = $_POST['posts_per_page'];
 		
-		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters ) );
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'posts_per_page' => $posts_per_page ) );
 
 		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
-
-
 		
 		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, 1 );
-
-		// var_dump($pagination);
 
 		wp_send_json_success(array( 'coaches' => $coaches, 'pagination' => $pagination, 'foundCoaches' => $found_coaches ), 200 );
 		wp_die();
@@ -85,9 +81,11 @@ class Shortcode {
 		
 		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
 
+		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
+
 		$pagination = get_ajax_pagination( $shortcode_id, $posts_per_page, $paged );
 
-		wp_send_json_success(array( 'coaches' => $coaches, 'pagination' => $pagination ), 200 );
+		wp_send_json_success(array( 'coaches' => $coaches, 'pagination' => $pagination, 'foundCoaches' => $found_coaches ), 200 );
 		wp_die();
 	}
 
@@ -449,7 +447,9 @@ class Shortcode {
 						$paged = max( 1, $_GET[$paged_var] ?? 1 );
 						$args["paged"] = $paged;
 
-					} elseif ( in_array( $pagination_type, ['ajax-pagination', 'load-more-button', 'load-more-scroll'], true ) ) {
+					} elseif( 'ajax-pagination' === $pagination_type ){
+						$args['posts_per_page'] = $coach_per_page;
+					} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
 						$args['posts_per_page'] = 6;
 					}
 				}
@@ -471,7 +471,7 @@ class Shortcode {
 
 					if ( wp_doing_ajax() ) {
 
-						if ( 'ajax-pagination' === $pagination_type ) {
+						if ( 'ajax-pagination' === $pagination_type || 'normal-pagination' === $pagination_type ) {
 							$args["paged"] = (int) $ajax_datas['paged'];
 							$args['posts_per_page'] = (int) $ajax_datas['posts_per_page'];
 
@@ -481,7 +481,7 @@ class Shortcode {
 						}
 
 					} else {
-						if ( 'ajax-pagination' === $pagination_type ) {
+						if ( 'ajax-pagination' === $pagination_type || 'normal-pagination' === $pagination_type ) {
 							$args['posts_per_page'] = $coach_per_page;
 
 						} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
@@ -495,8 +495,11 @@ class Shortcode {
 
 		if( wp_doing_ajax() && ! empty($ajax_datas['filters']) ){
 
-			if( empty($ajax_datas['load_per_action']) ){
+			// Maybe I have to do something here
+			if( ! empty($ajax_datas['posts_per_page']) ){
 				$args['posts_per_page'] = 6;
+			} else{
+				$args['posts_per_page'] = 3;
 			}
 
 			$filters = $ajax_datas['filters'];
@@ -661,7 +664,7 @@ class Shortcode {
 			'prev_txt' => $gs_coach_prev_txt,
 		];
 
-		if( 'ajax-pagination' === $pagination_type ){
+		if( 'ajax-pagination' === $pagination_type || 'normal-pagination' === $pagination_type ){
 			$data_options['coach_per_page'] = $coach_per_page;
 		} elseif( 'load-more-button' === $pagination_type ){
 			$data_options['load_per_click'] = $load_per_click;
