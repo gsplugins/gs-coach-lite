@@ -428,16 +428,30 @@ class Shortcode {
 
 			} elseif ( 'on' === $enable_pagination ) {
 
-				if ( 'normal-pagination' === $pagination_type ) {
-					$args['posts_per_page'] = $coach_per_page;
+				if ( wp_doing_ajax() ) {
 
-					$shortcode_id = $id;
-					$paged_var = 'paged' . $shortcode_id;
-					$paged = max( 1, $_GET[$paged_var] ?? 1 );
-					$args["paged"] = $paged;
+					if ( 'ajax-pagination' === $pagination_type ) {
+						$args["paged"] = (int) $ajax_datas['paged'];
+						$args['posts_per_page'] = (int) $ajax_datas['posts_per_page'];
 
-				} elseif ( in_array( $pagination_type, ['ajax-pagination', 'load-more-button', 'load-more-scroll'], true ) ) {
-					$args['posts_per_page'] = 6;
+					} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+						$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
+						$args['offset'] = (int) $ajax_datas['offset'];
+					}
+
+				} else {
+
+					if ( 'normal-pagination' === $pagination_type ) {
+						$args['posts_per_page'] = $coach_per_page;
+
+						$shortcode_id = $id;
+						$paged_var = 'paged' . $shortcode_id;
+						$paged = max( 1, $_GET[$paged_var] ?? 1 );
+						$args["paged"] = $paged;
+
+					} elseif ( in_array( $pagination_type, ['ajax-pagination', 'load-more-button', 'load-more-scroll'], true ) ) {
+						$args['posts_per_page'] = 6;
+					}
 				}
 			}
 		}
@@ -446,7 +460,7 @@ class Shortcode {
 		elseif ( 'on' === $filter_enabled ) {
 
 			if ( 'normal-filter' === $gs_coach_filter_type ) {
-				$args['posts_per_page'] = -1; // Force show all regardless of pagination type
+				$args['posts_per_page'] = -1;
 
 			} elseif ( 'ajax-filter' === $gs_coach_filter_type ) {
 
@@ -467,7 +481,6 @@ class Shortcode {
 						}
 
 					} else {
-						// Initial (non-AJAX) load
 						if ( 'ajax-pagination' === $pagination_type ) {
 							$args['posts_per_page'] = $coach_per_page;
 
