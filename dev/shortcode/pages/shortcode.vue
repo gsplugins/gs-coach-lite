@@ -154,7 +154,7 @@
 						</div>
 
 						
-						<div class="shortcode-setting--row">
+						<div class="shortcode-setting--row" v-if="is_display_pagination_settings()">
 
 							<div class="gs-roow row-20">
 
@@ -175,7 +175,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && is_display_pagination_settings()">
 
 							<div class="gs-roow row-20">
 
@@ -196,7 +196,28 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && displayCondition( shortcode_settings.pagination_type, [ 'normal-pagination', 'ajax-pagination' ] )">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && displayCondition( shortcode_settings.pagination_type, [ 'load-more-button', 'load-more-scroll' ] )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="initial_items">{{translation('initial_items')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input type="number" class="bi-input-control" id="initial_items" v-model="shortcode_settings.initial_items" placeholder="6">
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('initial_items__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && is_display_pagination_settings() && displayCondition( shortcode_settings.pagination_type, [ 'normal-pagination', 'ajax-pagination' ] )">
 
 							<div class="gs-roow row-20">
 
@@ -217,7 +238,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-button'">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && is_display_pagination_settings() && shortcode_settings.pagination_type == 'load-more-button'">
 
 							<div class="gs-roow row-20">
 
@@ -238,7 +259,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-scroll'">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && is_display_pagination_settings() && shortcode_settings.pagination_type == 'load-more-scroll'">
 
 							<div class="gs-roow row-20">
 
@@ -259,7 +280,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && shortcode_settings.pagination_type == 'load-more-button'">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && is_display_pagination_settings() && shortcode_settings.pagination_type == 'load-more-button'">
 
 							<div class="gs-roow row-20">
 
@@ -2787,6 +2808,18 @@
 		},
 
 		methods: {
+
+			is_display_pagination_settings(){
+				if( this.shortcode_settings.filter_enabled && this.shortcode_settings.gs_coach_filter_type === 'normal-filter' ){
+					return false;
+				}
+
+				if( this.shortcode_settings.carousel_enabled ){
+					return false;
+				}
+
+				return true;
+			},
 
 			no_ribbon_themes(){
 				return ['gs-coach-circle-one', 'gs-coach-circle-two', 'gs-coach-circle-three', 'gs-coach-circle-four', 'gs-coach-circle-five', 'gs_tm_theme2', 'gs-coach-circle-seven', 'gs-coach-circle-eight', 'gs-coach-circle-nine', 'gs-coach-circle-ten'];

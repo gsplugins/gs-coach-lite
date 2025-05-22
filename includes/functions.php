@@ -1104,21 +1104,13 @@ function gs_filter_title_search_only( $search, $wp_query ) {
     return $search;
 }
 
-function is_display_pagination( $carousel_enabled, $enable_pagination, $filter_enabled, $filter_type ) {
+function is_display_pagination( $carousel_enabled, $filter_enabled, $filter_type ) {
 
-    if( $carousel_enabled === 'on' && $enable_pagination === 'on' ) {
+    if( $carousel_enabled === 'on' ) {
         return false;
     }
     
-    if( 'on' === $filter_enabled && $filter_type === 'normal-filter' && $enable_pagination === 'on' ){
-        return false;
-    }
-    
-    if( $carousel_enabled === 'off' && $enable_pagination === 'on' ) {
-        return true;
-    }
-    
-    if( $carousel_enabled === 'on' && $enable_pagination === 'off' ) {
+    if( 'on' === $filter_enabled && $filter_type === 'normal-filter' ){
         return false;
     }
 

@@ -778,6 +778,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'pagination_type' => __('Pagination Type', 'gscoach'),
                 'pagination_type__details' => __('Select pagination type.', 'gscoach'),
 
+                'initial_items'     => __('Initial Items', 'gscoach'),
+                'initial_items__details'    => __('Set initial number of items that shows on page load (before users interaction)', 'gscoach'),
+
                 'load_per_click' => __('Per Click', 'gscoach'),
                 'load_per_click__details' => __('Load coaches per button click', 'gscoach'),
 
@@ -2144,6 +2147,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_details_area_height'          => 'off',
                 'enable_pagination'               => 'off',
                 'pagination_type'                 => 'load-more-button',
+                'initial_items'                   => '6',
                 'coach_per_page'                  => '6',
                 'load_per_click'                  => '3',
                 'per_load'                        => '3',
