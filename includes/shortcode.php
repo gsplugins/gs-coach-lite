@@ -497,6 +497,12 @@ class Shortcode {
 
 			if( wp_doing_ajax() ){
 
+				if( 'on' === $enable_pagination && empty($ajax_datas['load_per_action']) ){
+					if ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+						$args['posts_per_page'] = $initial_items;
+					}
+				}
+
 				$filters = $ajax_datas['filters'];
 				
 				if( ! empty($filters['search']) ) {

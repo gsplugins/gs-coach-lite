@@ -196,7 +196,7 @@
 
 						</div>
 
-						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && displayCondition( shortcode_settings.pagination_type, [ 'load-more-button', 'load-more-scroll' ] )">
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && is_display_pagination_settings() && displayCondition( shortcode_settings.pagination_type, [ 'load-more-button', 'load-more-scroll' ] )">
 
 							<div class="gs-roow row-20">
 
