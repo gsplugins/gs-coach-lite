@@ -495,12 +495,17 @@ class Shortcode {
 
 		if( wp_doing_ajax() && ! empty($ajax_datas['filters']) ){
 
-			// Maybe I have to do something here
-			if( ! empty($ajax_datas['posts_per_page']) ){
-				$args['posts_per_page'] = $ajax_datas['posts_per_page']; // Set initial value here later on
-			} else{
-				$args['posts_per_page'] = 3;
+			// Just keep this for reference
+			// if( ! empty($ajax_datas['posts_per_page']) ){
+			// 	$args['posts_per_page'] = $ajax_datas['posts_per_page']; // Set initial value here later on
+			// } else{
+			// 	$args['posts_per_page'] = 3;
+			// }
+
+			if ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+				$args['posts_per_page'] = $initial_items;
 			}
+
 
 			$filters = $ajax_datas['filters'];
 				

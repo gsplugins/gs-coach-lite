@@ -196,6 +196,27 @@
 
 						</div>
 
+						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && displayCondition( shortcode_settings.pagination_type, [ 'load-more-button', 'load-more-scroll' ] )">
+
+							<div class="gs-roow row-20">
+
+								<div class="gs-col-xs-5">
+									<label class="m-t-10" for="initial_items">{{translation('initial_items')}}:</label>
+									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
+								</div>
+
+								<div class="gs-col-xs-7">
+									<input type="number" class="bi-input-control" id="initial_items" v-model="shortcode_settings.initial_items" placeholder="6">
+								</div>
+
+								<div class="gs-col-xs-12 bi-text-help--area">
+									<p class="bi-text-help">{{translation('initial_items__details')}}</p>
+								</div>
+
+							</div>
+
+						</div>
+
 						<div class="shortcode-setting--row" v-if="shortcode_settings.enable_pagination && is_display_pagination_settings() && displayCondition( shortcode_settings.pagination_type, [ 'normal-pagination', 'ajax-pagination' ] )">
 
 							<div class="gs-roow row-20">
