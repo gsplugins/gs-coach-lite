@@ -550,10 +550,6 @@ jQuery(function($) {
 				_this.filters.search = $search_by_name.val();
 				_this.renderAjaxTemplate();
 			}) );
-			$search_by_name.on( 'change', function() {
-				_this.filters.search = $search_by_name.val();
-				_this.renderAjaxTemplate();
-			});
 		
 			// use value of search field to filter
 			var $search_by_tag = this.$wrapper.find('.search-by-tag');
@@ -561,10 +557,6 @@ jQuery(function($) {
 				_this.filters.tagSearch = $search_by_tag.val();
 				_this.renderAjaxTemplate();
 			}) );
-			$search_by_tag.on( 'change', function() {
-				_this.filters.tagSearch = $search_by_tag.val();
-				_this.renderAjaxTemplate();
-			});
 
 			this.$wrapper.find('.gs-coach-filter-cats > li.filter').first().addClass('active')
 		
