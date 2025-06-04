@@ -421,7 +421,7 @@ jQuery(function($) {
 				paginationDiv = paginationDiv.find(`#gs-coach-load-more-button-${shortcodeId}`);
 			} else if ( isLoadMoreScroll ) {
 				postsPerPage = gsCoachAreaID.data('options').per_load;
-				paginationDiv = paginationDiv.find(`#gs-coach-load-more-button-${shortcodeId}`);
+				paginationDiv = paginationDiv.find(`#gs-coach-load-more-scroll-${shortcodeId}`);
 			}
 
 	
@@ -437,7 +437,6 @@ jQuery(function($) {
 				},
 				beforeSend: function() {
 					gsCoachAreaID.find('.gs_coach').hide();
-					$('#gs-coach-load-more-coach-btn').hide();
 					paginationDiv.hide();
 					loader.show();
 				}
@@ -460,12 +459,19 @@ jQuery(function($) {
 						}
 						
 					} else{
+
 						$('#gs-coach-load-more-coach-btn').show();
 						paginationDiv.show( response.data.pagination );
+
+						if( isAjaxPagination ){
+							paginationDiv.html( response.data.pagination );
+						}
 
 						if( isLoadMoreScroll ){
 							initGSCoachScrollLoader();
 						}
+
+						paginationDiv.show();
 					}
 				}, 500);
 	
@@ -1143,11 +1149,10 @@ jQuery(function($) {
 
 			let coachDivs = $(dataEls).find('.single-coach-div');
 
+			$('.gs_coach').append(coachDivs);
+
 			if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
-				$('.gs_coach').append(coachDivs);
 				$('#gs-coach-load-more-coach-btn').hide();
-			} else{
-				$('.gs_coach').append(coachDivs);
 			}
 	
 		});

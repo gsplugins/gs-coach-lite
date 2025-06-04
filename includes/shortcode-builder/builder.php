@@ -772,6 +772,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'next' => __('Next Text', 'gscoach'),
                 'next-details' => __('Replace with preferred text for carousel Next text', 'gscoach'),
 
+                'filter_enabled' => __('Enable Filter', 'gscoach'),
+                'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gscoach'),
+
+                'filter_type' => __('Filter Type', 'gscoach'),
+                'filter_type__details' => __('Select filter type', 'gscoach'),
+                
                 'enable_pagination' => __('Enable Pagination', 'gscoach'),
                 'enable_pagination__details' => __('Enable paginations like number pagination, load more button, On scroll load etc.', 'gscoach'),
 
@@ -817,12 +823,6 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 'carousel_navs' => __('Carousel Navs Style', 'gscoach'),
                 'carousel_navs__details' => __('Select carousel navs style, this is available for certain theme', 'gscoach'),
-
-                'filter_enabled' => __('Enable Filter', 'gscoach'),
-                'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gscoach'),
-
-                'filter_type' => __('Filter Type', 'gscoach'),
-                'filter_type__details' => __('Select filter type', 'gscoach'),
 
                 'drawer_style' => __('Drawer Style', 'gscoach'),
                 'drawer_style__details' => __('Select drawer style, this is available for certain theme', 'gscoach'),
