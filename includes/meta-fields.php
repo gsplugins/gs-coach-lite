@@ -100,7 +100,7 @@ class Meta_Fields {
 
 			<div class="gs-coach-pro-field">
 
-			<div class="form-group">
+				<div class="form-group">
 					<label for="gsCoachExperience"><?php echo get_meta_field_name('_gscoach_experience'); ?></label>
 					<input type="text" id="gsCoachExperience" class="form-control" name="gs_coach_experience" placeholder="Experience" value="<?php echo isset($gs_coach_experience) ? esc_attr($gs_coach_experience) : ''; ?>">
 				</div>
@@ -142,7 +142,7 @@ class Meta_Fields {
 
 				<div class="form-group">
 					<label for="gsCoachSchedule"><?php echo get_meta_field_name('_gscoach_shedule'); ?></label>
-					<input type="time" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
+					<input type="text" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
 				</div>
 
 				<div class="form-group">
