@@ -772,6 +772,12 @@ if ( ! class_exists( 'Builder' ) ) {
                 'next' => __('Next Text', 'gscoach'),
                 'next-details' => __('Replace with preferred text for carousel Next text', 'gscoach'),
 
+                'filter_enabled' => __('Enable Filter', 'gscoach'),
+                'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gscoach'),
+
+                'filter_type' => __('Filter Type', 'gscoach'),
+                'filter_type__details' => __('Select filter type', 'gscoach'),
+                
                 'enable_pagination' => __('Enable Pagination', 'gscoach'),
                 'enable_pagination__details' => __('Enable paginations like number pagination, load more button, On scroll load etc.', 'gscoach'),
 
@@ -817,12 +823,6 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 'carousel_navs' => __('Carousel Navs Style', 'gscoach'),
                 'carousel_navs__details' => __('Select carousel navs style, this is available for certain theme', 'gscoach'),
-
-                'filter_enabled' => __('Enable Filter', 'gscoach'),
-                'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gscoach'),
-
-                'filter_type' => __('Filter Type', 'gscoach'),
-                'filter_type__details' => __('Select filter type', 'gscoach'),
 
                 'drawer_style' => __('Drawer Style', 'gscoach'),
                 'drawer_style__details' => __('Select drawer style, this is available for certain theme', 'gscoach'),
@@ -2145,6 +2145,8 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_desc_scroll_contrl'           => 'on',
                 'gs_max_scroll_height'            => '',
                 'gs_details_area_height'          => 'off',
+                'filter_enabled'                  => 'off',
+                'gs_coach_filter_type'            => 'normal-filter',
                 'enable_pagination'               => 'off',
                 'pagination_type'                 => 'load-more-button',
                 'initial_items'                   => '6',
@@ -2158,8 +2160,6 @@ if ( ! class_exists( 'Builder' ) ) {
                 'carousel_dots_enabled'           => 'on',
                 'carousel_navs_style'             => 'default',
                 'carousel_dots_style'             => 'default',
-                'filter_enabled'                  => 'off',
-                'gs_coach_filter_type'            => 'normal-filter',
                 'drawer_style'                    => 'default',
                 'panel_style'                     => 'default',
                 'popup_style'                     => 'default',

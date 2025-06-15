@@ -284,3 +284,8 @@
   width: 100%;
   border-radius: 5px;
 }
+
+.gs-flatpickr-alt {
+  width: 80%;
+  background: #fff !important;
+}

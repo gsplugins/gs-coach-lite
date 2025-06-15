@@ -26,11 +26,13 @@ class Meta_Fields {
 
 	function gs_coach_enqueue_admin_scripts($hook) {
 		global $post;
-		if ($hook === 'post.php' || $hook === 'post-new.php') {
-			if ('gs_coach' === get_post_type($post)) {
-				wp_enqueue_media();
-				wp_enqueue_script('gs-coach-cv-uploader', GSCOACH_PLUGIN_URI . '/assets/admin/js/cv-uploader.js', array('jquery'), GSCOACH_VERSION, true);
-			}
+
+		if (($hook === 'post.php' || $hook === 'post-new.php') && get_post_type($post) === 'gs_coach') {
+			wp_enqueue_media();
+			wp_enqueue_script('gs-coach-cv-uploader', GSCOACH_PLUGIN_URI . '/assets/admin/js/cv-uploader.js', array('jquery'), GSCOACH_VERSION, true);
+
+			wp_enqueue_style('gs-flatpickr', GSCOACH_PLUGIN_URI . '/assets/libs/flatpickr/flatpickr.min.css');
+			wp_enqueue_script('gs-flatpickr', GSCOACH_PLUGIN_URI . '/assets/libs/flatpickr/flatpickr.min.js', ['jquery'], null, true);
 		}
 	}
 
@@ -100,7 +102,7 @@ class Meta_Fields {
 
 			<div class="gs-coach-pro-field">
 
-			<div class="form-group">
+				<div class="form-group">
 					<label for="gsCoachExperience"><?php echo get_meta_field_name('_gscoach_experience'); ?></label>
 					<input type="text" id="gsCoachExperience" class="form-control" name="gs_coach_experience" placeholder="Experience" value="<?php echo isset($gs_coach_experience) ? esc_attr($gs_coach_experience) : ''; ?>">
 				</div>
@@ -142,13 +144,33 @@ class Meta_Fields {
 
 				<div class="form-group">
 					<label for="gsCoachSchedule"><?php echo get_meta_field_name('_gscoach_shedule'); ?></label>
-					<input type="time" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
+					<input type="text" id="gsCoachSchedule" class="form-control" name="gs_coach_schedule" placeholder="Schedule Time" value="<?php echo isset($gs_coach_schedule) ? esc_attr($gs_coach_schedule) : ''; ?>">
 				</div>
 
 				<div class="form-group">
-					<label for="gsCoachAvailable"><?php echo get_meta_field_name('_gscoach_available'); ?></label>
-					<input type="date" id="gsCoachAvailable" class="form-control" name="gs_coach_available" placeholder="Available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>">
+					<label for="gsCoachAvailableField"><?php echo get_meta_field_name('_gscoach_available'); ?></label>
+					<input type="text" id="gsCoachAvailable" class="form-control" name="gs_coach_available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>" placeholder="Set availability">
 				</div>
+
+				<?php
+				    // Flatpickr script
+					echo '
+					<script>
+					jQuery(document).ready(function($) {
+						$("#gsCoachAvailable").flatpickr({
+							mode: "range",
+							altInput: true,
+    						altFormat: "F j, Y",
+							altInputClass: "gs-flatpickr-alt form-control input",
+							onReady: function(selectedDates, dateStr, instance) {
+								// Add custom ID when alt input is ready
+								instance.altInput.id = "gsCoachAvailableField";
+							},
+							dateFormat: "F j, Y"
+						});
+					});
+					</script>';
+				?>
 
 				<div class="form-group">
 					<label><?php echo get_meta_field_name('_gscoach_psite'); ?></label>
