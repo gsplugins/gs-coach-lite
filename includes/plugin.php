@@ -47,6 +47,7 @@ class Plugin {
         new Meta_Fields();
         new Dummy_Data();
         new Import_Export();
+        new Term_Order();
 
         if (is_pro_valid()) {
             require_once GSCOACH_PLUGIN_DIR . 'includes/widgets.php';
