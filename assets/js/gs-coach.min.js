@@ -455,7 +455,7 @@ jQuery(function($) {
 						paginationDiv.hide();
 						// Do something here so that "gscoach_load_more_coach" ajax call is not made (On scroll)
 						if( isLoadMoreScroll ){
-							paginationDiv.remove();
+							paginationDiv.hide();
 						}
 						
 					} else{
