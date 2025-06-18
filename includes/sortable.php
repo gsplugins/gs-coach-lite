@@ -17,13 +17,6 @@ class Sortable {
 		// Set object_type if not set & Redirect to the correct page
 		add_action('admin_init', [$this, 'maybe_redirect']);
 		
-		// Add term_order column to terms table
-		add_filter('plugins_loaded', array($this, 'alter_terms_table'), 0);
-		
-		// Set custom order for terms
-		add_filter('get_terms_orderby', array($this, 'get_terms_orderby'), 1, 2);
-		add_filter('terms_clauses', array($this, 'terms_clauses'), 10, 3);
-		
 		// Update team coachs order via AJAX
 		add_action('wp_ajax_update_coaches_order', array($this, 'update_coaches_order'));
 		
@@ -171,73 +164,6 @@ class Sortable {
 		}
 
 		return wp_send_json_success();
-	}
-
-	/**
-	 * Set custom order for terms
-	 */
-	public function terms_clauses($clauses, $taxonomies, $args) {
-
-		if (empty($args['taxonomy'])) return $clauses;
-
-		if (!$this->is_pro() || !in_array('gs_coach_group', $args['taxonomy'])) return $clauses;
-
-		$options = [
-			'adminsort' => '1',
-			'autosort' => '1',
-		];
-
-		// if admin make sure use the admin setting
-		if (is_admin()) {
-			// return if use orderby columns
-			if (isset($_GET['orderby']) && $_GET['orderby'] != 'term_order') return $clauses;
-			if ($options['adminsort'] == "1") $clauses['orderby'] = 'ORDER BY t.term_order';
-			return $clauses;
-		}
-
-		// if autosort, then force the menu_order
-		if ($options['autosort'] == 1 && (!isset($args['ignore_term_order']) || (isset($args['ignore_term_order']) && $args['ignore_term_order'] !== TRUE))) {
-			$clauses['orderby'] = 'ORDER BY t.term_order';
-		}
-
-		return $clauses;
-	}
-
-	/**
-	 * Modify and Return terms orderby
-	 */
-	public function get_terms_orderby($orderby, $args) {
-
-		if (empty($args['taxonomy'])) return $orderby;
-
-		if ($this->is_pro() && in_array('gs_coach_group', $args['taxonomy'])) {
-			if (isset($args['orderby']) && $args['orderby'] == "term_order" && $orderby != "term_order") return "t.term_order";
-		}
-
-		return $orderby;
-	}
-
-	/**
-	 * Alter terms table and add term_order column
-	 */
-	public function alter_terms_table() {
-
-		if (!$this->is_pro()) return;
-
-		if (get_site_option('gsp_terms_table_altered', false) !== false) return;
-
-		global $wpdb;
-
-		//check if the menu_order column exists;
-		$query = "SHOW COLUMNS FROM $wpdb->terms LIKE 'term_order'";
-		$result = $wpdb->query($query);
-
-		if ($result == 0) {
-			$query = "ALTER TABLE $wpdb->terms ADD `term_order` INT( 4 ) NULL DEFAULT '0'";
-			$result = $wpdb->query($query);
-
-			update_site_option('gsp_terms_table_altered', true);
-		}
 	}
 
 	/**

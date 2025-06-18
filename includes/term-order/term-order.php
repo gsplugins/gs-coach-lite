@@ -7,7 +7,7 @@ defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Term_Order' ) ) :
 /**
- * Main WP Term Order class
+ * Main Term Order class
  *
  * @link https://make.wordpress.org/core/2013/07/28/potential-roadmap-for-taxonomy-meta-and-post-relationships/ Taxonomy Roadmap
  *
@@ -66,7 +66,7 @@ final class Term_Order {
 	public $fancy = true;
 
 	/**
-	 * @var WP_Meta_Query Meta query arguments
+	 * @var \WP_Meta_Query Meta query arguments
 	 */
 	public $meta_query = false;
 
@@ -1171,7 +1171,7 @@ final class Term_Order {
 endif;
 
 /**
- * Instantiate the main WordPress Term Order class
+ * Instantiate the main Term Order class
  *
  * @since 0.1.0
  */
