@@ -29,12 +29,12 @@ class Hooks {
 
     function register_sub_menu() {
         add_submenu_page(
-            'edit.php?post_type=gs_coach', 'Taxonomies', 'Taxonomies', 'publish_pages', 'gs-coach-shortcode#/taxonomies', array( plugin()->builder, 'view' )
+            'edit.php?post_type=gs_coaches', 'Taxonomies', 'Taxonomies', 'publish_pages', 'gs-coach-shortcode#/taxonomies', array( plugin()->builder, 'view' )
         );
     }
 
     function post_type_archive_link( $link, $post_type ) {
-        if ( $post_type === 'gs_coach' && ! empty( $archive_page_slug = getoption('archive_page_slug') ) ) {
+        if ( $post_type === 'gs_coaches' && ! empty( $archive_page_slug = getoption('archive_page_slug') ) ) {
             $archive_page_slug = ltrim( $archive_page_slug, '/\\' );
             if ( esc_url_raw( $archive_page_slug ) === $archive_page_slug ) return $archive_page_slug;
             return home_url( sanitize_text_field( $archive_page_slug ) );
@@ -43,12 +43,12 @@ class Hooks {
     }
 
     function jetpack__featured_image_exclude_cpt( $excluded_post_types ) {
-        return array_merge( $excluded_post_types, ['gs_coach'] );
+        return array_merge( $excluded_post_types, ['gs_coaches'] );
     }
 
     function disable_admin_notices() {
         global $parent_file;
-        if ( $parent_file != 'edit.php?post_type=gs_coach' ) return;
+        if ( $parent_file != 'edit.php?post_type=gs_coaches' ) return;
         remove_all_actions( 'network_admin_notices' );
         remove_all_actions( 'user_admin_notices' );
         remove_all_actions( 'admin_notices' );
@@ -56,14 +56,14 @@ class Hooks {
     }
 
     public function change_image_box() {
-        remove_meta_box('postimagediv', 'gs_coach', 'side');
-        add_meta_box('postimagediv', __('Coach coach Image'), 'post_thumbnail_meta_box', 'gs_coach', 'side', 'low');
+        remove_meta_box('postimagediv', 'gs_coaches', 'side');
+        add_meta_box('postimagediv', __('Coach coach Image'), 'post_thumbnail_meta_box', 'gs_coaches', 'side', 'low');
     }
     
     public function img_size_note($content) {
         global $post_type, $post;
     
-        if ($post_type == 'gs_coach') {
+        if ($post_type == 'gs_coaches') {
             if (!has_post_thumbnail($post->ID)) {
                 $content .= '<p>' . __('Recommended image size 400px X 400px for perfect view on various devices.', 'gscoach') . '</p>';
             }
@@ -99,7 +99,7 @@ class Hooks {
     public function single_template($single_team_template) {
         global $post;
 
-        if ($post->post_type == 'gs_coach') {
+        if ($post->post_type == 'gs_coaches') {
             $show_acf_fields         = getoption('show_acf_fields', 'off');
             $acf_fields_position     = getoption('acf_fields_position', 'after_skills');
             $this->load_acf_fields($show_acf_fields, $acf_fields_position);
@@ -111,7 +111,7 @@ class Hooks {
     
     public function archive_template($archive_template) {
 
-        if (is_post_type_archive('gs_coach')) {
+        if (is_post_type_archive('gs_coaches')) {
             $archive_template = Template_Loader::locate_template('gs-coach-template-archive.php');
         }
 
@@ -163,7 +163,7 @@ class Hooks {
     public function excerpt_length($length) {
     
         global $post;
-        if ($post->post_type == 'gs_coach') $length = 150;
+        if ($post->post_type == 'gs_coaches') $length = 150;
         return $length;
     }
     

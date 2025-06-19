@@ -17,17 +17,17 @@ class Meta_Fields {
 	}
 
 	function add_gs_coach_metaboxes() {
-		add_meta_box('gsCoachSection', 'Coach\'s Additional Info', [ $this, 'cmb_cb' ], 'gs_coach', 'normal', 'high');
-		add_meta_box('gsCoachSectionSocial', 'Coach\'s Social Links', [ $this, 'cmb_social_cb' ], 'gs_coach', 'normal', 'high');
-		add_meta_box('gsCoachSectionSkill', 'Coach\'s Skills', [ $this, 'cmb_skill_cb' ], 'gs_coach', 'normal', 'high');
-		add_meta_box('gsCoachSectionCertificate', 'Coach\'s Certificates', [ $this, 'cmb_certificate_cb' ], 'gs_coach', 'normal', 'high');
-		add_meta_box('gsCoachSectionCV', 'Coach\'s CV', [ $this, 'cmb_cv_cb' ], 'gs_coach', 'normal', 'high');
+		add_meta_box('gsCoachSection', 'Coach\'s Additional Info', [ $this, 'cmb_cb' ], 'gs_coaches', 'normal', 'high');
+		add_meta_box('gsCoachSectionSocial', 'Coach\'s Social Links', [ $this, 'cmb_social_cb' ], 'gs_coaches', 'normal', 'high');
+		add_meta_box('gsCoachSectionSkill', 'Coach\'s Skills', [ $this, 'cmb_skill_cb' ], 'gs_coaches', 'normal', 'high');
+		add_meta_box('gsCoachSectionCertificate', 'Coach\'s Certificates', [ $this, 'cmb_certificate_cb' ], 'gs_coaches', 'normal', 'high');
+		add_meta_box('gsCoachSectionCV', 'Coach\'s CV', [ $this, 'cmb_cv_cb' ], 'gs_coaches', 'normal', 'high');
 	}
 
 	function gs_coach_enqueue_admin_scripts($hook) {
 		global $post;
 
-		if (($hook === 'post.php' || $hook === 'post-new.php') && get_post_type($post) === 'gs_coach') {
+		if (($hook === 'post.php' || $hook === 'post-new.php') && get_post_type($post) === 'gs_coaches') {
 			wp_enqueue_media();
 			wp_enqueue_script('gs-coach-cv-uploader', GSCOACH_PLUGIN_URI . '/assets/admin/js/cv-uploader.js', array('jquery'), GSCOACH_VERSION, true);
 

@@ -53,8 +53,8 @@ class Integration_Gutenberg {
             'edit_link_text' => __( 'Edit', 'gscoach' ),
             'create_description_text' => __( 'Create new shortcode', 'gscoach' ),
             'create_link_text' => __( 'Create', 'gscoach' ),
-            'edit_link' => admin_url( "edit.php?post_type=gs_coach&page=gs-coach-shortcode#/shortcode/" ),
-            'create_link' => admin_url( 'edit.php?post_type=gs_coach&page=gs-coach-shortcode#/shortcode' ),
+            'edit_link' => admin_url( "edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/shortcode/" ),
+            'create_link' => admin_url( 'edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/shortcode' ),
             'gs_coach_shortcodes' => $this->get_shortcode_list()
 		);
 		wp_localize_script( 'gs-coach-block', 'gs_coach_block', $gs_coach_block );

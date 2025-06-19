@@ -115,13 +115,13 @@
   letter-spacing: 1px;
 }
 
-.edit-tags-php.post-type-gs_coach #col-container #col-left,
-.term-php.post-type-gs_coach #wpbody-content {
+.edit-tags-php.post-type-gs_coaches #col-container #col-left,
+.term-php.post-type-gs_coaches #wpbody-content {
   position: relative;
 }
 
-.edit-tags-php.post-type-gs_coach .gs-coach-pro-field--inner,
-.term-php.post-type-gs_coach .gs-coach-pro-field--inner {
+.edit-tags-php.post-type-gs_coaches .gs-coach-pro-field--inner,
+.term-php.post-type-gs_coaches .gs-coach-pro-field--inner {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
 }

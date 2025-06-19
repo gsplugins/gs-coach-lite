@@ -358,27 +358,27 @@ final class Scripts {
 		?>
 		<style>
 			#adminmenu .toplevel_page_gs-coach-coachs .wp-menu-image img,
-			#adminmenu .menu-icon-gs_coach .wp-menu-image img {
+			#adminmenu .menu-icon-gs_coaches .wp-menu-image img {
 				padding-top: 7px;
 				width: 22px;
 				opacity: .8;
 				height: auto;
 			}
 
-			#menu-posts-gs_coach li {
+			#menu-posts-gs_coaches li {
 				clear: both
 			}
 
-			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-coachs-affiliation"] ),
-			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-shortcode#/taxonomies"] ),
-			#menu-posts-gs_coach li:nth-last-child(2) {
+			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-coachs-affiliation"] ),
+			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/taxonomies"] ),
+			#menu-posts-gs_coaches li:nth-last-child(2) {
 				position: relative;
 				margin-top: 16px;
 			}
 			
-			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-coachs-affiliation"] ):before,
-			#menu-posts-gs_coach li:has( a[href^="edit.php?post_type=gs_coach&page=gs-coach-shortcode#/taxonomies"] ):before,
-			#menu-posts-gs_coach li:nth-last-child(2):before {
+			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-coachs-affiliation"] ):before,
+			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/taxonomies"] ):before,
+			#menu-posts-gs_coaches li:nth-last-child(2):before {
 				content: "";
 				position: absolute;
 				background: hsla(0, 0%, 100%, .2);
@@ -406,7 +406,7 @@ final class Scripts {
 		$this->wp_register_script_all('public');
 
 		// Enqueue for Single & Archive Pages
-		if (is_singular('gs_coach') || is_post_type_archive('gs_coach') || is_tax(['gs_coach_group', 'gs_coach_tag', 'gs_coach_language', 'gs_coach_location', 'gs_coach_gender', 'gs_coach_specialty'])) {
+		if (is_singular('gs_coaches') || is_post_type_archive('gs_coaches') || is_tax(['gs_coach_group', 'gs_coach_tag', 'gs_coach_language', 'gs_coach_location', 'gs_coach_gender', 'gs_coach_specialty'])) {
 			$this->add_dependency_styles('gs-coach-public', ['gs-font-awesome-5']);
 			wp_enqueue_style('gs-coach-public');
 		}
@@ -429,15 +429,15 @@ final class Scripts {
 		// Register Scripts
 		$this->wp_register_script_all('admin');
 
-		// Allow scripts loading in new gs_coach coach page
-		if ($hook == 'post-new.php' && $_GET['post_type'] == 'gs_coach') $load_script = true;
+		// Allow scripts loading in new gs_coaches coach page
+		if ($hook == 'post-new.php' && $_GET['post_type'] == 'gs_coaches') $load_script = true;
 
-		// Allow scripts loading in gs_coach coach edit page
-		if ($hook == 'post.php' && $post->post_type == 'gs_coach') $load_script = true;
+		// Allow scripts loading in gs_coaches coach edit page
+		if ($hook == 'post.php' && $post->post_type == 'gs_coaches') $load_script = true;
 
-		// Allow scripts loading in gs_coach coach edit page
-		if ($hook == 'edit-tags.php' && $_GET['post_type'] == 'gs_coach') $load_script = true;
-		if ($hook == 'term.php' && $_GET['post_type'] == 'gs_coach') $load_script = true;
+		// Allow scripts loading in gs_coaches coach edit page
+		if ($hook == 'edit-tags.php' && $_GET['post_type'] == 'gs_coaches') $load_script = true;
+		if ($hook == 'term.php' && $_GET['post_type'] == 'gs_coaches') $load_script = true;
 
 		// Abort load script if not allowed
 		if (!$load_script) return;

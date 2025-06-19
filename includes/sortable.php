@@ -104,7 +104,7 @@ class Sortable {
 		
 		if ( ! isset($wp_query) || ! is_main_query() ) return $orderby;
 
-		if ( is_post_type_archive('gs_coach') ) {
+		if ( is_post_type_archive('gs_coaches') ) {
 			$orderby = "{$wpdb->posts}.menu_order, {$wpdb->posts}.post_date DESC";
 		}
 
@@ -116,14 +116,14 @@ class Sortable {
 	 */
 	public function sort_scripts($hook) {
 
-		if ( $hook != 'gs_coach_page_sort_gs_coach' ) return;
+		if ( $hook != 'gs_coaches_page_sort_gs_coach' ) return;
 
 		plugin()->scripts->wp_enqueue_style('gs-coach-sort');
 		plugin()->scripts->wp_enqueue_script('gs-coach-sort');
 
 		if ( $this->is_pro() ) {
 
-			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_coach' ) {
+			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_coaches' ) {
 				$action = 'update_coaches_order';
 			} else if ( $_GET['object_type'] == 'gs_coach_filters' ) {
 				$action = 'update_coach_filters_order';
@@ -177,7 +177,7 @@ class Sortable {
 	 * Redirect to the correct page
 	 */
 	public function maybe_redirect() {
-		if ( isset($_GET['post_type']) && $_GET['post_type'] == 'gs_coach' && isset($_GET['page']) && $_GET['page'] === 'sort_gs_coach' && empty($_GET['object_type']) ) {
+		if ( isset($_GET['post_type']) && $_GET['post_type'] == 'gs_coaches' && isset($_GET['page']) && $_GET['page'] === 'sort_gs_coach' && empty($_GET['object_type']) ) {
 			wp_redirect( $this->get_url_with_object_type() );
 			exit;
 		}
@@ -188,7 +188,7 @@ class Sortable {
 	 */
 	public function gs_coach_sortable() {
 		add_submenu_page(
-			'edit.php?post_type=gs_coach',
+			'edit.php?post_type=gs_coaches',
 			'Sort Order',
 			'Sort Order',
 			'publish_pages',
@@ -219,7 +219,7 @@ class Sortable {
 	/**
 	 * Get the URL with object type
 	 */
-	public function get_url_with_object_type( $object = 'gs_coach' ) {
+	public function get_url_with_object_type( $object = 'gs_coaches' ) {
 		return add_query_arg( 'object_type', $object, $this->get_full_url() );
 	}
 
@@ -228,14 +228,14 @@ class Sortable {
 	 */
 	public function gs_coach_sortable_callback() {
 		
-		$object_type = isset($_GET['object_type']) ? $_GET['object_type'] : 'gs_coach';
+		$object_type = isset($_GET['object_type']) ? $_GET['object_type'] : 'gs_coaches';
 
 		?>
 
 		<div class="gs-plugins--sort-page">
 
 			<div class="gs-plugins--sort-links">
-				<a class="<?php echo $object_type === 'gs_coach' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach') ); ?>">Coaches</a>
+				<a class="<?php echo $object_type === 'gs_coaches' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coaches') ); ?>">Coaches</a>
 				<a class="<?php echo $object_type === 'gs_coach_group' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_group') ); ?>">Groups</a>
 				<a class="<?php echo $object_type === 'gs_coach_filters' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_filters') ); ?>">Coach Filters</a>
 				<a class="<?php echo $object_type === 'gs_coach_meta' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_meta') ); ?>">Meta Fields</a>
@@ -245,7 +245,7 @@ class Sortable {
 
 				<!-- <h2>Sort Order <img src="<?php // bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h2> -->
 				
-				<?php if ($object_type === 'gs_coach') : ?>
+				<?php if ($object_type === 'gs_coaches') : ?>
 
 					<?php $this->sort_coaches(); ?>
 
@@ -276,7 +276,7 @@ class Sortable {
 	public function sort_coaches() {
 
 
-		$sortable = new \WP_Query('post_type=gs_coach&posts_per_page=-1&orderby=menu_order&order=ASC');
+		$sortable = new \WP_Query('post_type=gs_coaches&posts_per_page=-1&orderby=menu_order&order=ASC');
 
 		if (!$this->is_pro()) : ?>
 
@@ -328,7 +328,7 @@ class Sortable {
 						<div class="notice notice-warning" style="margin-top: 30px;">
 							<h3><?php _e('No Coach coach Found!', 'gscoach'); ?></h3>
 							<p style="font-size: 14px;"><?php _e('We didn\'t find any team coach.</br>Please add some team coachs to sort them.', 'gscoach'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
+							<a href="<?php echo admin_url('post-new.php?post_type=gs_coaches'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
 						</div>
 
 					<?php endif; ?>
@@ -561,7 +561,7 @@ class Sortable {
 						<div class="notice notice-warning" style="margin-top: 30px;">
 							<h3><?php _e('No Coach coach Found!', 'gscoach'); ?></h3>
 							<p style="font-size: 14px;"><?php _e('We didn\'t find any team coach.</br>Please add some team coachs to sort them.', 'gscoach'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_coach'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
+							<a href="<?php echo admin_url('post-new.php?post_type=gs_coaches'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
 						</div>
 
 					<?php endif; ?>

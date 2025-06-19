@@ -91,7 +91,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             $builder = plugin()->builder;
 
             add_submenu_page(
-                'edit.php?post_type=gs_coach', 'Install Demo', 'Install Demo', 'publish_pages', 'gs-coach-shortcode#/demo-data', array( $builder, 'view' )
+                'edit.php?post_type=gs_coaches', 'Install Demo', 'Install Demo', 'publish_pages', 'gs-coach-shortcode#/demo-data', array( $builder, 'view' )
             );
 
         }
@@ -139,7 +139,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             $coaches = get_posts([
                 'numberposts' => -1,
-                'post_type' => 'gs_coach',
+                'post_type' => 'gs_coaches',
                 'fields' => 'ids'
             ]);
 
@@ -396,7 +396,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             do_action( 'gscoach_dummy_coachs_process_start' );
 
             $post_status = 'publish';
-            $post_type = 'gs_coach';
+            $post_type = 'gs_coaches';
 
             $coachs = [];
 
@@ -709,7 +709,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             $coachs = get_posts( array(
                 'numberposts' => -1,
-                'post_type'   => 'gs_coach',
+                'post_type'   => 'gs_coaches',
                 'meta_key' => 'gscoach-demo_data',
                 'meta_value' => 1,
             ));

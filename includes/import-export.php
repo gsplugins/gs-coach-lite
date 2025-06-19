@@ -176,7 +176,7 @@ class Import_Export {
         // Delete All the Posts
         $posts = get_posts([
             'posts_per_page'    => -1,
-            'post_type'         => 'gs_coach',
+            'post_type'         => 'gs_coaches',
         ]);
         foreach ($posts as $post) {
             wp_delete_post($post->ID, true);
@@ -209,7 +209,7 @@ class Import_Export {
 
         // Delete All the Shortcodes
         global $wpdb;
-        $wpdb->query("DELETE FROM {$wpdb->prefix}gs_coach");
+        $wpdb->query("DELETE FROM {$wpdb->prefix}gs_coaches");
     }
 
     public function import__terms($terms) {
@@ -385,7 +385,7 @@ class Import_Export {
             unset($shortcode['id']);
 
             // Insert the shortcode
-            $wpdb->insert($wpdb->prefix . 'gs_coach', $shortcode, [
+            $wpdb->insert($wpdb->prefix . 'gs_coaches', $shortcode, [
                 'shortcode_name'     => '%s',
                 'shortcode_settings' => '%s',
                 'created_at'         => '%s',
@@ -440,7 +440,7 @@ class Import_Export {
 
         $posts = get_posts([
             'posts_per_page'    => -1,
-            'post_type'         => 'gs_coach',
+            'post_type'         => 'gs_coaches',
         ]);
 
         // Add Posts Data to the zip file
@@ -543,7 +543,7 @@ class Import_Export {
         $builder = plugin()->builder;
 
         add_submenu_page(
-            'edit.php?post_type=gs_coach',
+            'edit.php?post_type=gs_coaches',
             'Import & Export',
             'Import & Export',
             'publish_pages',
@@ -562,7 +562,7 @@ class Import_Export {
     public function get_shortcode_list() {
         global $wpdb;
 
-        $shortcodes = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}gs_coach", ARRAY_A);
+        $shortcodes = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}gs_coaches", ARRAY_A);
         if (empty($shortcodes)) return [];
 
         $builder = plugin()->builder;
