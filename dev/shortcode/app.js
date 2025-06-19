@@ -64,15 +64,15 @@ jQuery(function($){
 
 	function fixAdminActiveLink( currentPath ) {
 
-		if ( !$team_admin_menu || !$team_admin_menu.length ) $team_admin_menu = $('#menu-posts-gs_coach');
+		if ( !$team_admin_menu || !$team_admin_menu.length ) $team_admin_menu = $('#menu-posts-gs_coaches');
 		if ( !$team_admin_menu.length ) return;
 
-		let $demo_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coach&page=gs-coach-shortcode#/demo-data']" );
-		let $shortcode_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coach&page=gs-coach-shortcode']" );
-		let $bulk_import_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coach&page=gs-coach-shortcode#/bulk-import']" );
-		let $export_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coach&page=gs-coach-shortcode#/import-export']" );
-		let $preference_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coach&page=gs-coach-shortcode#/preferences']" );
-		let $taxonomies_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coach&page=gs-coach-shortcode#/taxonomies']" );
+		let $demo_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/demo-data']" );
+		let $shortcode_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coaches&page=gs-coach-shortcode']" );
+		let $bulk_import_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/bulk-import']" );
+		let $export_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/import-export']" );
+		let $preference_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/preferences']" );
+		let $taxonomies_link = $team_admin_menu.find( "a[href='edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/taxonomies']" );
 		
 		if ( currentPath == '/demo-data' ) {
 			$demo_link.parent().addClass('current').siblings('li').removeClass('current');

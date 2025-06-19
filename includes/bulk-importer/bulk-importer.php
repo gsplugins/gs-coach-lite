@@ -27,7 +27,7 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
             $builder = plugin()->builder;
 
             add_submenu_page(
-                'edit.php?post_type=gs_coach', 'Bulk Import', 'Bulk Import', 'publish_pages', 'gs-coach-shortcode#/bulk-import', array( $builder, 'view' )
+                'edit.php?post_type=gs_coaches', 'Bulk Import', 'Bulk Import', 'publish_pages', 'gs-coach-shortcode#/bulk-import', array( $builder, 'view' )
             );
 
         }
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Bulk_Importer' ) ) {
                 'post_title'    => $row['name'],
                 'post_content'  => empty($row['description']) ? '' : $row['description'],
                 'post_status'   => 'publish',
-                'post_type'     => 'gs_coach',
+                'post_type'     => 'gs_coaches',
                 'tax_input'     => $this->get_row_tax_input( $row ),
                 'meta_input'    => $this->get_row_meta_input( $row )
             ];

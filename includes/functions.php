@@ -60,7 +60,7 @@ function get_query($atts) {
         'tax_query'            => [],
     ], $atts);
 
-    $args['post_type'] = 'gs_coach';
+    $args['post_type'] = 'gs_coaches';
 
     return new \WP_Query(apply_filters('gs_coach_wp_query_args', $args));
 }
@@ -438,7 +438,7 @@ function format_phone($num) {
 function get_meta_values($meta_key, $args) {
 
     extract(shortcode_atts([
-        'post_type' => 'gs_coach',
+        'post_type' => 'gs_coaches',
         'status' => 'publish',
         'order_by' => true,
         'order' => 'ASC',
@@ -478,7 +478,7 @@ function get_meta_values($meta_key, $args) {
     return $result;
 }
 
-function get_meta_values_options($meta_key = '', $post_type = 'gs_coach', $status = 'publish', $echo = true) {
+function get_meta_values_options($meta_key = '', $post_type = 'gs_coaches', $status = 'publish', $echo = true) {
 
     $meta_values = get_meta_values($meta_key, $post_type, $status);
 

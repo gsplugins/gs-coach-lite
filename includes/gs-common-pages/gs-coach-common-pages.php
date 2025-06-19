@@ -4,7 +4,7 @@ require_once plugin_dir_path( __FILE__ ) . 'gs-plugins-common-pages.php';
 
 new GS_Plugins_Common_Pages([
 	
-	'parent_slug' 	=> 'edit.php?post_type=gs_coach',
+	'parent_slug' 	=> 'edit.php?post_type=gs_coaches',
 	
 	'lite_page_title' 	=> __('Lite Plugins by GS Plugins'),
 	'pro_page_title' 	=> __('Premium Plugins by GS Plugins'),
@@ -15,9 +15,9 @@ new GS_Plugins_Common_Pages([
 	'help_page_slug' 	=> 'gs-coach-plugins-help',
 
 	'links' => [
-		'docs_link' 	=> 'https://docs.gsplugins.com/gs-coach-coachs/',
-		'rating_link' 	=> 'https://wordpress.org/support/plugin/gs-coach-coachs/reviews/#new-post',
-		// 'tutorial_link' => 'https://team.gsplugins.com/',
+		'docs_link' 	=> 'https://docs.gsplugins.com/gs-coaches/',
+		'rating_link' 	=> 'https://wordpress.org/support/plugin/gs-coaches/reviews/#new-post',
+		'tutorial_link' => 'https://coach.gsplugins.com/'
 	]
 
 ]);

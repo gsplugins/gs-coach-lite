@@ -141,11 +141,11 @@ if ( ! class_exists( 'Builder' ) ) {
         public function register_sub_menu() {
 
             add_submenu_page( 
-                'edit.php?post_type=gs_coach', 'Coach Shortcode', 'Coach Shortcode', 'publish_pages', 'gs-coach-shortcode', array( $this, 'view' )
+                'edit.php?post_type=gs_coaches', 'Coach Shortcode', 'Coach Shortcode', 'publish_pages', 'gs-coach-shortcode', array( $this, 'view' )
             );
 
             add_submenu_page( 
-                'edit.php?post_type=gs_coach', 'Preference', 'Preference', 'publish_pages', 'gs-coach-shortcode#/preferences', array( $this, 'view' )
+                'edit.php?post_type=gs_coaches', 'Preference', 'Preference', 'publish_pages', 'gs-coach-shortcode#/preferences', array( $this, 'view' )
             );
 
             do_action( 'gs_after_shortcode_submenu' );
@@ -187,7 +187,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public function scripts( $hook ) {
 
-            if ( 'gs_coach_page_gs-coach-shortcode' != $hook ) {
+            if ( 'gs_coaches_page_gs-coach-shortcode' != $hook ) {
                 return;
             }
 
@@ -234,7 +234,7 @@ if ( ! class_exists( 'Builder' ) ) {
             if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
                 
                 $team_groups = \acf_get_field_groups([
-                    'post_type'	=> 'gs_coach'
+                    'post_type'	=> 'gs_coaches'
                 ]);
                 
                 if ( !empty($team_groups) ) {
@@ -306,7 +306,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             $wpdb = $this->get_wpdb();
 
-            $shortcode = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}gs_coach WHERE id = %d LIMIT 1", absint($shortcode_id) ), ARRAY_A );
+            $shortcode = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}gs_coaches WHERE id = %d LIMIT 1", absint($shortcode_id) ), ARRAY_A );
 
             if ( $shortcode ) {
 
@@ -362,7 +362,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 "updated_at" 		    => current_time( 'mysql')
             );
         
-            $update_id = $wpdb->update( "{$wpdb->prefix}gs_coach" , $data, array( 'id' => absint( $shortcode_id ) ),  $this->get_db_columns() );
+            $update_id = $wpdb->update( "{$wpdb->prefix}gs_coaches" , $data, array( 'id' => absint( $shortcode_id ) ),  $this->get_db_columns() );
         
             if ( $this->has_db_error() ) {
                 if ( $is_ajax ) wp_send_json_error( sprintf( __( 'Database Error: %1$s', 'gscoach'), $wpdb->last_error), 500 );
@@ -395,7 +395,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 $shortcodes = wp_cache_get( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
 
                 if ( $shortcodes === false ) {
-                    $shortcodes = $wpdb->get_results( "SELECT {$fields} FROM {$wpdb->prefix}gs_coach ORDER BY id DESC", ARRAY_A );
+                    $shortcodes = $wpdb->get_results( "SELECT {$fields} FROM {$wpdb->prefix}gs_coaches ORDER BY id DESC", ARRAY_A );
                     wp_cache_add( 'gs_coach_shortcodes', $shortcodes, 'gs_coach_memebrs' );
                 }
 
@@ -404,7 +404,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 $how_many = count($shortcode_ids);
                 $placeholders = array_fill(0, $how_many, '%d');
                 $format = implode(', ', $placeholders);
-                $query = "SELECT {$fields} FROM {$wpdb->prefix}gs_coach WHERE id IN($format)";
+                $query = "SELECT {$fields} FROM {$wpdb->prefix}gs_coaches WHERE id IN($format)";
                 $shortcodes = $wpdb->get_results( $wpdb->prepare($query, $shortcode_ids), ARRAY_A );
 
             }
@@ -443,7 +443,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 "updated_at" => current_time( 'mysql'),
             );
 
-            $wpdb->insert( "{$wpdb->prefix}gs_coach", $data, $this->get_db_columns() );
+            $wpdb->insert( "{$wpdb->prefix}gs_coaches", $data, $this->get_db_columns() );
 
             // check for database error
             if ( $this->has_db_error() ) wp_send_json_error( sprintf(__('Database Error: %s'), $wpdb->last_error), 500 );
@@ -489,7 +489,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 "updated_at" => current_time( 'mysql'),
             );
 
-            $wpdb->insert( "{$wpdb->prefix}gs_coach", $data, $this->get_db_columns() );
+            $wpdb->insert( "{$wpdb->prefix}gs_coaches", $data, $this->get_db_columns() );
 
             // check for database error
             if ( $this->has_db_error() ) wp_send_json_error( sprintf(__('Database Error: %s'), $wpdb->last_error), 500 );
@@ -545,7 +545,7 @@ if ( ! class_exists( 'Builder' ) ) {
             $count = count( $ids );
     
             $ids = implode( ',', array_map('absint', $ids) );
-            $wpdb->query( "DELETE FROM {$wpdb->prefix}gs_coach WHERE ID IN($ids)" );
+            $wpdb->query( "DELETE FROM {$wpdb->prefix}gs_coaches WHERE ID IN($ids)" );
     
             if ( $this->has_db_error() ) wp_send_json_error( sprintf(__('Database Error: %s'), $wpdb->last_error), 500 );
 
@@ -643,7 +643,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'replace-custom-slug-details' => __('Enable this option to use a custom structure without the base prefix.', 'gscoach'),
 
                 'archive-page-slug' => __('Archive Page Slug', 'gscoach'),
-                'archive-page-slug-details' => __('Set Custom Archive Page Slug, now it is set to', 'gscoach') . ' ' . get_post_type_archive_link( 'gs_coach' ),
+                'archive-page-slug-details' => __('Set Custom Archive Page Slug, now it is set to', 'gscoach') . ' ' . get_post_type_archive_link( 'gs_coaches' ),
 
                 'archive-page-title' => __('Archive Page Title', 'gscoach'),
                 'archive-page-title-details' => __('Set Custom Archive Page Title, now it is set to', 'gscoach') . ' ' . gs_get_post_type_archive_title(),
@@ -2767,7 +2767,7 @@ if ( ! class_exists( 'Builder' ) ) {
             
             require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
-            $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}gs_coach (
+            $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}gs_coaches (
             	id BIGINT(20) unsigned NOT NULL AUTO_INCREMENT,
             	shortcode_name TEXT NOT NULL,
             	shortcode_settings LONGTEXT NOT NULL,
@@ -2819,7 +2819,7 @@ if ( ! class_exists( 'Builder' ) ) {
                     "updated_at" => current_time( 'mysql'),
                 );
     
-                $wpdb->insert( "{$wpdb->prefix}gs_coach", $data, $this->get_db_columns() );
+                $wpdb->insert( "{$wpdb->prefix}gs_coaches", $data, $this->get_db_columns() );
 
             }
 
@@ -2831,7 +2831,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             $needle = 'gscoach-demo_data';
 
-            $wpdb->query( "DELETE FROM {$wpdb->prefix}gs_coach WHERE shortcode_settings like '%$needle%'" );
+            $wpdb->query( "DELETE FROM {$wpdb->prefix}gs_coaches WHERE shortcode_settings like '%$needle%'" );
 
             // Delete the shortcode cache
             wp_cache_delete( 'gs_coach_shortcodes', 'gs_coach_memebrs' );
@@ -2884,7 +2884,7 @@ if ( ! class_exists( 'Builder' ) ) {
                     "updated_at" 		    => current_time( 'mysql')
                 );
             
-                $wpdb->update( "{$wpdb->prefix}gs_coach" , $data, array( 'id' => absint( $shortcode_id ) ), [
+                $wpdb->update( "{$wpdb->prefix}gs_coaches" , $data, array( 'id' => absint( $shortcode_id ) ), [
                     'shortcode_settings' => '%s',
                     'updated_at' => '%s',
                 ]);
@@ -2942,7 +2942,7 @@ if ( ! class_exists( 'Builder' ) ) {
                     "updated_at" 		    => current_time( 'mysql')
                 );
             
-                $wpdb->update( "{$wpdb->prefix}gs_coach" , $data, array( 'id' => absint( $shortcode_id ) ), [
+                $wpdb->update( "{$wpdb->prefix}gs_coaches" , $data, array( 'id' => absint( $shortcode_id ) ), [
                     'shortcode_settings' => '%s',
                     'updated_at' => '%s',
                 ]);
@@ -3001,7 +3001,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             $coaches = get_posts([
                 'numberposts' => -1,
-                'post_type' => 'gs_coach',
+                'post_type' => 'gs_coaches',
                 'fields' => 'ids'
             ]);
 

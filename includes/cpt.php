@@ -62,7 +62,7 @@ class Cpt {
 			'show_in_wpml_language_switcher' => true
 		);
 
-		register_post_type( 'gs_coach', $args );
+		register_post_type( 'gs_coaches', $args );
 	}
 
 	// Register Taxonomies
@@ -123,7 +123,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_group', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_group', array( 'gs_coaches' ), $args );
 
 	}
 	
@@ -166,7 +166,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_tag', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_tag', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -209,7 +209,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_language', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_language', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -252,7 +252,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_location', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_location', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -295,7 +295,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_gender', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_gender', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -338,7 +338,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_specialty', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_specialty', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -381,7 +381,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_extra_one', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_extra_one', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -424,7 +424,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_extra_two', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_extra_two', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -467,7 +467,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_extra_three', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_extra_three', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -510,7 +510,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_extra_four', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_extra_four', array( 'gs_coaches' ), $args );
 
 	}
 
@@ -553,7 +553,7 @@ class Cpt {
 			'show_tagcloud'              => false,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'gs_coach_extra_five', array( 'gs_coach' ), $args );
+		register_taxonomy( 'gs_coach_extra_five', array( 'gs_coaches' ), $args );
 
 	}
 

@@ -177,13 +177,13 @@ function load_elementor_widget_class() {
 
             $eidt_link = sprintf( '%s: <a class="gs-coach-edit-link" href="%s" target="_blank">%s</a>',
                 __('Edit this shortcode', 'gscoach'),
-                admin_url( "edit.php?post_type=gs_coach&page=gs-coach-shortcode#/shortcode/" ),
+                admin_url( "edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/shortcode/" ),
                 __('Edit', 'gscoach')
             );
 
             $create_link = sprintf( '%s: <a class="gs-coach-create-link" href="%s" target="_blank">%s</a>',
                 __('Create new shortcode', 'gscoach'),
-                admin_url( 'edit.php?post_type=gs_coach&page=gs-coach-shortcode#/shortcode' ),
+                admin_url( 'edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/shortcode' ),
                 __('Create', 'gscoach')
             );
 

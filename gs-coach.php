@@ -48,7 +48,7 @@ if ( ! is_pro_valid() ) {
     function gs_coach_free_vs_pro_page() {
 
         add_submenu_page(
-            'edit.php?post_type=gs_coach',
+            'edit.php?post_type=gs_coaches',
             'Free Pro Trial',
             'Free Pro Trial',
             'delete_posts',

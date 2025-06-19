@@ -1726,7 +1726,7 @@
 
 			updateTaxMenu( taxonomy, enable_tax_key, tax_plural_label_key ) {
 
-				let $tax_link = jQuery('a[href="edit-tags.php?taxonomy=' + taxonomy + '&post_type=gs_coach"]', '#menu-posts-gs_coach');
+				let $tax_link = jQuery('a[href="edit-tags.php?taxonomy=' + taxonomy + '&post_type=gs_coaches"]', '#menu-posts-gs_coaches');
 
 				if ( this.settings[enable_tax_key] ) {
 
