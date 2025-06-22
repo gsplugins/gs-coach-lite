@@ -2111,11 +2111,11 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="group_orderby">{{translation('group-order-by')}}:</label>
+									<label class="m-t-10" for="taxonomy_orderby">{{translation('taxonomy-order-by')}}:</label>
 								</div>
 
 								<div class="gs-col-xs-7">
-									<input-select key="group_orderby" id="group_orderby" v-model="shortcode_settings.group_orderby" :options="shortcode_options.group_orderby" :placeholder="translation('group-order-by')"></input-select>
+									<input-select key="taxonomy_orderby" id="taxonomy_orderby" v-model="shortcode_settings.taxonomy_orderby" :options="shortcode_options.taxonomy_orderby" :placeholder="translation('taxonomy-order-by')"></input-select>
 								</div>
 
 							</div>
@@ -2127,11 +2127,11 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-5">
-									<label class="m-t-10" for="group_order">{{translation('group-order')}}:</label>
+									<label class="m-t-10" for="taxonomy_order">{{translation('taxonomy-order')}}:</label>
 								</div>
 
 								<div class="gs-col-xs-7">
-									<input-select key="group_order" id="group_order" v-model="shortcode_settings.group_order" :options="shortcode_options.order" :placeholder="translation('group-order')"></input-select>
+									<input-select key="taxonomy_order" id="taxonomy_order" v-model="shortcode_settings.taxonomy_order" :options="shortcode_options.order" :placeholder="translation('taxonomy-order')"></input-select>
 								</div>
 
 							</div>
@@ -2143,16 +2143,16 @@
 							<div class="gs-roow row-20">
 
 								<div class="gs-col-xs-7">
-									<label class="m-t-10" for="group_hide_empty">{{translation('group_hide_empty')}}:</label>
+									<label class="m-t-10" for="taxonomy_hide_empty">{{translation('taxonomy_hide_empty')}}:</label>
 									<button class="gscoach-show--info"><i class="zmdi zmdi-help-outline"></i></button>
 								</div>
 
 								<div class="gs-col-xs-5">
-									<input-toggle class="m-t-6" name="group_hide_empty" v-model="shortcode_settings.group_hide_empty" offLabel="Off" onLabel="On"></input-toggle>
+									<input-toggle class="m-t-6" name="taxonomy_hide_empty" v-model="shortcode_settings.taxonomy_hide_empty" offLabel="Off" onLabel="On"></input-toggle>
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('group_hide_empty__details')}}</p>
+									<p class="bi-text-help">{{translation('taxonomy_hide_empty__details')}}</p>
 								</div>
 
 							</div>

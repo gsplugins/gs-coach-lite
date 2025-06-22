@@ -770,6 +770,23 @@ final class Term_Order {
 			return $orderby;
 		}
 
+		global $current_screen;
+
+		$current_screen_base = $current_screen->base ?? '';
+
+		if( $current_screen_base !== 'edit-tags' ) {
+			$safe_orderbys = ['id', 'name', 'slug', 'count', 'none']; // Native values you allow
+
+			if ( isset($args['orderby']) && in_array($args['orderby'], $safe_orderbys, true) ) {
+				return $orderby; // 👈 respect what's passed from settings
+			}
+
+			// ✅ Now handle custom 'term_order' ordering
+			if ( isset($args['orderby']) && $args['orderby'] === 'term_order' ) {
+				return 'tt.order'; // Or 'tt.order' or even meta-based logic
+			}
+		}
+
 		// Default to not overriding
 		$override = false;
 
