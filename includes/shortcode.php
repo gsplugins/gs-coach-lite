@@ -185,7 +185,7 @@ class Shortcode {
 		// Extracting shortcode attributes.
 		extract( $settings );
 
-		$hide_empty = $group_hide_empty === 'on';
+		$hide_empty = $taxonomy_hide_empty === 'on';
 	
 		$_carousel_enabled 	= $carousel_enabled == 'on';
 		$_filter_enabled 	= ! $_carousel_enabled && $filter_enabled == 'on';

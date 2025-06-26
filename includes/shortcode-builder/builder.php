@@ -945,10 +945,10 @@ if ( ! class_exists( 'Builder' ) ) {
                 'coaches' => __('Coaches', 'gscoach'),
                 'order' => __('Order', 'gscoach'),
                 'order-by' => __('Order By', 'gscoach'),
-                'group-order' => __('Group Order', 'gscoach'),
-                'group-order-by' => __('Group Order By', 'gscoach'),
-                'group_hide_empty' => __('Hide Empty Filters', 'gscoach'),
-                'group_hide_empty__details' => __('Enable to hide the empty filters', 'gscoach'),
+                'taxonomy-order' => __('Taxonomy Order', 'gscoach'),
+                'taxonomy-order-by' => __('Taxonomy Order By', 'gscoach'),
+                'taxonomy_hide_empty' => __('Hide Empty Filters', 'gscoach'),
+                'taxonomy_hide_empty__details' => __('Enable to hide the empty filters', 'gscoach'),
                 'group' => __('Group', 'gscoach'),
                 'group__help' => __('Select specific group to show that specific group coaches', 'gscoach'),
                 'tags' => __('Tags', 'gscoach'),
@@ -1942,17 +1942,17 @@ if ( ! class_exists( 'Builder' ) ) {
                         'value' => 'rand'
                     ],
                 ],
-                'group_orderby' => [
+                'taxonomy_orderby' => [
                     [
                         'label' => __( 'Custom Order', 'gscoach' ),
                         'value' => 'term_order'
                     ],
                     [
-                        'label' => __( 'Group ID', 'gscoach' ),
+                        'label' => __( 'Taxonomy ID', 'gscoach' ),
                         'value' => 'term_id'
                     ],
                     [
-                        'label' => __( 'Group Name', 'gscoach' ),
+                        'label' => __( 'Taxonomy Name', 'gscoach' ),
                         'value' => 'name'
                     ],
                 ],
@@ -2076,16 +2076,16 @@ if ( ! class_exists( 'Builder' ) ) {
                 'num'                             => -1,
                 'order'                           => 'DESC',
                 'orderby'                         => 'date',
-                'group_orderby'                   => 'term_order',
-                'group_order'                     => 'ASC',
-                'group_hide_empty'                => 'off',
+                'taxonomy_orderby'                => 'name',
+                'taxonomy_order'                     => 'ASC',
+                'taxonomy_hide_empty'             => 'off',
                 'gs_coach_theme'                  => 'gs-grid-style-five',
                 'gs_coach_cols'                   => '3',
                 'gs_coach_cols_tablet'            => '4',
                 'gs_coach_cols_mobile_portrait'   => '6',
                 'gs_coach_cols_mobile'            => '12',
                 'group'                           => '',
-                'tag'                            => '',
+                'tag'                             => '',
                 'language'                        => '',
                 'location'                        => '',
                 'specialty'                       => '',

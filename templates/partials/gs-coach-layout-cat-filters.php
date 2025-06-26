@@ -19,6 +19,8 @@ $_exclude_group = [];
 
 $terms = get_terms([
     'taxonomy'  => 'gs_coach_group',
+    'orderby'   => $taxonomy_orderby,
+    'order'     => $taxonomy_order,
     'hide_empty' => $hide_empty,
     'ignore_term_order' => true,
 ]);

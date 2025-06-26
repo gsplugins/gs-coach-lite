@@ -236,7 +236,6 @@ class Sortable {
 
 			<div class="gs-plugins--sort-links">
 				<a class="<?php echo $object_type === 'gs_coaches' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coaches') ); ?>">Coaches</a>
-				<a class="<?php echo $object_type === 'gs_coach_group' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_group') ); ?>">Groups</a>
 				<a class="<?php echo $object_type === 'gs_coach_filters' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_filters') ); ?>">Coach Filters</a>
 				<a class="<?php echo $object_type === 'gs_coach_meta' ? 'gs-sort-active' : ''; ?>" href="<?php echo esc_url( $this->get_url_with_object_type('gs_coach_meta') ); ?>">Meta Fields</a>
 			</div>
@@ -505,88 +504,6 @@ class Sortable {
 						</ul>
 
 					<?php endif; ?>
-
-				</div>
-
-			</div>
-
-		</div><!-- #wrap -->
-
-		<?php
-	}
-
-	/**
-	 * Sort Coach Taxonomies
-	 */
-	public function sort_coach_taxonomies() {
-
-		if (!$this->is_pro()) : ?>
-
-			<div class="gs-coach-disable--term-pages">
-				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
-				</div>
-			</div>
-
-		<?php endif; ?>
-
-		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
-
-			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
-
-				<div class="gscoach-sort--left-area" style="flex: 1 0 auto; width: 570px;">
-
-					<h3><?php esc_html_e('Step 1: Drag & Drop to rearrange Groups', 'gscoach'); ?><img src="<?php bloginfo('url'); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h3>
-
-					<?php
-
-					$terms = get_terms('gs_coach_group');
-
-					if (!empty($terms)) : ?>
-
-						<ul id="sortable-list" style="max-width: 600px;">
-							<?php foreach ($terms as $term) : ?>
-
-								<li id="<?php echo esc_attr($term->term_id); ?>">
-									<div class="sortable-content sortable-icon"><i class="fas fa-arrows-alt" aria-hidden="true"></i></div>
-									<div class="sortable-content sortable-title"><?php echo esc_html($term->name); ?></div>
-									<div class="sortable-content sortable-group"><span><?php echo absint($term->count) . ' ' . 'coachs'; ?></span></div>
-								</li>
-
-							<?php endforeach; ?>
-						</ul>
-
-					<?php else : ?>
-
-						<div class="notice notice-warning" style="margin-top: 30px;">
-							<h3><?php _e('No Coach coach Found!', 'gscoach'); ?></h3>
-							<p style="font-size: 14px;"><?php _e('We didn\'t find any team coach.</br>Please add some team coachs to sort them.', 'gscoach'); ?></p>
-							<a href="<?php echo admin_url('post-new.php?post_type=gs_coaches'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
-
-				<div class="gscoach-sort--right-area">
-					
-					<h3><?php esc_html_e('Step 2: Query Settings for Groups', 'gscoach'); ?></h3>
-
-					<div style="background: #fff; border-radius: 6px; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12); font-size: 1.3em; line-height: 1.6; margin-top: 30px">
-						
-						<ol style="list-style: numeric; padding-left: 20px; margin: 0">
-							<li>Create or Edit a Shortcode From <strong>GS Coach > Coach Shortcode</strong>.</li>
-							<li>Then proceed to the 3rd tab labeled <strong>Query Settings</strong>.</li>
-							<li>Set <strong>Group Order by</strong> to <strong>Custom Order</strong>.</li>
-							<li>Set <strong>Group Order</strong> to <strong>ASC</strong>.</li>
-						</ol>
-	
-						<ul style="list-style: circle; padding-left: 20px; margin-top: 20px">
-							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-coachs/manage-gs-coach-coach/sort-order/#reordering-groups-categories" target="_blank">Documentation</a> to learn more.</li>
-							<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
-						</ul>
-
-					</div>
 
 				</div>
 

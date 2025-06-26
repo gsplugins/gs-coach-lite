@@ -152,26 +152,6 @@ class Meta_Fields {
 					<input type="text" id="gsCoachAvailable" class="form-control" name="gs_coach_available" value="<?php echo isset($gs_coach_available) ? esc_attr($gs_coach_available) : ''; ?>" placeholder="Set availability">
 				</div>
 
-				<?php
-				    // Flatpickr script
-					echo '
-					<script>
-					jQuery(document).ready(function($) {
-						$("#gsCoachAvailable").flatpickr({
-							mode: "range",
-							altInput: true,
-    						altFormat: "F j, Y",
-							altInputClass: "gs-flatpickr-alt form-control input",
-							onReady: function(selectedDates, dateStr, instance) {
-								// Add custom ID when alt input is ready
-								instance.altInput.id = "gsCoachAvailableField";
-							},
-							dateFormat: "F j, Y"
-						});
-					});
-					</script>';
-				?>
-
 				<div class="form-group">
 					<label><?php echo get_meta_field_name('_gscoach_psite'); ?></label>
 					<div class="gs-coach-form-input-grid-wrapper">
