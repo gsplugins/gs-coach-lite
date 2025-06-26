@@ -105,4 +105,16 @@ jQuery(function($) {
 
     }
 
+    $("#gsCoachAvailable").flatpickr({
+        mode: "range",
+        altInput: true,
+        altFormat: "F j, Y",
+        altInputClass: "gs-flatpickr-alt form-control input",
+        onReady: function(selectedDates, dateStr, instance) {
+            // Add custom ID when alt input is ready
+            instance.altInput.id = "gsCoachAvailableField";
+        },
+        dateFormat: "F j, Y"
+    });
+
 });
