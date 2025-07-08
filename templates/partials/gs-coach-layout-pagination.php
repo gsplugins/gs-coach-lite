@@ -35,13 +35,13 @@ if( 'on' === $filter_enabled && 'normal-pagination' === $pagination_type ) {
         
     <?php elseif ( 'load-more-button' === $pagination_type ) : ?>
 
-        <div id="gs-coach-load-more-button-<?php echo esc_attr( $id ); ?>" data-posts-per-page="<?php echo esc_attr( $per_click ); ?>" class="gs-coach-load-more-wrapper">
+        <div id="gs-coach-load-more-button-<?php echo esc_attr( $id ); ?>" class="gs-coach-load-more-wrapper">
             <button id="gs-coach-load-more-coach-btn" class="gs-coach-load-more-btn"><?php echo esc_html( $load_button_text ); ?></button>
         </div>
 
     <?php elseif ( 'load-more-scroll' === $pagination_type ) : ?>
 
-        <div id="gs-coach-load-more-scroll-<?php echo esc_attr( $id ); ?>" data-posts-per-page="<?php echo esc_attr( $per_load ); ?>">
+        <div id="gs-coach-load-more-scroll-<?php echo esc_attr( $id ); ?>">
             <div class="gs-coach-loader-spinner" style="display: none;"><img src="<?php echo GSCOACH_PLUGIN_URI . '/assets/img/loader.svg'; ?>" alt="Loader Image"></div>
         </div>
 

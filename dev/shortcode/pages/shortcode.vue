@@ -2053,7 +2053,7 @@
 
 					<div class="gscoach--query-settings" v-if="currentTab == 'query_settings'">
 
-						<div class="shortcode-setting--row">
+						<div class="shortcode-setting--row" v-if="!shortcode_settings.enable_pagination">
 
 							<div class="gs-roow row-20">
 
