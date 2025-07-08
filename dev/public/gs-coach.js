@@ -400,6 +400,9 @@ jQuery(function($) {
 			const loader = gsCoachArea.find('.gs-coach-filter-loader-spinner');
 			
 			const gsCoachAreaID = $(`#gs_coach_area_${shortcodeId}`);
+
+			const initialItems = gsCoachAreaID.data('options').initial_items;
+
 			let postsPerPage;
 
 			// Incorrect Selector. Start from here the next day.
@@ -450,7 +453,7 @@ jQuery(function($) {
 					loader.hide();
 					gsCoachAreaID.find('.gs_coach').replaceWith(coachDivs);
 
-					if( response.data.foundCoaches <= 6 ){
+					if( response.data.foundCoaches <= initialItems ){
 						$('#gs-coach-load-more-coach-btn').hide();
 						paginationDiv.hide();
 						// Do something here so that "gscoach_load_more_coach" ajax call is not made (On scroll)

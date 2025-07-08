@@ -56,7 +56,7 @@ class Shortcode {
 		$shortcode_id = $_POST['shortcodeId'];
 		$is_preview = is_numeric($shortcode_id) ? false : true;
 
-		$filters = $_POST['filters'];
+		$filters = isset( $_POST['filters'] ) ? $_POST['filters'] : array();
 		$load_per_action = $_POST['loadPerAction'];
 		$offset = $_POST['offset'];
 		
@@ -77,7 +77,7 @@ class Shortcode {
 		$posts_per_page = $_POST['posts_per_page'];
 		$paged = $_POST['paged'];
 
-		$filters = $_POST['filters'];
+		$filters = isset( $_POST['filters'] ) ? $_POST['filters'] : array();
 		
 		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'paged' => $paged, 'posts_per_page' => $posts_per_page ) );
 
@@ -422,7 +422,7 @@ class Shortcode {
 		if ( 'off' === $filter_enabled ) {
 
 			if ( 'off' === $enable_pagination ) {
-				$args['posts_per_page'] = -1;
+				$args['posts_per_page'] = $num;
 
 			} elseif ( 'on' === $enable_pagination ) {
 
@@ -432,7 +432,7 @@ class Shortcode {
 						$args["paged"] = (int) $ajax_datas['paged'];
 						$args['posts_per_page'] = (int) $ajax_datas['posts_per_page'];
 
-					} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true ) ) {
+					} elseif ( in_array( $pagination_type, ['load-more-button', 'load-more-scroll'], true )  && ! empty($ajax_datas['load_per_action']) ) {
 						$args['posts_per_page'] = (int) $ajax_datas['load_per_action'];
 						$args['offset'] = (int) $ajax_datas['offset'];
 					}
@@ -675,8 +675,10 @@ class Shortcode {
 			$data_options['coach_per_page'] = $coach_per_page;
 		} elseif( 'load-more-button' === $pagination_type ){
 			$data_options['load_per_click'] = $load_per_click;
+			$data_options['initial_items'] = $initial_items;
 		} elseif( 'load-more-scroll' === $pagination_type ){
 			$data_options['per_load'] = $per_load;
+			$data_options['initial_items'] = $initial_items;
 		}
 	
 		$theme_class = $gs_coach_theme;
