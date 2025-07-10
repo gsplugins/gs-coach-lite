@@ -40,7 +40,7 @@ class Shortcode {
 		$filters = $_POST['filters'];
 		$posts_per_page = $_POST['posts_per_page'];
 		
-		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'posts_per_page' => $posts_per_page ) );
+		$coaches = $this->shortcode( array( 'id'=> $shortcode_id, 'preview' => $is_preview ), array( 'filters' => $filters, 'posts_per_page' => $posts_per_page, 'paged' => '' ) );
 
 		$found_coaches = $GLOBALS['gs_coach_loop']->found_posts;
 		
@@ -460,12 +460,12 @@ class Shortcode {
 		elseif ( 'on' === $filter_enabled ) {
 
 			if ( 'normal-filter' === $gs_coach_filter_type ) {
-				$args['posts_per_page'] = -1;
+				$args['posts_per_page'] = $num;
 
 			} elseif ( 'ajax-filter' === $gs_coach_filter_type ) {
 
 				if ( 'off' === $enable_pagination ) {
-					$args['posts_per_page'] = -1;
+					$args['posts_per_page'] = $num;
 
 				} elseif ( 'on' === $enable_pagination ) {
 
