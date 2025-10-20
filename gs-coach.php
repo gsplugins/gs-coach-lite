@@ -20,7 +20,6 @@
  * License:         GPL-2.0+
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
  * 
- * @fs_premium_only /templates/pro/
  */
 
 /**
