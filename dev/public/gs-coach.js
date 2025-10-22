@@ -395,7 +395,10 @@ jQuery(function($) {
 
 		GS_Coach_filter.prototype.renderAjaxTemplate = function() {
 
-			const gsCoachArea = $('.gs_coach_area');
+			// console.log(this.$widget);
+			// console.log(this.$wrapper);
+
+			const gsCoachArea = this.$wrapper;
 			const shortcodeId = gsCoachArea.data('shortcode-id');
 			const loader = gsCoachArea.find('.gs-coach-filter-loader-spinner');
 			
@@ -405,7 +408,6 @@ jQuery(function($) {
 
 			let postsPerPage;
 
-			// Incorrect Selector. Start from here the next day.
 			let paginationDiv = $(`#gs-coach-pagination-wrapper-${shortcodeId}`);
 
 			const isAjaxPagination = paginationDiv.find(`#gs-coach-ajax-pagination-${shortcodeId}`).length > 0;
@@ -416,7 +418,7 @@ jQuery(function($) {
 
 			if( isPaginationDisabled ){
 				postsPerPage = -1;
-			}else if ( isAjaxPagination ) {
+			} else if ( isAjaxPagination ) {
 				postsPerPage = gsCoachAreaID.data('options').coach_per_page;
 				paginationDiv = paginationDiv.find(`#gs-coach-ajax-pagination-${shortcodeId}`);
 			} else if ( isLoadMoreButton ) {
@@ -454,16 +456,16 @@ jQuery(function($) {
 					gsCoachAreaID.find('.gs_coach').replaceWith(coachDivs);
 
 					if( response.data.foundCoaches <= initialItems ){
-						$('#gs-coach-load-more-coach-btn').hide();
-						paginationDiv.hide();
-						// Do something here so that "gscoach_load_more_coach" ajax call is not made (On scroll)
+
+						$(this.$wrapper).find('#gs-coach-load-more-coach-btn').hide();
+						// paginationDiv.hide();
 						if( isLoadMoreScroll ){
 							paginationDiv.hide();
 						}
 						
 					} else{
 
-						$('#gs-coach-load-more-coach-btn').show();
+						$(this.$wrapper).find('#gs-coach-load-more-coach-btn').show();
 						paginationDiv.show( response.data.pagination );
 
 						if( isAjaxPagination ){
@@ -940,6 +942,242 @@ jQuery(function($) {
 
 	}
 
+	function do_pagination( $gs_coach_area ) {
+
+		// AJAX Pagination
+		$($gs_coach_area).on('click', '.gs-coach-ajax-pagination-link a', function(e){
+			e.preventDefault();
+
+			const link = $(this).attr('href');
+			const urlParams = new URLSearchParams(link.split('?')[1]);
+			const paged = urlParams.get(Object.keys(Object.fromEntries(urlParams)).find(key => key.includes('paged')));
+
+			let coachParent = $gs_coach_area.find('.gs_coach');
+
+			// For table theme
+			const table = coachParent.find('table');
+			let isTableTheme;
+			let tbody;
+
+			if (table.length > 0) {
+				isTableTheme = true;
+				tbody = table.find('tbody');
+				coachParent = tbody;
+			}
+
+			const container = $(this).closest('[id^=gs-coach-ajax-pagination-]');
+			const shortcodeId = container.attr('id').replace('gs-coach-ajax-pagination-', '');
+			const postsPerPage = container.data('posts-per-page');
+
+			$.ajax({
+				url: GSCoachData.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'gscoach_ajax_pagination',
+					_ajax_nonce: GSCoachData.nonce,
+					shortcode_id: shortcodeId,
+					filters: filterVals,
+					paged: paged,
+					posts_per_page: postsPerPage
+				},
+				beforeSend: function() {
+					container.css('opacity', '0.5');
+					coachParent.css('opacity', '0.5');
+				}
+			})
+			.done( response => {
+
+				let dataCoaches = $.parseHTML( response.data.coaches );
+				let coachDivs = $(dataCoaches).find('.single-coach-div');
+
+				if( isTableTheme ){
+					$gs_coach_area.find('.gs_coach').append( $(dataCoaches).find('.gs_coach_popup') );
+					tbody.html(coachDivs);
+				} else {
+					coachParent.html(coachDivs);
+				}
+
+				container.html( response.data.pagination );
+
+				container.css('opacity', '1');
+				coachParent.css('opacity', '1');
+			})
+			.fail((xhr, status, error) => {
+				console.error("AJAX request failed:", status, error);
+				container.css('opacity', '1'); // reset even if failed
+				coachParent.css('opacity', '1'); // reset even if failed
+			});
+			
+		});
+
+			
+		$($gs_coach_area).on('click', '#gs-coach-load-more-coach-btn', function(e){
+
+			e.preventDefault();
+
+			const shortcodeId = $gs_coach_area.data('shortcode-id');
+
+			let coachParent = $gs_coach_area.find('.gs_coach');
+
+			// For table theme
+			const table = coachParent.find('table');
+			let isTableTheme;
+			let tbody;
+
+			if (table.length > 0) {
+				isTableTheme = true;
+				tbody = table.find('tbody');
+				coachParent = tbody;
+			}
+
+			const currentCoachQuantity = parseInt(coachParent[0].children.length);
+
+			const dataOptions = $gs_coach_area.attr('data-options');
+			const fixedDataOptions = dataOptions.replace(/'/g, '"');
+			const parsedData = JSON.parse(fixedDataOptions);
+			const loadPerActionValue = parseInt(parsedData.load_per_click);
+
+			$.ajax({
+				url: GSCoachData.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'gscoach_load_more_coach',
+					_ajax_nonce: GSCoachData.nonce,
+					shortcodeId: shortcodeId,
+					filters: filterVals,
+					loadPerAction: loadPerActionValue,
+					offset: currentCoachQuantity
+				}
+			})
+			.done( response => {
+
+				let dataEls = $.parseHTML( response.data.coaches );
+				let coachDivs = $(dataEls).find('.single-coach-div');
+
+				if( isTableTheme ){
+					$gs_coach_area.find('.gs_coach').append( $(dataEls).find('.gs_coach_popup') );
+					tbody.append(coachDivs);
+				} else {
+					coachParent.append(coachDivs);
+				}
+
+
+				if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
+					$gs_coach_area.find('#gs-coach-load-more-coach-btn').hide();
+				}
+		
+			})
+			.fail((xhr, status, error) => {
+				console.error("AJAX request failed:", status, error);
+			});
+		});
+
+
+		// Load more coaches on scroll
+		function initGSCoachScrollLoader() {
+
+			const shortcodeId = $gs_coach_area.data('shortcode-id');
+			
+			const scrollWrapper = $gs_coach_area.find(`#gs-coach-load-more-scroll-${shortcodeId}`);
+
+			const dataOptions = $gs_coach_area.attr('data-options');
+
+			if (!shortcodeId || !dataOptions) return;
+
+			const parsedData = JSON.parse(dataOptions);
+			const loadPerActionValue = parseInt(parsedData.per_load);
+
+			let coachParent = $gs_coach_area.find('.gs_coach');
+
+			// For table theme
+			const table = coachParent.find('table');
+			let isTableTheme;
+			let tbody;
+
+			if (table.length > 0) {
+				isTableTheme = true;
+				tbody = table.find('tbody');
+				coachParent = tbody;
+			}
+
+			let isLoading = false;
+			let noMoreData = false;
+
+			function loadMoreCoaches() {
+				if (isLoading || noMoreData) return;
+
+				const currentCoachQuantity = parseInt(coachParent[0].children.length);
+
+				isLoading = true;
+				scrollWrapper.find('.gs-coach-loader-spinner').show();
+
+				$.ajax({
+					url: GSCoachData.ajaxUrl,
+					type: 'POST',
+					data: {
+						action: 'gscoach_load_more_coach',
+						_ajax_nonce: GSCoachData.nonce,
+						shortcodeId: shortcodeId,
+						filters: filterVals,
+						loadPerAction: loadPerActionValue,
+						offset: currentCoachQuantity
+					}
+				})
+				.done(response => {
+
+					scrollWrapper.find('.gs-coach-loader-spinner').fadeOut();
+					setTimeout(function() {
+
+						isLoading = false;
+						
+						if (response.success) {
+
+							let dataEls = $.parseHTML(response.data.coaches);
+							let coachDivs = $(dataEls).find('.single-coach-div');
+
+							if( isTableTheme ){
+								coachParent.append( $(dataEls).find('.gs_coach_popup') );
+								tbody.append(coachDivs);
+							} else {
+								coachParent.append(coachDivs);
+							}
+
+						}
+					}, 600);
+
+					
+					if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
+						noMoreData = true;
+					}
+					
+				})
+				.fail((xhr, status, error) => {
+					console.error("AJAX request failed:", status, error);
+				});
+			}
+
+			// Scroll detection
+			$(window).on('scroll', function() {
+				if (isLoading || noMoreData) return;
+
+				const scrollTop = $(window).scrollTop();
+				const windowHeight = $(window).height();
+				const coachAreaBottom = $gs_coach_area.offset().top + $gs_coach_area.outerHeight();
+
+				if (scrollTop + windowHeight >= coachAreaBottom - 100) {
+					loadMoreCoaches();
+				}
+			});
+		}
+
+		const shortcodeId = $gs_coach_area.data('shortcode-id');
+		const scrollID = $gs_coach_area.find(`#gs-coach-load-more-scroll-${shortcodeId}`);
+
+		if( scrollID.length !== 0 ){
+			initGSCoachScrollLoader();
+		}
+	}
+
 	// Fix Tooltip
 	function fix_tooltip( $staff_meta ) {
 
@@ -1038,6 +1276,8 @@ jQuery(function($) {
 		do_gridder( $('.gridder', $widget_box) );
 	
 		do_filter( $('.gs-all-items-filter-wrapper', $widget_box) );
+
+		do_pagination( $widget_box );
 	
 		do_popup( $('.single-coach-pop', $widget_box ), $widget_box );
 	
@@ -1119,177 +1359,5 @@ jQuery(function($) {
         e.stopPropagation();
         e.stopImmediatePropagation();
     });
-
-	$('#gs-coach-load-more-coach-btn').on('click', function(e){
-
-		const gsCoachArea = $('.gs_coach_area');
-
-		const shortcodeId = gsCoachArea.attr('data-shortcode-id');
-
-		const coachParent = document.querySelector('.gs_coach');
-		const currentCoachQuantity = parseInt(coachParent.children.length);
-
-		const dataOptions = gsCoachArea.attr('data-options');
-		const fixedDataOptions = dataOptions.replace(/'/g, '"');
-		const parsedData = JSON.parse(fixedDataOptions);
-		const loadPerActionValue = parseInt(parsedData.load_per_click);
-
-		$.ajax({
-			url: GSCoachData.ajaxUrl,
-			type: 'POST',
-			data: {
-				action: 'gscoach_load_more_coach',
-				_ajax_nonce: GSCoachData.nonce,
-				shortcodeId: shortcodeId,
-				filters: filterVals,
-				loadPerAction: loadPerActionValue,
-				offset: currentCoachQuantity
-			}
-		})
-		.done( response => {
-
-			let dataEls = $.parseHTML( response.data.coaches );
-
-			let coachDivs = $(dataEls).find('.single-coach-div');
-
-			$('.gs_coach').append(coachDivs);
-
-			if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
-				$('#gs-coach-load-more-coach-btn').hide();
-			}
-	
-		});
-	});
-
-	// AJAX Pagination
-	$('.gs_coach_area').on('click', '.gs-coach-ajax-pagination-link a', function(e){
-		e.preventDefault();
-
-		const link = $(this).attr('href');
-		const urlParams = new URLSearchParams(link.split('?')[1]);
-		const paged = urlParams.get(Object.keys(Object.fromEntries(urlParams)).find(key => key.includes('paged')));
-
-		const container = $(this).closest('[id^=gs-coach-ajax-pagination-]');
-		const shortcodeId = container.attr('id').replace('gs-coach-ajax-pagination-', '');
-		const postsPerPage = container.data('posts-per-page');
-		
-		const paginationId = $(`#gs-coach-ajax-pagination-${shortcodeId}`);
-
-		$.ajax({
-			url: GSCoachData.ajaxUrl,
-			type: 'POST',
-			data: {
-                action: 'gscoach_ajax_pagination',
-				_ajax_nonce: GSCoachData.nonce,
-                shortcode_id: shortcodeId,
-				filters: filterVals,
-                paged: paged,
-                posts_per_page: postsPerPage
-			},
-			beforeSend: function() {
-                container.css('opacity', '0.5');
-            }
-		})
-		.done( response => {
-
-			let dataCoaches = $.parseHTML( response.data.coaches );
-			let coachDivs = $(dataCoaches).find('.single-coach-div');
-			$('.gs_coach').html(coachDivs);
-
-			paginationId.html( response.data.pagination );
-
-			container.css('opacity', '1');
-		});
-		
-	});
-
-
-	// Load more coaches on scroll
-	function initGSCoachScrollLoader() {
-
-		const gsCoachArea = $('.gs_coach_area');
-
-		const shortcodeId = gsCoachArea.attr('data-shortcode-id');
-		
-		const scrollWrapper = $(`#gs-coach-load-more-scroll-${shortcodeId}`);
-
-		const gsCoachAreaID = $(`#gs_coach_area_${shortcodeId}`);
-		const dataOptions = gsCoachAreaID.attr('data-options');
-
-		if (!shortcodeId || !dataOptions) return;
-
-		const fixedDataOptions = dataOptions.replace(/'/g, '"');
-		const parsedData = JSON.parse(fixedDataOptions);
-		const loadPerActionValue = parseInt(parsedData.per_load);
-
-		const coachParent = document.querySelector('.gs_coach');
-
-		let isLoading = false;
-		let noMoreData = false;
-
-		function loadMoreCoaches() {
-			if (isLoading || noMoreData) return;
-
-			const currentCoachQuantity = parseInt(coachParent.children.length);
-
-			isLoading = true;
-			scrollWrapper.find('.gs-coach-loader-spinner').show();
-
-			$.ajax({
-				url: GSCoachData.ajaxUrl,
-				type: 'POST',
-				data: {
-					action: 'gscoach_load_more_coach',
-					_ajax_nonce: GSCoachData.nonce,
-					shortcodeId: shortcodeId,
-					filters: filterVals,
-					loadPerAction: loadPerActionValue,
-					offset: currentCoachQuantity
-				}
-			})
-			.done(response => {
-
-				setTimeout(function() {
-					scrollWrapper.find('.gs-coach-loader-spinner').fadeOut();
-
-					isLoading = false;
-					
-					if (response.success) {
-
-						let dataEls = $.parseHTML(response.data.coaches);
-						let coachDivs = $(dataEls).find('.single-coach-div');
-						$('.gs_coach').append(coachDivs);
-					}
-				}, 600);
-
-				
-				if (response.data.foundCoaches <= (currentCoachQuantity + loadPerActionValue)) {
-					noMoreData = true;
-				}
-				
-			});
-		}
-
-		// Scroll detection
-		$(window).on('scroll', function() {
-			if (isLoading || noMoreData) return;
-
-			const scrollTop = $(window).scrollTop();
-			const windowHeight = $(window).height();
-			const coachAreaBottom = gsCoachAreaID.offset().top + gsCoachAreaID.outerHeight();
-
-			if (scrollTop + windowHeight >= coachAreaBottom - 100) {
-				loadMoreCoaches();
-			}
-		});
-	}
-
-	const gsCoachArea = $('.gs_coach_area');
-	const shortcodeId = gsCoachArea.attr('data-shortcode-id');
-	const scrollID = $(`#gs-coach-load-more-scroll-${shortcodeId}`);
-
-	if( scrollID.length !== 0 ){
-		initGSCoachScrollLoader();
-	}
 	
 });
