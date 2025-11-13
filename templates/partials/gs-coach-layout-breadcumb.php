@@ -11,21 +11,23 @@ namespace GSCOACH;
  * @version 1.0.0
  */
 
-if( 'on' === $is_breadcumb_enabled ):
+$is_breadcumb_enabled = getoption('enable_breadcumb', 'off');
 
-    // get home text and url
-    $home_text = 'Home';
-    $home_url = home_url();
-    $seperator = ' > ';
+if( 'on' !== $is_breadcumb_enabled ) return;
 
-    // get post type slug and archive link
-    $post_type = get_post_type();
-    $post_type_obj = get_post_type_object( $post_type );
-    $post_type_slug = ucfirst($post_type_obj->rewrite['slug']);
-    $post_type_archive_link = get_post_type_archive_link( $post_type );
+// get home text and url
+$home_text = 'Home';
+$home_url = home_url();
+$seperator = ' > ';
 
-    // get current page title
-    $current_page = get_the_title();
+// get post type slug and archive link
+$post_type = get_post_type();
+$post_type_obj = get_post_type_object( $post_type );
+$post_type_slug = ucfirst($post_type_obj->rewrite['slug']);
+$post_type_archive_link = get_post_type_archive_link( $post_type );
+
+// get current page title
+$current_page = get_the_title();
 
 ?>
 
@@ -51,4 +53,4 @@ if( 'on' === $is_breadcumb_enabled ):
     </div>
 </div>
 
-<?php endif; ?>
+<?php do_action( 'gs_coach_after_breadcumb' ); ?>

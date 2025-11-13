@@ -14,11 +14,7 @@ $designation = get_post_meta( get_the_id(), '_gscoach_profession', true );
 
 ?>
 
-<div class="gs-coach-breadcumb">
-    <?php $is_breadcumb_enabled = getoption('enable_breadcumb', 'off'); ?> 
-    <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-breadcumb.php' ); ?>
-    <?php do_action( 'gs_coach_after_breadcumb' ); ?>
-</div>
+<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-breadcumb.php' ); ?>
 
 <div class="gs-coach-single-content" itemscope="" itemtype="http://schema.org/Person">
 
