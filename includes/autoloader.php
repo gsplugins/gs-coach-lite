@@ -20,7 +20,7 @@ class Autoloader {
      * 
      * @access private
      * @static
-     * @var    array Classes array use by Solid Testimonials.
+     * @var    array Classes array use by GS Coach Lite.
      */
     private static $classesMap;
 
@@ -31,7 +31,7 @@ class Autoloader {
      * @access private
      * @static
      * 
-     * Classes folder used for @package Solid Testimonials.
+     * Classes folder used for @package GS Coach Lite.
      */
     private static $SOURCE_DIRECTORY = GSCOACH_PLUGIN_DIR;
 
@@ -41,7 +41,7 @@ class Autoloader {
      * @access private
      * @static
      * 
-     * Classes array used for @package Solid Testimonials.
+     * Classes array used for @package GS Coach Lite.
      */
     private static $CLASS_MAPS_FILE = __DIR__ . '/classmaps.php';
 

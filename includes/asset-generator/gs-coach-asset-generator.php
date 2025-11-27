@@ -363,8 +363,6 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 		plugin()->scripts->wp_enqueue_script_all( 'public' );
 
 		$this->enqueue_localize_script();
-
-		add_fs_script( 'gs-coach-public' );
 		
 		$this->print_google_fonts();
 
@@ -421,8 +419,6 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 
 		$this->enqueue_localize_script();
 		
-		add_fs_script( 'gs-coach-public' );
-
 		$this->print_google_fonts();
 
 		if ( is_divi_active() ) {

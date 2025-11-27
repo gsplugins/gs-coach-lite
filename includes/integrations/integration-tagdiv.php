@@ -44,8 +44,6 @@ class Integration_TagDiv {
             // Register Scripts
             plugin()->scripts->wp_enqueue_script_all( 'public', ['gs-cpb-scroller'] );
     
-            add_fs_script( 'gs-coach-public' );
-
             wp_add_inline_script( 'gs-coach-public', "setInterval(function(){jQuery(document).trigger('gscoach:scripts:reprocess');},500);" );
 
         }

@@ -37,8 +37,6 @@ class Integration_Gutenberg {
 		// Register Scripts
         plugin()->scripts->wp_enqueue_script_all( 'public', ['gs-cpb-scroller'] );
 
-        add_fs_script( 'gs-coach-public' );
-
     }
 
     public function load_block_script() {

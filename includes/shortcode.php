@@ -662,6 +662,7 @@ class Shortcode {
 		if ( ! is_pro_valid() ) {
 			
 			$free_themes = wp_list_pluck( Builder::get_free_themes() , 'value' );
+			$initial_theme = $gs_coach_theme;
 
 			if ( ! in_array( $gs_coach_theme, $free_themes ) ) {
 				$gs_coach_theme		             = 'gs-grid-style-five';
@@ -734,6 +735,7 @@ class Shortcode {
 			do_action( 'gs_coach_template_before__loaded', $gs_coach_theme );
 	
 			if ( ! is_pro_valid() ) {
+				$free_themes = wp_list_pluck( Builder::get_free_themes() , 'value' );
 				require_once GSCOACH_PLUGIN_DIR . 'includes/restrict-template.php';
 			}
 	

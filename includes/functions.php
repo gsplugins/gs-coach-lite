@@ -7,6 +7,30 @@ namespace GSCOACH;
  */
 if (!defined('ABSPATH')) exit;
 
+function is_pro_active() {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	return is_plugin_active( GSCOACH_PRO_PLUGIN );
+}
+
+function gs_coach_pro_license_status() {
+    $license = get_option( 'gs-coach-pro_license', false );
+    return $license->license ?? false;
+}
+
+function is_gs_coach_pro_valid() {
+    $license_status  = gs_coach_pro_license_status();
+
+    if ( $license_status && 'valid' === $license_status ) {
+        return true;
+    }
+
+    return false;
+}
+
+function is_pro_active_and_valid(){
+    return is_pro_active() && is_gs_coach_pro_valid();
+}
+
 function is_divi_active() {
     if (!defined('ET_BUILDER_PLUGIN_ACTIVE') || !ET_BUILDER_PLUGIN_ACTIVE) return false;
     return et_core_is_builder_used_on_current_request();
@@ -672,15 +696,6 @@ function select_builder($name, $options, $selected = "", $selecttext = "", $clas
         $select_html .= '</select>';
         echo gs_wp_kses($select_html);
     }
-}
-
-function add_fs_script($handler) {
-
-    $data = [
-        'is_paying_or_trial' => wp_validate_boolean(is_pro_valid())
-    ];
-
-    wp_localize_script($handler, 'gs_coach_fs', $data);
 }
 
 function terms_hierarchically(array &$cats, array &$into, $parentId = 0, $exclude_group = []) {

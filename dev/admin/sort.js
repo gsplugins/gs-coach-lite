@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-	var isPro = gs_coach_fs.is_paying_or_trial;
+	var isPro = (typeof _gscoach_sort_data !== 'undefined') ? _gscoach_sort_data.is_pro : false;
 	var nonce, action;
 	
 	if ( isPro ) {
@@ -14,7 +14,10 @@ jQuery(function($) {
 	$resourceSort.sortable({
 		update: function() {
 
-			if ( ! isPro ) return;
+			if ( ! isPro ){
+				alert('Please activate the license.');
+				return;
+			}
 
 			$('#loading-animation').show(); // Show the animate loading gif while waiting
 

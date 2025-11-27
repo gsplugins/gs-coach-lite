@@ -67,7 +67,6 @@ final class Scripts {
 		$this->add_script('gs-coach-certificate-gallery', GSCOACH_PLUGIN_URI . '/assets/admin/js/gscoach_certificate_gallery.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-select2', GSCOACH_PLUGIN_URI . '/assets/libs/select2/select2.min.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true);
-		$this->add_script('gs-coach-sort-group', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort-group.min.js', ['jquery', 'jquery-ui-sortable'], GSCOACH_VERSION, true);
 		$this->add_script('gs-coach-admin', GSCOACH_PLUGIN_URI . '/assets/admin/js/admin.min.js', ['jquery', 'jquery-ui-sortable', 'gs-select2', 'gs-rate-it', 'gs-coach-certificate-gallery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-bootstrap-table', GSCOACH_PLUGIN_URI . '/assets/libs/bootstrap-table/bootstrap-table.min.js', ['jquery'], GSCOACH_VERSION, true);
 		$this->add_script('gs-cpb-scroller', GSCOACH_PLUGIN_URI . '/assets/libs/cpb-scroller/cpb-scroller.min.js', ['jquery'], GSCOACH_VERSION, true);
@@ -93,11 +92,11 @@ final class Scripts {
 	 * @param  string  $handler Name of the stylesheet.
 	 * @param  string  $src     Full URL of the stylesheet
 	 * @param  array   $deps    Array of registered stylesheet handles this stylesheet depends on.
-	 * @param  boolean $ver     Specifying stylesheet version number
+	 * @param  string  $ver     Specifying stylesheet version number
 	 * @param  string  $media   The media for which this stylesheet has been defined.
 	 * @return void
 	 */
-	public function add_style($handler, $src, $deps = [], $ver = false, $media = 'all') {
+	public function add_style($handler, $src, $deps = [], $ver = GSCOACH_VERSION, $media = 'all') {
 		$this->styles[$handler] = [
 			'src' => $src,
 			'deps' => $deps,
@@ -114,11 +113,11 @@ final class Scripts {
 	 * @param  string  $handler  Name of the script.
 	 * @param  string  $src      Full URL of the script
 	 * @param  array   $deps      Array of registered script handles this script depends on.
-	 * @param  boolean $ver       Specifying script version number
+	 * @param  string  $ver       Specifying script version number
 	 * @param  boolean $in_footer Whether to enqueue the script before </body> instead of in the <head>
 	 * @return void
 	 */
-	public function add_script($handler, $src, $deps = [], $ver = false, $in_footer = false) {
+	public function add_script($handler, $src, $deps = [], $ver = GSCOACH_VERSION, $in_footer = false) {
 		$this->scripts[$handler] = [
 			'src' => $src,
 			'deps' => $deps,
@@ -406,7 +405,7 @@ final class Scripts {
 		$this->wp_register_script_all('public');
 
 		// Enqueue for Single & Archive Pages
-		if (is_singular('gs_coaches') || is_post_type_archive('gs_coaches') || is_tax(['gs_coach_group', 'gs_coach_tag', 'gs_coach_language', 'gs_coach_location', 'gs_coach_gender', 'gs_coach_specialty'])) {
+		if (is_singular('gs_coaches') || is_post_type_archive('gs_coaches') || is_tax(['gs_coach_group', 'gs_coach_tag', 'gs_coach_language', 'gs_coach_location', 'gs_coach_gender', 'gs_coach_specialty', 'gs_coach_extra_one', 'gs_coach_extra_two', 'gs_coach_extra_three', 'gs_coach_extra_four', 'gs_coach_extra_five'])) {
 			$this->add_dependency_styles('gs-coach-public', ['gs-font-awesome-5']);
 			wp_enqueue_style('gs-coach-public');
 		}
@@ -447,8 +446,6 @@ final class Scripts {
 
 		// Enqueue Scripts
 		wp_enqueue_script('gs-coach-admin');
-
-		add_fs_script('gs-coach-admin');
 	}
 
 	public static function add_dependency_scripts($handle, $scripts) {

@@ -99,12 +99,6 @@ jQuery(function($) {
         return $icon;
     }
 
-    if ( ! gs_coach_fs.is_paying_or_trial ) {
-
-        $('.gs-coach-pro-field').addClass('gs-coach-fields-disable').append('<div class="gs-coach-pro-field--inner"><div class="gs-coach-pro-field--content"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div></div>');
-
-    }
-
     $("#gsCoachAvailable").flatpickr({
         mode: "range",
         altInput: true,

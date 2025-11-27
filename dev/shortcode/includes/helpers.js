@@ -105,12 +105,6 @@ const helpers = {
 
 	},
 
-	isPro() {
-
-		return gs_coach_fs.is_paying_or_trial;
-
-	},
-
 	isArray( data ) {
 		return typeof data && Array.isArray(data);
 	},

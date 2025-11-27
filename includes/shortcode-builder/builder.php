@@ -192,8 +192,15 @@ if ( ! class_exists( 'Builder' ) ) {
             }
 
             wp_register_style( 'gs-zmdi-fonts', GSCOACH_PLUGIN_URI . '/assets/libs/material-design-iconic-font/css/material-design-iconic-font.min.css', '', GSCOACH_VERSION, 'all' );
-
             wp_enqueue_style( 'gs-coach-shortcode', GSCOACH_PLUGIN_URI . '/assets/admin/css/shortcode.min.css', array('gs-zmdi-fonts'), GSCOACH_VERSION, 'all' );
+
+            if( ! is_pro_active_and_valid() ){
+                wp_register_script( 'gs-coach-shortcode', GSCOACH_PLUGIN_URI . '/assets/admin/js/shortcode.min.js', array('jquery'), GSCOACH_VERSION, true );
+            }
+
+            do_action( 'gs_coach_enqueue_admin_scripts', $hook );
+
+            wp_enqueue_script( 'gs-coach-shortcode' );
 
             $data = array(
                 "nonce"    => wp_create_nonce( "_gscoach_admin_nonce_gs_" ),
@@ -217,11 +224,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'shortcode_data' => wp_validate_boolean( get_option('gscoach_dummy_shortcode_data_created') )
             ];
 
-            wp_enqueue_script( 'gs-coach-shortcode', GSCOACH_PLUGIN_URI . '/assets/admin/js/shortcode.min.js', array('jquery'), GSCOACH_VERSION, true );
-
             wp_localize_script( 'gs-coach-shortcode', '_gscoach_data', $data );
-
-            add_fs_script( 'gs-coach-shortcode' );
             
         }
 
@@ -2310,28 +2313,28 @@ if ( ! class_exists( 'Builder' ) ) {
                 'tag_tax_archive_slug' => 'gs-coach-tag',
 
                 // Language Taxonomy
-                'enable_language_tax' => 'on',
+                'enable_language_tax' => 'off',
                 'language_tax_label' => __('Language', 'gscoach'),
                 'language_tax_plural_label' => __('Languages', 'gscoach'),
                 'enable_language_tax_archive' => 'on',
                 'language_tax_archive_slug' => 'gs-coach-language',
 
                 // Location Taxonomy
-                'enable_location_tax' => 'on',
+                'enable_location_tax' => 'off',
                 'location_tax_label' => __('Location', 'gscoach'),
                 'location_tax_plural_label' => __('Locations', 'gscoach'),
                 'enable_location_tax_archive' => 'on',
                 'location_tax_archive_slug' => 'gs-coach-location',
 
                 // Gender Taxonomy
-                'enable_gender_tax' => 'on',
+                'enable_gender_tax' => 'off',
                 'gender_tax_label' => __('Gender', 'gscoach'),
                 'gender_tax_plural_label' => __('Genders', 'gscoach'),
                 'enable_gender_tax_archive' => 'on',
                 'gender_tax_archive_slug' => 'gs-coach-gender',
 
                 // Specialty Taxonomy
-                'enable_specialty_tax' => 'on',
+                'enable_specialty_tax' => 'off',
                 'specialty_tax_label' => __('Specialty', 'gscoach'),
                 'specialty_tax_plural_label' => __('Specialties', 'gscoach'),
                 'enable_specialty_tax_archive' => 'on',

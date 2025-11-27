@@ -17,11 +17,8 @@ class Sortable {
 		// Set object_type if not set & Redirect to the correct page
 		add_action('admin_init', [$this, 'maybe_redirect']);
 		
-		// Update team coachs order via AJAX
+		// Update coach order via AJAX
 		add_action('wp_ajax_update_coaches_order', array($this, 'update_coaches_order'));
-		
-		// Update taxonomy order via AJAX
-		add_action('wp_ajax_update_coach_taxonomy_order', array($this, 'update_coach_taxonomy_order'));
 		
 		// Update team filters order via AJAX
 		add_action('wp_ajax_update_coach_filters_order', array($this, 'update_coach_filters_order'));
@@ -37,35 +34,11 @@ class Sortable {
 	}
 
 	/**
-	 * Update taxonomy order
-	 */
-	public function update_coach_taxonomy_order() {
-
-		if (!$this->is_pro()) wp_send_json_error();
-
-		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
-			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
-		}
-
-		global $wpdb;
-
-		$order = explode(',', sanitize_text_field($_POST['order']));
-		$counter = 0;
-
-		foreach ($order as $term_id) {
-			$wpdb->update($wpdb->terms, array('term_order' => $counter), array('term_id' => (int) $term_id));
-			$counter++;
-		}
-
-		return wp_send_json_success();
-	}
-
-	/**
 	 * Update Coach Filters Order
 	 */
 	public function update_coach_filters_order() {
 
-		if (!$this->is_pro()) wp_send_json_error();
+		if ( ! is_pro_active_and_valid() ) wp_send_json_error();
 
 		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
 			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
@@ -82,7 +55,7 @@ class Sortable {
 	 */
 	public function update_coach_meta_order() {
 
-		if (!$this->is_pro()) wp_send_json_error();
+		if ( ! is_pro_active_and_valid() ) wp_send_json_error();
 
 		if (empty($_POST['_nonce']) || !wp_verify_nonce($_POST['_nonce'], '_gscoach_update_order_gs_')) {
 			wp_send_json_error(__('Unauthorised Request', 'gscoach'), 401);
@@ -117,11 +90,11 @@ class Sortable {
 	public function sort_scripts($hook) {
 
 		if ( $hook != 'gs_coaches_page_sort_gs_coach' ) return;
+		
+		wp_enqueue_style('gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/css/sort.min.css', ['gs-font-awesome-5'], GSCOACH_VERSION);
+		wp_enqueue_script('gs-coach-sort', GSCOACH_PLUGIN_URI . '/assets/admin/js/sort.min.js', array('jquery', 'jquery-ui-sortable'), GSCOACH_VERSION, true);
 
-		plugin()->scripts->wp_enqueue_style('gs-coach-sort');
-		plugin()->scripts->wp_enqueue_script('gs-coach-sort');
-
-		if ( $this->is_pro() ) {
+		if ( is_pro_active_and_valid() ) {
 
 			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs_coaches' ) {
 				$action = 'update_coaches_order';
@@ -130,10 +103,11 @@ class Sortable {
 			} else if ( $_GET['object_type'] == 'gs_coach_meta' ) {
 				$action = 'update_coach_meta_order';
 			} else {
-				$action = 'update_coach_taxonomy_order';
+				$action = 'update_coaches_order';
 			}
 
 			$data = [
+				'is_pro' => wp_validate_boolean( is_pro_active_and_valid() ),
 				'nonce' => wp_create_nonce('_gscoach_update_order_gs_'),
 				'action' => $action
 			];
@@ -141,7 +115,6 @@ class Sortable {
 			wp_localize_script('gs-coach-sort', '_gscoach_sort_data', $data);
 		}
 
-		add_fs_script('gs-coach-sort');
 	}
 
 	/**
@@ -164,13 +137,6 @@ class Sortable {
 		}
 
 		return wp_send_json_success();
-	}
-
-	/**
-	 * Check if PRO version is active
-	 */
-	public function is_pro() {
-		return is_pro_valid();
 	}
 
 	/**
@@ -230,7 +196,15 @@ class Sortable {
 		
 		$object_type = isset($_GET['object_type']) ? $_GET['object_type'] : 'gs_coaches';
 
-		?>
+		if ( ! is_pro_active_and_valid() ) : ?>
+
+		<div class="gs-coach-disable--sort-page">
+			<div class="gs-coach-disable--sort-inner">
+				<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/wordpress-coaches-plugin/#pricing">Upgrade to PRO</a></div>
+			</div>
+		</div>
+
+		<?php endif; ?>
 
 		<div class="gs-plugins--sort-page">
 
@@ -258,7 +232,7 @@ class Sortable {
 
 				<?php else : ?>
 
-					<?php $this->sort_coach_taxonomies(); ?>
+					<?php $this->sort_coaches(); ?>
 
 				<?php endif; ?>
 			</div>
@@ -274,20 +248,11 @@ class Sortable {
 	 */
 	public function sort_coaches() {
 
-
 		$sortable = new \WP_Query('post_type=gs_coaches&posts_per_page=-1&orderby=menu_order&order=ASC');
 
-		if (!$this->is_pro()) : ?>
+		?>
 
-			<div class="gs-coach-disable--term-pages">
-				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
-				</div>
-			</div>
-
-		<?php endif; ?>
-
-		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
+		<div class="gs-coach--sort-wrap <?php echo is_pro_active() ? 'sort--wrap-active' : ''; ?>">
 
 			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
 
@@ -326,7 +291,7 @@ class Sortable {
 
 						<div class="notice notice-warning" style="margin-top: 30px;">
 							<h3><?php _e('No Coach coach Found!', 'gscoach'); ?></h3>
-							<p style="font-size: 14px;"><?php _e('We didn\'t find any team coach.</br>Please add some team coachs to sort them.', 'gscoach'); ?></p>
+							<p style="font-size: 14px;"><?php _e('We didn\'t find any coach.</br>Please add some coaches to sort them.', 'gscoach'); ?></p>
 							<a href="<?php echo admin_url('post-new.php?post_type=gs_coaches'); ?>" style="margin-top: 10px; margin-bottom: 20px;" class="button button-primary button-large"><?php _e('Add coach', 'gscoach'); ?></a>
 						</div>
 
@@ -336,7 +301,7 @@ class Sortable {
 
 				<div class="gscoach-sort--right-area">
 					
-					<h3><?php esc_html_e('Step 2: Query Settings fores', 'gscoach'); ?></h3>
+					<h3><?php esc_html_e('Step 2: Query Settings for coaches', 'gscoach'); ?></h3>
 
 					<div style="background: #fff; border-radius: 6px; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12); font-size: 1.3em; line-height: 1.6; margin-top: 30px">
 						
@@ -348,7 +313,7 @@ class Sortable {
 						</ol>
 	
 						<ul style="list-style: circle; padding-left: 20px; margin-top: 20px">
-							<li>Follow <a href="https://docs.gsplugins.com/gs-coach-coachs/manage-gs-coach-coach/sort-order/" target="_blank">Documentation</a> to learn more.</li>
+							<li>Follow <a href="https://docs.gsplugins.com/gs-coach/manage-gs-coach/sort-order/" target="_blank">Documentation</a> to learn more.</li>
 							<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
 						</ul>
 
@@ -414,21 +379,11 @@ class Sortable {
 	 */
 	public function sort_coach_filters() {
 
-		if (!$this->is_pro()) : ?>
-
-			<div class="gs-coach-disable--term-pages">
-				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
-				</div>
-			</div>
-
-		<?php endif;
-
 		$filters = self::get_coach_filters();
 
 		?>
 
-		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
+		<div class="gs-coach--sort-wrap <?php echo is_pro_active() ? 'sort--wrap-active' : ''; ?>">
 
 			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
 
@@ -464,25 +419,13 @@ class Sortable {
 	/**
 	 * Sort Coach Meta
 	 */
-	public function sort_coach_meta() {
-
-		if (!$this->is_pro()) : ?>
-
-			<div class="gs-coach-disable--term-pages">
-				<div class="gs-coach-disable--term-inner">
-					<div class="gs-coach-disable--term-message"><a href="https://www.gsplugins.com/product/gs-coach-coachs/#pricing">Upgrade to PRO</a></div>
-				</div>
-			</div>
-
-		<?php endif;
-
-		
+	public function sort_coach_meta() {	
 
 		$metas = gs_get_sort_metas();
 
 		?>
 
-		<div class="gs-coach--sort-wrap <?php echo $this->is_pro() ? 'sort--wrap-active' : ''; ?>">
+		<div class="gs-coach--sort-wrap <?php echo is_pro_active() ? 'sort--wrap-active' : ''; ?>">
 
 			<div style="display: flex; width: 100%; max-width: 1280px; gap: 40px; flex-wrap: wrap;">
 
