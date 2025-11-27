@@ -71,7 +71,7 @@ class Cpt {
 		$this->group();
 		$this->tag();
 
-		if ( is_pro_valid() ) {
+		if ( is_pro_active_and_valid() ) {
 			$this->language();
 			$this->location();
 			$this->gender();
