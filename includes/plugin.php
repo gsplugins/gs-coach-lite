@@ -42,7 +42,6 @@ class Plugin {
         $this->builder           = new Builder();
         $this->integrations      = new Integrations();
 
-        new Bulk_Importer();
         new Column();
         new Meta_Fields();
         new Dummy_Data();

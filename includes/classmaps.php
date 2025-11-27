@@ -15,7 +15,6 @@ $classmaps = [
 	'Template_Loader'    => 'includes/template-loader.php',
 	'Scripts'            => 'includes/scripts.php',
 	'Sortable'           => 'includes/sortable.php',
-	'Bulk_Importer'      => 'includes/bulk-importer/bulk-importer.php',
 	'Dummy_Data'         => 'includes/demo-data/dummy-data.php',
 	'Builder'            => 'includes/shortcode-builder/builder.php',
 	'Integrations'       => 'includes/integrations/integrations.php',
