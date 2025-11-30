@@ -11,7 +11,7 @@ if ( $gs_coach_loop->have_posts() ) : while ( $gs_coach_loop->have_posts() ): $g
 
     <?php
 
-    if ( ! is_pro_valid() ) {
+    if ( ! is_pro_active_and_valid() ) {
         include Template_Loader::locate_template( 'drawers/gs-coach-drawer-default.php' );
         return;
     }

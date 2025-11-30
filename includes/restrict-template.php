@@ -16,7 +16,7 @@ if ( $is_preview || current_user_can('publish_pages') ) {
 
             <p style="margin-bottom: 16px;"><?php _e( 'This theme is not available in free version.<br>Please upgrade the plan to use this theme. Thanks!', 'gscoach' ); ?></p>
 
-            <a href="https://www.gsplugins.com/product/gs-coach-coachs/" target="_blank"><?php _e( 'Learn more details', 'gscoach' ); ?></a>
+            <a href="https://www.gsplugins.com/product/wordpress-coaches-plugin/" target="_blank"><?php _e( 'Learn more details', 'gscoach' ); ?></a>
             
             <p class="gs-coach-restrict--notice"><?php _e( 'Only Admin & Editor will see this message, visitor will see <strong>Grid 1 (Hover)</strong> template.', 'gscoach' ); ?></p>
             

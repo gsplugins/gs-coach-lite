@@ -592,7 +592,7 @@ function get_taxonomies( $args = [] ) {
         'extra_five' => 'gs_coach_extra_five'
     ];
 
-    if ( $args['restricted'] && ! is_pro_valid() ) {
+    if ( $args['restricted'] && ! is_pro_active_and_valid() ) {
         $taxonomies = array_intersect_key($taxonomies, array_flip(['group', 'tag']));
     }
 
@@ -772,7 +772,7 @@ function get_themes_list($version = 'all', $type = 'both', $data_type = 'full') 
     return wp_list_pluck($themes, $data_type);
 }
 
-if (is_pro_valid()) {
+if (is_pro_active_and_valid()) {
 
     function gs_coach_get_terms_names($term_name, $separator = ', ') {
 

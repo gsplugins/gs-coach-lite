@@ -16,7 +16,7 @@ class Cpt {
 		add_action( 'init', [ $this, 'register_taxonomies' ] );
 		add_action( 'after_setup_theme', [ $this, 'theme_support' ] );
 
-		if ( ! is_pro_valid() ) {
+		if ( ! is_pro_active_and_valid() ) {
 			$this->dummy_tax();
 		}
 		

@@ -48,7 +48,7 @@ class Plugin {
         new Import_Export();
         new Term_Order();
 
-        if (is_pro_valid()) {
+        if (is_pro_active_and_valid()) {
             require_once GSCOACH_PLUGIN_DIR . 'includes/widgets.php';
         }
 

@@ -24,15 +24,15 @@ class Column {
 
         $is_enabled_group_tax       = $this->get_tax_option('enable_group_tax') === 'on';
         $is_enabled_tag_tax         = $this->get_tax_option('enable_tag_tax') === 'on';
-        $is_enabled_language_tax    = is_pro_valid() && $this->get_tax_option('enable_language_tax') === 'on';
-        $is_enabled_location_tax    = is_pro_valid() && $this->get_tax_option('enable_location_tax') === 'on';
-        $is_enabled_gender_tax      = is_pro_valid() && $this->get_tax_option('enable_gender_tax') === 'on';
-        $is_enabled_specialty_tax   = is_pro_valid() && $this->get_tax_option('enable_specialty_tax') === 'on';
-        $is_enabled_extra_one_tax   = is_pro_valid() && $this->get_tax_option('enable_extra_one_tax') === 'on';
-        $is_enabled_extra_two_tax   = is_pro_valid() && $this->get_tax_option('enable_extra_two_tax') === 'on';
-        $is_enabled_extra_three_tax = is_pro_valid() && $this->get_tax_option('enable_extra_three_tax') === 'on';
-        $is_enabled_extra_four_tax  = is_pro_valid() && $this->get_tax_option('enable_extra_four_tax') === 'on';
-        $is_enabled_extra_five_tax  = is_pro_valid() && $this->get_tax_option('enable_extra_five_tax') === 'on';
+        $is_enabled_language_tax    = is_pro_active_and_valid() && $this->get_tax_option('enable_language_tax') === 'on';
+        $is_enabled_location_tax    = is_pro_active_and_valid() && $this->get_tax_option('enable_location_tax') === 'on';
+        $is_enabled_gender_tax      = is_pro_active_and_valid() && $this->get_tax_option('enable_gender_tax') === 'on';
+        $is_enabled_specialty_tax   = is_pro_active_and_valid() && $this->get_tax_option('enable_specialty_tax') === 'on';
+        $is_enabled_extra_one_tax   = is_pro_active_and_valid() && $this->get_tax_option('enable_extra_one_tax') === 'on';
+        $is_enabled_extra_two_tax   = is_pro_active_and_valid() && $this->get_tax_option('enable_extra_two_tax') === 'on';
+        $is_enabled_extra_three_tax = is_pro_active_and_valid() && $this->get_tax_option('enable_extra_three_tax') === 'on';
+        $is_enabled_extra_four_tax  = is_pro_active_and_valid() && $this->get_tax_option('enable_extra_four_tax') === 'on';
+        $is_enabled_extra_five_tax  = is_pro_active_and_valid() && $this->get_tax_option('enable_extra_five_tax') === 'on';
 
         unset( $columns['date'] );
 

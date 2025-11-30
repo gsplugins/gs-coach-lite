@@ -526,7 +526,7 @@ class Meta_Fields {
 		}
 
 
-		if (is_pro_valid()) {
+		if (is_pro_active_and_valid()) {
 
 			if (!empty($coach_skill = $_POST['gscoach-skill-name']) && !empty($coachs_percent = $_POST['gscoach-skill-percent'])) {
 
@@ -561,7 +561,7 @@ class Meta_Fields {
 		$gs_prof_data = sanitize_text_field($_POST['gs_prof']);
 		update_post_meta($post_id, '_gscoach_profession', $gs_prof_data);
 
-		if (is_pro_valid()) {
+		if (is_pro_active_and_valid()) {
 
 			update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
 			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));

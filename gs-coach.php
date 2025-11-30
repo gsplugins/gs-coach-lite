@@ -38,12 +38,6 @@ if (!defined('GSCOACH_PLUGIN_DIR')) define('GSCOACH_PLUGIN_DIR', plugin_dir_path
 if (!defined('GSCOACH_PLUGIN_URI')) define('GSCOACH_PLUGIN_URI', plugins_url('', __FILE__));
 if (!defined('GSCOACH_PRO_PLUGIN')) define('GSCOACH_PRO_PLUGIN', 'gs-coach-pro/gs-coach-pro.php');
 
-if( ! function_exists( 'is_pro_valid' ) ){
-    function is_pro_valid(){
-        return false;
-    }
-}
-
 require_once GSCOACH_PLUGIN_DIR . 'includes/autoloader.php';
 require_once GSCOACH_PLUGIN_DIR . 'includes/functions.php';
 require_once GSCOACH_PLUGIN_DIR . 'includes/plugin.php';

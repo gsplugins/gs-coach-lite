@@ -27,15 +27,15 @@ $gs_coach_extra_three_label = plugin()->builder->get_tax_option( 'extra_three_ta
 $gs_coach_extra_four_label  = plugin()->builder->get_tax_option( 'extra_four_tax_label' );
 $gs_coach_extra_five_label  = plugin()->builder->get_tax_option( 'extra_five_tax_label' );
 
-$location           = is_pro_valid() ? gs_coach_coach_location() : '';
-$language           = is_pro_valid() ? gs_coach_coach_language() : '';
-$specialty          = is_pro_valid() ? gs_coach_coach_specialty() : '';
-$gender             = is_pro_valid() ? gs_coach_coach_gender() : '';
-$extra_one          = is_pro_valid() ? gs_coach_coach_extra_one() : '';
-$extra_two          = is_pro_valid() ? gs_coach_coach_extra_two() : '';
-$extra_three        = is_pro_valid() ? gs_coach_coach_extra_three() : '';
-$extra_four         = is_pro_valid() ? gs_coach_coach_extra_four() : '';
-$extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
+$location           = is_pro_active_and_valid() ? gs_coach_coach_location() : '';
+$language           = is_pro_active_and_valid() ? gs_coach_coach_language() : '';
+$specialty          = is_pro_active_and_valid() ? gs_coach_coach_specialty() : '';
+$gender             = is_pro_active_and_valid() ? gs_coach_coach_gender() : '';
+$extra_one          = is_pro_active_and_valid() ? gs_coach_coach_extra_one() : '';
+$extra_two          = is_pro_active_and_valid() ? gs_coach_coach_extra_two() : '';
+$extra_three        = is_pro_active_and_valid() ? gs_coach_coach_extra_three() : '';
+$extra_four         = is_pro_active_and_valid() ? gs_coach_coach_extra_four() : '';
+$extra_five         = is_pro_active_and_valid() ? gs_coach_coach_extra_five() : '';
 
 ?>
 

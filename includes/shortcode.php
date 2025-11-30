@@ -26,7 +26,7 @@ class Shortcode {
 		add_filter( 'post_thumbnail_html', [ $this, 'gscoach_post_thumbnail_html' ], 999999 );
 		add_shortcode( 'gscoach', [ $this, 'shortcode' ] );
 
-		if ( is_pro_valid() ) {
+		if ( is_pro_active_and_valid() ) {
 			add_shortcode( 'gs_coach_sidebar', [ $this, 'sidebar_shortcode' ] );		
 		}
 	}
@@ -199,7 +199,7 @@ class Shortcode {
 				if ( $default_link_type == 'none' ) $gs_coach_name_is_linked = 'off';
 			}
 	
-			if ( ! is_pro_valid() ) {
+			if ( ! is_pro_active_and_valid() ) {
 				if ( $gs_coach_link_type == 'popup' ) $popup_style = 'default';
 				if ( in_array($gs_coach_link_type, ['panel', 'drawer', 'custom']) ) $gs_coach_link_type = 'default';
 			}
@@ -218,9 +218,9 @@ class Shortcode {
 	
 		if ( empty($fitler_all_text) ) $fitler_all_text = 'All';
 	
-		if ( ! is_pro_valid() && $display_ribbon == 'on' ) $gs_coach_ribbon_style = 'default';
+		if ( ! is_pro_active_and_valid() && $display_ribbon == 'on' ) $gs_coach_ribbon_style = 'default';
 
-		if ( ! is_pro_valid() && $gs_coach_link_type == 'popup' ) $popup_style = 'default';
+		if ( ! is_pro_active_and_valid() && $gs_coach_link_type == 'popup' ) $popup_style = 'default';
 	
 		$args = [
 			'order'          => sanitize_text_field( $order ),
@@ -659,7 +659,7 @@ class Shortcode {
 
 		remove_filter( 'posts_search', 'GSCOACH\gs_filter_title_search_only', 10 );
 	
-		if ( ! is_pro_valid() ) {
+		if ( ! is_pro_active_and_valid() ) {
 			
 			$free_themes = wp_list_pluck( Builder::get_free_themes() , 'value' );
 			$initial_theme = $gs_coach_theme;
@@ -722,7 +722,7 @@ class Shortcode {
 
 		$img_effect_class = '';
 
-		if ( is_pro_valid() ) {
+		if ( is_pro_active_and_valid() ) {
 			$img_effect_class = "gs-coach--img-efect_$image_filter gs-coach--img-hover-efect_$hover_image_filter";
 		}
 	
@@ -734,7 +734,7 @@ class Shortcode {
 	
 			do_action( 'gs_coach_template_before__loaded', $gs_coach_theme );
 	
-			if ( ! is_pro_valid() ) {
+			if ( ! is_pro_active_and_valid() ) {
 				$free_themes = wp_list_pluck( Builder::get_free_themes() , 'value' );
 				require_once GSCOACH_PLUGIN_DIR . 'includes/restrict-template.php';
 			}
@@ -803,7 +803,7 @@ class Shortcode {
 				include Template_Loader::locate_template( 'gs-coach-layout-grid-2.php' );
 			}
 	
-			if ( is_pro_valid() ) {
+			if ( is_pro_active_and_valid() ) {
 
 				if ( $gs_coach_theme == 'gs-grid-style-one') {
 						

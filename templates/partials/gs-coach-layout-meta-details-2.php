@@ -36,16 +36,16 @@ $land               = get_post_meta( get_the_id(), '_gs_land', true );
 $cell               = get_post_meta( get_the_id(), '_gscoach_contact', true );
 $company            = get_post_meta( get_the_id(), '_gs_com', true );
 $company_website    = get_post_meta( get_the_id(), '_gs_com_website', true );
-$gs_zip_code        = is_pro_valid() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';
-$location           = is_pro_valid() ? gs_coach_coach_location() : '';
-$language           = is_pro_valid() ? gs_coach_coach_language() : '';
-$specialty          = is_pro_valid() ? gs_coach_coach_specialty() : '';
-$gender             = is_pro_valid() ? gs_coach_coach_gender() : '';
-$extra_one          = is_pro_valid() ? gs_coach_coach_extra_one() : '';
-$extra_two          = is_pro_valid() ? gs_coach_coach_extra_two() : '';
-$extra_three        = is_pro_valid() ? gs_coach_coach_extra_three() : '';
-$extra_four         = is_pro_valid() ? gs_coach_coach_extra_four() : '';
-$extra_five         = is_pro_valid() ? gs_coach_coach_extra_five() : '';
+$gs_zip_code        = is_pro_active_and_valid() ? get_post_meta( get_the_id(), '_gs_zip_code', true ) : '';
+$location           = is_pro_active_and_valid() ? gs_coach_coach_location() : '';
+$language           = is_pro_active_and_valid() ? gs_coach_coach_language() : '';
+$specialty          = is_pro_active_and_valid() ? gs_coach_coach_specialty() : '';
+$gender             = is_pro_active_and_valid() ? gs_coach_coach_gender() : '';
+$extra_one          = is_pro_active_and_valid() ? gs_coach_coach_extra_one() : '';
+$extra_two          = is_pro_active_and_valid() ? gs_coach_coach_extra_two() : '';
+$extra_three        = is_pro_active_and_valid() ? gs_coach_coach_extra_three() : '';
+$extra_four         = is_pro_active_and_valid() ? gs_coach_coach_extra_four() : '';
+$extra_five         = is_pro_active_and_valid() ? gs_coach_coach_extra_five() : '';
 
 ?>
 

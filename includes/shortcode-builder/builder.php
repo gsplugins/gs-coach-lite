@@ -1462,13 +1462,7 @@ if ( ! class_exists( 'Builder' ) ) {
                     'value' => 'gs_tm_theme25',
                     'type' => 'pro',
                     'version' => 1
-                ],
-                [
-                    'label' => __( 'Ticker', 'gscoach' ),
-                    'value' => 'gs_tm_theme26',
-                    'type' => 'pro',
-                    'version' => 1
-                ],
+                ]
             ];
         }
 
@@ -1504,7 +1498,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
         public static function get_formated_themes( $themes ) {
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
 
                 $_themes = array_map( function( $theme ) {
                     $theme['label'] = $theme['label'] . __(' (Pro)', 'gscoach');
@@ -1561,7 +1555,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
@@ -1602,7 +1596,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 ]
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $pro_options = self::add_pro_to_options( $pro_options );
             }
 
@@ -1632,7 +1626,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
@@ -1663,7 +1657,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
@@ -1702,7 +1696,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $styles = self::add_pro_to_options( $styles );
             }
 
@@ -1747,7 +1741,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $styles = self::add_pro_to_options($styles);
             }
 
@@ -1789,7 +1783,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
             }
@@ -1828,7 +1822,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $styles = self::add_pro_to_options($styles);
             }
 
@@ -2491,7 +2485,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 ]
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $effects = self::add_pro_to_options($effects);
             }
 
@@ -2604,7 +2598,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
 
                 $default = array_shift( $styles );
                 $styles = array_merge( [$default], self::add_pro_to_options($styles) );
@@ -2626,7 +2620,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 $this->get_shortcode_options_link_types()[1]
             ];
 
-            if ( ! is_pro_valid() ) {
+            if ( ! is_pro_active_and_valid() ) {
                 $acf_fields_position = self::add_pro_to_options( $acf_fields_position );
                 $default = array_shift( $single_page_style );
                 $single_page_style = array_merge( [$default], self::add_pro_to_options($single_page_style) );

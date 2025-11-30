@@ -6,7 +6,7 @@ $single_page_style = getoption( 'single_page_style', 'default' );
 
 $single_page_style = apply_filters( 'gs_coach_single_page_style', $single_page_style );
 
-if ( ! is_pro_valid() ) {
+if ( ! is_pro_active_and_valid() ) {
 	$single_page_style = 'default';
 }
 
@@ -20,7 +20,7 @@ if ( ! is_pro_valid() ) {
 		
 		while ( have_posts() ) : the_post();
 
-			if ( ! is_pro_valid() ) {
+			if ( ! is_pro_active_and_valid() ) {
 				include Template_Loader::locate_template( 'singles/gs-coach-single-default.php' );
 				return;
 			}

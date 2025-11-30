@@ -20,7 +20,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
     <div class="mfp-content--container">
         <?php
 
-        if ( ! is_pro_valid() ) {
+        if ( ! is_pro_active_and_valid() ) {
             include Template_Loader::locate_template( 'popups/gs-coach-popup-default.php' );     
         } 
         else {
