@@ -12,7 +12,6 @@ class Hooks {
         add_filter( 'admin_post_thumbnail_html', [ $this, 'img_size_note' ] );        
         add_filter( 'single_template', [ $this, 'single_template' ], -1 );
         add_filter( 'archive_template', [ $this, 'archive_template' ], -1 );
-        add_filter( 'plugin_action_links_' . plugin_basename(GSCOACH_PLUGIN_FILE), [ $this, 'pro_link' ] );
         add_action( 'init', [ $this, 'plugin_update_version' ], 0 );
         add_action( 'plugins_loaded', [ $this, 'plugin_loaded' ] );
         add_action( 'init', [ $this, 'GS_flush_rewrite_rules' ] );
@@ -120,11 +119,6 @@ class Hooks {
         }
 
         return $archive_template;
-    }
-    
-    public function pro_link($gsCoach_links) {
-        $gsCoach_links[] = '<a href="https://www.gsplugins.com/wordpress-plugins" target="_blank">GS Plugins</a>';
-        return $gsCoach_links;
     }
     
     public function plugin_update_version() {

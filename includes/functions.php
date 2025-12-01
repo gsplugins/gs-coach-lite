@@ -31,6 +31,58 @@ function is_pro_active_and_valid(){
     return is_pro_active() && is_gs_coach_pro_valid();
 }
 
+/**
+ * Upgrade notice if compatibility fails
+ */
+function pro_compatibility_notice() {
+
+    $screen = get_current_screen();
+    
+    if ( isset( $screen->parent_file ) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id ) return;
+    if ( 'update' === $screen->base && 'update' === $screen->id ) return;
+
+    if ( ! current_user_can( 'update_plugins' ) ) return;
+
+    $upgrade_url = wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' . GSCOACH_PRO_PLUGIN ), 'upgrade-plugin_' . GSCOACH_PRO_PLUGIN );
+    $message = '<p>' . __( 'GS Coach is not working because you need to upgrade the GS Coach Pro plugin to latest version.', 'gscoach' ) . '</p>';
+    $message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $upgrade_url, __( 'Upgrade GS Coach Pro Now', 'gscoach' ) ) . '</p>';
+
+    echo '<div class="error"><p>' . $message . '</p></div>';
+    
+}
+
+/**
+ * Compatibility check with Pro plugin
+ */
+function is_pro_compatible() {
+    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    if ( defined('GSCOACH_PRO_VERSION') && is_plugin_active( GSCOACH_PRO_PLUGIN ) ) {
+        if ( version_compare( GSCOACH_PRO_VERSION, GSCOACH_MIN_PRO_VERSION, '<' ) ) {
+            add_action( 'admin_notices', 'GSCOACH\pro_compatibility_notice' );
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
+ * Plugins action links
+ */
+function add_pro_link( $links ) {
+    if ( ! is_pro_active() ) {
+        $links[] = '<a style="color: red; font-weight: bold;" class="gs-pro-link" href="https://www.gsplugins.com/product/wordpress-coaches-plugin" target="_blank">Go Pro!</a>';
+    }
+    $links[] = '<a href="https://www.gsplugins.com/wordpress-plugins" target="_blank">GS Plugins</a>';
+    return $links;
+}
+
+/**
+ * Plugins Load Text Domain
+ */
+function gs_load_textdomain() {
+    load_plugin_textdomain( 'gscoach', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+
 function is_divi_active() {
     if (!defined('ET_BUILDER_PLUGIN_ACTIVE') || !ET_BUILDER_PLUGIN_ACTIVE) return false;
     return et_core_is_builder_used_on_current_request();
@@ -772,55 +824,52 @@ function get_themes_list($version = 'all', $type = 'both', $data_type = 'full') 
     return wp_list_pluck($themes, $data_type);
 }
 
-if (is_pro_active_and_valid()) {
+function gs_coach_get_terms_names($term_name, $separator = ', ') {
 
-    function gs_coach_get_terms_names($term_name, $separator = ', ') {
+    global $post;
 
-        global $post;
+    $terms = get_the_terms($post->ID, $term_name);
 
-        $terms = get_the_terms($post->ID, $term_name);
-
-        if (!empty($terms) && !is_wp_error($terms)) {
-            $terms = implode($separator, wp_list_pluck($terms, 'name'));
-            return $terms;
-        }
+    if (!empty($terms) && !is_wp_error($terms)) {
+        $terms = implode($separator, wp_list_pluck($terms, 'name'));
+        return $terms;
     }
+}
 
-    function gs_coach_coach_location($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_location', $separator);
-    }
+function gs_coach_coach_location($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_location', $separator);
+}
 
-    function gs_coach_coach_language($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_language', $separator);
-    }
+function gs_coach_coach_language($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_language', $separator);
+}
 
-    function gs_coach_coach_specialty($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_specialty', $separator);
-    }
+function gs_coach_coach_specialty($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_specialty', $separator);
+}
 
-    function gs_coach_coach_gender($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_gender', $separator);
-    }
+function gs_coach_coach_gender($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_gender', $separator);
+}
 
-    function gs_coach_coach_extra_one($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_extra_one', $separator);
-    }
+function gs_coach_coach_extra_one($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_extra_one', $separator);
+}
 
-    function gs_coach_coach_extra_two($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_extra_two', $separator);
-    }
+function gs_coach_coach_extra_two($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_extra_two', $separator);
+}
 
-    function gs_coach_coach_extra_three($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_extra_three', $separator);
-    }
+function gs_coach_coach_extra_three($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_extra_three', $separator);
+}
 
-    function gs_coach_coach_extra_four($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_extra_four', $separator);
-    }
+function gs_coach_coach_extra_four($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_extra_four', $separator);
+}
 
-    function gs_coach_coach_extra_five($separator = ', ') {
-        return gs_coach_get_terms_names('gs_coach_extra_five', $separator);
-    }
+function gs_coach_coach_extra_five($separator = ', ') {
+    return gs_coach_get_terms_names('gs_coach_extra_five', $separator);
 }
 
 function minimize_css_simple($css) {

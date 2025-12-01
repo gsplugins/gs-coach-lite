@@ -84,7 +84,7 @@ if ( $gs_coaches_pop_clm == 'one' ) : ?>
         <?php do_action( 'gs_coach_after_coach_details' ); ?>
         
         <!-- Meta Fields -->
-        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-fields.php' ); ?>
+        <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-meta-details-2.php' ); ?>
         
         <!-- Social Links -->
         <?php include Template_Loader::locate_template( 'partials/gs-coach-layout-social-links.php' ); ?>

@@ -13,6 +13,8 @@ if ( ! class_exists( 'Template_Loader' ) ) {
 
         private static $template_path = '';
 
+        private static $template_path_pro = '';
+
         private static $theme_path = '';
 
         private static $child_theme_path = '';
@@ -20,6 +22,10 @@ if ( ! class_exists( 'Template_Loader' ) ) {
         public function __construct() {
 
             self::$template_path = GSCOACH_PLUGIN_DIR . 'templates/';
+            
+            if ( is_pro_active() ) {
+                self::$template_path_pro = GSCOACH_PRO_DIR . 'templates/';
+            }
 
             add_action( 'init', [$this, 'set_theme_template_path'] );
 
@@ -45,8 +51,14 @@ if ( ! class_exists( 'Template_Loader' ) ) {
             // Default path
             $path = self::$template_path;
 
-            // Check requested file exist
-            if ( ! file_exists( $path . $template_file ) ) return new \WP_Error( 'gscoach_template_not_found', __( 'Template file not found - GS Plugins', 'gscoach' ) );
+            // Check if requested file exist in plugin
+            if ( ! empty(self::$template_path_pro) && file_exists( self::$template_path_pro . $template_file ) ) {
+                $path = self::$template_path_pro;
+            } else {
+                if ( ! file_exists( $path . $template_file ) ) {
+                    return new \WP_Error( 'gscoach_template_not_found', __( 'Template file not found - GS Plugins', 'gscoachpro' ) );
+                }
+            }
 
             // Override default template if exist from theme
             if ( file_exists( self::$theme_path . $template_file ) ) $path = self::$theme_path;

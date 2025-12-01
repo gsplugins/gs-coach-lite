@@ -40,4 +40,4 @@ if (!defined('GSCOACH_PRO_PLUGIN')) define('GSCOACH_PRO_PLUGIN', 'gs-coach-pro/g
 
 require_once GSCOACH_PLUGIN_DIR . 'includes/autoloader.php';
 require_once GSCOACH_PLUGIN_DIR . 'includes/functions.php';
-require_once GSCOACH_PLUGIN_DIR . 'includes/plugin.php';
+require_once GSCOACH_PLUGIN_DIR . 'includes/init.php';
