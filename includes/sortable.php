@@ -20,10 +20,10 @@ class Sortable {
 		// Update coach order via AJAX
 		add_action('wp_ajax_update_coaches_order', array($this, 'update_coaches_order'));
 		
-		// Update team filters order via AJAX
+		// Update  filters order via AJAX
 		add_action('wp_ajax_update_coach_filters_order', array($this, 'update_coach_filters_order'));
 		
-		// Update team filters order via AJAX
+		// Update  filters order via AJAX
 		add_action('wp_ajax_update_coach_meta_order', array($this, 'update_coach_meta_order'));
 		
 		// Enqueue admin scripts for sorting

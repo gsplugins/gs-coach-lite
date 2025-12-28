@@ -3807,7 +3807,7 @@
           pos: index in line,
           dir: direction of traversal (-1 or 1)
         }
-        and modifies the line, ln, and pos coachs to represent the
+        and modifies the line, ln, and pos coaches to represent the
         next valid position or sets them to null if there are
         no more valid positions.
        */

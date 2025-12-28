@@ -220,7 +220,7 @@ if ( ! class_exists( 'Builder' ) ) {
             $data['is_multilingual']    = $this->is_multilingual_enabled();
 
             $data['demo_data'] = [
-                'team_data'      => wp_validate_boolean( get_option('gscoach_dummy_team_data_created') ),
+                'coach_data'      => wp_validate_boolean( get_option('gscoach_dummy_coach_data_created') ),
                 'shortcode_data' => wp_validate_boolean( get_option('gscoach_dummy_shortcode_data_created') )
             ];
 
@@ -236,11 +236,11 @@ if ( ! class_exists( 'Builder' ) ) {
 
             if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
                 
-                $team_groups = \acf_get_field_groups([
+                $coach_groups = \acf_get_field_groups([
                     'post_type'	=> 'gs_coaches'
                 ]);
                 
-                if ( !empty($team_groups) ) {
+                if ( !empty($coach_groups) ) {
                     $plugins[] = 'advanced-custom-fields';
                 }
             }
@@ -599,31 +599,31 @@ if ( ! class_exists( 'Builder' ) ) {
                 'hover_image_filter' => __( 'Image Filter on Hover', 'gscoach' ),
 
                 'location'  => __('Location', 'gscoach'),
-                'location--details'  => __('Select specific team location to show that specific location coachs', 'gscoach'),
+                'location--details'  => __('Select specific coach location to show that specific location coaches', 'gscoach'),
 
                 'specialty'  => __('Specialty', 'gscoach'),
-                'specialty--details'  => __('Select specific team specialty to show that specific specialty coachs', 'gscoach'),
+                'specialty--details'  => __('Select specific coach specialty to show that specific specialty coaches', 'gscoach'),
 
                 'language'  => __('Language', 'gscoach'),
-                'language--details'  => __('Select specific team language to show that specific language coachs', 'gscoach'),
+                'language--details'  => __('Select specific coach language to show that specific language coaches', 'gscoach'),
 
                 'gender'  => __('Gender', 'gscoach'),
-                'gender--details'  => __('Select specific team gender to show that specific gender coachs', 'gscoach'),
+                'gender--details'  => __('Select specific coach gender to show that specific gender coaches', 'gscoach'),
 
                 'include_extra_one'  => __('Extra One', 'gscoach'),
-                'include_extra_one--details'  => __('Select specific team extra one to show that specific extra one coachs', 'gscoach'),
+                'include_extra_one--details'  => __('Select specific coach extra one to show that specific extra one coaches', 'gscoach'),
 
                 'include_extra_two'  => __('Extra Two', 'gscoach'),
-                'include_extra_two--details'  => __('Select specific team extra two to show that specific extra two coachs', 'gscoach'),
+                'include_extra_two--details'  => __('Select specific coach extra two to show that specific extra two coaches', 'gscoach'),
 
                 'include_extra_three'  => __('Extra Three', 'gscoach'),
-                'include_extra_three--details'  => __('Select specific team extra three to show that specific extra three coachs', 'gscoach'),
+                'include_extra_three--details'  => __('Select specific coach extra three to show that specific extra three coaches', 'gscoach'),
 
                 'include_extra_four'  => __('Extra Four', 'gscoach'),
-                'include_extra_four--details'  => __('Select specific team extra four to show that specific extra four coachs', 'gscoach'),
+                'include_extra_four--details'  => __('Select specific coach extra four to show that specific extra four coaches', 'gscoach'),
 
                 'include_extra_five'  => __('Extra Five', 'gscoach'),
-                'include_extra_five--details'  => __('Select specific team extra five to show that specific extra five coachs', 'gscoach'),
+                'include_extra_five--details'  => __('Select specific coach extra five to show that specific extra five coaches', 'gscoach'),
 
                 'install-demo-data' => __('Install Demo Data', 'gscoach'),
                 'install-demo-data-description' => __('Quick start with GS Plugins by installing the demo data', 'gscoach'),
@@ -668,7 +668,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 // Extra One Taxonomy Settings
                 'enable_extra_tax' => __('Enable Taxonomy', 'gscoach'),
-                'enable_extra_tax--details' => __('Enable Taxonomy for team coachs', 'gscoach'),
+                'enable_extra_tax--details' => __('Enable Taxonomy for coaches', 'gscoach'),
                 'extra_tax_label' => __('Taxonomy Label', 'gscoach'),
                 'extra_tax_label--details' => __('Set Taxonomy Label', 'gscoach'),
                 'extra_tax_plural_label' => __('Taxonomy Plural Label', 'gscoach'),
@@ -685,7 +685,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'show-acf-fields-details' => __('Display ACF fields in the single pages', 'gscoach'),
                 
                 'disable_lazy_load' => __('Disable Lazy Load', 'gscoach'),
-                'disable_lazy_load-details' => __('Disable Lazy Load for team coach images', 'gscoach'),
+                'disable_lazy_load-details' => __('Disable Lazy Load for coach images', 'gscoach'),
                 
                 'lazy_load_class' => __('Lazy Load Class', 'gscoach'),
                 'lazy_load_class-details' => __('Add class to disable lazy loading, multiple classes should be separated by space', 'gscoach'),
@@ -846,7 +846,7 @@ if ( ! class_exists( 'Builder' ) ) {
 
                 'shortcodes' => __('Shortcodes', 'gscoach'),
                 'shortcode' => __('Shortcode', 'gscoach'),
-                'global-settings-for-gs-coach-coachs' => __('Global Settings for GS Coaches', 'gscoach'),
+                'global-settings-for-gs-coaches' => __('Global Settings for GS Coaches', 'gscoach'),
                 'all-shortcodes-for-gs-coach-coach' => __('All shortcodes for GS Coach', 'gscoach'),
                 'create-shortcode' => __('Create Shortcode', 'gscoach'),
                 'create-new-shortcode' => __('Create New Shortcode', 'gscoach'),
@@ -883,7 +883,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_thumbnail_sizes' => __('Thumbnail Sizes', 'gscoach'),
                 'gs_coach_thumbnail_sizes_details' => __('Select a thumbnail size', 'gscoach'),
                 'gs_coach_link_type' => __('Link Type', 'gscoach'),
-                'gs_coach_link_type__details' => __('Choose the link type of team coachs', 'gscoach'),
+                'gs_coach_link_type__details' => __('Choose the link type of coaches', 'gscoach'),
                 
                 'coach-designation' => __('Designation', 'gscoach'),
                 'coach-details' => __('Details', 'gscoach'),
@@ -916,7 +916,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'gs_coach_filter_columns' => __('Filter Columns', 'gscoach'),
                 'social-link-target' => __('Social Link Target', 'gscoach'),
                 'gs-desc-allow-html' => __('Allow HTML for Details', 'gscoach'),
-                'gs-desc-allow-html--help' => __('Enable/Disable HTML content for the single team coach descript, this will load whole content from the post type.', 'gscoach'),
+                'gs-desc-allow-html--help' => __('Enable/Disable HTML content for the single coach descript, this will load whole content from the post type.', 'gscoach'),
                 'details-control' => __('Details Control', 'gscoach'),
                 'gs-desc-scroll-contrl' => __('Description Scroll Control', 'gscoach'),
                 'gs-desc-scroll-contrl--help' => __('Enable/Disable scrollbar for description on popup, drawer & panel, useful when description has large content.', 'gscoach'),
@@ -957,7 +957,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'tags' => __('Tags', 'gscoach'),
                 'tags__help' => __('Select specific tag to show that specific tagged coaches', 'gscoach'),
                 'exclude_group' => __('Group', 'gscoach'),
-                'exclude_group__help' => __('Select a specific team group to hide that specific group coaches', 'gscoach'),
+                'exclude_group__help' => __('Select a specific coach group to hide that specific group coaches', 'gscoach'),
                 'exclude_tags' => __('Tags', 'gscoach'),
                 'exclude_tags__help' => __('Select a specific tag to hide that specific tagged coaches', 'gscoach'),
                 'exclude_language' => __('Language', 'gscoach'),
@@ -984,14 +984,14 @@ if ( ! class_exists( 'Builder' ) ) {
                 'font-weight' => __('Font Weight', 'gscoach'),
                 'font-style' => __('Font Style', 'gscoach'),
 
-                'select-number-of-team-columns' => __('Select the number of Coach columns', 'gscoach'),
+                'select-number-of-coach-columns' => __('Select the number of Coach columns', 'gscoach'),
                 'select-preffered-style-theme' => __('Select the preferred Style & Theme', 'gscoach'),
-                'show-or-hide-team-coach-name' => __('Show or Hide Coach Name', 'gscoach'),
-                'show-or-hide-team-coach-designation' => __('Show or Hide Coach Designation', 'gscoach'),
-                'show-or-hide-team-coach-details' => __('Show or Hide Coach Details', 'gscoach'),
-                'show-or-hide-team-coach-social-connections' => __('Show or Hide Coach Social Connections', 'gscoach'),
-                'show-or-hide-team-coach-paginations' => __('Show or Hide Coach Paginations', 'gscoach'),
-                'show-or-hide-next-prev-coach-link-at-single-team-template' => __('Show or Hide Next / Prev link at Single Coach Template', 'gscoach'),
+                'show-or-hide-coach-name' => __('Show or Hide Coach Name', 'gscoach'),
+                'show-or-hide-coach-designation' => __('Show or Hide Coach Designation', 'gscoach'),
+                'show-or-hide-coach-details' => __('Show or Hide Coach Details', 'gscoach'),
+                'show-or-hide-coach-social-connections' => __('Show or Hide Coach Social Connections', 'gscoach'),
+                'show-or-hide-coach-paginations' => __('Show or Hide Coach Paginations', 'gscoach'),
+                'show-or-hide-next-prev-coach-link-at-single-coach-template' => __('Show or Hide Next / Prev link at Single Coach Template', 'gscoach'),
                 'show-or-hide-instant-search-applicable-for-theme-9' => __('Show or Hide Instant Search', 'gscoach'),
                 'gs-coach-srch-by-zip--details' => __('Show or Hide by Instant Zip Search', 'gscoach'),
                 'gs-coach-srch-by-tag--details' => __('Show or Hide by Instant Tag Search', 'gscoach'),
@@ -1008,8 +1008,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'specify-target-to-load-the-links' => __('Specify the target to load the Links, Default New Tab', 'gscoach'),
                 'define-maximum-number-of-characters' => __('Define the maximum number of characters in details. Default 100', 'gscoach'),
                 'set-column-for-popup' => __('Set column for popup', 'gscoach'),
-                'set-max-team-numbers-you-want-to-show' => __('Set max team numbers you want to show, set -1 for all coachs', 'gscoach'),
-                'select-specific-team-group-to' => __('Select a specific team group to show that specific group coachs', 'gscoach'),
+                'set-max-coach-numbers-you-want-to-show' => __('Set max coach numbers you want to show, set -1 for all coaches', 'gscoach'),
 
                 'export-coaches-data' => __('Export Coaches', 'gscoach'),
                 'export-shortcodes-data' => __('Export Shortcodes', 'gscoach'),
@@ -3002,9 +3001,9 @@ if ( ! class_exists( 'Builder' ) ) {
                 'fields' => 'ids'
             ]);
 
-            foreach ( $coaches as $team_coach_id ) {
+            foreach ( $coaches as $coach_id ) {
 
-                $social_data = get_post_meta( $team_coach_id, '_gscoach_socials', true );
+                $social_data = get_post_meta( $coach_id, '_gscoach_socials', true );
 
                 foreach ( $social_data as $key => $social_link ) {
                     if ( ! empty($social_link['icon']) && array_key_exists( $social_link['icon'], $social_icons_map ) ) {
@@ -3012,7 +3011,7 @@ if ( ! class_exists( 'Builder' ) ) {
                     }
                 }
 
-                update_post_meta( $team_coach_id, '_gscoach_socials', $social_data );
+                update_post_meta( $coach_id, '_gscoach_socials', $social_data );
 
             }
 
@@ -3021,22 +3020,22 @@ if ( ! class_exists( 'Builder' ) ) {
         public function upgrade_to_2_3_9() {
             
             // Coach Group
-            $this->upgrade_to_2_3_9__taxonomy( 'team_group', 'gs_coach_group' );
+            $this->upgrade_to_2_3_9__taxonomy( 'coach_group', 'gs_coach_group' );
 
             // Coach Tag
-            $this->upgrade_to_2_3_9__taxonomy( 'team_tag', 'gs_coach_tag' );
+            $this->upgrade_to_2_3_9__taxonomy( 'coach_tag', 'gs_coach_tag' );
 
             // Coach Gender
-            $this->upgrade_to_2_3_9__taxonomy( 'team_gender', 'gs_coach_gender' );
+            $this->upgrade_to_2_3_9__taxonomy( 'coach_gender', 'gs_coach_gender' );
 
             // Coach Location
-            $this->upgrade_to_2_3_9__taxonomy( 'team_location', 'gs_coach_location' );
+            $this->upgrade_to_2_3_9__taxonomy( 'coach_location', 'gs_coach_location' );
 
             // Coach Language
-            $this->upgrade_to_2_3_9__taxonomy( 'team_language', 'gs_coach_language' );
+            $this->upgrade_to_2_3_9__taxonomy( 'coach_language', 'gs_coach_language' );
 
             // Coach Specialty
-            $this->upgrade_to_2_3_9__taxonomy( 'team_specialty', 'gs_coach_specialty' );
+            $this->upgrade_to_2_3_9__taxonomy( 'coach_specialty', 'gs_coach_specialty' );
     
         }
 

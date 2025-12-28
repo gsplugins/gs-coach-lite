@@ -27,7 +27,7 @@ class Integration_Beaver {
 
     public function init() {
         if ( class_exists( '\FLBuilder' ) ) {
-            require_once GSCOACH_PLUGIN_DIR . 'includes/integrations/beaver/beaver-widget-team.php';
+            require_once GSCOACH_PLUGIN_DIR . 'includes/integrations/beaver/beaver-widget-coach.php';
             FLBuilder::register_module( 'GSCOACH\Beaver', array(
                 'my-tab-1'      => array(
                     'title'         => __( 'Tab 1', 'gscoach' ),

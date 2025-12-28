@@ -9,7 +9,7 @@ plugin()->hooks->load_acf_fields( $show_acf_fields, $acf_fields_position );
 
 <div class="gs-roow">
 
-    <div class="gs-col-md-6 team-description">
+    <div class="gs-col-md-6 coach-description">
 
         <!-- Single coach name -->
         <?php coach_name( $id, true, false, $gs_coach_link_type, 'h2', 'title', true ); ?>

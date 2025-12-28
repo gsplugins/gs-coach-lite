@@ -370,7 +370,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('select-number-of-team-columns')}}</p>
+									<p class="bi-text-help">{{translation('select-number-of-coach-columns')}}</p>
 								</div>
 
 							</div>
@@ -592,7 +592,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-coach-name')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-coach-name')}}</p>
 								</div>
 
 							</div>
@@ -613,7 +613,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-coach-designation')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-coach-designation')}}</p>
 								</div>
 
 							</div>
@@ -634,7 +634,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-coach-details')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-coach-details')}}</p>
 								</div>
 
 							</div>
@@ -655,7 +655,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-coach-social-connections')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-coach-social-connections')}}</p>
 								</div>
 
 							</div>
@@ -718,7 +718,7 @@
 								</div>
 
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('show-or-hide-team-coach-paginations')}}</p>
+									<p class="bi-text-help">{{translation('show-or-hide-coach-paginations')}}</p>
 								</div>
 
 							</div>
@@ -2067,7 +2067,7 @@
 								</div>
 								
 								<div class="gs-col-xs-12 bi-text-help--area">
-									<p class="bi-text-help">{{translation('set-max-team-numbers-you-want-to-show')}}</p>
+									<p class="bi-text-help">{{translation('set-max-coach-numbers-you-want-to-show')}}</p>
 								</div>
 
 							</div>

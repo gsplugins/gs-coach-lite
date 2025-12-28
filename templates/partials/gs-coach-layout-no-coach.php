@@ -5,7 +5,7 @@ namespace GSCOACH;
  * GS Coach - Layout No coach
  * @author GS Plugins <hello@gsplugins.com>
  * 
- * This template can be overridden by copying it to yourtheme/gs-coach/partials/gs-coach-layout-no-team-coach.php
+ * This template can be overridden by copying it to yourtheme/gs-coach/partials/gs-coach-layout-no-coach.php
  * 
  * @package GS_Coach/Templates
  * @version 1.0.0

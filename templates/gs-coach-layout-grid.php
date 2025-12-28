@@ -102,7 +102,7 @@ if ( $_drawer_enabled ) $gs_row_classes[] = 'gscoach-gridder gscoach-gridder-' .
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-coach template -->
+			<!--Coaches not found - Load no-coach template -->
 			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-coach-coach.php' ); ?>
 
 		<?php endif; ?>

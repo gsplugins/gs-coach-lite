@@ -11,9 +11,9 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
         public function __construct() {
 
-            add_action( 'wp_ajax_gscoach_import_team_data', array($this, 'import_team_data') );
+            add_action( 'wp_ajax_gscoach_import_coach_data', array($this, 'import_coach_data') );
 
-            add_action( 'wp_ajax_gscoach_remove_team_data', array($this, 'remove_team_data') );
+            add_action( 'wp_ajax_gscoach_remove_coach_data', array($this, 'remove_coach_data') );
 
             add_action( 'wp_ajax_gscoach_import_shortcode_data', array($this, 'import_shortcode_data') );
 
@@ -34,10 +34,10 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             add_action( 'gscoach_dummy_attachments_process_start', function() {
 
                 // Force delete option if have any
-                delete_option( 'gscoach_dummy_team_data_created' );
+                delete_option( 'gscoach_dummy_coach_data_created' );
 
                 // Force update the process
-                set_transient( 'gscoach_dummy_team_data_creating', 1, 3 * MINUTE_IN_SECONDS );
+                set_transient( 'gscoach_dummy_coach_data_creating', 1, 3 * MINUTE_IN_SECONDS );
 
             });
             
@@ -56,10 +56,10 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             add_action( 'gscoach_dummy_coachs_process_finished', function() {
 
                 // clean the record that we have started a process
-                delete_transient( 'gscoach_dummy_team_data_creating' );
+                delete_transient( 'gscoach_dummy_coach_data_creating' );
 
                 // Add a track so we never duplicate the process
-                update_option( 'gscoach_dummy_team_data_created', 1 );
+                update_option( 'gscoach_dummy_coach_data_created', 1 );
 
             });
             
@@ -146,7 +146,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             $shortcodes = plugin()->builder->fetch_shortcodes();
 
             if ( empty($coaches) && empty($shortcodes) ) {
-                $this->_import_team_data( false );
+                $this->_import_coach_data( false );
                 $this->_import_shortcode_data( false );
             }
 
@@ -159,7 +159,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
             $response = [
-                'team' => $this->_import_team_data( false ),
+                'coach' => $this->_import_coach_data( false ),
                 'shortcode' => $this->_import_shortcode_data( false )
             ];
 
@@ -175,7 +175,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
             $response = [
-                'team' => $this->_remove_team_data( false ),
+                'coach' => $this->_remove_coach_data( false ),
                 'shortcode' => $this->_remove_shortcode_data( false )
             ];
 
@@ -185,23 +185,23 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
         }
 
-        public function import_team_data() {
+        public function import_coach_data() {
 
             // Validate nonce && check permission
             if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
             // Start importing
-            $this->_import_team_data();
+            $this->_import_coach_data();
 
         }
 
-        public function remove_team_data() {
+        public function remove_coach_data() {
 
             // Validate nonce && check permission
             if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
-            // Remove team data
-            $this->_remove_team_data();
+            // Remove coach data
+            $this->_remove_coach_data();
 
         }
 
@@ -220,17 +220,17 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             // Validate nonce && check permission
             if ( !check_admin_referer('_gscoach_admin_nonce_gs_') || !current_user_can('publish_pages') ) wp_send_json_error( __('Unauthorised Request', 'gscoach'), 401 );
 
-            // Remove team data
+            // Remove coach data
             $this->_remove_shortcode_data();
 
         }
 
-        public function _import_team_data( $is_ajax = null ) {
+        public function _import_coach_data( $is_ajax = null ) {
 
             if ( $is_ajax === null ) $is_ajax = wp_doing_ajax();
 
             // Data already imported
-            if ( get_option('gscoach_dummy_team_data_created') !== false || get_transient('gscoach_dummy_team_data_creating') !== false ) {
+            if ( get_option('gscoach_dummy_coach_data_created') !== false || get_transient('gscoach_dummy_coach_data_creating') !== false ) {
 
                 $message_202 = __( 'Dummy Coaches already imported', 'gscoach' );
 
@@ -257,7 +257,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
         }
 
-        public function _remove_team_data( $is_ajax = null ) {
+        public function _remove_coach_data( $is_ajax = null ) {
 
             if ( $is_ajax === null ) $is_ajax = wp_doing_ajax();
 
@@ -265,8 +265,8 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             $this->delete_dummy_terms();
             $this->delete_dummy_coachs();
 
-            delete_option( 'gscoach_dummy_team_data_created' );
-            delete_transient( 'gscoach_dummy_team_data_creating' );
+            delete_option( 'gscoach_dummy_coach_data_created' );
+            delete_transient( 'gscoach_dummy_coach_data_creating' );
 
             $message = __( 'Dummy Coaches deleted', 'gscoach' );
 
@@ -390,7 +390,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
         }
 
-        //es
+        // Coaches
         public function create_dummy_coachs() {
 
             do_action( 'gscoach_dummy_coachs_process_start' );
@@ -398,9 +398,9 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             $post_status = 'publish';
             $post_type = 'gs_coaches';
 
-            $coachs = [];
+            $coaches = [];
 
-            $coachs[] = array(
+            $coaches[] = array(
                 'post_title'    => "Morgan Freman",
                 'post_content'  => "Experienced and innovative Web Developer with a passion for creating elegant and functional web solutions. Proficient in frontend and backend technologies, I excel at translating complex design and functionality requirements into clean, efficient, and user-friendly websites.\r\n\r\nWith a strong foundation in coding and problem-solving, I am dedicated to delivering high-quality projects on time and within scope.",
                 'post_status'   => $post_status,
@@ -446,7 +446,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $coachs[] = array(
+            $coaches[] = array(
                 'post_title'    => "Samuel Oliver",
                 'post_content'  => "Dedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.\r\n\r\nDedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.",
                 'post_status'   => $post_status,
@@ -492,7 +492,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $coachs[] = array(
+            $coaches[] = array(
                 'post_title'    => "Orlando Bloom",
                 'post_content'  => "Dedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.\r\n\r\nDedicated and knowledgeable Corona Specialist with a proven background in effectively managing and mitigating challenges posed by the COVID-19 pandemic.\r\n\r\nLeveraging a multidisciplinary skill set, I am adept at developing and implementing comprehensive strategies for disease prevention, public health education, crisis management, and community outreach.\r\n\r\nBy staying informed about the latest developments, guidelines, and best practices, I am committed to fostering safer environments and contributing to the well-being of individuals and communities.",
                 'post_status'   => $post_status,
@@ -538,9 +538,9 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $coachs[] = array(
+            $coaches[] = array(
                 'post_title'    => "Juri Sepp",
-                'post_content'  => "Creative and detail-oriented UI\/UX Designer with a passion for crafting exceptional user experiences. Proficient in translating user needs into visually appealing and intuitive designs. Strong collaborator who thrives in interdisciplinary teams to deliver innovative digital solutions that combine aesthetics with functionality.\r\n\r\nPassionate UI Designer with a keen eye for detail and a drive to create exceptional digital experiences. Leveraging a strong foundation in design principles and an understanding of user behavior, I specialize in crafting interfaces that seamlessly blend aesthetics with usability.\r\n\r\nBy collaborating closely with cross-functional teams, I consistently deliver innovative solutions that captivate users and elevate brands. With a dedication to staying at the forefront of design trends and technologies, I am committed to pushing the boundaries of visual and interactive design to create meaningful connections between users and products.",
+                'post_content'  => "Creative and detail-oriented UI\/UX Designer with a passion for crafting exceptional user experiences. Proficient in translating user needs into visually appealing and intuitive designs. Strong collaborator who thrives in interdisciplinary coaches to deliver innovative digital solutions that combine aesthetics with functionality.\r\n\r\nPassionate UI Designer with a keen eye for detail and a drive to create exceptional digital experiences. Leveraging a strong foundation in design principles and an understanding of user behavior, I specialize in crafting interfaces that seamlessly blend aesthetics with usability.\r\n\r\nBy collaborating closely with cross-functional coaches, I consistently deliver innovative solutions that captivate users and elevate brands. With a dedication to staying at the forefront of design trends and technologies, I am committed to pushing the boundaries of visual and interactive design to create meaningful connections between users and products.",
                 'post_status'   => $post_status,
                 'post_type' => $post_type,
                 'post_date' => '2020-08-13 07:01:44',
@@ -584,7 +584,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $coachs[] = array(
+            $coaches[] = array(
                 'post_title'    => "Richard Gere",
                 'post_content'  => "Results-driven SEO Manager with a proven track record of developing and executing successful search engine optimization strategies.\r\n\r\nAdept at analyzing data, identifying trends, and implementing actionable insights to improve organic search rankings and drive targeted traffic. Strong leadership skills and a passion for staying updated with industry trends, algorithms, and best practices.",
                 'post_status'   => $post_status,
@@ -630,7 +630,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            $coachs[] = array(
+            $coaches[] = array(
                 'post_title'    => "Hugh Jakman",
                 'post_content'  => "Experienced and innovative Web Developer with a passion for creating elegant and functional web solutions. Proficient in frontend and backend technologies, I excel at translating complex design and functionality requirements into clean, efficient, and user-friendly websites.\r\n\r\nWith a strong foundation in coding and problem-solving, I am dedicated to delivering high-quality projects on time and within scope.",
                 'post_status'   => $post_status,
@@ -676,7 +676,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 ])
             );
 
-            foreach ( $coachs as $coach ) {
+            foreach ( $coaches as $coach ) {
                 // Insert the post into the database
                 $post_id = wp_insert_post( $coach );
                 // Add meta value for demo
@@ -689,11 +689,11 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
         public function delete_dummy_coachs() {
             
-            $coachs = $this->get_dummy_coachs();
+            $coaches = $this->get_dummy_coachs();
 
-            if ( empty($coachs) ) return;
+            if ( empty($coaches) ) return;
 
-            foreach ($coachs as $coach) {
+            foreach ($coaches as $coach) {
                 wp_delete_post( $coach->ID, true );
             }
 
@@ -703,25 +703,25 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
         public function get_dummy_coachs() {
 
-            $coachs = get_transient( 'gscoach_dummy_coachs' );
+            $coaches = get_transient( 'gscoach_dummy_coachs' );
 
-            if ( false !== $coachs ) return $coachs;
+            if ( false !== $coaches ) return $coaches;
 
-            $coachs = get_posts( array(
+            $coaches = get_posts( array(
                 'numberposts' => -1,
                 'post_type'   => 'gs_coaches',
                 'meta_key' => 'gscoach-demo_data',
                 'meta_value' => 1,
             ));
             
-            if ( is_wp_error($coachs) || empty($coachs) ) {
+            if ( is_wp_error($coaches) || empty($coaches) ) {
                 delete_transient( 'gscoach_dummy_coachs' );
                 return [];
             }
             
-            set_transient( 'gscoach_dummy_coachs', $coachs, 3 * MINUTE_IN_SECONDS );
+            set_transient( 'gscoach_dummy_coachs', $coaches, 3 * MINUTE_IN_SECONDS );
 
-            return $coachs;
+            return $coaches;
 
         }
 

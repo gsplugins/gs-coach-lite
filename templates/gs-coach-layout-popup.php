@@ -102,8 +102,8 @@ global $gs_coach_loop;
 
 		<?php else: ?>
 
-			<!--es not found - Load no-team-coach template -->
-			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-team-coach.php' ); ?>
+			<!--Coaches not found - Load no-coach template -->
+			<?php include Template_Loader::locate_template( 'partials/gs-coach-layout-no-coach.php' ); ?>
 
 		<?php endif; ?>
 

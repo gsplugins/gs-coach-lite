@@ -26,17 +26,17 @@
 							<li>27 Premade Shortcodes will be created</li>
 						</ul>
 
-						<button class="btn btn-brand btn-sm m-t-6 m-r-5" @click.prevent.stop="importAllData" v-if="!teamImported || !shortcodeImported">
+						<button class="btn btn-brand btn-sm m-t-6 m-r-5" @click.prevent.stop="importAllData" v-if="!coachImported || !shortcodeImported">
 							<i class="zmdi zmdi-cloud-download"></i>
 							<span>Import Now</span>
 						</button>
 
-						<div class="btn btn-success btn-sm m-t-6 m-r-5" v-if="teamImported && shortcodeImported">
+						<div class="btn btn-success btn-sm m-t-6 m-r-5" v-if="coachImported && shortcodeImported">
 							<i class="zmdi zmdi-cloud-done"></i>
 							<span>Already Imported</span>
 						</div>
 
-						<button class="btn btn-red btn-sm m-t-6" @click.prevent.stop="removeAllData" :disabled="!teamImported && !shortcodeImported">
+						<button class="btn btn-red btn-sm m-t-6" @click.prevent.stop="removeAllData" :disabled="!coachImported && !shortcodeImported">
 							<i class="zmdi zmdi-delete"></i>
 							<span>Remove Data</span>
 						</button>
@@ -62,17 +62,17 @@
 							<li>Texonomies: Group, Language, Location, Gender, Specialty</li>
 						</ul>
 
-						<button class="btn btn-brand btn-sm m-t-6 m-r-5" @click.prevent.stop="importCoachData" v-if="!teamImported">
+						<button class="btn btn-brand btn-sm m-t-6 m-r-5" @click.prevent.stop="importCoachData" v-if="!coachImported">
 							<i class="zmdi zmdi-cloud-download"></i>
 							<span>Import Now</span>
 						</button>
 
-						<div class="btn btn-success btn-sm m-t-6 m-r-5" v-if="teamImported">
+						<div class="btn btn-success btn-sm m-t-6 m-r-5" v-if="coachImported">
 							<i class="zmdi zmdi-cloud-done"></i>
 							<span>Already Imported</span>
 						</div>
 
-						<button class="btn btn-red btn-sm m-t-6" @click.prevent.stop="removeCoachData" :disabled="!teamImported">
+						<button class="btn btn-red btn-sm m-t-6" @click.prevent.stop="removeCoachData" :disabled="!coachImported">
 							<i class="zmdi zmdi-delete"></i>
 							<span>Remove Data</span>
 						</button>
@@ -141,7 +141,7 @@
 			return {
 				mode: 'all',
 				processing: false,
-				teamImported: false,
+				coachImported: false,
 				shortcodeImported: false,
 			}
 		},
@@ -150,7 +150,7 @@
 
 			const demoDataStatus = this.getDemoDataStatus();
 
-			this.teamImported = demoDataStatus.team_data;
+			this.coachImported = demoDataStatus.coach_data;
 			this.shortcodeImported = demoDataStatus.shortcode_data;
 
 		},
@@ -176,7 +176,7 @@
 			updateDemoDataStatus() {
 
 				this._updateDemoDataStatus({
-					team_data: this.teamImported,
+					coach_data: this.coachImported,
 					shortcode_data: this.shortcodeImported
 				});
 
@@ -185,7 +185,7 @@
 			importAllData() {
 
 				this.ajax( 'gscoach_import_all_data' ).then( () => {
-					this.teamImported = true;
+					this.coachImported = true;
 					this.shortcodeImported = true;
 					this.updateDemoDataStatus();
 				});
@@ -196,7 +196,7 @@
 
 				this.$confirm({
 					title: 'Are you sure?',
-					message: 'This action will delete all unmodified shortcodes & team coachs including attachments & texonomies, that inserted by gscoach dummy data importer',
+					message: 'This action will delete all unmodified shortcodes & coaches including attachments & texonomies, that inserted by gscoach dummy data importer',
 					button: {
 						yes: 'Yes',
 						no: 'Cancel'
@@ -206,7 +206,7 @@
 						if ( ! confirm ) return;
 
 						this.ajax( 'gscoach_remove_all_data' ).then( () => {
-							this.teamImported = false;
+							this.coachImported = false;
 							this.shortcodeImported = false;
 							this.updateDemoDataStatus();
 						});
@@ -218,8 +218,8 @@
 
 			importCoachData() {
 
-				this.ajax( 'gscoach_import_team_data' ).then( () => {
-					this.teamImported = true;
+				this.ajax( 'gscoach_import_coach_data' ).then( () => {
+					this.coachImported = true;
 					this.updateDemoDataStatus();
 				});
 
@@ -229,7 +229,7 @@
 
 				this.$confirm({
 					title: 'Are you sure?',
-					message: 'This action will delete all unmodified team coachs including attachments & texonomies, that inserted by gscoach dummy data importer',
+					message: 'This action will delete all unmodified coaches including attachments & texonomies, that inserted by gscoach dummy data importer',
 					button: {
 						yes: 'Yes',
 						no: 'Cancel'
@@ -238,8 +238,8 @@
 						
 						if ( ! confirm ) return;
 
-						this.ajax( 'gscoach_remove_team_data' ).then( () => {
-							this.teamImported = false;
+						this.ajax( 'gscoach_remove_coach_data' ).then( () => {
+							this.coachImported = false;
 							this.updateDemoDataStatus();
 						});
 

@@ -72,7 +72,7 @@ class Integration_Gutenberg {
             'render_callback' => [$this, 'shortcodes_dynamic_render_callback']
         ));
 
-        register_block_type( 'gscoach/single-team-block', array(
+        register_block_type( 'gscoach/single-coach-block', array(
             'editor_script' => 'gs-coach-single-block',
             'render_callback' => [$this, 'single_page_render_callback']
         ));
@@ -111,34 +111,34 @@ class Integration_Gutenberg {
 
         ob_start(); ?>
     
-        .gscoach-coachs--toolbar {
+        .gscoach-coaches--toolbar {
             padding: 20px;
             border: 1px solid #1f1f1f;
             border-radius: 2px;
         }
 
-        .gscoach-coachs--toolbar label {
+        .gscoach-coaches--toolbar label {
             display: block;
             margin-bottom: 6px;
             margin-top: -6px;
         }
 
-        .gscoach-coachs--toolbar select {
+        .gscoach-coaches--toolbar select {
             width: 250px;
             max-width: 100% !important;
             line-height: 42px !important;
         }
 
-        .gscoach-coachs--toolbar .gs-coach-block--des {
+        .gscoach-coaches--toolbar .gs-coach-block--des {
             margin: 10px 0 0;
             font-size: 16px;
         }
 
-        .gscoach-coachs--toolbar .gs-coach-block--des span {
+        .gscoach-coaches--toolbar .gs-coach-block--des span {
             display: block;
         }
 
-        .gscoach-coachs--toolbar p.gs-coach-block--des a {
+        .gscoach-coaches--toolbar p.gs-coach-block--des a {
             margin-left: 4px;
         }
     

@@ -19,7 +19,7 @@ class GS_Coach_Asset_Generator extends GS_Asset_Generator_Base {
 	}
 
 	public function get_assets_key() {
-		return 'gs-coach-coachs';
+		return 'gs-coaches';
 	}
 
 	public function generateStyle( $selector, $selector_divi, $targets, $prop, $value ) {

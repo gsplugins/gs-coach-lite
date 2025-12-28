@@ -356,7 +356,7 @@ final class Scripts {
 	public function print_plugin_icon_css() {
 		?>
 		<style>
-			#adminmenu .toplevel_page_gs-coach-coachs .wp-menu-image img,
+			#adminmenu .toplevel_page_gs-coaches .wp-menu-image img,
 			#adminmenu .menu-icon-gs_coaches .wp-menu-image img {
 				padding-top: 7px;
 				width: 22px;
@@ -368,14 +368,14 @@ final class Scripts {
 				clear: both
 			}
 
-			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-coachs-affiliation"] ),
+			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coaches-affiliation"] ),
 			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/taxonomies"] ),
 			#menu-posts-gs_coaches li:nth-last-child(2) {
 				position: relative;
 				margin-top: 16px;
 			}
 			
-			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-coachs-affiliation"] ):before,
+			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coaches-affiliation"] ):before,
 			#menu-posts-gs_coaches li:has( a[href^="edit.php?post_type=gs_coaches&page=gs-coach-shortcode#/taxonomies"] ):before,
 			#menu-posts-gs_coaches li:nth-last-child(2):before {
 				content: "";

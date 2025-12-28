@@ -12,7 +12,7 @@
 
     $(window).on( 'elementor/frontend/init', function() {
 
-        elementorFrontend.hooks.addAction( 'frontend/element_ready/gs-coach-coachs.default', GS_Coach_coach );
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/gs-coaches.default', GS_Coach_coach );
 
     });
 

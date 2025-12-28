@@ -85,7 +85,7 @@ class Import_Export {
 
         if ($file_extension != 'zip') wp_send_json_error(__('Invalid file type', 'gscoach'), 400);
 
-        $upload_file_dir = get_temp_dir() . 'gs-plugins/gs-coach-coachs';
+        $upload_file_dir = get_temp_dir() . 'gs-plugins/gs-coaches';
 
         if (is_dir($upload_file_dir)) $this->delete_directory($upload_file_dir);
 
@@ -132,7 +132,7 @@ class Import_Export {
         if (empty($json_data)) wp_send_json_error(__('Invalid file content', 'gscoach'), 400);
         
         // Initiate the Import Process
-        $this->import__team_data( $json_data );
+        $this->import__coach_data( $json_data );
 
         // Delete the uploaded files
         $this->delete_directory($this->upload_dir);
@@ -141,7 +141,7 @@ class Import_Export {
         wp_send_json_success(__('Data imported successfully', 'gscoach'), 200 );
     }
 
-    public function import__team_data( $json_data ) {
+    public function import__coach_data( $json_data ) {
 
         // Import the Settings Data
         if (!empty($json_data['settings'])) {
@@ -171,7 +171,7 @@ class Import_Export {
     }
 
     // Test Purpose
-    public function delete__team_data() {
+    public function delete__coach_data() {
 
         // Delete All the Posts
         $posts = get_posts([

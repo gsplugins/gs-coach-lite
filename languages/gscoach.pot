@@ -205,7 +205,7 @@ msgid "No Coach coach Found!"
 msgstr ""
 
 #: ../includes/sortable.php:329
-msgid "We didn't find any team coach.</br>Please add some team coachs to sort them."
+msgid "We didn't find any coach.</br>Please add some coaches to sort them."
 msgstr ""
 
 #: ../includes/sortable.php:330
@@ -441,7 +441,7 @@ msgid "Location"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:599
-msgid "Select specific team location to show that specific location coachs"
+msgid "Select specific coach location to show that specific location coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:601, ../includes/shortcode-builder/builder.php:709, ../includes/shortcode-builder/builder.php:964, ../includes/shortcode-builder/builder.php:2335
@@ -449,7 +449,7 @@ msgid "Specialty"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:602
-msgid "Select specific team specialty to show that specific specialty coachs"
+msgid "Select specific coach specialty to show that specific specialty coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:604, ../includes/shortcode-builder/builder.php:708, ../includes/shortcode-builder/builder.php:960, ../includes/shortcode-builder/builder.php:2314
@@ -457,7 +457,7 @@ msgid "Language"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:605
-msgid "Select specific team language to show that specific language coachs"
+msgid "Select specific coach language to show that specific language coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:607, ../includes/shortcode-builder/builder.php:710, ../includes/shortcode-builder/builder.php:966, ../includes/shortcode-builder/builder.php:2328
@@ -465,7 +465,7 @@ msgid "Gender"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:608
-msgid "Select specific team gender to show that specific gender coachs"
+msgid "Select specific coach gender to show that specific gender coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:610, ../includes/shortcode-builder/builder.php:968
@@ -473,7 +473,7 @@ msgid "Extra One"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:611
-msgid "Select specific team extra one to show that specific extra one coachs"
+msgid "Select specific coach extra one to show that specific extra one coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:613, ../includes/shortcode-builder/builder.php:970
@@ -481,7 +481,7 @@ msgid "Extra Two"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:614
-msgid "Select specific team extra two to show that specific extra two coachs"
+msgid "Select specific coach extra two to show that specific extra two coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:616, ../includes/shortcode-builder/builder.php:972
@@ -489,7 +489,7 @@ msgid "Extra Three"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:617
-msgid "Select specific team extra three to show that specific extra three coachs"
+msgid "Select specific coach extra three to show that specific extra three coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:619, ../includes/shortcode-builder/builder.php:974
@@ -497,7 +497,7 @@ msgid "Extra Four"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:620
-msgid "Select specific team extra four to show that specific extra four coachs"
+msgid "Select specific coach extra four to show that specific extra four coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:622, ../includes/shortcode-builder/builder.php:976
@@ -505,7 +505,7 @@ msgid "Extra Five"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:623
-msgid "Select specific team extra five to show that specific extra five coachs"
+msgid "Select specific coach extra five to show that specific extra five coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:625
@@ -597,7 +597,7 @@ msgid "Enable Taxonomy"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:668
-msgid "Enable Taxonomy for team coachs"
+msgid "Enable Taxonomy for coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:669
@@ -649,7 +649,7 @@ msgid "Disable Lazy Load"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:685
-msgid "Disable Lazy Load for team coach images"
+msgid "Disable Lazy Load for coach images"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:687
@@ -1261,7 +1261,7 @@ msgid "Link Type"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:883
-msgid "Choose the link type of team coachs"
+msgid "Choose the link type of coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:886
@@ -1385,7 +1385,7 @@ msgid "Allow HTML for Details"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:916
-msgid "Enable/Disable HTML content for the single team coach descript, this will load whole content from the post type."
+msgid "Enable/Disable HTML content for the single coach descript, this will load whole content from the post type."
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:917
@@ -1541,7 +1541,7 @@ msgid "Select specific tag to show that specific tagged coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:957
-msgid "Select a specific team group to hide that specific group coaches"
+msgid "Select a specific coach group to hide that specific group coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:959
@@ -1697,11 +1697,11 @@ msgid "Set column for popup"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:1008
-msgid "Set max team numbers you want to show, set -1 for all coachs"
+msgid "Set max coach numbers you want to show, set -1 for all coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:1009
-msgid "Select a specific team group to show that specific group coachs"
+msgid "Select a specific coach group to show that specific group coaches"
 msgstr ""
 
 #: ../includes/shortcode-builder/builder.php:1011

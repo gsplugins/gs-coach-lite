@@ -289,9 +289,9 @@ class Meta_Fields {
 									<tr>
 										<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 										<td>
-											<?php select_builder('gscoach-team-icon[]', $social_icons, $field['icon'], __('Select icon', 'gscoach'), 'widefat gscoach-icon-select'); ?>
+											<?php select_builder('gscoach--icon[]', $social_icons, $field['icon'], __('Select icon', 'gscoach'), 'widefat gscoach-icon-select'); ?>
 										</td>
-										<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach-team-link[]" value="<?php if (isset($field['link'])) echo esc_attr($field['link']); ?>" /></td>
+										<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach--link[]" value="<?php if (isset($field['link'])) echo esc_attr($field['link']); ?>" /></td>
 										<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 									</tr>
 
@@ -301,9 +301,9 @@ class Meta_Fields {
 								<tr>
 									<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 									<td>
-										<?php select_builder('gscoach-team-icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat gscoach-icon-select'); ?>
+										<?php select_builder('gscoach--icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat gscoach-icon-select'); ?>
 									</td>
-									<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach-team-link[]" value="" /></td>
+									<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach--link[]" value="" /></td>
 									<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 								</tr>
 
@@ -312,9 +312,9 @@ class Meta_Fields {
 							<tr class="empty-row screen-reader-text">
 								<td><i class="fas fa-arrows-alt" aria-hidden="true"></i></td>
 								<td>
-									<?php select_builder('gscoach-team-icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat'); ?>
+									<?php select_builder('gscoach--icon[]', $social_icons, '', __('Select icon', 'gscoach'), 'widefat'); ?>
 								</td>
-								<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach-team-link[]" value="" /></td>
+								<td><input type="text" placeholder="<?php _e('ex: https://twitter.com/gsplugins', 'gscoach'); ?>" class="widefat" name="gscoach--link[]" value="" /></td>
 								<td><a class="button remove-row" href="#"><?php _e('Remove', 'gscoach'); ?></a></td>
 							</tr>
 
@@ -504,7 +504,7 @@ class Meta_Fields {
 			}
 		}
 
-		if (!empty($social_icons = $_POST['gscoach-team-icon']) && !empty($social_links = $_POST['gscoach-team-link'])) {
+		if (!empty($social_icons = $_POST['gscoach--icon']) && !empty($social_links = $_POST['gscoach--link'])) {
 
 			$social_icons = array_map('sanitize_text_field', $social_icons);
 			$social_links = array_map('sanitize_text_field', $social_links);

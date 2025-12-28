@@ -19,7 +19,7 @@
         }
       
         render() {
-            return <div className='gs-coach-coachs' dangerouslySetInnerHTML={{ __html: this.props.__shortcode }}></div>
+            return <div className='gs-coaches' dangerouslySetInnerHTML={{ __html: this.props.__shortcode }}></div>
         }
     }
 

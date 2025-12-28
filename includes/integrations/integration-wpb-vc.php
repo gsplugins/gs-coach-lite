@@ -33,7 +33,7 @@ class Integration_WPB_VC {
 
             'name' => __( 'GS Coaches', 'gscoach' ),
             'base' => 'gscoach',
-            'description' => __( 'Show team coachs from GS Coach plugin' ),
+            'description' => __( 'Show coaches from GS Coach plugin' ),
             'category' => 'GS Plugins',
             'icon' => GSCOACH_PLUGIN_URI . '/assets/img/icon.svg',
             'params' => [

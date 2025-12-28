@@ -4,7 +4,7 @@
 
 			<div class="top-section head-section">
 				<h2>{{translation('preference')}}</h2>
-				<p>{{translation('global-settings-for-gs-coach-coachs')}}</p>
+				<p>{{translation('global-settings-for-gs-coaches')}}</p>
 			</div>
 
 			<div class="bottom-section">
@@ -237,7 +237,7 @@
 						</div>
 
 						<div class="gs-col-xs-12 bi-text-help--area">
-							<p class="bi-text-help">{{translation('show-or-hide-next-prev-coach-link-at-single-team-template')}}</p>
+							<p class="bi-text-help">{{translation('show-or-hide-next-prev-coach-link-at-single-coach-template')}}</p>
 						</div>
 
 					</div>
