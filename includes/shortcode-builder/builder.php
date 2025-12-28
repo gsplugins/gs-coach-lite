@@ -847,7 +847,7 @@ if ( ! class_exists( 'Builder' ) ) {
                 'shortcodes' => __('Shortcodes', 'gscoach'),
                 'shortcode' => __('Shortcode', 'gscoach'),
                 'global-settings-for-gs-coaches' => __('Global Settings for GS Coaches', 'gscoach'),
-                'all-shortcodes-for-gs-coach-coach' => __('All shortcodes for GS Coach', 'gscoach'),
+                'all-shortcodes-for-gs-coach' => __('All shortcodes for GS Coach', 'gscoach'),
                 'create-shortcode' => __('Create Shortcode', 'gscoach'),
                 'create-new-shortcode' => __('Create New Shortcode', 'gscoach'),
                 'name' => __('Name', 'gscoach'),

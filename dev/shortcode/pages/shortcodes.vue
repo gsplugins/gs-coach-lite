@@ -3,7 +3,7 @@
 		<div class="gs-coach-box">
 			<div class="top-section head-section">
 				<h2>{{translation('shortcodes')}}</h2>
-				<p>{{translation('all-shortcodes-for-gs-coach-coach')}}</p>
+				<p>{{translation('all-shortcodes-for-gs-coach')}}</p>
 				<router-link to="/shortcode/" class="btn btn-brand btn-sm"><i class="zmdi zmdi-plus"></i><span>{{translation('create-new-shortcode')}}</span></router-link>
 			</div>
 			<div class="bottom-section">
