@@ -446,6 +446,12 @@ final class Scripts {
 
 		// Enqueue Scripts
 		wp_enqueue_script('gs-coach-admin');
+
+		// Localize admin script
+		wp_localize_script('gs-coach-admin', 'gsCoachAdminData', [
+			'is_pro_active' => wp_validate_boolean( is_pro_active() ),
+			'is_pro_valid' => wp_validate_boolean( is_gs_coach_pro_valid() )
+		]);
 	}
 
 	public static function add_dependency_scripts($handle, $scripts) {

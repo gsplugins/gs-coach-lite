@@ -16,6 +16,48 @@
   overflow: hidden;
 }
 
+.gs_coach-metafields #manage_certificate {
+  color: #6472ef;
+  border-color: #6472ef;
+  background: rgba(100, 114, 239, 0.05);
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.gs_coach-metafields #gscoach_empty_certif {
+  color: #ff8e8e;
+  border-color: #ff8e8e;
+  background: rgba(239, 143, 144, 0.05);
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.gs_coach-metafields #gs_coach_cv {
+  width: 500px;
+  padding: 7px 12px;
+  border: 1px solid #b6b6b6;
+  background-color: rgba(178, 178, 182, 0.2);
+}
+.gs_coach-metafields .gs-coach-upload-cv {
+  color: #6472ef;
+  border-color: #6472ef;
+  background: rgba(100, 114, 239, 0.05);
+  padding: 6px 25px;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+.gs_coach-metafields .gs-coach-remove-cv {
+  color: #ff8e8e;
+  border-color: #ff8e8e;
+  background: rgba(239, 143, 144, 0.05);
+  padding: 6px 20px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
 .gs_coach-metafields .form-group {
   margin-bottom: 15px;
   display: -webkit-box;
@@ -106,13 +148,15 @@
 }
 .gs-coach-pro-field--inner .gs-coach-pro-field--content {
   font-size: 18px;
-  background: #6472ef;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.gs-coach-pro-field--inner .gs-coach-pro-field--content a {
   padding: 20px 100px;
+  background: #6472ef;
   -webkit-box-shadow: 0px 0px 50px rgba(89, 97, 109, 0.1);
           box-shadow: 0px 0px 50px rgba(89, 97, 109, 0.1);
   border-radius: 3px;
-  color: #fff;
-  letter-spacing: 1px;
 }
 
 .edit-tags-php.post-type-gs_coaches #col-container #col-left,
@@ -191,7 +235,7 @@
 
 .gs-coach-social--section select,
 .gs-coach-social--section select + .select2-container,
-#select2-gscoach-coachh-icon-results {
+#select2-gscoach-coach-icon-results {
   text-transform: capitalize;
 }
 

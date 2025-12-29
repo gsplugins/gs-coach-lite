@@ -86,7 +86,7 @@ class Meta_Fields {
 		$gs_coach_fee              = get_post_meta($post->ID, '_gscoach_fee', true);
 		$gs_coach_review           = get_post_meta($post->ID, '_gscoach_review', true);
 		$gs_coach_rating 		   = get_post_meta($post->ID, '_gscoach_rating', true);
-		$gs_coach_rating		   = '' !== $gs_coach_rating ? $gs_coach_rating : '2';
+		$gs_coach_rating		   = '' !== $gs_coach_rating ? $gs_coach_rating : '0';
 		$gs_coach_custom_page 	   = get_post_meta($post->ID, '_gscoach_custom_page', true);
 
 		?>
@@ -100,17 +100,17 @@ class Meta_Fields {
 				<input type="text" id="gsProf" class="form-control" name="gs_prof" placeholder="Profession" value="<?php echo isset($gs_prof) ? esc_attr($gs_prof) : ''; ?>">
 			</div>
 
+			<div class="form-group">
+				<label for="gsCoachExperience"><?php echo get_meta_field_name('_gscoach_experience'); ?></label>
+				<input type="text" id="gsCoachExperience" class="form-control" name="gs_coach_experience" placeholder="Experience" value="<?php echo isset($gs_coach_experience) ? esc_attr($gs_coach_experience) : ''; ?>">
+			</div>
+
+			<div class="form-group">
+				<label for="gsCoachEducation"><?php echo get_meta_field_name('_gscoach_education'); ?></label>
+				<input type="text" id="gsCoachEducation" class="form-control" name="gs_coach_education" placeholder="Education" value="<?php echo isset($gs_coach_education) ? esc_attr($gs_coach_education) : ''; ?>">
+			</div>
+
 			<div class="gs-coach-pro-field">
-
-				<div class="form-group">
-					<label for="gsCoachExperience"><?php echo get_meta_field_name('_gscoach_experience'); ?></label>
-					<input type="text" id="gsCoachExperience" class="form-control" name="gs_coach_experience" placeholder="Experience" value="<?php echo isset($gs_coach_experience) ? esc_attr($gs_coach_experience) : ''; ?>">
-				</div>
-
-				<div class="form-group">
-					<label for="gsCoachEducation"><?php echo get_meta_field_name('_gscoach_education'); ?></label>
-					<input type="text" id="gsCoachEducation" class="form-control" name="gs_coach_education" placeholder="Education" value="<?php echo isset($gs_coach_education) ? esc_attr($gs_coach_education) : ''; ?>">
-				</div>
 			
 				<div class="form-group">
 					<label for="gsCoachRibbon"><?php echo get_meta_field_name('_gscoach_ribbon'); ?></label>
@@ -456,11 +456,9 @@ class Meta_Fields {
 
 		?>
 		<div class="gs-coach-pro-field gs_coach-metafields">
-			<p>
-				<input type="text" id="gs_coach_cv" name="gs_coach_cv" value="<?php echo esc_url($cv_url); ?>" placeholder="Select or Upload CV" readonly />
-				<button type="button" class="button gs-meta-button gs-coach-upload-cv"><?php esc_html_e('Upload CV', 'gscoach'); ?></button>
-				<button type="button" class="button gs-meta-button gs-coach-remove-cv"><?php esc_html_e('Remove', 'gscoach'); ?></button>
-			</p>
+			<input type="text" id="gs_coach_cv" name="gs_coach_cv" value="<?php echo esc_url($cv_url); ?>" placeholder="Select or Upload CV" readonly />
+			<input type="button" class="button gs-meta-button gs-coach-upload-cv" value="<?php esc_html_e('Upload CV', 'gscoach'); ?>" />
+			<input type="button" class="button gs-meta-button gs-coach-remove-cv" value="<?php esc_html_e('Remove', 'gscoach'); ?>" />
 			<?php if ($cv_url) : ?>
 				<p><a class="gs-coach-view-cv-link" href="<?php echo esc_url($cv_url); ?>" target="_blank"><?php esc_html_e('View CV', 'gscoach'); ?></a></p>
 			<?php endif; ?>
@@ -558,13 +556,12 @@ class Meta_Fields {
 		}
 
 		// Sanitize user input.
-		$gs_prof_data = sanitize_text_field($_POST['gs_prof']);
-		update_post_meta($post_id, '_gscoach_profession', $gs_prof_data);
+		update_post_meta($post_id, '_gscoach_profession', sanitize_text_field($_POST['gs_prof']));
+		update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
+		update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));
 
 		if (is_pro_active_and_valid()) {
 
-			update_post_meta($post_id, '_gscoach_experience', sanitize_text_field($_POST['gs_coach_experience']));
-			update_post_meta($post_id, '_gscoach_education', sanitize_text_field($_POST['gs_coach_education']));
 			update_post_meta($post_id, '_gscoach_ribbon', sanitize_text_field($_POST['gs_coach_ribbon']));
 			update_post_meta($post_id, '_gscoach_address', sanitize_text_field($_POST['gs_coach_address']));
 			update_post_meta($post_id, '_gscoach_state', sanitize_text_field($_POST['gs_coach_state']));
@@ -586,6 +583,7 @@ class Meta_Fields {
 
 			// Save certificate gallery
 			global $post;
+
 			if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){
 				return;
 			} else if(is_object($post)){
@@ -600,6 +598,7 @@ class Meta_Fields {
 			} else {
 				delete_post_meta($post_id, '_gscoach_cv');
 			}
+
 		}
 	}
 }

@@ -518,7 +518,7 @@
   text-align: left;
   color: #000;
 }
-.et-db #et-boc .et-l .et_pb_module .coachh-description {
+.et-db #et-boc .et-l .et_pb_module .coach-description {
   border-right: 2px solid #aaa;
 }
 .et-db #et-boc .et-l .et_pb_module .gridder-navigation .gridder-close {
@@ -1165,7 +1165,7 @@
   .et-db #et-boc .et-l .et_pb_module .gridder .gridder-list {
     width: 49%;
   }
-  .et-db #et-boc .et-l .et_pb_module .coachh-description {
+  .et-db #et-boc .et-l .et_pb_module .coach-description {
     border-right: none;
   }
   .et-db #et-boc .et-l .et_pb_module .coach-skill {

@@ -1,5 +1,12 @@
 jQuery(function($) {
 
+    let isProActive = (gsCoachAdminData.is_pro_active !== '') && (gsCoachAdminData.is_pro_active === '1');
+    let isProValid = (gsCoachAdminData.is_pro_valid !== '') && (gsCoachAdminData.is_pro_valid === '1');
+
+    if ( ! isProActive || ! isProValid ) {
+        $('.gs-coach-pro-field').addClass('gs-coach-fields-disable').append('<div class="gs-coach-pro-field--inner"><div class="gs-coach-pro-field--content"><a href="https://www.gsplugins.com/product/wordpress-coaches-plugin/#pricing">Upgrade to PRO</a></div></div>');
+    }
+
     /*
      * Select/Upload image(s) event
      */
