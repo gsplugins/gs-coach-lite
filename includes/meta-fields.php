@@ -526,14 +526,14 @@ class Meta_Fields {
 
 		if (is_pro_active_and_valid()) {
 
-			if (!empty($coach_skill = $_POST['gscoach-skill-name']) && !empty($coachs_percent = $_POST['gscoach-skill-percent'])) {
+			if (!empty($coach_skill = $_POST['gscoach-skill-name']) && !empty($coaches_percent = $_POST['gscoach-skill-percent'])) {
 
 				$coach_skill = array_map('sanitize_text_field', $coach_skill);
-				$coachs_percent = array_map('absint', $coachs_percent);
+				$coaches_percent = array_map('absint', $coaches_percent);
 
 				$newdata = array_map(function ($skill, $percent) {
 					if (!empty($skill) && !empty($percent)) return ['skill' => $skill, 'percent' => $percent];
-				}, $coach_skill, $coachs_percent);
+				}, $coach_skill, $coaches_percent);
 
 				$meta_key = '_gscoach_skills';
 

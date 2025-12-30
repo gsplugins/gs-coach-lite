@@ -53,14 +53,14 @@ class Integration_Divi {
         ?>
         <style>
 
-            .et-db #et-boc .et-l .et-fb-modules-list ul > li.gs_coach_coachs:before {
+            .et-db #et-boc .et-l .et-fb-modules-list ul > li.gs_coaches:before {
                 background: url('<?php echo esc_attr( $icon ); ?>') no-repeat center center;
                 background-size: contain;
                 content: "";
                 height: 28px;
             }
             
-            .et-db #et-boc .et-l .et-fb-modules-list ul > li.gs_coach_coachs {
+            .et-db #et-boc .et-l .et-fb-modules-list ul > li.gs_coaches {
                 height: 67px;
             }
 
@@ -94,7 +94,7 @@ function divi_widget_class() {
     // Divi Widget Class
     class Divi_Widget extends \ET_Builder_Module {                
         
-        public $slug       = 'gs_coach_coachs';
+        public $slug       = 'gs_coaches';
         public $vb_support = 'on';
         
         public function init() {                    

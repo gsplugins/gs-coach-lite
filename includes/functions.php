@@ -89,7 +89,7 @@ function is_divi_active() {
 }
 
 function is_divi_editor() {
-    if (!empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_coach_coachs') return true;
+    if (!empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_coaches') return true;
 }
 
 function gs_wp_kses($content) {

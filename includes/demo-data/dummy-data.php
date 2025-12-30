@@ -49,11 +49,11 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             
             add_action( 'gscoach_dummy_terms_process_finished', function() {
 
-                $this->create_dummy_coachs();
+                $this->create_dummy_coaches();
 
             });
             
-            add_action( 'gscoach_dummy_coachs_process_finished', function() {
+            add_action( 'gscoach_dummy_coaches_process_finished', function() {
 
                 // clean the record that we have started a process
                 delete_transient( 'gscoach_dummy_coach_data_creating' );
@@ -129,7 +129,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             
             // Remove dummy indicator from post
             delete_post_meta( $post_id, 'gscoach-demo_data', 1 );
-            delete_transient( 'gscoach_dummy_coachs' );
+            delete_transient( 'gscoach_dummy_coaches' );
 
         }
 
@@ -263,7 +263,7 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
 
             $this->delete_dummy_attachments();
             $this->delete_dummy_terms();
-            $this->delete_dummy_coachs();
+            $this->delete_dummy_coaches();
 
             delete_option( 'gscoach_dummy_coach_data_created' );
             delete_transient( 'gscoach_dummy_coach_data_creating' );
@@ -391,9 +391,9 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
         }
 
         // Coaches
-        public function create_dummy_coachs() {
+        public function create_dummy_coaches() {
 
-            do_action( 'gscoach_dummy_coachs_process_start' );
+            do_action( 'gscoach_dummy_coaches_process_start' );
 
             $post_status = 'publish';
             $post_type = 'gs_coaches';
@@ -683,13 +683,13 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 if ( $post_id ) add_post_meta( $post_id, 'gscoach-demo_data', 1 );
             }
 
-            do_action( 'gscoach_dummy_coachs_process_finished' );
+            do_action( 'gscoach_dummy_coaches_process_finished' );
 
         }
 
-        public function delete_dummy_coachs() {
+        public function delete_dummy_coaches() {
             
-            $coaches = $this->get_dummy_coachs();
+            $coaches = $this->get_dummy_coaches();
 
             if ( empty($coaches) ) return;
 
@@ -697,13 +697,13 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
                 wp_delete_post( $coach->ID, true );
             }
 
-            delete_transient( 'gscoach_dummy_coachs' );
+            delete_transient( 'gscoach_dummy_coaches' );
 
         }
 
-        public function get_dummy_coachs() {
+        public function get_dummy_coaches() {
 
-            $coaches = get_transient( 'gscoach_dummy_coachs' );
+            $coaches = get_transient( 'gscoach_dummy_coaches' );
 
             if ( false !== $coaches ) return $coaches;
 
@@ -715,11 +715,11 @@ if ( ! class_exists( 'Dummy_Data' ) ) {
             ));
             
             if ( is_wp_error($coaches) || empty($coaches) ) {
-                delete_transient( 'gscoach_dummy_coachs' );
+                delete_transient( 'gscoach_dummy_coaches' );
                 return [];
             }
             
-            set_transient( 'gscoach_dummy_coachs', $coaches, 3 * MINUTE_IN_SECONDS );
+            set_transient( 'gscoach_dummy_coaches', $coaches, 3 * MINUTE_IN_SECONDS );
 
             return $coaches;
 

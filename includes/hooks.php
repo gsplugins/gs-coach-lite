@@ -95,17 +95,17 @@ class Hooks {
         add_action($action, [ $this, 'display_acf_fields' ]);
     }
     
-    public function single_template($single_team_template) {
+    public function single_template($single_coach_template) {
         global $post;
 
         if ($post->post_type == 'gs_coaches') {
             $show_acf_fields         = getoption('show_acf_fields', 'off');
             $acf_fields_position     = getoption('acf_fields_position', 'after_skills');
             $this->load_acf_fields($show_acf_fields, $acf_fields_position);
-            $single_team_template = Template_Loader::locate_template('gs-coach-template-single.php');
+            $single_coach_template = Template_Loader::locate_template('gs-coach-template-single.php');
         }
 
-        return $single_team_template;
+        return $single_coach_template;
     }
     
     public function archive_template($archive_template) {
